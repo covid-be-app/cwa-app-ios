@@ -125,6 +125,9 @@ class ENAExposureSubmissionService: ExposureSubmissionService {
 		completion completeWith: @escaping RegistrationHandler
 	) {
 		let (key, type) = getKeyAndType(for: deviceRegistrationKey)
+		
+		print("key = \(key)")
+		
 		client.getRegistrationToken(forKey: key, withType: type) { result in
 			switch result {
 			case let .failure(error):

@@ -155,6 +155,15 @@ final class ExposureSubmissionQRScannerViewController: UIViewController, QRScann
 
 	// Make sure to get permission to use the camera before using this method.
 	private func startScanning() {
+		
+		// :TEMP:
+		
+		let uuid = UUID().uuidString
+		let urlString = "https://www.covid.be/?\(uuid)"
+		
+		delegate?.qrScanner(self, didScan: urlString)
+		return
+		
 		let captureSession = AVCaptureSession()
 
 		captureDevice = AVCaptureDevice.default(for: .video)
