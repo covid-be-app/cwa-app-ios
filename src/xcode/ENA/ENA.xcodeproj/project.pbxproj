@@ -233,8 +233,8 @@
 		A328426324910552006B1F09 /* ExposureSubmissionSuccessViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A328426224910552006B1F09 /* ExposureSubmissionSuccessViewControllerTests.swift */; };
 		A32842652491136E006B1F09 /* ExposureSubmissionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32842642491136E006B1F09 /* ExposureSubmissionUITests.swift */; };
 		A32842672492359E006B1F09 /* MockExposureSubmissionNavigationControllerChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32842662492359E006B1F09 /* MockExposureSubmissionNavigationControllerChild.swift */; };
-		A3483B0B24C5EFA40037855F /* MockExposureDetectionViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3483B0A24C5EFA40037855F /* MockExposureDetectionViewControllerDelegate.swift */; };
 		A32CA72F24B6F2E300B1A994 /* HomeRiskCellConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32CA72E24B6F2E300B1A994 /* HomeRiskCellConfiguratorTests.swift */; };
+		A3483B0B24C5EFA40037855F /* MockExposureDetectionViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3483B0A24C5EFA40037855F /* MockExposureDetectionViewControllerDelegate.swift */; };
 		A36D07B92486D61C00E46F96 /* HomeCardCellButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36D07B82486D61C00E46F96 /* HomeCardCellButtonDelegate.swift */; };
 		A36FACC424C5EA1500DED947 /* ExposureDetectionViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36FACC324C5EA1500DED947 /* ExposureDetectionViewControllerTests.swift */; };
 		A372DA3B24BDA075003248BB /* ExposureSubmissionCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = A372DA3A24BDA075003248BB /* ExposureSubmissionCoordinating.swift */; };
@@ -613,7 +613,7 @@
 		858F6F6D245A103C009FFD33 /* ExposureNotification.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExposureNotification.framework; path = System/Library/Frameworks/ExposureNotification.framework; sourceTree = SDKROOT; };
 		8595BF5E246032D90056EA27 /* ENASwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ENASwitch.swift; sourceTree = "<group>"; };
 		859DD511248549790073D59F /* MockDiagnosisKeysRetrieval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDiagnosisKeysRetrieval.swift; sourceTree = "<group>"; };
-		85D7593B2457048F008175F0 /* ENA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ENA.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		85D7593B2457048F008175F0 /* BeSafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeSafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85D7593E2457048F008175F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85D759402457048F008175F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		85D7594A24570491008175F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -669,8 +669,8 @@
 		A328426224910552006B1F09 /* ExposureSubmissionSuccessViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureSubmissionSuccessViewControllerTests.swift; sourceTree = "<group>"; };
 		A32842642491136E006B1F09 /* ExposureSubmissionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureSubmissionUITests.swift; sourceTree = "<group>"; };
 		A32842662492359E006B1F09 /* MockExposureSubmissionNavigationControllerChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockExposureSubmissionNavigationControllerChild.swift; sourceTree = "<group>"; };
-		A3483B0A24C5EFA40037855F /* MockExposureDetectionViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockExposureDetectionViewControllerDelegate.swift; sourceTree = "<group>"; };
 		A32CA72E24B6F2E300B1A994 /* HomeRiskCellConfiguratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRiskCellConfiguratorTests.swift; sourceTree = "<group>"; };
+		A3483B0A24C5EFA40037855F /* MockExposureDetectionViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockExposureDetectionViewControllerDelegate.swift; sourceTree = "<group>"; };
 		A36D07B82486D61C00E46F96 /* HomeCardCellButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardCellButtonDelegate.swift; sourceTree = "<group>"; };
 		A36FACC324C5EA1500DED947 /* ExposureDetectionViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureDetectionViewControllerTests.swift; sourceTree = "<group>"; };
 		A372DA3A24BDA075003248BB /* ExposureSubmissionCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureSubmissionCoordinating.swift; sourceTree = "<group>"; };
@@ -1398,7 +1398,7 @@
 		85D7593C2457048F008175F0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				85D7593B2457048F008175F0 /* ENA.app */,
+				85D7593B2457048F008175F0 /* BeSafe.app */,
 				85D7595424570491008175F0 /* ENATests.xctest */,
 				85D7595F24570491008175F0 /* ENAUITests.xctest */,
 			);
@@ -1581,15 +1581,6 @@
 			path = "Mock Objects";
 			sourceTree = "<group>";
 		};
-		A36FACC224C5E9FC00DED947 /* __tests__ */ = {
-			isa = PBXGroup;
-			children = (
-				A36FACC324C5EA1500DED947 /* ExposureDetectionViewControllerTests.swift */,
-				A3483B0A24C5EFA40037855F /* MockExposureDetectionViewControllerDelegate.swift */,
-			);
-			path = __tests__;
-			sourceTree = "<group>";
-		};
 		A32CA72D24B6F28700B1A994 /* __tests__ */ = {
 			isa = PBXGroup;
 			children = (
@@ -1598,6 +1589,15 @@
 				516E42FA24B7739F0008CC30 /* HomeUnknownRiskCellConfiguratorTests.swift */,
 				516E42FC24B776A90008CC30 /* HomeLowRiskCellConfiguratorTests.swift */,
 				516E42FF24B777B20008CC30 /* HomeHighRiskCellConfiguratorTests.swift */,
+			);
+			path = __tests__;
+			sourceTree = "<group>";
+		};
+		A36FACC224C5E9FC00DED947 /* __tests__ */ = {
+			isa = PBXGroup;
+			children = (
+				A36FACC324C5EA1500DED947 /* ExposureDetectionViewControllerTests.swift */,
+				A3483B0A24C5EFA40037855F /* MockExposureDetectionViewControllerDelegate.swift */,
 			);
 			path = __tests__;
 			sourceTree = "<group>";
@@ -2201,7 +2201,7 @@
 				B1B5A75F24924B3D0029D5D7 /* FMDB */,
 			);
 			productName = ENA;
-			productReference = 85D7593B2457048F008175F0 /* ENA.app */;
+			productReference = 85D7593B2457048F008175F0 /* BeSafe.app */;
 			productType = "com.apple.product-type.application";
 		};
 		85D7595324570491008175F0 /* ENATests */ = {
@@ -2915,7 +2915,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = $IPHONE_APP_DEV_TEAM;
+				DEVELOPMENT_TEAM = MB7TR4N9LK;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -2937,8 +2937,8 @@
 					"-DSQLCIPHER_CRYPTO_CC",
 					"-DNDEBUG",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.rki.coronawarnapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jpdvdg.covidtest;
+				PRODUCT_NAME = BeSafe;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "COMMUNITY DISABLE_CERTIFICATE_PINNING";
 				SWIFT_OBJC_BRIDGING_HEADER = "ENA-Bridging-Header.h";
@@ -3089,7 +3089,7 @@
 					"-DNDEBUG",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.rki.coronawarnapp-dev";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = BeSafe;
 				PROVISIONING_PROFILE_SPECIFIER = $IPHONE_APP_DIST_PROF_SPECIFIER;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "APP_STORE DISABLE_CERTIFICATE_PINNING";
 				SWIFT_OBJC_BRIDGING_HEADER = "ENA-Bridging-Header.h";
@@ -3243,7 +3243,7 @@
 					"-DNDEBUG",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.rki.coronawarnapp-dev";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = BeSafe;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG UITESTING DISABLE_CERTIFICATE_PINNING";
 				SWIFT_OBJC_BRIDGING_HEADER = "ENA-Bridging-Header.h";
@@ -3459,7 +3459,7 @@
 					"-DNDEBUG",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.rki.coronawarnapp-dev";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = BeSafe;
 				PROVISIONING_PROFILE_SPECIFIER = $IPHONE_APP_DIST_PROF_SPECIFIER;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG DISABLE_CERTIFICATE_PINNING";
 				SWIFT_OBJC_BRIDGING_HEADER = "ENA-Bridging-Header.h";
@@ -3495,7 +3495,7 @@
 					"-DNDEBUG",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.rki.coronawarnapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = BeSafe;
 				PROVISIONING_PROFILE_SPECIFIER = $IPHONE_APP_DIST_PROF_SPECIFIER;
 				SWIFT_OBJC_BRIDGING_HEADER = "ENA-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
