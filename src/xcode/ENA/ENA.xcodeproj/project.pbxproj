@@ -680,6 +680,16 @@
 		A3EE6E59249BB7AF00C64B61 /* ExposureSubmissionServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureSubmissionServiceFactory.swift; sourceTree = "<group>"; };
 		A3EE6E5B249BB97500C64B61 /* UITestingParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestingParameters.swift; sourceTree = "<group>"; };
 		A3FF84EB247BFAF00053E947 /* Hasher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hasher.swift; sourceTree = "<group>"; };
+		A96E9FC224CD710000F845DB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = fr; path = fr.lproj/usage.html; sourceTree = "<group>"; };
+		A96E9FC324CD710000F845DB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = fr; path = "fr.lproj/privacy-policy.html"; sourceTree = "<group>"; };
+		A96E9FC424CD710000F845DB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A96E9FC524CD710000F845DB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = fr; path = fr.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		A96E9FC624CD710000F845DB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A96E9FC724CD71B300F845DB /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = nl; path = nl.lproj/usage.html; sourceTree = "<group>"; };
+		A96E9FC824CD71B300F845DB /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = nl; path = "nl.lproj/privacy-policy.html"; sourceTree = "<group>"; };
+		A96E9FC924CD71B300F845DB /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A96E9FCA24CD71B300F845DB /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = nl; path = nl.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		A96E9FCB24CD71B300F845DB /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B102BDC22460410600CD55A2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B10F9B89249961B500C418F4 /* DynamicTypeLabelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTypeLabelTests.swift; sourceTree = "<group>"; };
 		B10FD5F3246EAC1700E9D7F2 /* AppleFilesWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleFilesWriter.swift; sourceTree = "<group>"; };
@@ -2265,6 +2275,8 @@
 				pl,
 				ro,
 				bg,
+				fr,
+				nl,
 			);
 			mainGroup = 85D759322457048F008175F0;
 			packageReferences = (
@@ -2751,6 +2763,8 @@
 				EECF5E5524BDCC3C00332B8F /* pl */,
 				EECF5E5A24BDCC4D00332B8F /* ro */,
 				EECF5E5F24BDCC5900332B8F /* bg */,
+				A96E9FC224CD710000F845DB /* fr */,
+				A96E9FC724CD71B300F845DB /* nl */,
 			);
 			name = usage.html;
 			sourceTree = "<group>";
@@ -2766,6 +2780,8 @@
 				EECF5E5624BDCC3C00332B8F /* pl */,
 				EECF5E5B24BDCC4D00332B8F /* ro */,
 				EECF5E6024BDCC5A00332B8F /* bg */,
+				A96E9FC324CD710000F845DB /* fr */,
+				A96E9FC824CD71B300F845DB /* nl */,
 			);
 			name = "privacy-policy.html";
 			sourceTree = "<group>";
@@ -2792,6 +2808,8 @@
 				EECF5E5924BDCC3C00332B8F /* pl */,
 				EECF5E5E24BDCC4D00332B8F /* ro */,
 				EECF5E6324BDCC5A00332B8F /* bg */,
+				A96E9FC624CD710000F845DB /* fr */,
+				A96E9FCB24CD71B300F845DB /* nl */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -2807,6 +2825,8 @@
 				EECF5E5724BDCC3C00332B8F /* pl */,
 				EECF5E5C24BDCC4D00332B8F /* ro */,
 				EECF5E6124BDCC5A00332B8F /* bg */,
+				A96E9FC424CD710000F845DB /* fr */,
+				A96E9FC924CD71B300F845DB /* nl */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -2822,6 +2842,8 @@
 				EECF5E5824BDCC3C00332B8F /* pl */,
 				EECF5E5D24BDCC4D00332B8F /* ro */,
 				EECF5E6224BDCC5A00332B8F /* bg */,
+				A96E9FC524CD710000F845DB /* fr */,
+				A96E9FCA24CD71B300F845DB /* nl */,
 			);
 			name = Localizable.stringsdict;
 			sourceTree = "<group>";
@@ -2898,7 +2920,7 @@
 				CODE_SIGN_ENTITLEMENTS = "${PROJECT}/Resources/ENACommunity.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = MB7TR4N9LK;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -3054,7 +3076,7 @@
 				CODE_SIGN_ENTITLEMENTS = "${PROJECT}/Resources/ENA.entitlements";
 				CODE_SIGN_IDENTITY = $IPHONE_APP_CODE_SIGN_IDENTITY;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 523TP53AQF;
 				GCC_PREPROCESSOR_DEFINITIONS = "SQLITE_HAS_CODEC=1";
 				INFOPLIST_FILE = ENA/Resources/Info_Testflight.plist;
@@ -3204,7 +3226,7 @@
 				CODE_SIGN_ENTITLEMENTS = "${PROJECT}/Resources/ENACommunity.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = $IPHONE_APP_DEV_TEAM;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -3420,7 +3442,7 @@
 				CODE_SIGN_ENTITLEMENTS = "${PROJECT}/Resources/ENATest.entitlements";
 				CODE_SIGN_IDENTITY = $IPHONE_APP_CODE_SIGN_IDENTITY;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 523TP53AQF;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -3461,7 +3483,7 @@
 				CODE_SIGN_ENTITLEMENTS = "${PROJECT}/Resources/ENA.entitlements";
 				CODE_SIGN_IDENTITY = $IPHONE_APP_CODE_SIGN_IDENTITY;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				GCC_PREPROCESSOR_DEFINITIONS = "SQLITE_HAS_CODEC=1";
 				INFOPLIST_FILE = ENA/Resources/Info.plist;
 				IPHONE_APP_CODE_SIGN_IDENTITY = "iPhone Developer";

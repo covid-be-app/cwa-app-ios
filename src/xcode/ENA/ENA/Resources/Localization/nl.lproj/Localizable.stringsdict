@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ExposureDetection_Explanation_Text_High_DaysSinceLastExposure</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@VARIABLE@</string>
+		<key>VARIABLE</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>one</key>
+			<string>YJe hebt een verhoogd risico op infectie omdat je een dag geleden voor het laatst bent blootgesteld over een langere periode en in de nabijheid van ten minste één persoon die gediagnosticeerd is met COVID-19.</string>
+			<key>other</key>
+			<string>U hebt een verhoogd risico op infectie omdat u de laatste dagen geleden voor het laatst bent blootgesteld aan %u over een langere periode en in de nabijheid van ten minste één persoon die de diagnose COVID-19 heeft gekregen.</string>
+		</dict>
+	</dict>
+	<key>ExposureDetection_Refreshed_Format</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@VARIABLE@</string>
+		<key>VARIABLE</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>zero</key>
+			<!-- XFLD: Plural form for Zero  Plural form for ZERO. Plural form for ZERO.-->
+			<string>Vandaag, %%1$@</string>
+			<key>one</key>
+			<!-- XFLD: Plural form for One  Plural form for ONE. Plural form for ONE.-->
+			<string>Gisteren, %%1$@</string>
+			<key>few</key>
+			<!-- XFLD: Plural form for Other  Plural form for FEW. Plural form for FEW.-->
+			<string>%%2$@, %%1$@</string>
+			<key>many</key>
+			<!-- XFLD: Plural form for Other  Plural form for MANY. Plural form for MANY.-->
+			<string>%%2$@, %%1$@</string>
+			<key>two</key>
+			<!-- XFLD: Plural form for Other  Plural form for TWO. Plural form for TWO.-->
+			<string>%%2$@, %%1$@</string>
+			<key>other</key>
+			<!-- XFLD: Plural form for Other  Plural form for OTHER. Plural form for OTHER.-->
+			<string>%%2$@, %%1$@</string>
+		</dict>
+	</dict>
+	<key>ExposureDetection_NumberOfContacts</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@VARIABLE@</string>
+		<key>VARIABLE</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>zero</key>
+			<!-- XFLD: Plural form for Zero  Plural form for ZERO. Plural form for ZERO.-->
+			<string>Geen blootstelling tot nu toe</string>
+			<key>one</key>
+			<!-- XFLD: Plural form for One  Plural form for ONE. Plural form for ONE.-->
+			<string>Een blootstelling</string>
+			<key>few</key>
+			<!-- XFLD: Plural form for Other  Plural form for FEW. Plural form for FEW.-->
+			<string>%u blootstellingen</string>
+			<key>many</key>
+			<!-- XFLD: Plural form for Other  Plural form for MANY. Plural form for MANY.-->
+			<string>%u blootstellingen</string>
+			<key>two</key>
+			<!-- XFLD: Plural form for Other  Plural form for TWO. Plural form for TWO.-->
+			<string>%u blootstellingen</string>
+			<key>other</key>
+			<!-- XFLD: Plural form for Other  Plural form for OTHER. Plural form for OTHER.-->
+			<string>%u blootstellingen</string>
+		</dict>
+	</dict>
+	<key>ExposureDetection_LastExposure</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@VARIABLE@</string>
+		<key>VARIABLE</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>zero</key>
+			<!-- XFLD: Plural form for Zero  Plural form for ZERO. Plural form for ZERO.-->
+			<string>%u dagen sinds de laatste blootstelling</string>
+			<key>one</key>
+			<!-- XFLD: Plural form for One  Plural form for ONE. Plural form for ONE.-->
+			<string>%u dagen sinds de laatste blootstelling</string>
+			<key>few</key>
+			<!-- XFLD: Plural form for Other  Plural form for FEW. Plural form for FEW.-->
+			<string>%u dagen sinds de laatste blootstelling</string>
+			<key>many</key>
+			<!-- XFLD: Plural form for Other  Plural form for MANY. Plural form for MANY.-->
+			<string>%u dagen sinds de laatste blootstelling</string>
+			<key>two</key>
+			<!-- XFLD: Plural form for Other  Plural form for TWO. Plural form for TWO.-->
+			<string>%u dagen sinds de laatste blootstelling</string>
+			<key>other</key>
+			<!-- XFLD: Plural form for Other  Plural form for OTHER. Plural form for OTHER.-->
+			<string>%u dagen sinds de laatste blootstelling</string>
+		</dict>
+	</dict>
+    <key>Home_Risk_Number_Contacts_Item_Title</key>
+    <dict>
+        <key>NSStringLocalizedFormatKey</key>
+        <string>%#@VARIABLE@</string>
+        <key>VARIABLE</key>
+        <dict>
+            <key>NSStringFormatSpecTypeKey</key>
+            <string>NSStringPluralRuleType</string>
+            <key>NSStringFormatValueTypeKey</key>
+            <string>u</string>
+            <key>zero</key>
+			<!-- XFLD: Plural form for Zero  Plural form for ZERO. Plural form for ZERO.-->
+            <string>Geen blootstelling tot nu toe</string>
+            <key>one</key>
+			<!-- XFLD: Plural form for One  Plural form for ONE. Plural form for ONE.-->
+            <string>%u blootstelling</string>
+            <key>few</key>
+            <!-- XFLD: Plural form for Other  Plural form for FEW. Plural form for FEW.-->
+            <string>%u blootstellingen</string>
+            <key>many</key>
+            <!-- XFLD: Plural form for Other  Plural form for MANY. Plural form for MANY.-->
+            <string>%u blootstellingen</string>
+            <key>two</key>
+            <!-- XFLD: Plural form for Other  Plural form for TWO. Plural form for TWO.-->
+            <string>%u blootstellingen</string>
+            <key>other</key>
+			<!-- XFLD: Plural form for Other  Plural form for OTHER. Plural form for OTHER.-->
+            <string>%u blootstellingen</string>
+        </dict>
+    </dict>
+    <key>Home_Risk_Last_Contact_Item_Title</key>
+    <dict>
+        <key>NSStringLocalizedFormatKey</key>
+        <string>%#@VARIABLE@</string>
+        <key>VARIABLE</key>
+        <dict>
+            <key>NSStringFormatSpecTypeKey</key>
+            <string>NSStringPluralRuleType</string>
+            <key>NSStringFormatValueTypeKey</key>
+            <string>u</string>
+            <key>zero</key>
+			<!-- XFLD: Plural form for Zero  Plural form for ZERO. Plural form for ZERO.-->
+            <string>Minder dan een dag sinds de laatste blootstelling</string>
+            <key>one</key>
+			<!-- XFLD: Plural form for One  Plural form for ONE. Plural form for ONE.-->
+            <string>%u dag sinds de laatste blootstelling</string>
+            <key>few</key>
+            <!-- XFLD: Plural form for Other  Plural form for FEW. Plural form for FEW.-->
+            <string>%u dagen sinds de laatste blootstelling</string>
+            <key>many</key>
+            <!-- XFLD: Plural form for Other  Plural form for MANY. Plural form for MANY.-->
+            <string>%u dagen sinds de laatste blootstelling</string>
+            <key>two</key>
+            <!-- XFLD: Plural form for Other  Plural form for TWO. Plural form for TWO.-->
+            <string>%u dagen sinds de laatste blootstelling</string>
+            <key>other</key>
+			<!-- XFLD: Plural form for Other  Plural form for OTHER. Plural form for OTHER.-->
+            <string>%u dagen sinds de laatste blootstelling</string>
+        </dict>
+    </dict>
+    <key>Home_Risk_Status_Counter_Label</key>
+    <dict>
+        <key>NSStringLocalizedFormatKey</key>
+        <string>%#@minutes@%#</string>
+        <key>minutes</key>
+        <dict>
+            <key>NSStringFormatSpecTypeKey</key>
+            <string>NSStringPluralRuleType</string>
+            <key>NSStringFormatValueTypeKey</key>
+            <string>u</string>
+			<key>zero</key>
+			<!-- XFLD: Plural form for Zero  Plural form for ZERO. Plural form for ZERO.-->
+            <string>Update in %02u:%2$#@seconds@ seconden</string>
+            <key>one</key>
+			<!-- XFLD: Plural form for One  Plural form for ONE. Plural form for ONE.-->
+            <string>Update in %02u:%2$#@seconds@ minute</string>
+            <key>few</key>
+            <!-- XFLD: Plural form for Other  Plural form for FEW. Plural form for FEW.-->
+            <string>Update in %02u:%2$#@seconds@ minutes</string>
+            <key>many</key>
+            <!-- XFLD: Plural form for Other  Plural form for MANY. Plural form for MANY.-->
+            <string>Update in %02u:%2$#@seconds@ minutes</string>
+            <key>two</key>
+            <!-- XFLD: Plural form for Other  Plural form for TWO. Plural form for TWO.-->
+            <string>Update in %02u:%2$#@seconds@ minutes</string>
+            <key>other</key>
+			<!-- XFLD: Plural form for Other  Plural form for OTHER. Plural form for OTHER.-->
+            <string>Update in %02u:%2$#@seconds@ minutes</string>
+        </dict>
+        <key>seconds</key>
+        <dict>
+            <key>NSStringFormatSpecTypeKey</key>
+            <string>NSStringPluralRuleType</string>
+            <key>NSStringFormatValueTypeKey</key>
+            <string>u</string>
+			<key>one</key>
+			<!-- XFLD: Plural form for One  Plural form for ONE. Plural form for ONE.-->
+			<string>%02u</string>
+            <key>zero</key>
+            <!-- XFLD: Plural form for Other  Plural form for ZERO. Plural form for ZERO.-->
+            <string>%02u</string>
+            <key>few</key>
+            <!-- XFLD: Plural form for Other  Plural form for FEW. Plural form for FEW.-->
+            <string>%02u</string>
+            <key>many</key>
+            <!-- XFLD: Plural form for Other  Plural form for MANY. Plural form for MANY.-->
+            <string>%02u</string>
+            <key>two</key>
+            <!-- XFLD: Plural form for Other  Plural form for TWO. Plural form for TWO.-->
+            <string>%02u</string>
+            <key>other</key>
+			<!-- XFLD: Plural form for Other  Plural form for OTHER. Plural form for OTHER.-->
+            <string>%02u</string>
+        </dict>
+    </dict>
+	<key>ENSetting_Tracing_History</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@VARIABLE@</string>
+		<key>VARIABLE</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>zero</key>
+			<!-- XFLD: Plural form for Zero  Plural form for ZERO. Plural form for ZERO.-->
+			<string>Blootstellingsregistratie is minder dan een dag actief geweest. Een belichtingscontrole kan alleen betrouwbaar zijn als de belichtingsregistratie permanent is geactiveerd.</string>
+			<key>one</key>
+			<!-- XFLD: Plural form for One  Plural form for ONE. Plural form for ONE.-->
+			<string>Blootstellingsregistratie is actief geweest voor %u dag. Een belichtingscontrole kan alleen betrouwbaar zijn als de belichtingsregistratie permanent is geactiveerd.</string>
+			<key>few</key>
+			<!-- XFLD: Plural form for Other  Plural form for FEW. Plural form for FEW.-->
+			<string>Blootstellingsregistratie is al %u-dagen actief. Een belichtingscontrole kan alleen betrouwbaar zijn als de belichtingsregistratie permanent is geactiveerd.</string>
+			<key>many</key>
+			<!-- XFLD: Plural form for Other  Plural form for MANY. Plural form for MANY.-->
+			<string>Blootstellingsregistratie is al %u-dagen actief. Een belichtingscontrole kan alleen betrouwbaar zijn als de belichtingsregistratie permanent is geactiveerd.</string>
+			<key>two</key>
+			<!-- XFLD: Plural form for Other  Plural form for TWO. Plural form for TWO.-->
+			<string>Blootstellingsregistratie is al %u-dagen actief. Een belichtingscontrole kan alleen betrouwbaar zijn als de belichtingsregistratie permanent is geactiveerd.</string>
+			<key>other</key>
+			<!-- XFLD: Plural form for Other  Plural form for OTHER. Plural form for OTHER.-->
+			<string>Blootstellingsregistratie is al %u-dagen actief. Een belichtingscontrole kan alleen betrouwbaar zijn als de belichtingsregistratie permanent is geactiveerd.</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

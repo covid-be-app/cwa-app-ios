@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ExposureDetection_Explanation_Text_High_DaysSinceLastExposure</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@VARIABLE@</string>
+		<key>VARIABLE</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>one</key>
+			<string>Vous avez un risque accru d'infection parce que vous avez été exposé pour la dernière fois il y a un jour, sur une période plus longue et à proximité d'au moins une personne ayant reçu un diagnostic de COVID-19.</string>
+			<key>other</key>
+			<string>Vous avez un risque accru d'infection parce que vous avez été exposé pour la dernière fois il y a plusieurs jours sur une période plus longue et à proximité d'au moins une personne ayant reçu un diagnostic de COVID-19.</string>
+		</dict>
+	</dict>
+	<key>ExposureDetection_Refreshed_Format</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@VARIABLE@</string>
+		<key>VARIABLE</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>zero</key>
+			<!-- XFLD: Plural form for Zero  Plural form for ZERO. Plural form for ZERO.-->
+			<string>Aujourd'hui, %%1$@</string>
+			<key>one</key>
+			<!-- XFLD: Plural form for One  Plural form for ONE. Plural form for ONE.-->
+			<string>Hier, %%1$@</string>
+			<key>few</key>
+			<!-- XFLD: Plural form for Other  Plural form for FEW. Plural form for FEW.-->
+			<string>%%2$@, %%1$@</string>
+			<key>many</key>
+			<!-- XFLD: Plural form for Other  Plural form for MANY. Plural form for MANY.-->
+			<string>%%2$@, %%1$@</string>
+			<key>two</key>
+			<!-- XFLD: Plural form for Other  Plural form for TWO. Plural form for TWO.-->
+			<string>%%2$@, %%1$@</string>
+			<key>other</key>
+			<!-- XFLD: Plural form for Other  Plural form for OTHER. Plural form for OTHER.-->
+			<string>%%2$@, %%1$@</string>
+		</dict>
+	</dict>
+	<key>ExposureDetection_NumberOfContacts</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@VARIABLE@</string>
+		<key>VARIABLE</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>zero</key>
+			<!-- XFLD: Plural form for Zero  Plural form for ZERO. Plural form for ZERO.-->
+			<string>Pas d'exposition jusqu'à présent</string>
+			<key>one</key>
+			<!-- XFLD: Plural form for One  Plural form for ONE. Plural form for ONE.-->
+			<string>Une exposition</string>
+			<key>few</key>
+			<!-- XFLD: Plural form for Other  Plural form for FEW. Plural form for FEW.-->
+			<string>%u exposition</string>
+			<key>many</key>
+			<!-- XFLD: Plural form for Other  Plural form for MANY. Plural form for MANY.-->
+			<string>%u exposition</string>
+			<key>two</key>
+			<!-- XFLD: Plural form for Other  Plural form for TWO. Plural form for TWO.-->
+			<string>%u exposition</string>
+			<key>other</key>
+			<!-- XFLD: Plural form for Other  Plural form for OTHER. Plural form for OTHER.-->
+			<string>%u exposition</string>
+		</dict>
+	</dict>
+	<key>ExposureDetection_LastExposure</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@VARIABLE@</string>
+		<key>VARIABLE</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>zero</key>
+			<!-- XFLD: Plural form for Zero  Plural form for ZERO. Plural form for ZERO.-->
+			<string>%u jours depuis la dernière exposition</string>
+			<key>one</key>
+			<!-- XFLD: Plural form for One  Plural form for ONE. Plural form for ONE.-->
+			<string>%u jours depuis la dernière exposition</string>
+			<key>few</key>
+			<!-- XFLD: Plural form for Other  Plural form for FEW. Plural form for FEW.-->
+			<string>%u jours depuis la dernière exposition</string>
+			<key>many</key>
+			<!-- XFLD: Plural form for Other  Plural form for MANY. Plural form for MANY.-->
+			<string>%u jours depuis la dernière exposition</string>
+			<key>two</key>
+			<!-- XFLD: Plural form for Other  Plural form for TWO. Plural form for TWO.-->
+			<string>%u jours depuis la dernière exposition</string>
+			<key>other</key>
+			<!-- XFLD: Plural form for Other  Plural form for OTHER. Plural form for OTHER.-->
+			<string>%u jours depuis la dernière exposition</string>
+		</dict>
+	</dict>
+    <key>Home_Risk_Number_Contacts_Item_Title</key>
+    <dict>
+        <key>NSStringLocalizedFormatKey</key>
+        <string>%#@VARIABLE@</string>
+        <key>VARIABLE</key>
+        <dict>
+            <key>NSStringFormatSpecTypeKey</key>
+            <string>NSStringPluralRuleType</string>
+            <key>NSStringFormatValueTypeKey</key>
+            <string>u</string>
+            <key>zero</key>
+			<!-- XFLD: Plural form for Zero  Plural form for ZERO. Plural form for ZERO.-->
+            <string>Pas d'exposition jusqu'à présent</string>
+            <key>one</key>
+			<!-- XFLD: Plural form for One  Plural form for ONE. Plural form for ONE.-->
+            <string>%u expositions</string>
+            <key>few</key>
+            <!-- XFLD: Plural form for Other  Plural form for FEW. Plural form for FEW.-->
+            <string>%u expositions</string>
+            <key>many</key>
+            <!-- XFLD: Plural form for Other  Plural form for MANY. Plural form for MANY.-->
+            <string>%u expositions</string>
+            <key>two</key>
+            <!-- XFLD: Plural form for Other  Plural form for TWO. Plural form for TWO.-->
+            <string>%u expositions</string>
+            <key>other</key>
+			<!-- XFLD: Plural form for Other  Plural form for OTHER. Plural form for OTHER.-->
+            <string>%u expositions</string>
+        </dict>
+    </dict>
+    <key>Home_Risk_Last_Contact_Item_Title</key>
+    <dict>
+        <key>NSStringLocalizedFormatKey</key>
+        <string>%#@VARIABLE@</string>
+        <key>VARIABLE</key>
+        <dict>
+            <key>NSStringFormatSpecTypeKey</key>
+            <string>NSStringPluralRuleType</string>
+            <key>NSStringFormatValueTypeKey</key>
+            <string>u</string>
+            <key>zero</key>
+			<!-- XFLD: Plural form for Zero  Plural form for ZERO. Plural form for ZERO.-->
+            <string>Moins d'un jour depuis la dernière exposition</string>
+            <key>one</key>
+			<!-- XFLD: Plural form for One  Plural form for ONE. Plural form for ONE.-->
+            <string>%u jour depuis la dernière exposition</string>
+            <key>few</key>
+            <!-- XFLD: Plural form for Other  Plural form for FEW. Plural form for FEW.-->
+            <string>%u jour depuis la dernière exposition</string>
+            <key>many</key>
+            <!-- XFLD: Plural form for Other  Plural form for MANY. Plural form for MANY.-->
+            <string>%u jour depuis la dernière expositione</string>
+            <key>two</key>
+            <!-- XFLD: Plural form for Other  Plural form for TWO. Plural form for TWO.-->
+            <string>%u jour depuis la dernière exposition</string>
+            <key>other</key>
+			<!-- XFLD: Plural form for Other  Plural form for OTHER. Plural form for OTHER.-->
+            <string>%u jour depuis la dernière exposition</string>
+        </dict>
+    </dict>
+    <key>Home_Risk_Status_Counter_Label</key>
+    <dict>
+        <key>NSStringLocalizedFormatKey</key>
+        <string>%#@minutes@%#</string>
+        <key>minutes</key>
+        <dict>
+            <key>NSStringFormatSpecTypeKey</key>
+            <string>NSStringPluralRuleType</string>
+            <key>NSStringFormatValueTypeKey</key>
+            <string>u</string>
+			<key>zero</key>
+			<!-- XFLD: Plural form for Zero  Plural form for ZERO. Plural form for ZERO.-->
+            <string>Mise à jour dans %02u:%2$#@seconds@ secondes</string>
+            <key>one</key>
+			<!-- XFLD: Plural form for One  Plural form for ONE. Plural form for ONE.-->
+            <string>Mise à jour dans %02u:%2$#@seconds@ minute</string>
+            <key>few</key>
+            <!-- XFLD: Plural form for Other  Plural form for FEW. Plural form for FEW.-->
+            <string>Mise à jour dans %02u:%2$#@seconds@ minutes</string>
+            <key>many</key>
+            <!-- XFLD: Plural form for Other  Plural form for MANY. Plural form for MANY.-->
+            <string>Mise à jour dans %02u:%2$#@seconds@ minutes</string>
+            <key>two</key>
+            <!-- XFLD: Plural form for Other  Plural form for TWO. Plural form for TWO.-->
+            <string>Mise à jour dans %02u:%2$#@seconds@ minutes</string>
+            <key>other</key>
+			<!-- XFLD: Plural form for Other  Plural form for OTHER. Plural form for OTHER.-->
+            <string>Mise à jour dans %02u:%2$#@seconds@ minutes</string>
+        </dict>
+        <key>seconds</key>
+        <dict>
+            <key>NSStringFormatSpecTypeKey</key>
+            <string>NSStringPluralRuleType</string>
+            <key>NSStringFormatValueTypeKey</key>
+            <string>u</string>
+			<key>one</key>
+			<!-- XFLD: Plural form for One  Plural form for ONE. Plural form for ONE.-->
+			<string>%02u</string>
+            <key>zero</key>
+            <!-- XFLD: Plural form for Other  Plural form for ZERO. Plural form for ZERO.-->
+            <string>%02u</string>
+            <key>few</key>
+            <!-- XFLD: Plural form for Other  Plural form for FEW. Plural form for FEW.-->
+            <string>%02u</string>
+            <key>many</key>
+            <!-- XFLD: Plural form for Other  Plural form for MANY. Plural form for MANY.-->
+            <string>%02u</string>
+            <key>two</key>
+            <!-- XFLD: Plural form for Other  Plural form for TWO. Plural form for TWO.-->
+            <string>%02u</string>
+            <key>other</key>
+			<!-- XFLD: Plural form for Other  Plural form for OTHER. Plural form for OTHER.-->
+            <string>%02u</string>
+        </dict>
+    </dict>
+	<key>ENSetting_Tracing_History</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@VARIABLE@</string>
+		<key>VARIABLE</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>zero</key>
+			<!-- XFLD: Plural form for Zero  Plural form for ZERO. Plural form for ZERO.-->
+			<string>L'enregistrement de l'exposition est actif depuis moins d'un jour. Un contrôle de l'exposition ne peut être fiable que si l'enregistrement de l'exposition est activé en permanence.</string>
+			<key>one</key>
+			<!-- XFLD: Plural form for One  Plural form for ONE. Plural form for ONE.-->
+			<string>L'enregistrement de l'exposition a été actif depuis le jour du %u. Un contrôle de l'exposition ne peut être fiable que si l'enregistrement de l'exposition est activé en permanence.</string>
+			<key>few</key>
+			<!-- XFLD: Plural form for Other  Plural form for FEW. Plural form for FEW.-->
+			<string>L'enregistrement de l'exposition a été actif pendant %u jours. Un contrôle de l'exposition ne peut être fiable que si l'enregistrement de l'exposition est activé en permanence.</string>
+			<key>many</key>
+			<!-- XFLD: Plural form for Other  Plural form for MANY. Plural form for MANY.-->
+			<string>L'enregistrement de l'exposition a été actif pendant %u jours. Un contrôle de l'exposition ne peut être fiable que si l'enregistrement de l'exposition est activé en permanence.</string>
+			<key>two</key>
+			<!-- XFLD: Plural form for Other  Plural form for TWO. Plural form for TWO.-->
+			<string>L'enregistrement de l'exposition a été actif pendant %u jours. Un contrôle de l'exposition ne peut être fiable que si l'enregistrement de l'exposition est activé en permanence.</string>
+			<key>other</key>
+			<!-- XFLD: Plural form for Other  Plural form for OTHER. Plural form for OTHER.-->
+			<string>L'enregistrement de l'exposition a été actif pendant %u jours. Un contrôle de l'exposition ne peut être fiable que si l'enregistrement de l'exposition est activé en permanence.</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

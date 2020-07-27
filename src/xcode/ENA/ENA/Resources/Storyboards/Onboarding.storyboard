@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vq1-Uv-hV6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vq1-Uv-hV6">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -11,7 +11,7 @@
         <!--Onboarding Info View Controller-->
         <scene sceneID="yHS-fB-KA1">
             <objects>
-                <viewController storyboardIdentifier="OnboardingInfoViewController" automaticallyAdjustsScrollViewInsets="NO" id="Vq1-Uv-hV6" customClass="OnboardingInfoViewController" customModule="ENA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingInfoViewController" automaticallyAdjustsScrollViewInsets="NO" id="Vq1-Uv-hV6" customClass="OnboardingInfoViewController" customModule="Coronalert" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Z4y-Yc-scw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,16 +20,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQb-9Z-xLl">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="625.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="796.66666666666663"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="2eY-pe-EqA">
-                                                <rect key="frame" x="16" y="16" width="382" height="593.66666666666663"/>
+                                                <rect key="frame" x="16" y="16" width="382" height="764.66666666666663"/>
                                                 <subviews>
                                                     <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="0fv-1M-Keg">
-                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="229"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="400"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" verticalHuggingPriority="1000" image="Illu_Onboarding_GemeinsamCoronabekaempfen" translatesAutoresizingMaskIntoConstraints="NO" id="mfP-Vw-3SQ">
-                                                                <rect key="frame" x="-16" y="0.0" width="414" height="229"/>
+                                                                <rect key="frame" x="-16" y="0.0" width="414" height="400"/>
                                                             </imageView>
                                                         </subviews>
                                                         <constraints>
@@ -38,9 +38,9 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5mX-wj-3lR" userLabel="State View">
-                                                        <rect key="frame" x="0.0" y="261" width="382" height="183.66666666666663"/>
+                                                        <rect key="frame" x="0.0" y="432.00000000000006" width="382" height="183.66666666666669"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LmS-TP-O2Q" userLabel="Header Label" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LmS-TP-O2Q" userLabel="Header Label" customClass="ENALabel" customModule="Coronalert" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="131.66666666666666"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" name="ENA Text Primary 2 Color"/>
@@ -50,22 +50,22 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yjr-cH-93U" userLabel="Top Separator View">
-                                                                <rect key="frame" x="-16" y="137.66666666666669" width="414" height="1"/>
+                                                                <rect key="frame" x="-16" y="137.66666666666663" width="414" height="1"/>
                                                                 <color key="backgroundColor" name="ENA Hairline Color"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="g1P-Qd-1bz"/>
                                                                 </constraints>
                                                             </view>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="oqp-SS-lmn">
-                                                                <rect key="frame" x="0.0" y="138.66666666666669" width="382" height="44"/>
+                                                                <rect key="frame" x="0.0" y="138.66666666666663" width="382" height="44"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWX-RA-h4H" userLabel="Title Label" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWX-RA-h4H" userLabel="Title Label" customClass="ENALabel" customModule="Coronalert" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="307.33333333333331" height="44"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7n-TP-ep2" userLabel="State Label" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7n-TP-ep2" userLabel="State Label" customClass="ENALabel" customModule="Coronalert" customModuleProvider="target">
                                                                         <rect key="frame" x="340.33333333333331" y="0.0" width="41.666666666666686" height="44"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <color key="textColor" name="ENA Text Primary 2 Color"/>
@@ -77,7 +77,7 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qCJ-vG-9qd" userLabel="Bottom Separator View">
-                                                                <rect key="frame" x="-16" y="182.66666666666669" width="414" height="1"/>
+                                                                <rect key="frame" x="-16" y="182.66666666666663" width="414" height="1"/>
                                                                 <color key="backgroundColor" name="ENA Hairline Color"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="Xyj-4r-deS"/>
@@ -100,8 +100,8 @@
                                                             <constraint firstAttribute="bottom" secondItem="qCJ-vG-9qd" secondAttribute="bottom" id="soO-7o-Bga"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="800" verticalCompressionResistancePriority="50" text="Title 1" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kj-Lh-G2l" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="476.66666666666669" width="382" height="20.333333333333314"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="800" verticalCompressionResistancePriority="50" text="Title 1" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kj-Lh-G2l" customClass="ENALabel" customModule="Coronalert" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="647.66666666666663" width="382" height="20.333333333333371"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="ENA Text Primary 1 Color"/>
                                                         <nil key="highlightedColor"/>
@@ -110,9 +110,9 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="mqn-eD-7XN">
-                                                        <rect key="frame" x="0.0" y="529" width="382" height="64.666666666666629"/>
+                                                        <rect key="frame" x="0.0" y="700" width="382" height="64.666666666666629"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Headline" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iX7-JF-1ms" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Headline" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iX7-JF-1ms" customClass="ENALabel" customModule="Coronalert" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="20.333333333333332"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" name="ENA Text Primary 1 Color"/>
@@ -121,7 +121,7 @@
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="headline"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subheadline" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B7z-ur-AOj" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subheadline" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B7z-ur-AOj" customClass="ENALabel" customModule="Coronalert" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="44.333333333333371" width="382" height="20.333333333333329"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" name="ENA Text Primary 1 Color"/>
@@ -154,7 +154,7 @@
                                     <constraint firstItem="OQb-9Z-xLl" firstAttribute="width" secondItem="1HX-Yf-LyV" secondAttribute="width" id="ufc-l2-buW"/>
                                 </constraints>
                             </scrollView>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0oH-fF-RI6" customClass="ENAFooterView" customModule="ENA" customModuleProvider="target">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0oH-fF-RI6" customClass="ENAFooterView" customModule="Coronalert" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="722" width="414" height="174"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="5H2-LC-1rB">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="174"/>
@@ -163,7 +163,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Dnb-sh-MSz">
                                             <rect key="frame" x="16" y="16" width="382" height="108"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XjZ-ed-ItP" customClass="ENAButton" customModule="ENA" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XjZ-ed-ItP" customClass="ENAButton" customModule="Coronalert" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="RXZ-iw-otW"/>
@@ -173,7 +173,7 @@
                                                         <action selector="didTapNextButton:" destination="Vq1-Uv-hV6" eventType="touchUpInside" id="xFd-EU-3KZ"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Clc-Yy-2ht" customClass="ENAButton" customModule="ENA" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Clc-Yy-2ht" customClass="ENAButton" customModule="Coronalert" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="58" width="382" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="WAo-jw-dV0"/>
@@ -242,7 +242,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Illu_Onboarding_GemeinsamCoronabekaempfen" width="375" height="229"/>
+        <image name="Illu_Onboarding_GemeinsamCoronabekaempfen" width="375" height="400"/>
         <namedColor name="ENA Background Color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
