@@ -49,8 +49,10 @@ enum PublicKeyStore {
 			throw KeyError.encodingError
 		}
 		
-		let key = try P256.Signing.PublicKey(rawRepresentation: data)
+		if let key = try? P256.Signing.PublicKey(rawRepresentation: data) {
+			return key
+		}
 
-		return key
+		return try P256.Signing.PublicKey(x963Representation: data[data.count - 65..<data.count])
 	}
 }
