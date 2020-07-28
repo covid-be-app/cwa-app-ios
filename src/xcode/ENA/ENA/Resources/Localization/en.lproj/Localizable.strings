@@ -986,3 +986,19 @@ For further information, please see our FAQ page.";
  */
 "Active_Tracing_Interval_Partially_Active" = "Exposure logging was active for %1$u of the last %2$u days.";
 "Active_Tracing_Interval_Permanently_Active" = "Exposure logging permanently active";
+
+
+/*
+ Belgian app translations
+ */
+
+"BEMobileTestId_title" = "Get tested";
+
+"BEMobileTestId_DateExplanation" = "Select the date on which you became contagious.\nThis will be communicated to you by the person doing the test.";
+
+"BEMobileTestId_Select" = "Select";
+
+"BEMobileTestId_Date" = "Date";
+"BEMobileTestId_Save" = "Save";
+"BEMobileTestId_saveExplanation" = "Show this number to the person doing the test.\nTap \"Save\" so you can be notified as soon as the test result is available";
+

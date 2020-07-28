@@ -192,7 +192,9 @@ final class HomeViewController: UIViewController, RequiresAppDependencies {
 		// A strong reference to the coordinator is passed to the exposre submission navigation controller
 		// when .start() is called. The coordinator is then bound to the lifecycle of this navigation controller
 		// which is managed by UIKit.
-		let coordinator = ExposureSubmissionCoordinator(
+		
+		// :BE: replaced ExposureSubmissionCoordinator
+		let coordinator = BEExposureSubmissionCoordinator(
 			parentNavigationController: navigationController,
 			exposureSubmissionService: homeInteractor.exposureSubmissionService,
 			delegate: self

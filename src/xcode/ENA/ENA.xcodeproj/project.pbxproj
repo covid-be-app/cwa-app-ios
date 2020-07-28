@@ -248,6 +248,20 @@
 		A3EE6E5D249BB9B900C64B61 /* UITestingParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE6E5B249BB97500C64B61 /* UITestingParameters.swift */; };
 		A3EE6E61249BC57F00C64B61 /* MockExposureSubmissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3284256248E7431006B1F09 /* MockExposureSubmissionService.swift */; };
 		A3FF84EC247BFAF00053E947 /* Hasher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FF84EB247BFAF00053E947 /* Hasher.swift */; };
+		A9DD2CE724CEF0680035081A /* BEMobileTestIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2CE524CEF0680035081A /* BEMobileTestIdViewController.swift */; };
+		A9DD2CE824CEF0680035081A /* BEMobileTestIdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9DD2CE624CEF0680035081A /* BEMobileTestIdViewController.xib */; };
+		A9DD2CEB24CEF3C70035081A /* BEExposureSubmissionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2CEA24CEF3C70035081A /* BEExposureSubmissionCoordinator.swift */; };
+		A9DD2CED24CF0BC00035081A /* BEAppStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2CEC24CF0BC00035081A /* BEAppStrings.swift */; };
+		A9DD2CEF24CF293E0035081A /* BEMobileTestId.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2CEE24CF293E0035081A /* BEMobileTestId.swift */; };
+		A9DD2CF324CF2AE20035081A /* BEString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2CF224CF2AE20035081A /* BEString.swift */; };
+		A9DD2CF624CF379F0035081A /* BEUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2CF524CF379F0035081A /* BEUIImage.swift */; };
+		A9DD2CF824CFF9720035081A /* BEStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2CF724CFF9720035081A /* BEStringTests.swift */; };
+		A9DD2CFB24D001AB0035081A /* BEMobileTestIdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2CFA24D001AB0035081A /* BEMobileTestIdTests.swift */; };
+		A9DD2CFD24D018AE0035081A /* BESymmetricKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2CFC24D018AE0035081A /* BESymmetricKey.swift */; };
+		A9DD2CFF24D01A940035081A /* BESymmetricKeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2CFE24D01A940035081A /* BESymmetricKeyTests.swift */; };
+		A9DD2D0124D01F980035081A /* BESecureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2D0024D01F980035081A /* BESecureStore.swift */; };
+		A9DD2D0424D0213B0035081A /* BEStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2D0324D0213B0035081A /* BEStoreTests.swift */; };
+		A9DD2D0724D02DFC0035081A /* BEExposureSubmissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2D0624D02DFC0035081A /* BEExposureSubmissionService.swift */; };
 		B10F9B8B249961BC00C418F4 /* DynamicTypeLabelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10F9B89249961B500C418F4 /* DynamicTypeLabelTests.swift */; };
 		B10F9B8C249961CE00C418F4 /* UIFont+DynamicTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B163D11424993F64001A322C /* UIFont+DynamicTypeTests.swift */; };
 		B10FD5ED246EAADC00E9D7F2 /* AppInformationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CC3E9E246D6B6800217F2C /* AppInformationDetailViewController.swift */; };
@@ -611,7 +625,7 @@
 		858F6F6D245A103C009FFD33 /* ExposureNotification.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExposureNotification.framework; path = System/Library/Frameworks/ExposureNotification.framework; sourceTree = SDKROOT; };
 		8595BF5E246032D90056EA27 /* ENASwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ENASwitch.swift; sourceTree = "<group>"; };
 		859DD511248549790073D59F /* MockDiagnosisKeysRetrieval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDiagnosisKeysRetrieval.swift; sourceTree = "<group>"; };
-		85D7593B2457048F008175F0 /* Coronalert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coronalert.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		85D7593B2457048F008175F0 /* ENA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ENA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85D7593E2457048F008175F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85D759402457048F008175F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		85D7594A24570491008175F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -690,6 +704,20 @@
 		A96E9FC924CD71B300F845DB /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A96E9FCA24CD71B300F845DB /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = nl; path = nl.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		A96E9FCB24CD71B300F845DB /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A9DD2CE524CEF0680035081A /* BEMobileTestIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEMobileTestIdViewController.swift; sourceTree = "<group>"; };
+		A9DD2CE624CEF0680035081A /* BEMobileTestIdViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BEMobileTestIdViewController.xib; sourceTree = "<group>"; };
+		A9DD2CEA24CEF3C70035081A /* BEExposureSubmissionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEExposureSubmissionCoordinator.swift; sourceTree = "<group>"; };
+		A9DD2CEC24CF0BC00035081A /* BEAppStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEAppStrings.swift; sourceTree = "<group>"; };
+		A9DD2CEE24CF293E0035081A /* BEMobileTestId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEMobileTestId.swift; sourceTree = "<group>"; };
+		A9DD2CF224CF2AE20035081A /* BEString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEString.swift; sourceTree = "<group>"; };
+		A9DD2CF524CF379F0035081A /* BEUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEUIImage.swift; sourceTree = "<group>"; };
+		A9DD2CF724CFF9720035081A /* BEStringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEStringTests.swift; sourceTree = "<group>"; };
+		A9DD2CFA24D001AB0035081A /* BEMobileTestIdTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEMobileTestIdTests.swift; sourceTree = "<group>"; };
+		A9DD2CFC24D018AE0035081A /* BESymmetricKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BESymmetricKey.swift; sourceTree = "<group>"; };
+		A9DD2CFE24D01A940035081A /* BESymmetricKeyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BESymmetricKeyTests.swift; sourceTree = "<group>"; };
+		A9DD2D0024D01F980035081A /* BESecureStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BESecureStore.swift; sourceTree = "<group>"; };
+		A9DD2D0324D0213B0035081A /* BEStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEStoreTests.swift; sourceTree = "<group>"; };
+		A9DD2D0624D02DFC0035081A /* BEExposureSubmissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEExposureSubmissionService.swift; sourceTree = "<group>"; };
 		B102BDC22460410600CD55A2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B10F9B89249961B500C418F4 /* DynamicTypeLabelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTypeLabelTests.swift; sourceTree = "<group>"; };
 		B10FD5F3246EAC1700E9D7F2 /* AppleFilesWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleFilesWriter.swift; sourceTree = "<group>"; };
@@ -1404,7 +1432,7 @@
 		85D7593C2457048F008175F0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				85D7593B2457048F008175F0 /* Coronalert.app */,
+				85D7593B2457048F008175F0 /* ENA.app */,
 				85D7595424570491008175F0 /* ENATests.xctest */,
 				85D7595F24570491008175F0 /* ENAUITests.xctest */,
 			);
@@ -1414,6 +1442,7 @@
 		85D7593D2457048F008175F0 /* ENA */ = {
 			isa = PBXGroup;
 			children = (
+				A9DD2CE224CEEEF40035081A /* BE */,
 				B102BDC12460405F00CD55A2 /* Backend */,
 				51D420D524598AC200AD70CA /* Source */,
 				85D7597424570615008175F0 /* Resources */,
@@ -1637,6 +1666,107 @@
 				A3E851B424ADDAC000402485 /* CountdownTimerTests.swift */,
 			);
 			path = __tests__;
+			sourceTree = "<group>";
+		};
+		A9DD2CE224CEEEF40035081A /* BE */ = {
+			isa = PBXGroup;
+			children = (
+				A9DD2D0B24D059C00035081A /* Client */,
+				A9DD2D0824D055440035081A /* Home */,
+				A9DD2D0524D02DD60035081A /* Services */,
+				A9DD2D0224D020F80035081A /* __tests__ */,
+				A9DD2CF124CF2AD70035081A /* Extensions */,
+				A9DD2CE324CEEF370035081A /* MobileTestId */,
+				A9DD2CEC24CF0BC00035081A /* BEAppStrings.swift */,
+				A9DD2D0024D01F980035081A /* BESecureStore.swift */,
+			);
+			path = BE;
+			sourceTree = SOURCE_ROOT;
+		};
+		A9DD2CE324CEEF370035081A /* MobileTestId */ = {
+			isa = PBXGroup;
+			children = (
+				A9DD2CF924D001980035081A /* __tests__ */,
+				A9DD2CE924CEF3B00035081A /* Coordinator */,
+				A9DD2CE424CEEF370035081A /* ViewControllers */,
+				A9DD2CEE24CF293E0035081A /* BEMobileTestId.swift */,
+			);
+			path = MobileTestId;
+			sourceTree = "<group>";
+		};
+		A9DD2CE424CEEF370035081A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A9DD2CE524CEF0680035081A /* BEMobileTestIdViewController.swift */,
+				A9DD2CE624CEF0680035081A /* BEMobileTestIdViewController.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A9DD2CE924CEF3B00035081A /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A9DD2CEA24CEF3C70035081A /* BEExposureSubmissionCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A9DD2CF124CF2AD70035081A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A9DD2CF424CF359D0035081A /* __tests__ */,
+				A9DD2CF224CF2AE20035081A /* BEString.swift */,
+				A9DD2CF524CF379F0035081A /* BEUIImage.swift */,
+				A9DD2CFC24D018AE0035081A /* BESymmetricKey.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A9DD2CF424CF359D0035081A /* __tests__ */ = {
+			isa = PBXGroup;
+			children = (
+				A9DD2CF724CFF9720035081A /* BEStringTests.swift */,
+				A9DD2CFE24D01A940035081A /* BESymmetricKeyTests.swift */,
+			);
+			path = __tests__;
+			sourceTree = "<group>";
+		};
+		A9DD2CF924D001980035081A /* __tests__ */ = {
+			isa = PBXGroup;
+			children = (
+				A9DD2CFA24D001AB0035081A /* BEMobileTestIdTests.swift */,
+			);
+			path = __tests__;
+			sourceTree = "<group>";
+		};
+		A9DD2D0224D020F80035081A /* __tests__ */ = {
+			isa = PBXGroup;
+			children = (
+				A9DD2D0324D0213B0035081A /* BEStoreTests.swift */,
+			);
+			path = __tests__;
+			sourceTree = "<group>";
+		};
+		A9DD2D0524D02DD60035081A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A9DD2D0624D02DFC0035081A /* BEExposureSubmissionService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A9DD2D0824D055440035081A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A9DD2D0B24D059C00035081A /* Client */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Client;
 			sourceTree = "<group>";
 		};
 		B102BDC12460405F00CD55A2 /* Backend */ = {
@@ -2197,7 +2327,7 @@
 				B1B5A75F24924B3D0029D5D7 /* FMDB */,
 			);
 			productName = ENA;
-			productReference = 85D7593B2457048F008175F0 /* Coronalert.app */;
+			productReference = 85D7593B2457048F008175F0 /* ENA.app */;
 			productType = "com.apple.product-type.application";
 		};
 		85D7595324570491008175F0 /* ENATests */ = {
@@ -2317,6 +2447,7 @@
 				EE92A33E245D96DA006B97B0 /* Localizable.stringsdict in Resources */,
 				A328424D248B91E0006B1F09 /* HomeTestResultLoadingCell.xib in Resources */,
 				01E25C7024A3B52F007E33F8 /* Info_Testflight.plist in Resources */,
+				A9DD2CE824CEF0680035081A /* BEMobileTestIdViewController.xib in Resources */,
 				EE278B2D245F2BBB008B06F9 /* InviteFriends.storyboard in Resources */,
 				EE70C23D245B09EA00AC9B2F /* Localizable.strings in Resources */,
 				51CE1B85246078B6002CF42A /* ActivateCollectionViewCell.xib in Resources */,
@@ -2415,11 +2546,13 @@
 				71F54191248BF677006DB793 /* HtmlTextView.swift in Sources */,
 				51B5B41C246EC8B800DC5D3E /* HomeCardCollectionViewCell.swift in Sources */,
 				B1EDFD8D248E74D000E7EAFF /* URL+StaticString.swift in Sources */,
+				A9DD2D0724D02DFC0035081A /* BEExposureSubmissionService.swift in Sources */,
 				A3E851B224ADD09900402485 /* CountdownTimer.swift in Sources */,
 				011E13AE24680A4000973467 /* HTTPClient.swift in Sources */,
 				A1C683FA24AEC57400B90D12 /* DynamicTableViewTextViewCell.swift in Sources */,
 				853D987A24694A8700490DBA /* ENAButton.swift in Sources */,
 				CD8638532477EBD400A5A07C /* SettingsViewModel.swift in Sources */,
+				A9DD2CF624CF379F0035081A /* BEUIImage.swift in Sources */,
 				2FC0357124B5B70700E234AC /* Error+FAQUrl.swift in Sources */,
 				51CE1BB52460AC83002CF42A /* UICollectionView+Dequeue.swift in Sources */,
 				B17F2D48248CEB4C00CAA38F /* DetectionMode.swift in Sources */,
@@ -2452,12 +2585,14 @@
 				B1C7EEAE24941A3B00F1F284 /* ManualExposureDetectionState.swift in Sources */,
 				51486DA22485101500FCE216 /* RiskInactiveCollectionViewCell.swift in Sources */,
 				710021DC248E44A6001F0B63 /* ENAFont.swift in Sources */,
+				A9DD2D0124D01F980035081A /* BESecureStore.swift in Sources */,
 				B1FE13FF2489708200D012E5 /* CachedAppConfiguration.swift in Sources */,
 				EE22DB8B247FB43A001B0A71 /* ActionDetailTableViewCell.swift in Sources */,
 				71FE1C71247AA7B700851FEB /* DynamicTableViewHeaderImageView.swift in Sources */,
 				0159E6C2247829BA00894A89 /* temporary_exposure_key_signature_list.pb.swift in Sources */,
 				B1CD333C24865A7D00B06E9B /* TracingStatusHistory.swift in Sources */,
 				51D420B724583B7200AD70CA /* NSObject+Identifier.swift in Sources */,
+				A9DD2CFD24D018AE0035081A /* BESymmetricKey.swift in Sources */,
 				CDCE11D6247D644100F30825 /* NotificationSettingsViewModel.swift in Sources */,
 				710224EC248FC150000C5DEF /* HomeTestResultCellConfigurator.swift in Sources */,
 				71330E4724810A0C00EB10F6 /* DynamicTableViewFooter.swift in Sources */,
@@ -2478,6 +2613,7 @@
 				B1741B4C2462C21F006275D9 /* DMDeveloperMenu.swift in Sources */,
 				514C0A11247C15EC00F235F6 /* HomeUnknownRiskCellConfigurator.swift in Sources */,
 				710ABB23247513E300948792 /* DynamicTypeTableViewCell.swift in Sources */,
+				A9DD2CED24CF0BC00035081A /* BEAppStrings.swift in Sources */,
 				71FE1C7D247AC2B500851FEB /* ExposureSubmissionTanInputViewController.swift in Sources */,
 				EE22DB81247FB40A001B0A71 /* ENStateHandler.swift in Sources */,
 				A16714AF248CA1B70031B111 /* Bundle+ReadPlist.swift in Sources */,
@@ -2556,6 +2692,7 @@
 				85D759412457048F008175F0 /* SceneDelegate.swift in Sources */,
 				71B8044D248525CD00D53506 /* RiskLegendViewController+DynamicTableViewModel.swift in Sources */,
 				859DD512248549790073D59F /* MockDiagnosisKeysRetrieval.swift in Sources */,
+				A9DD2CF324CF2AE20035081A /* BEString.swift in Sources */,
 				EE22DB89247FB43A001B0A71 /* TracingHistoryTableViewCell.swift in Sources */,
 				A3EE6E61249BC57F00C64B61 /* MockExposureSubmissionService.swift in Sources */,
 				71B804472484CC0800D53506 /* ENALabel.swift in Sources */,
@@ -2576,6 +2713,7 @@
 				710021E0248EAF9A001F0B63 /* ExposureSubmissionImageCardCell.swift in Sources */,
 				B14D0CDF246E976400D5BEBC /* ExposureDetectionTransaction+DidEndPrematurelyReason.swift in Sources */,
 				71FE1C69247A8FE100851FEB /* DynamicTableViewHeaderFooterView.swift in Sources */,
+				A9DD2CE724CEF0680035081A /* BEMobileTestIdViewController.swift in Sources */,
 				B184A383248FFCE2007180F6 /* CodableExposureDetectionSummary.swift in Sources */,
 				B111EE2C2465D9F7001AEBB4 /* String+Localization.swift in Sources */,
 				A1C683FC24AEC9EE00B90D12 /* DynamicTableViewTextCell.swift in Sources */,
@@ -2589,6 +2727,7 @@
 				B112545A246F2C6500AB5036 /* ENTemporaryExposureKey+Convert.swift in Sources */,
 				51486D9F2484FC0200FCE216 /* HomeRiskLevelCellConfigurator.swift in Sources */,
 				B1E8C99D2479D4E7006DC678 /* DMSubmissionStateViewController.swift in Sources */,
+				A9DD2CEB24CEF3C70035081A /* BEExposureSubmissionCoordinator.swift in Sources */,
 				71FE1C8C247AC79D00851FEB /* DynamicTableViewIconCell.swift in Sources */,
 				B19FD7112491A07000A9D56A /* String+SemanticVersion.swift in Sources */,
 				710ABB25247514BD00948792 /* UIViewController+Segue.swift in Sources */,
@@ -2620,6 +2759,7 @@
 				FEDCE09E9F78ABEB4AA9A484 /* ExposureDetectionExecutor.swift in Sources */,
 				FEDCE50B4AC5E24D4E11AA52 /* RequiresAppDependencies.swift in Sources */,
 				FEDCE29E414945F14E7CE576 /* ENStateHandler+State.swift in Sources */,
+				A9DD2CEF24CF293E0035081A /* BEMobileTestId.swift in Sources */,
 				FEDCE6E2763B0BABFADF36BA /* ExposureDetectionViewController+State.swift in Sources */,
 				FEDCECC1B2111AB537AEF7E5 /* HomeInteractor+State.swift in Sources */,
 				B1221BE02492ECE800E6C4E4 /* CFDictionary+KeychainQuery.swift in Sources */,
@@ -2640,8 +2780,11 @@
 				A372DA4224BF3E29003248BB /* MockExposureSubmissionCoordinator.swift in Sources */,
 				A1E419582495A8F90016E52A /* HTTPClient+RegistrationTokenTests.swift in Sources */,
 				A1E419552495A8060016E52A /* HTTPClient+GetTestResultTests.swift in Sources */,
+				A9DD2CFF24D01A940035081A /* BESymmetricKeyTests.swift in Sources */,
 				A3284259248E7672006B1F09 /* MockExposureSubmissionQRScannerViewController.swift in Sources */,
 				A328425F248E943D006B1F09 /* ExposureSubmissionTanInputViewControllerTests.swift in Sources */,
+				A9DD2D0424D0213B0035081A /* BEStoreTests.swift in Sources */,
+				A9DD2CFB24D001AB0035081A /* BEMobileTestIdTests.swift in Sources */,
 				A14BDEC024A1AD660063E4EC /* MockExposureDetector.swift in Sources */,
 				A3483B0B24C5EFA40037855F /* MockExposureDetectionViewControllerDelegate.swift in Sources */,
 				B1C7EE482493D97000F1F284 /* RiskProvidingConfigurationManualTriggerTests.swift in Sources */,
@@ -2673,6 +2816,7 @@
 				B11655932491437600316087 /* RiskProvidingConfigurationTests.swift in Sources */,
 				B1A76E9F24714AC700EA5208 /* HTTPClient+Configuration.swift in Sources */,
 				516E430024B777B20008CC30 /* HomeHighRiskCellConfiguratorTests.swift in Sources */,
+				A9DD2CF824CFF9720035081A /* BEStringTests.swift in Sources */,
 				F2DC809224898B1800EDC40A /* DynamicTableViewControllerHeaderTests.swift in Sources */,
 				B1D431C8246C69F300E728AD /* HTTPClient+ConfigurationTests.swift in Sources */,
 				B15382FE248424F00010F007 /* ExposureDetectionTests.swift in Sources */,
@@ -2920,7 +3064,7 @@
 				CODE_SIGN_ENTITLEMENTS = "${PROJECT}/Resources/ENACommunity.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = MB7TR4N9LK;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -2944,7 +3088,8 @@
 					"-DNDEBUG",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jpdvdg.covidtest;
-				PRODUCT_NAME = Coronalert;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
+				PRODUCT_NAME = ENA;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "COMMUNITY DISABLE_CERTIFICATE_PINNING";
 				SWIFT_OBJC_BRIDGING_HEADER = "ENA-Bridging-Header.h";
@@ -3076,7 +3221,7 @@
 				CODE_SIGN_ENTITLEMENTS = "${PROJECT}/Resources/ENA.entitlements";
 				CODE_SIGN_IDENTITY = $IPHONE_APP_CODE_SIGN_IDENTITY;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 523TP53AQF;
 				GCC_PREPROCESSOR_DEFINITIONS = "SQLITE_HAS_CODEC=1";
 				INFOPLIST_FILE = ENA/Resources/Info_Testflight.plist;
@@ -3095,7 +3240,8 @@
 					"-DNDEBUG",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.rki.coronawarnapp-dev";
-				PRODUCT_NAME = Coronalert;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
+				PRODUCT_NAME = ENA;
 				PROVISIONING_PROFILE_SPECIFIER = $IPHONE_APP_DIST_PROF_SPECIFIER;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "APP_STORE DISABLE_CERTIFICATE_PINNING";
 				SWIFT_OBJC_BRIDGING_HEADER = "ENA-Bridging-Header.h";
@@ -3226,7 +3372,7 @@
 				CODE_SIGN_ENTITLEMENTS = "${PROJECT}/Resources/ENACommunity.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = $IPHONE_APP_DEV_TEAM;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -3249,7 +3395,8 @@
 					"-DNDEBUG",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.rki.coronawarnapp-dev";
-				PRODUCT_NAME = Coronalert;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
+				PRODUCT_NAME = ENA;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG UITESTING DISABLE_CERTIFICATE_PINNING";
 				SWIFT_OBJC_BRIDGING_HEADER = "ENA-Bridging-Header.h";
@@ -3442,12 +3589,13 @@
 				CODE_SIGN_ENTITLEMENTS = "${PROJECT}/Resources/ENATest.entitlements";
 				CODE_SIGN_IDENTITY = $IPHONE_APP_CODE_SIGN_IDENTITY;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 523TP53AQF;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 					"SQLITE_HAS_CODEC=1",
+					"DISABLE_CERTIFICATE_PINNING=1",
 				);
 				INFOPLIST_FILE = ENA/Resources/Info_Debug.plist;
 				IPHONE_APP_CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -3465,9 +3613,10 @@
 					"-DNDEBUG",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.rki.coronawarnapp-dev";
-				PRODUCT_NAME = Coronalert;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
+				PRODUCT_NAME = ENA;
 				PROVISIONING_PROFILE_SPECIFIER = $IPHONE_APP_DIST_PROF_SPECIFIER;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG DISABLE_CERTIFICATE_PINNING";
 				SWIFT_OBJC_BRIDGING_HEADER = "ENA-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -3483,7 +3632,7 @@
 				CODE_SIGN_ENTITLEMENTS = "${PROJECT}/Resources/ENA.entitlements";
 				CODE_SIGN_IDENTITY = $IPHONE_APP_CODE_SIGN_IDENTITY;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				GCC_PREPROCESSOR_DEFINITIONS = "SQLITE_HAS_CODEC=1";
 				INFOPLIST_FILE = ENA/Resources/Info.plist;
 				IPHONE_APP_CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -3501,7 +3650,8 @@
 					"-DNDEBUG",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.rki.coronawarnapp;
-				PRODUCT_NAME = Coronalert;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
+				PRODUCT_NAME = ENA;
 				PROVISIONING_PROFILE_SPECIFIER = $IPHONE_APP_DIST_PROF_SPECIFIER;
 				SWIFT_OBJC_BRIDGING_HEADER = "ENA-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

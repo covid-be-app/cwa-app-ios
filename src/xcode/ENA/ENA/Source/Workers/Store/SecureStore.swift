@@ -23,7 +23,9 @@ import Foundation
 /// It uses an SQLite Database that still needs to be encrypted
 final class SecureStore: Store {
 	private let directoryURL: URL
-	private let kvStore: SQLiteKeyValueStore
+	
+	// :BE: remove private from attribute so we can access it in our own extension in BESecureStore.swift
+	let kvStore: SQLiteKeyValueStore
 
 	init(at directoryURL: URL, key: String) {
 		self.directoryURL = directoryURL
