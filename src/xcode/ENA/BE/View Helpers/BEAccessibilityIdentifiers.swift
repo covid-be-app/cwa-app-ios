@@ -17,22 +17,12 @@
 // under the License.
 //
 
-import XCTest
-@testable import ENA
+import Foundation
 
-class BEStoreTests: XCTestCase {
-	private var store: SecureStore!
+enum BEAccessibilityIdentifiers {
 
-	override func setUp() {
-		store = SecureStore(at: URL(staticString: ":memory:"), key: "123456")
+	enum BEMobileTestId {
+		static let selectDate = "BEAppStrings.BEMobileTestId.select"
+		static let save = "BEAppStrings.BEMobileTestId.save"
 	}
-
-    func testStoreMobileTestId() throws {
-		let testId = BeMobileTestId(datePatientInfectious: "2020-07-22")
-		store.mobileTestIds = [testId]
-		
-		XCTAssertEqual(store.mobileTestIds!.count, 1)
-		let loadedId = store.mobileTestIds![0]
-		XCTAssertEqual(loadedId.fullString, testId.fullString)
-    }
 }

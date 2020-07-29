@@ -49,6 +49,8 @@ class ExposureSubmissionUITests: XCTestCase {
 		XCTAssert(app.images["ExposureSubmissionIntroViewController.image"].waitForExistence(timeout: .medium))
 	}
 
+	// :BE: This no longer exists
+	/*
 	func test_NavigateToHotlineVC() throws {
 		launch()
 
@@ -159,6 +161,9 @@ class ExposureSubmissionUITests: XCTestCase {
 		XCTAssert(app.navigationBars["ENA.ExposureSubmissionSuccessView"].waitForExistence(timeout: .medium))
 
 	}
+*/
+	// :BE: - end
+
 }
 
 // MARK: - Helpers.

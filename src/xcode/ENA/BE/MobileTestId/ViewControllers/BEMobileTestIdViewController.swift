@@ -77,6 +77,9 @@ class BEMobileTestIdViewController: UIViewController {
 		overlayView.backgroundColor = UIColor.black
 		overlayView.alpha = 0.15
 
+		selectButton.accessibilityIdentifier = BEAccessibilityIdentifiers.BEMobileTestId.selectDate
+		saveButton.accessibilityIdentifier = BEAccessibilityIdentifiers.BEMobileTestId.save
+		
 		setupTitle()
     }
 	
