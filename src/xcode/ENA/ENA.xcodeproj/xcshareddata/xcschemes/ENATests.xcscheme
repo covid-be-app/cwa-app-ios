@@ -35,7 +35,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "85D7593A2457048F008175F0"
-            BuildableName = "Coronalert.app"
+            BuildableName = "ENA.app"
             BlueprintName = "ENA"
             ReferencedContainer = "container:ENA.xcodeproj">
          </BuildableReference>
