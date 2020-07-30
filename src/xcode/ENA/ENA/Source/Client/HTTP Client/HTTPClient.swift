@@ -190,7 +190,8 @@ final class HTTPClient: Client {
 	func getTestResult(forDevice registrationToken: String, completion completeWith: @escaping TestResultHandler) {
 		let url = configuration.testResultURL
 
-		let bodyValues = ["registrationToken": registrationToken]
+		// :BE: update key name for body
+		let bodyValues = ["testResultPollingToken": registrationToken]
 		do {
 			let encoder = JSONEncoder()
 			encoder.outputFormatting = .prettyPrinted

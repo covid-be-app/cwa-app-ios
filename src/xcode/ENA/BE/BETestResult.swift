@@ -34,6 +34,7 @@ struct TestResult : Codable, Hashable {
 	}
 	
 	enum Channel: Int, Codable {
+		case unknown = 0
 		case lab = 1
 		case doctor = 2
 	}
