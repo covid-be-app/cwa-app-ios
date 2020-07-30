@@ -19,7 +19,8 @@ import ExposureNotification
 import Foundation
 import ZIPFoundation
 
-final class HTTPClient: Client {
+// :BE: remove final so we can subclass
+class HTTPClient: Client {
 	// MARK: Creating
 	init(
 		configuration: Configuration,
@@ -33,7 +34,9 @@ final class HTTPClient: Client {
 
 	// MARK: Properties
 	let configuration: Configuration
-	private let session: URLSession
+	
+	// :BE: remove private so we can use in subclass
+	let session: URLSession
 	private let packageVerifier: SAPDownloadedPackage.Verification
 
 	func appConfiguration(completion: @escaping AppConfigurationCompletion) {

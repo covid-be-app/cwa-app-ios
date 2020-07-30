@@ -24,5 +24,9 @@ extension SecureStore {
 		get { kvStore["mobileTestId"] as BEMobileTestId?}
 		set { kvStore["mobileTestId"] = newValue }
 	}
-
+	
+	var testResult:TestResult? {
+		get { kvStore["testResult"] as TestResult?}
+		set { kvStore["testResult"] = newValue }
+	}
 }

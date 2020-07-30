@@ -21,10 +21,10 @@ import Foundation
 
 struct TestResult : Codable, Hashable {
 	
-	static let positive = TestResult(result:.positive, channel:.lab, dateCollected: "2020-01-01")
-	static let negative = TestResult(result:.negative, channel:.lab, dateCollected: "2020-01-01")
-	static let invalid = TestResult(result:.invalid, channel:.lab, dateCollected: "2020-01-01")
-	static let pending = TestResult(result:.pending, channel:.lab, dateCollected: "2020-01-01")
+	static let positive = TestResult(result:.positive, channel:.lab, dateCollected: "2020-01-01", dateTestCommunicated: "2020-01-01")
+	static let negative = TestResult(result:.negative, channel:.lab, dateCollected: "2020-01-01", dateTestCommunicated: "2020-01-01")
+	static let invalid = TestResult(result:.invalid, channel:.lab, dateCollected: "2020-01-01", dateTestCommunicated: "2020-01-01")
+	static let pending = TestResult(result:.pending, channel:.lab, dateCollected: "2020-01-01", dateTestCommunicated: "2020-01-01")
 
 	enum Result: Int, Codable {
 		case pending = 0
@@ -41,11 +41,13 @@ struct TestResult : Codable, Hashable {
 
 	let result:Result
 	let resultChannel:Channel
-	let dateSampleCollected:String
+	let dateSampleCollected:String   // t1
+	let dateTestCommunicated:String  // t3
 	
-	private init(result:Result,channel:Channel,dateCollected:String) {
+	private init(result:Result,channel:Channel,dateCollected:String,dateTestCommunicated:String) {
 		self.result = result
 		self.resultChannel = channel
 		self.dateSampleCollected = dateCollected
+		self.dateTestCommunicated = dateTestCommunicated
 	}
 }

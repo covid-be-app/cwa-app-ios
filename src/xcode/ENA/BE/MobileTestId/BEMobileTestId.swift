@@ -45,6 +45,16 @@ struct BEMobileTestId {
 			return "\(id)|\(datePatientInfectious)"
 		}
 	}
+	
+	var secretKeyBase64String:String {
+		get {
+			return secretKey.withUnsafeBytes { bytes in
+				let data = Data.init(bytes: bytes.baseAddress!, count: bytes.count)
+				
+				return data.base64EncodedString()
+			}
+		}
+	}
 
 	// this is the t0 date, in YYYY-MM-DD format
 	init(datePatientInfectious:String) {

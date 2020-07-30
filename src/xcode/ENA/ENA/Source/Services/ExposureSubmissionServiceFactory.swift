@@ -19,6 +19,8 @@
 
 import Foundation
 
+// :BE: replace ENAExposureSubmissionService with BEExposureSubmissionService
+
 /// Service factory that can be used to create an instance of the ExposureSubmissionService.
 class ExposureSubmissionServiceFactory { }
 
@@ -27,7 +29,7 @@ class ExposureSubmissionServiceFactory { }
 
 extension ExposureSubmissionServiceFactory {
 	static func create(diagnosiskeyRetrieval: DiagnosisKeysRetrieval, client: Client, store: Store) -> ExposureSubmissionService {
-		return ENAExposureSubmissionService(
+		return BEExposureSubmissionService(
 			diagnosiskeyRetrieval: diagnosiskeyRetrieval,
 			client: client,
 			store: store
@@ -47,7 +49,7 @@ extension ExposureSubmissionServiceFactory {
 	static func create(diagnosiskeyRetrieval: DiagnosisKeysRetrieval, client: Client, store: Store) -> ExposureSubmissionService {
 
 		guard isEnabled(.useMock) else {
-			return ENAExposureSubmissionService(
+			return BEExposureSubmissionService(
 				diagnosiskeyRetrieval: diagnosiskeyRetrieval,
 				client: client,
 				store: store
