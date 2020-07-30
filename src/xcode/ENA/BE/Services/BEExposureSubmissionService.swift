@@ -21,17 +21,24 @@ import Foundation
 
 extension ENAExposureSubmissionService {
 
-	func addMobileTestId(_ mobileTestId:BeMobileTestId) {
-		guard let secureStore = store as? SecureStore else {
-			preconditionFailure()
+	var mobileTestId:BEMobileTestId? {
+		get {
+			guard let secureStore = store as? SecureStore else {
+				preconditionFailure()
+			}
+
+			return secureStore.mobileTestId
 		}
-		
-		secureStore.registrationToken = mobileTestId.registrationToken
-		
-		if let currentIds = secureStore.mobileTestIds {
-			secureStore.mobileTestIds = currentIds + [mobileTestId]
-		} else {
-			secureStore.mobileTestIds = [mobileTestId]
+		set {
+			guard let secureStore = store as? SecureStore else {
+				preconditionFailure()
+			}
+
+			secureStore.mobileTestId = newValue
+
+			if newValue != nil {
+				secureStore.registrationToken = newValue!.registrationToken
+			}
 		}
 	}
 }

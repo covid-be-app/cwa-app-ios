@@ -20,7 +20,7 @@
 import UIKit
 
 protocol BEMobileTestIdViewControllerDelegate : class {
-	func mobileTestIdViewController(_ vc:BEMobileTestIdViewController, finshedWithMobileTestId mobileTestId:BeMobileTestId )
+	func mobileTestIdViewController(_ vc:BEMobileTestIdViewController, finshedWithMobileTestId mobileTestId:BEMobileTestId )
 }
 
 class BEMobileTestIdViewController: UIViewController {
@@ -55,11 +55,11 @@ class BEMobileTestIdViewController: UIViewController {
 			generatedCodeStepView.isHidden = false
 			removeDatePicker()
 			dateLabel.text = dateFormatter.string(from: selectedDate)
-			mobileTestId = BeMobileTestId(datePatientInfectious: String.fromDateWithoutTime(date:selectedDate))
+			mobileTestId = BEMobileTestId(datePatientInfectious: String.fromDateWithoutTime(date:selectedDate))
 		}
 	}
 	
-	private var mobileTestId:BeMobileTestId! {
+	private var mobileTestId:BEMobileTestId! {
 		didSet {
 			updateTestIdGUI()
 		}

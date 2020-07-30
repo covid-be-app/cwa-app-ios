@@ -199,8 +199,8 @@ class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
 
 extension BEExposureSubmissionCoordinator : BEMobileTestIdViewControllerDelegate {
 	
-	func mobileTestIdViewController(_ vc: BEMobileTestIdViewController, finshedWithMobileTestId mobileTestId: BeMobileTestId) {
-		(exposureSubmissionService as! ENAExposureSubmissionService).addMobileTestId(mobileTestId)
+	func mobileTestIdViewController(_ vc: BEMobileTestIdViewController, finshedWithMobileTestId mobileTestId: BEMobileTestId) {
+		(exposureSubmissionService as! ENAExposureSubmissionService).mobileTestId = mobileTestId
 		self.navigationController?.dismiss(animated: true)
 	}
 	

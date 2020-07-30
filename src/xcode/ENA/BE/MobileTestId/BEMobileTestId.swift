@@ -20,7 +20,7 @@
 import Foundation
 import CryptoKit
 
-struct BeMobileTestId {
+struct BEMobileTestId {
 	let id:String				// R1. This is a string because it can start with 0
 	let checksum:String					// 2 digits to suffix to R1 to make (R1|checksum) % 97 == 0 also a string because of 0 prefix possible (and we don't need to do calculations on these numbers individually)
 
@@ -76,15 +76,9 @@ struct BeMobileTestId {
 	}
 }
 
-extension BeMobileTestId {
+extension BEMobileTestId {
 	private static func generateK() -> SymmetricKey {
-		let K = SymmetricKey(size:.bits128)
-		K.withUnsafeBytes{ bytes in
-			let data = Data.init(bytes: bytes.baseAddress!, count: bytes.count)
-			print("K = \(data.base64EncodedString())")
-		}
-
-		return K
+		return SymmetricKey(size:.bits128)
 	}
 	
 	private static func generateR0() -> String {
@@ -129,10 +123,7 @@ extension BeMobileTestId {
 	}
 }
 
-extension BeMobileTestId {
-}
-
-extension BeMobileTestId : Codable {
+extension BEMobileTestId : Codable {
 
 }
 
