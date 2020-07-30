@@ -300,7 +300,8 @@ extension HomeInteractor {
 			// This is shown when we registered a test.
 			// Note that the `positive` state has a custom cell and the risk cell will not be shown once the user was tested positive.
 
-			switch self.testResult {
+			// :BE: TestResult to struct
+			switch self.testResult?.result {
 			case .none:
 				// Risk card.
 				if let risk = setupRiskConfigurator() {

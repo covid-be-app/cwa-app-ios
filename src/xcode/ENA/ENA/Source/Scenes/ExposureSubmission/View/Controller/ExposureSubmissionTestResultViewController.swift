@@ -63,7 +63,10 @@ class ExposureSubmissionTestResultViewController: DynamicTableViewController, EN
 	}
 
 	private func setupButtons() {
-		guard let result = testResult else { return }
+		// :BE: change enum to struct
+		guard let testResult = testResult else { return }
+		let result = testResult.result
+		// :BE: - end
 
 		// Make sure to reset all button loading states.
 		self.navigationFooterItem?.isPrimaryButtonLoading = false
@@ -210,7 +213,10 @@ extension ExposureSubmissionTestResultViewController {
 
 extension ExposureSubmissionTestResultViewController {
 	func navigationController(_ navigationController: ENANavigationControllerWithFooter, didTapPrimaryButton button: UIButton) {
-		guard let result = testResult else { return }
+		// :BE: change enum to struct
+		guard let testResult = testResult else { return }
+		let result = testResult.result
+		// :BE: - end
 
 		switch result {
 		case .positive:
@@ -223,7 +229,11 @@ extension ExposureSubmissionTestResultViewController {
 	}
 
 	func navigationController(_ navigationController: ENANavigationControllerWithFooter, didTapSecondaryButton button: UIButton) {
-		guard let result = testResult else { return }
+		// :BE: change enum to struct
+		guard let testResult = testResult else { return }
+		let result = testResult.result
+		// :BE: - end
+
 		switch result {
 		case .pending:
 			deleteTest()
@@ -237,15 +247,18 @@ extension ExposureSubmissionTestResultViewController {
 // MARK: - DynamicTableViewModel convenience setup methods.
 
 private extension ExposureSubmissionTestResultViewController {
-	private func dynamicTableViewModel(for result: TestResult) -> DynamicTableViewModel {
+	
+	// :BE: change enum to struct
+	private func dynamicTableViewModel(for testResult: TestResult) -> DynamicTableViewModel {
 		DynamicTableViewModel.with {
 			$0.add(
-				testResultSection(for: result)
+				testResultSection(for: testResult.result)
 			)
 		}
 	}
 
-	private func testResultSection(for result: TestResult) -> DynamicSection {
+	// :BE: change enum
+	private func testResultSection(for result: TestResult.Result) -> DynamicSection {
 		switch result {
 		case .positive:
 			return positiveTestResultSection()

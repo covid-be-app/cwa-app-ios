@@ -23,12 +23,15 @@ enum DeviceRegistrationKey {
 	case guid(String)
 }
 
+// :BE: replaced with a more complex structure
+/*
 enum TestResult: Int {
 	case pending = 0
 	case negative = 1
 	case positive = 2
 	case invalid = 3
 }
+*/
 
 protocol ExposureSubmissionService: class {
 	typealias ExposureSubmissionHandler = (_ error: ExposureSubmissionError?) -> Void
@@ -106,13 +109,15 @@ class ENAExposureSubmissionService: ExposureSubmissionService {
 			case let .failure(error):
 				completeWith(.failure(self.parseError(error)))
 			case let .success(testResult):
+				// :BE: TestResult from enum to struct
+				/*
 				guard let testResult = TestResult(rawValue: testResult) else {
 					completeWith(.failure(.other("Failed to parse TestResult")))
 					return
 				}
-
+*/
 				completeWith(.success(testResult))
-				if testResult != .pending {
+				if testResult.result != .pending {
 					self.store.testResultReceivedTimeStamp = Int64(Date().timeIntervalSince1970)
 				}
 			}

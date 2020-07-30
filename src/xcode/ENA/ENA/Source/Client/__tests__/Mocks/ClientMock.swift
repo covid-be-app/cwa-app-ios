@@ -103,9 +103,10 @@ extension ClientMock: Client {
 		completeWith(.success("dummyRegistrationToken"))
 	}
 
+	// :BE: TestResult from enum to struct
 	func getTestResult(forDevice device: String, completion completeWith: @escaping TestResultHandler) {
 		guard let onGetTestResult = self.onGetTestResult else {
-			completeWith(.success(TestResult.positive.rawValue))
+			completeWith(.success(TestResult.positive))
 			return
 		}
 

@@ -24,11 +24,11 @@ import XCTest
 final class HTTPClientTestResultTests: XCTestCase {
 	private let expectationsTimeout: TimeInterval = 2
 
+	// :BE: TestResult from enum to struct
 	func testGetTestResult_Success() throws {
-		let testResult = 1234
 		let stack = MockNetworkStack(
 			httpStatus: 200,
-			responseData: try? JSONEncoder().encode(GetTestResultResponse(testResult: testResult))
+			responseData: try? JSONEncoder().encode(TestResult.positive)
 		)
 
 		let successExpectation = expectation(
@@ -38,8 +38,8 @@ final class HTTPClientTestResultTests: XCTestCase {
 		HTTPClient.makeWith(mock: stack).getTestResult(forDevice: "1234567890") { result in
 			defer { successExpectation.fulfill() }
 			switch result {
-			case .success(let responseCode):
-				XCTAssertEqual(testResult, responseCode)
+			case .success(let responseResult):
+				XCTAssertEqual(TestResult.positive, responseResult)
 			case .failure:
 				XCTFail("Encountered Error when receiving test result!")
 			}

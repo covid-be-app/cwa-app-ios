@@ -27,7 +27,8 @@ protocol Client {
 	typealias AvailableDaysCompletionHandler = (Result<[String], Failure>) -> Void
 	typealias AvailableHoursCompletionHandler = (Result<[Int], Failure>) -> Void
 	typealias RegistrationHandler = (Result<String, Failure>) -> Void
-	typealias TestResultHandler = (Result<Int, Failure>) -> Void
+	// :BE: testresult from enum to struct
+	typealias TestResultHandler = (Result<TestResult, Failure>) -> Void
 	typealias TANHandler = (Result<String, Failure>) -> Void
 	typealias DayCompletionHandler = (Result<SAPDownloadedPackage, Failure>) -> Void
 	typealias HourCompletionHandler = (Result<SAPDownloadedPackage, Failure>) -> Void

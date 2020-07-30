@@ -31,8 +31,9 @@ class HomeTestResultCellConfigurator: CollectionViewCellConfigurator {
 		configure(cell: cell, for: testResult)
 	}
 
+	// :BE: change test result from enum to struct
 	private func configure(cell: HomeTestResultCollectionViewCell, for testResult: TestResult?) {
-		switch testResult {
+		switch testResult?.result {
 		case .none: configureSubmit(cell: cell)
 		case .invalid: configureTestResultInvalid(cell: cell)
 		case .pending: configureTestResultPending(cell: cell)

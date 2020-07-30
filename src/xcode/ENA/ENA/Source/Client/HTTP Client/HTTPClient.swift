@@ -210,16 +210,13 @@ final class HTTPClient: Client {
 						return
 					}
 					do {
+						// :BE: TestResult from enum to struct
 						let decoder = JSONDecoder()
-						let responseDictionary = try decoder.decode(
-							[String: Int].self,
+						let testResult = try decoder.decode(
+							TestResult.self,
+							//[String: Int].self,
 							from: testResultResponseData
 						)
-						guard let testResult = responseDictionary["testResult"] else {
-							logError(message: "Failed to register Device with invalid response payload structure")
-							completeWith(.failure(.invalidResponse))
-							return
-						}
 						completeWith(.success(testResult))
 					} catch {
 						logError(message: "Failed to register Device with invalid response payload structure")

@@ -28,7 +28,7 @@ class BEStoreTests: XCTestCase {
 	}
 
     func testStoreMobileTestId() throws {
-		let testId = BeMobileTestId(timePatientInfectious: "2020-07-22")
+		let testId = BeMobileTestId(datePatientInfectious: "2020-07-22")
 		store.mobileTestIds = [testId]
 		
 		XCTAssertEqual(store.mobileTestIds!.count, 1)
