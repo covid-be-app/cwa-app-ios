@@ -19,7 +19,8 @@ import ExposureNotification
 import Foundation
 import ZIPFoundation
 
-final class HTTPClient: Client {
+// :BE: remove final so we can subclass
+class HTTPClient: Client {
 	// MARK: Creating
 	init(
 		configuration: Configuration,
@@ -33,7 +34,9 @@ final class HTTPClient: Client {
 
 	// MARK: Properties
 	let configuration: Configuration
-	private let session: URLSession
+	
+	// :BE: remove private so we can use in subclass
+	let session: URLSession
 	private let packageVerifier: SAPDownloadedPackage.Verification
 
 	func appConfiguration(completion: @escaping AppConfigurationCompletion) {
@@ -190,7 +193,8 @@ final class HTTPClient: Client {
 	func getTestResult(forDevice registrationToken: String, completion completeWith: @escaping TestResultHandler) {
 		let url = configuration.testResultURL
 
-		let bodyValues = ["registrationToken": registrationToken]
+		// :BE: update key name for body
+		let bodyValues = ["testResultPollingToken": registrationToken]
 		do {
 			let encoder = JSONEncoder()
 			encoder.outputFormatting = .prettyPrinted
@@ -210,16 +214,13 @@ final class HTTPClient: Client {
 						return
 					}
 					do {
+						// :BE: TestResult from enum to struct
 						let decoder = JSONDecoder()
-						let responseDictionary = try decoder.decode(
-							[String: Int].self,
+						let testResult = try decoder.decode(
+							TestResult.self,
+							//[String: Int].self,
 							from: testResultResponseData
 						)
-						guard let testResult = responseDictionary["testResult"] else {
-							logError(message: "Failed to register Device with invalid response payload structure")
-							completeWith(.failure(.invalidResponse))
-							return
-						}
 						completeWith(.success(testResult))
 					} catch {
 						logError(message: "Failed to register Device with invalid response payload structure")

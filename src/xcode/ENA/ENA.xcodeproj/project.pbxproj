@@ -248,8 +248,8 @@
 		A3EE6E5D249BB9B900C64B61 /* UITestingParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE6E5B249BB97500C64B61 /* UITestingParameters.swift */; };
 		A3EE6E61249BC57F00C64B61 /* MockExposureSubmissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3284256248E7431006B1F09 /* MockExposureSubmissionService.swift */; };
 		A3FF84EC247BFAF00053E947 /* Hasher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FF84EB247BFAF00053E947 /* Hasher.swift */; };
-		A92974E524D17BDC00C4A825 /* BEAccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92974E424D17BDC00C4A825 /* BEAccessibilityIdentifiers.swift */; };
-		A92974E824D1A03500C4A825 /* BEExposureSubmissionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92974E624D19F2B00C4A825 /* BEExposureSubmissionUITests.swift */; };
+		A9A5F21B24D1C757004B01FC /* BETestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A5F21A24D1C757004B01FC /* BETestResult.swift */; };
+		A9A64C6A24D3130000B3D25F /* BEHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A64C6924D3130000B3D25F /* BEHTTPClient.swift */; };
 		A9DD2CE724CEF0680035081A /* BEMobileTestIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2CE524CEF0680035081A /* BEMobileTestIdViewController.swift */; };
 		A9DD2CE824CEF0680035081A /* BEMobileTestIdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9DD2CE624CEF0680035081A /* BEMobileTestIdViewController.xib */; };
 		A9DD2CEB24CEF3C70035081A /* BEExposureSubmissionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2CEA24CEF3C70035081A /* BEExposureSubmissionCoordinator.swift */; };
@@ -696,8 +696,6 @@
 		A3EE6E59249BB7AF00C64B61 /* ExposureSubmissionServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureSubmissionServiceFactory.swift; sourceTree = "<group>"; };
 		A3EE6E5B249BB97500C64B61 /* UITestingParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestingParameters.swift; sourceTree = "<group>"; };
 		A3FF84EB247BFAF00053E947 /* Hasher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hasher.swift; sourceTree = "<group>"; };
-		A92974E424D17BDC00C4A825 /* BEAccessibilityIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEAccessibilityIdentifiers.swift; sourceTree = "<group>"; };
-		A92974E624D19F2B00C4A825 /* BEExposureSubmissionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEExposureSubmissionUITests.swift; sourceTree = "<group>"; };
 		A96E9FC224CD710000F845DB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = fr; path = fr.lproj/usage.html; sourceTree = "<group>"; };
 		A96E9FC324CD710000F845DB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = fr; path = "fr.lproj/privacy-policy.html"; sourceTree = "<group>"; };
 		A96E9FC424CD710000F845DB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -708,6 +706,8 @@
 		A96E9FC924CD71B300F845DB /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A96E9FCA24CD71B300F845DB /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = nl; path = nl.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		A96E9FCB24CD71B300F845DB /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A9A5F21A24D1C757004B01FC /* BETestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BETestResult.swift; sourceTree = "<group>"; };
+		A9A64C6924D3130000B3D25F /* BEHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEHTTPClient.swift; sourceTree = "<group>"; };
 		A9DD2CE524CEF0680035081A /* BEMobileTestIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEMobileTestIdViewController.swift; sourceTree = "<group>"; };
 		A9DD2CE624CEF0680035081A /* BEMobileTestIdViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BEMobileTestIdViewController.xib; sourceTree = "<group>"; };
 		A9DD2CEA24CEF3C70035081A /* BEExposureSubmissionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEExposureSubmissionCoordinator.swift; sourceTree = "<group>"; };
@@ -1672,18 +1672,9 @@
 			path = __tests__;
 			sourceTree = "<group>";
 		};
-		A92974E324D17BC600C4A825 /* View Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				A92974E424D17BDC00C4A825 /* BEAccessibilityIdentifiers.swift */,
-			);
-			path = "View Helpers";
-			sourceTree = "<group>";
-		};
 		A9DD2CE224CEEEF40035081A /* BE */ = {
 			isa = PBXGroup;
 			children = (
-				A92974E324D17BC600C4A825 /* View Helpers */,
 				A9DD2D0B24D059C00035081A /* Client */,
 				A9DD2D0824D055440035081A /* Home */,
 				A9DD2D0524D02DD60035081A /* Services */,
@@ -1692,6 +1683,7 @@
 				A9DD2CE324CEEF370035081A /* MobileTestId */,
 				A9DD2CEC24CF0BC00035081A /* BEAppStrings.swift */,
 				A9DD2D0024D01F980035081A /* BESecureStore.swift */,
+				A9A5F21A24D1C757004B01FC /* BETestResult.swift */,
 			);
 			path = BE;
 			sourceTree = SOURCE_ROOT;
@@ -1748,7 +1740,6 @@
 			isa = PBXGroup;
 			children = (
 				A9DD2CFA24D001AB0035081A /* BEMobileTestIdTests.swift */,
-				A92974E624D19F2B00C4A825 /* BEExposureSubmissionUITests.swift */,
 			);
 			path = __tests__;
 			sourceTree = "<group>";
@@ -1779,6 +1770,7 @@
 		A9DD2D0B24D059C00035081A /* Client */ = {
 			isa = PBXGroup;
 			children = (
+				A9A64C6924D3130000B3D25F /* BEHTTPClient.swift */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -2710,6 +2702,7 @@
 				EE22DB89247FB43A001B0A71 /* TracingHistoryTableViewCell.swift in Sources */,
 				A3EE6E61249BC57F00C64B61 /* MockExposureSubmissionService.swift in Sources */,
 				71B804472484CC0800D53506 /* ENALabel.swift in Sources */,
+				A9A64C6A24D3130000B3D25F /* BEHTTPClient.swift in Sources */,
 				71FE1C7F247AC2B500851FEB /* ExposureSubmissionTestResultViewController.swift in Sources */,
 				B1D6B002247DA0320079DDD3 /* ExposureDetectionViewControllerDelegate.swift in Sources */,
 				713EA25B247818B000AB7EE8 /* DynamicTypeButton.swift in Sources */,
@@ -2724,10 +2717,10 @@
 				B10FD5F1246EAB1000E9D7F2 /* AppInformationViewController+DynamicTableViewModel.swift in Sources */,
 				51C7790E24867F22004582F8 /* RiskListItemView.swift in Sources */,
 				71CAB9D2248AACAD00F516A5 /* PixelPerfectLayoutConstraint.swift in Sources */,
+				A9A5F21B24D1C757004B01FC /* BETestResult.swift in Sources */,
 				710021E0248EAF9A001F0B63 /* ExposureSubmissionImageCardCell.swift in Sources */,
 				B14D0CDF246E976400D5BEBC /* ExposureDetectionTransaction+DidEndPrematurelyReason.swift in Sources */,
 				71FE1C69247A8FE100851FEB /* DynamicTableViewHeaderFooterView.swift in Sources */,
-				A92974E524D17BDC00C4A825 /* BEAccessibilityIdentifiers.swift in Sources */,
 				A9DD2CE724CEF0680035081A /* BEMobileTestIdViewController.swift in Sources */,
 				B184A383248FFCE2007180F6 /* CodableExposureDetectionSummary.swift in Sources */,
 				B111EE2C2465D9F7001AEBB4 /* String+Localization.swift in Sources */,
@@ -2890,7 +2883,6 @@
 				13E50469248E3CD20086641C /* ENAUITestsAppInformation.swift in Sources */,
 				130CB19C246D92F800ADE602 /* ENAUITestsOnboarding.swift in Sources */,
 				13E5046B248E3DF30086641C /* AppStrings.swift in Sources */,
-				A92974E824D1A03500C4A825 /* BEExposureSubmissionUITests.swift in Sources */,
 				A3EE6E5C249BB97500C64B61 /* UITestingParameters.swift in Sources */,
 				134F0F2C2475793400D88934 /* SnapshotHelper.swift in Sources */,
 			);
@@ -3081,7 +3073,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
-				DEVELOPMENT_TEAM = UK48F668XR;
+				DEVELOPMENT_TEAM = MB7TR4N9LK;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -3089,6 +3081,9 @@
 					"DISABLE_CERTIFICATE_PINNING=1",
 				);
 				INFOPLIST_FILE = ENA/Resources/Info_Debug.plist;
+				IPHONE_APP_CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONE_APP_DEV_TEAM = "";
+				IPHONE_APP_DIST_PROF_SPECIFIER = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3100,7 +3095,7 @@
 					"-DSQLCIPHER_CRYPTO_CC",
 					"-DNDEBUG",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "be.sciensano.coronalert-community";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jpdvdg.covidtest;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = ENA;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3232,12 +3227,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "${PROJECT}/Resources/ENA.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = $IPHONE_APP_CODE_SIGN_IDENTITY;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 5;
-				DEVELOPMENT_TEAM = UK48F668XR;
+				DEVELOPMENT_TEAM = 523TP53AQF;
 				GCC_PREPROCESSOR_DEFINITIONS = "SQLITE_HAS_CODEC=1";
 				INFOPLIST_FILE = ENA/Resources/Info_Testflight.plist;
+				IPHONE_APP_CODE_SIGN_IDENTITY = "Apple Distribution";
+				IPHONE_APP_DEV_TEAM = 523TP53AQF;
+				IPHONE_APP_DIST_PROF_SPECIFIER = "match AppStore de.rki.coronawarnapp-dev";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3249,10 +3247,10 @@
 					"-DSQLCIPHER_CRYPTO_CC",
 					"-DNDEBUG",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = be.sciensano.coronalert;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.rki.coronawarnapp-dev";
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = ENA;
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = $IPHONE_APP_DIST_PROF_SPECIFIER;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "APP_STORE DISABLE_CERTIFICATE_PINNING";
 				SWIFT_OBJC_BRIDGING_HEADER = "ENA-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -3383,13 +3381,16 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
-				DEVELOPMENT_TEAM = UK48F668XR;
+				DEVELOPMENT_TEAM = $IPHONE_APP_DEV_TEAM;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 					"SQLITE_HAS_CODEC=1",
 				);
 				INFOPLIST_FILE = ENA/Resources/Info.plist;
+				IPHONE_APP_CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONE_APP_DEV_TEAM = 523TP53AQF;
+				IPHONE_APP_DIST_PROF_SPECIFIER = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3401,7 +3402,7 @@
 					"-DSQLCIPHER_CRYPTO_CC",
 					"-DNDEBUG",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = be.sciensano.coronalert;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.rki.coronawarnapp-dev";
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = ENA;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3594,10 +3595,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "${PROJECT}/Resources/ENATest.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = $IPHONE_APP_CODE_SIGN_IDENTITY;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 5;
-				DEVELOPMENT_TEAM = UK48F668XR;
+				DEVELOPMENT_TEAM = 523TP53AQF;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -3605,6 +3606,9 @@
 					"DISABLE_CERTIFICATE_PINNING=1",
 				);
 				INFOPLIST_FILE = ENA/Resources/Info_Debug.plist;
+				IPHONE_APP_CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONE_APP_DEV_TEAM = 523TP53AQF;
+				IPHONE_APP_DIST_PROF_SPECIFIER = "523TP53AQF/Corona-Warn-App-Dev1";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3616,10 +3620,10 @@
 					"-DSQLCIPHER_CRYPTO_CC",
 					"-DNDEBUG",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = be.sciensano.coronalert;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.rki.coronawarnapp-dev";
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = ENA;
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = $IPHONE_APP_DIST_PROF_SPECIFIER;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG DISABLE_CERTIFICATE_PINNING";
 				SWIFT_OBJC_BRIDGING_HEADER = "ENA-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -3634,12 +3638,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "${PROJECT}/Resources/ENA.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = $IPHONE_APP_CODE_SIGN_IDENTITY;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 5;
-				DEVELOPMENT_TEAM = UK48F668XR;
 				GCC_PREPROCESSOR_DEFINITIONS = "SQLITE_HAS_CODEC=1";
 				INFOPLIST_FILE = ENA/Resources/Info.plist;
+				IPHONE_APP_CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONE_APP_DEV_TEAM = 523TP53AQF;
+				IPHONE_APP_DIST_PROF_SPECIFIER = "523TP53AQF/Corona-Warn-App";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3651,10 +3657,10 @@
 					"-DSQLCIPHER_CRYPTO_CC",
 					"-DNDEBUG",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = be.sciensano.coronalert;
+				PRODUCT_BUNDLE_IDENTIFIER = de.rki.coronawarnapp;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = ENA;
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = $IPHONE_APP_DIST_PROF_SPECIFIER;
 				SWIFT_OBJC_BRIDGING_HEADER = "ENA-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -3668,7 +3674,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UK48F668XR;
+				DEVELOPMENT_TEAM = 523TP53AQF;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"SQLITE_HAS_CODEC=1",
@@ -3732,7 +3738,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UK48F668XR;
+				DEVELOPMENT_TEAM = 523TP53AQF;
 				INFOPLIST_FILE = ENAUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

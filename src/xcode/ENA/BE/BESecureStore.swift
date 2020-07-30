@@ -20,9 +20,13 @@
 import Foundation
 
 extension SecureStore {
-	var mobileTestIds: [BeMobileTestId]? {
-		get { kvStore["mobileTestIds"] as [BeMobileTestId]? ?? nil }
-		set { kvStore["mobileTestIds"] = newValue }
+	var mobileTestId: BEMobileTestId? {
+		get { kvStore["mobileTestId"] as BEMobileTestId?}
+		set { kvStore["mobileTestId"] = newValue }
 	}
-
+	
+	var testResult:TestResult? {
+		get { kvStore["testResult"] as TestResult?}
+		set { kvStore["testResult"] = newValue }
+	}
 }

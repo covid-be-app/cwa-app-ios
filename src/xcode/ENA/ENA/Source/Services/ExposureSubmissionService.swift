@@ -23,12 +23,15 @@ enum DeviceRegistrationKey {
 	case guid(String)
 }
 
+// :BE: replaced with a more complex structure
+/*
 enum TestResult: Int {
 	case pending = 0
 	case negative = 1
 	case positive = 2
 	case invalid = 3
 }
+*/
 
 protocol ExposureSubmissionService: class {
 	typealias ExposureSubmissionHandler = (_ error: ExposureSubmissionError?) -> Void
@@ -96,27 +99,9 @@ class ENAExposureSubmissionService: ExposureSubmissionService {
 	/// received, either from the TAN or QR Code flow. After successful completion,
 	/// the timestamp of the last received test is updated.
 	func getTestResult(_ completeWith: @escaping TestResultHandler) {
-		guard let registrationToken = store.registrationToken else {
-			completeWith(.failure(.noRegistrationToken))
-			return
-		}
-
-		client.getTestResult(forDevice: registrationToken) { result in
-			switch result {
-			case let .failure(error):
-				completeWith(.failure(self.parseError(error)))
-			case let .success(testResult):
-				guard let testResult = TestResult(rawValue: testResult) else {
-					completeWith(.failure(.other("Failed to parse TestResult")))
-					return
-				}
-
-				completeWith(.success(testResult))
-				if testResult != .pending {
-					self.store.testResultReceivedTimeStamp = Int64(Date().timeIntervalSince1970)
-				}
-			}
-		}
+		
+		// :BE: implemented in subclass
+		fatalError()
 	}
 
 	/// Stores the provided key, retrieves the registration token and deletes the key.
@@ -232,7 +217,9 @@ class ENAExposureSubmissionService: ExposureSubmissionService {
 	// This method removes all left over persisted objects part of the
 	// `submitExposure` flow. Removes the registrationToken,
 	// and isAllowedToSubmitDiagnosisKeys.
-	private func submitExposureCleanup() {
+
+	// :BE: remove private so we can access in subclass
+	func submitExposureCleanup() {
 		store.registrationToken = nil
 		store.isAllowedToSubmitDiagnosisKeys = false
 		store.lastSuccessfulSubmitDiagnosisKeyTimestamp = Int64(Date().timeIntervalSince1970)
@@ -246,7 +233,9 @@ class ENAExposureSubmissionService: ExposureSubmissionService {
 	/// `ExposureNotificationError`, `SubmissionError`, or `URLSession.Response.Failure`,
 	/// an unknown error is returned. Therefore, if this method returns `.unknown`,
 	/// examine the incoming `Error` closely.
-	private func parseError(_ error: Error) -> ExposureSubmissionError {
+	
+	// :BE: remove private so we can access in subclass
+	func parseError(_ error: Error) -> ExposureSubmissionError {
 
 		if let enError = error as? ENError {
 			return enError.toExposureSubmissionError()

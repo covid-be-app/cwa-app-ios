@@ -120,11 +120,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	#endif
 
 	private var exposureDetection: ExposureDetection?
-	private var exposureSubmissionService: ENAExposureSubmissionService?
+	// :BE: use protocol and not subclass as variable type
+	private var exposureSubmissionService: ExposureSubmissionService?
 
 	let downloadedPackagesStore: DownloadedPackagesStore = DownloadedPackagesSQLLiteStore(fileName: "packages")
 
-	var client = HTTPClient(configuration: .backendBaseURLs)
+	// :BE: replace HTTPClient
+	var client: HTTPClient = BEHTTPClient(configuration: .backendBaseURLs)
 
 	// TODO: REMOVE ME
 	var lastRiskCalculation: String = ""
@@ -184,7 +186,8 @@ extension AppDelegate: ENATaskExecutionDelegate {
 	/// NOTE: This method will always return true.
 	private func executeFetchTestResults(task: BGTask, completion: @escaping ((Bool) -> Void)) {
 
-		exposureSubmissionService = ENAExposureSubmissionService(diagnosiskeyRetrieval: exposureManager, client: client, store: store)
+		// :BE: replace ENAExposureSubmissionService with BEExposureSubmissionService
+		exposureSubmissionService = BEExposureSubmissionService(diagnosiskeyRetrieval: exposureManager, client: client, store: store)
 
 		if store.registrationToken != nil && store.testResultReceivedTimeStamp == nil {
 			self.exposureSubmissionService?.getTestResult { result in

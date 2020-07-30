@@ -129,10 +129,12 @@ extension HTTPClient {
 				)
 		}
 
+		// :BE: change endpoint url
 		var submissionURL: URL {
 			endpoints
 				.submission
 				.appending(
+					"submission-api",
 					"version",
 					apiVersion,
 					"diagnosis-keys"
@@ -149,13 +151,15 @@ extension HTTPClient {
 				)
 		}
 
+		// :BE: change endpoint url
 		var testResultURL: URL {
 			endpoints
 				.verification
 				.appending(
+					"verification-api",
 					"version",
 					apiVersion,
-					"testresult"
+					"mobiletestresult"
 				)
 		}
 

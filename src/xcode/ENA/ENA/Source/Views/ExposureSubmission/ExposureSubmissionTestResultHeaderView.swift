@@ -69,9 +69,10 @@ class ExposureSubmissionTestResultHeaderView: DynamicTableViewHeaderFooterView {
 	}
 }
 
+// :BE: change enum to struct and use `result` attribute
 private extension TestResult {
 	var color: UIColor {
-		switch self {
+		switch result {
 		case .positive: return .enaColor(for: .riskHigh)
 		case .negative: return .enaColor(for: .riskLow)
 		case .invalid: return .enaColor(for: .riskNeutral)
@@ -80,7 +81,7 @@ private extension TestResult {
 	}
 
 	var image: UIImage? {
-		switch self {
+		switch result {
 		case .positive: return UIImage(named: "Illu_Submission_PositivTestErgebnis")
 		case .negative: return UIImage(named: "Illu_Submission_NegativesTestErgebnis")
 		case .invalid: return UIImage(named: "Illu_Submission_FehlerhaftesTestErgebnis")
@@ -89,7 +90,7 @@ private extension TestResult {
 	}
 
 	var text: String {
-		switch self {
+		switch result {
 		case .positive: return "\(AppStrings.ExposureSubmissionResult.card_title)\n\(AppStrings.ExposureSubmissionResult.card_positive)"
 		case .negative: return "\(AppStrings.ExposureSubmissionResult.card_title)\n\(AppStrings.ExposureSubmissionResult.card_negative)"
 		case .invalid: return AppStrings.ExposureSubmissionResult.card_invalid

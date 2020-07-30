@@ -72,13 +72,11 @@ class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
 		navigationController?.dismiss(animated: true)
 	}
 
-
 	// We will "abuse" this name to show the QR code screen without having to modify the entire structure of the calls
 	// This is what is called after showing the intro screen
 	// In the original app it will show you the 3 possibilities to register a test, in our case we go directly to the code generator
 	
 	func showOverviewScreen() {
-		
 		let alert = UIAlertController(
 			title: AppStrings.ExposureSubmission.dataPrivacyTitle,
 			message: AppStrings.ExposureSubmission.dataPrivacyDisclaimer,
@@ -97,12 +95,22 @@ class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
 							  handler: { _ in
 								alert.dismiss(animated: true, completion: nil) }
 			))
-		
 		alert.preferredAction = acceptAction
 		present(alert)
 	}
 
+	func showWarnOthersScreen() {
+		let vc = createWarnOthersViewController()
+		push(vc)
+	}
+
+	func showThankYouScreen() {
+		let vc = createSuccessViewController()
+		push(vc)
+	}
+
 	// MARK: - Methods no longer used
+
 
 	func showHotlineScreen() {
 		fatalError()
@@ -119,15 +127,6 @@ class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
 	func showTestResultScreen(with result: TestResult) {
 		fatalError()
 	}
-
-	func showWarnOthersScreen() {
-		fatalError()
-	}
-
-	func showThankYouScreen() {
-		fatalError()
-	}
-	
 
 	// MARK: - Helpers.
 	
@@ -201,8 +200,8 @@ class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
 
 extension BEExposureSubmissionCoordinator : BEMobileTestIdViewControllerDelegate {
 	
-	func mobileTestIdViewController(_ vc: BEMobileTestIdViewController, finshedWithMobileTestId mobileTestId: BeMobileTestId) {
-		(exposureSubmissionService as! ENAExposureSubmissionService).addMobileTestId(mobileTestId)
+	func mobileTestIdViewController(_ vc: BEMobileTestIdViewController, finshedWithMobileTestId mobileTestId: BEMobileTestId) {
+		(exposureSubmissionService as! BEExposureSubmissionService).mobileTestId = mobileTestId
 		self.navigationController?.dismiss(animated: true)
 	}
 	
