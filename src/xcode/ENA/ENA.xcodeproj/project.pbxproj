@@ -2464,7 +2464,6 @@
 				51C7790C24867F16004582F8 /* RiskListItemView.xib in Resources */,
 				EE92A33E245D96DA006B97B0 /* Localizable.stringsdict in Resources */,
 				A328424D248B91E0006B1F09 /* HomeTestResultLoadingCell.xib in Resources */,
-				01E25C7024A3B52F007E33F8 /* Info_Testflight.plist in Resources */,
 				A9DD2CE824CEF0680035081A /* BEMobileTestIdViewController.xib in Resources */,
 				EE278B2D245F2BBB008B06F9 /* InviteFriends.storyboard in Resources */,
 				EE70C23D245B09EA00AC9B2F /* Localizable.strings in Resources */,
@@ -3653,6 +3652,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = be.sciensano.coronalert;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = ENA;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE DISABLE_CERTIFICATE_PINNING";
 				SWIFT_OBJC_BRIDGING_HEADER = "ENA-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
