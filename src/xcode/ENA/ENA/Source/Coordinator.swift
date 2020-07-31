@@ -185,7 +185,9 @@ extension Coordinator: HomeViewControllerDelegate {
 		// A strong reference to the coordinator is passed to the exposure submission navigation controller
 		// when .start() is called. The coordinator is then bound to the lifecycle of this navigation controller
 		// which is managed by UIKit.
-		let coordinator = ExposureSubmissionCoordinator(
+		
+		// :BE: replace ExposureSubmissionCoordinator with BEExposureSubmissionCoordinator
+		let coordinator = BEExposureSubmissionCoordinator(
 			parentNavigationController: rootViewController,
 			exposureSubmissionService: exposureSubmissionService,
 			delegate: self
