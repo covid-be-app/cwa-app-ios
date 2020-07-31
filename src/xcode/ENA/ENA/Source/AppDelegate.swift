@@ -102,7 +102,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		)
 	}()
 
-	#if targetEnvironment(simulator) || COMMUNITY
+	// :TEMP:
+	//#if targetEnvironment(simulator) || COMMUNITY
 	// Enable third party contributors that do not have the required
 	// entitlements to also use the app
 	let exposureManager: ExposureManager = {
@@ -115,9 +116,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		let keys = [tempKey]
 		return MockExposureManager(exposureNotificationError: nil, diagnosisKeysResult: (keys, nil))
 	}()
-	#else
-	let exposureManager: ExposureManager = ENAExposureManager()
-	#endif
+	//#else
+	//let exposureManager: ExposureManager = ENAExposureManager()
+	//#endif
 
 	private var exposureDetection: ExposureDetection?
 	// :BE: use protocol and not subclass as variable type
