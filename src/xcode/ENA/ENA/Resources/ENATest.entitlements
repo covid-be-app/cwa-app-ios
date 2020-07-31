@@ -3,10 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>com.apple.developer.exposure-notification-test</key>
-	<true/>
+	<false/>
 	<key>com.apple.developer.exposure-notification-test-skip-file-verification</key>
-	<true/>
+	<false/>
 	<key>com.apple.developer.exposure-notification</key>
-	<true/>
+	<false/>
 </dict>
 </plist>
