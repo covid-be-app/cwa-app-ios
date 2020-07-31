@@ -988,3 +988,18 @@ Pour de plus amples informations, veuillez consulter notre page FAQ" ;
 "Active_Tracing_Interval_Partially_Active" = "L'enregistrement de l'exposition était actif pour %1$u des derniers %2$u jours" ;
 "Active_Tracing_Interval_Permanently_Active" = "L'enregistrement de l'exposition est actif en permanence" ;
 
+/*
+ Belgian app translations
+ */
+
+"BEMobileTestId_title" = "Faits un test";
+
+"BEMobileTestId_DateExplanation" = "Sélectionnez la date sur laquelle vous êtes devenu contagieux.\nLa personne qui vous fait le test vous le communiquera.";
+
+"BEMobileTestId_Select" = "Confirmer";
+
+"BEMobileTestId_Date" = "Date";
+"BEMobileTestId_Save" = "Sauvegarder";
+"BEMobileTestId_saveExplanation" = "Montre ce numéro à la personne qui vous fait le test.\nTapez \"Sauvegarder\" pour être averti dès que le résultat est disponible";
+
+

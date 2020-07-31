@@ -986,3 +986,18 @@ Voor meer informatie, zie onze FAQ-pagina.";
  */
 "Active_Tracing_Interval_Partially_Active" = "Exposure logging was actief voor %1$u van de laatste %2$u dagen";
 "Active_Tracing_Interval_Permanent_Active" = "Exposure logging permanent actief";
+
+/*
+ Belgian app translations
+ */
+
+"BEMobileTestId_title" = "Word getest";
+
+"BEMobileTestId_DateExplanation" = "Selecteer de datum waarop u besmettelijk werd.\nDit zal u meegedeeld worden door de persoon die de test afneemt";
+
+"BEMobileTestId_Select" = "Selecteer";
+
+"BEMobileTestId_Date" = "Datum";
+"BEMobileTestId_Save" = "Opslaan";
+"BEMobileTestId_saveExplanation" = "Toon dit nummer aan de persoon die de test afneemt.\nTap \"Opslaan\" zodat u verwittigd kan worden zodra het resultaat beschikbaar is";
+
