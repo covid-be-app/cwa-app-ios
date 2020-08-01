@@ -304,21 +304,21 @@ Pour de plus amples informations, veuillez consulter notre page FAQ" ;
 
 "ExposureSubmissionDataPrivacy_DontAcceptTitle" = "Ne pas accepter" ;
 
-"ExposureSubmission_Submit" = "Enter TAN" ;
+"ExposureSubmission_Submit" = "Enter CODE" ;
 
-"ExposureSubmissionTanEntry_Title" = "Entrée TAN" ;
+"ExposureSubmissionTanEntry_Title" = "Entrée CODE" ;
 
-"ExposureSubmissionTanEntry_EntryField" = "Champ d'entrée TAN" ;
+"ExposureSubmissionTanEntry_EntryField" = "Champ d'entrée CODE" ;
 
-"ExposureSubmissionTanEntry_Info" = "Veuillez saisir le NAV qui vous a été attribué :";
+"ExposureSubmissionTanEntry_Info" = "Veuillez saisir le CODE qui vous a été attribué :";
 
-"ExposureSubmissionTanEntry_Description" = "Veuillez saisir le numéro d'identification de l'article (TAN) à 10 chiffres qui vous a été attribué" ;
+"ExposureSubmissionTanEntry_Description" = "Veuillez saisir le numéro d'identification de l'article (CODE) qui vous a été attribué" ;
 
 "ExposureSubmissionTanEntry_Submit" = "Suivant" ;
 
 "ExposureSubmissionTanEntry_InvalidCharacterError" = "Entrée non valable, veuillez vérifier votre entrée" ;
 
-"ExposureSubmissionTanEntry_InvalidError" = "TAN non valide, veuillez vérifier votre entrée" ;
+"ExposureSubmissionTanEntry_InvalidError" = "CODE non valide, veuillez vérifier votre entrée" ;
 
 "ExposureSubmission_NavTitle" = "Envoyer la clé de diagnostic" ;
 
@@ -334,23 +334,23 @@ Pour de plus amples informations, veuillez consulter notre page FAQ" ;
 
 "ExposureSubmissionDispatch_QRCodeButtonDescription" = "Enregistrez votre test en scannant le code QR de votre document de test" ;
 
-"ExposureSubmissionDispatch_TANButtonTitle" = "TAN" ;
+"ExposureSubmissionDispatch_CODEButtonTitle" = "CODE" ;
 
-"ExposureSubmissionDispatch_TANButtonDescription" = "Enregistrez votre test en entrant votre TAN manuellement" ;
+"ExposureSubmissionDispatch_CODEButtonDescription" = "Enregistrez votre test en entrant votre CODE manuellement" ;
 
-"ExposureSubmissionDispatch_HotlineButtonTitle" = "Demande de TAN" ;
+"ExposureSubmissionDispatch_HotlineButtonTitle" = "Demande de CODE" ;
 
 "ExposureSubmissionDispatch_HotlineButtonDescription" = "Veuillez nous appeler si vous avez été testé %@." ;
 
 "ExposureSubmissionDispatch_HotlineButtonPositiveWord" = "Positive" ;
 
-"ExposureSubmissionHotline_Title" = "Request TAN" ;
+"ExposureSubmissionHotline_Title" = "Request CODE" ;
 
-"ExposureSubmissionHotline_Description" = "Veuillez garder votre résultat de test (si disponible) et votre numéro de téléphone à portée de main pour demander un TAN" ;
+"ExposureSubmissionHotline_Description" = "Veuillez garder votre résultat de test (si disponible) et votre numéro de téléphone à portée de main pour demander un CODE" ;
 
 "ExposureSubmissionHotline_SectionTitle" = "Comment cela fonctionne-t-il ?";
 
-"ExposureSubmissionHotline_SectionDescription1" = "Appelez la hotline et demandez un TAN :";
+"ExposureSubmissionHotline_SectionDescription1" = "Appelez la hotline et demandez un CODE :";
 
 "ExposureSubmissionHotline_SectionAccessibilityLabel1" = "Étape 1 de 2" ;
 
@@ -358,15 +358,15 @@ Pour de plus amples informations, veuillez consulter notre page FAQ" ;
 
 "ExposureSubmission_PhoneNumber" = "+49 800 7540002" ;
 
-"ExposureSubmission_PhoneDetailDescription" = "Langues : \nAllemand, anglais, turc\nHoraires d'ouverture:\nLundi à dimanche : 24 heures\nL'appel est gratuit." ;
+"ExposureSubmission_PhoneDetailDescription" = "Langues : \nAllemand, anglais, français, néerlandais\nHoraires d'ouverture:\nLundi à dimanche : 24 heures\nL'appel est gratuit." ;
 
-"ExposureSubmission_SectionDescription2" = "Enregistrez le test en entrant le TAN dans l'application" ;
+"ExposureSubmission_SectionDescription2" = "Enregistrez le test en entrant le CODE dans l'application" ;
 
 "ExposureSubmission_CallButtonTitle" = "Appeler" ;
 
-"ExposureSubmission_TANInputButtonTitle" = "Entrer le TAN" ;
+"ExposureSubmission_CODEInputButtonTitle" = "Entrer le CODE" ;
 
-"ExposureSubmissionHotline_imageDescription" = "La hotline communique un TAN" ;
+"ExposureSubmissionHotline_imageDescription" = "La hotline communique un CODE" ;
 
 /* Exposure Submission QR Code Scanner */
 "ExposureSubmissionQRScanner_title" = "QR Code Scan" ;
@@ -419,7 +419,7 @@ Pour de plus amples informations, veuillez consulter notre page FAQ" ;
 /* Introduction à la soumission d'exposition */
 "ExposureSubmissionIntroduction_Title" = "Information" ;
 
-"ExposureSubmissionIntroduction_SubTitle" = "This is how the app Coronalert works" ;
+"ExposureSubmissionIntroduction_SubTitle" = "Voici comment fonctionne l'application Coronalert" ;
 
 "ExposureSubmissionIntroduction_AccImageDescription" = "Un appareil transmet un diagnostic positif crypté au système" ;
 
@@ -431,12 +431,12 @@ Pour de plus amples informations, veuillez consulter notre page FAQ" ;
 
 "ExposureSubmissionIntroduction_ListItem2" = "Si vous avez été diagnostiqué avec COVID-19, vous pouvez en informer d'autres personnes" ;
 
-"ExposureSubmissionIntroduction_ListItem3" = "Si vous avez reçu un TAN pour un diagnostic positif, vous pouvez l'utiliser pour enregistrer le test" ;
+"ExposureSubmissionIntroduction_ListItem3" = "Si vous avez reçu un CODE pour un diagnostic positif, vous pouvez l'utiliser pour enregistrer le test" ;
 
-"ExposureSubmissionIntroduction_ListItem4" = "Si vous n'avez pas de TAN, vous pouvez en demander un par téléphone" ;
+"ExposureSubmissionIntroduction_ListItem4" = "Si vous n'avez pas de CODE, vous pouvez en demander un par téléphone" ;
 
 /* Résultat de la soumission de l'exposition */
-"ExposureSubmissionResult_Title" = "Test Result" ;
+"ExposureSubmissionResult_Title" = "Résultat du test" ;
 
 "ExposureSubmissionResult_CardSubTitle" = "Votre diagnostic" ;
 
@@ -508,7 +508,7 @@ Pour de plus amples informations, veuillez consulter notre page FAQ" ;
 
 "ExposureSubmissionWarnOthers_dataPrivacyDescription" = "En appuyant sur \"Accepter\", vous consentez à ce que l'application envoie votre résultat de test positif au système du serveur de l'application avec vos identifiants aléatoires des 14 derniers jours, de sorte que les autres utilisateurs de l'application qui ont activé la fonction de journalisation de l'exposition puissent être automatiquement avertis qu'ils ont pu être exposés à un risque d'infection. Les identifiants aléatoires transmis à cette fin ne contiennent aucune information qui permettrait de tirer des conclusions sur votre identité ou votre personne. La transmission de votre résultat de test via l'application est volontaire. Vous ne serez pas pénalisé si vous ne transmettez pas votre résultat de test. Puisqu'il n'est pas possible de tracer ou de vérifier si et comment vous utilisez l'application, personne d'autre que vous ne saura si vous avez transmis les informations que vous avez infectées. Ce retrait de votre consentement n'affectera pas la légalité du traitement effectué sur la base du consentement préalable au retrait. Vous trouverez de plus amples informations dans le menu sous \"Informations sur la protection des données\"" ;
 
-"ExposureSubmissionWarnOthers_dataPrivacyTitle" = "Data Privacy" ;
+"ExposureSubmissionWarnOthers_dataPrivacyTitle" = "Données privées" ;
 
 "ExposureSubmissionResult_RemoveAlert_Title" = "Supprimer le test ?";
 
@@ -521,7 +521,7 @@ Pour de plus amples informations, veuillez consulter notre page FAQ" ;
 /* Exposure Submission */
 "ExposureSubmissionError_NoKeys" = "Aucune clé de diagnostic n'est disponible. Veuillez réessayer demain." ;
 
-"ExposureSubmissionError_InvalidTan" = "Le TAN généré n'est pas valide pour la soumission. Veuillez contacter la hotline technique via App Information -> Technical Hotline" ;
+"ExposureSubmissionError_InvalidTan" = "Le CODE généré n'est pas valide pour la soumission. Veuillez contacter la hotline technique via App Information -> Technical Hotline" ;
 
 "ExposureSubmissionError_EnNotEnabled" = "L'enregistrement de l'exposition n'est pas actif." ;
 
@@ -533,9 +533,9 @@ Pour de plus amples informations, veuillez consulter notre page FAQ" ;
 
 "ExposureSubmissionError_QRAlreadyUsed" = "Le code QR a déjà été utilisé. Veuillez contacter la hotline technique via App Information -> Technical Hotline" ;
 
-"ExposureSubmissionError_TeleTanAlreadyUsed" = "Le TAN n'est pas valide ou a déjà été utilisé. Veuillez réessayer ou contacter la hotline technique via App Information -> Technical Hotline" ;
+"ExposureSubmissionError_TeleTanAlreadyUsed" = "Le CODE n'est pas valide ou a déjà été utilisé. Veuillez réessayer ou contacter la hotline technique via App Information -> Technical Hotline" ;
 
-"ExposureSubmissionError_RegTokenNotExist" = "Un TAN pour la soumission ne peut pas être généré. Veuillez contacter la hotline technique via App Information -> Technical Hotline" ;
+"ExposureSubmissionError_RegTokenNotExist" = "Un CODE pour la soumission ne peut pas être généré. Veuillez contacter la hotline technique via App Information -> Technical Hotline" ;
 
 "ExposureSubmissionError_other" = "Une erreur de connexion s'est produite. Code d'erreur pour le support technique : " ;
 
@@ -550,11 +550,11 @@ Pour de plus amples informations, veuillez consulter notre page FAQ" ;
 "ExposureSubmissionError_defaultError" = "Erreur lors de la transmission de la clé" ;
 
 /* Activation/désactivation des paramètres de traçage */
-"ExposureNotificationSetting_TracingSettingTitle" = "Exposure Logging" ;
+"ExposureNotificationSetting_TracingSettingTitle" = "Enregistrement de l'exposition" ;
 
-"ExposureNotificationSetting_EnableTracing" = "Exposure Logging" ;
+"ExposureNotificationSetting_EnableTracing" = "Enregistrement de l'exposition" ;
 
-"ExposureNotificationSetting_Tracing_Limited" = "Restricted" ;
+"ExposureNotificationSetting_Tracing_Limited" = "Restreint" ;
 
 "ExposureNotificationSetting_Tracing_Deactivated" = "Désactivé" ;
 
@@ -606,7 +606,7 @@ Pour de plus amples informations, veuillez consulter notre page FAQ" ;
 
 "ExposureNotificationSetting_Dismiss_Action" = "Annuler" ;
 
-"ExposureNotificationSetting_GeneralError_Title" = "Error" ;
+"ExposureNotificationSetting_GeneralError_Title" = "Erreur" ;
 
 "ExposureNotificationSetting_GeneralError_LearnMore_Action" = "En savoir plus" ;
 
@@ -628,22 +628,22 @@ Pour de plus amples informations, veuillez consulter notre page FAQ" ;
 "Description du bouton de la barre droite" = "Informations" ;
 
 /* Carte active de la maison */
-"Home_Activate_Card_On_Title" = "Exposure Logging Active" ;
+"Home_Activate_Card_On_Title" = "Enregistrement de l'exposition actif" ;
 
-"Home_Activate_Card_Off_Title" = "Exposure logging stopped" ;
+"Home_Activate_Card_Off_Title" = "Arrêt de l'enregistrement de l'exposition" ;
 
 "Home_Activate_Card_Bluetooth_Off_Title" = "Bluetooth désactivé" ;
 
-"Home_Activate_Card_Internet_Off_Title" = "No Internet connection" ;
+"Home_Activate_Card_Internet_Off_Title" = "Pas de connexion Internet" ;
 
 /* Carte commune à la maison */
-"Home_Risk_Date_Item_Title" = "Updated : %@" ;
+"Home_Risk_Date_Item_Title" = "Mise à jour : %@" ;
 
 "Home_Risk_No_Date_Title" = "Inconnu" ;
 
-"Home_Risk_Period_Update_Title" = "Updated every %@\U00A0hours" ;
+"Home_Risk_Period_Update_Title" = "Mise à jour de chaque %@\U00A0hours" ;
 
-"Home_Risk_Period_Disabled_Button_Title" = "Updated only every %@\U00A0hours" ;
+"Home_Risk_Period_Disabled_Button_Title" = "Mise à jour seulement tous les %@\U00A0hours" ;
 
 /* Carte "Home Unknown" */
 "Home_Risk_Unknown_Title" = "Risque inconnu" ;
@@ -655,7 +655,7 @@ Pour de plus amples informations, veuillez consulter notre page FAQ" ;
 /* Carte Home Inactive */
 "Titre de la page d'accueil des risques inactifs" = "Arrêt de l'enregistrement de l'exposition" ;
 
-"Home_Risk_Inactive_Outdated_Results_Title" = "Exposure logging is not possible" ;
+"Home_Risk_Inactive_Outdated_Results_Title" = "L'enregistrement de l'exposition n'est pas possible" ;
 
 "Home_Risk_Inactive_NoCalculation_Possible_Body" = "Activer l'enregistrement de l'exposition pour évaluer votre statut de risque aujourd'hui" ;
 
@@ -676,18 +676,18 @@ Pour de plus amples informations, veuillez consulter notre page FAQ" ;
 /* Home Low card */
 "Home_Risk_Low_Title" = "Risque faible" ;
 
-"Home_Risk_Low_SaveDays_Item_Title" = "Risk detection was active for %u of %u days" ;
+"Home_Risk_Low_SaveDays_Item_Title" = "La détection des risques a été active pour %u du %u jours" ;
 "Home_Risk_Low_SaveDays_Item_Title__Permanently_Active" = "La détection des risques est active en permanence" ;
 
 "Home_Risk_Low_Button" = "Mise à jour" ;
 
 /* Home High card */
-"Home_Risk_High_Title" = "Higher Risk" ;
+"Home_Risk_High_Title" = "Un risque plus élevé" ;
 
-"Home_Risk_High_Button" = "Update" ;
+"Home_Risk_High_Button" = "Mise à jour" ;
 
 /* Vérification du statut de la maison */
-"Home_Risk_Status_Check_Title" = "Check is running ..." ;
+"Home_Risk_Status_Check_Title" = "La vérification est en cours ..." ;
 
 "Home_Risk_Status_Check_Body" = "Les données actuelles sont en cours de téléchargement et de vérification. Cela peut prendre plusieurs minutes" ;
 
@@ -698,7 +698,7 @@ Pour de plus amples informations, veuillez consulter notre page FAQ" ;
 
 "Home_Thank_You_Card_Body" = "Grâce à votre soutien, d'autres personnes peuvent maintenant être averties et réagir de manière appropriée" ;
 
-"Home_Thank_You_Card_Note_Title" = "Please note :";
+"Home_Thank_You_Card_Note_Title" = "Veuillez noter que :";
 
 "Home_Thank_You_Card_Phone_Item_Title" = "L'autorité de santé publique vous contactera dans les prochains jours par téléphone ou par courrier" ;
 
@@ -715,9 +715,9 @@ Pour de plus amples informations, veuillez consulter notre page FAQ" ;
 "Home_Thank_You_Card_NoSymptoms_Item_Title" = "Même si vous n'avez plus de symptômes et que vous vous sentez bien, vous pouvez toujours être contagieux. " ;
 
 /* Accueil Trouver positif */
-"Home_Finding_Positive_Card_Title" = "Positive Diagnosis" ;
+"Home_Finding_Positive_Card_Title" = "Diagnostic positif" ;
 
-"Home_Finding_Positive_Card_Status_Title" = "SARS-CoV-2 positive" ;
+"Home_Finding_Positive_Card_Status_Title" = "SARS-CoV-2 positif" ;
 
 "Sous-titre de la carte de statut de la maison" = "Vous avez été diagnostiqué comme étant porteur du virus du CoV-2 du SRAS" ;
 
@@ -738,7 +738,7 @@ Pour de plus amples informations, veuillez consulter notre page FAQ" ;
 
 "Home_SubmitCard_Button" = "En savoir plus et aide" ;
 
-"Home_InfoCard_ShareTitle" = "Partagez le app Coronalert" ;
+"Home_InfoCard_ShareTitle" = "Partagez l'application Coronalert" ;
 
 "Home_InfoCard_ShareBody" = "Plus il y a de personnes qui utilisent l'application, plus vite nous pouvons briser la chaîne d'infection. Veuillez inviter votre famille et vos amis à télécharger l'application" ;
 
@@ -748,7 +748,7 @@ Pour de plus amples informations, veuillez consulter notre page FAQ" ;
 
 "Home_SettingsCard_Title" = "Paramètres" ;
 
-"Home_AppInformationCard_Title" = "App Information" ;
+"Home_AppInformationCard_Title" = "Information Application" ;
 
 "Home_AppInformationCard_Version" = "Version" ;
 
@@ -790,7 +790,7 @@ Pour de plus amples informations, veuillez consulter notre page FAQ" ;
 "App_Information_FAQ_Navigation" = "FAQ" ;
 
 /* App Information - Contact */
-"App_Information_Contact_Navigation" = "Hotline technique" ;
+"App_Information_Contact_Navigation" = "Hotline" ;
 
 "App_Information_Contact_ImageDescription" = "Un homme porte un casque d'écoute lorsqu'il passe un appel téléphonique" ;
 
@@ -798,7 +798,7 @@ Pour de plus amples informations, veuillez consulter notre page FAQ" ;
 
 "App_Information_Contact_Description" = "Pour toute question technique concernant le app Coronalert, veuillez contacter notre hotline" ;
 
-"App_Information_Contact_Hotline_Title" = "Hotline technique" ;
+"App_Information_Contact_Hotline_Title" = "Hotline" ;
 
 "App_Information_Contact_Hotline_Text" = "0800 14 689" ;
 
@@ -863,7 +863,7 @@ Pour de plus amples informations, veuillez consulter notre page FAQ" ;
 
 "InviteFriends_ShareUrl" = "https://www.coronalert.be" ;
 
-"InviteFriends_Illustration_Label" = "Un homme partage le app Coronalert avec quatre autres personnes." ;
+"InviteFriends_Illustration_Label" = "Une personne partage l'application Coronalert avec quatre autres personnes." ;
 
 /* Réinitialisation de la vue */
 "Reset_NavTitle" = "Réinitialisation" ;
@@ -880,7 +880,7 @@ Pour de plus amples informations, veuillez consulter notre page FAQ" ;
 
 "Reset_InfoDescription" = "Le journal d'exposition doit être supprimé séparément dans les paramètres de votre appareil" ;
 
-"Reset_Subtitle" = "Reset App" ;
+"Reset_Subtitle" = "Réinitialiser l'application" ;
 
 "Reset_ImageDescription" = "Une main tient un smartphone qui affiche un symbole indiquant que l'application est réinitialisée" ;
 

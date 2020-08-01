@@ -303,21 +303,21 @@ Voor meer informatie, zie onze FAQ-pagina.";
 
 "ExposureSubmissionDataPrivacy_DontAcceptTitle" = "Niet accepteren";
 
-"ExposureSubmission_Submit" = "Enter TAN";
+"ExposureSubmission_Submit" = "Enter CODE";
 
-"ExposureSubmissionTanEntry_Title" = "TAN Entry";
+"ExposureSubmissionTanEntry_Title" = "CODE Entry";
 
-"ExposureSubmissionTanEntry_EntryField" = "TAN Entry Field";
+"ExposureSubmissionTanEntry_EntryField" = "CODE Entry Field";
 
-"ExposureSubmissionTanEntry_Info" = "Vul de TAN in die u werd gegeven:";
+"ExposureSubmissionTanEntry_Info" = "Vul de CODE in die u werd gegeven:";
 
-"ExposureSubmissionTanEntry_Description" = "Vul de 10-cijferige TAN in die u werd gegeven.";
+"ExposureSubmissionTanEntry_Description" = "Vul de 10-cijferige CODE in die u werd gegeven.";
 
 "ExposureSubmissionTanEntry_Submit" = "Volgende";
 
 "ExposureSubmissionTanEntry_InvalidCharacterError" = "Ongeldige invoer, controleer uw invoer";
 
-"ExposureSubmissionTanEntry_InvalidError" = "Ongeldige TAN, controleer uw invoer";
+"ExposureSubmissionTanEntry_InvalidError" = "Ongeldige CODE, controleer uw invoer";
 
 "ExposureSubmission_NavTitle" = "Verzenden Diagnosesleutel";
 
@@ -333,23 +333,23 @@ Voor meer informatie, zie onze FAQ-pagina.";
 
 "ExposureSubmissionDispatch_QRCodeButtonDescription" = "Registreer uw test door de QR-code van uw testdocument te scannen";
 
-"ExposureSubmissionDispatch_TANButtonTitle" = "TAN";
+"ExposureSubmissionDispatch_CODEButtonTitle" = "CODE";
 
-"ExposureSubmissionDispatch_TANButtonDescription" = "Registreer uw test door uw TAN handmatig in te voeren";
+"ExposureSubmissionDispatch_CODEButtonDescription" = "Registreer uw test door uw CODE handmatig in te voeren";
 
-"ExposureSubmissionDispatch_HotlineButtonTitle" = "TAN aanvragen";
+"ExposureSubmissionDispatch_HotlineButtonTitle" = "CODE aanvragen";
 
 "ExposureSubmissionDispatch_HotlineButtonDescription" = "Bel ons als u getest bent %@.";
 
 "ExposureSubmissionDispatch_HotlineButtonPositiveWord" = "Positive";
 
-"ExposureSubmissionHotline_Title" = "Request TAN";
+"ExposureSubmissionHotline_Title" = "Request CODE";
 
-"ExposureSubmissionHotline_Description" = "Houd uw testresultaat (indien beschikbaar) en uw telefoonnummer klaar om een TAN aan te vragen";
+"ExposureSubmissionHotline_Description" = "Houd uw testresultaat (indien beschikbaar) en uw telefoonnummer klaar om een CODE aan te vragen";
 
 "ExposureSubmissionHotline_SectionTitle" = "Hoe dit werkt";
 
-"ExposureSubmissionHotline_SectionDescription1" = "Bel de hotline en vraag een TAN aan:";
+"ExposureSubmissionHotline_SectionDescription1" = "Bel de hotline en vraag een CODE aan:";
 
 "ExposureSubmissionHotline_iconAccessibilityLabel1" = "Stap 1 van 2";
 
@@ -359,16 +359,16 @@ Voor meer informatie, zie onze FAQ-pagina.";
 
 "ExposureSubmission_PhoneDetailDescription" = "Talen: \Duits, Engels, Frans, Zakelijke uren: van maandag tot zondag: 24 uur. Het gesprek is gratis.";
 
-"ExposureSubmission_SectionDescription2" = "Registreer de test door de TAN in te voeren in de app.";
+"ExposureSubmission_SectionDescription2" = "Registreer de test door de CODE in te voeren in de app.";
 
 "ExposureSubmission_CallButtonTitle" = "Bel";
 
-"ExposureSubmission_TANInputButtonTitle" = "Enter TAN";
+"ExposureSubmission_CODEInputButtonTitle" = "Enter CODE";
 
-"ExposureSubmissionHotline_imageDescription" = "Hotline communiceert een TAN.";
+"ExposureSubmissionHotline_imageDescription" = "Hotline communiceert een CODE.";
 
 /* Exposure Submission QR Code Scanner */
-"ExposureSubmissionQRScanner_title" = "QR Code Scan";
+"ExposureSubmissionQRScanner_title" = "QR-code scannen";
 
 "ExposureSubmissionQRScanner_instructie" = "Plaats het kader over de QR-code van uw document";
 
@@ -430,9 +430,9 @@ Voor meer informatie, zie onze FAQ-pagina.";
 
 "ExposureSubmissionIntroduction_ListItem2" = "Als er bij u een diagnose is gesteld met COVID-19, kunt u anderen hiervan op de hoogte stellen";
 
-"ExposureSubmissionIntroduction_ListItem3" = "Als u een TAN hebt gekregen voor een positieve diagnose, kunt u deze gebruiken om de test te registreren";
+"ExposureSubmissionIntroduction_ListItem3" = "Als u een CODE hebt gekregen voor een positieve diagnose, kunt u deze gebruiken om de test te registreren";
 
-"ExposureSubmissionIntroduction_ListItem4" = "Als u geen TAN heeft, kunt u deze telefonisch aanvragen";
+"ExposureSubmissionIntroduction_ListItem4" = "Als u geen CODE heeft, kunt u deze telefonisch aanvragen";
 
 /* Exposure Submission Resultaat */
 "ExposureSubmissionResult_Title" = "Test Result";
@@ -520,7 +520,7 @@ Voor meer informatie, zie onze FAQ-pagina.";
 /* Blootstellingsaanvraag */
 "ExposureSubmissionError_NoKeys" = "Er is geen diagnosesleutel beschikbaar. Probeer het morgen opnieuw.";
 
-"ExposureSubmissionError_InvalidTan" = "De gegenereerde TAN is ongeldig voor indiening. Neem contact op met de technische hotline via App Information -> Technical Hotline.";
+"ExposureSubmissionError_InvalidTan" = "De gegenereerde CODE is ongeldig voor indiening. Neem contact op met de technische hotline via App Information -> Technical Hotline.";
 
 "ExposureSubmissionError_EnNotEnabled" = "Exposure logging is niet actief.";
 
@@ -532,9 +532,9 @@ Voor meer informatie, zie onze FAQ-pagina.";
 
 "ExposureSubmissionError_QRAlreadyUsed" = "De QR-code is al gebruikt. Neem contact op met de technische hotline via App Information -> Technical Hotline.";
 
-"ExposureSubmissionError_TeleTanAlreadyUsed" = "De TAN is ongeldig of werd al gebruikt. Probeer het opnieuw of neem contact op met de technische hotline via App Information -> Technical Hotline";
+"ExposureSubmissionError_TeleTanAlreadyUsed" = "De CODE is ongeldig of werd al gebruikt. Probeer het opnieuw of neem contact op met de technische hotline via App Information -> Technical Hotline";
 
-"ExposureSubmissionError_RegTokenNotExist" = "Een TAN voor indiening kan niet worden gegenereerd. Neem contact op met de technische hotline via App Information -> Technical Hotline";
+"ExposureSubmissionError_RegTokenNotExist" = "Een CODE voor indiening kan niet worden gegenereerd. Neem contact op met de technische hotline via App Information -> Technical Hotline";
 
 "ExposureSubmissionError_other" = "Er is een verbindingsfout opgetreden. Foutcode voor technische ondersteuning: ";
 
@@ -549,15 +549,15 @@ Voor meer informatie, zie onze FAQ-pagina.";
 "ExposureSubmissionError_defaultError" = "Fout tijdens sleuteloverdracht";
 
 /* Tracing Enable/Disable Settings */
-"ExposureNotificationSetting_TracingSettingTitle" = "Exposure Logging";
+"ExposureNotificationSetting_TracingSettingTitle" = "Blootstellingsregistratie";
 
-"ExposureNotificationSetting_EnableTracing" = "Exposure Logging";
+"ExposureNotificationSetting_EnableTracing" = "Blootstellingsregistratie";
 
-"ExposureNotificationSetting_Tracing_Limited" = "Restricted";
+"ExposureNotificationSetting_Tracing_Limited" = "Beperkt";
 
-"ExposureNotificationSetting_Tracing_Deactivated" = "Deactivated";
+"ExposureNotificationSetting_Tracing_Deactivated" = "Gedeactiveerd";
 
-"ExposureNotificationSetting_ActionCell_Header" = "Setting";
+"ExposureNotificationSetting_ActionCell_Header" = "Instelling";
 
 "ExposureNotificationSetting_DescriptionTitle_Inactive" = "Exposure Logging activeren";
 
@@ -577,17 +577,17 @@ Voor meer informatie, zie onze FAQ-pagina.";
 
 "ExposureNotificationSetting_Internet_Description" = "Exposure logging vereist een internetverbinding om de belichting te berekenen. Schakel WIFI of mobiele gegevens in de instellingen van uw apparaat in";
 
-"ExposureNotificationSetting_Detail_Action_Button" = "Open Device Settings";
+"ExposureNotificationSetting_Detail_Action_Button" = "Apparaatinstellingen openen";
 
-"ExposureNotificationSetting_Activate_OSENSetting" = "Enable COVID-19 Exposure Logging and Notifications";
+"ExposureNotificationSetting_Activate_OSENSetting" = "COVID-19 Blootstellingsregistratie en meldingen inschakelen";
 
 "ExposureNotificationSetting_Activate_OSENSetting_Description" = "Voor de belichtingsregistratie moeten de COVID-19-belichtingsregistratie en meldingen in de systeeminstellingen worden geactiveerd, zodat ontmoetingen kunnen worden geregistreerd. Activeer \"COVID-19 Exposure Logging en meldingen\" in uw systeeminstellingen";
 
-"ExposureNotificationSetting_ParentalControls_OSENSetting" = "Activeer COVID-19 Exposure Logging and Notifications";
+"ExposureNotificationSetting_ParentalControls_OSENSetting" = "Activeer COVID-19 Blootstellingsregistratie en meldingen";
 
 "ExposureNotificationSetting_ParentalControls_OSENSetting_Description" = "Voor de belichtingsregistratie moeten de COVID-19-belichtingsregistratie en meldingen in de systeeminstellingen worden geactiveerd, zodat ontmoetingen kunnen worden geregistreerd. Activeer \"COVID-19 Exposure Logging en meldingen\" in uw systeeminstellingen";
 
-"ExposureNotificationSetting_AuthorizationRequired_OSENSetting" = "Authorization required";
+"ExposureNotificationSetting_AuthorizationRequired_OSENSetting" = "Autorisatie vereist";
 
 "ExposureNotificationSetting_AuthorizationRequired_OSENSetting_Description" = "Bevestig het gebruik van de COVID-19-belichtingsregistratie";
 
@@ -645,14 +645,14 @@ Voor meer informatie, zie onze FAQ-pagina.";
 "Home_Risk_Period_Disabled_Button_Title" = "Alleen elke %@U00A0hours bijgewerkt";
 
 /* Home Onbekende kaart */
-"Home_Risk_Unknown_Title" = "Unknown Risk";
+"Home_Risk_Unknown_Title" = "Onbekend Risico";
 
 "Home_RiskCard_Unknown_Item_Title" = "Omdat u de belichtingsregistratie niet lang genoeg heeft aangezet, kunnen we uw infectierisico niet berekenen";
 
 "Home_RiskCard_Unknown_Button" = "Update";
 
 /* Home Inactieve kaart */
-"Home_Risk_Inactive_NoCalculation_Possible_Title" = "Exposure logging gestopt";
+"Home_Risk_Inactive_NoCalculation_Possible_Title" = "Blootstellingsregistratie gestopt";
 
 "Home_Risk_Inactive_Outdated_Results_Title" = "Exposure logging is niet mogelijk";
 
@@ -781,7 +781,7 @@ Voor meer informatie, zie onze FAQ-pagina.";
 
 "App_Information_About_Title" = "Laten we samen het coronavirus bestrijden";
 
-"App_Information_About_Description" = "Robert Koch Institute (RKI) is de Duitse federale gezondheidsinstelling. Het RKI publiceert namens de Bondsregering de Coronalert App. De app is bedoeld als digitale aanvulling op de reeds ingevoerde maatregelen op het gebied van de volksgezondheid: sociale afstand, hygiëne en gezichtsmaskers";
+"App_Information_About_Description" = "Sciensano (RKI) is de Duitse federale gezondheidsinstelling. Het RKI publiceert namens de Bondsregering de Coronalert App. De app is bedoeld als digitale aanvulling op de reeds ingevoerde maatregelen op het gebied van de volksgezondheid: sociale afstand, hygiëne en gezichtsmaskers";
 
 "App_Information_About_Text" = "Wie de app gebruikt, helpt bij het opsporen en doorbreken van infectieketens. De app slaat ontmoetingen met andere mensen ter plaatse op uw apparaat op. U krijgt een melding als u mensen hebt ontmoet die later met COVID-19 zijn gediagnosticeerd. Uw identiteit en privacy zijn altijd beschermd";
 
@@ -816,13 +816,13 @@ Voor meer informatie, zie onze FAQ-pagina.";
 
 "App_Information_Imprint_Section1_Text" = "(verantwoordelijk volgens § 5, alinea. 1 TMG, § 55 para. 1 RStV, DS-GVO, BDSG)";
 
-"App_Information_Imprint_Section2_Title" = "Robert Koch Institute";
+"App_Information_Imprint_Section2_Title" = "Sciensano";
 
 "App_Information_Imprint_Section2_Text" = "Nordufer 20\n13353 Berlijn, vertegenwoordigd door zijn voorzitter";
 
 "App_Information_Imprint_Section3_Title" = "Contact";
 
-"App_Information_Imprint_Section3_Text" = "E-Mail:  info@sciensano.beTelefoon:   +32 2 642 51 11";
+"App_Information_Imprint_Section3_Text" = "E-Mail:  info@sciensano.be Telefoon:   +32 2 642 51 11";
 
 "App_Information_Imprint_Section4_Title" = "BTW-identificatienummer";
 
@@ -845,12 +845,12 @@ Voor meer informatie, zie onze FAQ-pagina.";
 
 "App_Information_Terms_ImageDescription" = "Een hand houdt een smartphone vast met een grote hoeveelheid tekst op het scherm. Naast de tekst staat een vinkje dat aangeeft dat de gebruiksvoorwaarden zijn geaccepteerd.";
 
-"App_Information_Terms_Title" = "Terms of Use";
+"App_Information_Terms_Title" = "Gebruiksvoorwaarden";
 
 /* Vrienden uitnodigen */
-"InviteFriends_NavTitle" = "Share";
+"InviteFriends_NavTitle" = "Deel";
 
-"InviteFriends_Subtitle" = "Share the Coronalert App";
+"InviteFriends_Subtitle" = "Deel de Coronalert App";
 
 "InviteFriends_Title" = "Laten we samen tegen het coronavirus vechten";
 
@@ -875,7 +875,7 @@ Voor meer informatie, zie onze FAQ-pagina.";
 
 "Reset_Discard" = "Annuleren";
 
-"Reset_InfoTitle" = "Delete Exposure Log";
+"Reset_InfoTitle" = "Belichtingslogboek verwijderen";
 
 "Reset_InfoDescription" = "Het belichtingslogboek moet apart worden verwijderd in de instellingen van uw apparaat";
 
@@ -928,7 +928,7 @@ Voor meer informatie, zie onze FAQ-pagina.";
 
 "RiskLegend_Legend2_Low_Color" = "Groen";
 
-"RiskLegend_Legend2_Unknown" = "Unknown Risk";
+"RiskLegend_Legend2_Unknown" = "Onbekend Risico";
 
 "RiskLegend_Legend2_Unknown_Color" = "Grey";
 
@@ -938,15 +938,15 @@ Voor meer informatie, zie onze FAQ-pagina.";
 
 "RiskLegend_Definitions_Title" = "Definitie van termen";
 
-"RiskLegend_Store_Title" = "Exposure Log";
+"RiskLegend_Store_Title" = "Belichtingslogboek";
 
 "RiskLegend_Store_Text" = "Lijst van ontvangen en tijdelijke willekeurige ID's die tijdelijk zijn opgeslagen in de opslag van het besturingssysteem. Deze lijst wordt gelezen wanneer de blootstellingen worden gecontroleerd. Alle willekeurige ID's worden na 14 dagen automatisch gewist";
 
-"RiskLegend_Check_Title" = "Exposure Check";
+"RiskLegend_Check_Title" = "Blootstellingscontrole";
 
 "RiskLegend_Check_Text" = "Blootstellingsloggegevens worden opgehaald en gesynchroniseerd met gerapporteerde infecties van andere gebruikers. De blootstellingscontrole wordt automatisch ongeveer om de twee uur uitgevoerd";
 
-"RiskLegend_Contact_Title" = "Exposures";
+"RiskLegend_Contact_Title" = "Blootstellingen";
 
 "RiskLegend_Contact_Text" = "Ontmoetingen over een langere periode en in de nabijheid van mensen die gediagnosticeerd zijn met COVID-19.";
 
