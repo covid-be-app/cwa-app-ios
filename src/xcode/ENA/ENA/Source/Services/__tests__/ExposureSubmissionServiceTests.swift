@@ -145,6 +145,9 @@ class ExposureSubmissionServiceTests: XCTestCase {
 		waitForExpectations(timeout: expectationsTimeout)
 	}
 
+	// :BE: TestResult enum to struct
+	/*
+
 	func testGetTestResult_success() {
 
 		// Initialize.
@@ -172,6 +175,7 @@ class ExposureSubmissionServiceTests: XCTestCase {
 		waitForExpectations(timeout: .short)
 	}
 
+
 	func testGetTestResult_noRegistrationToken() {
 
 		// Initialize.
@@ -197,8 +201,6 @@ class ExposureSubmissionServiceTests: XCTestCase {
 		waitForExpectations(timeout: .short)
 	}
 
-	// :BE: TestResult enum to struct
-	/*
 	func testGetTestResult_unknownTestResultValue() {
 
 		// Initialize.

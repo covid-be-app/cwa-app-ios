@@ -23,17 +23,14 @@ final class ENStateTests: XCTestCase {
 
 	var stateHandler: ENStateHandler!
 	var exposureManagerState: ExposureManagerState!
-	var mockReachabilityService = MockReachabilityService()
 	let mockStateHandler = MockStateHandlerObserverDelegate()
 	
 	// setup stateHandler to be in enabled state
 	override func setUp() {
 		super.setUp()
 		exposureManagerState = ExposureManagerState(authorized: true, enabled: true, status: .active)
-		mockReachabilityService = MockReachabilityService()
 		stateHandler = ENStateHandler(
 				initialExposureManagerState: exposureManagerState,
-				reachabilityService: self.mockReachabilityService,
 				delegate: mockStateHandler
 		)
 

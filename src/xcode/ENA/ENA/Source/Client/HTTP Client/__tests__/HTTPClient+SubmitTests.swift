@@ -202,7 +202,8 @@ final class HTTPClientSubmitTests: XCTestCase {
 				return
 			}
 
-			guard content["registrationToken"] == expectedToken else {
+			// :BE: rename registrationToken to testResultPollingToken
+			guard content["testResultPollingToken"] == expectedToken else {
 				XCTFail("POST JSON body did not have registrationToken value, or it was incorrect!")
 				return
 			}
