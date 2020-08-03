@@ -1,902 +1,861 @@
-/* Général */
+/* General */
+"Alert_TitleGeneral" = "Une erreur s'est produite";
 
-"Alert_TitleGeneral" = "Une erreur s'est produite" ;
+"Alert_ActionOk" = "OK";
 
-"Alert_ActionOk" = "OK" ;
+"Alert_ActionRetry" = "Répéter";
 
-"Alert_ActionRetry" = "Répéter" ;
+"Alert_ActionCancel" = "Annuler";
 
-"Alert_ActionCancel" = "Annuler" ;
+"Alert_ActionRemove" = "Supprimer";
 
-"Alert_ActionRemove" = "Supprimer" ;
+"Alert_BluetoothOff_Title" = "Activer le Bluetooth";
 
-"Alert_BluetoothOff_Title" = "Activer le Bluetooth" ;
+"Alert_BluetoothOff_Description" = "Activer le Bluetooth dans les paramètres de votre appareil pour utiliser cette application";
 
-"Alert_BluetoothOff_Description" = "Activer le Bluetooth dans les paramètres de votre appareil pour utiliser cette application" ;
+"Alert_CancelAction_Later" = "Plus tard";
 
-"Alert_CancelAction_Later" = "Plus tard" ;
+"Alert_DefaultAction_OpenSettings" = "Ouvrir les paramètres";
 
-"Alert_DefaultAction_OpenSettings" = "Ouvrir les paramètres" ;
+"General_BackButtonTitle" = "Retour";
 
-"General_BackButtonTitle" = "Retour" ;
+"Common_ENError5_Description" = "Erreur 5 : Quelque chose s'est mal passé. Votre niveau de risque ne peut être déterminé. Nous cherchons une solution";
 
-"Common_ENError5_Description" = "Erreur 5 : Quelque chose s'est mal passé. Votre niveau de risque ne peut être déterminé. Nous cherchons une solution" ;
+"Common_ENError11_Description" = "Erreur 11 : Quelque chose s'est mal passé. Votre niveau de risque ne peut pas être déterminé. Veuillez redémarrer votre appareil et réessayer demain.";
 
-"Common_ENError11_Description" = "Erreur 11 : Quelque chose s'est mal passé. Votre niveau de risque ne peut pas être déterminé. Veuillez redémarrer votre appareil et réessayer demain." ;
+"Common_ENError13_Description" = "Erreur 13 : Votre enregistrement de l'exposition pour aujourd'hui a déjà été effectué. Veuillez réessayer dans 24 heures.";
 
-"Common_ENError13_Description" = "Erreur 13 : Votre enregistrement de l'exposition pour aujourd'hui a déjà été effectué. Veuillez réessayer dans 24 heures." ;
-
-"Common_Alert_Action_moreInfo" = "En savoir plus" ;
+"Common_Alert_Action_moreInfo" = "En savoir plus";
 
 "Common_BackgroundFetch_AlertMessage" = "Vous avez désactivé les mises à jour en arrière-plan pour l'application Coronalert. Veuillez activer les mises à jour en arrière-plan pour utiliser l'enregistrement automatique de l'exposition. Si vous n'activez pas les mises à jour en arrière-plan, vous ne pouvez que commencer à enregistrer l'exposition manuellement dans l'application. Vous pouvez activer ces mises à jour pour l'application dans les paramètres de votre appareil";
 
-"Common_BackgroundFetch_SettingsTitle" = "Ouvrir les paramètres de l'appareil" ;
+"Common_BackgroundFetch_SettingsTitle" = "Ouvrir les paramètres de l'appareil";
 
-"Common_BackgroundFetch_OKTitle" = "Démarrer l'enregistrement de l'exposition manuellement" ;
+"Common_BackgroundFetch_OKTitle" = "Démarrer l'enregistrement de l'exposition manuellement";
 
-"Common_BackgroundFetch_AlertTitle" = "Mises à jour en l'arrière-plan désactivées" ;
+"Common_BackgroundFetch_AlertTitle" = "Mises à jour en l'arrière-plan désactivées";
 
-/* Général - Liens */
-"General_moreInfo_URL" = "https://www.coronalert.be" ;
+/* General - Links */
+"General_moreInfo_URL" = "https://www.coronalert.be";
 
-"General_moreInfo_URL_EN5" = "https://www.coronalert.be" ;
+"General_moreInfo_URL_EN5" = "https://www.coronalert.be";
 
-"General_moreInfo_URL_EN11" = "https://www.coronalert.be" ;
+"General_moreInfo_URL_EN11" = "https://www.coronalert.be";
 
-"General_moreInfo_URL_EN13" = "https://www.coronalert.be" ;
+"General_moreInfo_URL_EN13" = "https://www.coronalert.be";
 
-/* Accessibilité */
-"AccessibilityLabel_Close" = "Fermer" ;
+/* Accessibility */
+"AccessibilityLabel_Close" = "Fermer";
 
-"AccessibilityLabel_PhoneNumber" = "Numéro de téléphone" ;
+"AccessibilityLabel_PhoneNumber" = "Numéro de téléphone";
 
-/* Détection de l'exposition */
-"ExposureDetection_Off" = "Enregistrement de l'exposition arrêté" ;
+/* Exposure Detection */
+"ExposureDetection_Off" = "Enregistrement de l'exposition arrêté";
 
-"ExposureDetection_Outdated" = "L'enregistrement de l'exposition n'est pas possible" ;
+"ExposureDetection_Outdated" = "L'enregistrement de l'exposition n'est pas possible";
 
-"ExposureDetection_Unknown" = "Risque inconnu" ;
+"ExposureDetection_Unknown" = "Risque inconnu";
 
-"ExposureDetection_Low" = "Faible risque" ;
+"ExposureDetection_Low" = "Faible risque";
 
-"ExposureDetection_High" = "Risque important" ;
+"ExposureDetection_High" = "Risque important";
 
-"ExposureDetection_NumberOfDaysStored" = "%d de 14 jours d'activité" ;
+"ExposureDetection_NumberOfDaysStored" = "%d de 14 jours d'activité";
 
-"ExposureDetection_Refreshed" = "Updated : %@" ;
+"ExposureDetection_Refreshed" = "Updated : %@";
 
-"ExposureDetection_Refreshed_Never" = "Inconnu" ;
+"ExposureDetection_Refreshed_Never" = "Inconnu";
 
-"ExposureDetection_RefreshingIn" = "Mise à jour en %02d:%02d\U00A0minutes" ;
+"ExposureDetection_RefreshingIn" = "Mise à jour en %02d:%02d minutes";
 
-"ExposureDetection_RefreshIn" = "Mise à jour en %@" ;
+"ExposureDetection_RefreshIn" = "Mise à jour en %@";
 
-"ExposureDetection_Refresh_24h" = "Mise à jour toutes les 24 heures" ;
+"ExposureDetection_Refresh_24h" = "Mise à jour toutes les 24 heures";
 
-"ExposureDetection_LastRiskLevel" = "Dernier enregistrement d'exposition : %@" ;
+"ExposureDetection_LastRiskLevel" = "Dernier enregistrement d'exposition : %@";
 
-"ExposureDetection_OffText" = "Activez mise à jour de l'exposition pour évaluer votre statut de risque aujourd'hui" ;
+"ExposureDetection_OffText" = "Activez mise à jour de l'exposition pour évaluer votre statut de risque aujourd'hui";
 
-"ExposureDetection_OutdatedText" = "Votre enregistrement d'exposition n'a pas pu être mis à jour pendant plus de 48 heures" ;
+"ExposureDetection_OutdatedText" = "Votre enregistrement d'exposition n'a pas pu être mis à jour pendant plus de 48 heures";
 
-"ExposureDetection_UnknownText" = "Comme vous n'avez pas activé l'enregistrement de l'exposition depuis suffisamment longtemps, nous ne pouvons pas calculer votre risque d'infection." ;
+"ExposureDetection_UnknownText" = "Comme vous n'avez pas activé l'enregistrement de l'exposition depuis suffisamment longtemps, nous ne pouvons pas calculer votre risque d'infection.";
 
-"ExposureDetection_LoadingText" = "Les données actuelles sont en cours de téléchargement et de vérification. Cela peut prendre plusieurs minutes" ;
+"ExposureDetection_LoadingText" = "Les données actuelles sont en cours de téléchargement et de vérification. Cela peut prendre plusieurs minutes";
 
-"ExposureDetection_Behavior_Title" = "Directives" ;
+"ExposureDetection_Behavior_Title" = "Directives";
 
-"ExposureDetection_Behavior_Subtitle" = "Voici ce que vous devez faire" ;
+"ExposureDetection_Behavior_Subtitle" = "Voici ce que vous devez faire";
 
-"ExposureDetection_Guide_Hands" = "Lavez-vous les mains régulièrement" ;
+"ExposureDetection_Guide_Hands" = "Lavez-vous les mains régulièrement";
 
-"ExposureDetection_Guide_Mask" = "Portez un masque facial lorsque vous rencontrez d'autres personnes" ;
+"ExposureDetection_Guide_Mask" = "Portez un masque facial lorsque vous rencontrez d'autres personnes";
 
-"ExposureDetection_Guide_Distance" = "Gardez au moins 1,5 mètre de distance avec les autres personnes" ;
+"ExposureDetection_Guide_Distance" = "Gardez au moins 1,5 mètre de distance avec les autres personnes";
 
-"ExposureDetection_Guide_Sneeze" = "Éternuez ou toussez dans votre coude ou dans un mouchoir en papier. " ;
+"ExposureDetection_Guide_Sneeze" = "Éternuez ou toussez dans votre coude ou dans un mouchoir en papier. ";
 
-"ExposureDetection_Guide_Home" = "Si possible, rentrez et restez chez vous." ;
+"ExposureDetection_Guide_Home" = "Si possible, rentrez et restez chez vous.";
 
 "ExposureDetection_Guide_Hotline1" = "Si vous avez des questions sur les symptômes, la disponibilité des tests ou l'auto-isolement, veuillez contacter l'une des personnes suivantes :";
 
-"ExposureDetection_Guide_Hotline2" = "Votre médecin généraliste" ;
+"ExposureDetection_Guide_Hotline2" = "Votre médecin généraliste";
 
-"ExposureDetection_Guide_Hotline3" = "Service d'urgence médicale au numéro de téléphone 116117" ;
+"ExposureDetection_Guide_Hotline3" = "Service d'urgence médicale au numéro de téléphone 116117";
 
-"ExposureDetection_Guide_Hotline4" = "Votre autorité de santé publique" ;
+"ExposureDetection_Guide_Hotline4" = "Votre autorité de santé publique";
 
-"ExposureDetection_Explanation_Title" = "Risque d'infection" ;
+"ExposureDetection_Explanation_Title" = "Risque d'infection";
 
-"ExposureDetection_Explanation_Subtitle_Active" = "Voici comment votre risque a été calculé" ;
+"ExposureDetection_Explanation_Subtitle_Active" = "Voici comment votre risque a été calculé";
 
-"ExposureDetection_Explanation_Subtitle_Inactive" = "C'est ainsi que votre risque est calculé" ;
+"ExposureDetection_Explanation_Subtitle_Inactive" = "C'est ainsi que votre risque est calculé";
 
-"ExposureDetection_Explanation_Text_Off" = "Votre risque d'infection est calculé à partir des données d'enregistrement de l'exposition (durée et proximité) localement sur votre appareil. Votre risque d'infection ne peut pas être vu par, ou transmis à quelqu'un d'autre" ;
+"ExposureDetection_Explanation_Text_Off" = "Votre risque d'infection est calculé à partir des données d'enregistrement de l'exposition (durée et proximité) localement sur votre appareil. Votre risque d'infection ne peut pas être vu par, ou transmis à quelqu'un d'autre";
 
-"ExposureDetection_Explanation_Text_Outdated" = "Comme vous n'avez pas activé l'enregistrement de l'exposition depuis suffisamment longtemps, nous ne pouvons pas calculer votre risque d'infection" ; "Votre risque d'infection est calculé à partir des données d'enregistrement de l'exposition (durée et proximité) localement sur votre appareil. Votre risque d'infection ne peut pas être vu par, ou transmis à quelqu'un d'autre" ;
+"ExposureDetection_Explanation_Text_Outdated" = "Comme vous n'avez pas activé l'enregistrement de l'exposition depuis suffisamment longtemps, nous ne pouvons pas calculer votre risque d'infection";
 
-"ExposureDetection_Explanation_Text_Unknown" = "Comme vous n'avez pas activé l'enregistrement de l'exposition depuis suffisamment longtemps, nous ne pouvons pas calculer votre risque d'infection. Votre risque d'infection est calculé à partir des données d'enregistrement de l'exposition (durée et proximité) localement sur votre appareil. Votre risque d'infection ne peut pas être vu par, ou transmis à quelqu'un d'autre" ;
+"ExposureDetection_Explanation_Text_Unknown" = "Comme vous n'avez pas activé l'enregistrement de l'exposition depuis suffisamment longtemps, nous ne pouvons pas calculer votre risque d'infection. Votre risque d'infection est calculé à partir des données d'enregistrement de l'exposition (durée et proximité) localement sur votre appareil. Votre risque d'infection ne peut pas être vu par, ou transmis à quelqu'un d'autre";
 
-"ExposureDetection_Explanation_Text_Low" = "Vous avez un faible risque d'infection car aucune rencontre avec une personne ayant reçu un diagnostic de COVID-19 n'a été enregistrée, ou votre rencontre a été de courte durée et à grande distance. Votre risque d'infection ne peut pas être vu par, ou transmis à quelqu'un d'autre" ;
+"ExposureDetection_Explanation_Text_Low" = "Vous avez un faible risque d'infection car aucune rencontre avec une personne ayant reçu un diagnostic de COVID-19 n'a été enregistrée, ou votre rencontre a été de courte durée et à grande distance. Votre risque d'infection ne peut pas être vu par, ou transmis à quelqu'un d'autre";
 
-"ExposureDetection_Explanation_Text_High" = "\n\nPour cette raison, votre risque d'infection a été classé comme élevé.\n Votre risque d'infection est calculé à partir des données d'enregistrement de l'exposition (durée et proximité) localement sur votre appareil. Votre risque d'infection ne peut pas être vu par, ou transmis à quelqu'un d'autre.\nQuand vous rentrez chez vous, veuillez également éviter tout contact étroit avec les membres de votre famille ou de votre ménage." ;
+"ExposureDetection_Explanation_Text_High" = "\n\nPour cette raison, votre risque d'infection a été classé comme élevé.\n Votre risque d'infection est calculé à partir des données d'enregistrement de l'exposition (durée et proximité) localement sur votre appareil. Votre risque d'infection ne peut pas être vu par, ou transmis à quelqu'un d'autre.\nQuand vous rentrez chez vous, veuillez également éviter tout contact étroit avec les membres de votre famille ou de votre ménage.";
 
-"ExposureDetection_Button_Enable" = "Activer le journal des expositions" ;
+"ExposureDetection_Button_Enable" = "Activer le journal des expositions";
 
-"ExposureDetection_Button_Refresh" = "Mise à jour" ;
+"ExposureDetection_Button_Refresh" = "Mise à jour";
 
-/* Section de recherche active */
-"ExposureDetection_ActiveTracingSection_Title" = "Période enregistrée" ;
-"ExposureDetection_ActiveTracingSection_Subtitle" = "Cette période est incluse dans le calcul" ;
+/* Active Tracing Section */
+"ExposureDetection_ActiveTracingSection_Title" = "Période enregistrée";
 
-/*
- Cette section comporte deux paragraphes. Le premier ne contient que du texte...
- */
-"ExposureDetection_ActiveTracingSection_Text_Paragraph0" = "Votre risque d'infection ne peut être calculé que pour les périodes durant lesquelles l'enregistrement de l'exposition était actif. La fonction de journalisation doit donc rester active en permanence" ;
+"ExposureDetection_ActiveTracingSection_Subtitle" = "Cette période est incluse dans le calcul";
 
-/*
- ... le deuxième paragraphe contient deux colonnes. A gauche, il y a notre actif
- indicateur de traçage. Dans la colonne de droite, il y a juste un texte qui explique ce que
- que l'indicateur montre.
+/* There are two paragraphs in this section. The first one just contains text… */
+"ExposureDetection_ActiveTracingSection_Text_Paragraph0" = "Votre risque d'infection ne peut être calculé que pour les périodes durant lesquelles l'enregistrement de l'exposition était actif. La fonction de journalisation doit donc rester active en permanence";
 
- Paramètres :
- - premièrement : nombre total de jours pertinents (généralement 14).
- - deuxièmement : le nombre réel de jours avec une recherche active.
- */
+/* … the second paragraph contains two columns. On the left there is our active\n tracing indicator. On the right column there is just text that explains what\n the indicator shows.\n\n Parameters:\n - first: total number of relevant days (usually 14).\n - second: the actual number of days with active tracing. */
+"ExposureDetection_ActiveTracingSection_Text_Paragraph1" = "L'enregistrement de l'exposition couvre les derniers %1$u jours. Pendant cette période, la fonction de journalisation de votre appareil était active pour %2$u jours. L'application supprime automatiquement les anciens journaux, car ils ne sont plus pertinents pour la prévention des infections";
 
-"ExposureDetection_ActiveTracingSection_Text_Paragraph1" = "L'enregistrement de l'exposition couvre les derniers %1$u jours. Pendant cette période, la fonction de journalisation de votre appareil était active pour %2$u jours. L'application supprime automatiquement les anciens journaux, car ils ne sont plus pertinents pour la prévention des infections" ;
+/* Exposure Detection Errors */
+"ExposureDetectionError_Alert_Title" = "Erreur";
 
-/* Erreurs de détection de l'exposition */
-"ExposureDetectionError_Alert_Title" = "Erreur" ;
+"ExposureDetectionError_Alert_Action_Details" = "Détails";
 
-"ExposureDetectionError_Alert_Action_Details" = "Détails" ;
+"ExposureDetectionError_Alert_Message" = "Une erreur s'est produite lors de l'enregistrement de l'exposition";
 
-"ExposureDetectionError_Alert_Message" = "Une erreur s'est produite lors de l'enregistrement de l'exposition" ;
+/* How Risk Detection Works Alert.\n First introduced due to EXPOSUREAPP-1738.\n The alert only displays a single OK-button. We re-use the localized string\n `Alert_ActionOk` for that. */
+"How_Risk_Detection_Works_Alert_Title" = "Informations sur la fonctionnalité d'enregistrement des expositions";
 
-/*
- Comment fonctionne la détection des risques Alerte.
- Introduit pour la première fois en raison de l'EXPOSITIONAPP-1738.
- L'alerte n'affiche qu'un seul bouton OK. Nous réutilisons la chaîne localisée
- Alerte_ActionOk pour cela.
- */
+/* Settings */
+"Settings_StatusActive" = "On";
 
-"How_Risk_Detection_Works_Alert_Title" = "Informations sur la fonctionnalité d'enregistrement des expositions" ;
+"Settings_StatusInactive" = "Off";
 
-"Message d'alerte sur la détection des risques" = "Votre risque d'infection ne peut être calculé que pour les périodes pendant lesquelles l'enregistrement de l'exposition était actif. La fonction d'enregistrement doit donc rester active en permanence.
-L'enregistrement de l'exposition couvre les derniers %1$u jours.
-L'application supprime automatiquement les anciens journaux, car ils ne sont plus pertinents pour la prévention des infections.
+"Settings_StatusEnable" = "Activer";
 
-Pour de plus amples informations, veuillez consulter notre page FAQ" ;
+"Settings_StatusDisable" = "Désactiver";
 
-/* Paramètres */
-"Settings_StatusActive" = "On" ;
+"Settings_KontaktProtokollStatusActive" = "Actif";
 
-"Settings_StatusInactive" = "Off" ;
+"Settings_KontaktProtokollStatusInactive" = "Inactif";
 
-"Settings_StatusEnable" = "Activer" ;
+"Settings_Tracing_Label" = "Journalisation de l'exposition";
 
-"Settings_StatusDisable" = "Désactiver" ;
+"Settings_Notification_Label" = "Notifications";
 
-"Settings_KontaktProtokollStatusActive" = "Actif" ;
+"Settings_Reset_Label" = "Réinitialiser l'application";
 
-"Settings_KontaktProtokollStatusInactive" = "Inactif" ;
+"Settings_Tracing_Description" = "Autoriser la génération et le partage d'ID aléatoires COVID-19";
 
-"Settings_Tracing_Label" = "Journalisation de l'exposition" ;
+"Settings_Notification_Description" = "Autoriser les notifications automatiques de votre statut de risque COVID-19";
 
-"Settings_Notification_Label" = "Notifications" ;
+"Settings_Reset_Description" = "Supprimez toutes vos données dans l'application";
 
-"Settings_Reset_Label" = "Réinitialiser l'application" ;
+"Settings_NavTitle" = "Paramètres";
 
-"Settings_Tracing_Description" = "Autoriser la génération et le partage d'ID aléatoires COVID-19" ;
-
-"Settings_Notification_Description" = "Autoriser les notifications automatiques de votre statut de risque COVID-19" ;
-
-"Settings_Reset_Description" = "Supprimez toutes vos données dans l'application" ;
-
-"Settings_NavTitle" = "Paramètres" ;
-
-/* Paramètres de notification */
+/* Noticiation Settings */
 "NotificationSettings_On_Title" = "Voulez-vous activer les notifications de votre statut de risque COVID-19 ?";
 
-"NotificationSettings_On_SectionTitle" = "Paramétrage" ;
+"NotificationSettings_On_SectionTitle" = "Paramétrage";
 
-"NotificationSettings_On_RiskChanges" = "Votre risque d'infection a changé" ;
+"NotificationSettings_On_RiskChanges" = "Votre risque d'infection a changé";
 
-"NotificationSettings_On_TestsStatus" = "Statut de votre test COVID-19" ;
+"NotificationSettings_On_TestsStatus" = "Statut de votre test COVID-19";
 
-"NotificationSettings_Off_SectionTitle" = "Paramétrage" ;
+"NotificationSettings_Off_SectionTitle" = "Paramétrage";
 
-"NotificationSettings_Off_EnableNotifications" = "Notifications" ;
+"NotificationSettings_Off_EnableNotifications" = "Notifications";
 
-"NotificationSettings_Off_StatusInactive" = "Off" ;
+"NotificationSettings_Off_StatusInactive" = "Off";
 
-"NotificationSettings_Off_InfoTitle" = "Activer les notifications" ;
+"NotificationSettings_Off_InfoTitle" = "Activer les notifications";
 
-"NotificationSettings_Off_InfoDescription" = "Pour activer les notifications, vous devez autoriser les notifications pour l'application Coronalert dans les paramètres de votre appareil" ;
+"NotificationSettings_Off_InfoDescription" = "Pour activer les notifications, vous devez autoriser les notifications pour l'application Coronalert dans les paramètres de votre appareil";
 
-"NotificationSettings_Off_OpenSettings" = "Ouvrir les paramètres" ;
+"NotificationSettings_Off_OpenSettings" = "Ouvrir les paramètres";
 
-"NotificationSettings_NavTitle" = "Notifications" ;
+"NotificationSettings_NavTitle" = "Notifications";
 
 "NotificationSettings_onImageDescription" = "Une femme reçoit une notification de son application Coronalert";
 
 "NotificationSettings_offImageDescription" = "Une femme ne peut pas recevoir de notifications de son application Coronalert";
 
-/* Embarquement */
-"Onboarding_LetsGo_actionText" = "Commençons" ;
+/* Onboarding */
+"Onboarding_LetsGo_actionText" = "Commençons";
 
-"Onboarding_Continue_actionText" = "Suivant" ;
+"Onboarding_Continue_actionText" = "Suivant";
 
-"Onboarding_EnableLogging_actionText" = "Suivant" ;
+"Onboarding_EnableLogging_actionText" = "Suivant";
 
-"Onboarding_Continue_actionTextHint" = "Vous pouvez sauter cet écran" ;
+"Onboarding_Continue_actionTextHint" = "Vous pouvez sauter cet écran";
 
-"Onboarding_doNotAllow_actionText" = "Ne pas autoriser" ;
+"Onboarding_doNotAllow_actionText" = "Ne pas autoriser";
 
-"Onboarding_DoNotActivate_actionText" = "Ne pas activer" ;
+"Onboarding_DoNotActivate_actionText" = "Ne pas activer";
 
-"Onboarding_DeactivateExposureConfirmation_title" = "Cela signifie que l'application Coronalert ne peut pas envoyer ou recevoir de notifications concernant votre statut de risque COVID-19" ;
+"Onboarding_DeactivateExposureConfirmation_title" = "Cela signifie que l'application Coronalert ne peut pas envoyer ou recevoir de notifications concernant votre statut de risque COVID-19";
 
-"Onboarding_DeactivateExposureConfirmation_message" = "Vous pouvez désactiver cette fonction à tout moment" ;
+"Onboarding_DeactivateExposureConfirmation_message" = "Vous pouvez désactiver cette fonction à tout moment";
 
-"OnboardingInfo_togetherAgainstCoronaPage_imageDescription" = "Un groupe de personnes utilisent toutes leurs appareils en ville" ;
+"OnboardingInfo_togetherAgainstCoronaPage_imageDescription" = "Un groupe de personnes utilisent toutes leurs appareils en ville";
 
-"OnboardingInfo_togetherAgainstCoronaPage_title" = "Luttons ensemble contre le coronavirus" ;
+"OnboardingInfo_togetherAgainstCoronaPage_title" = "Luttons ensemble contre le coronavirus";
 
-"OnboardingInfo_togetherAgainstCoronaPage_boldText" = "Plus de protection pour vous et pour nous tous. En utilisant l'application Coronalert, nous pouvons briser les chaînes d'infection beaucoup plus rapidement" ;
+"OnboardingInfo_togetherAgainstCoronaPage_boldText" = "Plus de protection pour vous et pour nous tous. En utilisant l'application Coronalert, nous pouvons briser les chaînes d'infection beaucoup plus rapidement";
 
-"OnboardingInfo_togetherAgainstCoronaPage_normalText" = "Transformez votre appareil en système d'alerte corona. Obtenez un aperçu de votre statut de risque et découvrez si vous avez été en contact étroit avec des personnes diagnostiquées positives au COVID-19 au cours des 14 derniers jours. \nL'application enregistre les rencontres entre individus par leurs appareils en échangeant des identifiants aléatoires cryptés, et sans accéder à aucune donnée personnelle." ;
+"OnboardingInfo_togetherAgainstCoronaPage_normalText" = "Transformez votre appareil en système d'alerte corona. Obtenez un aperçu de votre statut de risque et découvrez si vous avez été en contact étroit avec des personnes diagnostiquées positives au COVID-19 au cours des 14 derniers jours. \nL'application enregistre les rencontres entre individus par leurs appareils en échangeant des identifiants aléatoires cryptés, et sans accéder à aucune donnée personnelle.";
 
-"OnboardingInfo_privacyPage_imageDescription" = "Une femme utilise l'application app Coronalert sur son smartphone. Une icône représentant un cadenas sur le fond d'un bouclier symbolise des données cryptées" ;
+"OnboardingInfo_privacyPage_imageDescription" = "Une femme utilise l'application app Coronalert sur son smartphone. Une icône représentant un cadenas sur le fond d'un bouclier symbolise des données cryptées";
 
-"OnboardingInfo_privacyPage_title" = "Confidentialité des données" ;
+"OnboardingInfo_privacyPage_title" = "Confidentialité des données";
 
 "OnboardingInfo_privacyPage_boldText" = "";
 
 "OnboardingInfo_privacyPage_normalText" = "Vous resterez anonyme. Vos données sont entièrement cryptées et transmises sous un pseudonyme : GDPR, article 4, paragraphe. 7:\n\nRobert Koch-Institute\nNNNordufer 20\n13353 Berlin\nVeuillez lire notre règlement sur la protection des données.\n\n\nInformation sur la protection des données :";
 
-"OnboardingInfo_enableLoggingOfContactsPage_imageDescription" = "Trois personnes ont activé l'enregistrement de l'exposition sur leur appareil, qui enregistreront leurs rencontres les uns avec les autres." ;
+"OnboardingInfo_enableLoggingOfContactsPage_imageDescription" = "Trois personnes ont activé l'enregistrement de l'exposition sur leur appareil, qui enregistreront leurs rencontres les uns avec les autres.";
 
-"OnboardingInfo_enableLoggingOfContactsPage_title" = "Comment activer la journalisation de l'exposition" ;
+"OnboardingInfo_enableLoggingOfContactsPage_title" = "Comment activer la journalisation de l'exposition";
 
-"OnboardingInfo_enableLoggingOfContactsPage_boldText" = "Pour identifier si vous êtes à risque d'infection, vous devez activer la fonction de journalisation de l'exposition" ;
+"OnboardingInfo_enableLoggingOfContactsPage_boldText" = "Pour identifier si vous êtes à risque d'infection, vous devez activer la fonction de journalisation de l'exposition";
 
-"OnboardingInfo_enableLoggingOfContactsPage_normalText" = "La journalisation de l'exposition fonctionne en ce sens que votre appareil reçoit, via Bluetooth, les ID aléatoires chiffrés des autres utilisateurs et transmet votre propre ID aléatoire à leurs appareils. Cette fonction peut être désactivée à tout moment. \Les identifiants aléatoires cryptés ne transmettent à d'autres personnes que des informations sur la date, la durée et la proximité (calculée en fonction de la puissance du signal). Les données personnelles telles que le nom, l'adresse et le lieu ne sont jamais enregistrées. Les individus ne peuvent pas être identifiés" ;
+"OnboardingInfo_enableLoggingOfContactsPage_normalText" = "La journalisation de l'exposition fonctionne en ce sens que votre appareil reçoit, via Bluetooth, les ID aléatoires chiffrés des autres utilisateurs et transmet votre propre ID aléatoire à leurs appareils. Cette fonction peut être désactivée à tout moment. \Les identifiants aléatoires cryptés ne transmettent à d'autres personnes que des informations sur la date, la durée et la proximité (calculée en fonction de la puissance du signal). Les données personnelles telles que le nom, l'adresse et le lieu ne sont jamais enregistrées. Les individus ne peuvent pas être identifiés";
 
-"OnboardingInfo_enableLoggingOfContactsPage_panelTitle" = "Déclaration de consentement" ;
+"OnboardingInfo_enableLoggingOfContactsPage_panelTitle" = "Déclaration de consentement";
 
-"OnboardingInfo_enableLoggingOfContactsPage_panelBody" = "Pour savoir si vous avez été en contact avec une personne infectée et s'il y a un risque que vous soyez vous-même infecté, vous devez activer la fonction d'enregistrement de l'exposition de l'application. En appuyant sur le bouton \"Activer\", vous acceptez l'activation de la fonction d'enregistrement de l'exposition de l'application et le traitement des données associées. Afin d'utiliser la fonction d'enregistrement de l'exposition de l'application, vous devrez activer la fonction d'enregistrement de l'exposition COVID-19 fournie par Apple sur votre iPhone et accorder à l'application Coronalert l'autorisation de l'utiliser. \Lorsque l'enregistrement de l'exposition est activé, votre iPhone génère et transmet continuellement des ID aléatoires via Bluetooth, que les autres smartphones Apple et Android à proximité peuvent recevoir si l'enregistrement de l'exposition est également activé chez eux. Votre iPhone, à son tour, reçoit les ID aléatoires des autres smartphones. Vos propres ID aléatoires et celles reçues d'autres smartphones sont enregistrées dans le journal d'exposition et y sont stockées pendant 14 jours. Pour identifier votre risque d'infection, l'application charge une liste - plusieurs fois par jour ou sur demande - des ID aléatoires de tous les utilisateurs qui ont déclaré à l'application qu'ils ont été infectés par le coronavirus. Cette liste est ensuite comparée avec les ID aléatoires stockées dans le journal d'exposition. Si l'application détecte que vous avez pu être en contact avec un utilisateur infecté, elle vous en informe et vous dit qu'il y a un risque que vous soyez également infecté. Dans ce cas, l'application a également accès à d'autres données stockées dans le journal d'exposition de votre iPhone (date, durée et puissance du signal Bluetooth du contact). La puissance du signal Bluetooth est utilisée pour calculer la distance physique (plus le signal est fort, plus la distance est faible). L'application analyse ensuite ces informations afin d'évaluer la probabilité que vous ayez été infecté par le coronavirus et de vous donner des recommandations sur la marche à suivre. Cette analyse n'est effectuée que localement sur votre iPhone. En dehors de vous, personne (pas même le RKI) ne saura si vous avez été en contact avec une personne infectée et quel risque a été identifié pour vous. Pour retirer votre consentement à la fonction d'enregistrement de l'exposition, vous pouvez désactiver la fonction en utilisant le commutateur à bascule dans l'application ou supprimer l'application. Si vous décidez d'utiliser à nouveau la fonction d'enregistrement de l'exposition, vous pouvez réactiver la fonction ou réinstaller l'application. Si vous désactivez la fonction de journalisation de l'exposition, l'application ne vérifiera plus si vous avez été en contact avec un utilisateur infecté. Si vous souhaitez également empêcher votre appareil d'envoyer et de recevoir des ID aléatoires, vous devrez désactiver la fonction COVID-19 Exposure Logging dans les paramètres de votre iPhone. Veuillez noter que vos propres ID aléatoires et celles reçues d'autres smartphones qui sont stockées dans le journal d'exposition ne seront pas supprimées dans l'application. Vous ne pouvez supprimer définitivement les données stockées dans le journal d'exposition que dans les paramètres de votre iPhone. L'avis de confidentialité de l'application (comprenant une explication du traitement des données effectué pour la fonction de journal d'exposition) se trouve dans le menu sous \"Informations sur la confidentialité des données\"" ;
+"OnboardingInfo_enableLoggingOfContactsPage_panelBody" = "Pour savoir si vous avez été en contact avec une personne infectée et s'il y a un risque que vous soyez vous-même infecté, vous devez activer la fonction d'enregistrement de l'exposition de l'application. En appuyant sur le bouton \"Activer\", vous acceptez l'activation de la fonction d'enregistrement de l'exposition de l'application et le traitement des données associées. Afin d'utiliser la fonction d'enregistrement de l'exposition de l'application, vous devrez activer la fonction d'enregistrement de l'exposition COVID-19 fournie par Apple sur votre iPhone et accorder à l'application Coronalert l'autorisation de l'utiliser. \Lorsque l'enregistrement de l'exposition est activé, votre iPhone génère et transmet continuellement des ID aléatoires via Bluetooth, que les autres smartphones Apple et Android à proximité peuvent recevoir si l'enregistrement de l'exposition est également activé chez eux. Votre iPhone, à son tour, reçoit les ID aléatoires des autres smartphones. Vos propres ID aléatoires et celles reçues d'autres smartphones sont enregistrées dans le journal d'exposition et y sont stockées pendant 14 jours. Pour identifier votre risque d'infection, l'application charge une liste - plusieurs fois par jour ou sur demande - des ID aléatoires de tous les utilisateurs qui ont déclaré à l'application qu'ils ont été infectés par le coronavirus. Cette liste est ensuite comparée avec les ID aléatoires stockées dans le journal d'exposition. Si l'application détecte que vous avez pu être en contact avec un utilisateur infecté, elle vous en informe et vous dit qu'il y a un risque que vous soyez également infecté. Dans ce cas, l'application a également accès à d'autres données stockées dans le journal d'exposition de votre iPhone (date, durée et puissance du signal Bluetooth du contact). La puissance du signal Bluetooth est utilisée pour calculer la distance physique (plus le signal est fort, plus la distance est faible). L'application analyse ensuite ces informations afin d'évaluer la probabilité que vous ayez été infecté par le coronavirus et de vous donner des recommandations sur la marche à suivre. Cette analyse n'est effectuée que localement sur votre iPhone. En dehors de vous, personne (pas même le RKI) ne saura si vous avez été en contact avec une personne infectée et quel risque a été identifié pour vous. Pour retirer votre consentement à la fonction d'enregistrement de l'exposition, vous pouvez désactiver la fonction en utilisant le commutateur à bascule dans l'application ou supprimer l'application. Si vous décidez d'utiliser à nouveau la fonction d'enregistrement de l'exposition, vous pouvez réactiver la fonction ou réinstaller l'application. Si vous désactivez la fonction de journalisation de l'exposition, l'application ne vérifiera plus si vous avez été en contact avec un utilisateur infecté. Si vous souhaitez également empêcher votre appareil d'envoyer et de recevoir des ID aléatoires, vous devrez désactiver la fonction COVID-19 Exposure Logging dans les paramètres de votre iPhone. Veuillez noter que vos propres ID aléatoires et celles reçues d'autres smartphones qui sont stockées dans le journal d'exposition ne seront pas supprimées dans l'application. Vous ne pouvez supprimer définitivement les données stockées dans le journal d'exposition que dans les paramètres de votre iPhone. L'avis de confidentialité de l'application (comprenant une explication du traitement des données effectué pour la fonction de journal d'exposition) se trouve dans le menu sous \"Informations sur la confidentialité des données\"";
 
-"OnboardingInfo_enableLoggingOfContactsPage_stateHeader" = "Statut" ;
+"OnboardingInfo_enableLoggingOfContactsPage_stateHeader" = "Statut";
 
-"OnboardingInfo_enableLoggingOfContactsPage_stateTitle" = "Exposure Logging" ;
+"OnboardingInfo_enableLoggingOfContactsPage_stateTitle" = "Exposure Logging";
 
-"OnboardingInfo_enableLoggingOfContactsPage_stateActive" = "Actif" ;
+"OnboardingInfo_enableLoggingOfContactsPage_stateActive" = "Actif";
 
-"OnboardingInfo_enableLoggingOfContactsPage_stateStopped" = "Inactif" ;
+"OnboardingInfo_enableLoggingOfContactsPage_stateStopped" = "Inactif";
 
-"OnboardingInfo_howDoesDataExchangeWorkPage_imageDescription" = "Un diagnostic positif crypté est transmis au système qui avertit alors les autres utilisateurs" ;
+"OnboardingInfo_howDoesDataExchangeWorkPage_imageDescription" = "Un diagnostic positif crypté est transmis au système qui avertit alors les autres utilisateurs";
 
-"OnboardingInfo_howDoesDataExchangeWorkPage_title" = "Si vous êtes diagnostiqué positif au COVID-19 ..." ;
+"OnboardingInfo_howDoesDataExchangeWorkPage_title" = "Si vous êtes diagnostiqué positif au COVID-19 ...";
 
-"OnboardingInfo_howDoesDataExchangeWorkPage_boldText" = "... veuillez le signaler dans l'application Coronalert. Le partage de vos résultats de test est volontaire et sécurisé. Veuillez le faire dans l'intérêt de la santé de tous" ;
+"OnboardingInfo_howDoesDataExchangeWorkPage_boldText" = "... veuillez le signaler dans l'application Coronalert. Le partage de vos résultats de test est volontaire et sécurisé. Veuillez le faire dans l'intérêt de la santé de tous";
 
-"OnboardingInfo_howDoesDataExchangeWorkPage_normalText" = "Votre notification est cryptée de manière sécurisée et traitée sur un serveur sécurisé. Les personnes dont les identifiants aléatoires cryptés ont été collectés par votre appareil, recevront désormais un avertissement ainsi que des informations sur ce qu'elles doivent faire maintenant" ;
+"OnboardingInfo_howDoesDataExchangeWorkPage_normalText" = "Votre notification est cryptée de manière sécurisée et traitée sur un serveur sécurisé. Les personnes dont les identifiants aléatoires cryptés ont été collectés par votre appareil, recevront désormais un avertissement ainsi que des informations sur ce qu'elles doivent faire maintenant";
 
 "OnboardingInfo_alwaysStayInformedPage_imageDescription" = "Une femme reçoit une notification de son application Coronalert";
 
-"OnboardingInfo_alwaysStayInformedPage_title" = "Recevoir des avertissements et identifier les risques" ;
+"OnboardingInfo_alwaysStayInformedPage_title" = "Recevoir des avertissements et identifier les risques";
 
-"OnboardingInfo_alwaysStayInformedPage_boldText" = "L'application peut vous informer automatiquement de votre statut de risque et vous avertir des nouvelles infections de personnes auxquelles vous avez été exposé. Autorisez l'application à vous avertir dès maintenant. " ;
+"OnboardingInfo_alwaysStayInformedPage_boldText" = "L'application peut vous informer automatiquement de votre statut de risque et vous avertir des nouvelles infections de personnes auxquelles vous avez été exposé. Autorisez l'application à vous avertir dès maintenant. ";
 
-"OnboardingInfo_alwaysStayInformedPage_normalText" = "Vous pouvez alors vous isoler pour protéger les autres et savoir où vous pouvez vous faire tester" ;
+"OnboardingInfo_alwaysStayInformedPage_normalText" = "Vous pouvez alors vous isoler pour protéger les autres et savoir où vous pouvez vous faire tester";
 
 /* Exposure Submission */
-"ExposureSubmission_Hotline_Number" = "+498007540002" ;
+"ExposureSubmission_Hotline_Number" = "+498007540002";
 
-"ExposureSubmission_DataPrivacyTitle" = "Confidentialité des données" ;
+"ExposureSubmission_DataPrivacyTitle" = "Confidentialité des données";
 
-"ExposureSubmission_Continue_actionText" = "Suivant" ;
+"ExposureSubmission_Continue_actionText" = "Suivant";
 
-"ExposureSubmission_DataPrivacyDescription" = "En appuyant sur \"Accepter\", vous consentez à ce que l'application interroge le statut de votre test coronavirus et l'affiche dans l'application. Cette fonction vous est accessible si vous avez reçu un QR code et si vous avez consenti à ce que le résultat de votre test soit transmis au système serveur de l'application. Dès que le laboratoire de test a stocké votre résultat sur le serveur, vous pourrez voir le résultat dans l'application. Si vous avez activé les notifications, vous recevrez également une notification en dehors de l'application vous informant que votre résultat de test a été reçu. Toutefois, pour des raisons de confidentialité, le résultat du test lui-même ne sera affiché que dans l'application. Vous pouvez retirer ce consentement à tout moment en supprimant votre inscription au test dans l'application. Le retrait de votre consentement n'affectera pas la légalité du traitement avant son retrait. Vous trouverez de plus amples informations dans le menu sous \"Informations sur la protection des données\"" ;
+"ExposureSubmission_DataPrivacyDescription" = "En appuyant sur \"Accepter\", vous consentez à ce que l'application interroge le statut de votre test coronavirus et l'affiche dans l'application. Cette fonction vous est accessible si vous avez reçu un QR code et si vous avez consenti à ce que le résultat de votre test soit transmis au système serveur de l'application. Dès que le laboratoire de test a stocké votre résultat sur le serveur, vous pourrez voir le résultat dans l'application. Si vous avez activé les notifications, vous recevrez également une notification en dehors de l'application vous informant que votre résultat de test a été reçu. Toutefois, pour des raisons de confidentialité, le résultat du test lui-même ne sera affiché que dans l'application. Vous pouvez retirer ce consentement à tout moment en supprimant votre inscription au test dans l'application. Le retrait de votre consentement n'affectera pas la légalité du traitement avant son retrait. Vous trouverez de plus amples informations dans le menu sous \"Informations sur la protection des données\"";
 
-"ExposureSubmissionDataPrivacy_AcceptTitle" = "Accepter" ;
+"ExposureSubmissionDataPrivacy_AcceptTitle" = "Accepter";
 
-"ExposureSubmissionDataPrivacy_DontAcceptTitle" = "Ne pas accepter" ;
+"ExposureSubmissionDataPrivacy_DontAcceptTitle" = "Ne pas accepter";
 
-"ExposureSubmission_Submit" = "Enter CODE" ;
+"ExposureSubmission_Submit" = "Enter CODE";
 
-"ExposureSubmissionTanEntry_Title" = "Entrée CODE" ;
+"ExposureSubmissionTanEntry_Title" = "Entrée CODE";
 
-"ExposureSubmissionTanEntry_EntryField" = "Champ d'entrée CODE" ;
+"ExposureSubmissionTanEntry_EntryField" = "Champ d'entrée CODE";
 
 "ExposureSubmissionTanEntry_Info" = "Veuillez saisir le CODE qui vous a été attribué :";
 
-"ExposureSubmissionTanEntry_Description" = "Veuillez saisir le numéro d'identification de l'article (CODE) qui vous a été attribué" ;
+"ExposureSubmissionTanEntry_Description" = "Veuillez saisir le numéro d'identification de l'article (CODE) qui vous a été attribué";
 
-"ExposureSubmissionTanEntry_Submit" = "Suivant" ;
+"ExposureSubmissionTanEntry_Submit" = "Suivant";
 
-"ExposureSubmissionTanEntry_InvalidCharacterError" = "Entrée non valable, veuillez vérifier votre entrée" ;
+"ExposureSubmissionTanEntry_InvalidCharacterError" = "Entrée non valable, veuillez vérifier votre entrée";
 
-"ExposureSubmissionTanEntry_InvalidError" = "CODE non valide, veuillez vérifier votre entrée" ;
+"ExposureSubmissionTanEntry_InvalidError" = "CODE non valide, veuillez vérifier votre entrée";
 
-"ExposureSubmission_NavTitle" = "Envoyer la clé de diagnostic" ;
+"ExposureSubmission_NavTitle" = "Envoyer la clé de diagnostic";
 
-"ExposureSubmissionConfirmation_Title" = "Diagnostic positif" ;
+"ExposureSubmissionConfirmation_Title" = "Diagnostic positif";
 
-"ExposureSubmission_GeneralErrorTitle" = "Erreurr" ;
+"ExposureSubmission_GeneralErrorTitle" = "Erreurr";
 
-"ExposureSubmission_DispatchTitle" = "Sélection" ;
+"ExposureSubmission_DispatchTitle" = "Sélection";
 
 "ExposureSubmission_DispatchDescription" = "Il y a quoi pour vous ?";
 
-"ExposureSubmissionDispatch_QRCodeButtonTitle" = "Document avec QR code" ;
+"ExposureSubmissionDispatch_QRCodeButtonTitle" = "Document avec QR code";
 
-"ExposureSubmissionDispatch_QRCodeButtonDescription" = "Enregistrez votre test en scannant le QR code de votre document de test" ;
+"ExposureSubmissionDispatch_QRCodeButtonDescription" = "Enregistrez votre test en scannant le QR code de votre document de test";
 
-"ExposureSubmissionDispatch_CODEButtonTitle" = "CODE" ;
+"ExposureSubmissionDispatch_HotlineButtonTitle" = "Demande de CODE";
 
-"ExposureSubmissionDispatch_CODEButtonDescription" = "Enregistrez votre test en entrant votre CODE manuellement" ;
+"ExposureSubmissionDispatch_HotlineButtonDescription" = "Veuillez nous appeler si vous avez été testé %@.";
 
-"ExposureSubmissionDispatch_HotlineButtonTitle" = "Demande de CODE" ;
+"ExposureSubmissionDispatch_HotlineButtonPositiveWord" = "Positif";
 
-"ExposureSubmissionDispatch_HotlineButtonDescription" = "Veuillez nous appeler si vous avez été testé %@." ;
+"ExposureSubmissionHotline_Title" = "Request CODE";
 
-"ExposureSubmissionDispatch_HotlineButtonPositiveWord" = "Positif" ;
-
-"ExposureSubmissionHotline_Title" = "Request CODE" ;
-
-"ExposureSubmissionHotline_Description" = "Veuillez garder votre résultat de test (si disponible) et votre numéro de téléphone à portée de main pour demander un CODE" ;
+"ExposureSubmissionHotline_Description" = "Veuillez garder votre résultat de test (si disponible) et votre numéro de téléphone à portée de main pour demander un CODE";
 
 "ExposureSubmissionHotline_SectionTitle" = "Comment cela fonctionne-t-il ?";
 
 "ExposureSubmissionHotline_SectionDescription1" = "Appelez la hotline et demandez un CODE :";
 
-"ExposureSubmissionHotline_SectionAccessibilityLabel1" = "Étape 1 sur 2" ;
+"ExposureSubmissionHotline_iconAccessibilityLabel2" = "Étape 2 sur 2";
 
-"ExposureSubmissionHotline_iconAccessibilityLabel2" = "Étape 2 sur 2" ;
+"ExposureSubmission_PhoneNumber" = "+49 800 7540002";
 
-"ExposureSubmission_PhoneNumber" = "+49 800 7540002" ;
+"ExposureSubmission_PhoneDetailDescription" = "Langues : \nAllemand, anglais, français, néerlandais\nHoraires d'ouverture:\nLundi à dimanche : 24 heures\nL'appel est gratuit.";
 
-"ExposureSubmission_PhoneDetailDescription" = "Langues : \nAllemand, anglais, français, néerlandais\nHoraires d'ouverture:\nLundi à dimanche : 24 heures\nL'appel est gratuit." ;
+"ExposureSubmission_SectionDescription2" = "Enregistrez le test en entrant le CODE dans l'application";
 
-"ExposureSubmission_SectionDescription2" = "Enregistrez le test en entrant le CODE dans l'application" ;
+"ExposureSubmission_CallButtonTitle" = "Appeler";
 
-"ExposureSubmission_CallButtonTitle" = "Appeler" ;
-
-"ExposureSubmission_CODEInputButtonTitle" = "Entrer le CODE" ;
-
-"ExposureSubmissionHotline_imageDescription" = "Le numéro d'information communique un CODE" ;
+"ExposureSubmissionHotline_imageDescription" = "Le numéro d'information communique un CODE";
 
 /* Exposure Submission QR Code Scanner */
-"ExposureSubmissionQRScanner_title" = "Scanner le QR code" ;
+"ExposureSubmissionQRScanner_title" = "Scanner le QR code";
 
-"ExposureSubmissionQRScanner_instruction" = "Positionner le cadre sur le QR code de votre document" ;
+"ExposureSubmissionQRScanner_instruction" = "Positionner le cadre sur le QR code de votre document";
 
-"ExposureSubmissionQRScanner_notFoundAlertTitle" = "Diagnostic introuvable" ;
+"ExposureSubmissionQRScanner_notFoundAlertTitle" = "Diagnostic introuvable";
 
-"ExposureSubmissionQRScanner_notFoundAlertText" = "Pour faciliter la lecture du QR code, essayez d'aligner le QR code verticalement par rapport au scanner ou activez le flash" ;
+"ExposureSubmissionQRScanner_notFoundAlertText" = "Pour faciliter la lecture du QR code, essayez d'aligner le QR code verticalement par rapport au scanner ou activez le flash";
 
-"ExposureSubmissionQRScanner_otherError" = "Une erreur inconnue s'est produite." ;
+"ExposureSubmissionQRScanner_otherError" = "Une erreur inconnue s'est produite.";
 
-"ExposureSubmissionQRScanner_cameraPermissionDenied" = "Permettre à l'application d'utiliser l'appareil photo pour scanner le QR code." ;
+"ExposureSubmissionQRScanner_cameraPermissionDenied" = "Permettre à l'application d'utiliser l'appareil photo pour scanner le QR code.";
 
-"ExposureSubmissionQRScanner_CameraFlash" = "Flash de l'appareil photo" ;
+"ExposureSubmissionQRScanner_CameraFlash" = "Flash de l'appareil photo";
 
-"ExposureSubmissionQRScanner_CameraFlash_On" = "Activé" ;
+"ExposureSubmissionQRScanner_CameraFlash_On" = "Activé";
 
-"ExposureSubmissionQRScanner_CameraFlash_Off" = "Désactivé" ;
+"ExposureSubmissionQRScanner_CameraFlash_Off" = "Désactivé";
 
-"ExposureSubmissionQRScanner_CameraFlash_Enable" = "Activer le flash de l'appareil photo" ;
+"ExposureSubmissionQRScanner_CameraFlash_Enable" = "Activer le flash de l'appareil photo";
 
-"ExposureSubmissionQRScanner_CameraFlash_Disable" = "Désactiver le flash de l'appareil photo" ;
+"ExposureSubmissionQRScanner_CameraFlash_Disable" = "Désactiver le flash de l'appareil photo";
 
-/* Succès de la soumission de l'exposition */
+/* Exposure Submission Success */
 "ExposureSubmissionSuccess_Title" = "Merci !";
 
-"ExposureSubmissionSuccess_AccImageDescription" = "Tout le monde dans le groupe applaudit parce que quelqu'un a partagé son résultat de test" ;
+"ExposureSubmissionSuccess_AccImageDescription" = "Tout le monde dans le groupe applaudit parce que quelqu'un a partagé son résultat de test";
 
 "ExposureSubmissionSuccess_Button" = "C'est tout !";
 
-"ExposureSubmissionSuccess_Description" = "Grâce à votre soutien, d'autres personnes peuvent maintenant être averties et réagir de manière appropriée" ;
+"ExposureSubmissionSuccess_Description" = "Grâce à votre soutien, d'autres personnes peuvent maintenant être averties et réagir de manière appropriée";
 
 "ExposureSubmissionSuccess_subTitle" = "Autres informations :";
 
 "ExposureSubmissionSuccess_listTitle" = "Please note :";
 
-"ExposureSubmissionSuccess_listItem1" = "L'autorité de santé publique vous contactera dans les prochains jours par téléphone ou par courrier" ;
+"ExposureSubmissionSuccess_listItem1" = "L'autorité de santé publique vous contactera dans les prochains jours par téléphone ou par courrier";
 
-"ExposureSubmissionSuccess_listItem2" = "Vous êtes infectieux. Isolez-vous des autres personnes" ;
+"ExposureSubmissionSuccess_listItem2" = "Vous êtes infectieux. Isolez-vous des autres personnes";
 
-"ExposureSubmissionSuccess_listItem2_1" = "La période de quarantaine est généralement de 14 jours. Veuillez observer vos symptômes et surveiller leur évolution." ;
+"ExposureSubmissionSuccess_listItem2_1" = "La période de quarantaine est généralement de 14 jours. Veuillez observer vos symptômes et surveiller leur évolution.";
 
-"ExposureSubmissionSuccess_listItem2_2" = "Votre autorité de santé publique vous demandera de créer une liste des personnes avec lesquelles vous avez été en contact. Cette liste doit inclure toutes les personnes avec lesquelles vous avez été en contact étroit (moins de 2 mètres, conversation en face à face) pendant plus de 15 minutes au cours des deux jours précédant l'apparition des symptômes" ;
+"ExposureSubmissionSuccess_listItem2_2" = "Votre autorité de santé publique vous demandera de créer une liste des personnes avec lesquelles vous avez été en contact. Cette liste doit inclure toutes les personnes avec lesquelles vous avez été en contact étroit (moins de 2 mètres, conversation en face à face) pendant plus de 15 minutes au cours des deux jours précédant l'apparition des symptômes";
 
-"ExposureSubmissionSuccess_listItem2_3" = "Veuillez considérer en particulier les personnes qui ne seront pas directement averties par l'application puisqu'elles ne possèdent pas de smartphone ou n'ont pas installé l'application" ;
+"ExposureSubmissionSuccess_listItem2_3" = "Veuillez considérer en particulier les personnes qui ne seront pas directement averties par l'application puisqu'elles ne possèdent pas de smartphone ou n'ont pas installé l'application";
 
-"ExposureSubmissionSuccess_listItem2_4" = "Même si vous n'avez plus de symptômes et que vous vous sentez bien, vous pouvez toujours être contagieux. " ;
+"ExposureSubmissionSuccess_listItem2_4" = "Même si vous n'avez plus de symptômes et que vous vous sentez bien, vous pouvez toujours être contagieux. ";
 
-/* Introduction à la soumission d'exposition */
-"ExposureSubmissionIntroduction_Title" = "Informations" ;
+/* Exposure Submission Introduction */
+"ExposureSubmissionIntroduction_Title" = "Informations";
 
-"ExposureSubmissionIntroduction_SubTitle" = "Voici comment fonctionne l'application Coronalert" ;
+"ExposureSubmissionIntroduction_SubTitle" = "Voici comment fonctionne l'application Coronalert";
 
-"ExposureSubmissionIntroduction_AccImageDescription" = "Un appareil transmet un diagnostic positif crypté au système" ;
+"ExposureSubmissionIntroduction_AccImageDescription" = "Un appareil transmet un diagnostic positif crypté au système";
 
-"ExposureSubmissionIntroduction_Usage01" = "Pour que l'application fonctionne bien, nous comptons sur le soutien des personnes qui ont été diagnostiquées positive au COVID-19." ;
+"ExposureSubmissionIntroduction_Usage01" = "Pour que l'application fonctionne bien, nous comptons sur le soutien des personnes qui ont été diagnostiquées positive au COVID-19.";
 
 "ExposureSubmissionIntroduction_Usage02" = "Comme seuls des identifiants aléatoires cryptés sont échangés, vous restez anonyme. Vous pouvez maintenant procéder comme suit :";
 
-"ExposureSubmissionIntroduction_ListItem1" = "S'il y a un code QR dans votre document de test, vous pouvez le scanner et enregistrer le test. Dès que le résultat est disponible, vous pouvez le consulter dans l'application. " ;
+"ExposureSubmissionIntroduction_ListItem1" = "S'il y a un code QR dans votre document de test, vous pouvez le scanner et enregistrer le test. Dès que le résultat est disponible, vous pouvez le consulter dans l'application. ";
 
-"ExposureSubmissionIntroduction_ListItem2" = "Si vous avez été diagnostiqué positif au COVID-19, vous pouvez en informer d'autres personnes" ;
+"ExposureSubmissionIntroduction_ListItem2" = "Si vous avez été diagnostiqué positif au COVID-19, vous pouvez en informer d'autres personnes";
 
-"ExposureSubmissionIntroduction_ListItem3" = "Si vous avez reçu un CODE pour un diagnostic positif, vous pouvez l'utiliser pour enregistrer le test" ;
+"ExposureSubmissionIntroduction_ListItem3" = "Si vous avez reçu un CODE pour un diagnostic positif, vous pouvez l'utiliser pour enregistrer le test";
 
-"ExposureSubmissionIntroduction_ListItem4" = "Si vous n'avez pas de CODE, vous pouvez en demander un par téléphone" ;
+"ExposureSubmissionIntroduction_ListItem4" = "Si vous n'avez pas de CODE, vous pouvez en demander un par téléphone";
 
-/* Résultat de la soumission de l'exposition */
-"ExposureSubmissionResult_Title" = "Résultat du test" ;
+/* Exposure Submission Result */
+"ExposureSubmissionResult_Title" = "Résultat du test";
 
-"ExposureSubmissionResult_CardSubTitle" = "Votre diagnostic" ;
+"ExposureSubmissionResult_CardSubTitle" = "Votre diagnostic";
 
-"ExposureSubmissionResult_CardTitle" = "SARS-CoV-2" ;
+"ExposureSubmissionResult_CardTitle" = "SARS-CoV-2";
 
-"ExposureSubmissionResult_CardPositive" = "Positif" ;
+"ExposureSubmissionResult_CardPositive" = "Positif";
 
-"ExposureSubmissionResult_CardNegative" = "Négatif" ;
+"ExposureSubmissionResult_CardNegative" = "Négatif";
 
-"ExposureSubmissionResult_CardInvalid" = "Évaluation impossible" ;
+"ExposureSubmissionResult_CardInvalid" = "Évaluation impossible";
 
-"ExposureSubmissionResult_CardPending" = "Votre résultat n'est pas encore disponible" ;
+"ExposureSubmissionResult_CardPending" = "Votre résultat n'est pas encore disponible";
 
 "ExposureSubmissionResult_Procedure" = "Comment ça marche ? :";
 
-"ExposureSubmissionResult_testAdded" = "Test ajouté avec succès" ;
+"ExposureSubmissionResult_testAdded" = "Test ajouté avec succès";
 
 "ExposureSubmissionResult_testAddedDesc" = "Votre test a été enregistré dans l'application Coronalert";
 
-"ExposureSubmissionResult_warnOthers" = "Avertir les autres" ;
+"ExposureSubmissionResult_warnOthers" = "Avertir les autres";
 
-"ExposureSubmissionResult_warnOthersDesc" = "Partagez vos identifiants aléatoires des 14 derniers jours afin de protéger les autres et de briser la chaîne d'infection" ;
+"ExposureSubmissionResult_warnOthersDesc" = "Partagez vos identifiants aléatoires des 14 derniers jours afin de protéger les autres et de briser la chaîne d'infection";
 
-"ExposureSubmissionResult_testPositive" = "Diagnostic positif" ;
+"ExposureSubmissionResult_testPositive" = "Diagnostic positif";
 
-"ExposureSubmissionResult_testPositiveDesc" = "Votre résultat de test a été vérifié comme étant positif" ;
+"ExposureSubmissionResult_testPositiveDesc" = "Votre résultat de test a été vérifié comme étant positif";
 
-"ExposureSubmissionResult_testNegative" = "Diagnostic négatif" ;
+"ExposureSubmissionResult_testNegative" = "Diagnostic négatif";
 
-"ExposureSubmissionResult_testNegativeDesc" = "Le résultat du laboratoire indique aque vous n'êtes pas porteur du coronavirus SRAS-CoV-2." ;
+"ExposureSubmissionResult_testNegativeDesc" = "Le résultat du laboratoire indique aque vous n'êtes pas porteur du coronavirus SRAS-CoV-2.";
 
 "ExposureSubmissionResult_testNegative_furtherInfos_title" = "Autres informations :";
 
-"ExposureSubmissionResult_testNegative_furtherInfos_listItem1" = "Vous ne vous sentez toujours pas bien ? Si vous vous sentez très mal et/ou si vos symptômes se sont aggravés, veuillez contacter votre médecin généraliste" ;
+"ExposureSubmissionResult_testNegative_furtherInfos_listItem1" = "Vous ne vous sentez toujours pas bien ? Si vous vous sentez très mal et/ou si vos symptômes se sont aggravés, veuillez contacter votre médecin généraliste";
 
-"ExposureSubmissionResult_testNegative_furtherInfos_listItem2" = "Restez chez vous jusqu'à ce que vous vous sentiez à nouveau bien. Si vous deviez être infecté par un coronavirus (SRAS-CoV-2) alors que vous êtes affaibli par une autre infection, cela pourrait entraîner une maladie grave" ;
+"ExposureSubmissionResult_testNegative_furtherInfos_listItem2" = "Restez chez vous jusqu'à ce que vous vous sentiez à nouveau bien. Si vous deviez être infecté par un coronavirus (SRAS-CoV-2) alors que vous êtes affaibli par une autre infection, cela pourrait entraîner une maladie grave";
 
-"ExposureSubmissionResult_testNegative_furtherInfos_listItem3" = "N'allez pas travailler si vous ne vous sentez pas bien afin de ne pas mettre d'autres personnes en danger" ;
+"ExposureSubmissionResult_testNegative_furtherInfos_listItem3" = "N'allez pas travailler si vous ne vous sentez pas bien afin de ne pas mettre d'autres personnes en danger";
 
-"ExposureSubmissionResult_furtherInfos_hint_testAgain" = "Si vos symptômes s'aggravent, vous pourriez avoir besoin d'un nouveau test SRAS-CoV-2" ;
+"ExposureSubmissionResult_furtherInfos_hint_testAgain" = "Si vos symptômes s'aggravent, vous pourriez avoir besoin d'un nouveau test SRAS-CoV-2";
 
-"ExposureSubmissionResult_testInvalid" = "Le test comporte des erreurs" ;
+"ExposureSubmissionResult_testInvalid" = "Le test comporte des erreurs";
 
-"ExposureSubmissionResult_testInvalidDesc" = "Il y a eu un problème d'évaluation de votre test. Veuillez contacter l'autorité de santé publique pour savoir comment procéder. " ;
+"ExposureSubmissionResult_testInvalidDesc" = "Il y a eu un problème d'évaluation de votre test. Veuillez contacter l'autorité de santé publique pour savoir comment procéder. ";
 
-"ExposureSubmissionResult_testPending" = "Le résultat du test n'est pas encore disponible" ;
+"ExposureSubmissionResult_testPending" = "Le résultat du test n'est pas encore disponible";
 
-"ExposureSubmissionResult_testPendingDesc" = "Le résultat de votre test n'est pas encore disponible" ;
+"ExposureSubmissionResult_testPendingDesc" = "Le résultat de votre test n'est pas encore disponible";
 
-"ExposureSubmissionResult_testRemove" = "Supprimer le test" ;
+"ExposureSubmissionResult_testRemove" = "Supprimer le test";
 
-"ExposureSubmissionResult_testRemoveDesc" = "Veuillez supprimer le test de l'application Coronalert, afin de pouvoir enregistrer un nouveau code de test ici si nécessaire" ;
+"ExposureSubmissionResult_testRemoveDesc" = "Veuillez supprimer le test de l'application Coronalert, afin de pouvoir enregistrer un nouveau code de test ici si nécessaire";
 
-"ExposureSubmissionResult_continueButton" = "Suivant" ;
+"ExposureSubmissionResult_continueButton" = "Suivant";
 
-"ExposureSubmissionResult_deleteButton" = "Supprimer le test" ;
+"ExposureSubmissionResult_deleteButton" = "Supprimer le test";
 
-"ExposureSubmissionResult_refreshButton" = "Update" ;
+"ExposureSubmissionResult_refreshButton" = "Update";
 
-"ExposureSubmissionWarnOthers_title" = "Warning Others" ;
+"ExposureSubmissionWarnOthers_title" = "Warning Others";
 
-"ExposureSubmissionWarnOthers_AccImageDescription" = "Un appareil transmet au système un diagnostic de test positif crypté" ;
+"ExposureSubmissionWarnOthers_AccImageDescription" = "Un appareil transmet au système un diagnostic de test positif crypté";
 
-"ExposureSubmissionWarnOthers_continueButton" = "Suivant" ;
+"ExposureSubmissionWarnOthers_continueButton" = "Suivant";
 
 "ExposureSubmissionWarnOthers_sectionTitle" = "Ensemble, combattons le virus !";
 
-"ExposureSubmissionWarnOthers_description" = "Ensuite, vous pouvez vous assurer que l'application Coronalert partage avec les autres vos identifiants aléatoires des 14 derniers jours. En faisant cela, vous pouvez avertir d'autres personnes et aider à briser la chaîne d'infection. Puisque seules des identités aléatoires impersonnelles sont transmises, votre identité restera anonyme" ;
+"ExposureSubmissionWarnOthers_description" = "Ensuite, vous pouvez vous assurer que l'application Coronalert partage avec les autres vos identifiants aléatoires des 14 derniers jours. En faisant cela, vous pouvez avertir d'autres personnes et aider à briser la chaîne d'infection. Puisque seules des identités aléatoires impersonnelles sont transmises, votre identité restera anonyme";
 
-"ExposureSubmissionWarnOthers_dataPrivacyDescription" = "En appuyant sur \"Accepter\", vous consentez à ce que l'application envoie votre résultat de test positif au système du serveur de l'application avec vos identifiants aléatoires des 14 derniers jours, de sorte que les autres utilisateurs de l'application qui ont activé la fonction de journalisation de l'exposition puissent être automatiquement avertis qu'ils ont pu être exposés à un risque d'infection. Les identifiants aléatoires transmis à cette fin ne contiennent aucune information qui permettrait de tirer des conclusions sur votre identité ou votre personne. La transmission de votre résultat de test via l'application est volontaire. Vous ne serez pas pénalisé si vous ne transmettez pas votre résultat de test. Puisqu'il n'est pas possible de tracer ou de vérifier si et comment vous utilisez l'application, personne d'autre que vous ne saura si vous avez transmis l'information de votre infection. Ce retrait de votre consentement n'affectera pas la légalité du traitement effectué sur base du consentement préalable au retrait. Vous trouverez de plus amples informations dans le menu sous \"Informations sur la protection des données\"" ;
+"ExposureSubmissionWarnOthers_dataPrivacyDescription" = "En appuyant sur \"Accepter\", vous consentez à ce que l'application envoie votre résultat de test positif au système du serveur de l'application avec vos identifiants aléatoires des 14 derniers jours, de sorte que les autres utilisateurs de l'application qui ont activé la fonction de journalisation de l'exposition puissent être automatiquement avertis qu'ils ont pu être exposés à un risque d'infection. Les identifiants aléatoires transmis à cette fin ne contiennent aucune information qui permettrait de tirer des conclusions sur votre identité ou votre personne. La transmission de votre résultat de test via l'application est volontaire. Vous ne serez pas pénalisé si vous ne transmettez pas votre résultat de test. Puisqu'il n'est pas possible de tracer ou de vérifier si et comment vous utilisez l'application, personne d'autre que vous ne saura si vous avez transmis l'information de votre infection. Ce retrait de votre consentement n'affectera pas la légalité du traitement effectué sur base du consentement préalable au retrait. Vous trouverez de plus amples informations dans le menu sous \"Informations sur la protection des données\"";
 
-"ExposureSubmissionWarnOthers_dataPrivacyTitle" = "Données privées" ;
+"ExposureSubmissionWarnOthers_dataPrivacyTitle" = "Données privées";
 
 "ExposureSubmissionResult_RemoveAlert_Title" = "Supprimer le test ?";
 
-"ExposureSubmissionResult_RemoveAlert_Text" = "Le test sera définitivement supprimé de l'application Coronalert et ne pourra plus être ajouté. Cette procédure est irréversible. " ;
+"ExposureSubmissionResult_RemoveAlert_Text" = "Le test sera définitivement supprimé de l'application Coronalert et ne pourra plus être ajouté. Cette procédure est irréversible. ";
 
-"ExposureSubmissionResult_RegistrationDateUnknown" = "Date d'enregistrement inconnue" ;
+"ExposureSubmissionResult_RegistrationDateUnknown" = "Date d'enregistrement inconnue";
 
-"ExposureSubmissionResult_RegistrationDate" = "Enregistré le " ;
+"ExposureSubmissionResult_RegistrationDate" = "Enregistré le ";
 
 /* Exposure Submission */
-"ExposureSubmissionError_NoKeys" = "Aucune clé de diagnostic n'est disponible. Veuillez réessayer demain." ;
+"ExposureSubmissionError_NoKeys" = "Aucune clé de diagnostic n'est disponible. Veuillez réessayer demain.";
 
-"ExposureSubmissionError_InvalidTan" = "Le CODE généré n'est pas valide pour la soumission. Veuillez contacter le numéro d'aide technique via App Information -> Technical Hotline" ;
+"ExposureSubmissionError_InvalidTan" = "Le CODE généré n'est pas valide pour la soumission. Veuillez contacter le numéro d'aide technique via App Information -> Technical Hotline";
 
-"ExposureSubmissionError_EnNotEnabled" = "L'enregistrement de l'exposition n'est pas actif." ;
+"ExposureSubmissionError_EnNotEnabled" = "L'enregistrement de l'exposition n'est pas actif.";
 
-"ExposureSubmissionError_NoRegistrationToken" = "Aucun jeton d'enregistrement n'a pu être trouvé sur l'appareil." ;
+"ExposureSubmissionError_NoRegistrationToken" = "Aucun jeton d'enregistrement n'a pu être trouvé sur l'appareil.";
 
-"ExposureSubmissionError_InvalidResponse" = "La réponse ne peut être traitée" ;
+"ExposureSubmissionError_InvalidResponse" = "La réponse ne peut être traitée";
 
-"ExposureSubmissionError_NoResponse" = "La réponse n'a pas de contenu." ;
+"ExposureSubmissionError_NoResponse" = "La réponse n'a pas de contenu.";
 
-"ExposureSubmissionError_QRAlreadyUsed" = "Le QR code a déjà été utilisé. Veuillez contacter le numéro d'aide technique via App Information -> Technical Hotline" ;
+"ExposureSubmissionError_QRAlreadyUsed" = "Le QR code a déjà été utilisé. Veuillez contacter le numéro d'aide technique via App Information -> Technical Hotline";
 
-"ExposureSubmissionError_TeleTanAlreadyUsed" = "Le CODE n'est pas valide ou a déjà été utilisé. Veuillez réessayer ou contacter le numéro d'aide technique via App Information -> Technical Hotline" ;
+"ExposureSubmissionError_TeleTanAlreadyUsed" = "Le CODE n'est pas valide ou a déjà été utilisé. Veuillez réessayer ou contacter le numéro d'aide technique via App Information -> Technical Hotline";
 
-"ExposureSubmissionError_RegTokenNotExist" = "Un CODE pour la soumission ne peut pas être généré. Veuillez contacter le numéro d'aide technique via App Information -> Technical Hotline" ;
+"ExposureSubmissionError_RegTokenNotExist" = "Un CODE pour la soumission ne peut pas être généré. Veuillez contacter le numéro d'aide technique via App Information -> Technical Hotline";
 
-"ExposureSubmissionError_other" = "Une erreur de connexion s'est produite. Code d'erreur pour le support technique : " ;
+"ExposureSubmissionError_other" = "Une erreur de connexion s'est produite. Code d'erreur pour le support technique : ";
 
-"ExposureSubmissionError_otherend" = "Veuillez réessayer" ;
+"ExposureSubmissionError_otherend" = "Veuillez réessayer";
 
-"ExposureSubmissionError_httpError" = "La connexion ne peut être établie" ;
+"ExposureSubmissionError_httpError" = "La connexion ne peut être établie";
 
-"ExposureSubmissionError_declined" = "Veuillez communiquer vos identifiants aléatoires pour avertir d'autres personnes" ;
+"ExposureSubmissionError_declined" = "Veuillez communiquer vos identifiants aléatoires pour avertir d'autres personnes";
 
-"ExposureSubmissionError_unknown" = "Erreur inconnue" ;
+"ExposureSubmissionError_unknown" = "Erreur inconnue";
 
-"ExposureSubmissionError_defaultError" = "Erreur lors de la transmission de la clé" ;
+"ExposureSubmissionError_defaultError" = "Erreur lors de la transmission de la clé";
 
-/* Activation/désactivation des paramètres de traçage */
-"ExposureNotificationSetting_TracingSettingTitle" = "Enregistrement de l'exposition" ;
+/* Tracing Enable/Disable Settings */
+"ExposureNotificationSetting_TracingSettingTitle" = "Enregistrement de l'exposition";
 
-"ExposureNotificationSetting_EnableTracing" = "Enregistrement de l'exposition" ;
+"ExposureNotificationSetting_EnableTracing" = "Enregistrement de l'exposition";
 
-"ExposureNotificationSetting_Tracing_Limited" = "Restreint" ;
+"ExposureNotificationSetting_Tracing_Limited" = "Restreint";
 
-"ExposureNotificationSetting_Tracing_Deactivated" = "Désactivé" ;
+"ExposureNotificationSetting_Tracing_Deactivated" = "Désactivé";
 
-"ExposureNotificationSetting_ActionCell_Header" = "Réglages" ;
+"ExposureNotificationSetting_ActionCell_Header" = "Réglages";
 
-"ExposureNotificationSetting_DescriptionTitle_Inactive" = "Activer l'enregistrement de l'exposition" ;
+"ExposureNotificationSetting_DescriptionTitle_Inactive" = "Activer l'enregistrement de l'exposition";
 
-"ExposureNotificationSetting_DescriptionTitle" = "Voici comment fonctionne votre enregistrement d'exposition" ;
+"ExposureNotificationSetting_DescriptionTitle" = "Voici comment fonctionne votre enregistrement d'exposition";
 
-"ExposureNotificationSetting_DescriptionText1" = "Pour déterminer si vous êtes exposé à un risque d'infection, vous devez activer la fonction d'enregistrement de l'exposition" ;
+"ExposureNotificationSetting_DescriptionText1" = "Pour déterminer si vous êtes exposé à un risque d'infection, vous devez activer la fonction d'enregistrement de l'exposition";
 
-"ExposureNotificationSetting_DescriptionText2" = "La journalisation de l'exposition fonctionne en ce sens que votre appareil reçoit, via Bluetooth, les ID aléatoires cryptés des autres utilisateurs et transmet votre propre ID aléatoire à leur appareil. Cette fonction peut être désactivée à tout moment" ;
+"ExposureNotificationSetting_DescriptionText2" = "La journalisation de l'exposition fonctionne en ce sens que votre appareil reçoit, via Bluetooth, les ID aléatoires cryptés des autres utilisateurs et transmet votre propre ID aléatoire à leur appareil. Cette fonction peut être désactivée à tout moment";
 
-"ExposureNotificationSetting_DescriptionText3" = "Les ID aléatoires cryptés transmettent uniquement des informations sur la date, la durée et la proximité (en utilisant la puissance du signal) à d'autres personnes. Les données personnelles telles que le nom, l'adresse ou le lieu ne sont jamais enregistrées. Les personnes ne peuvent pas être identifiées" ;
+"ExposureNotificationSetting_DescriptionText3" = "Les ID aléatoires cryptés transmettent uniquement des informations sur la date, la durée et la proximité (en utilisant la puissance du signal) à d'autres personnes. Les données personnelles telles que le nom, l'adresse ou le lieu ne sont jamais enregistrées. Les personnes ne peuvent pas être identifiées";
 
-"ExposureNotificationSetting_Activate_Bluetooth" = "Activer Bluetooth" ;
+"ExposureNotificationSetting_Activate_Bluetooth" = "Activer Bluetooth";
 
-"ExposureNotificationSetting_Bluetooth_Description" = "Bluetooth doit être activé pour l'enregistrement de l'exposition afin de consigner les rencontres. Veuillez activer le Bluetooth dans les paramètres de votre appareil" ;
+"ExposureNotificationSetting_Bluetooth_Description" = "Bluetooth doit être activé pour l'enregistrement de l'exposition afin de consigner les rencontres. Veuillez activer le Bluetooth dans les paramètres de votre appareil";
 
-"ExposureNotificationSetting_Activate_Internet" = "Ouvrir une connexion Internet" ;
+"ExposureNotificationSetting_Activate_Internet" = "Ouvrir une connexion Internet";
 
-"ExposureNotificationSetting_Internet_Description" = "L'enregistrement de l'exposition nécessite une connexion Internet pour calculer les expositions. Veuillez activer le WIFI ou les données mobiles dans les paramètres de votre appareil" ;
+"ExposureNotificationSetting_Internet_Description" = "L'enregistrement de l'exposition nécessite une connexion Internet pour calculer les expositions. Veuillez activer le WIFI ou les données mobiles dans les paramètres de votre appareil";
 
-"ExposureNotificationSetting_Detail_Action_Button" = "Ouvrir les paramètres de l'appareil" ;
+"ExposureNotificationSetting_Detail_Action_Button" = "Ouvrir les paramètres de l'appareil";
 
-"ExposureNotificationSetting_Activate_OSENSetting" = "Activer l'enregistrement et les notifications d'exposition au COVID-19" ;
+"ExposureNotificationSetting_Activate_OSENSetting" = "Activer l'enregistrement et les notifications d'exposition au COVID-19";
 
-"ExposureNotificationSetting_Activate_OSENSetting_Description" = "Pour l'enregistrement de l'exposition, celui-ci et les notifications d'exposition COVID-19 doivent être activés dans les paramètres du système afin que les rencontres puissent être enregistrées. Veuillez activer \"COVID-19 Exposure Logging and Notifications\" dans les paramètres de votre système" ;
+"ExposureNotificationSetting_Activate_OSENSetting_Description" = "Pour l'enregistrement de l'exposition, celui-ci et les notifications d'exposition COVID-19 doivent être activés dans les paramètres du système afin que les rencontres puissent être enregistrées. Veuillez activer \"COVID-19 Exposure Logging and Notifications\" dans les paramètres de votre système";
 
-"ExposureNotificationSetting_ParentalControls_OSENSetting" = "Activer l'enregistrement et les notifications d'exposition au COVID-19" ;
+"ExposureNotificationSetting_ParentalControls_OSENSetting" = "Activer l'enregistrement et les notifications d'exposition au COVID-19";
 
-"ExposureNotificationSetting_ParentalControls_OSENSetting_Description" = "Pour l'enregistrement de l'exposition, l'enregistrement et les notifications de l'exposition au COVID-19 doivent être activés dans les paramètres du système afin que les rencontres puissent être enregistrées. Veuillez activer \"COVID-19 Exposure Logging and Notifications\" dans les paramètres de votre système" ;
+"ExposureNotificationSetting_ParentalControls_OSENSetting_Description" = "Pour l'enregistrement de l'exposition, l'enregistrement et les notifications de l'exposition au COVID-19 doivent être activés dans les paramètres du système afin que les rencontres puissent être enregistrées. Veuillez activer \"COVID-19 Exposure Logging and Notifications\" dans les paramètres de votre système";
 
-"ExposureNotificationSetting_AuthorizationRequired_OSENSetting" = "Autorisation requise" ;
+"ExposureNotificationSetting_AuthorizationRequired_OSENSetting" = "Autorisation requise";
 
-"ExposureNotificationSetting_AuthorizationRequired_OSENSetting_Description" = "Veuillez confirmer l'utilisation de l'enregistrement de l'exposition au COVID-19" ;
+"ExposureNotificationSetting_AuthorizationRequired_OSENSetting_Description" = "Veuillez confirmer l'utilisation de l'enregistrement de l'exposition au COVID-19";
 
-"ExposureNotificationSetting_AuthorizationRequired_ActionTitle" = "Autorisation" ;
+"ExposureNotificationSetting_AuthorizationRequired_ActionTitle" = "Autorisation";
 
-"ExposureNotificationSetting_AccLabel_Enabled" = "Trois personnes ont activé l'enregistrement de l'exposition sur leur appareil, si elles se rencontrent, ce sera enregistré par l'application" ;
+"ExposureNotificationSetting_AccLabel_Enabled" = "Trois personnes ont activé l'enregistrement de l'exposition sur leur appareil, si elles se rencontrent, ce sera enregistré par l'application";
 
-"ExposureNotificationSetting_AccLabel_Disabled" = "Une personne a désactivé l'enregistrement de l'exposition sur son smartphone, de sorte qu'une rencontre avec les deux autres personnes n'est pas enregistrée" ;
+"ExposureNotificationSetting_AccLabel_Disabled" = "Une personne a désactivé l'enregistrement de l'exposition sur son smartphone, de sorte qu'une rencontre avec les deux autres personnes n'est pas enregistrée";
 
-"ExposureNotificationSetting_AccLabel_BluetoothOff" = "Une personne a désactivé le Bluetooth sur son smartphone, donc la rencontre avec les deux autres personnes n'est pas enregistrée." ; "ExposureNotificationSetting_AccLabel_BluetoothOff" = "Une personne a désactivé le Bluetooth sur son smartphone, donc une rencontre avec les deux autres personnes ne sera pas enregistrée." ;
+"ExposureNotificationSetting_AccLabel_BluetoothOff" = "Une personne a désactivé le Bluetooth sur son smartphone, donc la rencontre avec les deux autres personnes n'est pas enregistrée.";
 
-"ExposureNotificationSetting_AccLabel_InternetOff" = "Une personne a désactivé la connexion Internet sur son smartphone, il n'est donc pas possible d'identifier ses dernières rencontres" ;
+"ExposureNotificationSetting_AccLabel_InternetOff" = "Une personne a désactivé la connexion Internet sur son smartphone, il n'est donc pas possible d'identifier ses dernières rencontres";
 
-"ExposureNotificationSetting_Activate_Action" = "Accepter" ;
+"ExposureNotificationSetting_Activate_Action" = "Accepter";
 
-"ExposureNotificationSetting_Dismiss_Action" = "Annuler" ;
+"ExposureNotificationSetting_Dismiss_Action" = "Annuler";
 
-"ExposureNotificationSetting_GeneralError_Title" = "Erreur" ;
+"ExposureNotificationSetting_GeneralError_Title" = "Erreur";
 
-"ExposureNotificationSetting_GeneralError_LearnMore_Action" = "En savoir plus" ;
+"ExposureNotificationSetting_GeneralError_LearnMore_Action" = "En savoir plus";
 
-"ExposureNotificationSetting_GeneralError_LearnMore_URL" = "https://www.coronalert.be" ;
+"ExposureNotificationSetting_GeneralError_LearnMore_URL" = "https://www.coronalert.be";
 
-"ExposureNotificationSetting_AuthenticationError" = "Une erreur s'est produite lors de l'activation de la fonction d'enregistrement de l'exposition. Veuillez vérifier si vous avez activé l'enregistrement de l'exposition au COVID-19 dans vos paramètres" ;
+"ExposureNotificationSetting_AuthenticationError" = "Une erreur s'est produite lors de l'activation de la fonction d'enregistrement de l'exposition. Veuillez vérifier si vous avez activé l'enregistrement de l'exposition au COVID-19 dans vos paramètres";
 
-"ExposureNotificationSetting_exposureNotification_Required" = "Une erreur s'est produite lors de l'activation de la fonction d'enregistrement de l'exposition. Veuillez vérifier si la fonction de notification de l'exposition au COVID-19 dans vos paramètres est activée pour l'application" ;
+"ExposureNotificationSetting_exposureNotification_Required" = "Une erreur s'est produite lors de l'activation de la fonction d'enregistrement de l'exposition. Veuillez vérifier si la fonction de notification de l'exposition au COVID-19 dans vos paramètres est activée pour l'application";
 
-"ExposureNotificationSetting_exposureNotification_unavailable" = "Une erreur s'est produite lors de l'activation de la fonction d'enregistrement de l'exposition. Veuillez vérifier si cette application est sélectionnée comme application active pour l'enregistrement de l'exposition au COVID-19 dans vos paramètres. Pour plus d'informations, consultez la FAQ" ;
+"ExposureNotificationSetting_exposureNotification_unavailable" = "Une erreur s'est produite lors de l'activation de la fonction d'enregistrement de l'exposition. Veuillez vérifier si cette application est sélectionnée comme application active pour l'enregistrement de l'exposition au COVID-19 dans vos paramètres. Pour plus d'informations, consultez la FAQ";
 
-"ExposureNotificationSetting_unknownError" = "Une erreur inconnue s'est produite. Pour plus d'informations, consultez la FAQ" ;
+"ExposureNotificationSetting_unknownError" = "Une erreur inconnue s'est produite. Pour plus d'informations, consultez la FAQ";
 
-"ExposureNotificationSetting_apiMisuse" = "Une erreur interne s'est produite lors de l'activation de la fonction de journalisation de l'exposition. Pour plus d'informations, consultez FAQ et réessayez plus tard" ;
+"ExposureNotificationSetting_apiMisuse" = "Une erreur interne s'est produite lors de l'activation de la fonction de journalisation de l'exposition. Pour plus d'informations, consultez FAQ et réessayez plus tard";
 
-/* Barre de navigation d'accueil */
-"Home_LeftBarButton_description" = "Logo app Coronalert" ;
+/* Home Navigation Bar */
+"Home_LeftBarButton_description" = "Logo app Coronalert";
 
-"Description du bouton de la barre droite" = "Informations" ;
+/* Home Active card */
+"Home_Activate_Card_On_Title" = "Enregistrement de l'exposition actif";
 
-/* Carte active de la maison */
-"Home_Activate_Card_On_Title" = "Enregistrement de l'exposition actif" ;
+"Home_Activate_Card_Off_Title" = "Arrêt de l'enregistrement de l'exposition";
 
-"Home_Activate_Card_Off_Title" = "Arrêt de l'enregistrement de l'exposition" ;
+"Home_Activate_Card_Bluetooth_Off_Title" = "Bluetooth désactivé";
 
-"Home_Activate_Card_Bluetooth_Off_Title" = "Bluetooth désactivé" ;
+"Home_Activate_Card_Internet_Off_Title" = "Pas de connexion Internet";
 
-"Home_Activate_Card_Internet_Off_Title" = "Pas de connexion Internet" ;
+/* Home common card */
+"Home_Risk_Date_Item_Title" = "Mise à jour : %@";
 
-/* Carte commune à la maison */
-"Home_Risk_Date_Item_Title" = "Mise à jour : %@" ;
+"Home_Risk_No_Date_Title" = "Inconnu";
 
-"Home_Risk_No_Date_Title" = "Inconnu" ;
+"Home_Risk_Period_Update_Title" = "Mise à jour de chaque %@ hours";
 
-"Home_Risk_Period_Update_Title" = "Mise à jour de chaque %@\U00A0hours" ;
+"Home_Risk_Period_Disabled_Button_Title" = "Mise à jour seulement toutes les %@ hours";
 
-"Home_Risk_Period_Disabled_Button_Title" = "Mise à jour seulement toutes les %@\U00A0hours" ;
+"Home_Risk_Unknown_Title" = "Risque inconnu";
 
-/* Carte "Home Unknown" */
-"Home_Risk_Unknown_Title" = "Risque inconnu" ;
+"Home_Risk_Last_Activate_Item_Title" = "Last exposure logging: %@";
 
-"Home_RiskCard_Unknown_Item_Title" = "Étant donné que vous n'avez pas activé la connexion à l'exposition depuis suffisamment longtemps, nous ne pouvons pas calculer votre risque d'infection" ;
+"Home_Risk_Last_Activate_Item_Unknown_Title" = "Unknown Risk";
 
-"Home_RiskCard_Unknown_Button" = "Mise à jour" ;
+"Home_Risk_Last_Activate_Item_Low_Title" = "Low Risk";
 
-/* Carte Home Inactive */
-"Home_Risk_Inactive_NoCalculation_Possible_Title" = "Arrêt de l'enregistrement de l'exposition" ;
+"Home_Risk_Last_Activate_Item_High_Title" = "Higher Risk";
 
-"Home_Risk_Inactive_Outdated_Results_Title" = "L'enregistrement de l'exposition n'est pas possible" ;
+"Home_RiskCard_Update_Button" = "Update";
 
-"Home_Risk_Inactive_NoCalculation_Possible_Body" = "Activer l'enregistrement de l'exposition pour évaluer votre statut de risque aujourd'hui" ;
+/* Home Unknown card */
+"Home_RiskCard_Unknown_Item_Title" = "Étant donné que vous n'avez pas activé la connexion à l'exposition depuis suffisamment longtemps, nous ne pouvons pas calculer votre risque d'infection";
 
-"Home_Risk_Inactive_Outdated_Results_Body" = "Votre enregistrement d'exposition n'a pas pu être mis à jour pendant plus de 24 heures" ;
+/* Home Unknown 48 card */
+"Home_RiskCard_Unknown48h_Body" = "Ihre Risiko-Berechnung wurde seit mehr als 48 Stunden nicht aktualisiert. Bitte aktualisieren Sie die Berechnung.";
 
-"Home_Risk_Inactive_Activate_Item_Title" = "Dernière exposition enregistrée : %@" ;
+/* Home Inactive card */
+"Home_Risk_Inactive_NoCalculation_Possible_Title" = "Arrêt de l'enregistrement de l'exposition";
 
-"Home_Risk_Inactive_Activate_Item_Unknown_Title" = "Risque inconnu" ;
+"Home_Risk_Inactive_Outdated_Results_Title" = "L'enregistrement de l'exposition n'est pas possible";
 
-"Home_Risk_Inactive_Activate_Item_Low_Title" = "Risque faible" ;
+"Home_Risk_Inactive_NoCalculation_Possible_Body" = "Activer l'enregistrement de l'exposition pour évaluer votre statut de risque aujourd'hui";
 
-"Home_Risk_Inactive_Activate_Item_High_Title" = "Risque élevé" ;
+"Home_Risk_Inactive_Outdated_Results_Body" = "Votre enregistrement d'exposition n'a pas pu être mis à jour pendant plus de 24 heures";
 
-"Home_Risk_Inactive_NoCalculation_Possible_Button" = "Activer l'enregistrement de l'exposition" ;
+"Home_Risk_Inactive_NoCalculation_Possible_Button" = "Activer l'enregistrement de l'exposition";
 
-"Home_Risk_Inactive_Outdated_Results_Button" = "Activer l'enregistrement de l'exposition" ;
+"Home_Risk_Inactive_Outdated_Results_Button" = "Activer l'enregistrement de l'exposition";
 
 /* Home Low card */
-"Home_Risk_Low_Title" = "Risque faible" ;
+"Home_Risk_Low_Title" = "Risque faible";
 
-"Home_Risk_Low_SaveDays_Item_Title" = "La détection des risques a été active pour %u du %u jours" ;
-"Home_Risk_Low_SaveDays_Item_Title__Permanently_Active" = "La détection des risques est active en permanence" ;
+"Home_Risk_Low_SaveDays_Item_Title" = "La détection des risques a été active pour %u du %u jours";
 
-"Home_Risk_Low_Button" = "Mise à jour" ;
+"Home_Risk_Low_SaveDays_Item_Title__Permanently_Active" = "La détection des risques est active en permanence";
 
 /* Home High card */
-"Home_Risk_High_Title" = "Un risque plus élevé" ;
+"Home_Risk_High_Title" = "Un risque plus élevé";
 
-"Home_Risk_High_Button" = "Mise à jour" ;
+/* Home Status Check */
+"Home_Risk_Status_Check_Title" = "La vérification est en cours...";
 
-/* Vérification du statut de la maison */
-"Home_Risk_Status_Check_Title" = "La vérification est en cours..." ;
+"Home_Risk_Status_Check_Body" = "Les données actuelles sont en cours de téléchargement et de vérification. Cela peut prendre plusieurs minutes.";
 
-"Home_Risk_Status_Check_Body" = "Les données actuelles sont en cours de téléchargement et de vérification. Cela peut prendre plusieurs minutes." ;
-
-"Home_Risk_Status_Check_Button" = "Mise à jour" ;
-
-/* Carte de remerciement à domicile */
+/* Home Thank you card */
 "Home_Thank_You_Card_Title" = "Merci !";
 
-"Home_Thank_You_Card_Body" = "Grâce à votre soutien, d'autres personnes peuvent maintenant être averties et réagir de manière appropriée." ;
+"Home_Thank_You_Card_Body" = "Grâce à votre soutien, d'autres personnes peuvent maintenant être averties et réagir de manière appropriée.";
 
 "Home_Thank_You_Card_Note_Title" = "Veuillez noter que :";
 
-"Home_Thank_You_Card_Phone_Item_Title" = "L'autorité de santé publique vous contactera dans les prochains jours par téléphone ou par courrier." ;
+"Home_Thank_You_Card_Phone_Item_Title" = "L'autorité de santé publique vous contactera dans les prochains jours par téléphone ou par courrier.";
 
-"Home_Thank_You_Card_Home_Item_Title" = "Vous êtes contagieux. Isolez-vous des autres personnes." ;
+"Home_Thank_You_Card_Home_Item_Title" = "Vous êtes contagieux. Isolez-vous des autres personnes.";
 
 "Home_Thank_You_Card_Further_Info_Item_Title" = "Autres informations :";
 
-"Home_Thank_You_Card_14Days_Item_Title" = "Votre période de quarantaine est généralement de 14 jours. Veuillez observer vos symptômes et surveiller leur évolution" ;
+"Home_Thank_You_Card_14Days_Item_Title" = "Votre période de quarantaine est généralement de 14 jours. Veuillez observer vos symptômes et surveiller leur évolution";
 
-"Home_Thank_You_Card_Contacts_Item_Title" = "Votre autorité de santé publique vous demandera de créer une liste des personnes avec lesquelles vous avez été en contact. Cette liste doit inclure toutes les personnes avec lesquelles vous avez été en contact étroit (moins de 2 mètres, conversation en face à face) pendant plus de 15 minutes au cours des deux jours précédant l'apparition des symptômes" ;
+"Home_Thank_You_Card_Contacts_Item_Title" = "Votre autorité de santé publique vous demandera de créer une liste des personnes avec lesquelles vous avez été en contact. Cette liste doit inclure toutes les personnes avec lesquelles vous avez été en contact étroit (moins de 2 mètres, conversation en face à face) pendant plus de 15 minutes au cours des deux jours précédant l'apparition des symptômes";
 
-"Home_Thank_You_Card_App_Item_Title" = "Veuillez considérer tout particulièrement les personnes qui ne seront pas directement averties par l'application puisqu'elles ne possèdent pas de smartphone ou n'ont pas installé l'application" ;
+"Home_Thank_You_Card_App_Item_Title" = "Veuillez considérer tout particulièrement les personnes qui ne seront pas directement averties par l'application puisqu'elles ne possèdent pas de smartphone ou n'ont pas installé l'application";
 
-"Home_Thank_You_Card_NoSymptoms_Item_Title" = "Même si vous n'avez plus de symptômes et que vous vous sentez bien, vous pouvez toujours être contagieux. " ;
+"Home_Thank_You_Card_NoSymptoms_Item_Title" = "Même si vous n'avez plus de symptômes et que vous vous sentez bien, vous pouvez toujours être contagieux. ";
 
-/* Accueil Trouver positif */
-"Home_Finding_Positive_Card_Title" = "Diagnostic positif" ;
+/* Home Finding positive */
+"Home_Finding_Positive_Card_Title" = "Diagnostic positif";
 
-"Home_Finding_Positive_Card_Status_Title" = "SARS-CoV-2 positif" ;
+"Home_Finding_Positive_Card_Status_Title" = "SARS-CoV-2 positif";
 
-"Sous-titre de la carte de statut de la maison" = "Vous avez été diagnostiqué comme étant porteur du SARS-CoV-2" ;
+"Home_Finding_Positive_Card_Phone_Item_Title" = "L'autorité de santé publique vous contactera dans les prochains jours par téléphone ou par courrier";
 
-"Titre de la carte de constatation positive" = "Veuillez noter :";
+"Home_Finding_Positive_Card_Home_Item_Title" = "Vous êtes contagieux. Isolez-vous des autres personnes";
 
-"Home_Finding_Positive_Card_Phone_Item_Title" = "L'autorité de santé publique vous contactera dans les prochains jours par téléphone ou par courrier" ;
+"Home_Finding_Positive_Card_Share_Item_Title" = "Partagez vos identifiants aléatoires afin que les autres puissent être avertis";
 
-"Home_Finding_Positive_Card_Home_Item_Title" = "Vous êtes contagieux. Isolez-vous des autres personnes" ;
-
-"Home_Finding_Positive_Card_Share_Item_Title" = "Partagez vos identifiants aléatoires afin que les autres puissent être avertis" ;
-
-"Bouton de recherche de carte positive" = "Suivant" ;
+"Home_Finding_Positive_Card_Button" = "Suivant";
 
 /* Home Submit card */
 "Home_SubmitCard_Title" = "Avez-vous été testé ?";
 
-"Home_SubmitCard_Body" = "Aidez à briser la chaîne d'infection en informant les autres" ;
+"Home_SubmitCard_Body" = "Aidez à briser la chaîne d'infection en informant les autres";
 
-"Home_SubmitCard_Button" = "En savoir plus et aide" ;
+"Home_SubmitCard_Button" = "En savoir plus et aide";
 
-"Home_InfoCard_ShareTitle" = "Partagez l'application Coronalert" ;
+"Home_InfoCard_ShareTitle" = "Partagez l'application Coronalert";
 
-"Home_InfoCard_ShareBody" = "Plus il y a de personnes qui utilisent l'application, plus vite nous pourrons briser la chaîne d'infection. Veuillez inviter votre famille et vos amis à télécharger l'application" ;
+"Home_InfoCard_ShareBody" = "Plus il y a de personnes qui utilisent l'application, plus vite nous pourrons briser la chaîne d'infection. Veuillez inviter votre famille et vos amis à télécharger l'application";
 
-"Home_InfoCard_AboutTitle" = "FAQ" ;
+"Home_InfoCard_AboutTitle" = "FAQ";
 
-"Home_InfoCard_AboutBody" = "Vous trouverez ici les réponses aux questions les plus fréquemment posées sur l'application Coronalert. Vous serez redirigé vers un site web externe" ;
+"Home_InfoCard_AboutBody" = "Vous trouverez ici les réponses aux questions les plus fréquemment posées sur l'application Coronalert. Vous serez redirigé vers un site web externe";
 
-"Home_SettingsCard_Title" = "Paramètres" ;
+"Home_SettingsCard_Title" = "Paramètres";
 
-"Home_AppInformationCard_Title" = "Informations application" ;
+"Home_AppInformationCard_Title" = "Informations application";
 
-"Home_AppInformationCard_Version" = "Version" ;
+"Home_AppInformationCard_Version" = "Version";
 
 /* Home Result Card */
-"Home_resultCard_ResultAvailableTitle" = "Votre résultat est disponible" ;
+"Home_resultCard_ResultAvailableTitle" = "Votre résultat est disponible";
 
-"Home_resultCard_ResultUnvailableTitle" = "Votre résultat n'est pas encore disponible" ;
+"Home_resultCard_ResultUnvailableTitle" = "Votre résultat n'est pas encore disponible";
 
-"Home_resultCard_ShowResultButton" = "Test d'affichage" ;
+"Home_resultCard_ShowResultButton" = "Test d'affichage";
 
-"Home_resultCard_LoadingBody" = "Les données actuelles sont en cours de téléchargement\nCela peut prendre plusieurs minutes" ;
+"Home_resultCard_LoadingBody" = "Les données actuelles sont en cours de téléchargement\nCela peut prendre plusieurs minutes";
 
-"Home_resultCard_LoadingTitle" = "Mise à jour en cours..." ;
+"Home_resultCard_LoadingTitle" = "Mise à jour en cours...";
 
-"Home_resultCard_NegativeTitle" = "Diagnostic négatif" ;
+"Home_resultCard_NegativeTitle" = "Diagnostic négatif";
 
-"Home_resultCard_NegativeDesc" = "Vous avez été diagnostiqué négatif pour le SRAS-CoV-2." ;
+"Home_resultCard_NegativeDesc" = "Vous avez été diagnostiqué négatif pour le SRAS-CoV-2.";
 
-"Home_resultCard_PendingDesc" = "L'évaluation de votre test n'est pas encore terminée" ;
+"Home_resultCard_PendingDesc" = "L'évaluation de votre test n'est pas encore terminée";
 
-"Home_resultCard_InvalidTitle" = "Test non valide" ;
+"Home_resultCard_InvalidTitle" = "Test non valide";
 
-"Home_resultCard_InvalidDesc" = "Votre test ne peut pas être évalué" ;
+"Home_resultCard_InvalidDesc" = "Votre test ne peut pas être évalué";
 
-"Home_resultCard_LoadingErrorTitle" = "Le résultat de votre test ne peut pas être chargé" ;
+"Home_resultCard_LoadingErrorTitle" = "Le résultat de votre test ne peut pas être chargé";
 
-/* Informations sur l'application - A propos de */
-"App_Information_About_Navigation" = "À propos de l'application" ;
+/* App Information - About */
+"App_Information_About_Navigation" = "À propos de l'application";
 
-"App_Information_About_ImageDescription" = "" ;
+"App_Information_About_ImageDescription" = "";
 
-"App_Information_About_Title" = "Luttons ensemble contre le coronavirus" ;
+"App_Information_About_Title" = "Luttons ensemble contre le coronavirus";
 
-"App_Information_About_Description" = "Sciensano est l'organisme fédéral belge de santé publique. Il publie l'application Coronalert au nom du gouvernement fédéral. L'application se veut un complément numérique aux mesures de santé publique déjà mises en place : éloignement social, hygiène, et masques faciaux" ;
+"App_Information_About_Description" = "Sciensano est l'organisme fédéral belge de santé publique. Il publie l'application Coronalert au nom du gouvernement fédéral. L'application se veut un complément numérique aux mesures de santé publique déjà mises en place : éloignement social, hygiène, et masques faciaux";
 
-"App_Information_About_Text" = "Quiconque utilise l'application aide à tracer et à briser les chaînes d'infection. L'application enregistre les rencontres avec d'autres personnes localement sur votre appareil. Vous êtes averti si vous avez rencontré des personnes chez qui le COVID-19 a été diagnostiqué par la suite. Votre identité et votre vie privée sont toujours protégées" ;
+"App_Information_About_Text" = "Quiconque utilise l'application aide à tracer et à briser les chaînes d'infection. L'application enregistre les rencontres avec d'autres personnes localement sur votre appareil. Vous êtes averti si vous avez rencontré des personnes chez qui le COVID-19 a été diagnostiqué par la suite. Votre identité et votre vie privée sont toujours protégées";
 
-/* Informations sur l'application - FAQ */
-"App_Information_FAQ_Navigation" = "FAQ" ;
+/* App Information - FAQ */
+"App_Information_FAQ_Navigation" = "FAQ";
 
 /* App Information - Contact */
-"App_Information_Contact_Navigation" = "Numéro d'information" ;
+"App_Information_Contact_Navigation" = "Numéro d'information";
 
-"App_Information_Contact_ImageDescription" = "Un homme porte un casque d'écoute lorsqu'il passe un appel téléphonique" ;
+"App_Information_Contact_ImageDescription" = "Un homme porte un casque d'écoute lorsqu'il passe un appel téléphonique";
 
 "App_Information_Contact_Title" = "Comment pouvons-nous vous aider ?";
 
-"App_Information_Contact_Description" = "Pour toute question technique concernant l'application Coronalert, veuillez contacter notre numéro d'information" ;
+"App_Information_Contact_Description" = "Pour toute question technique concernant l'application Coronalert, veuillez contacter notre numéro d'information";
 
-"App_Information_Contact_Hotline_Title" = "Numéro d'information" ;
+"App_Information_Contact_Hotline_Title" = "Numéro d'information";
 
-"App_Information_Contact_Hotline_Text" = "0800 14 689" ;
+"App_Information_Contact_Hotline_Text" = "0800 14 689";
 
-"Numéro de la ligne d'assistance App_Information_Contact" = "0800 14 689" ;
+"App_Information_Contact_Hotline_Number" = "0800 14 689";
 
-"App_Information_Contact_Hotline_Description" = "Notre service clientèle est là pour vous aider" ;
+"App_Information_Contact_Hotline_Description" = "Notre service clientèle est là pour vous aider";
 
-"App_Information_Contact_Hotline_Termms" = "Langues : Français, Néerlandais, Allemand\n\nHoraires d'ouverture:\ndu lundi au samedi : 9h-17h\n(sauf jours fériés)\n\nLa communication est gratuite." ;
+"App_Information_Contact_Hotline_Terms" = "Talen: Nederlands, Frans, Duits, Engels, Frans, Kantooruren: van maandag tot zaterdag: 9 uur 's ochtends tot 17 uur 's avonds, behalve op nationale feestdagen. Het telefoontje is gratis";
 
-/* Informations sur l'application - Mentions légales */
-"App_Information_Imprint_Navigation" = "Empreinte" ;
+/* App Information - Imprint */
+"App_Information_Imprint_Navigation" = "Empreinte";
 
-"App_Information_Imprint_ImageDescription" = "Une main tient un smartphone qui affiche un grand corps de texte à l'écran. À côté du texte se trouve un symbole de section représentant l'empreinte" ;
+"App_Information_Imprint_ImageDescription" = "Une main tient un smartphone qui affiche un grand corps de texte à l'écran. À côté du texte se trouve un symbole de section représentant l'empreinte";
 
-"App_Information_Imprint_Section1_Title" = "Publié par" ;
+"App_Information_Imprint_Section1_Title" = "Publié par";
 
-"App_Information_Imprint_Section1_Text" = "(responsable conformément au § 5, al. 1 TMG, article 55, paragraphe 1. 1 RStV, DS-GVO, BDSG)" ;
+"App_Information_Imprint_Section1_Text" = "(responsable conformément au § 5, al. 1 TMG, article 55, paragraphe 1. 1 RStV, DS-GVO, BDSG)";
 
-"App_Information_Imprint_Section2_Title" = "Sciensano" ;
+"App_Information_Imprint_Section2_Title" = "Sciensano";
 
-"App_Information_Imprint_Section2_Text" = "Rue Juliette Wytsmanstraat 14 Belgium\n1050 Bruxelles\nreprésenté par son président" ;
+"App_Information_Imprint_Section2_Text" = "Rue Juliette Wytsmanstraat 14 Belgium\n1050 Bruxelles\nreprésenté par son président";
 
-"App_Information_Imprint_Section3_Title" = "Contact" ;
+"App_Information_Imprint_Section3_Title" = "Contact";
 
-"App_Information_Imprint_Section3_Text" = "E-Mail :  info@sciensano.be\nTéléphone : 0800 14 689" ;
+"App_Information_Imprint_Section3_Text" = "E-Mail :  info@sciensano.be\nTéléphone : 0800 14 689";
 
-"App_Information_Imprint_Section4_Title" = "Numéro d'identification à la TVA" ;
+"App_Information_Imprint_Section4_Title" = "Numéro d'identification à la TVA";
 
-"App_Information_Imprint_Section4_Text" = "BE 985 523 430" ;
+"App_Information_Imprint_Section4_Text" = "BE 985 523 430";
 
 /* App Information - Legal */
-"App_Information_Legal_Navigation" = "Mentions légales" ;
+"App_Information_Legal_Navigation" = "Mentions légales";
 
-/* App Information - Vie privée */
-"App_Information_Privacy_Navigation" = "Confidentialité des données" ;
+/* App Information - Privacy */
+"App_Information_Privacy_Navigation" = "Confidentialité des données";
 
-"App_Information_Legal_ImageDescription" = "Une main tient un smartphone qui affiche un grand corps de texte sur l'écran. A côté du texte se trouve une balance qui symbolise les mentions légales" ;
+"App_Information_Legal_ImageDescription" = "Une main tient un smartphone qui affiche un grand corps de texte sur l'écran. A côté du texte se trouve une balance qui symbolise les mentions légales";
 
-"App_Information_Privacy_Title" = "Confidentialité des données" ;
+"App_Information_Privacy_Title" = "Confidentialité des données";
 
-"App_Information_Privacy_Description" = "Vous resterez anonyme" ; "Vos données sont entièrement cryptées et transmises sous un pseudonyme" ;
+"App_Information_Privacy_Description" = "Vous resterez anonyme";
 
-/* App Information - Conditions */
-"App_Information_Terms_Navigation" = "Conditions d'utilisation" ;
+/* App Information - Terms */
+"App_Information_Terms_Navigation" = "Conditions d'utilisation";
 
-"App_Information_Terms_ImageDescription" = "Une main tient un smartphone affichant un grand corps de texte sur l'écran. A côté du texte se trouve une coche symbolisant que les conditions d'utilisation ont été acceptées" ;
+"App_Information_Terms_ImageDescription" = "Une main tient un smartphone affichant un grand corps de texte sur l'écran. A côté du texte se trouve une coche symbolisant que les conditions d'utilisation ont été acceptées";
 
-"App_Information_Terms_Title" = "Conditions d'utilisation" ;
+"App_Information_Terms_Title" = "Conditions d'utilisation";
 
-/* Inviter des amis */
-"InviteFriends_NavTitle" = "Partager" ;
+/* Invite Friends */
+"InviteFriends_NavTitle" = "Partager";
 
-"InviteFriends_Subtitle" = "Partager l'application Coronalert" ;
+"InviteFriends_Subtitle" = "Partager l'application Coronalert";
 
-"InviteFriends_Title" = "Luttons ensemble contre le coronavirus" ;
+"InviteFriends_Title" = "Luttons ensemble contre le coronavirus";
 
-"InviteFriends_Description" = "Plus il y a de personnes qui utilisent l'application, plus vite nous pouvons briser la chaîne d'infection. Invitez votre famille et vos amis à télécharger l'application" ;
+"InviteFriends_Description" = "Plus il y a de personnes qui utilisent l'application, plus vite nous pouvons briser la chaîne d'infection. Invitez votre famille et vos amis à télécharger l'application";
 
-"InviteFriends_Button" = "Envoyer le lien de téléchargement" ;
+"InviteFriends_Button" = "Envoyer le lien de téléchargement";
 
-"InviteFriends_ShareTitle" = "Luttons ensemble contre les coronavirus. Je suis dans le coup, toi aussi ?" ;
+"InviteFriends_ShareTitle" = "Luttons ensemble contre les coronavirus. Je suis dans le coup, toi aussi ?";
 
-"InviteFriends_ShareUrl" = "https://www.coronalert.be" ;
+"InviteFriends_ShareUrl" = "https://www.coronalert.be";
 
-"InviteFriends_Illustration_Label" = "Une personne partage l'application Coronalert avec quatre autres personnes." ;
+"InviteFriends_Illustration_Label" = "Une personne partage l'application Coronalert avec quatre autres personnes.";
 
-/* Réinitialisation de la vue */
-"Reset_NavTitle" = "Réinitialisation" ;
+/* Reset View */
+"Reset_NavTitle" = "Réinitialisation";
 
 "Reset_Header1" = "Etes-vous sûr de vouloir réinitialiser l'application ?";
 
-"Reset_Descrition1" = "Vous ne serez plus notifié de vos expositions et vous ne pourrez plus avertir les autres utilisateurs" ;
+"Reset_Descrition1" = "Vous ne serez plus notifié de vos expositions et vous ne pourrez plus avertir les autres utilisateurs";
 
-"Bouton_Réinitialisation" = "Réinitialiser l'application" ;
+"Reset_Discard" = "Annuler";
 
-"Reset_Discard" = "Annuler" ;
+"Reset_InfoTitle" = "Supprimer le journal d'exposition";
 
-"Reset_InfoTitle" = "Supprimer le journal d'exposition" ;
+"Reset_InfoDescription" = "Le journal d'exposition doit être supprimé séparément dans les paramètres de votre appareil";
 
-"Reset_InfoDescription" = "Le journal d'exposition doit être supprimé séparément dans les paramètres de votre appareil" ;
+"Reset_Subtitle" = "Réinitialiser l'application";
 
-"Reset_Subtitle" = "Réinitialiser l'application" ;
+"Reset_ImageDescription" = "Une main tient un smartphone qui affiche un symbole indiquant que l'application est réinitialisée";
 
-"Reset_ImageDescription" = "Une main tient un smartphone qui affiche un symbole indiquant que l'application est réinitialisée" ;
+"Reset_ConfirmDialog_Title" = "Réinitialisation de l'application";
 
-"Reset_ConfirmDialog_Title" = "Réinitialisation de l'application" ;
+"Reset_ConfirmDialog_Description" = "Vous ne serez plus notifié de vos expositions et vous ne pourrez plus avertir les autres utilisateurs. Cette procédure est irréversible.";
 
-"Reset_ConfirmDialog_Description" = "Vous ne serez plus notifié de vos expositions et vous ne pourrez plus avertir les autres utilisateurs. Cette procédure est irréversible." ;
+"Reset_ConfirmDialog_Cancel" = "Annuler";
 
-"Reset_ConfirmDialog_Cancel" = "Annuler" ;
-
-"Reset_ConfirmDialog_Confirm" = "Réinitialiser" ;
+"Reset_ConfirmDialog_Confirm" = "Réinitialiser";
 
 /* Safari */
-"safari_corona_website" = "https://www.coronalert.be" ;
+"safari_corona_website" = "https://www.coronalert.be";
 
-/* Notifications locales */
-"local_notifications_ignore" = "Ignorer" ;
+/* Local Notifications */
+"local_notifications_ignore" = "Ignorer";
 
 "local_notifications_detectexposure_title" = "Coronalert";
 
@@ -906,92 +865,85 @@ Pour de plus amples informations, veuillez consulter notre page FAQ" ;
 
 "local_notifications_testresults_body" = "Vous avez de nouveaux messages de votre application Coronalert";
 
-/* Légende des risques */
+/* Risk Legend */
 "RiskLegend_Title" = "Vue d'ensemble";
 
-"RiskLegend_Subtitle" = "Fonctions et concepts importants" ;
+"RiskLegend_Subtitle" = "Fonctions et concepts importants";
 
-"RiskLegend_Legend1_Title" = "Enregistrement de l'exposition" ;
+"RiskLegend_Legend1_Title" = "Enregistrement de l'exposition";
 
-"RiskLegend_Legend1_Text" = "La journalisation des expositions est l'une des trois caractéristiques principales de l'application. Lorsque vous l'activez, les rencontres avec les appareils d'autres personnes sont enregistrées. Vous n'avez rien d'autre à faire" ;
+"RiskLegend_Legend1_Text" = "La journalisation des expositions est l'une des trois caractéristiques principales de l'application. Lorsque vous l'activez, les rencontres avec les appareils d'autres personnes sont enregistrées. Vous n'avez rien d'autre à faire";
 
-"RiskLegend_Legend2_Title" = "Risque d'infection" ;
+"RiskLegend_Legend2_Title" = "Risque d'infection";
 
-"RiskLegend_Legend2_Text" = "Si vous avez été en contact au cours des 14 derniers jours avec une personne chez qui le COVID-19 a été diagnostiqué, l'application calcule votre risque personnel d'infection. Il le fait en mesurant la durée et la proximité de l'exposition" ;
+"RiskLegend_Legend2_Text" = "Si vous avez été en contact au cours des 14 derniers jours avec une personne chez qui le COVID-19 a été diagnostiqué, l'application calcule votre risque personnel d'infection. Il le fait en mesurant la durée et la proximité de l'exposition";
 
 "RiskLegend_Legend2_RiskLevels" = "Le statut de risque suivant peut être affiché :";
 
-"RiskLegend_Legend2_High" = "Risque plus élevé" ;
+"RiskLegend_Legend2_High" = "Risque plus élevé";
 
-"RiskLegend_Legend2_High_Color" = "Rouge" ;
+"RiskLegend_Legend2_High_Color" = "Rouge";
 
-"RiskLegend_Legend2_Low" = "Risque faible" ;
+"RiskLegend_Legend2_Low" = "Risque faible";
 
-"RiskLegend_Legend2_Low_Color" = "Vert" ;
+"RiskLegend_Legend2_Low_Color" = "Vert";
 
-"RiskLegend_Legend2_Unknown" = "Risque inconnu" ;
+"RiskLegend_Legend2_Unknown" = "Risque inconnu";
 
-"RiskLegend_Legend2_Unknown_Color" = "Gris" ;
+"RiskLegend_Legend2_Unknown_Color" = "Gris";
 
-"RiskLegend_Legend3_Title" = "Notification aux autres utilisateurs" ;
+"RiskLegend_Legend3_Title" = "Notification aux autres utilisateurs";
 
-"RiskLegend_Legend3_Text" = "Une autre fonction centrale est l'enregistrement de votre test et la récupération du résultat. Si l'on vous diagnostique le COVID-19, vous pouvez notifier les autres et briser la chaîne d'infection" ;
+"RiskLegend_Legend3_Text" = "Une autre fonction centrale est l'enregistrement de votre test et la récupération du résultat. Si l'on vous diagnostique le COVID-19, vous pouvez notifier les autres et briser la chaîne d'infection";
 
-"RiskLegend_Definitions_Title" = "Définition des termes" ;
+"RiskLegend_Definitions_Title" = "Définition des termes";
 
-"RiskLegend_Store_Title" = "Journal d'exposition" ;
+"RiskLegend_Store_Title" = "Journal d'exposition";
 
-"RiskLegend_Store_Text" = "Liste des ID reçus et des ID aléatoires temporaires enregistrés dans le stockage du système d'exploitation. Cette liste est lue lorsque les expositions sont contrôlées. Tous les ID aléatoires sont automatiquement supprimés après 14 jours" ;
+"RiskLegend_Store_Text" = "Liste des ID reçus et des ID aléatoires temporaires enregistrés dans le stockage du système d'exploitation. Cette liste est lue lorsque les expositions sont contrôlées. Tous les ID aléatoires sont automatiquement supprimés après 14 jours";
 
-"RiskLegend_Check_Title" = "Contrôle des expositions" ;
+"RiskLegend_Check_Title" = "Contrôle des expositions";
 
-"RiskLegend_Check_Text" = "Les données du journal des expositions sont récupérées et synchronisées avec les infections signalées par les autres utilisateurs. Le contrôle de l'exposition est effectué automatiquement toutes les deux heures environ" ;
+"RiskLegend_Check_Text" = "Les données du journal des expositions sont récupérées et synchronisées avec les infections signalées par les autres utilisateurs. Le contrôle de l'exposition est effectué automatiquement toutes les deux heures environ";
 
-"RiskLegend_Contact_Title" = "Expositions" ;
+"RiskLegend_Contact_Title" = "Expositions";
 
-"RiskLegend_Contact_Text" = "Rencontres sur une plus longue durée et à proximité de personnes diagnostiquées avec le COVID-19" ;
+"RiskLegend_Contact_Text" = "Rencontres sur une plus longue durée et à proximité de personnes diagnostiquées avec le COVID-19";
 
-"RiskLegend_Notification_Title" = "Notification d'exposition" ;
+"RiskLegend_Notification_Title" = "Notification d'exposition";
 
 "RiskLegend_Notification_Text" = "L'affichage des expositions dans le app Coronalert";
 
-"RiskLegend_Random_Title" = "ID aléatoires" ;
+"RiskLegend_Random_Title" = "ID aléatoires";
 
-"RiskLegend_Random_Text" = "Les ID aléatoires sont des combinaisons de chiffres et de lettres générées de manière aléatoire. Elles sont échangées entre des dispositifs situés à proximité les uns des autres. Les identifiants aléatoires ne peuvent pas être rattachés à une personne spécifique et sont automatiquement supprimés après 14 jours. Les personnes diagnostiquées avec le COVID-19 peuvent choisir de partager leurs ID aléatoires des 14 derniers jours avec d'autres utilisateurs de l'application" ;
+"RiskLegend_Random_Text" = "Les ID aléatoires sont des combinaisons de chiffres et de lettres générées de manière aléatoire. Elles sont échangées entre des dispositifs situés à proximité les uns des autres. Les identifiants aléatoires ne peuvent pas être rattachés à une personne spécifique et sont automatiquement supprimés après 14 jours. Les personnes diagnostiquées avec le COVID-19 peuvent choisir de partager leurs ID aléatoires des 14 derniers jours avec d'autres utilisateurs de l'application";
 
-"RiskLegend_Image1_AccLabel" = "Un appareil affiche des contenus chiffrés différents" ;
+"RiskLegend_Image1_AccLabel" = "Un appareil affiche des contenus chiffrés différents";
 
-/* Message de mise à jour */
-"Update_Message_Title" = "Mise à jour disponible" ;
+/* Update Message */
+"Update_Message_Title" = "Mise à jour disponible";
 
 "Update_Message_Text" = "Il y a une mise à jour disponible pour l'application Coronalert";
 
-"Update_Message_Text_Force" = "Veuillez noter que vous ne pouvez utiliser à nouveau l'application Coronalert qu'après avoir installé la dernière mise à jour" ;
+"Update_Message_Text_Force" = "Veuillez noter que vous ne pouvez utiliser à nouveau l'application Coronalert qu'après avoir installé la dernière mise à jour";
 
-"Update_Message_Action_Update" = "Mise à jour" ;
+"Update_Message_Action_Update" = "Mise à jour";
 
-"Update_Message_Action_Later" = "Plus tard" ;
+"Update_Message_Action_Later" = "Plus tard";
 
 /* ENATanInput */
-"ENATanInput_Empty" = "Vide" ;
+"ENATanInput_Empty" = "Vide";
 
-"ENATanInput_InvalidCharacter" = "Caractère non valide\n\n%@" ;
+"ENATanInput_InvalidCharacter" = "Caractère non valide\n\n%@";
 
-"ENATanInput_CharacterIndex" = "Caractère %1$u de %2$u" ;
+"ENATanInput_CharacterIndex" = "Caractère %1$u de %2$u";
 
-/*
- Formatage de l'intervalle de traçage actif :
- Les deux entrées suivantes sont utilisées ensemble. Si le traçage n'était pas actif (presque) 14 jours
- au cours des 14 derniers jours, alors `Active_Tracing_Interval_Partially_Active` est utilisé - sinon
- On utilisera "Actif_Intervalle_de_traçage_partiellement_actif".
- */
-"Active_Tracing_Interval_Partially_Active" = "L'enregistrement de l'exposition était actif pour %1$u des derniers %2$u jours" ;
-"Active_Tracing_Interval_Permanently_Active" = "L'enregistrement de l'exposition est actif en permanence" ;
+/* Active Tracing Interval Formatting:\n The following two entries are used together. If tracing was not active (almost) 14 days\n during the last 14 days then `Active_Tracing_Interval_Partially_Active` is used – otherwise\n `Active_Tracing_Interval_Partially_Active` will be used. */
+"Active_Tracing_Interval_Partially_Active" = "L'enregistrement de l'exposition était actif pour %1$u des derniers %2$u jours";
 
-/*
- Belgian app translations
- */
+"Active_Tracing_Interval_Permanently_Active" = "L'enregistrement de l'exposition est actif en permanence";
 
+/* Belgian app translations */
 "BEMobileTestId_title" = "Faites un test";
 
 "BEMobileTestId_DateExplanation" = "Sélectionnez la date à laquelle vous êtes devenu contagieux.\nLa personne qui vous fait le test vous la communiquera.";
@@ -999,9 +951,52 @@ Pour de plus amples informations, veuillez consulter notre page FAQ" ;
 "BEMobileTestId_Select" = "Confirmer";
 
 "BEMobileTestId_Date" = "Date";
+
 "BEMobileTestId_Save" = "Sauvegarder";
+
 "BEMobileTestId_saveExplanation" = "Montrez ce numéro à la personne qui vous fera le test.\nTapez \"Sauvegarder\" pour être averti dès que le résultat est disponible";
 
+"BELanguage" = "fr";
+
 "BESelectKeyCountries_title" = "Sélectionnez Pays";
+
 "BESelectKeyCountries_explanation" = "Si vous n'étiez pas en Belgique pendant certaines dates ci-dessous et vous voulez partagez cet info (de façon anonyme), veuillez changer le pays en sélectionnant les dates que vous voulez changer.";
+
 "BESelectKeyCountries_sendKeys" = "Partagez vos identifiants";
+
+"Home_Risk_Inactive_Activate_Item_Title" = "Dernière exposition enregistrée : %@";
+
+"Home_Risk_Inactive_Activate_Item_Unknown_Title" = "Risque inconnu";
+
+"Home_Risk_Inactive_Activate_Item_Low_Title" = "Risque faible";
+
+"Home_Risk_Inactive_Activate_Item_High_Title" = "Risque élevé";
+
+"Home_Risk_Low_Button" = "Mise à jour";
+
+"Home_Risk_High_Button" = "Mise à jour";
+
+"Home_Risk_Status_Check_Button" = "Mise à jour";
+
+"Message d'alerte sur la détection des risques" = "Votre risque d'infection ne peut être calculé que pour les périodes pendant lesquelles l'enregistrement de l'exposition était actif. La fonction d'enregistrement doit donc rester active en permanence.\nL'enregistrement de l'exposition couvre les derniers %1$u jours.\nL'application supprime automatiquement les anciens journaux, car ils ne sont plus pertinents pour la prévention des infections.\n\nPour de plus amples informations, veuillez consulter notre page FAQ";
+
+"ExposureSubmissionDispatch_CODEButtonTitle" = "CODE";
+
+"ExposureSubmissionDispatch_CODEButtonDescription" = "Enregistrez votre test en entrant votre CODE manuellement";
+
+"ExposureSubmissionHotline_SectionAccessibilityLabel1" = "Étape 1 sur 2";
+
+"ExposureSubmission_CODEInputButtonTitle" = "Entrer le CODE";
+
+"Description du bouton de la barre droite" = "Informations";
+
+"Sous-titre de la carte de statut de la maison" = "Vous avez été diagnostiqué comme étant porteur du SARS-CoV-2";
+
+"Titre de la carte de constatation positive" = "Veuillez noter :";
+
+"Bouton de recherche de carte positive" = "Suivant";
+
+"Numéro de la ligne d'assistance App_Information_Contact" = "0800 14 689";
+
+"Bouton_Réinitialisation" = "Réinitialiser l'application";
+

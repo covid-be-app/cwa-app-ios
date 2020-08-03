@@ -135,7 +135,9 @@ final class ExposureSubmissionQRScannerViewController: UIViewController, QRScann
 		}
 	}
 
+	// :BE: disable camera permission code since we don't use it and we don't want Apple to complain
 	private func prepareScanning() {
+		/*
 		switch AVCaptureDevice.authorizationStatus(for: .video) {
 		case .authorized:
 			startScanning()
@@ -151,19 +153,11 @@ final class ExposureSubmissionQRScannerViewController: UIViewController, QRScann
 		default:
 			delegate?.qrScanner(self, error: .cameraPermissionDenied)
 		}
+*/
 	}
 
 	// Make sure to get permission to use the camera before using this method.
 	private func startScanning() {
-		
-		// :TEMP:
-		
-		let uuid = UUID().uuidString
-		let urlString = "https://www.covid.be/?\(uuid)"
-		
-		delegate?.qrScanner(self, didScan: urlString)
-		return
-		
 		let captureSession = AVCaptureSession()
 
 		captureDevice = AVCaptureDevice.default(for: .video)

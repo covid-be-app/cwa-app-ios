@@ -66,7 +66,7 @@
 
 "ExposureDetection_Refreshed_Never" = "Bilinmiyor";
 
-"ExposureDetection_RefreshingIn" = "%02d:%02d\U00A0minutes içinde güncelle";
+"ExposureDetection_RefreshingIn" = "%02d:%02d minutes içinde güncelle";
 
 "ExposureDetection_RefreshIn" = "%@ içinde güncelle";
 
@@ -620,9 +620,9 @@
 
 "Home_Risk_No_Date_Title" = "Bilinmiyor";
 
-"Home_Risk_Period_Update_Title" = "%@\U00A0hours aralıkla güncellenir";
+"Home_Risk_Period_Update_Title" = "%@ hours aralıkla güncellenir";
 
-"Home_Risk_Period_Disabled_Button_Title" = "Yalnızca %@\U00A0hours aralıkla güncellenir";
+"Home_Risk_Period_Disabled_Button_Title" = "Yalnızca %@ hours aralıkla güncellenir";
 
 "Home_Risk_Unknown_Title" = "Bilinmeyen Risk";
 
@@ -638,7 +638,6 @@
 
 /* Home Unknown card */
 "Home_RiskCard_Unknown_Item_Title" = "Maruz kalma günlüğünün uzun süredir açık olmadığı için enfeksiyon riskinizi hesaplayamıyoruz.";
-"Home_RiskCard_Unknown_Item_Title" = "Maruz kalma günlüğü uzun süredir açık olmadığı için enfeksiyon riskinizi hesaplayamıyoruz.";
 
 /* Home Unknown 48 card */
 "Home_RiskCard_Unknown48h_Body" = "Ihre Risiko-Berechnung wurde seit mehr als 48 Stunden nicht aktualisiert. Bitte aktualisieren Sie die Berechnung.";

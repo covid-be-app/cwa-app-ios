@@ -66,7 +66,7 @@
 
 "ExposureDetection_Refreshed_Never" = "Неизвестно";
 
-"ExposureDetection_RefreshingIn" = "Обновление через %02d:%02d\U00A0мин";
+"ExposureDetection_RefreshingIn" = "Обновление через %02d:%02d мин";
 
 "ExposureDetection_RefreshIn" = "Обновление через %@";
 
@@ -604,9 +604,9 @@
 
 "Home_Risk_No_Date_Title" = "Неизвестно";
 
-"Home_Risk_Period_Update_Title" = "Обновление каждые %@\U00A0ч";
+"Home_Risk_Period_Update_Title" = "Обновление каждые %@ ч";
 
-"Home_Risk_Period_Disabled_Button_Title" = "Обновление только каждые %@\U00A0ч";
+"Home_Risk_Period_Disabled_Button_Title" = "Обновление только каждые %@ ч";
 
 "Home_Risk_Unknown_Title" = "Неизвестный риск";
 
@@ -622,7 +622,6 @@
 
 /* Home Unknown card */
 "Home_RiskCard_Unknown_Item_Title" = "С момента включения определения контакта не прошло достаточно времени, чтобы рассчитать Ваш риск заражения.";
-"Home_RiskCard_Unknown_Item_Title" = "С момента включения определения риска не прошло достаточно времени, чтобы рассчитать Ваш риск заражения.";
 
 /* Home Unknown 48 card */
 "Home_RiskCard_Unknown48h_Body" = "Ihre Risiko-Berechnung wurde seit mehr als 48 Stunden nicht aktualisiert. Bitte aktualisieren Sie die Berechnung.";
@@ -635,21 +634,6 @@
 "Home_Risk_Inactive_NoCalculation_Possible_Body" = "Активируйте определение контакта, чтобы оценить Ваш статус риска сегодня.";
 
 "Home_Risk_Inactive_Outdated_Results_Body" = "Не удается обновить определение контакта более 24 часов.";
-"Home_Risk_Inactive_NoCalculation_Possible_Title" = "Определение риска остановлено";
-
-"Home_Risk_Inactive_Outdated_Results_Title" = "Определение риска невозможно";
-
-"Home_Risk_Inactive_NoCalculation_Possible_Body" = "Активируйте определение риска, чтобы оценить Ваш статус риска сегодня.";
-
-"Home_Risk_Inactive_Outdated_Results_Body" = "Не удается обновить определение риска более 24 часов.";
-
-"Home_Risk_Inactive_Activate_Item_Title" = "Последнее определение риска: %@";
-
-"Home_Risk_Inactive_Activate_Item_Unknown_Title" = "Неизвестный риск";
-
-"Home_Risk_Inactive_Activate_Item_Low_Title" = "Низкий риск";
-
-"Home_Risk_Inactive_Activate_Item_High_Title" = "Повышенный риск";
 
 "Home_Risk_Inactive_NoCalculation_Possible_Button" = "Активировать определение риска";
 
@@ -953,4 +937,12 @@
 "ENATanInput_InvalidCharacter" = "Недопустимый символ\n\n%@";
 
 "ENATanInput_CharacterIndex" = "Символ %1$u из %2$u";
+
+"Home_Risk_Inactive_Activate_Item_Title" = "Последнее определение риска: %@";
+
+"Home_Risk_Inactive_Activate_Item_Unknown_Title" = "Неизвестный риск";
+
+"Home_Risk_Inactive_Activate_Item_Low_Title" = "Низкий риск";
+
+"Home_Risk_Inactive_Activate_Item_High_Title" = "Повышенный риск";
 

@@ -66,7 +66,7 @@
 
 "ExposureDetection_Refreshed_Never" = "Неизвестен";
 
-"ExposureDetection_RefreshingIn" = "Актуализиране след %02d:%02d\U00A0минути";
+"ExposureDetection_RefreshingIn" = "Актуализиране след %02d:%02d минути";
 
 "ExposureDetection_RefreshIn" = "Актуализиране след %@";
 
@@ -620,16 +620,14 @@
 
 "Home_Risk_No_Date_Title" = "Неизвестен";
 
-"Home_Risk_Period_Update_Title" = "Актуализира се на всеки %@\U00A0часа";
+"Home_Risk_Period_Update_Title" = "Актуализира се на всеки %@ часа";
 
-"Home_Risk_Period_Disabled_Button_Title" = "Актуализира се на всеки %@\U00A0часа";
+"Home_Risk_Period_Disabled_Button_Title" = "Актуализира се на всеки %@ часа";
 
-/* Home Unknown card */
 "Home_Risk_Unknown_Title" = "Неизвестен риск";
 
+/* Home Unknown card */
 "Home_RiskCard_Unknown_Item_Title" = "Тъй като регистрирането на излагания не риск не е било активно достатъчно дълго, не можем да изчислим Вашия риск от заразяване.";
-
-"Home_RiskCard_Unknown_Button" = "Актуализиране";
 
 /* Home Inactive card */
 "Home_Risk_Inactive_NoCalculation_Possible_Title" = "В момента не се извършва регистриране на излагания на риск";
@@ -639,14 +637,6 @@
 "Home_Risk_Inactive_NoCalculation_Possible_Body" = "Активирайте регистрирането на излагания на риск, за да разберете какво е нивото Ви на риск днес.";
 
 "Home_Risk_Inactive_Outdated_Results_Body" = "Регистърът на излаганията на риск не е обновяван повече от 24 часа.";
-
-"Home_Risk_Inactive_Activate_Item_Title" = "Последно регистриране на излагане на риск: %@";
-
-"Home_Risk_Inactive_Activate_Item_Unknown_Title" = "Неизвестен риск";
-
-"Home_Risk_Inactive_Activate_Item_Low_Title" = "Нисък риск";
-
-"Home_Risk_Inactive_Activate_Item_High_Title" = "Повишен риск";
 
 "Home_Risk_Inactive_NoCalculation_Possible_Button" = "Активиране на регистрирането на излагания на риск";
 
@@ -659,19 +649,13 @@
 
 "Home_Risk_Low_SaveDays_Item_Title__Permanently_Active" = "Няма прекъсване на регистрирането на излагания на риск";
 
-"Home_Risk_Low_Button" = "Актуализиране";
-
 /* Home High card */
 "Home_Risk_High_Title" = "Повишен риск";
-
-"Home_Risk_High_Button" = "Актуализиране";
 
 /* Home Status Check */
 "Home_Risk_Status_Check_Title" = "Извършва се проверка ...";
 
 "Home_Risk_Status_Check_Body" = "Извършва се изтегляне и проверка на актуалните данни. Това може да отнеме няколко минути.";
-
-"Home_Risk_Status_Check_Button" = "Актуализиране";
 
 /* Home Thank you card */
 "Home_Thank_You_Card_Title" = "Благодарим Ви!";
@@ -963,4 +947,18 @@
 "Active_Tracing_Interval_Partially_Active" = "Регистрирането на излагания на риск беше активно през %1$u от изминалите 14 дни.";
 
 "Active_Tracing_Interval_Permanently_Active" = "Няма прекъсване на регистрирането на излагания на риск";
+
+"Home_Risk_Inactive_Activate_Item_Title" = "Последно регистриране на излагане на риск: %@";
+
+"Home_Risk_Inactive_Activate_Item_Unknown_Title" = "Неизвестен риск";
+
+"Home_Risk_Inactive_Activate_Item_Low_Title" = "Нисък риск";
+
+"Home_Risk_Inactive_Activate_Item_High_Title" = "Повишен риск";
+
+"Home_Risk_Low_Button" = "Актуализиране";
+
+"Home_Risk_High_Button" = "Актуализиране";
+
+"Home_Risk_Status_Check_Button" = "Актуализиране";
 

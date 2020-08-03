@@ -66,7 +66,7 @@
 
 "ExposureDetection_Refreshed_Never" = "Nieznane";
 
-"ExposureDetection_RefreshingIn" = "Aktualizuj za %02d:%02d\U00A0minut(y)";
+"ExposureDetection_RefreshingIn" = "Aktualizuj za %02d:%02d minut(y)";
 
 "ExposureDetection_RefreshIn" = "Aktualizacja za %@";
 
@@ -620,16 +620,14 @@
 
 "Home_Risk_No_Date_Title" = "Nieznane";
 
-"Home_Risk_Period_Update_Title" = "Aktualizacja co %@\U00A0godzin(y)";
+"Home_Risk_Period_Update_Title" = "Aktualizacja co %@ godzin(y)";
 
-"Home_Risk_Period_Disabled_Button_Title" = "Aktualizacja tylko co %@\U00A0godzin(y)";
+"Home_Risk_Period_Disabled_Button_Title" = "Aktualizacja tylko co %@ godzin(y)";
 
-/* Home Unknown card */
 "Home_Risk_Unknown_Title" = "Nieznane ryzyko";
 
+/* Home Unknown card */
 "Home_RiskCard_Unknown_Item_Title" = "Ponieważ rejestrowanie narażenia nie było włączone przez wystarczająco długi czas, nie możemy obliczyć Twojego ryzyka zakażenia.";
-
-"Home_RiskCard_Unknown_Button" = "Aktualizuj";
 
 /* Home Inactive card */
 "Home_Risk_Inactive_NoCalculation_Possible_Title" = "Zatrzymano rejestrowanie narażenia";
@@ -639,14 +637,6 @@
 "Home_Risk_Inactive_NoCalculation_Possible_Body" = "Aktywuj rejestrowanie narażenia, aby już dziś ocenić swoje ryzyko.";
 
 "Home_Risk_Inactive_Outdated_Results_Body" = "Rejestrowanie narażenia nie mogło zostać zaktualizowane przez okres dłuższy niż 24 godziny.";
-
-"Home_Risk_Inactive_Activate_Item_Title" = "Ostatnie rejestrowanie narażenia:\n%@";
-
-"Home_Risk_Inactive_Activate_Item_Unknown_Title" = "Nieznane ryzyko";
-
-"Home_Risk_Inactive_Activate_Item_Low_Title" = "Niskie ryzyko";
-
-"Home_Risk_Inactive_Activate_Item_High_Title" = "Podwyższone ryzyko";
 
 "Home_Risk_Inactive_NoCalculation_Possible_Button" = "Aktywuj rejestrowanie narażenia";
 
@@ -659,19 +649,13 @@
 
 "Home_Risk_Low_SaveDays_Item_Title__Permanently_Active" = "Rejestrowanie narażenia stale aktywne";
 
-"Home_Risk_Low_Button" = "Aktualizuj";
-
 /* Home High card */
 "Home_Risk_High_Title" = "Podwyższone ryzyko";
-
-"Home_Risk_High_Button" = "Aktualizuj";
 
 /* Home Status Check */
 "Home_Risk_Status_Check_Title" = "Sprawdzanie w toku ...";
 
 "Home_Risk_Status_Check_Body" = "Bieżące dane są pobierane i sprawdzane. Może to potrwać kilka minut.";
-
-"Home_Risk_Status_Check_Button" = "Aktualizuj";
 
 /* Home Thank you card */
 "Home_Thank_You_Card_Title" = "Dziękujemy!";
@@ -963,4 +947,18 @@
 "Active_Tracing_Interval_Partially_Active" = "Rejestrowanie narażenia było aktywne przez %1$u z ostatnich 14 dni.";
 
 "Active_Tracing_Interval_Permanently_Active" = "Rejestrowanie narażenia stale aktywne";
+
+"Home_Risk_Inactive_Activate_Item_Title" = "Ostatnie rejestrowanie narażenia:\n%@";
+
+"Home_Risk_Inactive_Activate_Item_Unknown_Title" = "Nieznane ryzyko";
+
+"Home_Risk_Inactive_Activate_Item_Low_Title" = "Niskie ryzyko";
+
+"Home_Risk_Inactive_Activate_Item_High_Title" = "Podwyższone ryzyko";
+
+"Home_Risk_Low_Button" = "Aktualizuj";
+
+"Home_Risk_High_Button" = "Aktualizuj";
+
+"Home_Risk_Status_Check_Button" = "Aktualizuj";
 
