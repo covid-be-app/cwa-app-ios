@@ -20,13 +20,9 @@
 import Foundation
 import ExposureNotification
 
-class BEExposureSubmissionService : ENAExposureSubmissionService {
 
-	var secureStore:SecureStore {
-		get {
-			return store as! SecureStore
-		}
-	}
+class BEExposureSubmissionService : ENAExposureSubmissionService {
+	typealias BEExposureSubmissionGetKeysHandler = (Result<[ENTemporaryExposureKey], ExposureSubmissionError>) -> Void
 	
 	var httpClient:BEHTTPClient {
 		get {
@@ -36,16 +32,22 @@ class BEExposureSubmissionService : ENAExposureSubmissionService {
 	
 	var mobileTestId:BEMobileTestId? {
 		get {
-			return secureStore.mobileTestId
+			return store.mobileTestId
 		}
 		set {
-			secureStore.mobileTestId = newValue
+			store.mobileTestId = newValue
 
 			if newValue != nil {
 				print(newValue!)
-				secureStore.registrationToken = newValue!.registrationToken
+				store.registrationToken = newValue!.registrationToken
 			}
 		}
+	}
+	
+	override func deleteTest() {
+		super.deleteTest()
+		store.mobileTestId = nil
+		store.testResult = nil
 	}
 	
 	// no longer supported
@@ -68,52 +70,57 @@ class BEExposureSubmissionService : ENAExposureSubmissionService {
 				completeWith(.failure(self.parseError(error)))
 			case let .success(testResult):
 				if testResult.result != .pending {
-					self.secureStore.testResultReceivedTimeStamp = Int64(Date().timeIntervalSince1970)
-					self.secureStore.testResult = testResult
+					self.store.testResultReceivedTimeStamp = Int64(Date().timeIntervalSince1970)
+					self.store.testResult = testResult
 				}
 				completeWith(.success(testResult))
 			}
 		}
 	}
-
 	
-	/// This method submits the exposure keys. Additionally, after successful completion,
-	/// the timestamp of the key submission is updated.
-	override func submitExposure(completionHandler: @escaping ExposureSubmissionHandler) {
-		log(message: "Started exposure submission...")
-
+	func retrieveDiagnosisKeys(completionHandler: @escaping BEExposureSubmissionGetKeysHandler) {
 		diagnosiskeyRetrieval.accessDiagnosisKeys { keys, error in
 			if let error = error {
 				logError(message: "Error while retrieving diagnosis keys: \(error.localizedDescription)")
-				completionHandler(self.parseError(error))
+				completionHandler(.failure(self.parseError(error)))
 				return
 			}
 
 			guard var keys = keys, !keys.isEmpty else {
-				completionHandler(.noKeys)
-				// We perform a cleanup in order to set the correct
-				// timestamps, despite not having communicated with the backend,
-				// in order to show the correct screens.
-				self.submitExposureCleanup()
+				completionHandler(.failure(.noKeys))
 				return
 			}
 			keys.processedForSubmission()
 
-			self.submit(keys, completion: completionHandler)
+			completionHandler(.success(keys))
 		}
+
 	}
 
-	private func submit(_ keys: [ENTemporaryExposureKey], completion: @escaping ExposureSubmissionHandler) {
+	
+	/// This method submits the exposure keys. Additionally, after successful completion,
+	/// the timestamp of the key submission is updated.
+	func submitExposure(keys:[ENTemporaryExposureKey],countries:[BECountry], completionHandler: @escaping ExposureSubmissionHandler) {
+		log(message: "Started exposure submission...")
+		self.submit(keys:keys,countries:countries,completion: completionHandler)
+	}
+
+	// no longer used
+	override func submitExposure( completionHandler: @escaping ExposureSubmissionHandler) {
+		fatalError()
+	}
+
+	private func submit(keys: [ENTemporaryExposureKey], countries:[BECountry], completion: @escaping ExposureSubmissionHandler) {
 		
 		guard
-			let testResult = secureStore.testResult,
-			let mobileTestId = secureStore.mobileTestId
+			let testResult = store.testResult,
+			let mobileTestId = store.mobileTestId
 		else {
 			completion(.other("no_test_result_or_test_id"))
 			return
 		}
 		
-		httpClient.submit(keys: keys, mobileTestId: mobileTestId, dateTestCommunicated: testResult.dateTestCommunicated) { error in
+		httpClient.submit(keys: keys, countries:countries, mobileTestId: mobileTestId, dateTestCommunicated: testResult.dateTestCommunicated) { error in
 			if let error = error {
 				logError(message: "Error while submiting diagnosis keys: \(error.localizedDescription)")
 				completion(self.parseError(error))

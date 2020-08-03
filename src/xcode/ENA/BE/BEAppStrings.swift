@@ -20,6 +20,9 @@
 import Foundation
 
 enum BEAppStrings {
+	
+	static let currentLanguage = NSLocalizedString("BELanguage", comment: "") == "BELanguage" ? "en" : NSLocalizedString("BELanguage", comment: "")  // :TEMP:
+	
 	enum BEMobileTestId {
 		static let title = NSLocalizedString("BEMobileTestId_title", comment: "")
 		static let dateExplanation = NSLocalizedString("BEMobileTestId_DateExplanation", comment: "")
@@ -28,5 +31,12 @@ enum BEAppStrings {
 		static let date = NSLocalizedString("BEMobileTestId_Date", comment: "")
 		static let save = NSLocalizedString("BEMobileTestId_Save", comment: "")
 		static let saveExplanation = NSLocalizedString("BEMobileTestId_saveExplanation", comment: "")
+	}
+	
+	enum BESelectKeyCountries {
+		static let title = NSLocalizedString("BESelectKeyCountries_title", comment: "")
+		static let explanation = NSLocalizedString("BESelectKeyCountries_explanation", comment: "")
+		static let sendKeys = NSLocalizedString("BESelectKeyCountries_sendKeys", comment: "")
+		static let selectForDateTitle = NSLocalizedString("BESelectCountries_selectCountryForDate", comment: "")
 	}
 }

@@ -28,11 +28,19 @@ class BEStoreTests: XCTestCase {
 	}
 
     func testStoreMobileTestId() throws {
-		let testId = BeMobileTestId(datePatientInfectious: "2020-07-22")
-		store.mobileTestIds = [testId]
+		let testId = BEMobileTestId(datePatientInfectious: "2020-07-22")
+		store.mobileTestId = testId
 		
-		XCTAssertEqual(store.mobileTestIds!.count, 1)
-		let loadedId = store.mobileTestIds![0]
+		let loadedId = store.mobileTestId!
 		XCTAssertEqual(loadedId.fullString, testId.fullString)
     }
+	
+	func testStoreTestResult() throws {
+		let result = TestResult.positive
+		
+		store.testResult = result
+		
+		let loadedResult = store.testResult!
+		XCTAssertEqual(loadedResult.dateSampleCollected,result.dateSampleCollected)
+	}
 }

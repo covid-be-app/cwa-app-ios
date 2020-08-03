@@ -976,3 +976,8 @@
 "BEMobileTestId_Save" = "Save";
 "BEMobileTestId_saveExplanation" = "Show this number to the person doing the test.\nTap \"Save\" so you can be notified as soon as the test result is available";
 
+"BELanguage" = "en";
+
+"BESelectKeyCountries_title" = "Select Countries";
+"BESelectKeyCountries_explanation" = "For each of the below dates, if you have not been in Belgium and you would like to share this information (anonymously), please select the country you visited on that date by tapping the line you want to change.";
+"BESelectKeyCountries_sendKeys" = "Share IDs";

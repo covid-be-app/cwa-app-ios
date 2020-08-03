@@ -29,6 +29,7 @@ class BEHTTPClient : HTTPClient {
 	
 	func submit(
 		keys: [ENTemporaryExposureKey],
+		countries: [BECountry],
 		mobileTestId: BEMobileTestId,
 		dateTestCommunicated:String,
 		completion: @escaping SubmitKeysCompletionHandler

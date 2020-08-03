@@ -95,4 +95,9 @@ protocol Store: AnyObject {
 	var userNeedsToBeInformedAboutHowRiskDetectionWorks: Bool { get set }
 
 	func clearAll(key: String?)
+	
+	// :BE: add test Id and test result
+	var mobileTestId: BEMobileTestId? { get set }
+
+	var testResult:TestResult? { get set }
 }

@@ -17,15 +17,26 @@
 // under the License.
 //
 
-import UIKit
+import XCTest
+@testable import ENA
 
-class BESelectKeyCountryCell: UITableViewCell {
+class BECountriesTest: XCTestCase {
 
-	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    func testCountryLoading() throws {
+		let countries = BECountry.load("en")
 		
-	}
-	
-	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
-	}
+		let firstCountry = countries[0]
+		let secondCountry = countries[1]
+		
+		XCTAssertEqual(firstCountry.name["en"]!.compare(secondCountry.name["en"]!),.orderedAscending)
+    }
+
+    func testCountryLoading2() throws {
+		let countries = BECountry.load("fr")
+		
+		let firstCountry = countries[0]
+		let secondCountry = countries[1]
+		
+		XCTAssertEqual(firstCountry.name["fr"]!.compare(secondCountry.name["fr"]!),.orderedAscending)
+    }
 }

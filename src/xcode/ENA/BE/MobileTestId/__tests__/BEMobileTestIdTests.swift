@@ -23,7 +23,7 @@ import XCTest
 class BEMobileTestIdTests: XCTestCase {
 
     func testGenerateId() throws {
-		let testId = BeMobileTestId(datePatientInfectious: "2020-07-10")
+		let testId = BEMobileTestId(datePatientInfectious: "2020-07-10")
 		
 		XCTAssertEqual(testId.id.count, 15)
 		XCTAssertEqual(testId.checksum.count,2)

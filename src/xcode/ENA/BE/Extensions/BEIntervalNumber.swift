@@ -18,15 +18,12 @@
 //
 
 import Foundation
+import ExposureNotification
 
-enum BEAccessibilityIdentifiers {
-
-	enum BEMobileTestId {
-		static let selectDate = "BEAppStrings.BEMobileTestId.select"
-		static let save = "BEAppStrings.BEMobileTestId.save"
-	}
-	
-	enum BESelectKeyCountries {
-		static let explanation = "BEAppStrings.BESelectKeyCountries.explanation"
+extension ENIntervalNumber {
+	var date:Date {
+		get {
+			return Date(timeIntervalSince1970: TimeInterval(self) * 600)
+		}
 	}
 }

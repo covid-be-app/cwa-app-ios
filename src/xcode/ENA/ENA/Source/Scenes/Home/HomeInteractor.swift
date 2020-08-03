@@ -60,7 +60,10 @@ final class HomeInteractor: RequiresAppDependencies {
 	private var inactiveConfigurator: HomeInactiveRiskCellConfigurator?
 	private var countdownTimer: CountdownTimer?
 
-	private(set) var testResult: TestResult?
+	// :BE: test result is persisted in secured store
+	var testResult: TestResult? {
+		return store.testResult
+	}
 
 	private lazy var isRequestRiskRunning = riskProvider.isLoading
 	private let riskConsumer = RiskConsumer()
@@ -385,7 +388,8 @@ extension HomeInteractor {
 extension HomeInteractor {
 	func updateTestResults() {
 		// Avoid unnecessary loading.
-		guard testResult == nil || testResult != .positive else { return }
+		// :BE: only check for nil
+		guard testResult == nil /*|| testResult != .positive */ else { return }
 		guard store.registrationToken != nil else { return }
 
 		// Make sure to make the loading cell appear for at least `minRequestTime`.
@@ -402,7 +406,9 @@ extension HomeInteractor {
 					message: error.localizedDescription,
 					title: AppStrings.Home.resultCardLoadingErrorTitle,
 					completion: {
-						self?.testResult = .pending
+						
+						// :BE: remove storage of non-loaded test result
+						//self?.testResult = .pending
 						self?.reloadTestResult(with: .pending)
 					}
 				)
@@ -411,8 +417,12 @@ extension HomeInteractor {
 				let requestTime = Date().timeIntervalSince(requestStart)
 				let delay = requestTime < minRequestTime && self?.testResult == nil ? minRequestTime : 0
 				DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
-					self?.testResult = result
-					self?.reloadTestResult(with: result)
+					
+					// :BE: persist test result
+					if let self = self {
+						self.store.testResult = result
+						self.reloadTestResult(with: result)
+					}
 				}
 			}
 		}

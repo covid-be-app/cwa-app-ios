@@ -49,4 +49,8 @@ final class MockTestStore: Store {
 	var allowTestsStatusNotification: Bool = true
 	var hourlyFetchingEnabled: Bool = true
 	var userNeedsToBeInformedAboutHowRiskDetectionWorks = false
+	
+	// :BE: added properties
+	var mobileTestId: BEMobileTestId?
+	var testResult: TestResult?
 }

@@ -19,6 +19,7 @@
 
 import Foundation
 import UIKit
+import ExposureNotification
 
 class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
 
@@ -32,7 +33,7 @@ class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
 	weak var navigationController: UINavigationController?
 
 	/// - NOTE: We need a strong (aka non-weak) reference here.
-	let exposureSubmissionService: ExposureSubmissionService
+	let exposureSubmissionService: BEExposureSubmissionService
 
 	// MARK: - Initializers.
 
@@ -42,7 +43,7 @@ class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
 		delegate: ExposureSubmissionCoordinatorDelegate? = nil
 	) {
 		self.parentNavigationController = parentNavigationController
-		self.exposureSubmissionService = exposureSubmissionService
+		self.exposureSubmissionService = exposureSubmissionService as! BEExposureSubmissionService
 		self.delegate = delegate
 	}
 
@@ -108,6 +109,27 @@ class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
 		let vc = createSuccessViewController()
 		push(vc)
 	}
+	
+	func showSelectCountries(_ exposureKeys:[ENTemporaryExposureKey]) {
+		let vc = BESelectKeyCountriesViewController(service:exposureSubmissionService,coordinator:self,exposureKeys:exposureKeys)
+
+		push(vc)
+	}
+	
+	func showSelectCountryForKey(countries:[BECountry],selectedCountry:BECountry,keyDate:Date,delegate:BESelectCountryViewControllerDelegate) {
+		let vc = BESelectCountryViewController(
+			countries:countries,
+			selectedCountry:selectedCountry,
+			delegate:delegate)
+		let dateFormatter = DateFormatter()
+		dateFormatter.timeStyle = .none
+		dateFormatter.dateStyle = .medium
+		let dateString = dateFormatter.string(from:keyDate)
+
+		vc.title = dateString
+		push(vc)
+	}
+
 
 	// MARK: - Methods no longer used
 
@@ -187,7 +209,7 @@ class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
 	
 	private func createWarnOthersViewController() -> ExposureSubmissionWarnOthersViewController {
 		AppStoryboard.exposureSubmission.initiate(viewControllerType: ExposureSubmissionWarnOthersViewController.self) { coder -> UIViewController? in
-			ExposureSubmissionWarnOthersViewController(coder: coder, coordinator: self, exposureSubmissionService: self.exposureSubmissionService)
+			BEExposureSubmissionWarnOthersViewController(coder: coder, coordinator: self, exposureSubmissionService: self.exposureSubmissionService)
 		}
 	}
 
