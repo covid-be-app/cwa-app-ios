@@ -191,10 +191,13 @@ class HTTPClient: Client {
 	}
 
 	func getTestResult(forDevice registrationToken: String, completion completeWith: @escaping TestResultHandler) {
+		// :BE: disable code
+		
+		fatalError("Implemented in subclass")
+		/*
 		let url = configuration.testResultURL
 
-		// :BE: update key name for body
-		let bodyValues = ["testResultPollingToken": registrationToken]
+		let bodyValues = ["registrationToken": registrationToken]
 		do {
 			let encoder = JSONEncoder()
 			encoder.outputFormatting = .prettyPrinted
@@ -214,11 +217,8 @@ class HTTPClient: Client {
 						return
 					}
 					do {
-						// :BE: TestResult from enum to struct
-						let decoder = JSONDecoder()
 						let testResult = try decoder.decode(
-							TestResult.self,
-							//[String: Int].self,
+							[String: Int].self,
 							from: testResultResponseData
 						)
 						completeWith(.success(testResult))
@@ -235,6 +235,7 @@ class HTTPClient: Client {
 			completeWith(.failure(.invalidResponse))
 			return
 		}
+		*/
 	}
 
 	func getTANForExposureSubmit(forDevice registrationToken: String, completion completeWith: @escaping TANHandler) {

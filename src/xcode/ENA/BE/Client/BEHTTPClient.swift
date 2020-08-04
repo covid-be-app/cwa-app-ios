@@ -27,6 +27,72 @@ class BEHTTPClient : HTTPClient {
 		fatalError()
 	}
 	
+	override func getTestResult(forDevice registrationToken: String, completion completeWith: @escaping TestResultHandler) {
+		let url = configuration.testResultURL
+
+		// :BE: update key name for body
+		let bodyValues = ["testResultPollingToken": registrationToken]
+		do {
+			let encoder = JSONEncoder()
+			encoder.outputFormatting = .prettyPrinted
+
+			let data = try encoder.encode(bodyValues)
+
+			session.POST(url, data) { result in
+				switch result {
+				case let .success(response):
+					guard response.hasAcceptableStatusCode else {
+						completeWith(.failure(.serverError(response.statusCode)))
+						return
+					}
+					guard let testResultResponseData = response.body else {
+						completeWith(.failure(.invalidResponse))
+						logError(message: "Failed to register Device with invalid response")
+						return
+					}
+					do {
+						let decoder = JSONDecoder()
+						let testResult = try decoder.decode(
+							TestResult.self,
+							from: testResultResponseData
+						)
+						
+						if testResult.result != .pending {
+							let ackUrl = self.configuration.ackTestResultURL
+							
+							// we don't wait for this to return as even if it fails it's not an issue
+							// failure would mean that the test result is not deleted immediately from the server
+							// but it will be cleaned up in the auto-delete of old test results ran server-side anyway after a couple of days.
+							// Normally this will happen very rarely, since we just managed to do a succesful test download request
+							// so the connection should still work in 99.9% of the cases
+							
+							self.session.POST(ackUrl, data) { result in
+								switch result {
+								case .success:
+									log(message:"Ack succeeded")
+								case let .failure(error):
+									logError(message: "Ack failed due to error: \(error).")
+								}
+							}
+						}
+						
+						completeWith(.success(testResult))
+					} catch {
+						logError(message: "Failed to get test result with invalid response payload structure")
+						completeWith(.failure(.invalidResponse))
+					}
+				case let .failure(error):
+					completeWith(.failure(error))
+					logError(message: "Failed to get test result due to error: \(error).")
+				}
+			}
+		} catch {
+			completeWith(.failure(.invalidResponse))
+			return
+		}
+	}
+
+	
 	func submit(
 		keys: [ENTemporaryExposureKey],
 		countries: [BECountry],
@@ -76,6 +142,8 @@ private extension URLRequest {
 		}
 		let payloadData = try payload.serializedData()
 		let url = configuration.submissionURL
+		
+//		try! payloadData.write(to: URL(fileURLWithPath: "/tmp/keys.dat"))
 
 		var request = URLRequest(url: url)
 

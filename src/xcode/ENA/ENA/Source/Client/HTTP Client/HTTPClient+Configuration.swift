@@ -159,7 +159,21 @@ extension HTTPClient {
 					"verification-api",
 					"version",
 					apiVersion,
-					"mobiletestresult"
+					"testresult",
+					"poll"
+				)
+		}
+
+		// :BE: add ack url
+		var ackTestResultURL: URL {
+			endpoints
+				.verification
+				.appending(
+					"verification-api",
+					"version",
+					apiVersion,
+					"testresult",
+					"ack"
 				)
 		}
 

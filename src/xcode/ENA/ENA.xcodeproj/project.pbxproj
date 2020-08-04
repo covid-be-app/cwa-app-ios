@@ -1740,7 +1740,6 @@
 			isa = PBXGroup;
 			children = (
 				A9DD2CF924D001980035081A /* __tests__ */,
-				A9DD2CE924CEF3B00035081A /* Coordinator */,
 				A9DD2CE424CEEF370035081A /* ViewControllers */,
 				A9DD2CEE24CF293E0035081A /* BEMobileTestId.swift */,
 			);
@@ -1754,13 +1753,6 @@
 				A9DD2CE624CEF0680035081A /* BEMobileTestIdViewController.xib */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		A9DD2CE924CEF3B00035081A /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		A9DD2CF124CF2AD70035081A /* Extensions */ = {
