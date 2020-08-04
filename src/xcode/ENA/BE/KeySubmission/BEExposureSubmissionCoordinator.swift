@@ -35,6 +35,9 @@ class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
 	/// - NOTE: We need a strong (aka non-weak) reference here.
 	let exposureSubmissionService: BEExposureSubmissionService
 
+	
+	private weak var selectCountryDelegate:BESelectCountryViewControllerDelegate?
+	
 	// MARK: - Initializers.
 
 	init(
@@ -120,7 +123,10 @@ class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
 		let vc = BESelectCountryViewController(
 			countries:countries,
 			selectedCountry:selectedCountry,
-			delegate:delegate)
+			delegate:self)
+		
+		selectCountryDelegate = delegate
+		
 		let dateFormatter = DateFormatter()
 		dateFormatter.timeStyle = .none
 		dateFormatter.dateStyle = .medium
@@ -223,8 +229,16 @@ class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
 extension BEExposureSubmissionCoordinator : BEMobileTestIdViewControllerDelegate {
 	
 	func mobileTestIdViewController(_ vc: BEMobileTestIdViewController, finshedWithMobileTestId mobileTestId: BEMobileTestId) {
-		(exposureSubmissionService as! BEExposureSubmissionService).mobileTestId = mobileTestId
+		exposureSubmissionService.mobileTestId = mobileTestId
 		self.navigationController?.dismiss(animated: true)
 	}
 	
+}
+
+extension BEExposureSubmissionCoordinator : BESelectCountryViewControllerDelegate {
+	func selectCountryViewController(_ vc: BESelectCountryViewController, selectedCountry country: BECountry) {
+		selectCountryDelegate?.selectCountryViewController(vc, selectedCountry: country)
+		self.navigationController?.popViewController(animated: true)
+		selectCountryDelegate = nil
+	}
 }

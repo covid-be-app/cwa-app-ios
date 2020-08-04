@@ -20,7 +20,7 @@
 import UIKit
 import ExposureNotification
 
-class BESelectKeyCountriesViewController: DynamicTableViewController, ENANavigationControllerWithFooterChild, BESelectCountryViewControllerDelegate {
+class BESelectKeyCountriesViewController: DynamicTableViewController, ENANavigationControllerWithFooterChild {
 
 	private var footerItem = ENANavigationFooterItem()
 	
@@ -35,6 +35,8 @@ class BESelectKeyCountriesViewController: DynamicTableViewController, ENANavigat
 	private let countries:[BECountry]
 	private let coordinator:BEExposureSubmissionCoordinator
 	private let service:BEExposureSubmissionService
+	
+	private var editedKeyIndex:Int?
 	
 	init(service:BEExposureSubmissionService,coordinator:BEExposureSubmissionCoordinator,exposureKeys:[ENTemporaryExposureKey]) {
 		self.coordinator = coordinator
@@ -99,6 +101,7 @@ class BESelectKeyCountriesViewController: DynamicTableViewController, ENANavigat
     }
 	
 	private func selectCountry(forKeyAtIndex index:Int) {
+		editedKeyIndex = index
 		let key = exposureKeys[index]
 		coordinator.showSelectCountryForKey(
 			countries: countries,
@@ -117,7 +120,7 @@ extension BESelectKeyCountriesViewController {
 
 extension BESelectKeyCountriesViewController {
 	func navigationController(_ navigationController: ENANavigationControllerWithFooter, didTapPrimaryButton button: UIButton) {
-		service.submitExposure { error in
+		service.submitExposure(keys: exposureKeys, countries: countries) { error in
 			if let error = error {
 				logError(message: "error: \(error.localizedDescription)", level: .error)
 				let alert = self.setupErrorAlert(message: error.localizedDescription)
@@ -129,5 +132,16 @@ extension BESelectKeyCountriesViewController {
 				self.coordinator.showThankYouScreen()
 			}
 		}
+	}
+}
+
+extension BESelectKeyCountriesViewController : BESelectCountryViewControllerDelegate {
+	func selectCountryViewController(_ vc:BESelectCountryViewController,selectedCountry country:BECountry) {
+		guard let keyIndex = editedKeyIndex else {
+			fatalError()
+		}
+		
+		selectedCountries[keyIndex] = country
+		tableView.reloadData()
 	}
 }

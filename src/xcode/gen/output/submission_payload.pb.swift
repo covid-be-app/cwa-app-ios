@@ -27,6 +27,9 @@ struct SAP_SubmissionPayload {
 
   var keys: [SAP_TemporaryExposureKey] = []
 
+  /// The ISO 3166 3 letter country code for each key
+  var countries: [String] = []
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -40,12 +43,14 @@ extension SAP_SubmissionPayload: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   static let protoMessageName: String = _protobuf_package + ".SubmissionPayload"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "keys"),
+    2: .same(proto: "countries"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.keys)
+      case 2: try decoder.decodeRepeatedStringField(value: &self.countries)
       default: break
       }
     }
@@ -55,11 +60,15 @@ extension SAP_SubmissionPayload: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     if !self.keys.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.keys, fieldNumber: 1)
     }
+    if !self.countries.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.countries, fieldNumber: 2)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: SAP_SubmissionPayload, rhs: SAP_SubmissionPayload) -> Bool {
     if lhs.keys != rhs.keys {return false}
+    if lhs.countries != rhs.countries {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

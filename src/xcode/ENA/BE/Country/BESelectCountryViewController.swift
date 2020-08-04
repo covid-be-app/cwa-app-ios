@@ -75,11 +75,15 @@ class BESelectCountryViewController: DynamicTableViewController {
 		
 		self.countries.forEach{ countries in
 			let countryCells:[DynamicCell] = countries.map{ country in
-				return DynamicCell.custom(withIdentifier: CustomCellReuseIdentifiers.countryCell,
-						configure: { _, cell, _ in
-							guard let cell = cell as? BESelectCountryCell else { return }
-							
-							cell.configure(country: country)
+				return DynamicCell.custom(
+					withIdentifier: CustomCellReuseIdentifiers.countryCell,
+					action: .execute{ viewController in
+						guard let vc = viewController as? BESelectCountryViewController else { return }
+						vc.delegate?.selectCountryViewController(vc, selectedCountry:country)
+					},
+					configure: { _, cell, _ in
+						guard let cell = cell as? BESelectCountryCell else { return }
+						cell.configure(country: country)
 				})
 
 			}
@@ -111,7 +115,7 @@ extension BESelectCountryViewController {
 }
 
 protocol BESelectCountryViewControllerDelegate : class {
-	
+	func selectCountryViewController(_ vc:BESelectCountryViewController,selectedCountry country:BECountry)
 }
 
 

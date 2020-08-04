@@ -38,7 +38,8 @@ class BEHTTPClient : HTTPClient {
 			configuration: configuration,
 			mobileTestId: mobileTestId,
 			dateTestCommunicated: dateTestCommunicated,
-			keys: keys
+			keys: keys,
+			countries: countries
 		) else {
 			completion(.requestCouldNotBeBuilt)
 			return
@@ -66,10 +67,12 @@ private extension URLRequest {
 		configuration: HTTPClient.Configuration,
 		mobileTestId: BEMobileTestId,
 		dateTestCommunicated:String,
-		keys: [ENTemporaryExposureKey]
+		keys: [ENTemporaryExposureKey],
+		countries: [BECountry]
 	) throws -> URLRequest {
 		let payload = SAP_SubmissionPayload.with {
-			$0.keys = keys.compactMap { $0.sapKey }
+			$0.keys = keys.map { $0.sapKey }
+			$0.countries = countries.map { $0.code3 }
 		}
 		let payloadData = try payload.serializedData()
 		let url = configuration.submissionURL
