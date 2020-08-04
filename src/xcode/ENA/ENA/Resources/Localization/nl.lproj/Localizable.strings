@@ -431,6 +431,8 @@
 
 "ExposureSubmissionResult_testPositiveDesc" = "Jouw testresultaat is geverifieerd als positief.";
 
+"ExposureSubmissionResult_testNegative" = "Negatieve diagnose";
+
 "ExposureSubmissionResult_testNegativeDesc" = "Het laboratoriumresultaat geeft geen controle aan dat je coronavirus SARS-CoV-2 hebt";
 
 "ExposureSubmissionResult_testNegative_furtherInfos_title" = "Andere informatie:";
@@ -945,6 +947,8 @@
 
 "BESelectKeyCountries_sendKeys" = "Deel ID's";
 
+"ExposureSubmission_CODEInputButtonTitle" = "Geef CODE in";
+
 "Home_Risk_Inactive_Activate_Item_Title" = "Laatste blootstellingsregistratie: %@";
 
 "Home_Risk_Inactive_Activate_Item_Unknown_Title" = "Onbekend risico";
@@ -963,18 +967,7 @@
 
 "ExposureSubmissionDispatch_CODEButtonDescription" = "Registreer je test door je CODE handmatig in te vullen";
 
-"ExposureSubmission_CODEInputButtonTitle" = "Geef CODE in";
-
-"Gemeenschappelijk_achtergrondFetch_SettingsTitle" = "Apparaatinstellingen openen";
-
-/* Toegankelijkheid */
-"Toegankelijkheidslabel_Sluiten" = "Sluiten";
-
 "ExposureDetection_Refreshing_24h" = "Elke 24 uur bijgewerkt";
-
-"ExposureSubmissionQRScanner_instructie" = "Plaats het kader over de QR-code van je document";
-
-"ExposureSubmissionResult_testNegatief" = "Negatieve diagnose";
 
 "Home_Risk_Low_SaveDays_Item_Title__Permanent_Active" = "Risicodetectie permanent actief";
 
@@ -983,6 +976,4 @@
 "local_notifications_detect exposure_title" = "Coronalert-App";
 
 "local_notifications_detect exposure_body" = "Je hebt nieuwe berichten van je Coronalert-App";
-
-"RiskLegend_Legend3_Tekst" = "Een andere centrale functie is het registreren van je test en het ophalen van het resultaat. Als je gediagnosticeerd wordt met COVID-19, kan je anderen op de hoogte stellen en de keten van de infectie doorbreken";
 

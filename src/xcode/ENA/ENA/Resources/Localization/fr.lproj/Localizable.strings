@@ -964,6 +964,8 @@
 
 "BESelectKeyCountries_sendKeys" = "Partagez vos identifiants";
 
+"ExposureSubmission_CODEInputButtonTitle" = "Entrer le CODE";
+
 "Home_Risk_Inactive_Activate_Item_Title" = "Dernière exposition enregistrée : %@";
 
 "Home_Risk_Inactive_Activate_Item_Unknown_Title" = "Risque inconnu";
@@ -978,25 +980,9 @@
 
 "Home_Risk_Status_Check_Button" = "Mise à jour";
 
-"Message d'alerte sur la détection des risques" = "Votre risque d'infection ne peut être calculé que pour les périodes pendant lesquelles l'enregistrement de l'exposition était actif. La fonction d'enregistrement doit donc rester active en permanence.\nL'enregistrement de l'exposition couvre les derniers %1$u jours.\nL'application supprime automatiquement les anciens journaux, car ils ne sont plus pertinents pour la prévention des infections.\n\nPour de plus amples informations, veuillez consulter notre page FAQ";
-
 "ExposureSubmissionDispatch_CODEButtonTitle" = "CODE";
 
 "ExposureSubmissionDispatch_CODEButtonDescription" = "Enregistrez votre test en entrant votre CODE manuellement";
 
 "ExposureSubmissionHotline_SectionAccessibilityLabel1" = "Étape 1 sur 2";
-
-"ExposureSubmission_CODEInputButtonTitle" = "Entrer le CODE";
-
-"Description du bouton de la barre droite" = "Informations";
-
-"Sous-titre de la carte de statut de la maison" = "Vous avez été diagnostiqué comme étant porteur du SARS-CoV-2";
-
-"Titre de la carte de constatation positive" = "Veuillez noter :";
-
-"Bouton de recherche de carte positive" = "Suivant";
-
-"Numéro de la ligne d'assistance App_Information_Contact" = "0800 14 689";
-
-"Bouton_Réinitialisation" = "Réinitialiser l'application";
 

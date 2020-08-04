@@ -984,3 +984,30 @@
 
 "ExposureSubmission_CODEInputButtonTitle" = "Enter CODE";
 
+/* No comment provided by engineer. */
+"App_Information_Privacy_ImageDescription" = "App_Information_Privacy_ImageDescription";
+
+/* No comment provided by engineer. */
+"ENSetting_Tracing_History" = "ENSetting_Tracing_History";
+
+/* No comment provided by engineer. */
+"ExposureDetection_Explanation_Text_High_DaysSinceLastExposure" = "ExposureDetection_Explanation_Text_High_DaysSinceLastExposure";
+
+/* No comment provided by engineer. */
+"ExposureDetection_LastExposure" = "ExposureDetection_LastExposure";
+
+/* No comment provided by engineer. */
+"ExposureDetection_NumberOfContacts" = "ExposureDetection_NumberOfContacts";
+
+/* No comment provided by engineer. */
+"ExposureDetection_Refreshed_Format" = "ExposureDetection_Refreshed_Format";
+
+/* No comment provided by engineer. */
+"Home_Risk_Last_Contact_Item_Title" = "Home_Risk_Last_Contact_Item_Title";
+
+/* No comment provided by engineer. */
+"Home_Risk_Number_Contacts_Item_Title" = "Home_Risk_Number_Contacts_Item_Title";
+
+/* No comment provided by engineer. */
+"No Exposure Configuration available" = "No Exposure Configuration available";
+

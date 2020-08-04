@@ -37,6 +37,5 @@ enum BEAppStrings {
 		static let title = NSLocalizedString("BESelectKeyCountries_title", comment: "")
 		static let explanation = NSLocalizedString("BESelectKeyCountries_explanation", comment: "")
 		static let sendKeys = NSLocalizedString("BESelectKeyCountries_sendKeys", comment: "")
-		static let selectForDateTitle = NSLocalizedString("BESelectCountries_selectCountryForDate", comment: "")
 	}
 }
