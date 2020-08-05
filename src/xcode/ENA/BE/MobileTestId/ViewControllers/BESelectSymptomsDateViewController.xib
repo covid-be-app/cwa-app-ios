@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BESelectSymptomsDateViewController" customModule="ENA" customModuleProvider="target">
+            <connections>
+                <outlet property="datePicker" destination="anc-AV-t7T" id="OkZ-az-9aV"/>
+                <outlet property="enterDateExplanationLabel" destination="dkj-rL-CgO" id="MOD-Jq-DH4"/>
+                <outlet property="view" destination="gPl-Gn-GXe" id="H8O-25-48s"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="gPl-Gn-GXe">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Select the date on which you became contagious" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkj-rL-CgO" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
+                    <rect key="frame" x="20" y="44" width="394" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="ENA Text Primary 2 Color"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="body"/>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <datePicker contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="anc-AV-t7T">
+                    <rect key="frame" x="0.0" y="340" width="414" height="216"/>
+                </datePicker>
+            </subviews>
+            <color key="backgroundColor" name="ENA Background Color"/>
+            <constraints>
+                <constraint firstItem="anc-AV-t7T" firstAttribute="centerY" secondItem="gPl-Gn-GXe" secondAttribute="centerY" id="0zM-TD-ZEy"/>
+                <constraint firstAttribute="trailingMargin" secondItem="dkj-rL-CgO" secondAttribute="trailing" constant="-20" id="7re-rK-Bjq"/>
+                <constraint firstItem="dkj-rL-CgO" firstAttribute="leading" secondItem="gPl-Gn-GXe" secondAttribute="leadingMargin" id="99p-7B-ONk"/>
+                <constraint firstItem="NSG-3W-oWH" firstAttribute="trailing" secondItem="anc-AV-t7T" secondAttribute="trailing" id="CN1-Eq-CXb"/>
+                <constraint firstItem="anc-AV-t7T" firstAttribute="leading" secondItem="NSG-3W-oWH" secondAttribute="leading" id="gJv-J4-ozw"/>
+                <constraint firstItem="dkj-rL-CgO" firstAttribute="top" secondItem="gPl-Gn-GXe" secondAttribute="topMargin" id="wTt-x1-zzW"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="NSG-3W-oWH"/>
+            <point key="canvasLocation" x="-22" y="-71"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="ENA Background Color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ENA Text Primary 2 Color">
+            <color red="0.090196078431372548" green="0.098039215686274508" blue="0.10196078431372549" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

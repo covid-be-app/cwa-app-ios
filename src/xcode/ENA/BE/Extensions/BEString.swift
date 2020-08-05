@@ -27,12 +27,27 @@ extension String {
 		return formatter.string(from: date)
 	}
 	
-	func dateWithoutTime() -> Date? {
+	var dateWithoutTime:Date? {
 		let formatter = DateFormatter()
 		formatter.dateFormat = "YYYY-MM-dd"
 		
 		return formatter.date(from: self)
 	}
+	
+	// this is used to convert YYYY-MM-DD strings into YYMMDD representation
+	var compactDateNumber:Int{
+		#if DEBUG
+			guard let date = dateWithoutTime else {
+				fatalError("Wrong string format")
+			}
+		#endif
+		
+		let components = self.split(separator: "-")
+		let year = String(components[0])[2...4]
+		
+		return Int("\(year)\(components[1])\(components[2])")!
+	}
+
 }
 
 extension String {

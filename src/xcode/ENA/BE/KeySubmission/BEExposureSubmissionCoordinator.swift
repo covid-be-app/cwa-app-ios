@@ -81,6 +81,7 @@ class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
 	// In the original app it will show you the 3 possibilities to register a test, in our case we go directly to the code generator
 	
 	func showOverviewScreen() {
+		/*
 		let alert = UIAlertController(
 			title: AppStrings.ExposureSubmission.dataPrivacyTitle,
 			message: AppStrings.ExposureSubmission.dataPrivacyDisclaimer,
@@ -100,6 +101,36 @@ class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
 								alert.dismiss(animated: true, completion: nil) }
 			))
 		alert.preferredAction = acceptAction
+		present(alert)
+*/
+		let alert = UIAlertController(
+			title: BEAppStrings.BEExposureSubmission.symptomsExplanation,
+			message: nil,
+			preferredStyle: .alert
+		)
+		let yesAction = UIAlertAction(title: BEAppStrings.BEExposureSubmission.yes,
+										 style: .default, handler: { _ in
+											self.exposureSubmissionService.acceptPairing()
+											let vc = BESelectSymptomsDateViewController()
+											vc.delegate = self
+											self.push(vc)
+		})
+
+		let noAction = UIAlertAction(title: BEAppStrings.BEExposureSubmission.no,
+										 style: .default, handler: { _ in
+											self.exposureSubmissionService.acceptPairing()
+											self.showMobileTestIdViewController()
+		})
+/*
+		let cancelAction = UIAlertAction(title: BEAppStrings.BEExposureSubmission.cancel,
+										 style: .cancel, handler: { _ in
+											alert.dismiss(animated: true, completion: nil)
+		})
+*/
+		alert.addAction(yesAction)
+		alert.addAction(noAction)
+	//	alert.addAction(cancelAction)
+
 		present(alert)
 	}
 
@@ -155,6 +186,13 @@ class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
 	func showTestResultScreen(with result: TestResult) {
 		fatalError()
 	}
+	
+	func showMobileTestIdViewController(symptomsDate:Date? = nil) {
+		let vc = BEMobileTestIdViewController(symptomsDate: symptomsDate)
+		vc.delegate = self
+
+		self.push(vc)
+	}
 
 	// MARK: - Helpers.
 	
@@ -166,13 +204,6 @@ class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
 		self.navigationController?.present(vc, animated: true)
 	}
 	
-	private func createMobileTestIdController() -> BEMobileTestIdViewController {
-		let vc = BEMobileTestIdViewController()
-		vc.delegate = self
-		
-		return vc
-	}
-
 	private func createNavigationController(rootViewController vc:UIViewController)  -> ExposureSubmissionNavigationController {
 		return AppStoryboard.exposureSubmission.initiateInitial { coder in
 			return ExposureSubmissionNavigationController(coder: coder, coordinator: self, rootViewController: vc)
@@ -232,7 +263,12 @@ extension BEExposureSubmissionCoordinator : BEMobileTestIdViewControllerDelegate
 		exposureSubmissionService.mobileTestId = mobileTestId
 		self.navigationController?.dismiss(animated: true)
 	}
-	
+}
+
+extension BEExposureSubmissionCoordinator : BESelectSymptomsDateViewControllerDelegate {
+	func selectSymptomsDateViewController(_ vc: BESelectSymptomsDateViewController, selectedDate date: Date) {
+		showMobileTestIdViewController(symptomsDate: date)
+	}
 }
 
 extension BEExposureSubmissionCoordinator : BESelectCountryViewControllerDelegate {
