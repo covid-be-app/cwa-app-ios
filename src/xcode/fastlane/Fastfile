@@ -104,5 +104,9 @@ platform :ios do
       skip_submission: true,  # only upload
     )
   end
+  
+  lane :screenshots do
+    capture_screenshots
+  end
 
 end
