@@ -22,17 +22,46 @@ import XCTest
 
 class BEMobileTestIdTests: XCTestCase {
 
+	func testCalculateDateInfectiousNoSymptoms() throws {
+		let twoDaysAgo = Calendar.current.date(byAdding: .day, value: -2, to: Date())!
+		let twoDaysAgoComponents = Calendar.current.dateComponents([.day,.year,.month], from: twoDaysAgo)
+
+		let dateInfectiousNoSymptoms = BEMobileTestId.calculateDatePatientInfectious()
+		let infectiousComponents = Calendar.current.dateComponents([.day,.year,.month], from: dateInfectiousNoSymptoms)
+		
+		XCTAssertEqual(twoDaysAgoComponents.day!,infectiousComponents.day!)
+		XCTAssertEqual(twoDaysAgoComponents.month!,infectiousComponents.month!)
+		XCTAssertEqual(twoDaysAgoComponents.year!,infectiousComponents.year!)
+	}
+
+	func testCalculateDateInfectiousNoSymptoms2() throws {
+		let symptomsDate = Calendar.current.date(byAdding: .day, value: -5, to: Date())!
+		let twoDaysAgo = Calendar.current.date(byAdding: .day, value: -2, to: symptomsDate)!
+		let twoDaysAgoComponents = Calendar.current.dateComponents([.day,.year,.month], from: twoDaysAgo)
+
+		let dateInfectiousNoSymptoms = BEMobileTestId.calculateDatePatientInfectious(symptomsStartDate: symptomsDate)
+		let infectiousComponents = Calendar.current.dateComponents([.day,.year,.month], from: dateInfectiousNoSymptoms)
+		
+		XCTAssertEqual(twoDaysAgoComponents.day!,infectiousComponents.day!)
+		XCTAssertEqual(twoDaysAgoComponents.month!,infectiousComponents.month!)
+		XCTAssertEqual(twoDaysAgoComponents.year!,infectiousComponents.year!)
+	}
+
     func testGenerateId() throws {
 		let testId = BEMobileTestId(datePatientInfectious: "2020-07-10")
 		
 		XCTAssertEqual(testId.id.count, 15)
 		XCTAssertEqual(testId.checksum.count,2)
-		XCTAssertEqual(testId.fullString.count,20)
+		XCTAssertEqual(testId.fullString.count,28)
+		
 		
 		XCTAssertNotEqual(Int(testId.id),nil)
 		XCTAssertNotEqual(Int(testId.checksum),nil)
 		
-		XCTAssertEqual((Int(testId.id)! * 100 + Int(testId.checksum)!) % 97,0)
+		let fullNumber = Decimal(string:"\(testId.datePatientInfectious.compactDateNumber)\(testId.id)")! * 100 + Decimal(string:testId.checksum)!
+		let modulo = fullNumber % 97
+		
+		XCTAssertEqual(modulo,0)
 		
 		let registrationToken = testId.registrationToken
 		let components = registrationToken.split(separator:"|")

@@ -50,7 +50,7 @@ class BEStringTests: XCTestCase {
 	
 	func testDateWithoutTime() throws {
 		let string = String("2020-05-10")
-		let date = string.dateWithoutTime()!
+		let date = string.dateWithoutTime!
 		let yearFormatter = DateFormatter()
 		yearFormatter.dateFormat = "YYYY"
 		let monthFormatter = DateFormatter()
@@ -72,6 +72,13 @@ class BEStringTests: XCTestCase {
 			dayFormatter.string(from: date),
 			"10"
 		)
+	}
+	
+	func testCompactDate() throws {
+		let string = String("2020-05-10")
+		let dateNumber = string.compactDateNumber
+		
+		XCTAssertEqual(dateNumber, 200510)
 	}
 
     func testRandom() throws {

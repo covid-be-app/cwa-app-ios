@@ -22,20 +22,33 @@ import Foundation
 enum BEAppStrings {
 	
 	static let currentLanguage = NSLocalizedString("BELanguage", comment: "") == "BELanguage" ? "en" : NSLocalizedString("BELanguage", comment: "")  // :TEMP:
+
+	enum BEExposureSubmission {
+		static let symptomsTitle = NSLocalizedString("BEExposureSubmission_symptomsTitle", comment: "")
+		static let symptomsExplanation = NSLocalizedString("BEExposureSubmission_symptomsExplanation", comment: "")
+		static let yes = NSLocalizedString("BEExposureSubmission_yes", comment: "")
+		static let no = NSLocalizedString("BEExposureSubmission_no", comment: "")
+		static let cancel = NSLocalizedString("BEExposureSubmission_cancel", comment: "")
+	}
 	
 	enum BEMobileTestId {
 		static let title = NSLocalizedString("BEMobileTestId_title", comment: "")
-		static let dateExplanation = NSLocalizedString("BEMobileTestId_DateExplanation", comment: "")
 		static let select = NSLocalizedString("BEMobileTestId_Select", comment: "")
 
-		static let date = NSLocalizedString("BEMobileTestId_Date", comment: "")
 		static let save = NSLocalizedString("BEMobileTestId_Save", comment: "")
 		static let saveExplanation = NSLocalizedString("BEMobileTestId_saveExplanation", comment: "")
 	}
-	
+
+	enum BESelectSymptomsDate {
+		static let selectDateTitle = NSLocalizedString("BESelectSymptomsDate_title", comment: "")
+		static let dateExplanation = NSLocalizedString("BESelectSymptomsDate_explanation", comment: "")
+		static let next = NSLocalizedString("BESelectSymptomsDate_next", comment: "")
+	}
+
 	enum BESelectKeyCountries {
 		static let title = NSLocalizedString("BESelectKeyCountries_title", comment: "")
 		static let explanation = NSLocalizedString("BESelectKeyCountries_explanation", comment: "")
 		static let sendKeys = NSLocalizedString("BESelectKeyCountries_sendKeys", comment: "")
 	}
+	
 }

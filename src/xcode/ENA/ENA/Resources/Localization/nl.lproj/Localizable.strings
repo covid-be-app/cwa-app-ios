@@ -1,979 +1,477 @@
-/* General */
 "Alert_TitleGeneral" = "Er is een fout opgetreden.";
-
 "Alert_ActionOk" = "OK";
-
 "Alert_ActionRetry" = "Herhaal";
-
 "Alert_ActionCancel" = "Annuleren";
-
 "Alert_ActionRemove" = "Verwijderen";
-
 "Alert_BluetoothOff_Title" = "Bluetooth inschakelen";
-
-"Alert_BluetoothOff_Description" = "Activeer Bluetooth in je systeeminstellingen om deze app te gebruiken";
-
+"Alert_BluetoothOff_Description" = "Activeer Bluetooth in uw systeeminstellingen om deze app te gebruiken.";
 "Alert_CancelAction_Later" = "Later";
-
 "Alert_DefaultAction_OpenSettings" = "Open Instellingen";
-
 "General_BackButtonTitle" = "Terug";
-
-"Common_ENError5_Description" = "Error 5: Er is iets misgegaan. Je risiconiveau kan niet bepaald worden. We werken aan een oplossing van het probleem";
-
-"Common_ENError11_Description" = "Error 11: Er is iets misgegaan. Je risiconiveau kan niet bepaald worden. Start je toestel opnieuw op en probeer het morgen opnieuw.";
-
-"Common_ENError13_Description" = "Error 13: Je blootstellingsregistratie voor vandaag werd al uitgevoerd. Probeer het over 24 uur opnieuw.";
-
+"Common_ENError5_Description" = "Error 5: Er is iets misgegaan. Uw risiconiveau kan niet bepaald worden. We werken aan een oplossing voor het probleem.";
+"Common_ENError11_Description" = "Error 11: Er is iets misgegaan. Uw risiconiveau kan niet bepaald worden. Start uw toestel opnieuw op en probeer het morgen opnieuw.";
+"Common_ENError13_Description" = "Error 13: Uw blootstellingsregistratie voor vandaag werd al uitgevoerd. Probeer het over 24 uur opnieuw.";
 "Common_Alert_Action_moreInfo" = "Ontdek meer";
-
-"Common_BackgroundFetch_AlertMessage" = "Je hebt achtergrondupdates voor de Coronalert-App uitgeschakeld. Activeer de achtergrondupdates om de automatische blootstellingsregistratie te gebruiken. Als je geen achtergrond-updates inschakelt, kan je de blootstellingsregistratie alleen handmatig starten in de app. Je kan de achtergrond-updates voor de app inschakelen in de instellingen van je toestel";
-
+"Common_BackgroundFetch_AlertMessage" = "U heeft achtergrondupdates voor de coronalert-app uitgeschakeld. Activeer de achtergrondupdates om de automatische blootstellingsregistratie te gebruiken. Als u de achtergrondupdates niet inschakelt, kunt u de blootstellingsregistratie alleen handmatig starten in de app. \n\nU kunt de achtergrondupdates voor de app inschakelen in de instellingen van uw toestel.";
+"Common_BackgroundFetch_SettingsTitle" = "Open instellingen";
 "Common_BackgroundFetch_OKTitle" = "Start blootstellingsregistratie handmatig";
-
-"Common_BackgroundFetch_AlertTitle" = "Background Updates uitgeschakeld";
-
-/* General - Links */
+"Common_BackgroundFetch_AlertTitle" = "Updates op de achtergrond uitgeschakeld";
 "General_moreInfo_URL" = "https://www.coronalert.be";
-
 "General_moreInfo_URL_EN5" = "https://www.coronalert.be";
-
 "General_moreInfo_URL_EN11" = "https://www.coronalert.be";
-
 "General_moreInfo_URL_EN13" = "https://www.coronalert.be";
-
-/* Accessibility */
 "AccessibilityLabel_Close" = "Sluiten";
-
 "AccessibilityLabel_PhoneNumber" = "Telefoonnummer";
-
-/* Exposure Detection */
 "ExposureDetection_Off" = "Blootstellingsregistratie stopgezet";
-
 "ExposureDetection_Outdated" = "Blootstellingsregistratie is niet mogelijk";
-
 "ExposureDetection_Unknown" = "Onbekend risico";
-
 "ExposureDetection_Low" = "Laag risico";
-
 "ExposureDetection_High" = "Hoog risico";
-
 "ExposureDetection_NumberOfDaysStored" = "%d van 14 dagen actief";
-
 "ExposureDetection_Refreshed" = "Bijgewerkt: %@";
-
 "ExposureDetection_Refreshed_Never" = "Onbekend";
-
-"ExposureDetection_RefreshingIn" = "Bijgewerkt in %02d:%02d minuten";
-
-"ExposureDetection_RefreshIn" = "Update in %@";
-
+"ExposureDetection_RefreshingIn" = "Bijwerken over %02d:%02d minuten";
+"ExposureDetection_RefreshIn" = "Bijwerken over %@";
+"ExposureDetection_Refresh_24h" = "Om de 24 uur bijgewerkt";
 "ExposureDetection_LastRiskLevel" = "Laatste blootstellingsregistratie: %@";
-
-"ExposureDetection_OffText" = "Activeer de blootstellingsregistratie om je risicostatus vandaag nog te evalueren";
-
-"ExposureDetection_OutdatedText" = "Je blootstellingsregistratie kon niet meer dan 48 uur worden geüpdatet";
-
-"ExposureDetection_UnknownText" = "Aangezien je de blootstellingsregistratie niet lang genoeg hebt geactiveerd, kunnen we je risico op infectie niet berekenen";
-
+"ExposureDetection_OffText" = "Activeer de blootstellingsregistratie om uw risicostatus vandaag te evalueren.";
+"ExposureDetection_OutdatedText" = "Uw blootstellingsregistratie kon gedurende meer dan 48 uur niet worden geüpdatet.";
+"ExposureDetection_UnknownText" = "U heeft de blootstellingsregistratie niet lang genoeg aangezet. Daarom kunnen we uw infectierisico niet berekenen.";
 "ExposureDetection_LoadingText" = "Actuele gegevens worden gedownload en gecontroleerd. Dit kan enkele minuten duren.";
-
 "ExposureDetection_Behavior_Title" = "Richtlijnen";
-
-"ExposureDetection_Behavior_Subtitle" = "Dit is wat je moet doen";
-
-"ExposureDetection_Guide_Hands" = "Was je handen regelmatig.";
-
-"ExposureDetection_Guide_Mask" = "Draag een mondmasker als je andere mensen tegenkomt";
-
+"ExposureDetection_Behavior_Subtitle" = "Dit is wat u moet doen";
+"ExposureDetection_Guide_Hands" = "Was uw handen regelmatig.";
+"ExposureDetection_Guide_Mask" = "Draag een mondmasker wanneer u andere mensen tegenkomt.";
 "ExposureDetection_Guide_Distance" = "Houd minstens 1,5 meter afstand van andere mensen.";
-
-"ExposureDetection_Guide_Sneeze" = "Niezen of hoesten in je elleboog of een papieren zakdoekje. ";
-
-"ExposureDetection_Guide_Home" = "Indien mogelijk, ga naar huis en blijf thuis";
-
-"ExposureDetection_Guide_Hotline1" = "Als je vragen hebt over de symptomen, het testen van de beschikbaarheid of de zelfisolatie, neem dan contact op met één van de volgende personen:";
-
-"ExposureDetection_Guide_Hotline2" = "Je huisarts";
-
-"ExposureDetection_Guide_Hotline3" = "Algemene medische hulpdienst op telefoonnummer +32 000 00 00 00";
-
-"ExposureDetection_Guide_Hotline4" = "Je volksgezondheidsinstantie";
-
+"ExposureDetection_Guide_Sneeze" = "Nies of hoest in uw elleboog of een papieren zakdoekje. ";
+"ExposureDetection_Guide_Home" = "Ga indien mogelijk naar huis en blijft thuis.";
+"ExposureDetection_Guide_Hotline1" = "Als u vragen heeft over symptomen, de beschikbaarheid van testen of zelfisolatie, neem dan contact op met een van de volgende personen:";
+"ExposureDetection_Guide_Hotline2" = "Uw huisarts";
+"ExposureDetection_Guide_Hotline3" = "Algemene medische hulp op het nummer +32 000 00 00 00";
+"ExposureDetection_Guide_Hotline4" = "Uw dienst volksgezondheid";
 "ExposureDetection_Explanation_Title" = "Risico op infectie";
-
-"ExposureDetection_Explanation_Subtitle_Active" = "Zo is je risico berekend";
-
-"ExposureDetection_Explanation_Subtitle_Inactive" = "Zo is je risico berekend";
-
-"ExposureDetection_Explanation_Text_Off" = "Je risico op infectie wordt berekend op basis van de blootstellingsregistratiegegevens (duur en nabijheid) lokaal op je toestel. Je risico op infectie kan niet worden gezien door, of worden doorgegeven aan iemand anders.";
-
-"ExposureDetection_Explanation_Text_Outdated" = "Omdat je de blootstellingsregistratie niet lang genoeg hebt geactiveerd, kunnen we je infectierisico niet berekenen. Je infectierisico wordt berekend aan de hand van de blootstellingsregistratie gegevens (duur en nabijheid) lokaal op je toestel. Je infectierisico kan niet worden gezien door, of worden doorgegeven aan iemand anders.";
-
-"ExposureDetection_Explanation_Text_Unknown" = "Omdat je de blootstellingsregistratie niet lang genoeg heeft geactiveerd, kunnen we je infectierisico niet berekenen. Je infectierisico wordt berekend aan de hand van de blootstellingsregistratie gegevens (duur en nabijheid) lokaal op je toestel. Je infectierisico kan niet worden gezien door, of worden doorgegeven aan iemand anders.";
-
-"ExposureDetection_Explanation_Text_Low" = "Je hebt een laag risico op infectie omdat er geen contact is geweest met een persoon die gediagnosticeerd is met COVID-19, of omdat je contact beperkt was tot een korte tijd en op een grotere afstand. Je infectierisico kan niet worden gezien door, of worden doorgegeven aan iemand anders.";
-
-"ExposureDetection_Explanation_Text_High" = "Daarom is je infectierisico gerangschikt als verhoogd. Je infectierisico wordt berekend aan de hand van de blootstellingslogboekgegevens (duur en nabijheid) lokaal op je toestel. Je risico op infectie kan niet worden gezien door of doorgegeven aan iemand anders. Als je thuiskomt, vermijd dan ook nauw contact met leden van je familie of huishouden";
-
-"ExposureDetection_Button_Enable" = "Activeer Blootstellingsregistratie";
-
+"ExposureDetection_Explanation_Subtitle_Active" = "Zo werd uw risico berekend";
+"ExposureDetection_Explanation_Subtitle_Inactive" = "Zo wordt uw risico berekend";
+"ExposureDetection_Explanation_Text_Off" = "Uw infectierisico wordt berekend aan de hand van de gegevens uit het blootstellingslogboek (duur en nabijheid), die lokaal op uw toestel staan. Uw risico op infectie kan niet worden gezien door of doorgegeven aan iemand anders.";
+"ExposureDetection_Explanation_Text_Outdated" = "U heeft de blootstellingsregistratie niet lang genoeg geactiveerd. Daarom kunnen we uw infectierisico niet berekenen. \n\nUw infectierisico wordt berekend aan de hand van de gegevens uit het blootstellingslogboek (duur en nabijheid), die lokaal op uw toestel staan. Uw risico op infectie kan niet worden gezien door of doorgegeven aan iemand anders.";
+"ExposureDetection_Explanation_Text_Unknown" = "U heeft de blootstellingsregistratie niet lang genoeg geactiveerd. Daarom kunnen we uw infectierisico niet berekenen. \n\nUw infectierisico wordt berekend aan de hand van de gegevens uit het blootstellingslogboek (duur en nabijheid), die lokaal op uw toestel staan. Uw risico op infectie kan niet worden gezien door of doorgegeven aan iemand anders.";
+"ExposureDetection_Explanation_Text_Low" = "Uw risico op een infectie is laag, omdat u geen contact heeft gehad met iemand met een COVID-19-diagnose of omdat uw contact slechts kortstondig was en er voldoende afstand was. \n\nDaarom is het risico op een infectie laag.\n\nUw infectierisico wordt berekend aan de hand van de gegevens uit het blootstellingslogboek (duur en nabijheid), die lokaal op uw toestel staan. Uw risico op infectie kan niet worden gezien door of doorgegeven aan iemand anders. ";
+"ExposureDetection_Explanation_Text_High" = "Daarom loopt u een verhoogd risico op infectie. \nUw infectierisico wordt berekend aan de hand van de gegevens uit het blootstellingslogboek (duur en nabijheid), die lokaal op uw toestel staan. Uw risico op infectie kan niet worden gezien door of doorgegeven aan iemand anders. \nVermijd ook nauw contact met leden van uw gezin of huishouden wanneer u thuiskomt.";
+"ExposureDetection_Button_Enable" = "Activeer blootstellingsregistratie";
 "ExposureDetection_Button_Refresh" = "Bijwerken";
-
-/* Active Tracing Section */
 "ExposureDetection_ActiveTracingSection_Title" = "Periode geregistreerd";
-
-"ExposureDetection_ActiveTracingSection_Subtitle" = "Deze periode is opgenomen in de berekening";
-
-/* There are two paragraphs in this section. The first one just contains text… */
-"ExposureDetection_ActiveTracingSection_Text_Paragraph0" = "Je risico op infectie kan alleen worden berekend voor perioden waarin de blootstellingsregistratie actief was. De blootstellingsregistratie functie moet daarom permanent actief blijven.";
-
-/* … the second paragraph contains two columns. On the left there is our active\n tracing indicator. On the right column there is just text that explains what\n the indicator shows.\n\n Parameters:\n - first: total number of relevant days (usually 14).\n - second: the actual number of days with active tracing. */
-"ExposureDetection_ActiveTracingSection_Text_Paragraph1" = "Blootstellingsregistratie dekt de laatste %1$u dagen. Gedurende deze tijd was de blootstellingsregistratie functie op je toestel actief voor %2$u dagen. De app verwijdert automatisch oudere registraties, omdat deze niet langer relevant zijn voor de preventie van infecties";
-
-/* Exposure Detection Errors */
+"ExposureDetection_ActiveTracingSection_Subtitle" = "Deze periode is opgenomen in de berekening.";
+"ExposureDetection_ActiveTracingSection_Text_Paragraph0" = "Uw risico op infectie kan alleen worden berekend voor perioden waarin de blootstellingsregistratie actief was. De blootstellingsregistratie moet daarom permanent actief blijven.";
+"ExposureDetection_ActiveTracingSection_Text_Paragraph1" = "De blootstellingsregistratie dekt de voorbije %1$u dagen. De blootstellingsregistratie op uw toestel was tijdens deze periode %2$u dagen actief. De app verwijdert automatisch oudere registraties, omdat ze niet langer relevant zijn voor de preventie van infecties.";
 "ExposureDetectionError_Alert_Title" = "Error";
-
 "ExposureDetectionError_Alert_Action_Details" = "Details";
-
-"ExposureDetectionError_Alert_Message" = "Er is een fout opgetreden tijdens de blootstellingsregistratie";
-
-/* How Risk Detection Works Alert.\n First introduced due to EXPOSUREAPP-1738.\n The alert only displays a single OK-button. We re-use the localized string\n `Alert_ActionOk` for that. */
+"ExposureDetectionError_Alert_Message" = "Er heeft zich een fout voorgedaan tijdens de blootstellingsregistratie.";
 "How_Risk_Detection_Works_Alert_Title" = "Informatie over de functionaliteit van de blootstellingsregistratie";
-
-"How_Risk_Detection_Works_Alert_Message" = "Je risico op infectie kan alleen worden berekend voor periodes waarin de blootstellingsregistratie actief was. De blootstellingsregistratie functie moet daarom permanent actief blijven.\nDe blootstellingsregistratie heeft betrekking op de laatste %1$u dagen.\nDe app verwijdert automatisch oudere registraties, omdat deze niet langer relevant zijn voor infectiepreventie.\n\nVoor meer informatie, zie onze FAQ-pagina.";
-
-/* Settings */
+"How_Risk_Detection_Works_Alert_Message" = "Uw risico op infectie kan alleen worden berekend voor periodes waarin de blootstellingsregistratie actief was. De blootstellingsregistratie moet daarom permanent actief blijven.\nDe blootstellingsregistratie heeft betrekking op de voorbije %1$u dagen.\nDe app verwijdert automatisch oudere registraties, omdat ze niet langer relevant zijn voor infectiepreventie.\n\nZie onze FAQ-pagina voor meer informatie.";
 "Settings_StatusActive" = "On";
-
 "Settings_StatusInactive" = "Off";
-
 "Settings_StatusEnable" = "Activeren";
-
 "Settings_StatusDisable" = "Deactiveren";
-
 "Settings_KontaktProtokollStatusActive" = "Actief";
-
 "Settings_KontaktProtokollStatusInactive" = "Stopgezet";
-
 "Settings_Tracing_Label" = "Blootstellingsregistratie";
-
-"Settings_Notification_Label" = "Notificaties";
-
-"Settings_Reset_Label" = "Reset App";
-
-"Settings_Tracing_Description" = "Sta toe dat COVID-19 willekeurige ID's worden gegenereerd en gedeeld";
-
-"Settings_Notification_Description" = "Sta automatische notificaties toe van je COVID-19-risicostatus";
-
-"Settings_Reset_Description" = "Verwijder al je gegevens in de app.";
-
+"Settings_Notification_Label" = "Meldingen";
+"Settings_Reset_Label" = "App opnieuw instellen";
+"Settings_Tracing_Description" = "Sta toe dat willekeurige COVID-19-ID's worden gegenereerd en gedeeld.";
+"Settings_Notification_Description" = "Sta automatische meldingen van uw COVID-19-risicostatus toe.";
+"Settings_Reset_Description" = "Verwijder al uw gegevens in de app.";
 "Settings_NavTitle" = "Instellingen";
-
-/* Noticiation Settings */
-"NotificationSettings_On_Title" = "Wil je notificaties van je COVID-19-risicostatus activeren?";
-
+"NotificationSettings_On_Title" = "Wilt u meldingen van uw COVID-19-risicostatus activeren?";
 "NotificationSettings_On_SectionTitle" = "Instellingen";
-
-"NotificationSettings_On_RiskChanges" = "Je infectierisico is veranderd";
-
-"NotificationSettings_On_TestsStatus" = "Status van je COVID-19 test";
-
+"NotificationSettings_On_RiskChanges" = "Uw infectierisico is veranderd";
+"NotificationSettings_On_TestsStatus" = "Status van uw COVID-19-test";
 "NotificationSettings_Off_SectionTitle" = "Instellingen";
-
-"NotificationSettings_Off_EnableNotifications" = "Notificaties";
-
+"NotificationSettings_Off_EnableNotifications" = "Meldingen";
 "NotificationSettings_Off_StatusInactive" = "Off";
-
-"NotificationSettings_Off_InfoTitle" = "NotificationsSettings_Off_InfoTitle activeren";
-
-"NotificationSettings_Off_InfoDescription" = "Om notificaties te activeren, moet je notificaties voor de Coronalert-App in de instellingen van je toestel toestaan";
-
+"NotificationSettings_Off_InfoTitle" = "Meldingen inschakelen";
+"NotificationSettings_Off_InfoDescription" = "Om meldingen te activeren staat u meldingen voor de coronalert-app in de instellingen van uw toestel toe.";
 "NotificationSettings_Off_OpenSettings" = "Open instellingen";
-
-"NotificationSettings_NavTitle" = "Notificaties";
-
-"NotificationSettings_onImageDescription" = "Een vrouw ontvangt een notificatie van haar Coronalert-App.";
-
-"NotificationSettings_offImageDescription" = "Een vrouw kan geen notificaties ontvangen van haar Coronalert-App.";
-
-/* Onboarding */
+"NotificationSettings_NavTitle" = "Meldingen";
+"NotificationSettings_onImageDescription" = "Een vrouw krijgt een melding van haar coronalert-app.";
+"NotificationSettings_offImageDescription" = "Een vrouw kan geen meldingen ontvangen van haar coronalert-app.";
 "Onboarding_LetsGo_actionText" = "Laten we beginnen";
-
 "Onboarding_Continue_actionText" = "Volgende";
-
 "Onboarding_EnableLogging_actionText" = "Volgende";
-
-"Onboarding_Continue_actionTextHint" = "Je kan dit scherm overslaan";
-
+"Onboarding_Continue_actionTextHint" = "U kunt dit scherm overslaan";
 "Onboarding_doNotAllow_actionText" = "Niet toestaan";
-
 "Onboarding_DoNotActivate_actionText" = "Niet activeren";
-
-"Onboarding_DeactivateExposureConfirmation_title" = "Dit betekent dat de Coronalert-App geen meldingen over je COVID-19-risicostatus kan verzenden of ontvangen";
-
-"Onboarding_DeactivateExposureConfirmation_message" = "Je kunt deze functie op elk moment deactiveren";
-
-"OnboardingInfo_togetherAgainstCoronaPage_imageDescription" = "Een groep mensen gebruikt hun apparaten in de stad";
-
-"OnboardingInfo_togetherAgainstCoronaPage_title" = "Laten we samen tegen het coronavirus vechten";
-
-"OnboardingInfo_togetherAgainstCoronaPage_boldText" = "Meer bescherming voor jou en voor ons allemaal. Door gebruik te maken van de Coronalert-App kunnen we de infectieketens veel sneller doorbreken.";
-
-"OnboardingInfo_togetherAgainstCoronaPage_normalText" = "Maak van je toestel een corona-waarschuwingssysteem. Krijg een overzicht van je risicostatus en kom erachter of je de afgelopen 14 dagen nauw contact hebt gehad met mensen bij wie COVID-19 is gediagnosticeerd. \De app registraties komen mensen tegen door hun toestellen gecodeerde willekeurige ID's uit te wisselen, zonder toegang tot persoonlijke gegevens.";
-
-"OnboardingInfo_privacyPage_imageDescription" = "Een vrouw gebruikt de Coronalert-App op haar smartphone. Een pictogram met een hangslot op de achtergrond van een schild symboliseert gecodeerde gegevens.";
-
-"OnboardingInfo_privacyPage_title" = "Data Privacy";
-
+"Onboarding_DeactivateExposureConfirmation_title" = "Dit betekent dat de coronalert-app geen meldingen over uw COVID-19-risicostatus kan verzenden of ontvangen.";
+"Onboarding_DeactivateExposureConfirmation_message" = "U kunt deze functie op elk moment uitschakelen.";
+"OnboardingInfo_togetherAgainstCoronaPage_imageDescription" = "Een groep mensen gebruikt hun toestellen in de stad.";
+"OnboardingInfo_togetherAgainstCoronaPage_title" = "Samen krijgen we het coronavirus klein";
+"OnboardingInfo_togetherAgainstCoronaPage_boldText" = "Bescherm uzelf en ons allemaal. Gebruik de coronalert-app, zo kunnen we de infectieketens sneller doorbreken.";
+"OnboardingInfo_togetherAgainstCoronaPage_normalText" = "Maak van uw toestel een corona-waarschuwingssysteem. U krijgt een overzicht van uw risicostatus en krijgt te horen of u de voorbije 14 dagen nauw contact heeft gehad met mensen die een COVID-19-diagnose hebben gekregen. \n\nDe app registreert contacten tussen mensen. Hun toestellen wisselen gecodeerde willekeurige ID's uit, maar hebben geen toegang tot persoonlijke gegevens.";
+"OnboardingInfo_privacyPage_imageDescription" = "Een vrouw gebruikt de coronalert-app op haar smartphone. Het pictogram van een hangslot op een schildje verwijst naar gecodeerde gegevens.";
+"OnboardingInfo_privacyPage_title" = "Privacy gegevens";
 "OnboardingInfo_privacyPage_boldText" = "";
-
-"OnboardingInfo_privacyPage_normalText" = "Je blijft anoniem. Je gegevens worden volledig gecodeerd en verzonden onder een pseudoniem.\nVerantwoordelijke instantie: GDPR, artikel 4, alinea. 7:00 uur, Robert Koch-Instituut-Nordufer 20:30-353 uur, Berlijn. Lees alsjeblieft ons reglement voor gegevensbescherming";
-
-"OnboardingInfo_enableLoggingOfContactsPage_imageDescription" = "Drie mensen hebben de blootstellingsregistratie op hun apparaten geactiveerd, die hun ontmoetingen met elkaar zullen registreren.";
-
+"OnboardingInfo_privacyPage_normalText" = "U blijft anoniem. \nUw gegevens worden volledig gecodeerd en verzonden onder een pseudoniem.\n\nVerantwoordelijke instantie: GDPR, artikel 4, alinea 7\n\nSciensano\nJuliette Wytsmanstraat 14\n1050 Brussel\nLees ons privacybeleid.\n\nInformatie over privacy van gegevens:";
+"OnboardingInfo_enableLoggingOfContactsPage_imageDescription" = "Drie mensen hebben de blootstellingsregistratie op hun toestellen geactiveerd. Hun contacten met elkaar worden geregistreerd.";
 "OnboardingInfo_enableLoggingOfContactsPage_title" = "Blootstellingsregistratie inschakelen";
-
-"OnboardingInfo_enableLoggingOfContactsPage_boldText" = "Om vast te stellen of je risico loopt op infectie, moet je de blootstellingsregistratie-functie activeren";
-
-"OnboardingInfo_enableLoggingOfContactsPage_normalText" = "Blootstellingsregistratie werkt door je toestel dat via Bluetooth gecodeerde willekeurige ID's van andere gebruikers ontvangt en je eigen willekeurige ID doorgeeft aan hun apparaten. Deze functie kan op elk moment worden uitgeschakeld. \Gecodeerde willekeurige ID's geven alleen informatie over datum, duur en nabijheid (berekend met behulp van signaalsterkte) door aan andere mensen. Persoonlijke gegevens zoals naam, adres en locatie worden nooit geregistreerd. Individuen kunnen niet worden geïdentificeerd";
-
+"OnboardingInfo_enableLoggingOfContactsPage_boldText" = "Als u wilt weten of u risico loopt op een besmetting, dan moet u de blootstellingsregistratie activeren.";
+"OnboardingInfo_enableLoggingOfContactsPage_normalText" = "Voor de blootstellingsregistratie ontvangt uw toestel via Bluetooth gecodeerde willekeurige ID's van andere gebruikers en geeft uw willekeurige ID door aan hun toestellen. Deze functie kan op elk moment worden uitgeschakeld. \n\nGecodeerde willekeurige ID's geven alleen informatie over datum, duur en nabijheid (berekend met behulp van signaalsterkte) door aan anderen. Persoonlijke gegevens zoals naam, adres en locatie worden nooit geregistreerd. U kunt dan ook niet geïdentificeerd worden.";
 "OnboardingInfo_enableLoggingOfContactsPage_panelTitle" = "Toestemmingsverklaring";
-
-"OnboardingInfo_enableLoggingOfContactsPage_panelBody" = "Om te weten te komen of je in contact bent geweest met een geïnfecteerde persoon en of er een risico is dat je zelf geïnfecteerd bent, moet je de blootstellingsregistratie functie van de app inschakelen. Door op de knop \"Aanzetten\" te tikken, gaat u akkoord met het inschakelen van de blootstellingsregistratie functie van de App en de bijbehorende gegevensverwerking. Om de blootstellingsregistratie functie van de App te gebruiken, moet je de COVID-19 blootstellingsregistratie functie die door Apple op je iPhone wordt geleverd, inschakelen en de Coronalert-App toestemming geven om dit te gebruiken. \Wanneer de blootstellingsregistratie functie is ingeschakeld, genereert en verzendt je iPhone continu willekeurige ID's via Bluetooth, die andere Apple en Android smartphones in je omgeving kunnen ontvangen als de blootstellingsregistratie functie ook is ingeschakeld. Je iPhone ontvangt op zijn beurt de willekeurige ID's van de andere smartphones. Je eigen willekeurige ID's en die van andere smartphones worden geregistreerd in het blootstellingslogboek en daar 14 dagen lang opgeslagen. Om je risico op infectie te identificeren, laadt de App een lijst - meerdere keren per dag of op verzoek - van de willekeurige ID's van alle gebruikers die de App hebben verteld dat ze geïnfecteerd zijn met het coronavirus. Deze lijst wordt dan vergeleken met de willekeurige ID's die zijn opgeslagen in het blootstellingslogboek. Als de App detecteert dat je mogelijk in contact bent geweest met een geïnfecteerde gebruiker, zal zij je hiervan op de hoogte stellen en je vertellen dat er een risico is dat je ook geïnfecteerd bent. In dit geval krijgt de App ook toegang tot andere gegevens die zijn opgeslagen in het belichtingslogboek van je iPhone (datum, duur en Bluetooth-signaalsterkte van het contact).De Bluetooth-signaalsterkte wordt gebruikt om de fysieke afstand af te leiden (hoe sterker het signaal, hoe kleiner de afstand). De App analyseert deze informatie om te beoordelen of je waarschijnlijk geïnfecteerd bent met het coronavirus en om je aanbevelingen te doen voor de volgende stap. Deze analyse wordt alleen lokaal uitgevoerd op je iPhone. Behalve jij weet niemand (zelfs de RKI niet) of je in contact bent geweest met een geïnfecteerde persoon en welk risico voor je is geïdentificeerd. Om jouw toestemming voor de blootstellingsregistratie functie in te trekken, kan je de functie uitschakelen met behulp van de toggle switch in de App of de App verwijderen. Als je besluit om de blootstellingsregistratie functie weer te gebruiken, kan je de functie weer inschakelen of de App opnieuw installeren. Als je de blootstellingsregistratie functie uitschakelt, zal de App niet langer controleren of je in contact bent geweest met een geïnfecteerde gebruiker. Als je ook het verzenden en ontvangen van willekeurige ID's op je toestel wilt stoppen, moet je de COVID-19 blootstellingsregistratie in de instellingen van uw iPhone uitschakelen. Houd er rekening mee dat je eigen willekeurige ID's en die van andere smartphones die zijn opgeslagen in het belichtingslogboek niet worden verwijderd in de App. Je kan alleen de gegevens die zijn opgeslagen in het blootstellingslogboek in je iPhone-instellingen permanent verwijderen. De privacyverklaring van de App (inclusief een uitleg van de gegevensverwerking die is uitgevoerd voor de belichtingslogging) kan je vinden in het menu onder \"Informatie over de Data Privacy\"";
-
+"OnboardingInfo_enableLoggingOfContactsPage_panelBody" = "Om erachter te komen of u in contact bent gekomen met een geïnfecteerd persoon en of er een risico is dat u zelf ook geïnfecteerd bent, schakelt u de blootstellingsregistratie van de app in. Door op \"Inschakelen\" te tikken, gaat u akkoord met het inschakelen van de blootstellingsregistratie van de app en de bijbehorende gegevensverwerking. \n\n\nOm de blootstellingsregistratie van de app te gebruiken, schakelt u de functie COVID-19-blootstellingsregistratie die door Apple op uw iPhone is gezet, in en geeft u de coronalert-app de toestemming om deze functie te gebruiken. \n\nWanneer de blootstellingsregistratie is ingeschakeld, genereert en verzendt uw iPhone continu willekeurige ID's via Bluetooth, die andere Apple- en Android-smartphones in uw omgeving kunnen ontvangen als de blootstellingsregistratie ook bij hen is ingeschakeld. Uw iPhone ontvangt op zijn beurt de willekeurige ID's van de andere smartphones. Uw eigen willekeurige ID's en die van andere smartphones worden geregistreerd in het blootstellingslogboek en daar 14 dagen lang opgeslagen. \n\n\nOm te bekijken of u een risico op besmetting loopt, laadt de App - meerdere keren per dag of op verzoek - een lijst van de willekeurige ID's van alle gebruikers die de app hebben verteld dat ze geïnfecteerd zijn met het coronavirus. Deze lijst wordt dan vergeleken met de willekeurige ID's die zijn opgeslagen in het blootstellingslogboek. Als de app detecteert dat u mogelijk in contact bent geweest met een geïnfecteerde gebruiker, dan wordt u ervan op de hoogte gebracht dat het risico bestaat dat u ook geïnfecteerd bent. In dat geval krijgt de app ook toegang tot andere gegevens die zijn opgeslagen in het blootstellingslogboek van uw iPhone (datum, duur en Bluetooth-signaalsterkte van het contact).\n\nDe Bluetooth-signaalsterkte wordt gebruikt om de fysieke afstand af te leiden (hoe sterker het signaal, hoe kleiner de afstand). De app analyseert deze informatie om te beoordelen hoe waarschijnlijk het is dat u geïnfecteerd bent met het coronavirus en om u advies te geven over wat u vervolgens doet. Deze analyse gebeurt alleen lokaal op uw iPhone. Behalve u weet niemand (zelfs Sciensano niet) of u in contact bent geweest met een geïnfecteerde persoon en welk risico dat voor u inhoudt. \n\nOm uw toestemming voor de blootstellingsregistratie in te trekken, kunt u de functie uitschakelen met de toggle in de app of kunt u de app verwijderen. Als u de blootstellingsregistratie toch opnieuw wilt gebruiken, schakelt u de app met de toggle weer in of installeert u de app opnieuw. Als u de blootstellingsregistratie uitschakelt, dan zal de app niet langer controleren of u in contact bent gekomen met een geïnfecteerde gebruiker. Als u ook het verzenden en ontvangen van willekeurige ID's via uw toestel wilt stoppen, dan schakelt u de COVID-19-blootstellingsregistratie in de instellingen van uw iPhone uit. Houd er rekening mee dat uw eigen willekeurige ID's en die van andere smartphones die zijn opgeslagen in het blootstellingslogboek, niet worden verwijderd in de app. U kunt alleen de gegevens die zijn opgeslagen in het blootstellingslogboek in uw iPhone-instellingen, permanent verwijderen. \n\nDe privacyverklaring van de app (inclusief uitleg over de gegevensverwerking van het blootstellingslogboek) vindt u in het menu onder \"Informatie over de privacy van gegevens\".";
 "OnboardingInfo_enableLoggingOfContactsPage_stateHeader" = "Status";
-
 "OnboardingInfo_enableLoggingOfContactsPage_stateTitle" = "Blootstellingsregistratie";
-
 "OnboardingInfo_enableLoggingOfContactsPage_stateActive" = "Actief";
-
 "OnboardingInfo_enableLoggingOfContactsPage_stateStopped" = "Stopgezet";
-
-"OnboardingInfo_howDoesDataExchangeWorkPage_imageDescription" = "Een gecodeerde positieve testdiagnose wordt naar het systeem gestuurd, dat nu andere gebruikers zal waarschuwen";
-
-"OnboardingInfo_howDoesDataExchangeWorkPage_title" = "Als er een diagnose wordt gesteld met COVID-19 ...";
-
-"OnboardingInfo_howDoesDataExchangeWorkPage_boldText" = "... rapporteer dit in de Coronalert-App. Het delen van je testresultaten is vrijwillig en veilig. Doe dit alstublieft in het belang van ieders gezondheid.";
-
-"OnboardingInfo_howDoesDataExchangeWorkPage_normalText" = "Je notificatie is veilig versleuteld en wordt verwerkt op een beveiligde server. Mensen wiens gecodeerde willekeurige ID's je toestel heeft verzameld, zullen nu een waarschuwing ontvangen samen met informatie over wat ze nu moeten doen.";
-
-"OnboardingInfo_alwaysStayInformedPage_imageDescription" = "Een vrouw ontvangt een notificatie van haar Coronalert-App.";
-
+"OnboardingInfo_howDoesDataExchangeWorkPage_imageDescription" = "Er wordt een gecodeerde positieve testdiagnose naar het systeem gestuurd, dat nu andere gebruikers zal waarschuwen.";
+"OnboardingInfo_howDoesDataExchangeWorkPage_title" = "Als u een COVID-19-diagnose krijgt ...";
+"OnboardingInfo_howDoesDataExchangeWorkPage_boldText" = "... rapporteer dit in de coronalert-app. Het delen van uw testresultaten gebeurt vrijwillig en is veilig. Doe dit alstublieft in het belang van ieders gezondheid.";
+"OnboardingInfo_howDoesDataExchangeWorkPage_normalText" = "Uw melding is veilig versleuteld en wordt verwerkt op een beveiligde server. De mensen van wie uw toestel de gecodeerde willekeurige ID's heeft verzameld, ontvangen nu een waarschuwing samen met informatie over wat ze nu moeten doen.";
+"OnboardingInfo_alwaysStayInformedPage_imageDescription" = "Een vrouw ontvangt een melding van haar coronalert-app.";
 "OnboardingInfo_alwaysStayInformedPage_title" = "Waarschuwingen ontvangen en risico's identificeren";
-
-"OnboardingInfo_alwaysStayInformedPage_boldText" = "De app kan je automatisch informeren over je risicostatus en je waarschuwen voor nieuwe infecties van mensen waaraan je bent blootgesteld. Laat de app je nu op de hoogte brengen. ";
-
-"OnboardingInfo_alwaysStayInformedPage_normalText" = "Je kan dan zelf isoleren om anderen te beschermen en uit te zoeken waar je zich kunt laten testen";
-
-/* Exposure Submission */
+"OnboardingInfo_alwaysStayInformedPage_boldText" = "De app kan u automatisch informeren over uw risicostatus en u waarschuwen voor nieuwe infecties van mensen met wie u contact heeft gehad. Geef toestemming om u via de app op de hoogte te laten brengen. ";
+"OnboardingInfo_alwaysStayInformedPage_normalText" = "U kunt dan in zelfisolatie gaan om anderen te beschermen en uitzoeken waar u zich kunt laten testen.";
 "ExposureSubmission_Hotline_Number" = "0800 14 689";
-
-"ExposureSubmission_DataPrivacyTitle" = "Data Privacy";
-
+"ExposureSubmission_DataPrivacyTitle" = "Privacy gegevens";
 "ExposureSubmission_Continue_actionText" = "Volgende";
-
-"ExposureSubmission_DataPrivacyDescription" = "Door op \"Accepteren\" te tikken, geef je toestemming om de App te vragen naar de status van je coronavirustest en deze in de App weer te geven. Deze functie is beschikbaar voor jou als je een QR-code hebt ontvangen en toestemming hebt gegeven voor het verzenden van je testresultaat naar het serversysteem van de App. Zodra het testlaboratorium je testresultaat op de server heeft opgeslagen, kan je het resultaat in de App zien. Als je nitificaties hebt ingeschakeld, ontvang je ook een melding buiten de App om dat je testresultaat is ontvangen. Om privacyredenen wordt het testresultaat zelf echter alleen in de App getoond. Je kan deze toestemming te allen tijde intrekken door je testregistratie in de App te verwijderen. Het intrekken van je toestemming heeft geen invloed op de rechtmatigheid van de verwerking vóór de intrekking. Meer informatie vind je in het menu onder \"Informatie over Data Privacy\"";
-
+"ExposureSubmission_DataPrivacyDescription" = "Door op \"Accepteren\" te tikken, geeft u de app de toestemming de status van uw coronavirustest na te gaan en die in de app weer te geven. Deze functie is beschikbaar als u een QR-code heeft ontvangen en toestemming heeft gegeven om uw testresultaat naar de server van de app door te sturen. Zodra het testlaboratorium uw testresultaat op de server heeft opgeslagen, kunt u het resultaat in de app zien. Als u de meldingen heeft ingeschakeld, ontvangt u ook buiten de app een melding waarin staat dat uw testresultaat is ontvangen. Om privacyredenen wordt het testresultaat zelf echter alleen in de app getoond. U kunt deze toestemming op eender welk moment intrekken, hiervoor verwijdert u uw testregistratie in de app. Het intrekken van uw toestemming heeft geen invloed op de rechtmatigheid van de verwerking voorafgaand aan de intrekking. Meer informatie vindt u in het menu onder \"Informatie over privacy gegevens\"";
 "ExposureSubmissionDataPrivacy_AcceptTitle" = "Accepteren";
-
 "ExposureSubmissionDataPrivacy_DontAcceptTitle" = "Niet accepteren";
-
 "ExposureSubmission_Submit" = "Geef de CODE in";
-
-"ExposureSubmissionTanEntry_Title" = "Geef de CODE in";
-
-"ExposureSubmissionTanEntry_EntryField" = "CODE veld";
-
-"ExposureSubmissionTanEntry_Info" = "Vul de CODE in die je werd gegeven:";
-
-"ExposureSubmissionTanEntry_Description" = "Vul de 10-cijferige CODE in die je werd gegeven.";
-
+"ExposureSubmissionTanEntry_Title" = "Ingave CODE";
+"ExposureSubmissionTanEntry_EntryField" = "CODE-veld";
+"ExposureSubmissionTanEntry_Info" = "Vul de CODE in die u hebt gekregen.";
+"ExposureSubmissionTanEntry_Description" = "Vul de 10-cijferige CODE in die u hebt gekregen.";
 "ExposureSubmissionTanEntry_Submit" = "Volgende";
-
-"ExposureSubmissionTanEntry_InvalidCharacterError" = "Ongeldige ingave, controleer je ingave";
-
-"ExposureSubmissionTanEntry_InvalidError" = "Ongeldige CODE, controleer je ingave";
-
-"ExposureSubmission_NavTitle" = "Diagnoseskey verzenden";
-
-"ExposureSubmissionConfirmation_Title" = "Positief diagnose";
-
-"ExposureSubmission_GeneralErrorTitle" = "Error";
-
+"ExposureSubmissionTanEntry_InvalidCharacterError" = "Ongeldige ingave, controleer uw ingave";
+"ExposureSubmissionTanEntry_InvalidError" = "Ongeldige CODE, controleer uw ingave";
+"ExposureSubmission_NavTitle" = "Diagnosesleutel verzenden";
+"ExposureSubmissionConfirmation_Title" = "Positieve diagnose";
+"ExposureSubmission_GeneralErrorTitle" = "Fout";
 "ExposureSubmission_DispatchTitle" = "Selectie";
-
-"ExposureSubmission_DispatchDescription" = "Wat is er voor jou?";
-
+"ExposureSubmission_DispatchDescription" = "Wat houdt dit voor u in?";
 "ExposureSubmissionDispatch_QRCodeButtonTitle" = "Document met QR-code";
-
-"ExposureSubmissionDispatch_QRCodeButtonDescription" = "Registreer je test door de QR-code van je testdocument te scannen";
-
+"ExposureSubmissionDispatch_QRCodeButtonDescription" = "Scan de QR-code op uw testdocument en registreer uw test.";
+"ExposureSubmissionDispatch_TANButtonTitle" = "CODE";
+"ExposureSubmissionDispatch_TANButtonDescription" = "Geef uw CODE handmatig in en registreer uw test.";
 "ExposureSubmissionDispatch_HotlineButtonTitle" = "CODE aanvragen";
-
-"ExposureSubmissionDispatch_HotlineButtonDescription" = "Bel ons als je getest bent %@.";
-
+"ExposureSubmissionDispatch_HotlineButtonDescription" = "Bel ons als u getest bent %@.";
 "ExposureSubmissionDispatch_HotlineButtonPositiveWord" = "Positief";
-
 "ExposureSubmissionHotline_Title" = "CODE aanvragen";
-
-"ExposureSubmissionHotline_Description" = "Houd je testresultaat (indien beschikbaar) en je telefoonnummer klaar om een CODE aan te vragen";
-
-"ExposureSubmissionHotline_SectionTitle" = "Hoe dit werkt";
-
+"ExposureSubmissionHotline_Description" = "Houd uw testresultaat (indien beschikbaar) en uw telefoonnummer bij de hand wanneer u een CODE aanvraagt.";
+"ExposureSubmissionHotline_SectionTitle" = "Hoe werkt dit";
 "ExposureSubmissionHotline_SectionDescription1" = "Bel de hotline en vraag een CODE aan:";
-
 "ExposureSubmissionHotline_iconAccessibilityLabel1" = "Stap 1 van 2";
-
 "ExposureSubmissionHotline_iconAccessibilityLabel2" = "Stap 2 van 2";
-
 "ExposureSubmission_PhoneNumber" = "+32 000 000000";
-
-"ExposureSubmission_PhoneDetailDescription" = "Talen: \Nederlands, Frans, Duits, Engels, kantooruren uren: van maandag tot zondag: 24 uur. Het telefoontje is gratis.";
-
-"ExposureSubmission_SectionDescription2" = "Registreer de test door de CODE in te geven in de app.";
-
+"ExposureSubmission_PhoneDetailDescription" = "Talen: \nNederlands, Frans, Duits, Engels\n\nKantooruren: \nma.-vr.: 8.00-17.00 u\n(niet op feestdagen) \n\nDit is een gratis nummer.";
+"ExposureSubmission_SectionDescription2" = "Geef de CODE in de app in en registreer de test.";
 "ExposureSubmission_CallButtonTitle" = "Bellen";
-
-"ExposureSubmissionHotline_imageDescription" = "Hotline communiceert een CODE.";
-
-/* Exposure Submission QR Code Scanner */
+"ExposureSubmission_TANInputButtonTitle" = "Geef de CODE in";
+"ExposureSubmissionHotline_imageDescription" = "Hotline geeft een CODE door.";
 "ExposureSubmissionQRScanner_title" = "QR-code scannen";
-
+"ExposureSubmissionQRScanner_instruction" = "Houd het kader boven de QR-code op uw testdocument.";
 "ExposureSubmissionQRScanner_notFoundAlertTitle" = "Diagnose kan niet gevonden worden";
-
-"ExposureSubmissionQRScanner_notFoundAlertText" = "Om het lezen van de QR-code te vergemakkelijken, probeer je de QR-code verticaal op de scanner uit te lijnen, of zet je de flitser aan";
-
-"ExposureSubmissionQRScanner_otherError" = "Er is een onbekende fout opgetreden.";
-
-"ExposureSubmissionQRScanner_cameraPermissionDenied" = "Laat de app de camera gebruiken om de QR-code te scannen";
-
-"ExposureSubmissionQRScanner_CameraFlash" = "Cameraflitser";
-
+"ExposureSubmissionQRScanner_notFoundAlertText" = "De QR-code kan gemakkelijker gelezen worden als u hem verticaal voor de scanner houdt of de flits aanzet.";
+"ExposureSubmissionQRScanner_otherError" = "Er heeft zich een onbekende fout voorgedaan.";
+"ExposureSubmissionQRScanner_cameraPermissionDenied" = "Geef de app toegang tot de camera om de QR-code te scannen.";
+"ExposureSubmissionQRScanner_CameraFlash" = "Flits camera";
 "ExposureSubmissionQRScanner_CameraFlash_On" = "Aangezet";
-
-"ExposureSubmissionQRScanner_CameraFlash_Off" = "Uitgeschakeld";
-
-"ExposureSubmissionQRScanner_CameraFlash_Enable" = "Schakel de cameraflitser in";
-
-"ExposureSubmissionQRScanner_CameraFlash_Disable" = "Schakel de cameraflitser uit";
-
-/* Exposure Submission Success */
+"ExposureSubmissionQRScanner_CameraFlash_Off" = "Uitgezet";
+"ExposureSubmissionQRScanner_CameraFlash_Enable" = "Zet de flits van uw camera aan";
+"ExposureSubmissionQRScanner_CameraFlash_Disable" = "Zet de flits van uw camera uit";
 "ExposureSubmissionSuccess_Title" = "Bedankt!";
-
 "ExposureSubmissionSuccess_AccImageDescription" = "Iedereen in de groep juicht omdat iemand zijn testresultaat heeft gedeeld.";
-
-"ExposureSubmissionSuccess_Button" = "Dat is het!";
-
-"ExposureSubmissionSuccess_Description" = "Dankzij jouw steun kunnen andere mensen nu gewaarschuwd worden en adequaat reageren";
-
+"ExposureSubmissionSuccess_Button" = "Dat was het!";
+"ExposureSubmissionSuccess_Description" = "Dankzij uw steun kunnen andere mensen nu gewaarschuwd worden en op de juiste manier reageren.";
 "ExposureSubmissionSuccess_subTitle" = "Andere informatie:";
-
 "ExposureSubmissionSuccess_listTitle" = "Let op:";
-
-"ExposureSubmissionSuccess_listItem1" = "De volksgezondheidsautoriteit zal binnen enkele dagen telefonisch of per brief contact met jou opnemen";
-
-"ExposureSubmissionSuccess_listItem2" = "Je bent besmettelijk. Isoleer jezelf van andere mensen.";
-
-"ExposureSubmissionSuccess_listItem2_1" = "Je quarantaineperiode is meestal 14 dagen. Gelieve je symptomen te observeren en te controleren hoe ze zich ontwikkelen.";
-
-"ExposureSubmissionSuccess_listItem2_2" = "Je wordt door jouw volksgezondheidsinstantie gevraagd een lijst op te stellen van mensen met wie je contact hebt gehad. Dit moet alle mensen bevatten met wie je nauw contact hebt gehad (minder dan 2 meter, face-to-face gesprek) gedurende meer dan 15 minuten in de twee dagen voordat je de symptomen ontwikkelde";
-
-"ExposureSubmissionSuccess_listItem2_3" = "Houd vooral rekening met mensen die niet direct door de app op de hoogte worden gesteld omdat ze geen smartphone hebben of de app niet hebben geïnstalleerd";
-
-"ExposureSubmissionSuccess_listItem2_4" = "Zelfs als je geen symptomen meer hebt en je zich weer goed voelt, kan je nog steeds besmettelijk zijn. ";
-
-/* Exposure Submission Introduction */
+"ExposureSubmissionSuccess_listItem1" = "De dienst volksgezondheid neemt binnen enkele dagen telefonisch of per brief contact met u op.";
+"ExposureSubmissionSuccess_listItem2" = "U bent besmettelijk. Ga in zelfisolatie.";
+"ExposureSubmissionSuccess_listItem2_1" = "U gaat normaal gesproken 14 dagen in quarantaine. Let goed op uw symptomen en volg op hoe ze zich ontwikkelen.";
+"ExposureSubmissionSuccess_listItem2_2" = "De dienst volksgezondheid zal u vragen een lijst op te stellen van mensen met wie u contact heeft gehad. Noteer iedereen met wie u gedurende meer dan 15 minuten nauw contact heeft gehad (minder dan 2 meter, persoonlijk gesprek) in de twee dagen voordat u symptomen ontwikkelde.";
+"ExposureSubmissionSuccess_listItem2_3" = "Houd vooral rekening met mensen die niet rechtstreeks door de app op de hoogte worden gesteld, omdat ze geen smartphone hebben of de app niet hebben geïnstalleerd.";
+"ExposureSubmissionSuccess_listItem2_4" = "Zelfs als u geen symptomen meer heeft en u zich weer goed voelt, kunt u nog steeds besmettelijk zijn. ";
 "ExposureSubmissionIntroduction_Title" = "Informatie";
-
-"ExposureSubmissionIntroduction_SubTitle" = "Zo werkt de Coronalert-App";
-
-"ExposureSubmissionIntroduction_AccImageDescription" = "Een toestel zendt een gecodeerde positieve testdiagnose naar het systeem";
-
-"ExposureSubmissionIntroduction_Usage01" = "Om de app goed te laten werken, vertrouwen we op de steun van personen die gediagnosticeerd zijn met COVID-19.";
-
-"ExposureSubmissionIntroduction_Usage02" = "Omdat alleen gecodeerde willekeurige ID's worden uitgewisseld, blijf je anoniem. Je kan nu als volgt te werk gaan:";
-
-"ExposureSubmissionIntroduction_ListItem1" = "Als er een QR-code in je testdocument staat, kan je deze scannen en de test registreren. Zodra het resultaat beschikbaar is, kkan je het in de app bekijken. ";
-
-"ExposureSubmissionIntroduction_ListItem2" = "Als er bij jou een diagnose is gesteld met COVID-19, kan je anderen hiervan op de hoogte stellen";
-
-"ExposureSubmissionIntroduction_ListItem3" = "Als je een CODE hebt gekregen voor een positieve diagnose, kan je deze gebruiken om de test te registreren";
-
-"ExposureSubmissionIntroduction_ListItem4" = "Als je geen CODE hebt, kan je deze telefonisch aanvragen";
-
-/* Exposure Submission Result */
+"ExposureSubmissionIntroduction_SubTitle" = "Zo werkt de coronalert-app";
+"ExposureSubmissionIntroduction_AccImageDescription" = "Een toestel zendt een gecodeerde positieve diagnose naar het systeem.";
+"ExposureSubmissionIntroduction_Usage01" = "We rekenen op uw medewerking, want de app werkt alleen als mensen met een COVID-19-diagnose zich registreren.";
+"ExposureSubmissionIntroduction_Usage02" = "Omdat alleen gecodeerde willekeurige ID's worden uitgewisseld, blijft u anoniem. Zo gaat u te werk:";
+"ExposureSubmissionIntroduction_ListItem1" = "Staat er in het testdocument een QR-code, dan kunt u hem scannen en de test registreren. Zodra het resultaat beschikbaar is, kunt u het in de app bekijken. ";
+"ExposureSubmissionIntroduction_ListItem2" = "Als u een COVID-19-diagnose heeft gekregen, kunt u anderen hiervan op de hoogte brengen.";
+"ExposureSubmissionIntroduction_ListItem3" = "Als u een CODE heeft gekregen voor een positieve diagnose, kunt u hem gebruiken om de test te registreren.";
+"ExposureSubmissionIntroduction_ListItem4" = "Als u geen CODE heeft, kunt u er telefonisch een aanvragen.";
 "ExposureSubmissionResult_Title" = "Testresultaat";
-
-"ExposureSubmissionResult_CardSubTitle" = "Jouw diagnose";
-
+"ExposureSubmissionResult_CardSubTitle" = "Uw diagnose";
 "ExposureSubmissionResult_CardTitle" = "SARS-CoV-2";
-
 "ExposureSubmissionResult_CardPositive" = "Positief";
-
 "ExposureSubmissionResult_CardNegative" = "Negatief";
-
 "ExposureSubmissionResult_CardInvalid" = "Evaluatie niet mogelijk";
-
-"ExposureSubmissionResult_CardPending" = "Jouw resultaat is nog niet beschikbaar";
-
-"ExposureSubmissionResult_Procedure" = "Hoe dit werkt:";
-
+"ExposureSubmissionResult_CardPending" = "Uw resultaat is nog niet beschikbaar";
+"ExposureSubmissionResult_Procedure" = "Hoe werkt dit:";
 "ExposureSubmissionResult_testAdded" = "Test succesvol toegevoegd";
-
-"ExposureSubmissionResult_testAddedDesc" = "Jouw test is opgeslagen in de Coronalert-App.";
-
+"ExposureSubmissionResult_testAddedDesc" = "Uw test is opgeslagen in de coronalert-app.";
 "ExposureSubmissionResult_warnOthers" = "Anderen waarschuwen";
-
-"ExposureSubmissionResult_warnOthersDesc" = "Deel je willekeurige ID's van de laatste 14 dagen om anderen te beschermen en de keten van de infectie te doorbreken";
-
+"ExposureSubmissionResult_warnOthersDesc" = "Deel uw willekeurige ID's van de voorbije 14 dagen om anderen te beschermen en de infectieketen te doorbreken.";
 "ExposureSubmissionResult_testPositive" = "Positieve diagnose";
-
-"ExposureSubmissionResult_testPositiveDesc" = "Jouw testresultaat is geverifieerd als positief.";
-
+"ExposureSubmissionResult_testPositiveDesc" = "Uw testresultaat is positief.";
 "ExposureSubmissionResult_testNegative" = "Negatieve diagnose";
-
-"ExposureSubmissionResult_testNegativeDesc" = "Het laboratoriumresultaat geeft geen controle aan dat je coronavirus SARS-CoV-2 hebt";
-
+"ExposureSubmissionResult_testNegativeDesc" = "Het laboratoriumresultaat wijst er niet op dat u het coronavirus SARS-CoV-2 heeft.";
 "ExposureSubmissionResult_testNegative_furtherInfos_title" = "Andere informatie:";
-
-"ExposureSubmissionResult_testNegative_furtherInfos_listItem1" = "Voel je je nog steeds niet lekker? Als je je erg slecht voelt en/of je klachten verergerd zijn, neem dan contact op met je huisarts";
-
-"ExposureSubmissionResult_testNegative_furtherInfos_listItem2" = "Blijf thuis totdat je je weer goed voelt. Als je besmet zou raken met het coronavirus (SARS-CoV-2) terwijl je verzwakt bent door een andere infectie, kan dit leiden tot een ernstige ziekte";
-
-"ExposureSubmissionResult_testNegative_furtherInfos_listItem3" = "Ga niet naar het werk als je je niet lekker voelt om ervoor te zorgen dat je andere mensen niet in gevaar brengt";
-
-"ExposureSubmissionResult_furtherInfos_hint_testAgain" = "Als jouw symptomen verergeren, heb je misschien nog een SARS-CoV-2-test nodig";
-
+"ExposureSubmissionResult_testNegative_furtherInfos_listItem1" = "Voelt u zich nog steeds niet lekker? Als u zich erg slecht voelt en/of als uw klachten verergerd zijn, neem dan contact op met uw huisarts.";
+"ExposureSubmissionResult_testNegative_furtherInfos_listItem2" = "Blijf thuis tot u zich weer goed voelt. Als u besmet zou raken met het coronavirus (SARS-CoV-2) terwijl u verzwakt bent door een andere infectie, kan dit leiden tot een ernstige ziekte.";
+"ExposureSubmissionResult_testNegative_furtherInfos_listItem3" = "Ga niet naar het werk als u zich niet lekker voelt. Zo brengt u anderen niet in gevaar.";
+"ExposureSubmissionResult_furtherInfos_hint_testAgain" = "Als uw symptomen verergeren, heeft u misschien nog een SARS-CoV-2-test nodig.";
 "ExposureSubmissionResult_testInvalid" = "Test heeft fouten";
-
-"ExposureSubmissionResult_testInvalidDesc" = "Er was een probleem met de evaluatie van jouw test. Neem contact op met de volksgezondheidsinstantie om te weten te komen hoe je verder moet gaan. ";
-
+"ExposureSubmissionResult_testInvalidDesc" = "Er was een probleem met de evaluatie van uw test. Neem contact op met de dienst volksgezondheid om te weten wat u nu moet doen. ";
 "ExposureSubmissionResult_testPending" = "Testresultaat is nog niet beschikbaar";
-
-"ExposureSubmissionResult_testPendingDesc" = "Jouw testresultaat is nog niet beschikbaar.";
-
+"ExposureSubmissionResult_testPendingDesc" = "Uw testresultaat is nog niet beschikbaar.";
 "ExposureSubmissionResult_testRemove" = "Test verwijderen";
-
-"ExposureSubmissionResult_testRemoveDesc" = "Verwijder de test uit de Coronalert-App, zodat je hier eventueel een nieuwe testcode kan opslaan";
-
+"ExposureSubmissionResult_testRemoveDesc" = "Verwijder de test uit de coronalert-app, zodat u hier indien nodig een nieuwe testcode kunt opslaan.";
 "ExposureSubmissionResult_continueButton" = "Volgende";
-
 "ExposureSubmissionResult_deleteButton" = "Test verwijderen";
-
-"ExposureSubmissionResult_refreshButton" = "Update";
-
+"ExposureSubmissionResult_refreshButton" = "Updaten";
 "ExposureSubmissionWarnOthers_title" = "Anderen waarschuwen";
-
-"ExposureSubmissionWarnOthers_AccImageDescription" = "Een toestel zendt een gecodeerde positieve testdiagnose naar het systeem";
-
+"ExposureSubmissionWarnOthers_AccImageDescription" = "Een toestel stuurt een gecodeerde positieve diagnose naar het systeem.";
 "ExposureSubmissionWarnOthers_continueButton" = "Volgende";
-
-"ExposureSubmissionWarnOthers_sectionTitle" = "Help ons allemaal!";
-
-"ExposureSubmissionWarnOthers_description" = "Vervolgens kkan je ervoor zorgen dat de Coronalert-App je willekeurige ID's van de laatste 14 dagen met anderen deelt. Door dit te doen, kan je andere mensen waarschuwen en de infectieketen helpen door te breken. Omdat alleen onpersoonlijke willekeurige ID's doorgegeven worden, blijft je identiteit anoniem.";
-
-"ExposureSubmissionWarnOthers_dataPrivacyDescription" = "Door op \"Accepteren\" te tikken, stem je ermee in dat de App jouw positieve testresultaat naar het serversysteem van de App stuurt samen met jouw willekeurige ID's van de laatste 14 dagen, zodat andere gebruikers van de App die de blootstellingsregistratie functie hebben ingeschakeld, automatisch op de hoogte kunnen worden gesteld dat ze mogelijk zijn blootgesteld aan een risico op infectie. De willekeurige ID's die voor dit doel worden verzonden, bevatten geen informatie waarmee conclusies kunnen worden getrokken over jouw identiteit of je persoon. Het verzenden van jouw testresultaat via de App is vrijwillig. Je wordt niet gestraft als je je testresultaat niet doorgeeft. Aangezien het niet mogelijk is om te traceren of te controleren of en hoe je de App gebruikt, weet niemand anders dan jij of je de informatie die je hebt verzonden, hebt geïnfecteerd. Deze intrekking van jouw toestemming heeft geen invloed op de rechtmatigheid van de verwerking die op basis van de toestemming voorafgaand aan de intrekking is uitgevoerd. Meer informatie kan je terugvinden in het menu onder \"Informatie over Data Privacy\"";
-
-"ExposureSubmissionWarnOthers_dataPrivacyTitle" = "Data Privacy";
-
+"ExposureSubmissionWarnOthers_sectionTitle" = "We helpen elkaar!";
+"ExposureSubmissionWarnOthers_description" = "Vervolgens kunt u ook aangeven dat de coronalert-app uw willekeurige ID's van de voorbije 14 dagen met anderen deelt. Zo kunt u andere mensen waarschuwen en de infectieketen helpen doorbreken. \n\nEr worden alleen onpersoonlijke willekeurige ID's doorgegeven. Uw identiteit blijft anoniem.";
+"ExposureSubmissionWarnOthers_dataPrivacyDescription" = "Door op \"Accepteren\" te tikken stemt u ermee in dat de app uw positieve testresultaat samen met uw willekeurige ID's van de voorbije 14 dagen naar het serversysteem van de app stuurt, zodat andere gebruikers van de app die de blootstellingsregistratie hebben ingeschakeld, er automatisch van op de hoogte kunnen worden gesteld dat ze eventueel aan een risico op infectie blootgesteld zijn. De willekeurige ID's die voor dit doel worden verzonden, bevatten geen informatie op basis waarvan conclusies over uw identiteit of persoon getrokken kunnen worden. \n\nHet verzenden van uw testresultaat via de app gebeurt op vrijwillige basis. U wordt niet gestraft als u uw testresultaat niet doorgeeft. Aangezien het niet mogelijk is om te traceren of te controleren of en hoe u de app gebruikt, weet alleen u of u de informatie dat u bent geïnfecteerd, heeft verzonden. \n\nU kunt uw toestemming op eender welk moment intrekken door deze app te verwijderen. Het intrekken van uw toestemming heeft geen invloed op de rechtmatigheid van de verwerking op basis van de toestemming voorafgaand aan de intrekking. Meer informatie kunt u terugvinden in het menu onder \"Informatie over privacy van gegevens\".";
+"ExposureSubmissionWarnOthers_dataPrivacyTitle" = "Privacy gegevens";
 "ExposureSubmissionResult_RemoveAlert_Title" = "Test verwijderen?";
-
-"ExposureSubmissionResult_RemoveAlert_Text" = "De test wordt permanent verwijderd uit de Coronalert-App en kan niet opnieuw worden toegevoegd. Deze procedure kan niet ongedaan gemaakt worden. ";
-
+"ExposureSubmissionResult_RemoveAlert_Text" = "De test wordt permanent verwijderd uit de coronalert-app en kan niet opnieuw worden toegevoegd. Deze procedure kan niet ongedaan gemaakt worden. ";
 "ExposureSubmissionResult_RegistrationDateUnknown" = "Registratiedatum onbekend";
-
 "ExposureSubmissionResult_RegistrationDate" = "Registratie op ";
-
-/* Exposure Submission */
-"ExposureSubmissionError_NoKeys" = "Er is geen diagnosekey beschikbaar. Probeer het morgen opnieuw.";
-
-"ExposureSubmissionError_InvalidTan" = "De gegenereerde CODE is ongeldig voor indiening. Neem contact op met de technische hotline via App Informatie -> Technical Hotline.";
-
+"ExposureSubmissionError_NoKeys" = "Er is geen diagnosesleutel beschikbaar. Probeer het morgen opnieuw.";
+"ExposureSubmissionError_InvalidTan" = "De gegenereerde CODE is ongeldig voor indiening. Neem contact op met de technische hotline via Informatie App -> Technische hotline.";
 "ExposureSubmissionError_EnNotEnabled" = "Blootstellingsregistratie is niet actief.";
-
-"ExposureSubmissionError_NoRegistrationToken" = "Er kon geen registratietoken gevonden worden op het toestel";
-
+"ExposureSubmissionError_NoRegistrationToken" = "Er kon geen registratietoken gevonden worden op het toestel.";
 "ExposureSubmissionError_InvalidResponse" = "Het antwoord kan niet verwerkt worden.";
-
-"ExposureSubmissionError_NoResponse" = "Het antwoord heeft geen inhoud";
-
-"ExposureSubmissionError_QRAlreadyUsed" = "De QR-code is al gebruikt. Neem contact op met de technische hotline via App Informatie -> Technical Hotline.";
-
-"ExposureSubmissionError_TeleTanAlreadyUsed" = "De CODE is ongeldig of werd al gebruikt. Probeer het opnieuw of neem contact op met de technische hotline via App Informatie -> Technical Hotline";
-
-"ExposureSubmissionError_RegTokenNotExist" = "Een CODE voor indiening kan niet worden gegenereerd. Neem contact op met de technische hotline via App Informatie -> Technical Hotline";
-
-"ExposureSubmissionError_other" = "Er is een verbindingsfout opgetreden. Foutcode voor technische ondersteuning: ";
-
-"ExposureSubmissionError_otherend" = "Probeer het nog eens";
-
-"ExposureSubmissionError_httpError" = "De verbinding kan niet tot stand worden gebracht";
-
-"ExposureSubmissionError_declined" = "Geef jouw willekeurige ID's vrij om andere mensen te waarschuwen.";
-
+"ExposureSubmissionError_NoResponse" = "Het antwoord heeft geen inhoud.";
+"ExposureSubmissionError_QRAlreadyUsed" = "De QR-code is al gebruikt. Neem contact op met de technische hotline via Informatie App -> Technische hotline.";
+"ExposureSubmissionError_TeleTanAlreadyUsed" = "De CODE is ongeldig of werd al gebruikt. Probeer het opnieuw of neem contact op met de technische hotline via Informatie App -> Technische hotline.";
+"ExposureSubmissionError_RegTokenNotExist" = "Er kan geen CODE voor indiening gegenereerd worden. Neem contact op met de technische hotline via Informatie App -> Technische hotline.";
+"ExposureSubmissionError_other" = "Er heeft zich een verbindingsfout voorgedaan. Foutcode voor technische ondersteuning: ";
+"ExposureSubmissionError_otherend" = "Probeer het nog eens.";
+"ExposureSubmissionError_httpError" = "Er kan geen verbinding tot stand worden gebracht.";
+"ExposureSubmissionError_declined" = "Geef uw willekeurige ID's vrij om andere mensen te waarschuwen.";
 "ExposureSubmissionError_unknown" = "Onbekende fout";
-
-"ExposureSubmissionError_defaultError" = "Fout tijdens keyoverdracht";
-
-/* Tracing Enable/Disable Settings */
+"ExposureSubmissionError_defaultError" = "Fout tijdens verzenden sleutel";
 "ExposureNotificationSetting_TracingSettingTitle" = "Blootstellingsregistratie";
-
 "ExposureNotificationSetting_EnableTracing" = "Blootstellingsregistratie";
-
 "ExposureNotificationSetting_Tracing_Limited" = "Beperkt";
-
 "ExposureNotificationSetting_Tracing_Deactivated" = "Gedeactiveerd";
-
 "ExposureNotificationSetting_ActionCell_Header" = "Instelling";
-
 "ExposureNotificationSetting_DescriptionTitle_Inactive" = "Blootstellingsregistratie activeren";
-
-"ExposureNotificationSetting_DescriptionTitle" = "Zo werkt je blootstellingsregistratie";
-
-"ExposureNotificationSetting_DescriptionText1" = "Om vast te stellen of je risico loopt op infectie, moet je de blootstellingsregistratie functie activeren";
-
-"ExposureNotificationSetting_DescriptionText2" = "Blootstellingsregistratie werkt door je toestel dat via Bluetooth gecodeerde willekeurige ID's van andere gebruikers ontvangt en je eigen willekeurige ID aan hun apparaten doorgeeft. Deze functie kan op elk moment uitgeschakeld worden.";
-
-"ExposureNotificationSetting_DescriptionText3" = "De gecodeerde willekeurige ID's geven alleen informatie over datum, duur en nabijheid (met behulp van signaalsterkte) door aan andere mensen. Persoonlijke gegevens zoals naam, adres of locatie worden nooit geregistreerd. Individuen kunnen niet worden geïdentificeerd";
-
+"ExposureNotificationSetting_DescriptionTitle" = "Zo werkt de blootstellingsregistratie";
+"ExposureNotificationSetting_DescriptionText1" = "Om vast te stellen of u een risico loopt op infectie activeert u de blootstellingsregistratie.";
+"ExposureNotificationSetting_DescriptionText2" = "Voor het registreren van contacten ontvangt uw toestel via Bluetooth gecodeerde willekeurige ID's van andere gebruikers en wordt uw eigen willekeurige ID aan hun toestellen doorgegeven. U kunt deze functie op elk moment uitschakelen.";
+"ExposureNotificationSetting_DescriptionText3" = "De gecodeerde willekeurige ID's geven alleen informatie over datum, duur en nabijheid (via signaalsterkte) door aan anderen. Persoonlijke gegevens zoals naam, adres of locatie worden nooit geregistreerd. U kunt niet worden geïdentificeerd.";
 "ExposureNotificationSetting_Activate_Bluetooth" = "Bluetooth inschakelen";
-
-"ExposureNotificationSetting_Bluetooth_Description" = "Bluetooth moet worden ingeschakeld voor de blootstellingsregistratie om de ontmoetingen te kunnen registreren. Zet Bluetooth aan in de instellingen van je toestel";
-
+"ExposureNotificationSetting_Bluetooth_Description" = "Om contacten te kunnen registreren moet Bluetooth ingeschakeld worden. Schakel in de instellingen van uw telefoon Bluetooth in.";
 "ExposureNotificationSetting_Activate_Internet" = "Open Internetverbinding";
-
-"ExposureNotificationSetting_Internet_Description" = "Blootstellingsregistratie vereist een internetverbinding om de belichting te berekenen. Schakel WIFI of mobiele gegevens in de instellingen van je toestel in";
-
-"ExposureNotificationSetting_Detail_Action_Button" = "Apparaatinstellingen openen";
-
-"ExposureNotificationSetting_Activate_OSENSetting" = "COVID-19 Blootstellingsregistratie en meldingen inschakelen";
-
-"ExposureNotificationSetting_Activate_OSENSetting_Description" = "Voor de blootstellingsregistratie moeten de COVID-19-blootstellingsregistratie en notificaties in de systeeminstellingen worden geactiveerd, zodat ontmoetingen kunnen geregistreerd worden. Activeer \"COVID-19 Blootstellingsregistratie en notificaties\" in je systeeminstellingen";
-
-"ExposureNotificationSetting_ParentalControls_OSENSetting" = "Activeer COVID-19 Blootstellingsregistratie en meldingen";
-
-"ExposureNotificationSetting_ParentalControls_OSENSetting_Description" = "Voor de blootstellingsregistratie moeten de COVID-19-blootstellingsregistratie en notificaties in de systeeminstellingen worden geactiveerd, zodat ontmoetingen kunnen worden geregistreerd. Activeer \"COVID-19 Blootstellingsregistratie en notificaties\" in je systeeminstellingen";
-
+"ExposureNotificationSetting_Internet_Description" = "Om contacten te kunnen registreren en de blootstelling te kunnen berekenen is een internetverbinding nodig. Schakel in de instellingen van uw telefoon wifi of mobiele data in.";
+"ExposureNotificationSetting_Detail_Action_Button" = "Open de instellingen van het toestel";
+"ExposureNotificationSetting_Activate_OSENSetting" = "COVID-19-blootstellingsregistratie en meldingen activeren";
+"ExposureNotificationSetting_Activate_OSENSetting_Description" = "Om te kunnen registreren of u blootgesteld bent aan het virus, activeert u de COVID-19-blootstellingsregistratie en de meldingen in de instellingen, zodat contacten geregistreerd kunnen worden. Activeer \"COVID-19-blootstellingsregistratie en meldingen\" in de instellingen.";
+"ExposureNotificationSetting_ParentalControls_OSENSetting" = "Activeer COVID-19-blootstellingsregistratie en meldingen";
+"ExposureNotificationSetting_ParentalControls_OSENSetting_Description" = "Om te kunnen registreren of u blootgesteld bent aan het virus, activeert u de COVID-19-blootstellingsregistratie en de meldingen in de instellingen, zodat contacten geregistreerd kunnen worden. Activeer \"COVID-19-blootstellingsregistratie en meldingen\" in de instellingen.";
 "ExposureNotificationSetting_AuthorizationRequired_OSENSetting" = "Autorisatie vereist";
-
 "ExposureNotificationSetting_AuthorizationRequired_OSENSetting_Description" = "Bevestig het gebruik van de COVID-19-blootstellingsregistratie";
-
 "ExposureNotificationSetting_AuthorizationRequired_ActionTitle" = "Autorisatie";
-
-"ExposureNotificationSetting_AccLabel_Enabled" = "Drie mensen hebben de blootstellingsregistratie op hun apparaten geactiveerd, die hun ontmoetingen met elkaar zullen registreren";
-
-"ExposureNotificationSetting_AccLabel_Disabled" = "Een persoon heeft de blootstellingsregistratie op zijn smartphone uitgeschakeld, dus een ontmoeting met twee andere personen wordt niet gelogd";
-
-"ExposureNotificationSetting_AccLabel_BluetoothOff" = "Iemand heeft Bluetooth op zijn smartphone uitgeschakeld, dus een ontmoeting met twee andere personen wordt niet gelogd";
-
-"ExposureNotificationSetting_AccLabel_InternetOff" = "Iemand heeft de internetverbinding op zijn smartphone uitgeschakeld, dus het is niet mogelijk om zijn laatste ontmoeting te identificeren";
-
+"ExposureNotificationSetting_AccLabel_Enabled" = "Drie mensen hebben de blootstellingsregistratie op hun toestellen geactiveerd. Hun contacten met elkaar worden geregistreerd.";
+"ExposureNotificationSetting_AccLabel_Disabled" = "Iemand heeft de blootstellingsregistratie op zijn smartphone uitgeschakeld, dus is een contact met twee andere personen niet geregistreerd.";
+"ExposureNotificationSetting_AccLabel_BluetoothOff" = "Iemand heeft Bluetooth op zijn smartphone uitgeschakeld, dus is een contact met twee andere personen niet geregistreerd.";
+"ExposureNotificationSetting_AccLabel_InternetOff" = "Iemand heeft de internetverbinding op zijn smartphone uitgeschakeld, dus is het niet mogelijk om zijn recentste contacten te registreren.";
 "ExposureNotificationSetting_Activate_Action" = "Accepteren";
-
 "ExposureNotificationSetting_Dismiss_Action" = "Annuleren";
-
-"ExposureNotificationSetting_GeneralError_Title" = "Error";
-
+"ExposureNotificationSetting_GeneralError_Title" = "Fout";
 "ExposureNotificationSetting_GeneralError_LearnMore_Action" = "Ontdek meer";
-
 "ExposureNotificationSetting_GeneralError_LearnMore_URL" = "https://www.coronalert.be";
-
-"ExposureNotificationSetting_AuthenticationError" = "Er is een fout opgetreden tijdens het activeren van de blootstellingsregistratie functie. Controleer of je de COVID-19 Blootstellingsregistratie in je instellingen hebt geactiveerd.";
-
-"ExposureNotificationSetting_exposureNotification_Required" = "Er is een fout opgetreden tijdens het activeren van de blootstellingsregistratie functie. Controleer of de COVID-19-belichtingsnotificatie in je instellingen is geactiveerd voor de app.";
-
-"ExposureNotificationSetting_exposureNotification_unavailable" = "Er is een fout opgetreden tijdens het activeren van de blootstellingsregistratie functie. Controleer of deze app is geselecteerd als de actieve app voor COVID-19 blootstellingsregistratie in je instellingen. Ga voor meer informatie naar onze FAQ-pagina.";
-
-"ExposureNotificationSetting_unknownError" = "Er is een onbekende fout opgetreden. Ga voor meer informatie naar onze FAQ-pagina.";
-
-"ExposureNotificationSetting_apiMisuse" = "Er is een interne fout opgetreden tijdens het activeren van de blootstellingsregistratie functie. Ga voor meer informatie naar onze FAQ-pagina en probeer het later nog eens.";
-
-/* Home Navigation Bar */
-"Home_LeftBarButton_description" = "Coronalert-App-logo";
-
+"ExposureNotificationSetting_AuthenticationError" = "Er heeft zich een fout voorgedaan tijdens het activeren van de blootstellingsregistratie. Controleer in de instellingen van uw telefoon of u de COVID-19-blootstellingsregistratie heeft geactiveerd.";
+"ExposureNotificationSetting_exposureNotification_Required" = "Er heeft zich een fout voorgedaan tijdens het activeren van de blootstellingsregistratie. Controleer in de instellingen van uw telefoon of de meldingen voor de COVID-19-blootstellingsregistratie geactiveerd zijn voor de app.";
+"ExposureNotificationSetting_exposureNotification_unavailable" = "Er heeft zich een fout voorgedaan tijdens het activeren van de blootstellingsregistratie. Controleer in de instellingen van uw telefoon of deze app is geselecteerd als de actieve app voor COVID-19-blootstellingsregistratie. Ga voor meer informatie naar onze FAQ-pagina.";
+"ExposureNotificationSetting_unknownError" = "Er heeft zich een onbekende fout voorgedaan. Ga voor meer informatie naar onze FAQ-pagina.";
+"ExposureNotificationSetting_apiMisuse" = "Er heeft zich een interne fout voorgedaan tijdens het activeren van de blootstellingsregistratie. Ga voor meer informatie naar onze FAQ-pagina en probeer het later nog eens.";
+"Home_LeftBarButton_description" = "Logo coronalert-app";
 "Home_RightBarButton_description" = "Informatie";
-
-/* Home Active card */
 "Home_Activate_Card_On_Title" = "Blootstellingsregistratie actief";
-
 "Home_Activate_Card_Off_Title" = "Blootstellingsregistratie stopgezet";
-
 "Home_Activate_Card_Bluetooth_Off_Title" = "Bluetooth uitgeschakeld";
-
 "Home_Activate_Card_Internet_Off_Title" = "Geen internetverbinding";
-
-/* Home common card */
 "Home_Risk_Date_Item_Title" = "Bijgewerkt: %@";
-
 "Home_Risk_No_Date_Title" = "Onbekend";
-
-"Home_Risk_Period_Update_Title" = "Elke %@U00A0hours bijgewerkt";
-
-"Home_Risk_Period_Disabled_Button_Title" = "Alleen elke %@U00A0uren bijgewerkt";
-
-"Home_Risk_Unknown_Title" = "Onbekend Risico";
-
-/* Home Unknown card */
-"Home_RiskCard_Unknown_Item_Title" = "Omdat je de blootstellingsregistratie niet lang genoeg hebt aangezet, kunnen we je infectierisico niet berekenen";
-
-/* Home Inactive card */
+"Home_Risk_Period_Update_Title" = "Om de %@ uur bijgewerkt";
+"Home_Risk_Period_Disabled_Button_Title" = "Slechts om de %@ uur bijgewerkt";
+"Home_Risk_Unknown_Title" = "Onbekend risico";
+"Home_Risk_Last_Activate_Item_Title" = "Laatste blootstellingsregistratie: %@";
+"Home_Risk_Last_Activate_Item_Unknown_Title" = "Onbekend risico";
+"Home_Risk_Last_Activate_Item_Low_Title" = "Laag risico";
+"Home_Risk_Last_Activate_Item_High_Title" = "Verhoogd risico ";
+"Home_RiskCard_Update_Button" = "Updaten";
+"Home_RiskCard_Unknown_Item_Title" = "U heeft de blootstellingsregistratie niet lang genoeg aangezet. Daarom kunnen we uw infectierisico niet berekenen.";
+"Home_RiskCard_Unknown48h_Body" = "Uw risicoberekening werd meer dan 48 uur niet geüpdatet. Werk de berekening bij.";
 "Home_Risk_Inactive_NoCalculation_Possible_Title" = "Blootstellingsregistratie stopgezet";
-
 "Home_Risk_Inactive_Outdated_Results_Title" = "Blootstellingsregistratie is niet mogelijk";
-
-"Home_Risk_Inactive_NoCalculation_Possible_Body" = "Blootstellingsregistratie activeren om je risicostatus vandaag te evalueren";
-
-"Home_Risk_Inactive_Outdated_Results_Body" = "Je blootstellingsregistratie kon niet meer dan 24 uur worden geüpdatet";
-
+"Home_Risk_Inactive_NoCalculation_Possible_Body" = "Blootstellingsregistratie activeren om uw risicostatus vandaag te evalueren.";
+"Home_Risk_Inactive_Outdated_Results_Body" = "Uw blootstellingsregistratie kon gedurende meer dan 24 uur niet worden geüpdatet.";
 "Home_Risk_Inactive_NoCalculation_Possible_Button" = "Blootstellingsregistratie activeren";
-
 "Home_Risk_Inactive_Outdated_Results_Button" = "Blootstellingsregistratie activeren";
-
-/* Home Low card */
-"Home_Risk_Low_Title" = "Low Risk";
-
-"Home_Risk_Low_SaveDays_Item_Title" = "Risicodetectie was actief gedurende %u op %u dagen";
-
-/* Home High card */
-"Home_Risk_High_Title" = "Hoog risico ";
-
-/* Home Status Check */
-"Home_Risk_Status_Check_Title" = "Check is bezig ...";
-
+"Home_Risk_Low_Title" = "Laag risico";
+"Home_Risk_Low_SaveDays_Item_Title" = "Blootstellingsregistratie was %1$u van de voorbije 14 dagen actief.";
+"Home_Risk_Low_SaveDays_Item_Title__Permanently_Active" = "Blootstellingsregistratie permanent actief";
+"Home_Risk_High_Title" = "Verhoogd risico ";
+"Home_Risk_Status_Check_Title" = "Controle is bezig ...";
 "Home_Risk_Status_Check_Body" = "Actuele gegevens worden gedownload en gecontroleerd. Dit kan enkele minuten duren.";
-
-/* Home Thank you card */
-"Home_Thank_You_Card_Title" = "Dank je wel!";
-
-"Home_Thank_You_Card_Body" = "Dankzij jouw steun kunnen nu andere mensen gewaarschuwd worden en adequaat reageren.";
-
+"Home_Thank_You_Card_Title" = "Dank u wel!";
+"Home_Thank_You_Card_Body" = "Dankzij uw steun kunnen andere mensen nu gewaarschuwd worden en op de juiste manier reageren.";
 "Home_Thank_You_Card_Note_Title" = "Let op:";
-
-"Home_Thank_You_Card_Phone_Item_Title" = "De volksgezondheidsdienst neemt binnen enkele dagen telefonisch of per brief contact met je op";
-
-"Home_Thank_You_Card_Home_Item_Title" = "Je bent besmettelijk. Isoleer jezelf van andere mensen.";
-
-"Home_Thank_You_Card_14Days_Item_Title" = "Je quarantaineperiode is meestal 14 dagen. Gelieve je symptomen te observeren en te controleren hoe ze zich ontwikkelen";
-
-"Home_Thank_You_Card_Contacts_Item_Title" = "Je wordt door je volksgezondheidsinstantie gevraagd een lijst op te stellen van mensen met wie je contact hebt gehad. Dit moet alle mensen bevatten met wie je nauw contact hebt gehad (minder dan 2 meter, face-to-face gesprek) gedurende meer dan 15 minuten in de twee dagen voordat je symptomen ontwikkelde";
-
-"Home_Thank_You_Card_App_Item_Title" = "Houd vooral rekening met mensen die niet direct door de app op de hoogte worden gesteld omdat ze geen smartphone hebben of de app niet hebben geïnstalleerd";
-
-"Home_Thank_You_Card_NoSymptoms_Item_Title" = "Zelfs als je geen symptomen meer hebt en je je weer goed voelt, kan je nog steeds besmettelijk zijn. ";
-
-/* Home Finding positive */
-"Home_Finding_Positive_Card_Title" = "Positiebe Diagnose";
-
-"Home_Finding_Positive_Card_Status_Title" = "SARS-CoV-2 positief";
-
-"Home_Finding_Positive_Card_Status_Subtitle" = "Je bent gediagnosticeerd met het SARS-CoV-2-virus";
-
+"Home_Thank_You_Card_Phone_Item_Title" = "De dienst volksgezondheid neemt binnen enkele dagen telefonisch of per brief contact met u op.";
+"Home_Thank_You_Card_Home_Item_Title" = "U bent besmettelijk. Ga in zelfisolatie.";
+"Home_Thank_You_Card_Further_Info_Item_Title" = "Andere informatie:";
+"Home_Thank_You_Card_14Days_Item_Title" = "U gaat normaal gesproken 14 dagen in quarantaine. Let goed op uw symptomen en volg op hoe ze zich ontwikkelen.";
+"Home_Thank_You_Card_Contacts_Item_Title" = "De dienst volksgezondheid zal u vragen een lijst op te stellen van mensen met wie u contact heeft gehad. Noteer iedereen met wie u gedurende meer dan 15 minuten nauw contact heeft gehad (minder dan 2 meter, persoonlijk gesprek) in de twee dagen voordat u symptomen ontwikkelde.";
+"Home_Thank_You_Card_App_Item_Title" = "Houd vooral rekening met mensen die niet rechtstreeks door de app op de hoogte worden gesteld, omdat ze geen smartphone hebben of de app niet hebben geïnstalleerd.";
+"Home_Thank_You_Card_NoSymptoms_Item_Title" = "Zelfs als u geen symptomen meer heeft en u zich weer goed voelt, kunt u nog steeds besmettelijk zijn. ";
+"Home_Finding_Positive_Card_Title" = "Positieve diagnose";
+"Home_Finding_Positive_Card_Status_Title" = "SARS-CoV-2-positief";
+"Home_Finding_Positive_Card_Status_Subtitle" = "U testte positief op het SARS-CoV-2-virus.";
 "Home_Finding_Positive_Card_Note_Title" = "Let op:";
-
-"Home_Finding_Positive_Card_Phone_Item_Title" = "De volksgezondheidsdienst neemt binnen enkele dagen telefonisch of per brief contact met je op";
-
-"Home_Finding_Positive_Card_Home_Item_Title" = "Je bent besmettelijk. Isoleer jzelf van andere mensen.";
-
-"Home_Finding_Positive_Card_Share_Item_Title" = "Deel je willekeurige ID's zodat anderen gewaarschuwd kunnen worden.";
-
+"Home_Finding_Positive_Card_Phone_Item_Title" = "De dienst volksgezondheid neemt binnen enkele dagen telefonisch of per brief contact met u op.";
+"Home_Finding_Positive_Card_Home_Item_Title" = "U bent besmettelijk. Ga in zelfisolatie.";
+"Home_Finding_Positive_Card_Share_Item_Title" = "Deel uw willekeurige ID's, zodat anderen gewaarschuwd kunnen worden.";
 "Home_Finding_Positive_Card_Button" = "Volgende";
-
-/* Home Submit card */
-"Home_SubmitCard_Title" = "Werd je getest?";
-
-"Home_SubmitCard_Body" = "Help de infectieketen te doorbreken door anderen op de hoogte te stellen.";
-
-"Home_SubmitCard_Button" = "Meer informatie en hulp";
-
-"Home_InfoCard_ShareTitle" = "Deel de Coronalert-App";
-
-"Home_InfoCard_ShareBody" = "Hoe meer mensen de app gebruiken, hoe sneller we de infectieketen kunnen doorbreken. Nodig jouw familie en vrienden uit om de app te downloaden";
-
+"Home_SubmitCard_Title" = "Werd u getest?";
+"Home_SubmitCard_Body" = "Waarschuw anderen en help zo mee de infectieketen te doorbreken.";
+"Home_SubmitCard_Button" = "Meer informatie en Help";
+"Home_InfoCard_ShareTitle" = "Deel de coronalert-app";
+"Home_InfoCard_ShareBody" = "Hoe meer mensen de app gebruiken, hoe sneller we de infectieketen kunnen doorbreken. Vraag uw familie en vrienden om de app te downloaden.";
 "Home_InfoCard_AboutTitle" = "FAQ";
-
-"Home_InfoCard_AboutBody" = "Hier vindt je antwoorden op veelgestelde vragen over de Coronalert-App. Je zal doorgestuurd worden naar een externe website";
-
+"Home_InfoCard_AboutBody" = "Hier vindt u antwoorden op veelgestelde vragen over de coronalert-app. U wordt doorgestuurd naar een externe website.";
 "Home_SettingsCard_Title" = "Instellingen";
-
-"Home_AppInformationCard_Title" = "App Informatie";
-
+"Home_AppInformationCard_Title" = "Informatie app";
 "Home_AppInformationCard_Version" = "Versie";
-
-/* Home Result Card */
-"Home_resultCard_ResultAvailableTitle" = "Je resultaat is beschikbaar";
-
-"Home_resultCard_ResultUnvailableTitle" = "Je resultaat is nog niet beschikbaar";
-
+"Home_resultCard_ResultAvailableTitle" = "Uw resultaat is beschikbaar";
+"Home_resultCard_ResultUnvailableTitle" = "Uw resultaat is nog niet beschikbaar";
 "Home_resultCard_ShowResultButton" = "Test tonen";
-
 "Home_resultCard_LoadingBody" = "Huidige gegevens worden gedownload.\nDit kan enkele minuten duren.";
-
 "Home_resultCard_LoadingTitle" = "Update bezig...";
-
-"Home_resultCard_NegativeTitle" = "Negatief Diagnose";
-
-"Home_resultCard_NegativeDesc" = "Je bent negatief gediagnosticeerd voor SARS-CoV-2.";
-
-"Home_resultCard_PendingDesc" = "De evaluatie van je test is nog niet gedaan";
-
+"Home_resultCard_NegativeTitle" = "Negatieve diagnose";
+"Home_resultCard_NegativeDesc" = "U testte negatief op SARS-CoV-2.";
+"Home_resultCard_PendingDesc" = "De evaluatie van uw test is nog niet afgerond.";
 "Home_resultCard_InvalidTitle" = "Ongeldige test";
-
-"Home_resultCard_InvalidDesc" = "Je test kan niet geëvalueerd worden";
-
-"Home_resultCard_LoadingErrorTitle" = "Je testresultaat kan niet geladen worden.";
-
-/* App Information - About */
-"App_Information_About_Navigation" = "Over de App";
-
+"Home_resultCard_InvalidDesc" = "Uw test kan niet geëvalueerd worden.";
+"Home_resultCard_LoadingErrorTitle" = "Uw testresultaat kan niet geladen worden.";
+"App_Information_About_Navigation" = "Over de app";
 "App_Information_About_ImageDescription" = "";
-
-"App_Information_About_Title" = "Laten we samen tegen het coronavirus vechten";
-
-"App_Information_About_Description" = "Sciensano (RKI) is de Duitse federale gezondheidsinstelling. Het RKI publiceert namens de Bondsregering de Coronalert-App. De app is bedoeld als digitale aanvulling op de reeds ingevoerde maatregelen op het gebied van de volksgezondheid: sociale afstand, hygiëne en gezichtsmaskers";
-
-"App_Information_About_Text" = "Wie de app gebruikt, helpt bij het opsporen en doorbreken van infectieketens. De app slaat ontmoetingen met andere mensen ter plaatse op je toestel op. Je krijgt een melding als je mensen hebt ontmoet die later met COVID-19 zijn gediagnosticeerd. Je identiteit en privacy zijn altijd beschermd";
-
-/* App Information - FAQ */
+"App_Information_About_Title" = "Samen krijgen we het coronavirus klein";
+"App_Information_About_Description" = "Sciensano is het federale onderzoekscentrum voor de volksgezondheid, de diergezondheid en de voedselveiligheid van België. Het lanceert de coronalert-app namens de federale regering. De app is bedoeld als digitale aanvulling op de reeds ingevoerde maatregelen op het gebied van volksgezondheid: een veilige afstand aanhouden, hygiënemaatregelen naleven en een mondmasker dragen.";
+"App_Information_About_Text" = "Gebruikers van de app helpen bij het opsporen en doorbreken van infectieketens. De app slaat contacten met andere mensen lokaal op uw toestel op. U krijgt een melding als u in contact bent gekomen met mensen die later een COVID-19-diagnose hebben gekregen. Uw identiteit en privacy zijn altijd beschermd.";
 "App_Information_FAQ_Navigation" = "FAQ";
-
-/* App Information - Contact */
-"App_Information_Contact_Navigation" = "Technical Hotline";
-
-"App_Information_Contact_ImageDescription" = "Een man draagt een koptelefoon tijdens een telefoongesprek";
-
-"App_Information_Contact_Title" = "Hoe kunnen we je helpen?";
-
-"App_Information_Contact_Description" = "Voor technische vragen over de Coronalert-App kan je contact opnemen met onze hotline";
-
-"App_Information_Contact_Hotline_Title" = "Technical Hotline";
-
+"App_Information_Contact_Navigation" = "Technische hotline";
+"App_Information_Contact_ImageDescription" = "Een man met een koptelefoon telefoneert.";
+"App_Information_Contact_Title" = "Hoe kunnen we u helpen?";
+"App_Information_Contact_Description" = "Voor technische vragen over de coronalert-app belt naar u naar onze hotline.";
+"App_Information_Contact_Hotline_Title" = "Technische hotline";
 "App_Information_Contact_Hotline_Text" = "0800 14 689";
-
-"App_Information_Contact_Hotline_Number" = "0800 14 689";
-
-"App_Information_Contact_Hotline_Description" = "Onze dienst is er om je te helpen";
-
-"App_Information_Contact_Hotline_Terms" = "Talen: Nederlands, Frans, Duits, Engels, Frans, Kantooruren: van maandag tot zaterdag: 9 uur 's ochtends tot 17 uur 's avonds, behalve op nationale feestdagen. Het telefoontje is gratis";
-
-/* App Information - Imprint */
-"App_Information_Imprint_Navigation" = "Imprint";
-
-"App_Information_Imprint_ImageDescription" = "Een hand houdt een smartphone vast met een grote hoeveelheid tekst op het scherm. Naast de tekst staat een sectie-symbool dat de afdruk weergeeft.";
-
+"App_Information_Contact_Hotline_Number" = "02 642 51 11";
+"App_Information_Contact_Hotline_Description" = "Onze klantendienst is er om u te helpen";
+"App_Information_Contact_Hotline_Terms" = "Talen: Nederlands, Frans, Duits, Engels\n\nKantooruren: \nma.-vr.: 8.00-17.00 u\n(niet op feestdagen) \n\nDit is een gratis nummer.";
+"App_Information_Imprint_Navigation" = "Afdruk";
+"App_Information_Imprint_ImageDescription" = "Een hand houdt een smartphone met een grote hoeveelheid tekst op het schermpje vast. Het sectiesymbooltje naast de tekst verwijst naar de afdruk.";
 "App_Information_Imprint_Section1_Title" = "Gepubliceerd door";
-
 "App_Information_Imprint_Section1_Text" = "(verantwoordelijk volgens § 5, alinea. 1 TMG, § 55 para. 1 RStV, DS-GVO, BDSG)";
-
 "App_Information_Imprint_Section2_Title" = "Sciensano";
-
-"App_Information_Imprint_Section2_Text" = "Nordufer 20\n13353 Berlijn, vertegenwoordigd door zijn voorzitter";
-
+"App_Information_Imprint_Section2_Text" = "Juliette Wytsmanstraat 14\n1050 Brussel";
 "App_Information_Imprint_Section3_Title" = "Contact";
-
-"App_Information_Imprint_Section3_Text" = "E-Mail:  info@sciensano.be Telefoon:   +32 2 642 51 11";
-
+"App_Information_Imprint_Section3_Text" = "E-mail:  info@sciensano.be Telefoon:   +32 2 642 51 11";
 "App_Information_Imprint_Section4_Title" = "BTW-identificatienummer";
-
-"App_Information_Imprint_Section4_Text" = "BE 259 684 958";
-
-/* App Information - Legal */
+"App_Information_Imprint_Section4_Text" = "BE0693.876.830";
 "App_Information_Legal_Navigation" = "Wettelijke vermeldingen";
-
-/* App Information - Privacy */
-"App_Information_Privacy_Navigation" = "Data Privacy";
-
-"App_Information_Legal_ImageDescription" = "Een hand houdt een smartphone vast met een grote hoeveelheid tekst op het scherm. Naast de tekst staat een weegschaal die de wettelijke vermeldingen symboliseert";
-
-"App_Information_Privacy_Title" = "Data Privacy";
-
-"App_Information_Privacy_Description" = "Je blijft anoniem.\nJe gegevens zijn volledig gecodeerd en worden onder een pseudoniem verzonden.";
-
-/* App Information - Terms */
+"App_Information_Privacy_Navigation" = "Privacy gegevens";
+"App_Information_Legal_ImageDescription" = "Een hand houdt een smartphone met een grote hoeveelheid tekst op het schermpje vast. De weegschaal naast de tekst wijst op wettelijke vermeldingen.";
+"App_Information_Privacy_Title" = "Privacy gegevens";
+"App_Information_Privacy_Description" = "U blijft anoniem.\nUw gegevens zijn volledig gecodeerd en worden onder een pseudoniem verzonden.";
 "App_Information_Terms_Navigation" = "Gebruiksvoorwaarden";
-
-"App_Information_Terms_ImageDescription" = "Een hand houdt een smartphone vast met een grote hoeveelheid tekst op het scherm. Naast de tekst staat een vinkje dat aangeeft dat de gebruiksvoorwaarden zijn geaccepteerd.";
-
+"App_Information_Terms_ImageDescription" = "Een hand houdt een smartphone met een grote hoeveelheid tekst op het schermpje vast. Naast de tekst staat een vinkje dat aangeeft dat de gebruiksvoorwaarden zijn aanvaard.";
 "App_Information_Terms_Title" = "Gebruiksvoorwaarden";
-
-/* Invite Friends */
 "InviteFriends_NavTitle" = "Deel";
-
-"InviteFriends_Subtitle" = "Deel de Coronalert-App";
-
-"InviteFriends_Title" = "Laten we samen tegen het coronavirus vechten";
-
-"InviteFriends_Description" = "Hoe meer mensen de app gebruiken, hoe sneller we de infectieketen kunnen doorbreken. Nodig je familie en vrienden uit om de app te downloaden";
-
+"InviteFriends_Subtitle" = "Deel de coronalert-app";
+"InviteFriends_Title" = "Samen krijgen we het coronavirus klein";
+"InviteFriends_Description" = "Hoe meer mensen de app gebruiken, hoe sneller we de infectieketen kunnen doorbreken. Vraag uw familie en vrienden om de app te downloaden.";
 "InviteFriends_Button" = "Downloadlink verzenden";
-
-"InviteFriends_ShareTitle" = "Samen vechten tegen het coronavirus. Ik doe mee, jij ook?";
-
+"InviteFriends_ShareTitle" = "Samen krijgen we het coronavirus klein. Ik doe mee, u ook?";
 "InviteFriends_ShareUrl" = "https://www.coronalert.be";
-
-"InviteFriends_Illustration_Label" = "Een man deelt de Coronalert-App met vier andere personen.";
-
-/* Reset View */
-"Reset_NavTitle" = "Reset";
-
-"Reset_Header1" = "Weet je zeker dat je de app wilt resetten?";
-
-"Reset_Descrition1" = "Je wordt niet langer op de hoogte gesteld van je blootstellingen en je kunt andere gebruikers niet langer waarschuwen";
-
-"Reset_Button" = "Reset App";
-
+"InviteFriends_Illustration_Label" = "Een man deelt de coronalert-app met vier andere personen.";
+"Reset_NavTitle" = "Opnieuw instellen";
+"Reset_Header1" = "Weet u zeker dat u de app opnieuw wilt instellen?";
+"Reset_Descrition1" = "U wordt niet langer op de hoogte gesteld van blootstelling en u kunt andere gebruikers niet langer waarschuwen. ";
+"Reset_Button" = "App opnieuw instellen";
 "Reset_Discard" = "Annuleren";
-
 "Reset_InfoTitle" = "Blootstellingslogboek verwijderen";
-
-"Reset_InfoDescription" = "Het blootstellingslogboek moet apart worden verwijderd in de instellingen van je toestel";
-
-"Reset_Subtitle" = "Reset App";
-
-"Reset_ImageDescription" = "Een hand houdt een smartphone vast met een symbool dat aangeeft dat de app wordt gereset";
-
-"Reset_ConfirmDialog_Title" = "Reset App";
-
-"Reset_ConfirmDialog_Description" = "Je wordt niet langer op de hoogte gesteld van je belichtingen en je kunt andere gebruikers niet langer waarschuwen. Deze procedure kan niet ongedaan gemaakt worden.";
-
+"Reset_InfoDescription" = "Het blootstellingslogboek moet apart worden verwijderd in de instellingen van uw toestel.";
+"Reset_Subtitle" = "App opnieuw instellen";
+"Reset_ImageDescription" = "U ziet een hand die een smartphone vasthoudt met daarop een symbool dat aangeeft dat de app opnieuw wordt ingesteld.";
+"Reset_ConfirmDialog_Title" = "App opnieuw instellen";
+"Reset_ConfirmDialog_Description" = "U wordt niet langer op de hoogte gesteld van blootstelling en u kunt andere gebruikers niet langer waarschuwen. Deze procedure kan niet ongedaan gemaakt worden.";
 "Reset_ConfirmDialog_Cancel" = "Annuleren";
-
-"Reset_ConfirmDialog_Confirm" = "Reset";
-
-/* Safari */
+"Reset_ConfirmDialog_Confirm" = "Opnieuw instellen";
 "safari_corona_website" = "https://www.coronalert.be";
-
-/* Local Notifications */
 "local_notifications_ignore" = "Negeren";
-
-"local_notifications_testresults_title" = "Coronalert-App";
-
-"local_notifications_testresults_body" = "Je hebt nieuwe berichten van je Coronalert-App.";
-
-/* Risk Legend */
+"local_notifications_detectexposure_title" = "Coronalert-app";
+"local_notifications_detectexposure_body" = "U heeft nieuwe berichten van uw coronalert-app.";
+"local_notifications_testresults_title" = "Coronalert-app";
+"local_notifications_testresults_body" = "U heeft nieuwe berichten van uw coronalert-app.";
 "RiskLegend_Title" = "Overzicht";
-
 "RiskLegend_Subtitle" = "Belangrijke functies en concepten";
-
 "RiskLegend_Legend1_Title" = "Blootstellingsregistratie";
-
-"RiskLegend_Legend1_Text" = "Blootstellingsregistratie is een van de drie centrale kenmerken van de app. Wanneer je het activeert, worden ontmoetingen met apparaten van mensen gelogd. Je hoeft verder niets te doen.";
-
+"RiskLegend_Legend1_Text" = "Blootstellingsregistratie is een van de drie centrale kenmerken van de app. Wanneer u deze registratie activeert, worden contacten met toestellen van mensen gelogd. U hoeft verder niets te doen.";
 "RiskLegend_Legend2_Title" = "Risico op infectie";
-
-"RiskLegend_Legend2_Text" = "Als je in de afgelopen 14 dagen contact hebt gehad met een persoon die de diagnose COVID-19 heeft gekregen, berekent de app je persoonlijke besmettingsrisico. Dit doet hij door de duur en de nabijheid van de blootstelling te meten";
-
+"RiskLegend_Legend2_Text" = "Als u in de afgelopen 14 dagen contact heeft gehad met een persoon die een COVID-19-diagnose heeft gekregen, berekent de app uw persoonlijke besmettingsrisico. Dit doet hij door de duur en de nabijheid van de blootstelling te meten.";
 "RiskLegend_Legend2_RiskLevels" = "De volgende risicostatus kan getoond worden:";
-
 "RiskLegend_Legend2_High" = "Hoog risico";
-
 "RiskLegend_Legend2_High_Color" = "Rood";
-
 "RiskLegend_Legend2_Low" = "Laag risico";
-
 "RiskLegend_Legend2_Low_Color" = "Groen";
-
 "RiskLegend_Legend2_Unknown" = "Onbekend risico";
-
-"RiskLegend_Legend2_Unknown_Color" = "Grey";
-
+"RiskLegend_Legend2_Unknown_Color" = "Grijs";
 "RiskLegend_Legend3_Title" = "Andere gebruikers informeren";
-
+"RiskLegend_Legend3_Text" = "Een andere centrale functie is het registreren van uw test en het ophalen van het resultaat. Als u een COVID-19-diagnose krijgt, kunt u anderen op de hoogte stellen en de infectieketen doorbreken.";
 "RiskLegend_Definitions_Title" = "Definitie van termen";
-
 "RiskLegend_Store_Title" = "Blootstellingslogboek";
-
-"RiskLegend_Store_Text" = "Lijst van ontvangen en tijdelijke willekeurige ID's die tijdelijk zijn opgeslagen in de opslag van het besturingssysteem. Deze lijst wordt gelezen wanneer de blootstellingen worden gecontroleerd. Alle willekeurige ID's worden na 14 dagen automatisch gewist";
-
+"RiskLegend_Store_Text" = "Lijst van ontvangen tijdelijke willekeurige ID's die tijdelijk zijn opgeslagen in het besturingssysteem. Deze lijst wordt gelezen wanneer de blootstellingen worden gecontroleerd. Alle willekeurige ID's worden na 14 dagen automatisch gewist.";
 "RiskLegend_Check_Title" = "Blootstellingscontrole";
-
-"RiskLegend_Check_Text" = "Blootstellingsloggegevens worden opgehaald en gesynchroniseerd met gerapporteerde infecties van andere gebruikers. De blootstellingscontrole wordt automatisch ongeveer om de twee uur uitgevoerd";
-
+"RiskLegend_Check_Text" = "Gegevens over blootstelling worden opgehaald en gesynchroniseerd met gerapporteerde infecties van andere gebruikers. De blootstellingscontrole wordt ongeveer om de twee uur automatisch uitgevoerd.";
 "RiskLegend_Contact_Title" = "Blootstellingen";
-
-"RiskLegend_Contact_Text" = "Ontmoetingen over een langere periode en in de nabijheid van mensen die gediagnosticeerd zijn met COVID-19.";
-
-"RiskLegend_Notification_Title" = "Blootstelling Notificaties";
-
-"RiskLegend_Notification_Text" = "De weergave van blootstellingen in de Coronalert-App.";
-
-"RiskLegend_Random_Title" = "Random ID's";
-
-"RiskLegend_Random_Text" = "Willekeurige ID's zijn combinaties van cijfers en letters die willekeurig worden gegenereerd. Ze worden tussen apparaten in de nabijheid uitgewisseld. Willekeurige ID's zijn niet te herleiden tot een bepaalde persoon en worden na 14 dagen automatisch gewist. Personen die gediagnosticeerd zijn met COVID-19 kunnen ervoor kiezen om hun willekeurige ID's van maximaal de laatste 14 dagen te delen met andere gebruikers van de app";
-
-"RiskLegend_Image1_AccLabel" = "Een toestel toont verschillende genummerde inhoud.";
-
-/* Update Message */
+"RiskLegend_Contact_Text" = "Contact gedurende een langere periode en in de nabijheid van mensen met een COVID-19-diagnose.";
+"RiskLegend_Notification_Title" = "Melding blootstelling";
+"RiskLegend_Notification_Text" = "Blootstellingen in de coronalert-app weergeven.";
+"RiskLegend_Random_Title" = "Willekeurige ID's";
+"RiskLegend_Random_Text" = "Willekeurige ID's zijn combinaties van cijfers en letters die willekeurig worden gegenereerd. Ze worden uitgewisseld tussen toestellen die zich in elkaars buurt bevinden. Willekeurige ID's zijn niet te herleiden tot een bepaalde persoon en worden na 14 dagen automatisch gewist. Personen die een COVID-19-diagnose hebben gekregen, kunnen ervoor kiezen om hun willekeurige ID's van maximaal de voorbije 14 dagen te delen met andere gebruikers van de app.";
+"RiskLegend_Image1_AccLabel" = "Een toestel toont verschillende genummerde inhouden.";
 "Update_Message_Title" = "Update beschikbaar";
-
-"Update_Message_Text" = "Er is een update beschikbaar voor de Coronalert-App.";
-
-"Update_Message_Text_Force" = "Let op, je kan de Coronalert-App pas weer gebruiken als je de laatste update geïnstalleerd hebt";
-
+"Update_Message_Text" = "Er is een update beschikbaar voor de coronalert-app.";
+"Update_Message_Text_Force" = "Let op, u kunt de coronalert-app pas weer gebruiken zodra u de laatste update geïnstalleerd heeft.";
 "Update_Message_Action_Update" = "Update";
-
 "Update_Message_Action_Later" = "Later";
-
-/* ENATanInput */
 "ENATanInput_Empty" = "Leeg";
-
-"ENATanInput_InvalidCharacter" = "Invalid Character\n%@";
-
-"ENATanInput_CharacterIndex" = "Character %1$u of %2$u";
-
-/* Active Tracing Interval Formatting:\n The following two entries are used together. If tracing was not active (almost) 14 days\n during the last 14 days then `Active_Tracing_Interval_Partially_Active` is used – otherwise\n `Active_Tracing_Interval_Partially_Active` will be used. */
-"Active_Tracing_Interval_Partially_Active" = "Blootstellingsregistratie was actief voor %1$u van de laatste %2$u dagen";
-
-"Active_Tracing_Interval_Permanently_Active" = "Blootstellingsregistratie was constant actief";
-
-/* Belgian app translations */
-"BEMobileTestId_title" = "Word getest";
-
-"BEMobileTestId_DateExplanation" = "Selecteer de datum waarop je besmettelijk werd.\nDit zal je meegedeeld worden door de persoon die de test afneemt";
-
+"ENATanInput_InvalidCharacter" = "Ongeldig karakter\n%@";
+"ENATanInput_CharacterIndex" = "Karakter %1$u van %2$u";
+"Active_Tracing_Interval_Partially_Active" = "Blootstellingsregistratie was %1$u van de voorbije 14 dagen actief.";
+"Active_Tracing_Interval_Permanently_Active" = "Blootstellingsregistratie permanent actief";
+"BEMobileTestId_title" = "Laat u testen";
+"BESelectSymptomsDate_explanation" = "Selecteer de datum waarop u symptomen begon te krijgen.";
 "BEMobileTestId_Select" = "Selecteer";
-
 "BEMobileTestId_Date" = "Datum";
-
 "BEMobileTestId_Save" = "Opslaan";
-
-"BEMobileTestId_saveExplanation" = "Toon dit nummer aan de persoon die de test afneemt.\nTap \"Opslaan\" zodat je verwittigd kan worden zodra het resultaat beschikbaar is";
-
+"BEMobileTestId_saveExplanation" = "Laat dit nummer zien aan de persoon die de test afneemt.\nTik op \"Opslaan\", zodat u een melding krijgt zodra het resultaat beschikbaar is.";
 "BELanguage" = "nl";
-
 "BESelectKeyCountries_title" = "Kies Landen";
-
-"BESelectKeyCountries_explanation" = "Indien u op een van onderstaande datums niet in België was en u wenst deze informatie met ons te delen (anoniem), gelieve het land aan te passen door op de lijn te tappen die u wenst te wijzigen.";
-
+"BESelectKeyCountries_explanation" = "Als u op een van de onderstaande datums niet in België was en u deze informatie (anoniem) wilt delen, selecteer dan het land dat u op die datum heeft bezocht. Tik op de lijn die u wilt wijzigen.";
 "BESelectKeyCountries_sendKeys" = "Deel ID's";
-
 "ExposureSubmission_CODEInputButtonTitle" = "Geef CODE in";
-
-"Home_Risk_Inactive_Activate_Item_Title" = "Laatste blootstellingsregistratie: %@";
-
-"Home_Risk_Inactive_Activate_Item_Unknown_Title" = "Onbekend risico";
-
-"Home_Risk_Inactive_Activate_Item_Low_Title" = "Laag risico";
-
-"Home_Risk_Inactive_Activate_Item_High_Title" = "Hoog risico";
-
-"Home_Risk_Low_Button" = "Update";
-
-"Home_Risk_High_Button" = "Update";
-
-"Home_Risk_Status_Check_Button" = "Update";
-
-"ExposureSubmissionDispatch_CODEButtonTitle" = "CODE";
-
-"ExposureSubmissionDispatch_CODEButtonDescription" = "Registreer je test door je CODE handmatig in te vullen";
-
-"ExposureDetection_Refreshing_24h" = "Elke 24 uur bijgewerkt";
-
-"Home_Risk_Low_SaveDays_Item_Title__Permanent_Active" = "Risicodetectie permanent actief";
-
-"Home_Thank_You_Card_Verder_Info_Item_Title" = "Andere informatie:";
-
-"local_notifications_detect exposure_title" = "Coronalert-App";
-
-"local_notifications_detect exposure_body" = "Je hebt nieuwe berichten van je Coronalert-App";
-
+"No Exposure Configuration available" = "Geen blootstellingsconfiguratie beschikbaar";
+"BEExposureSubmission_symptomsTitle" = "Symptomen controleren";
+"BEExposureSubmission_symptomsExplanation" = "Ervaar je momenteel symptomen?";
+"BEExposureSubmission_yes" = "Ja";
+"BEExposureSubmission_no" = "Nee";
+"BEExposureSubmission_cancel" = "Annuleren";
+"BESelectSymptomsDate_title" = "Selecteer Datum";
+"BESelectSymptomsDate_next" = "";
