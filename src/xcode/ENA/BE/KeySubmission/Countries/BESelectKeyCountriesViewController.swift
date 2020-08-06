@@ -120,7 +120,7 @@ extension BESelectKeyCountriesViewController {
 
 extension BESelectKeyCountriesViewController {
 	func navigationController(_ navigationController: ENANavigationControllerWithFooter, didTapPrimaryButton button: UIButton) {
-		service.submitExposure(keys: exposureKeys, countries: countries) { error in
+		service.submitExposure(keys: exposureKeys, countries: selectedCountries) { error in
 			if let error = error {
 				logError(message: "error: \(error.localizedDescription)", level: .error)
 				let alert = self.setupErrorAlert(message: error.localizedDescription)
