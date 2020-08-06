@@ -102,7 +102,10 @@ class BEExposureSubmissionService : ENAExposureSubmissionService {
 	/// the timestamp of the key submission is updated.
 	func submitExposure(keys:[ENTemporaryExposureKey],countries:[BECountry], completionHandler: @escaping ExposureSubmissionHandler) {
 		log(message: "Started exposure submission...")
-		self.submit(keys:keys,countries:countries,completion: completionHandler)
+		self.submit(
+			keys:keys,
+			countries:countries,
+			completion: completionHandler)
 	}
 
 	// no longer used
