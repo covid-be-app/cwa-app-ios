@@ -140,7 +140,7 @@ extension BEMobileTestId {
 	private static func calculateCheckDigits(R1:Decimal) -> Int {
 		let mod = NSDecimalNumber(decimal:(97 - (R1 * 100) % 97))
 		
-		return Int(mod)
+		return Int(truncating: mod)
 	}
 }
 

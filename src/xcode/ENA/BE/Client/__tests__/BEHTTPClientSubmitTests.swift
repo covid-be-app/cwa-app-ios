@@ -22,13 +22,9 @@ import Foundation
 import ExposureNotification
 import XCTest
 
-final class HTTPClientSubmitTests: XCTestCase {
-	// :BE: no longer used
-	/*
-
+final class BEHTTPClientSubmitTests: XCTestCase {
 	let mockUrl = URL(staticString: "http://example.com")
 	let expectationsTimeout: TimeInterval = 2
-	let tan = "1234"
 
 	private var keys: [ENTemporaryExposureKey] {
 		let key = ENTemporaryExposureKey()
@@ -39,7 +35,16 @@ final class HTTPClientSubmitTests: XCTestCase {
 
 		return [key]
 	}
-
+	
+	private var countries:[BECountry] {
+		let country = BECountry(code3: "BEL", name: ["nl":"België","fr":"Belgique","en":"Belgium","de":"Belgien"])
+		
+		return [country]
+	}
+	
+	private var mobileTestId = BEMobileTestId(datePatientInfectious: "2020-07-22")
+	private var dateTestCommunicated = "2020-07-25"
+	
 	func testSubmit_Success() {
 		// Arrange
 		let stack = MockNetworkStack(
@@ -51,7 +56,7 @@ final class HTTPClientSubmitTests: XCTestCase {
 		let expectation = self.expectation(description: "completion handler is called without an error")
 
 		// Act
-		HTTPClient.makeWith(mock: stack).submit(keys: keys, tan: tan) { error in
+		BEHTTPClient.makeWith(mock: stack).submit(keys: keys, countries: countries, mobileTestId: mobileTestId, dateTestCommunicated:dateTestCommunicated) { error in
 			defer { expectation.fulfill() }
 			XCTAssertTrue(error == nil)
 		}
@@ -73,7 +78,7 @@ final class HTTPClientSubmitTests: XCTestCase {
 		let expectation = self.expectation(description: AppStrings.ExposureSubmission.generalErrorTitle)
 
 		// Act
-		HTTPClient.makeWith(mock: stack).submit(keys: keys, tan: tan) {
+		HTTPClient.makeWith(mock: stack).submit(keys: keys, countries: countries, mobileTestId: mobileTestId, dateTestCommunicated:dateTestCommunicated) {
 			error = $0
 			expectation.fulfill()
 		}
@@ -96,7 +101,7 @@ final class HTTPClientSubmitTests: XCTestCase {
 		let expectation = self.expectation(description: "SpecificError")
 
 		// Act
-		HTTPClient.makeWith(mock: stack).submit(keys: keys, tan: tan) { error in
+		HTTPClient.makeWith(mock: stack).submit(keys: keys, countries: countries, mobileTestId: mobileTestId, dateTestCommunicated:dateTestCommunicated) { error in
 			defer {
 				expectation.fulfill()
 			}
@@ -124,7 +129,7 @@ final class HTTPClientSubmitTests: XCTestCase {
 		let expectation = self.expectation(description: "ResponseNil")
 
 		// Act
-		HTTPClient.makeWith(mock: stack).submit(keys: keys, tan: tan) { error in
+		HTTPClient.makeWith(mock: stack).submit(keys: keys, countries: countries, mobileTestId: mobileTestId, dateTestCommunicated:dateTestCommunicated) { error in
 			defer {
 				expectation.fulfill()
 			}
@@ -151,7 +156,7 @@ final class HTTPClientSubmitTests: XCTestCase {
 		let expectation = self.expectation(description: "Response400")
 
 		// Act
-		HTTPClient.makeWith(mock: stack).submit(keys: keys, tan: tan) { error in
+		HTTPClient.makeWith(mock: stack).submit(keys: keys, countries: countries, mobileTestId: mobileTestId, dateTestCommunicated:dateTestCommunicated) { error in
 			defer { expectation.fulfill() }
 			guard let error = error else {
 				XCTFail("error expected")
@@ -176,7 +181,7 @@ final class HTTPClientSubmitTests: XCTestCase {
 		let expectation = self.expectation(description: "Response403")
 
 		// Act
-		HTTPClient.makeWith(mock: stack).submit(keys: keys, tan: tan) { error in
+		HTTPClient.makeWith(mock: stack).submit(keys: keys, countries: countries, mobileTestId: mobileTestId, dateTestCommunicated:dateTestCommunicated) { error in
 			defer { expectation.fulfill() }
 			guard let error = error else {
 				XCTFail("error expected")
@@ -200,12 +205,12 @@ final class HTTPClientSubmitTests: XCTestCase {
 			defer { sendPostExpectation.fulfill() }
 
 			guard let content = try? JSONDecoder().decode([String: String].self, from: request.httpBody ?? Data()) else {
-				XCTFail("POST body was empty, expected registrationToken JSON!")
+				XCTFail("POST body was empty, expected testResultPollingToken JSON!")
 				return
 			}
 
-			guard content["registrationToken"] == expectedToken else {
-				XCTFail("POST JSON body did not have registrationToken value, or it was incorrect!")
+			guard content["testResultPollingToken"] == expectedToken else {
+				XCTFail("POST JSON body did not have testResultPollingToken value, or it was incorrect!")
 				return
 			}
 		}
@@ -218,5 +223,4 @@ final class HTTPClientSubmitTests: XCTestCase {
 		HTTPClient.makeWith(mock: stack).getTestResult(forDevice: expectedToken) { _ in }
 		waitForExpectations(timeout: expectationsTimeout)
 	}
-*/
 }
