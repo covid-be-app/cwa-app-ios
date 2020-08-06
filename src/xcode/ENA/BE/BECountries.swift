@@ -29,12 +29,16 @@ struct BECountry : Decodable, Equatable {
 	}
 	
 	static func load(_ sortLanguage:String = BEAppStrings.currentLanguage) -> [BECountry] {
-		let countriesData = try! Data(contentsOf: Bundle.main.url(forResource: "countries", withExtension: "json")!)
-		let decoder = JSONDecoder()
-		let countries = try! decoder.decode([BECountry].self, from: countriesData)
-		
-		return countries.sorted { (country1, country2) -> Bool in
-			return country1.name[sortLanguage]!.compare(country2.name[sortLanguage]!) == .orderedAscending
+		do {
+			let countriesData = try Data(contentsOf: Bundle.main.url(forResource: "countries", withExtension: "json")!)
+			let decoder = JSONDecoder()
+			let countries = try decoder.decode([BECountry].self, from: countriesData)
+			
+			return countries.sorted { (country1, country2) -> Bool in
+				return country1.name[sortLanguage]!.compare(country2.name[sortLanguage]!) == .orderedAscending
+			}
+		} catch {
+			fatalError("Problem reading countries")
 		}
 	}
 	
