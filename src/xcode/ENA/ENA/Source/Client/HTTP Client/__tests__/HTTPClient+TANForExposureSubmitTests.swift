@@ -21,6 +21,9 @@
 import Foundation
 import XCTest
 
+// :BE: no longer used
+
+/*
 final class HTTPClientTANForExposureSubmitTests: XCTestCase {
 	private let expectationsTimeout: TimeInterval = 2
 
@@ -185,3 +188,4 @@ final class HTTPClientTANForExposureSubmitTests: XCTestCase {
 		waitForExpectations(timeout: expectationsTimeout)
 	}
 }
+*/

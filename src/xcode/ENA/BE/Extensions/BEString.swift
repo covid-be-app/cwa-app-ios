@@ -37,7 +37,7 @@ extension String {
 	// this is used to convert YYYY-MM-DD strings into YYMMDD representation
 	var compactDateNumber:Int{
 		#if DEBUG
-			guard let date = dateWithoutTime else {
+			guard let _ = dateWithoutTime else {
 				fatalError("Wrong string format")
 			}
 		#endif

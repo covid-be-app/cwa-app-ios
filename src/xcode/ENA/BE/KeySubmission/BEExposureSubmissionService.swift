@@ -24,11 +24,13 @@ import ExposureNotification
 class BEExposureSubmissionService : ENAExposureSubmissionService {
 	typealias BEExposureSubmissionGetKeysHandler = (Result<[ENTemporaryExposureKey], ExposureSubmissionError>) -> Void
 	
-	var httpClient:BEHTTPClient {
-		get {
-			return client as! BEHTTPClient
+	lazy var httpClient:BEHTTPClient = {
+		guard let beClient = client as? BEHTTPClient else {
+			fatalError("Wrong subclass")
 		}
-	}
+		
+		return beClient
+	}()
 	
 	var mobileTestId:BEMobileTestId? {
 		get {
@@ -55,7 +57,7 @@ class BEExposureSubmissionService : ENAExposureSubmissionService {
 		forKey deviceRegistrationKey: DeviceRegistrationKey,
 		completion completeWith: @escaping RegistrationHandler
 	) {
-		fatalError()
+		fatalError("Deprecated")
 	}
 	
 	override func getTestResult(_ completeWith: @escaping TestResultHandler) {
@@ -110,7 +112,7 @@ class BEExposureSubmissionService : ENAExposureSubmissionService {
 
 	// no longer used
 	override func submitExposure( completionHandler: @escaping ExposureSubmissionHandler) {
-		fatalError()
+		fatalError("Deprecated")
 	}
 
 	private func submit(keys: [ENTemporaryExposureKey], countries:[BECountry], completion: @escaping ExposureSubmissionHandler) {
