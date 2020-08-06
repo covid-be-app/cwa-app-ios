@@ -33,7 +33,7 @@ jobs:
             echo $SONARQUBE_SCANNER_PARAMS
             $SCANNERDIR/bin/sonar-scanner
           environment:
-            SONARQUBE_SCANNER_PARAMS: '{"sonar.host.url":"https://sonarcloud.io","sonar.login","$SONAR_TOKEN"}'
+            SONARQUBE_SCANNER_PARAMS: {"sonar.host.url":"https://sonarcloud.io","sonar.login","$SONAR_TOKEN"}
       - save_cache:
           key: sonar-cloud-v2
           paths:
