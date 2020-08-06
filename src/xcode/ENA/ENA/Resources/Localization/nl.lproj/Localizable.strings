@@ -393,7 +393,7 @@
 "App_Information_Terms_ImageDescription" = "Een hand houdt een smartphone met een grote hoeveelheid tekst op het schermpje vast. Naast de tekst staat een vinkje dat aangeeft dat de gebruiksvoorwaarden zijn aanvaard.";
 "App_Information_Terms_Title" = "Gebruiksvoorwaarden";
 "InviteFriends_NavTitle" = "Deel";
-"InviteFriends_Subtitle" = "Deel de coronalert-app";
+"InviteFriends_Subtitle" = "Deel de Coronalert-app";
 "InviteFriends_Title" = "Samen krijgen we het coronavirus klein";
 "InviteFriends_Description" = "Hoe meer mensen de app gebruiken, hoe sneller we de infectieketen kunnen doorbreken. Vraag uw familie en vrienden om de app te downloaden.";
 "InviteFriends_Button" = "Downloadlink verzenden";
@@ -415,9 +415,9 @@
 "Reset_ConfirmDialog_Confirm" = "Opnieuw instellen";
 "safari_corona_website" = "https://www.coronalert.be";
 "local_notifications_ignore" = "Negeren";
-"local_notifications_detectexposure_title" = "Coronalert-app";
+"local_notifications_detectexposure_title" = "Coronalert";
 "local_notifications_detectexposure_body" = "U heeft nieuwe berichten van uw coronalert-app.";
-"local_notifications_testresults_title" = "Coronalert-app";
+"local_notifications_testresults_title" = "Coronalert";
 "local_notifications_testresults_body" = "U heeft nieuwe berichten van uw coronalert-app.";
 "RiskLegend_Title" = "Overzicht";
 "RiskLegend_Subtitle" = "Belangrijke functies en concepten";
@@ -474,4 +474,4 @@
 "BEExposureSubmission_no" = "Nee";
 "BEExposureSubmission_cancel" = "Annuleren";
 "BESelectSymptomsDate_title" = "Selecteer Datum";
-"BESelectSymptomsDate_next" = "";
+"BESelectSymptomsDate_next" = "Volgende";
