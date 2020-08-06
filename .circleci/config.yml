@@ -19,6 +19,9 @@ jobs:
       xcode: 11.6.0
     shell: zsh
     steps:
+    - run:
+        name: Tests
+        command: cd src/xcode
       - run:
           name: Install and run sonar-scanner
           command: |
