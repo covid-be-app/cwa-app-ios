@@ -325,7 +325,10 @@ extension ExposureDetectionViewController {
 			]
 		)
 	}
+	
+	// :BE: no longer used
 
+	/*
 	private func highRiskExplanationSection(daysSinceLastExposureText: String, explanationText: String, isActive: Bool, accessibilityIdentifier: String?) -> DynamicSection {
 		let daysSinceLastExposure = state.risk?.details.daysSinceLastExposure ?? 0
 		return .section(
@@ -345,6 +348,7 @@ extension ExposureDetectionViewController {
 			]
 		)
 	}
+*/
 
 	private var offModel: DynamicTableViewModel {
 		DynamicTableViewModel([
@@ -393,12 +397,15 @@ extension ExposureDetectionViewController {
 			]),
 			riskRefreshSection,
 			riskLoadingSection,
-			standardGuideSection,
+			standardGuideSection
+			// :BE: remove explanation
+			/*
 			explanationSection(
 				text: AppStrings.ExposureDetection.explanationTextUnknown,
 				isActive: false,
 				accessibilityIdentifier: AccessibilityIdentifiers.ExposureDetection.explanationTextUnknown
 			)
+*/
 		])
 	}
 
@@ -415,12 +422,15 @@ extension ExposureDetectionViewController {
 			riskRefreshSection,
 			riskLoadingSection,
 			standardGuideSection,
-			activeTracingSection(accessibilityIdentifier: "hello"),
-			explanationSection(
+			activeTracingSection(accessibilityIdentifier: "hello")
+				// :BE: remove explanation
+					/*
+						explanationSection(
 				text: AppStrings.ExposureDetection.explanationTextLow,
 				isActive: true,
 				accessibilityIdentifier: AccessibilityIdentifiers.ExposureDetection.explanationTextLow
 			)
+*/
 		])
 	}
 
@@ -451,13 +461,16 @@ extension ExposureDetectionViewController {
 			),
 			activeTracingSection(
 				accessibilityIdentifier: AccessibilityIdentifiers.ExposureDetection.activeTracingSectionText
-			),
+			)
+			// :BE:
+			/*
 			highRiskExplanationSection(
 				daysSinceLastExposureText: AppStrings.ExposureDetection.explanationTextHighDaysSinceLastExposure,
 				explanationText: AppStrings.ExposureDetection.explanationTextHigh,
 				isActive: true,
 				accessibilityIdentifier: AccessibilityIdentifiers.ExposureDetection.explanationTextHigh
 			)
+*/
 		])
 	}
 }
