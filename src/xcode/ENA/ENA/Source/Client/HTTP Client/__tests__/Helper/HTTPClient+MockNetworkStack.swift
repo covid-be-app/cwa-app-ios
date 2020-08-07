@@ -61,8 +61,9 @@ struct MockNetworkStack {
 
 extension HTTPClient {
 	/// Configure a `HTTPClient` with `.fake` configuration and mocked `URLSession`
-	static func makeWith(mock stack: MockNetworkStack) -> HTTPClient {
-		HTTPClient(
+	// :BE: create the BE client
+	static func makeWith(mock stack: MockNetworkStack) -> BEHTTPClient {
+		BEHTTPClient(
 			configuration: .fake,
 			packageVerifier: stack.packageVerifier,
 			session: stack.urlSession

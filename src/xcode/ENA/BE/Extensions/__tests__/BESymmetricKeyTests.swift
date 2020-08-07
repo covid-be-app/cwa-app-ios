@@ -28,8 +28,8 @@ class BESymmetricKeyTests: XCTestCase {
         let key = SymmetricKey(size:.bits128)
 		let encoder = JSONEncoder()
 		let decoder = JSONDecoder()
-		let encoded = try! encoder.encode(key)
-		let decoded = try! decoder.decode(SymmetricKey.self, from: encoded)
+		let encoded = try encoder.encode(key)
+		let decoded = try decoder.decode(SymmetricKey.self, from: encoded)
 		
 		key.withUnsafeBytes{ originalBytes in
 			decoded.withUnsafeBytes{ decodedBytes in

@@ -77,7 +77,11 @@ class BESelectKeyCountriesViewController: DynamicTableViewController, ENANavigat
 			return DynamicCell.custom(
 				withIdentifier: CustomCellReuseIdentifiers.keyCell,
 				action: .execute(block: { vc in
-					(vc as! BESelectKeyCountriesViewController).selectCountry(forKeyAtIndex: index)
+					guard let selectCountriesViewController = vc as? BESelectKeyCountriesViewController else {
+						fatalError("Wrong viewcontroller")
+					}
+					
+					selectCountriesViewController.selectCountry(forKeyAtIndex: index)
 				}),
 				configure: { _, cell, _ in
 					guard let cell = cell as? BESelectKeyCountryCell else { return }
@@ -120,7 +124,7 @@ extension BESelectKeyCountriesViewController {
 
 extension BESelectKeyCountriesViewController {
 	func navigationController(_ navigationController: ENANavigationControllerWithFooter, didTapPrimaryButton button: UIButton) {
-		service.submitExposure(keys: exposureKeys, countries: countries) { error in
+		service.submitExposure(keys: exposureKeys, countries: selectedCountries) { error in
 			if let error = error {
 				logError(message: "error: \(error.localizedDescription)", level: .error)
 				let alert = self.setupErrorAlert(message: error.localizedDescription)
@@ -138,7 +142,7 @@ extension BESelectKeyCountriesViewController {
 extension BESelectKeyCountriesViewController : BESelectCountryViewControllerDelegate {
 	func selectCountryViewController(_ vc:BESelectCountryViewController,selectedCountry country:BECountry) {
 		guard let keyIndex = editedKeyIndex else {
-			fatalError()
+			fatalError("Wrong key index")
 		}
 		
 		selectedCountries[keyIndex] = country

@@ -101,7 +101,7 @@ class ENAExposureSubmissionService: ExposureSubmissionService {
 	func getTestResult(_ completeWith: @escaping TestResultHandler) {
 		
 		// :BE: implemented in subclass
-		fatalError()
+		fatalError("Deprecated")
 	}
 
 	/// Stores the provided key, retrieves the registration token and deletes the key.

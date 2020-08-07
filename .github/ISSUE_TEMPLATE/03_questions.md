@@ -11,7 +11,7 @@ Before opening a new issue, please make sure that we do not have any duplicates 
 -->
 
 ## Avoid duplicates
-* [ ] Question is not already answered in the [FAQ](https://www.coronawarn.app/en/faq/)
+* [ ] Question is not already answered in the [FAQ](https://www.coronalert.be)
 * [ ] Question has not already been asked in another issue
 
 ## Your Question

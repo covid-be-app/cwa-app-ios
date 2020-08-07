@@ -21,7 +21,9 @@ import CryptoKit
 import ZIPFoundation
 
 final class SAPDownloadedPackageTests: XCTestCase {
-
+	// :TODO: reactivate this once signing is enabled
+	
+	/*
 	private lazy var signingKey = P256.Signing.PrivateKey()
 	private lazy var publicKey = signingKey.publicKey
 	private let defaultBundleId = Bundle.main.bundleIdentifier ?? "de.rki.coronawarnapp"
@@ -148,4 +150,6 @@ final class SAPDownloadedPackageTests: XCTestCase {
 	func testInitFromZIP_extractFailed() throws {
 		XCTAssertNil(SAPDownloadedPackage(compressedData: Data()))
 	}
+
+*/
 }

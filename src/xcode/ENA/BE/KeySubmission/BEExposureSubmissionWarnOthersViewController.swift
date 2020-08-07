@@ -21,13 +21,29 @@ import UIKit
 import ExposureNotification
 
 class BEExposureSubmissionWarnOthersViewController: ExposureSubmissionWarnOthersViewController {
+	
+	lazy var beExposureSubmissionService: BEExposureSubmissionService = {
+		guard let beService = exposureSubmissionService as? BEExposureSubmissionService else {
+			fatalError("Wrong exposure submission service subclass")
+		}
+		
+		return beService
+	}()
+
+	lazy var beCoordinator: BEExposureSubmissionCoordinator  = {
+		guard let beCoordinator = coordinator as? BEExposureSubmissionCoordinator else {
+			fatalError("Wrong coordinator subclass")
+		}
+		
+		return beCoordinator
+	}()
 
 	override init?(coder: NSCoder, coordinator: ExposureSubmissionCoordinating, exposureSubmissionService: ExposureSubmissionService) {
 		super.init(coder: coder, coordinator: coordinator, exposureSubmissionService: exposureSubmissionService)
 	}
 	
 	override func startSubmitProcess() {
-		(exposureSubmissionService as! BEExposureSubmissionService).retrieveDiagnosisKeys { result in
+		beExposureSubmissionService.retrieveDiagnosisKeys { result in
 			switch result {
 			case .failure(let error):
 				switch error {
@@ -43,7 +59,7 @@ class BEExposureSubmissionWarnOthersViewController: ExposureSubmissionWarnOthers
 				}
 				
 			case .success(let keys):
-				(self.coordinator! as! BEExposureSubmissionCoordinator).showSelectCountries(keys)
+				self.beCoordinator.showSelectCountries(keys)
 			}
 		}
 	}
