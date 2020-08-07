@@ -325,7 +325,10 @@ extension ExposureDetectionViewController {
 			]
 		)
 	}
+	
+	// :BE: no longer used
 
+	/*
 	private func highRiskExplanationSection(daysSinceLastExposureText: String, explanationText: String, isActive: Bool, accessibilityIdentifier: String?) -> DynamicSection {
 		let daysSinceLastExposure = state.risk?.details.daysSinceLastExposure ?? 0
 		return .section(
@@ -345,6 +348,7 @@ extension ExposureDetectionViewController {
 			]
 		)
 	}
+*/
 
 	private var offModel: DynamicTableViewModel {
 		DynamicTableViewModel([
