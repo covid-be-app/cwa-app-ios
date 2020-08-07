@@ -122,14 +122,14 @@ final class HomeInteractor: RequiresAppDependencies {
 
 		let info1Configurator = HomeInfoCellConfigurator(
 			title: AppStrings.Home.infoCardShareTitle,
-			description: AppStrings.Home.infoCardShareBody,
+			description: nil, // :BE: no description
 			position: .first,
 			accessibilityIdentifier: AccessibilityIdentifiers.Home.infoCardShareTitle
 		)
 
 		let info2Configurator = HomeInfoCellConfigurator(
 			title: AppStrings.Home.infoCardAboutTitle,
-			description: AppStrings.Home.infoCardAboutBody,
+			description: nil, // :BE: no description
 			position: .last,
 			accessibilityIdentifier: AccessibilityIdentifiers.Home.infoCardAboutTitle
 		)
