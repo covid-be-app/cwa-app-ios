@@ -79,9 +79,10 @@ class ExposureSubmissionIntroViewController: DynamicTableViewController, ENANavi
 }
 
 private extension DynamicTableViewModel {
+	// :BE: remove unused lines
 	static let intro = DynamicTableViewModel([
-		.navigationSubtitle(text: AppStrings.ExposureSubmissionIntroduction.subTitle,
-							accessibilityIdentifier: AccessibilityIdentifiers.ExposureSubmissionIntroduction.subTitle),
+		//.navigationSubtitle(text: AppStrings.ExposureSubmissionIntroduction.subTitle,
+			//				accessibilityIdentifier: AccessibilityIdentifiers.ExposureSubmissionIntroduction.subTitle),
 		.section(
 			header: .image(
 				UIImage(named: "Illu_Submission_Funktion1"),
@@ -91,14 +92,16 @@ private extension DynamicTableViewModel {
 			),
 			separators: false,
 			cells: [
-				.headline(text: AppStrings.ExposureSubmissionIntroduction.usage01,
-						  accessibilityIdentifier: AccessibilityIdentifiers.ExposureSubmissionIntroduction.usage01),
+				//.headline(text: AppStrings.ExposureSubmissionIntroduction.usage01,
+					//	  accessibilityIdentifier: AccessibilityIdentifiers.ExposureSubmissionIntroduction.usage01),
 				.body(text: AppStrings.ExposureSubmissionIntroduction.usage02,
 					  accessibilityIdentifier: AccessibilityIdentifiers.ExposureSubmissionIntroduction.usage02),
 				ExposureSubmissionDynamicCell.stepCell(bulletPoint: AppStrings.ExposureSubmissionIntroduction.listItem1),
-				ExposureSubmissionDynamicCell.stepCell(bulletPoint: AppStrings.ExposureSubmissionIntroduction.listItem2),
-				ExposureSubmissionDynamicCell.stepCell(bulletPoint: AppStrings.ExposureSubmissionIntroduction.listItem3),
-				ExposureSubmissionDynamicCell.stepCell(bulletPoint: AppStrings.ExposureSubmissionIntroduction.listItem4)
+				ExposureSubmissionDynamicCell.stepCell(bulletPoint: AppStrings.ExposureSubmissionIntroduction.listItem2)
+				//,ExposureSubmissionDynamicCell.stepCell(bulletPoint: AppStrings.ExposureSubmissionIntroduction.listItem3),
+				//ExposureSubmissionDynamicCell.stepCell(bulletPoint: AppStrings.ExposureSubmissionIntroduction.listItem4)
+				
+				// :BE: - end
 			]
 		)
 	])
