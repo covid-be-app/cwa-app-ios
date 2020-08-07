@@ -33,7 +33,8 @@ final class ExposureNotificationSettingViewController: UITableViewController {
 
 	private var lastActionCell: ActionCell?
 
-	let model = ENSettingModel(content: [.banner, .actionCell, .actionDetailCell, .descriptionCell])
+	// :BE: remove description cell
+	let model = ENSettingModel(content: [.banner, .actionCell, .actionDetailCell])
 	let store: Store
 	var enState: ENStateHandler.State
 
