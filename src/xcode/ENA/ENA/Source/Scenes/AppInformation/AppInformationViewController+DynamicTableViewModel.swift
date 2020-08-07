@@ -185,12 +185,16 @@ extension AppInformationViewController {
 						   accessibilityIdentifier: AccessibilityIdentifiers.AppInformation.imprintImageDescription,
 						   height: 230),
 			cells: [
+				
+				// :BE: remove irrelevant text
+				/*
 				.headline(text: AppStrings.AppInformation.imprintSection1Title,
 						  accessibilityIdentifier: AccessibilityIdentifiers.AppInformation.imprintSection1Title,
 						  accessibilityTraits: .header),
 				.bodyWithoutTopInset(text: AppStrings.AppInformation.imprintSection1Text,
 									 style: .textView([]),
 									 accessibilityIdentifier: AccessibilityIdentifiers.AppInformation.imprintSection1Text),
+*/
 				.headlineWithoutBottomInset(text: AppStrings.AppInformation.imprintSection2Title,
 											accessibilityIdentifier: AccessibilityIdentifiers.AppInformation.imprintSection2Title),
 				.bodyWithoutTopInset(text: AppStrings.AppInformation.imprintSection2Text,

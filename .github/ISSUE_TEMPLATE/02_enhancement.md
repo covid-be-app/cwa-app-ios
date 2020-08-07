@@ -12,7 +12,7 @@ Before opening a new issue, please make sure that we do not have any duplicates 
 ## Avoid duplicates
 
 * [ ] This issue has not already been raised before
-* [ ] If you are proposing a new feature, please do so in [CWA-Wishlist](https://github.com/corona-warn-app/cwa-wishlist)
+* [ ] If you are proposing a new feature, please do so in [CWA-Wishlist](https://github.com/covid-be-app/cwa-wishlist)
 
 ## Current Implementation
 <!-- Describe or point to the current implementation that you would like to see improved -->

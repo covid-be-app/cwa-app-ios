@@ -24,7 +24,7 @@ class BEHTTPClient : HTTPClient {
 	
 	// no longer supported
 	override func submit(keys: [ENTemporaryExposureKey], tan: String, completion: @escaping HTTPClient.SubmitKeysCompletionHandler) {
-		fatalError()
+		fatalError("Deprecated")
 	}
 	
 	override func getTestResult(forDevice registrationToken: String, completion completeWith: @escaping TestResultHandler) {

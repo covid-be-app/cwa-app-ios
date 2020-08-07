@@ -46,7 +46,12 @@ class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
 		delegate: ExposureSubmissionCoordinatorDelegate? = nil
 	) {
 		self.parentNavigationController = parentNavigationController
-		self.exposureSubmissionService = exposureSubmissionService as! BEExposureSubmissionService
+		
+		guard let beSubmissionService = exposureSubmissionService as? BEExposureSubmissionService else {
+			fatalError("Wrong exposure submission class")
+		}
+		
+		self.exposureSubmissionService = beSubmissionService
 		self.delegate = delegate
 	}
 
@@ -172,19 +177,19 @@ class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
 
 
 	func showHotlineScreen() {
-		fatalError()
+		fatalError("Deprecated")
 	}
 	
 	func showTanScreen() {
-		fatalError()
+		fatalError("Deprecated")
 	}
 
 	func showQRScreen(qrScannerDelegate: ExposureSubmissionQRScannerDelegate) {
-		fatalError()
+		fatalError("Deprecated")
 	}
 
 	func showTestResultScreen(with result: TestResult) {
-		fatalError()
+		fatalError("Deprecated")
 	}
 	
 	func showMobileTestIdViewController(symptomsDate:Date? = nil) {

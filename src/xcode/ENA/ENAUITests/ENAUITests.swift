@@ -95,10 +95,10 @@ class ENAUITests: XCTestCase {
 		// :BE: no more qr scan screen
 		XCTAssertTrue(app.alerts.firstMatch.exists)
 		app.alerts.buttons.firstMatch.tap()
-		XCTAssertTrue(app.buttons["BEAppStrings.BEMobileTestId.select"].waitForExistence(timeout: 5.0))
+		XCTAssertTrue(app.buttons["BEAppStrings.BESelectSymptomsDate.next"].waitForExistence(timeout: 5.0))
 		if snapshotsActive { snapshot("AppStore_0005") }
 
-		app.buttons["BEAppStrings.BEMobileTestId.select"].tap()
+		app.buttons["BEAppStrings.BESelectSymptomsDate.next"].tap()
 		XCTAssertTrue(app.buttons["BEAppStrings.BEMobileTestId.save"].waitForExistence(timeout: 5.0))
 		if snapshotsActive { snapshot("AppStore_0006") }
 		
