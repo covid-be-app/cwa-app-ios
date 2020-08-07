@@ -84,7 +84,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	let taskScheduler: ENATaskScheduler = ENATaskScheduler.shared
 
 	lazy var riskProvider: RiskProvider = {
-		let exposureDetectionInterval = self.store.hourlyFetchingEnabled ? DateComponents(minute: 45) : DateComponents(hour: 24)
+		
+		// :BE: change detection interval to every 2 hours
+		//let exposureDetectionInterval = self.store.hourlyFetchingEnabled ? DateComponents(minute: 45) : DateComponents(hour: 24)
+		let exposureDetectionInterval = DateComponents(hour: 2)
 
 		let config = RiskProvidingConfiguration(
 			exposureDetectionValidityDuration: DateComponents(day: 2),
@@ -170,7 +173,9 @@ extension AppDelegate: ENATaskExecutionDelegate {
 
 	/// This method executes the background tasks needed for: a) fetching test results and b) performing exposure detection requests
 	func executeENABackgroundTask(task: BGTask, completion: @escaping ((Bool) -> Void)) {
+		log(message: "Running background task...")
 		executeFetchTestResults(task: task) { fetchTestResultSuccess in
+			log(message: "Start exposure detection...")
 
 			// NOTE: We are currently fetching the test result first, and then execute
 			// the exposure detection check. Instead of implementing this behaviour in the completion handler,
@@ -185,7 +190,7 @@ extension AppDelegate: ENATaskExecutionDelegate {
 	/// part of the app, a local notification is shown.
 	/// NOTE: This method will always return true.
 	private func executeFetchTestResults(task: BGTask, completion: @escaping ((Bool) -> Void)) {
-
+		log(message: "Start fetch test results...")
 		// :BE: replace ENAExposureSubmissionService with BEExposureSubmissionService
 		exposureSubmissionService = BEExposureSubmissionService(diagnosiskeyRetrieval: exposureManager, client: client, store: store)
 
