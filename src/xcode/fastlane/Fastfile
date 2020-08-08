@@ -114,8 +114,6 @@ platform :ios do
       changelog: changelog
     )
     
-    commit_version_bump(xcodeproj: "ENA/ENA.xcodeproj")
-    
     add_git_tag
     
     push_to_git_remote
