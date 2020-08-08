@@ -1,15 +1,15 @@
-git_url("git@github.com:corona-warn-app/cwa-certificates.git")
+git_url("git@github.com:covid-be-app/cwa-certificates.git")
 
 storage_mode("git")
 
 type("appstore") # The default type, can be: appstore, adhoc, enterprise or development
 
-app_identifier(["de.rki.coronawarnapp-dev"])  #, "de.rki.coronawarnapp"
+app_identifier(["be.sciensano.coronalertbe"])  #,
 
-template_name("Exposure Notification for 523TP53AQF (Distribution) iOS Dist")  # Entitlement name
+username("technical@devside.com") # Apple Developer Portal username
 
-username("cwa.technical-user@sap.com") # Apple Developer Portal username
+team_id("UK48F668XR")
 
-team_id("523TP53AQF")
+-template_name("Exposure Notification for UK48F668XR (Distribution)")
 
-# The docs are available on https://docs.fastlane.tools/actions/match
+
