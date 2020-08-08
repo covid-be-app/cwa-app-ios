@@ -116,4 +116,4 @@ workflows:
             filters:
               branches:
                 only:
-                  - /staging\/.*/
+                  - staging
