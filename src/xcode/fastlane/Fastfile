@@ -92,11 +92,6 @@ platform :ios do
       readonly: true
     )
 
-    match(
-      type:"development",
-      readonly: true
-    )
-    
     testflight_build_number = latest_testflight_build_number(username:"technical@devside.com",app_identifier:"be.sciensano.coronalertbe")
     
     increment_build_number(
