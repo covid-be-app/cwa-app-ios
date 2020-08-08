@@ -99,20 +99,12 @@ jobs:
           command: cd src/xcode && bundle exec fastlane betaRelease
 
 workflows:
-    test-and-scan:
+    process:
       jobs:
         - test
-    build:
-      jobs:
-        - build
-        - grab-screenshots:
-            filters:
-              branches:
-                only:
-                  - master
-    betaRelease:
-      jobs:
         - testflight-release:
+            requires:
+              - test
             filters:
               branches:
                 only:
