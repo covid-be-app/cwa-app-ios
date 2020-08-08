@@ -92,7 +92,7 @@ jobs:
       - save_cache:
           key: 1-gems-{{ checksum "src/xcode/Gemfile.lock" }}
           paths:
-            - vendor/bundle	  
+            - src/xcode/vendor/bundle	  
 #      - run: ./scripts/switch_to_dev_env.sh
       - run:
           name: fastlane

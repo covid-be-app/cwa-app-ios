@@ -91,6 +91,11 @@ platform :ios do
       type:"appstore",
       readonly: true
     )
+
+    match(
+      type:"development",
+      readonly: true
+    )
     
     testflight_build_number = latest_testflight_build_number(username:"technical@devside.com",app_identifier:"be.sciensano.coronalertbe")
     
