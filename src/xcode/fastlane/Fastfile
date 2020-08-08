@@ -105,13 +105,10 @@ platform :ios do
       clean: true
     )
     
-    changelog = changelog_from_git_commits()
-
     upload_to_testflight(
       username: "technical@devside.com",
-      skip_waiting_for_build_processing: false, # so we can set changelog
-      skip_submission: true,  # only upload
-      changelog: changelog
+      skip_waiting_for_build_processing: true,
+      skip_submission: true  # only upload
     )
     
     add_git_tag
