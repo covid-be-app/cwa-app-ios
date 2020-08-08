@@ -101,10 +101,10 @@ jobs:
 workflows:
     process:
       jobs:
-#        - test
+        - test
         - testflight-release:
- #           requires:
-  #            - test
+            requires:
+              - test
             filters:
               branches:
                 only:
