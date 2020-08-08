@@ -36,12 +36,12 @@
 "ExposureDetection_LastRiskLevel" = "Laatste contacttracing: %@";
 "ExposureDetection_OffText" = "Activeer contactlogboek om uw risicostatus vandaag te evalueren.";
 "ExposureDetection_OutdatedText" = "Uw contactlogboek kon gedurende meer dan 48 uur niet worden geüpdatet.";
-"ExposureDetection_UnknownText" = "U heeft de contactracing niet lang genoeg aangezet. Daarom kunnen we uw risico op een besmetting niet berekenen.";
+"ExposureDetection_UnknownText" = "U heeft de contacttracing niet lang genoeg aangezet. Daarom kunnen we uw risico op een besmetting niet berekenen.";
 "ExposureDetection_LoadingText" = "Actuele gegevens worden gedownload en gecontroleerd. Dit kan enkele minuten duren.";
 "ExposureDetection_Behavior_Title" = "Richtlijnen";
 "ExposureDetection_Behavior_Subtitle" = "Dit is wat u moet doen";
 "ExposureDetection_Guide_Hands" = "Was uw handen regelmatig.";
-"ExposureDetection_Guide_Mask" = "Draag een mondmasker wanneer u andere mensen tegenkomt.";
+"ExposureDetection_Guide_Mask" = "Draag een mondmasker wanneer u in contact komt met andere mensen.";
 "ExposureDetection_Guide_Distance" = "Houd minstens 1,5 meter afstand van andere mensen.";
 "ExposureDetection_Guide_Sneeze" = "Nies of hoest in uw elleboog of een papieren zakdoekje. ";
 "ExposureDetection_Guide_Home" = "Ga indien mogelijk naar huis en blijf thuis.";
@@ -112,7 +112,7 @@
 "OnboardingInfo_enableLoggingOfContactsPage_stateTitle" = "Contactlogboek";
 "OnboardingInfo_enableLoggingOfContactsPage_stateActive" = "Actief";
 "OnboardingInfo_enableLoggingOfContactsPage_stateStopped" = "Stopgezet";
-"OnboardingInfo_howDoesDataExchangeWorkPage_imageDescription" = "Er wordt een gecodeerde positieve testdiagnose naar het systeem gestuurd, dat nu andere gebruikers zal waarschuwen.";
+"OnboardingInfo_howDoesDataExchangeWorkPage_imageDescription" = "Er wordt een gecodeerde positieve diagnose naar het systeem gestuurd, dat nu andere gebruikers zal waarschuwen.";
 "OnboardingInfo_howDoesDataExchangeWorkPage_title" = "Als u een COVID-19-diagnose krijgt ...";
 "OnboardingInfo_howDoesDataExchangeWorkPage_boldText" = "... meld dit in CoronAlert. Het delen van uw testresultaten gebeurt vrijwillig en is veilig. Doe dit alstublieft in het belang van ieders gezondheid.";
 "OnboardingInfo_howDoesDataExchangeWorkPage_normalText" = "Uw melding is veilig versleuteld en wordt verwerkt op een beveiligde server. De mensen van wie uw toestel de gecodeerde willekeurige ID's heeft verzameld, ontvangen nu een waarschuwing samen met informatie over wat ze nu moeten doen.";
@@ -150,8 +150,8 @@
 "ExposureSubmissionHotline_SectionDescription1" = "Bel de hotline en vraag een CODE aan:";
 "ExposureSubmissionHotline_iconAccessibilityLabel1" = "Stap 1 van 2";
 "ExposureSubmissionHotline_iconAccessibilityLabel2" = "Stap 2 van 2";
-"ExposureSubmission_PhoneNumber" = "+32 000 000000";
-"ExposureSubmission_PhoneDetailDescription" = "Talen: \nNederlands, Frans, Duits, Engels\n\nKantooruren: \nma.-vr.: 8.00-17.00 u\n(niet op feestdagen) \n\nDit is een gratis nummer.";
+"ExposureSubmission_PhoneNumber" = "0800 14 689";
+"ExposureSubmission_PhoneDetailDescription" = "Talen: Nederlands, Frans, Duits, Engels\n\nDit nummer is 7/7 bereikbaar van 9.00 tot 17.00 u.\n\nDit is een gratis nummer.";
 "ExposureSubmission_SectionDescription2" = "Geef de CODE in de app in en registreer de test.";
 "ExposureSubmission_CallButtonTitle" = "Bellen";
 "ExposureSubmission_TANInputButtonTitle" = "Geef de CODE in";
@@ -180,7 +180,6 @@
 "ExposureSubmissionIntroduction_Usage02" = "Omdat alleen gecodeerde willekeurige ID's worden uitgewisseld, blijft u anoniem. Zo gaat u te werk:";
 "ExposureSubmissionIntroduction_ListItem1" = "We vragen u of u symptomen heeft. Als u symptomen heeft, vragen wij u naar de datum waarop de symptomen begonnen.";
 "ExposureSubmissionIntroduction_ListItem2" = "U krijgt een code te zien die u kunt gebruiken om uw testresultaat in de app te zien.";
-"ExposureSubmissionIntroduction_ListItem4" = "Als u geen CODE heeft, kunt u er telefonisch een aanvragen.";
 "ExposureSubmissionResult_Title" = "Testresultaat";
 "ExposureSubmissionResult_CardSubTitle" = "Uw diagnose";
 "ExposureSubmissionResult_CardTitle" = "SARS-CoV-2";
@@ -215,8 +214,8 @@
 "ExposureSubmissionWarnOthers_AccImageDescription" = "Een toestel stuurt een gecodeerde positieve diagnose naar het systeem.";
 "ExposureSubmissionWarnOthers_continueButton" = "Volgende";
 "ExposureSubmissionWarnOthers_sectionTitle" = "We helpen elkaar!";
-"ExposureSubmissionWarnOthers_description" = "Vervolgens kunt u ook aangeven dat CoronAlert uw willekeurige ID's van de voorbije 14 dagen met anderen deelt. Zo kunt u andere mensen waarschuwen en de infectieketen helpen doorbreken. \n\nEr worden alleen onpersoonlijke willekeurige ID's doorgegeven. Uw identiteit blijft anoniem.";
-"ExposureSubmissionWarnOthers_dataPrivacyDescription" = "Door op \"Accepteren\" te tikken stemt u ermee in dat de app uw positieve testresultaat samen met uw willekeurige ID's van de voorbije 14 dagen naar het serversysteem van de app stuurt, zodat andere gebruikers van de app die contacttracing hebben ingeschakeld, er automatisch van op de hoogte kunnen worden gesteld dat ze eventueel aan een risico op besmetting blootgesteld zijn. De willekeurige ID's die voor dit doel worden verzonden, bevatten geen informatie op basis waarvan conclusies over uw identiteit of persoon getrokken kunnen worden. \n\nHet verzenden van uw testresultaat via de app gebeurt op vrijwillige basis. U wordt niet gestraft als u uw testresultaat niet doorgeeft. Aangezien het niet mogelijk is om te traceren of te controleren of en hoe u de app gebruikt, weet alleen u of u de informatie dat u besmet bent, heeft verzonden. \n\nU kunt uw toestemming op eender welk moment intrekken door deze app te verwijderen. Het intrekken van uw toestemming heeft geen invloed op de rechtmatigheid van de verwerking op basis van de toestemming voorafgaand aan de intrekking. Meer informatie kunt u terugvinden in het menu onder \"Informatie over privacy van gegevens\".";
+"ExposureSubmissionWarnOthers_description" = "Vervolgens kunt u ook aangeven dat CoronAlert uw willekeurige ID's van de voorbije 14 dagen met anderen deelt. Zo kunt u andere mensen waarschuwen en de infectieketen helpen doorbreken. \n\nEr worden alleen onpersoonlijke willekeurige ID's doorgegeven. U blijft anoniem.";
+"ExposureSubmissionWarnOthers_dataPrivacyDescription" = "Door op \"Accepteren\" te tikken, stemt u ermee in dat de app uw positieve testresultaat samen met uw willekeurige ID's van de voorbije 14 dagen naar het serversysteem van de app stuurt, zodat andere gebruikers van de app die contacttracing hebben ingeschakeld, er automatisch van op de hoogte kunnen worden gesteld dat ze eventueel aan een risico op besmetting blootgesteld zijn. De willekeurige ID's die voor dit doel worden verzonden, bevatten geen informatie op basis waarvan conclusies over uw identiteit of persoon getrokken kunnen worden. \n\nHet verzenden van uw testresultaat via de app gebeurt op vrijwillige basis. U wordt niet gestraft als u uw testresultaat niet doorgeeft. Aangezien het niet mogelijk is om te traceren of te controleren of en hoe u de app gebruikt, weet alleen u of u de informatie dat u besmet bent, heeft verzonden. \n\nU kunt uw toestemming op eender welk moment intrekken door deze app te verwijderen. Het intrekken van uw toestemming heeft geen invloed op de rechtmatigheid van de verwerking op basis van de toestemming voorafgaand aan de intrekking. Meer informatie kunt u terugvinden in het menu onder \"Informatie over privacy van gegevens\".";
 "ExposureSubmissionWarnOthers_dataPrivacyTitle" = "Privacy van gegevens";
 "ExposureSubmissionResult_RemoveAlert_Title" = "Test verwijderen?";
 "ExposureSubmissionResult_RemoveAlert_Text" = "De test wordt permanent verwijderd uit CoronAlert en kan niet opnieuw worden toegevoegd. Deze procedure kan niet ongedaan gemaakt worden. ";
@@ -284,7 +283,7 @@
 "Home_Risk_Last_Activate_Item_Low_Title" = "Laag risico";
 "Home_Risk_Last_Activate_Item_High_Title" = "Verhoogd risico ";
 "Home_RiskCard_Update_Button" = "Updaten";
-"Home_RiskCard_Unknown_Item_Title" = "U heeft de contactracing niet lang genoeg aangezet. Daarom kunnen we uw besmettingsrisico niet berekenen.";
+"Home_RiskCard_Unknown_Item_Title" = "U heeft de contacttracing niet lang genoeg aangezet. Daarom kunnen we uw besmettingsrisico niet berekenen.";
 "Home_RiskCard_Unknown48h_Body" = "Uw risicoberekening werd meer dan 48 uur niet geüpdatet. Werk de berekening bij.";
 "Home_Risk_Inactive_NoCalculation_Possible_Title" = "Contacttracing stopgezet";
 "Home_Risk_Inactive_Outdated_Results_Title" = "Contacttracing is niet mogelijk";
@@ -299,7 +298,7 @@
 "Home_Risk_Status_Check_Title" = "Controle is bezig ...";
 "Home_Risk_Status_Check_Body" = "Actuele gegevens worden gedownload en gecontroleerd. Dit kan enkele minuten duren.";
 "Home_Thank_You_Card_Title" = "Dank u wel!";
-"Home_Thank_You_Card_Body" = "Dankzij uw steun kunnen andere mensen nu gewaarschuwd worden en op de juiste manier reageren.";
+"Home_Thank_You_Card_Body" = "Dankzij uw medewerking kunnen andere mensen nu gewaarschuwd worden en op de juiste manier reageren.";
 "Home_Thank_You_Card_Note_Title" = "Let op:";
 "Home_Thank_You_Card_Phone_Item_Title" = "De dienst volksgezondheid neemt binnen enkele dagen telefonisch of per brief contact met u op.";
 "Home_Thank_You_Card_Home_Item_Title" = "U bent besmettelijk. Ga in zelfisolatie.";
@@ -349,13 +348,13 @@
 "App_Information_Contact_Hotline_Text" = "0800 14 689";
 "App_Information_Contact_Hotline_Number" = "0800 14 689";
 "App_Information_Contact_Hotline_Description" = "Onze klantendienst is er om u te helpen";
-"App_Information_Contact_Hotline_Terms" = "Talen: Nederlands, Frans, Duits, Engels\n\nKantooruren: \nma.-vr.: 8.00-17.00 u\n(niet op feestdagen) \n\nDit is een gratis nummer.";
+"App_Information_Contact_Hotline_Terms" = "Talen: Nederlands, Frans, Duits, Engels\n\nDit nummer is 7/7 bereikbaar van 9.00 tot 17.00 u.\n\nDit is een gratis nummer.";
 "App_Information_Imprint_Navigation" = "Bedrijf";
-"App_Information_Imprint_ImageDescription" = "U ziet een hand met een smartphone met een grote hoeveelheid tekst op het schermpje. Het symbooltje naast de tekst verwijst naar de colofon.";
+"App_Information_Imprint_ImageDescription" = "U ziet een hand met een smartphone met een grote hoeveelheid tekst op het schermpje. Het symbooltje naast de tekst verwijst naar het colofon.";
 "App_Information_Imprint_Section2_Title" = "Gepubliceerd door Sciensano";
 "App_Information_Imprint_Section2_Text" = "Juliette Wytsmanstraat 14\n1050 Brussel";
 "App_Information_Imprint_Section3_Title" = "Contact";
-"App_Information_Imprint_Section3_Text" = "E-mail:  info@sciensano.be \nTelefoon:   +32 2 642 51 11";
+"App_Information_Imprint_Section3_Text" = "E-mail:  info@sciensano.be \nTelefoon:   0800 14 0689";
 "App_Information_Imprint_Section4_Title" = "BTW-identificatienummer";
 "App_Information_Imprint_Section4_Text" = "BE0693.876.830";
 "App_Information_Legal_Navigation" = "Wettelijke vermeldingen";
@@ -394,7 +393,7 @@
 "RiskLegend_Title" = "Overzicht";
 "RiskLegend_Subtitle" = "Belangrijke functies en concepten";
 "RiskLegend_Legend1_Title" = "Contactlogboek";
-"RiskLegend_Legend1_Text" = "Het contactlogboek is een van de drie centrale kenmerken van de app. Wanneer u dit logboek activeert, worden contacten met toestellen van mensen gelogd. U hoeft verder niets te doen.";
+"RiskLegend_Legend1_Text" = "Het contactlogboek is een van de drie centrale kenmerken van de app. Wanneer u dit logboek activeert, worden contacten met toestellen van anderen gelogd. U hoeft verder niets te doen.";
 "RiskLegend_Legend2_Text" = "Als u in de afgelopen 14 dagen contact heeft gehad met iemand die een COVID-19-diagnose heeft gekregen, dan berekent de app uw persoonlijke besmettingsrisico. Hiervoor meet hij de duur en de nabijheid van het contact.";
 "RiskLegend_Legend2_RiskLevels" = "De volgende risicostatus kan getoond worden:";
 "RiskLegend_Legend2_High" = "Hoog risico";
@@ -405,7 +404,7 @@
 "RiskLegend_Legend2_Unknown_Color" = "Grijs";
 "RiskLegend_Legend3_Title" = "Andere gebruikers informeren";
 "RiskLegend_Legend3_Text" = "Een andere centrale functie is het registreren van uw test en het ophalen van het resultaat. Als u een COVID-19-diagnose krijgt, kunt u anderen op de hoogte stellen en de infectieketen doorbreken.";
-"RiskLegend_Definitions_Title" = "Definitie van termen";
+"RiskLegend_Definitions_Title" = "Definitie terminologie";
 "RiskLegend_Store_Title" = "Contactlogboek";
 "RiskLegend_Store_Text" = "Lijst van ontvangen tijdelijke willekeurige ID's die tijdelijk zijn opgeslagen in het besturingssysteem. Deze lijst wordt gelezen wanneer de contacten worden gecontroleerd. Alle willekeurige ID's worden na 14 dagen automatisch gewist.";
 "RiskLegend_Check_Title" = "Contactcontrole";

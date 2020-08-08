@@ -16,10 +16,10 @@
 "Common_BackgroundFetch_SettingsTitle" = "Geräteeinstellungen öffnen";
 "Common_BackgroundFetch_OKTitle" = "Risiko-Ermittlung manuell starten";
 "Common_BackgroundFetch_AlertTitle" = "Hintergrundaktualisierung ausgeschaltet";
-"General_moreInfo_URL" = "https://www.coronawarn.app/de/faq/";
-"General_moreInfo_URL_EN5" = "https://www.coronawarn.app/de/faq/#ENError5";
-"General_moreInfo_URL_EN11" = "https://www.coronawarn.app/de/faq/#ENError11";
-"General_moreInfo_URL_EN13" = "https://www.coronawarn.app/de/faq/#ENError13";
+"General_moreInfo_URL" = "https://www.coronalert.be";
+"General_moreInfo_URL_EN5" = "https://www.coronalert.be";
+"General_moreInfo_URL_EN11" = "https://www.coronalert.be";
+"General_moreInfo_URL_EN13" = "https://www.coronalert.be";
 "AccessibilityLabel_Close" = "Schließen";
 "AccessibilityLabel_PhoneNumber" = "Telefonnummer";
 "ExposureDetection_Off" = "Risiko-Ermittlung gestoppt";
@@ -120,7 +120,7 @@
 "OnboardingInfo_alwaysStayInformedPage_title" = "Warnungen erhalten, Risiken kennen";
 "OnboardingInfo_alwaysStayInformedPage_boldText" = "Die App kann Sie automatisch über Ihren Risikostatus informieren und bei Neuinfektionen von Menschen, denen Sie begegnet sind, warnen. Erlauben Sie der App jetzt, Sie zu benachrichtigen.";
 "OnboardingInfo_alwaysStayInformedPage_normalText" = "Auf diese Weise können Sie sich zum Schutz Ihrer Mitmenschen in Isolation begeben und sich nach entsprechender Abklärung testen lassen.";
-"ExposureSubmission_Hotline_Number" = "+498007540002";
+"ExposureSubmission_Hotline_Number" = "0800 14 689";
 "ExposureSubmission_DataPrivacyTitle" = "Datenschutz";
 "ExposureSubmission_Continue_actionText" = "Weiter";
 "ExposureSubmission_DataPrivacyDescription" = "Durch Antippen von „Erlauben“ willigen Sie ein, dass die App den Status Ihres Corona-Virus-Tests abfragen und in der App anzeigen darf. Diese Funktion steht Ihnen zur Verfügung, wenn Sie einen QR-Code erhalten und eingewilligt haben, dass Ihr Testergebnis an das Serversystem der App übermittelt werden darf. Sobald das Testlabor Ihr Testergebnis auf dem Server hinterlegt hat, können Sie das Ergebnis in der App sehen. Falls Sie Mitteilungen aktiviert haben, werden Sie auch außerhalb der App über den Eingang des Testergebnis informiert. Das Testergebnis selbst wird aus Datenschutzgründen jedoch nur in der App angezeigt. Sie können diese Einwilligung jederzeit widerrufen, indem Sie die Testregistrierung in der App löschen. Durch den Widerruf der Einwilligung wird die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung nicht berührt. Weitere Informationen finden Sie unter dem Menüpunkt „Datenschutzinformation“.";
@@ -150,7 +150,7 @@
 "ExposureSubmissionHotline_SectionDescription1" = "Hotline anrufen & TAN erfragen:";
 "ExposureSubmissionHotline_iconAccessibilityLabel1" = "Schritt 1 von 2";
 "ExposureSubmissionHotline_iconAccessibilityLabel2" = "Schritt 2 von 2";
-"ExposureSubmission_PhoneNumber" = "+49 800 7540002";
+"ExposureSubmission_PhoneNumber" = "0800 14 689";
 "ExposureSubmission_PhoneDetailDescription" = "Sprachen:\nDeutsch, Englisch, Türkisch\n\nErreichbarkeit:\nMo - So: Täglich 24 Stunden\n\nDer Anruf ist kostenfrei.";
 "ExposureSubmission_SectionDescription2" = "Test per TAN-Eingabe in der App registrieren";
 "ExposureSubmission_CallButtonTitle" = "Anrufen";
@@ -180,7 +180,6 @@
 "ExposureSubmissionIntroduction_Usage02" = "Da nur verschlüsselte Zufallscodes ausgetauscht werden, bleiben Sie unerkannt. Sie können jetzt wie folgt vorgehen:";
 "ExposureSubmissionIntroduction_ListItem1" = "Sie werden gefragt, ob Sie Symptome haben. Wenn Sie Symptome haben, werden Sie nach dem Datum des Auftretens der Symptome gefragt.";
 "ExposureSubmissionIntroduction_ListItem2" = "Ihnen wird ein Code angezeigt, mit dem Sie Ihr Testergebnis in der App abrufen können.";
-"ExposureSubmissionIntroduction_ListItem4" = "Wenn Sie keine TAN haben, können Sie diese telefonisch anfragen.";
 "ExposureSubmissionResult_Title" = "Testergebnis";
 "ExposureSubmissionResult_CardSubTitle" = "IHR BEFUND";
 "ExposureSubmissionResult_CardTitle" = "SARS-CoV-2";
@@ -262,7 +261,7 @@
 "ExposureNotificationSetting_Dismiss_Action" = "Abbrechen";
 "ExposureNotificationSetting_GeneralError_Title" = "Fehler";
 "ExposureNotificationSetting_GeneralError_LearnMore_Action" = "Mehr erfahren";
-"ExposureNotificationSetting_GeneralError_LearnMore_URL" = "https://www.coronawarn.app/de/faq/";
+"ExposureNotificationSetting_GeneralError_LearnMore_URL" = "https://www.coronalert.be";
 "ExposureNotificationSetting_AuthenticationError" = "Bei der Aktivierung der Risiko-Ermittlung ist ein Fehler aufgetreten. Bitte prüfen Sie in den Einstellungen, ob Sie das COVID-19-Kontaktprotokoll aktiviert haben.";
 "ExposureNotificationSetting_exposureNotification_Required" = "Bei der Aktivierung der Risiko-Ermittlung ist ein Fehler aufgetreten. Bitte prüfen Sie in den Einstellungen, ob für diese App die COVID-19-Kontaktmitteilung aktiviert wurde.";
 "ExposureNotificationSetting_exposureNotification_unavailable" = "Bei der Aktivierung der Risiko-Ermittlung ist ein Fehler aufgetreten. Bitte prüfen Sie in den Einstellungen, ob diese App für die COVID-19-Kontaktermittlung als aktive App ausgewählt wurde. Besuchen Sie die FAQ-Website für weitere Informationen.";
@@ -346,8 +345,8 @@
 "App_Information_Contact_Title" = "Wie können wir Ihnen helfen?";
 "App_Information_Contact_Description" = "Für technische Fragen rund um Coronalert können Sie sich direkt an unsere technische Hotline wenden.";
 "App_Information_Contact_Hotline_Title" = "Technische Hotline";
-"App_Information_Contact_Hotline_Text" = "+49 800 7540001";
-"App_Information_Contact_Hotline_Number" = "+498007540001";
+"App_Information_Contact_Hotline_Text" = "0800 14 689";
+"App_Information_Contact_Hotline_Number" = "0800 14 689";
 "App_Information_Contact_Hotline_Description" = "Unser Kundenservice ist für Sie da.";
 "App_Information_Contact_Hotline_Terms" = "Sprachen: Deutsch, Englisch, Türkisch\n\nErreichbarkeit:\nMo - Sa: 07:00 - 22:00 Uhr\n(außer an bundesweiten Feiertagen)\n\nDer Anruf ist kostenfrei.";
 "App_Information_Imprint_Navigation" = "Unternehmen";
@@ -355,7 +354,7 @@
 "App_Information_Imprint_Section2_Title" = "Herausgegeben von Sciensano";
 "App_Information_Imprint_Section2_Text" = "Rue Juliette Wytsmanstraat 14\n1050 Brüssel (Belgien)";
 "App_Information_Imprint_Section3_Title" = "Kontakt";
-"App_Information_Imprint_Section3_Text" = "E-mail:  info@sciensano.be \nTelefon:   +32 2 642 51 11";
+"App_Information_Imprint_Section3_Text" = "E-mail:  info@sciensano.be \nTelefon:   0800 14 689";
 "App_Information_Imprint_Section4_Title" = "Umsatzsteueridentifikationsnummer";
 "App_Information_Imprint_Section4_Text" = "BE0693.876.830";
 "App_Information_Legal_Navigation" = "Rechtliche Hinweise";
@@ -437,12 +436,12 @@
 "BESelectKeyCountries_title" = "Länder auswählen";
 "BESelectKeyCountries_explanation" = "Wenn Sie an jedem der unten aufgeführten Daten nicht in Belgien gewesen sind und diese Informationen (anonym) weitergeben möchten, wählen Sie bitte das Land, das Sie an diesem Datum besucht haben, indem Sie auf die Zeile tippen, die Sie ändern möchten.";
 "BESelectKeyCountries_sendKeys" = "IDs teilen";
-"No Exposure Configuration available" = "Keine Belichtungskonfiguration verfügbar";
-"BEExposureSubmission_symptomsTitle" = "Überprüfung der Symptome";
+"No Exposure Configuration available" = "Keine Risikokonfiguration verfügbar";
+"BEExposureSubmission_symptomsTitle" = "Symptome überprüfen";
 "BEExposureSubmission_symptomsExplanation" = "Treten derzeit Symptome auf?";
 "BEExposureSubmission_yes" = "Ja";
 "BEExposureSubmission_no" = "Nein";
 "BEExposureSubmission_cancel" = "Abbrechen";
-"BESelectSymptomsDate_title" = "Datum auswählen";
+"BESelectSymptomsDate_title" = "Datum wählen";
 "BESelectSymptomsDate_next" = "Weiter";
-"InviteFriends_Description" = "Je mehr Menschen mitmachen, desto besser durchbrechen wir Infektionsketten. Laden Sie Familie, Freunde und Bekannte ein!";
+"InviteFriends_Description" = "Je häufiger die App benutzt wird, desto eher gebieten wir der Infektion Einhalt. Bitten Sie Familie, Freunde und Bekannte, die App herunterzuladen!";

@@ -120,7 +120,7 @@
 "OnboardingInfo_alwaysStayInformedPage_title" = "Recevoir des avertissements et identifier les risques.";
 "OnboardingInfo_alwaysStayInformedPage_boldText" = "L'application peut vous informer automatiquement de votre statut de risque et vous avertir des nouvelles infections de personnes auxquelles vous avez été exposé. Autorisez l'application à vous avertir dès maintenant. ";
 "OnboardingInfo_alwaysStayInformedPage_normalText" = "Vous pouvez alors vous isoler pour protéger les autres et chercher un endroit où vous faire tester.";
-"ExposureSubmission_Hotline_Number" = "+498007540002";
+"ExposureSubmission_Hotline_Number" = "0800 14 689";
 "ExposureSubmission_DataPrivacyTitle" = "Confidentialité des données";
 "ExposureSubmission_Continue_actionText" = "Suivant";
 "ExposureSubmission_DataPrivacyDescription" = "En appuyant sur \"accepter\", vous consentez à ce que l'application interroge le statut de votre test coronavirus et l'affiche dans l'application. Cette fonction vous est accessible si vous avez reçu un QR code et si vous avez consenti à ce que le résultat de votre test soit transmis au serveur de l'application. Dès que le laboratoire de test a stocké votre résultat sur le serveur, vous pourrez le voir dans l'application. Si vous avez activé les notifications, vous recevrez également une notification en dehors de l'application vous informant que votre résultat de test a été reçu. Toutefois, pour des raisons de confidentialité, le résultat du test lui-même ne sera affiché que dans l'application. Vous pouvez retirer ce consentement à tout moment en supprimant votre inscription au test dans l'application. Le retrait de votre consentement n'affectera pas la légalité du traitement avant son retrait. Vous trouverez de plus amples informations dans la rubrique \"Informations sur la protection des données\".";
@@ -150,7 +150,7 @@
 "ExposureSubmissionHotline_SectionDescription1" = "Appelez le numéro d'information et demandez un CODE :";
 "ExposureSubmissionHotline_iconAccessibilityLabel1" = "Étape 1 sur 2";
 "ExposureSubmissionHotline_iconAccessibilityLabel2" = "Étape 2 sur 2";
-"ExposureSubmission_PhoneNumber" = "+49 800 7540002";
+"ExposureSubmission_PhoneNumber" = "0800 14 689";
 "ExposureSubmission_PhoneDetailDescription" = "Langues : allemand, anglais, français, néerlandais\nCette ligne est accessible 7j/7 de 9h à 17h.\nL'appel est gratuit.";
 "ExposureSubmission_SectionDescription2" = "Enregistrez le test en entrant le CODE dans l'application.";
 "ExposureSubmission_CallButtonTitle" = "Appeler";
@@ -180,7 +180,6 @@
 "ExposureSubmissionIntroduction_Usage02" = "Comme seuls des identifiants aléatoires cryptés sont échangés, vous restez anonyme. Vous pouvez maintenant procéder comme suit :";
 "ExposureSubmissionIntroduction_ListItem1" = "On vous demandera si vous présentez des symptômes. Si vous présentez des symptômes, on vous demandera la date d'apparition des symptômes.";
 "ExposureSubmissionIntroduction_ListItem2" = "Vous verrez un code qui peut être utilisé pour obtenir votre résultat de test dans l'application.";
-"ExposureSubmissionIntroduction_ListItem4" = "Si vous n'avez pas de CODE, vous pouvez en demander un par téléphone.";
 "ExposureSubmissionResult_Title" = "Résultat du test";
 "ExposureSubmissionResult_CardSubTitle" = "Votre diagnostic";
 "ExposureSubmissionResult_CardTitle" = "SARS-CoV-2";
