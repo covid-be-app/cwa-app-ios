@@ -79,28 +79,29 @@ final class ActiveTracingTests: XCTestCase {
 		)
 	}
 
+	// :BE: different translations
 	func testLocalizedLowRiskLevelHomeScreenText() {
 		XCTAssertEqual(
 			_activeTracing(interval: 0).localizedDuration,
-			"Risiko-Ermittlung war für 0 der letzten 14 Tage aktiv"
+			"Kontaktlogbuch war an 0 der letzten 14 Tage aktiv"
 		)
 
 		// 13 hours = 1 day
 		XCTAssertEqual(
 			_activeTracing(interval: 3_600 * 13).localizedDuration,
-			"Risiko-Ermittlung war für 1 der letzten 14 Tage aktiv"
+			"Kontaktlogbuch war an 1 der letzten 14 Tage aktiv"
 		)
 
 		// 14 days yields different text
 		XCTAssertEqual(
 			_activeTracing(interval: 3_600 * 24 * 14).localizedDuration,
-			"Risiko-Ermittlung dauerhaft aktiv"
+			"Kontaktlogbuch dauerhaft aktiv"
 		)
 
 		// 14+ days yields different text
 		XCTAssertEqual(
 			_activeTracing(interval: 3_600 * 24 * 15).localizedDuration,
-			"Risiko-Ermittlung dauerhaft aktiv"
+			"Kontaktlogbuch dauerhaft aktiv"
 		)
 	}
 }

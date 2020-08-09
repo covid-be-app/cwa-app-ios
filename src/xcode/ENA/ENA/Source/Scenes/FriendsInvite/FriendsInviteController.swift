@@ -38,7 +38,8 @@ final class FriendsInviteController: UIViewController {
 		navigationController?.navigationBar.prefersLargeTitles = true
 		navigationItem.title = AppStrings.InviteFriends.navigationBarTitle
 
-		subtitleLabel.text = AppStrings.InviteFriends.subtitle
+		// :BE: remove text
+		subtitleLabel.text = nil //AppStrings.InviteFriends.subtitle
 		titleLabel.text = AppStrings.InviteFriends.title
 		descriptionLabel.text = AppStrings.InviteFriends.description
 		imageView.isAccessibilityElement = true
