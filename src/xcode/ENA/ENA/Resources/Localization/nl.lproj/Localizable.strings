@@ -151,7 +151,7 @@
 "ExposureSubmissionHotline_iconAccessibilityLabel1" = "Stap 1 van 2";
 "ExposureSubmissionHotline_iconAccessibilityLabel2" = "Stap 2 van 2";
 "ExposureSubmission_PhoneNumber" = "0800 14 689";
-"ExposureSubmission_PhoneDetailDescription" = "Talen: Nederlands, Frans, Duits, Engels\n\nDit nummer is 7/7 bereikbaar van 9.00 tot 17.00 u.\n\nDit is een gratis nummer.";
+"ExposureSubmission_PhoneDetailDescription" = "Talen: \nNederlands, Frans, Duits, Engels\n\nOpeningsuren\nMa.-vr.: 9.00-17.00 u.\n\nDit is een gratis nummer.";
 "ExposureSubmission_SectionDescription2" = "Geef de CODE in de app in en registreer de test.";
 "ExposureSubmission_CallButtonTitle" = "Bellen";
 "ExposureSubmission_TANInputButtonTitle" = "Geef de CODE in";
@@ -348,7 +348,7 @@
 "App_Information_Contact_Hotline_Text" = "0800 14 689";
 "App_Information_Contact_Hotline_Number" = "0800 14 689";
 "App_Information_Contact_Hotline_Description" = "Onze klantendienst is er om u te helpen";
-"App_Information_Contact_Hotline_Terms" = "Talen: Nederlands, Frans, Duits, Engels\n\nDit nummer is 7/7 bereikbaar van 9.00 tot 17.00 u.\n\nDit is een gratis nummer.";
+"App_Information_Contact_Hotline_Terms" = "Talen: Nederlands, Frans, Duits, Engels\n\nOpeningsuren\nMa.-vr.: 9.00-17.00 u.\n\nDit is een gratis nummer.";
 "App_Information_Imprint_Navigation" = "Bedrijf";
 "App_Information_Imprint_ImageDescription" = "U ziet een hand met een smartphone met een grote hoeveelheid tekst op het schermpje. Het symbooltje naast de tekst verwijst naar het colofon.";
 "App_Information_Imprint_Section2_Title" = "Gepubliceerd door Sciensano";
