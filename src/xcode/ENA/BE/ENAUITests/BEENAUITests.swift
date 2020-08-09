@@ -25,16 +25,11 @@ class BEENAUITests: XCTestCase {
 	override func setUpWithError() throws {
 		continueAfterFailure = false
 		app = XCUIApplication()
-		setupSnapshot(app)
 		app.setDefaults()
 		app.launchArguments.append(contentsOf: ["-isOnboarded", "YES"])
-		app.launchArguments += ["-AppleLanguages", "(nl)"]
-		app.launchArguments += ["-AppleLocale", "nl_BE"]
+		app.launchArguments += ["-AppleLanguages", "(en)"]
+		app.launchArguments += ["-AppleLocale", "en_US"]
 
-	}
-
-	override func tearDownWithError() throws {
-		// Put teardown code here. This method is called after the invocation of each test method in the class.
 	}
 
 	func testGetKeyWithoutSymptoms() throws {
@@ -89,5 +84,9 @@ class BEENAUITests: XCTestCase {
 		app.buttons["BEAppStrings.BEMobileTestId.save"].tap()
 
 		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
+		
+		let text = app.localized(AppStrings.Home.resultCardPendingDesc)
+		
+		XCTAssert(app.labelContains(text: text))		
 	}
 }
