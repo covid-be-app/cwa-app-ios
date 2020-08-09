@@ -151,7 +151,7 @@
 "ExposureSubmissionHotline_iconAccessibilityLabel1" = "Step 1 of 2";
 "ExposureSubmissionHotline_iconAccessibilityLabel2" = "Step 2 of 2";
 "ExposureSubmission_PhoneNumber" = "0800 14 689";
-"ExposureSubmission_PhoneDetailDescription" = "Languages: \nGerman, English, Turkish\n\nBusiness hours:\nMonday to Sunday: 9am-5pm\n\nThe call is free of charge.";
+"ExposureSubmission_PhoneDetailDescription" = "Languages: \nGerman, English, Turkish\n\nBusiness hours:\nMonday to Friday: 9am-5pm\n\nThe call is free of charge.";
 "ExposureSubmission_SectionDescription2" = "Register the test by entering the TAN in the app.";
 "ExposureSubmission_CallButtonTitle" = "Call";
 "ExposureSubmission_TANInputButtonTitle" = "Enter TAN";
@@ -348,7 +348,7 @@
 "App_Information_Contact_Hotline_Text" = "0800 14 689";
 "App_Information_Contact_Hotline_Number" = "0800 14 689";
 "App_Information_Contact_Hotline_Description" = "Our customer service is here to help.";
-"App_Information_Contact_Hotline_Terms" = "Languages: German, English, Turkish\n\nBusiness hours:\nMonday to Sunday from 9AM to 5PM.\n\nThe call is free of charge.";
+"App_Information_Contact_Hotline_Terms" = "Languages: German, English, Turkish\n\nBusiness hours:\nMonday to Friday from 9AM to 5PM.\n\nThe call is free of charge.";
 "App_Information_Imprint_Navigation" = "Company";
 "App_Information_Imprint_ImageDescription" = "A hand holds a smartphone displaying a large body of text on the screen. Next to the text is a section symbol representing the imprint.";
 "App_Information_Imprint_Section2_Title" = "Published by Sciensano";
