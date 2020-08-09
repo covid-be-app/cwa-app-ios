@@ -180,11 +180,15 @@ final class OnboardingInfoViewController: UIViewController {
 		stateStateLabel.text = exposureNotificationsEnabled ? onboardingInfo.stateActivated : onboardingInfo.stateDeactivated
 
 		switch pageType {
+			
+			// :BE: remove panel
+			/*
 		case .enableLoggingOfContactsPage:
 			addPanel(
 				title: AppStrings.Onboarding.onboardingInfo_enableLoggingOfContactsPage_panelTitle,
 				body: AppStrings.Onboarding.onboardingInfo_enableLoggingOfContactsPage_panelBody
 			)
+*/
 		case .privacyPage:
 			innerStackView.isHidden = true
 			let textView = HtmlTextView()
