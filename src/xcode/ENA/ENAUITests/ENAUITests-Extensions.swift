@@ -69,14 +69,21 @@ extension XCUIApplication {
 		if str.count == 2 {
 			return str
 		}
-		let start = str.index(str.startIndex, offsetBy: 1)
+		
+		// :BE: fix bug
+		
+		let start = str.index(str.startIndex, offsetBy: 0)
 		let end = str.index(start, offsetBy: 2)
 		let range = start..<end
 
 		let locale = str[range]
+		
+		// :BE: remove base
+		/*
 		if locale == "en" {
-			return "Base"
-		}
+			return "en"
+		}*/
+		
 		return String(locale)
 	}
 
