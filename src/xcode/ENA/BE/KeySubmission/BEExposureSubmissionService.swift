@@ -42,6 +42,8 @@ class BEExposureSubmissionService : ENAExposureSubmissionService {
 			if newValue != nil {
 				print(newValue!)
 				store.registrationToken = newValue!.registrationToken
+				// set as pending so the home view controller shows the right state
+				store.testResult = .pending
 			}
 		}
 	}
