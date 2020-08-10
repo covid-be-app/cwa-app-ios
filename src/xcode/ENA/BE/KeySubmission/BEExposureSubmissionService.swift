@@ -127,7 +127,11 @@ class BEExposureSubmissionService : ENAExposureSubmissionService {
 			return
 		}
 		
-		httpClient.submit(keys: keys, countries:countries, mobileTestId: mobileTestId, dateTestCommunicated: testResult.dateTestCommunicated) { error in
+		httpClient.submit(
+			keys: keys,
+			countries:countries,
+			mobileTestId: mobileTestId,
+			testResult: testResult) { error in
 			if let error = error {
 				logError(message: "Error while submiting diagnosis keys: \(error.localizedDescription)")
 				completion(self.parseError(error))
