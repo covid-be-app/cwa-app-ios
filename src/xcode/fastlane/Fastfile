@@ -92,13 +92,6 @@ platform :ios do
       readonly: true
     )
 
-    testflight_build_number = latest_testflight_build_number(username:"technical@devside.com",app_identifier:"be.sciensano.coronalertbe")
-    
-    increment_build_number(
-        build_number: testflight_build_number + 1,
-        xcodeproj: "ENA/ENA.xcodeproj"
-      )
-
     build_ios_app(
       scheme: "ENA",
       configuration: "Release",
