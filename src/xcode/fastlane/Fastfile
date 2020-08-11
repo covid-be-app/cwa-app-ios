@@ -91,6 +91,10 @@ platform :ios do
       type:"appstore",
       readonly: true
     )
+    
+    increment_build_number(
+      xcodeproj: "ENA/ENA.xcodeproj"
+    )
 
     build_ios_app(
       scheme: "ENA",
@@ -104,8 +108,13 @@ platform :ios do
       skip_submission: true  # only upload
     )
     
-    add_git_tag
+    commit_version_bump(
+      message:"[skip ci] version bump",
+      xcodeproj: "ENA/ENA.xcodeproj"
+    )
     
+    add_git_tag
+
     push_to_git_remote
   end
   
