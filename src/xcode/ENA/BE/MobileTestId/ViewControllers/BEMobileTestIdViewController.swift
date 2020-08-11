@@ -33,6 +33,7 @@ class BEMobileTestIdViewController: UIViewController, ENANavigationControllerWit
 		}
 	}
 
+	@IBOutlet weak var dateLabel:UILabel!
 	@IBOutlet weak var codeLabel:UILabel!
 	@IBOutlet weak var qrCodeImageView:UIImageView!
 	@IBOutlet weak var saveExplanationLabel:UILabel!
@@ -58,10 +59,14 @@ class BEMobileTestIdViewController: UIViewController, ENANavigationControllerWit
 		navigationFooterItem?.isPrimaryButtonEnabled = true
 		saveExplanationLabel.text = BEAppStrings.BEMobileTestId.saveExplanation
 
-		let qrCodeImage = UIImage.generateQRCode(mobileTestId.fullString, size: qrCodeImageView.bounds.size.width * self.view.contentScaleFactor)
+		let qrCodeImage = UIImage.generateQRCode("\(mobileTestId.datePatientInfectious)|\(mobileTestId.fullString)", size: qrCodeImageView.bounds.size.width * self.view.contentScaleFactor)
 		
 		qrCodeImageView.image = qrCodeImage
 		codeLabel.text = mobileTestId.fullString
+		let dateFormatter = DateFormatter()
+		dateFormatter.dateStyle = .medium
+		dateFormatter.timeStyle = .none
+		dateLabel.text = dateFormatter.string(from:mobileTestId.datePatientInfectious.dateWithoutTime!)
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
