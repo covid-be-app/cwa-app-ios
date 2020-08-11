@@ -52,7 +52,7 @@ class BEMobileTestIdTests: XCTestCase {
 		
 		XCTAssertEqual(testId.id.count, 15)
 		XCTAssertEqual(testId.checksum.count,2)
-		XCTAssertEqual(testId.fullString.count,28)
+		XCTAssertEqual(testId.fullString.count,21)
 		
 		
 		XCTAssertNotEqual(Int(testId.id),nil)
