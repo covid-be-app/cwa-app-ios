@@ -83,24 +83,38 @@ class BEExposureSubmissionService : ENAExposureSubmissionService {
 	}
 	
 	func retrieveDiagnosisKeys(completionHandler: @escaping BEExposureSubmissionGetKeysHandler) {
-		diagnosiskeyRetrieval.accessDiagnosisKeys { keys, error in
+		guard
+			let mobileTestId = store.mobileTestId,
+			let testResult = store.testResult else {
+				completionHandler(.failure(ExposureSubmissionError.internal))
+				return
+		}
+		
+		guard
+			let dateTestCommunicated = testResult.dateTestCommunicated.dateWithoutTime,
+			let datePatientInfectious = mobileTestId.datePatientInfectious.dateWithoutTime else {
+				completionHandler(.failure(ExposureSubmissionError.internal))
+				return
+		}
+
+		diagnosiskeyRetrieval.getKeysInDateRange(startDate: datePatientInfectious, endDate: dateTestCommunicated) { keys,error in
+			
+			if error == nil && keys == nil {
+				completionHandler(.failure(.noKeys))
+				return
+			}
+			
 			if let error = error {
 				logError(message: "Error while retrieving diagnosis keys: \(error.localizedDescription)")
 				completionHandler(.failure(self.parseError(error)))
 				return
 			}
 
-			guard var keys = keys, !keys.isEmpty else {
-				completionHandler(.failure(.noKeys))
-				return
-			}
-			keys.processedForSubmission()
-
-			completionHandler(.success(keys))
+			var processedKeys = keys!
+			processedKeys.processedForSubmission()
+			completionHandler(.success(processedKeys))
 		}
-
 	}
-
 	
 	/// This method submits the exposure keys. Additionally, after successful completion,
 	/// the timestamp of the key submission is updated.

@@ -17,17 +17,27 @@
 // under the License.
 //
 
-import Foundation
+import XCTest
 import ExposureNotification
 
-extension ENIntervalNumber {
-	var date:Date {
-		get {
-			return Date(timeIntervalSince1970: TimeInterval(self) * 600)
-		}
-	}
+@testable import ENA
+
+class BEIntervalNumberTests: XCTestCase {
+
+    func testFromDate() throws {
+		let date = Date()
+		let intervalNumber = ENIntervalNumber.fromDate(date)
+		let comparisonValue = (Int(date.timeIntervalSince1970) / 600) * 600
+		
+		XCTAssertTrue(intervalNumber * 600 == comparisonValue)
+    }
 	
-	static func fromDate(_ date:Date) -> ENIntervalNumber {
-		ENIntervalNumber(Int(date.timeIntervalSince1970) / 600)
+	func testToDate() throws {
+		let date = Date()
+		let comparisonValue = TimeInterval((Int(date.timeIntervalSince1970) / 600) * 600)
+		let comparisonDate = Date(timeIntervalSince1970: comparisonValue)
+		let intervalNumber = ENIntervalNumber(Int(date.timeIntervalSince1970) / 600)
+		
+		XCTAssertTrue(intervalNumber.date == comparisonDate)
 	}
 }
