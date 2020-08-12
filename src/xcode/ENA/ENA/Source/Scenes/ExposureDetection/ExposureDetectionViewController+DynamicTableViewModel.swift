@@ -317,11 +317,14 @@ extension ExposureDetectionViewController {
 			header: .backgroundSpace(height: 8),
 			footer: .backgroundSpace(height: 16),
 			cells: [
+				// :BE: no longer used
+				/*
 				.header(
 					title: AppStrings.ExposureDetection.explanationTitle,
 					subtitle: isActive ? AppStrings.ExposureDetection.explanationSubtitleActive : AppStrings.ExposureDetection.explanationSubtitleInactive
 				),
 				.body(text: text, accessibilityIdentifier: accessibilityIdentifier)
+*/
 			]
 		)
 	}
