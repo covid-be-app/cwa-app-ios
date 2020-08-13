@@ -116,6 +116,12 @@ platform :ios do
     add_git_tag
 
     push_to_git_remote
+    
+    create_pull_request(
+      repo: "covid-be-app/cwa-app-ios",
+      title: "Version Bump",
+      base: "develop", # optional, defaults to "master"
+    )
   end
   
   lane :screenshots do
