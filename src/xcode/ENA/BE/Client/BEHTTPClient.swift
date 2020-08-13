@@ -97,13 +97,13 @@ class BEHTTPClient : HTTPClient {
 		keys: [ENTemporaryExposureKey],
 		countries: [BECountry],
 		mobileTestId: BEMobileTestId,
-		dateTestCommunicated:String,
+		testResult:TestResult,
 		completion: @escaping SubmitKeysCompletionHandler
 	) {
 		guard let request = try? URLRequest.submitKeysRequest(
 			configuration: configuration,
 			mobileTestId: mobileTestId,
-			dateTestCommunicated: dateTestCommunicated,
+			testResult: testResult,
 			keys: keys,
 			countries: countries
 		) else {
@@ -132,7 +132,7 @@ private extension URLRequest {
 	static func submitKeysRequest(
 		configuration: HTTPClient.Configuration,
 		mobileTestId: BEMobileTestId,
-		dateTestCommunicated:String,
+		testResult:TestResult,
 		keys: [ENTemporaryExposureKey],
 		countries: [BECountry]
 	) throws -> URLRequest {
@@ -163,8 +163,13 @@ private extension URLRequest {
 		)
 
 		request.setValue(
-			dateTestCommunicated,
+			testResult.dateTestCommunicated,
 			forHTTPHeaderField: "Date-Test-Communicated"
+		)
+
+		request.setValue(
+			"\(testResult.resultChannel.rawValue)",
+			forHTTPHeaderField: "Result-Channel"
 		)
 
 		request.setValue(

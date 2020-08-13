@@ -20,9 +20,17 @@
 import Foundation
 import ExposureNotification
 
-
-class BEExposureSubmissionService : ENAExposureSubmissionService {
+protocol BEExposureSubmissionService : ExposureSubmissionService {
 	typealias BEExposureSubmissionGetKeysHandler = (Result<[ENTemporaryExposureKey], ExposureSubmissionError>) -> Void
+	
+	var httpClient:BEHTTPClient { get }
+	var mobileTestId:BEMobileTestId? { get set }
+	
+	func retrieveDiagnosisKeys(completionHandler: @escaping BEExposureSubmissionGetKeysHandler)
+	func submitExposure(keys:[ENTemporaryExposureKey],countries:[BECountry], completionHandler: @escaping ExposureSubmissionHandler)
+}
+
+class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposureSubmissionService {
 	
 	lazy var httpClient:BEHTTPClient = {
 		guard let beClient = client as? BEHTTPClient else {
@@ -44,6 +52,7 @@ class BEExposureSubmissionService : ENAExposureSubmissionService {
 				store.registrationToken = newValue!.registrationToken
 				// set as pending so the home view controller shows the right state
 				store.testResult = .pending
+				store.devicePairingSuccessfulTimestamp = Int64(Date().timeIntervalSince1970)
 			}
 		}
 	}
@@ -83,24 +92,38 @@ class BEExposureSubmissionService : ENAExposureSubmissionService {
 	}
 	
 	func retrieveDiagnosisKeys(completionHandler: @escaping BEExposureSubmissionGetKeysHandler) {
-		diagnosiskeyRetrieval.accessDiagnosisKeys { keys, error in
+		guard
+			let mobileTestId = store.mobileTestId,
+			let testResult = store.testResult else {
+				completionHandler(.failure(ExposureSubmissionError.internal))
+				return
+		}
+		
+		guard
+			let dateTestCommunicated = testResult.dateTestCommunicated.dateWithoutTime,
+			let datePatientInfectious = mobileTestId.datePatientInfectious.dateWithoutTime else {
+				completionHandler(.failure(ExposureSubmissionError.internal))
+				return
+		}
+
+		diagnosiskeyRetrieval.getKeysInDateRange(startDate: datePatientInfectious, endDate: dateTestCommunicated) { keys,error in
+			
+			if error == nil && keys == nil {
+				completionHandler(.failure(.noKeys))
+				return
+			}
+			
 			if let error = error {
 				logError(message: "Error while retrieving diagnosis keys: \(error.localizedDescription)")
 				completionHandler(.failure(self.parseError(error)))
 				return
 			}
 
-			guard var keys = keys, !keys.isEmpty else {
-				completionHandler(.failure(.noKeys))
-				return
-			}
-			keys.processedForSubmission()
-
-			completionHandler(.success(keys))
+			var processedKeys = keys!
+			processedKeys.processedForSubmission()
+			completionHandler(.success(processedKeys))
 		}
-
 	}
-
 	
 	/// This method submits the exposure keys. Additionally, after successful completion,
 	/// the timestamp of the key submission is updated.
@@ -127,7 +150,11 @@ class BEExposureSubmissionService : ENAExposureSubmissionService {
 			return
 		}
 		
-		httpClient.submit(keys: keys, countries:countries, mobileTestId: mobileTestId, dateTestCommunicated: testResult.dateTestCommunicated) { error in
+		httpClient.submit(
+			keys: keys,
+			countries:countries,
+			mobileTestId: mobileTestId,
+			testResult: testResult) { error in
 			if let error = error {
 				logError(message: "Error while submiting diagnosis keys: \(error.localizedDescription)")
 				completion(self.parseError(error))

@@ -23,7 +23,9 @@ extension HTTPClient {
 
 		static let backendBaseURLs = Configuration(
 			apiVersion: "v1",
-			country: "DE",
+			
+			// :BE: use BE
+			country: "BE",
 			endpoints: Configuration.Endpoints(
 				distribution: .init(
 					baseURL: URL(staticString: "https://c19distcdn-tst.ixor.be"),

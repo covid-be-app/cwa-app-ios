@@ -20,14 +20,27 @@
 import Foundation
 import ExposureNotification
 
-extension ENIntervalNumber {
-	var date:Date {
-		get {
-			return Date(timeIntervalSince1970: TimeInterval(self) * 600)
+extension DiagnosisKeysRetrieval {
+	func getKeysInDateRange(startDate:Date,endDate:Date,completionHandler: @escaping ENGetDiagnosisKeysHandler) {
+		accessDiagnosisKeys { keys, error in
+			if let error = error {
+				logError(message: "Error while retrieving diagnosis keys: \(error.localizedDescription)")
+				completionHandler(nil,error)
+				return
+			}
+
+			guard let keys = keys, !keys.isEmpty else {
+				completionHandler(nil,nil)
+				return
+			}
+			
+			let filteredKeys = keys.filter{ key in
+				let keyDate = key.rollingStartNumber.date
+				
+				return keyDate >= startDate && keyDate <= endDate
+			}
+			
+			completionHandler(filteredKeys, nil)
 		}
-	}
-	
-	static func fromDate(_ date:Date) -> ENIntervalNumber {
-		ENIntervalNumber(Int(date.timeIntervalSince1970) / 600)
 	}
 }

@@ -36,15 +36,14 @@ struct BEMobileTestId {
 	let creationDate:Date
 
 	var fullString:String {
-		let stringToSplit = "\(datePatientInfectious.compactDateNumber)\(id)\(checksum)"
+		let stringToSplit = "\(id)\(checksum)"
 		let part1 = stringToSplit[0...4]
 		let part2 = stringToSplit[4...8]
 		let part3 = stringToSplit[8...12]
 		let part4 = stringToSplit[12...16]
-		let part5 = stringToSplit[16...20]
-		let part6 = stringToSplit[20...23]
+		let part5 = stringToSplit[16...17]
 
-		return "\(part1)-\(part2)-\(part3)-\(part4)-\(part5)-\(part6)"
+		return "\(part1)-\(part2)-\(part3)-\(part4)-\(part5)"
 	}
 	
 	// the string used as registrationToken in the networking calls to fetch the test result
