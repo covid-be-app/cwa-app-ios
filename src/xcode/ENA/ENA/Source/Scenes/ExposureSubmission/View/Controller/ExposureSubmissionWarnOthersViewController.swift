@@ -44,6 +44,12 @@ class ExposureSubmissionWarnOthersViewController: DynamicTableViewController, EN
 		super.viewDidLoad()
 		setupView()
 	}
+	
+	// :BE: add acc. identifier to next button
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		self.footerView?.primaryButton.accessibilityIdentifier = BEAccessibilityIdentifiers.BEWarnOthers.next
+	}
 
 	// MARK: Setup helpers.
 

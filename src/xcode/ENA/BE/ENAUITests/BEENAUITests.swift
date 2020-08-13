@@ -89,4 +89,26 @@ class BEENAUITests: XCTestCase {
 		
 		XCTAssert(app.labelContains(text: text))		
 	}
+	
+	func testSelectCountry() throws {
+		app.launchArguments.append(contentsOf: ["-positiveResult", "YES"])
+		app.launchArguments.append(contentsOf:[UITestingParameters.ExposureSubmission.useMock.rawValue])
+		app.launch()
+
+		XCTAssertTrue(app.buttons["AppStrings.Home.submitCardButton"].waitForExistence(timeout: 5.0))
+		app.swipeUp()
+		app.buttons["AppStrings.Home.submitCardButton"].tap()
+
+		XCTAssertTrue(app.buttons["BEAppStrings.BETestResult.next"].waitForExistence(timeout: 5.0))
+		app.buttons["BEAppStrings.BETestResult.next"].tap()
+
+		XCTAssertTrue(app.buttons["BEAppStrings.BEWarnOthers.next"].waitForExistence(timeout: 5.0))
+		app.buttons["BEAppStrings.BEWarnOthers.next"].tap()
+		
+		XCTAssertTrue(app.buttons["BEAppStrings.BESelectKeyCountries.shareIds"].waitForExistence(timeout: 5.0))
+		
+		app.tables.cells.element(boundBy: 0).tap()
+		sleep(1)
+		app.tables.cells.element(boundBy: 0).tap()
+	}
 }

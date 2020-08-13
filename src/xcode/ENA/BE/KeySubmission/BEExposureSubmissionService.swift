@@ -20,9 +20,17 @@
 import Foundation
 import ExposureNotification
 
-
-class BEExposureSubmissionService : ENAExposureSubmissionService {
+protocol BEExposureSubmissionService : ExposureSubmissionService {
 	typealias BEExposureSubmissionGetKeysHandler = (Result<[ENTemporaryExposureKey], ExposureSubmissionError>) -> Void
+	
+	var httpClient:BEHTTPClient { get }
+	var mobileTestId:BEMobileTestId? { get set }
+	
+	func retrieveDiagnosisKeys(completionHandler: @escaping BEExposureSubmissionGetKeysHandler)
+	func submitExposure(keys:[ENTemporaryExposureKey],countries:[BECountry], completionHandler: @escaping ExposureSubmissionHandler)
+}
+
+class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposureSubmissionService {
 	
 	lazy var httpClient:BEHTTPClient = {
 		guard let beClient = client as? BEHTTPClient else {

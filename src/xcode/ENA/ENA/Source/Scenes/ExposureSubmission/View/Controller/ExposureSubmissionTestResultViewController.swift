@@ -79,6 +79,9 @@ class ExposureSubmissionTestResultViewController: DynamicTableViewController, EN
 		self.navigationFooterItem?.isSecondaryButtonEnabled = false
 		self.navigationFooterItem?.isSecondaryButtonHidden = true
 
+		// :BE: add accessibility identifier
+		self.footerView?.primaryButton?.accessibilityIdentifier = BEAccessibilityIdentifiers.BETestResult.next
+		
 		switch result {
 		case .positive:
 			navigationFooterItem?.primaryButtonTitle = AppStrings.ExposureSubmissionResult.continueButton

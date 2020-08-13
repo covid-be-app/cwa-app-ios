@@ -52,7 +52,7 @@ class BEExposureSubmissionServiceTests: XCTestCase {
 		let keyRetrieval = MockDiagnosisKeysRetrieval(diagnosisKeysResult: (keys, nil))
 		let client = ClientMock()
 		let store = MockTestStore()
-		let service = BEExposureSubmissionService(diagnosiskeyRetrieval: keyRetrieval, client: client, store: store)
+		let service = BEExposureSubmissionServiceImpl(diagnosiskeyRetrieval: keyRetrieval, client: client, store: store)
 
 		// receive result today
 		let dateTestCommunicated = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!
