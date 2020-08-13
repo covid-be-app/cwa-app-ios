@@ -220,7 +220,7 @@
 "ExposureSubmissionResult_RemoveAlert_Title" = "Supprimer le test ?";
 "ExposureSubmissionResult_RemoveAlert_Text" = "Le test sera définitivement supprimé de l'application Coronalert et ne pourra plus être ajouté. Cette procédure est irréversible. ";
 "ExposureSubmissionResult_RegistrationDateUnknown" = "Date d'enregistrement inconnue";
-"ExposureSubmissionResult_RegistrationDate" = "Enregistré le ";
+"ExposureSubmissionResult_RegistrationDate" = "Enregistré le";
 "ExposureSubmissionError_NoKeys" = "Aucune clé de diagnostic n'est disponible. Veuillez réessayer demain.";
 "ExposureSubmissionError_InvalidTan" = "Le CODE généré n'est pas valide. Veuillez contacter le numéro d'aide technique via Informations complémentaires -> Numéro d'information";
 "ExposureSubmissionError_EnNotEnabled" = "L'enregistrement de l'exposition n'est pas actif.";

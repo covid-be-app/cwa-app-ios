@@ -220,7 +220,7 @@
 "ExposureSubmissionResult_RemoveAlert_Title" = "Test verwijderen?";
 "ExposureSubmissionResult_RemoveAlert_Text" = "De test wordt permanent verwijderd uit CoronAlert en kan niet opnieuw worden toegevoegd. Deze procedure kan niet ongedaan gemaakt worden. ";
 "ExposureSubmissionResult_RegistrationDateUnknown" = "Registratiedatum onbekend";
-"ExposureSubmissionResult_RegistrationDate" = "Registratie op ";
+"ExposureSubmissionResult_RegistrationDate" = "Registratie op";
 "ExposureSubmissionError_NoKeys" = "Er is geen diagnosesleutel beschikbaar. Probeer het morgen opnieuw.";
 "ExposureSubmissionError_InvalidTan" = "De gegenereerde CODE is ongeldig voor indiening. Neem contact op met de technische hotline via Informatie App -> Technische hotline.";
 "ExposureSubmissionError_EnNotEnabled" = "Contacttracing is niet actief.";
