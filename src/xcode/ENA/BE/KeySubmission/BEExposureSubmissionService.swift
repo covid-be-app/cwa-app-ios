@@ -52,6 +52,7 @@ class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposure
 				store.registrationToken = newValue!.registrationToken
 				// set as pending so the home view controller shows the right state
 				store.testResult = .pending
+				store.devicePairingSuccessfulTimestamp = Int64(Date().timeIntervalSince1970)
 			}
 		}
 	}
