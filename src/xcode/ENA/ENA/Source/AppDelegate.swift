@@ -200,7 +200,9 @@ extension AppDelegate: ENATaskExecutionDelegate {
 				case .failure(let error):
 					logError(message: error.localizedDescription)
 				case .success(let testResult):
-					if testResult != .pending {
+					
+					// :BE: testresult enum to struct
+					if testResult.result != .pending {
 						UNUserNotificationCenter.current().presentNotification(
 							title: AppStrings.LocalNotifications.testResultsTitle,
 							body: AppStrings.LocalNotifications.testResultsBody,
