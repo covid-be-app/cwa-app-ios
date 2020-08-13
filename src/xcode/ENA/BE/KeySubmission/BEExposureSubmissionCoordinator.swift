@@ -86,28 +86,6 @@ class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
 	// In the original app it will show you the 3 possibilities to register a test, in our case we go directly to the code generator
 	
 	func showOverviewScreen() {
-		/*
-		let alert = UIAlertController(
-			title: AppStrings.ExposureSubmission.dataPrivacyTitle,
-			message: AppStrings.ExposureSubmission.dataPrivacyDisclaimer,
-			preferredStyle: .alert
-		)
-		let acceptAction = UIAlertAction(title: AppStrings.ExposureSubmission.dataPrivacyAcceptTitle,
-										 style: .default, handler: { _ in
-											let vc = self.createMobileTestIdController()
-											self.push(vc)
-											self.exposureSubmissionService.acceptPairing()
-		})
-		alert.addAction(acceptAction)
-
-		alert.addAction(.init(title: AppStrings.ExposureSubmission.dataPrivacyDontAcceptTitle,
-							  style: .cancel,
-							  handler: { _ in
-								alert.dismiss(animated: true, completion: nil) }
-			))
-		alert.preferredAction = acceptAction
-		present(alert)
-*/
 		let alert = UIAlertController(
 			title: BEAppStrings.BEExposureSubmission.symptomsExplanation,
 			message: nil,
@@ -126,15 +104,9 @@ class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
 											self.exposureSubmissionService.acceptPairing()
 											self.showMobileTestIdViewController()
 		})
-/*
-		let cancelAction = UIAlertAction(title: BEAppStrings.BEExposureSubmission.cancel,
-										 style: .cancel, handler: { _ in
-											alert.dismiss(animated: true, completion: nil)
-		})
-*/
+
 		alert.addAction(yesAction)
 		alert.addAction(noAction)
-	//	alert.addAction(cancelAction)
 
 		present(alert)
 	}
@@ -219,6 +191,11 @@ class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
 		#if UITESTING
 		if ProcessInfo.processInfo.arguments.contains("-negativeResult") {
 			return createTestResultViewController(with: .negative)
+		}
+
+		// :BE: add positive
+		if ProcessInfo.processInfo.arguments.contains("-positiveResult") {
+			return createTestResultViewController(with: .positive)
 		}
 
 		#else

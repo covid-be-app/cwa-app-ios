@@ -29,7 +29,7 @@ class ExposureSubmissionServiceFactory { }
 
 extension ExposureSubmissionServiceFactory {
 	static func create(diagnosiskeyRetrieval: DiagnosisKeysRetrieval, client: Client, store: Store) -> ExposureSubmissionService {
-		return BEExposureSubmissionService(
+		return BEExposureSubmissionServiceImpl(
 			diagnosiskeyRetrieval: diagnosiskeyRetrieval,
 			client: client,
 			store: store
@@ -49,15 +49,18 @@ extension ExposureSubmissionServiceFactory {
 	static func create(diagnosiskeyRetrieval: DiagnosisKeysRetrieval, client: Client, store: Store) -> ExposureSubmissionService {
 
 		guard isEnabled(.useMock) else {
-			return BEExposureSubmissionService(
+			return BEExposureSubmissionServiceImpl(
 				diagnosiskeyRetrieval: diagnosiskeyRetrieval,
 				client: client,
 				store: store
 			)
 		}
 
-		let service = MockExposureSubmissionService()
+		// :BE: mock BE service
+		let service = BEMockExposureSubmissionService()
 
+		// :BE: registration token fetching does not exist on our side
+		/*
 		if isEnabled(.getRegistrationTokenSuccess) {
 			service.getRegistrationTokenCallback = { _, completeWith in
 				DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -65,6 +68,7 @@ extension ExposureSubmissionServiceFactory {
 				}
 			}
 		}
+*/
 
 		if isEnabled(.submitExposureSuccess) {
 			service.submitExposureCallback = { completeWith in

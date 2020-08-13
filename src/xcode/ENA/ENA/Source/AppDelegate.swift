@@ -192,7 +192,7 @@ extension AppDelegate: ENATaskExecutionDelegate {
 	private func executeFetchTestResults(task: BGTask, completion: @escaping ((Bool) -> Void)) {
 		log(message: "Start fetch test results...")
 		// :BE: replace ENAExposureSubmissionService with BEExposureSubmissionService
-		exposureSubmissionService = BEExposureSubmissionService(diagnosiskeyRetrieval: exposureManager, client: client, store: store)
+		exposureSubmissionService = BEExposureSubmissionServiceImpl(diagnosiskeyRetrieval: exposureManager, client: client, store: store)
 
 		if store.registrationToken != nil && store.testResultReceivedTimeStamp == nil {
 			self.exposureSubmissionService?.getTestResult { result in
