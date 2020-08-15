@@ -29,4 +29,9 @@ extension SecureStore {
 		get { kvStore["testResult"] as TestResult?}
 		set { kvStore["testResult"] = newValue }
 	}
+	
+	var deleteMobileTestIdAfterTimeInterval: TimeInterval {
+		get { kvStore["testIdDeleteTimeInterval"] as TimeInterval? ?? 14*60*60*24 }
+		set { kvStore["testIdDeleteTimeInterval"] = newValue }
+	}
 }
