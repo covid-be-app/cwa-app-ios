@@ -123,8 +123,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	#endif
 
 	private var exposureDetection: ExposureDetection?
-	// :BE: use protocol and not subclass as variable type
-	private var exposureSubmissionService: ExposureSubmissionService?
+	// :BE: use BE protocol as variable type
+	private var exposureSubmissionService: BEExposureSubmissionService?
 
 	let downloadedPackagesStore: DownloadedPackagesStore = DownloadedPackagesSQLLiteStore(fileName: "packages")
 
@@ -192,31 +192,34 @@ extension AppDelegate: ENATaskExecutionDelegate {
 	private func executeFetchTestResults(task: BGTask, completion: @escaping ((Bool) -> Void)) {
 		log(message: "Start fetch test results...")
 		// :BE: replace ENAExposureSubmissionService with BEExposureSubmissionService
-		exposureSubmissionService = BEExposureSubmissionServiceImpl(diagnosiskeyRetrieval: exposureManager, client: client, store: store)
+		let service = BEExposureSubmissionServiceImpl(diagnosiskeyRetrieval: exposureManager, client: client, store: store)
+		exposureSubmissionService = service
 
 		if store.registrationToken != nil && store.testResultReceivedTimeStamp == nil {
-			self.exposureSubmissionService?.getTestResult { result in
-				switch result {
-				case .failure(let error):
-					logError(message: error.localizedDescription)
-				case .success(let testResult):
-					
-					// :BE: testresult enum to struct
-					if testResult.result != .pending {
-						UNUserNotificationCenter.current().presentNotification(
-							title: AppStrings.LocalNotifications.testResultsTitle,
-							body: AppStrings.LocalNotifications.testResultsBody,
-							identifier: task.identifier
-						)
+			// :BE: see if we passed the validity time for this test result
+			if !service.deleteTestIfOutdated() {
+				self.exposureSubmissionService?.getTestResult { result in
+					switch result {
+					case .failure(let error):
+						logError(message: error.localizedDescription)
+					case .success(let testResult):
+						
+						// :BE: testresult enum to struct
+						if testResult.result != .pending {
+							UNUserNotificationCenter.current().presentNotification(
+								title: AppStrings.LocalNotifications.testResultsTitle,
+								body: AppStrings.LocalNotifications.testResultsBody,
+								identifier: task.identifier
+							)
+						}
 					}
+					completion(true)
 				}
-
-				completion(true)
+				return
 			}
-		} else {
-			completion(true)
 		}
-
+		
+		completion(true)
 	}
 
 	/// This method performs a check for the current exposure detection state. Only if the risk level has changed compared to the

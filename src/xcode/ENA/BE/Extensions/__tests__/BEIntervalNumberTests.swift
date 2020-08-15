@@ -29,7 +29,7 @@ class BEIntervalNumberTests: XCTestCase {
 		let intervalNumber = ENIntervalNumber.fromDate(date)
 		let comparisonValue = (Int(date.timeIntervalSince1970) / 600) * 600
 		
-		XCTAssertTrue(intervalNumber * 600 == comparisonValue)
+		XCTAssertEqual(Int(intervalNumber * 600), comparisonValue)
     }
 	
 	func testToDate() throws {
@@ -38,6 +38,6 @@ class BEIntervalNumberTests: XCTestCase {
 		let comparisonDate = Date(timeIntervalSince1970: comparisonValue)
 		let intervalNumber = ENIntervalNumber(Int(date.timeIntervalSince1970) / 600)
 		
-		XCTAssertTrue(intervalNumber.date == comparisonDate)
+		XCTAssertEqual(intervalNumber.date, comparisonDate)
 	}
 }

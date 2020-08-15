@@ -82,4 +82,23 @@ class BEExposureSubmissionServiceTests: XCTestCase {
 			}
 		}
     }
+	
+	func testOutdatedTestRequestDeletion() throws {
+		let keyRetrieval = MockDiagnosisKeysRetrieval(diagnosisKeysResult: (keys, nil))
+		let client = ClientMock()
+		let store = SecureStore(at: URL(staticString: ":memory:"), key: "123456")
+		let service = BEExposureSubmissionServiceImpl(diagnosiskeyRetrieval: keyRetrieval, client: client, store: store)
+		let mobileTestId = BEMobileTestId(datePatientInfectious: "2020-08-11")
+		store.mobileTestId = mobileTestId
+		sleep(4)
+		store.deleteMobileTestIdAfterTimeInterval = 2
+		XCTAssertEqual(service.deleteTestIfOutdated(),true)
+		XCTAssert(store.mobileTestId == nil)
+
+		store.mobileTestId = mobileTestId
+		sleep(2)
+		store.deleteMobileTestIdAfterTimeInterval = 20
+		XCTAssertEqual(service.deleteTestIfOutdated(),false)
+		XCTAssert(store.mobileTestId != nil)
+	}
 }

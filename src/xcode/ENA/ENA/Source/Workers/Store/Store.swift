@@ -96,8 +96,10 @@ protocol Store: AnyObject {
 
 	func clearAll(key: String?)
 	
-	// :BE: add test Id and test result
+	// :BE: added values
 	var mobileTestId: BEMobileTestId? { get set }
 
-	var testResult:TestResult? { get set }
+	var testResult: TestResult? { get set }
+	
+	var deleteMobileTestIdAfterTimeInterval: TimeInterval {get set}
 }

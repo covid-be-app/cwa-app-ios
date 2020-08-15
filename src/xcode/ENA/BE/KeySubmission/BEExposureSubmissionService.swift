@@ -28,6 +28,8 @@ protocol BEExposureSubmissionService : ExposureSubmissionService {
 	
 	func retrieveDiagnosisKeys(completionHandler: @escaping BEExposureSubmissionGetKeysHandler)
 	func submitExposure(keys:[ENTemporaryExposureKey],countries:[BECountry], completionHandler: @escaping ExposureSubmissionHandler)
+	
+	func deleteTestIfOutdated() -> Bool
 }
 
 class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposureSubmissionService {
@@ -89,6 +91,22 @@ class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposure
 				completeWith(.success(testResult))
 			}
 		}
+	}
+	
+	func deleteTestIfOutdated() -> Bool {
+		guard let mobileTestId = store.mobileTestId else {
+			fatalError("No mobile test id present")
+		}
+		
+		let endDate = mobileTestId.creationDate.addingTimeInterval(store.deleteMobileTestIdAfterTimeInterval)
+		
+		if endDate < Date() {
+			deleteTest()
+			log(message: "Deleted outdated test request")
+			return true
+		}
+		
+		return false
 	}
 	
 	func retrieveDiagnosisKeys(completionHandler: @escaping BEExposureSubmissionGetKeysHandler) {
