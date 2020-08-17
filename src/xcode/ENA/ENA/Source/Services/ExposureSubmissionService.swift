@@ -221,6 +221,8 @@ class ENAExposureSubmissionService: ExposureSubmissionService {
 	// :BE: remove private so we can access in subclass
 	func submitExposureCleanup() {
 		store.registrationToken = nil
+		store.mobileTestId = nil
+		store.testResult = nil
 		store.isAllowedToSubmitDiagnosisKeys = false
 		store.lastSuccessfulSubmitDiagnosisKeyTimestamp = Int64(Date().timeIntervalSince1970)
 		log(message: "Exposure submission cleanup.")

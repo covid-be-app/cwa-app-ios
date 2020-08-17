@@ -53,4 +53,5 @@ final class MockTestStore: Store {
 	// :BE: added properties
 	var mobileTestId: BEMobileTestId?
 	var testResult: TestResult?
+	var deleteMobileTestIdAfterTimeInterval: TimeInterval = 600
 }

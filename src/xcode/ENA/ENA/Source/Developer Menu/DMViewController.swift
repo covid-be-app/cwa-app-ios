@@ -21,7 +21,9 @@ import ExposureNotification
 import UIKit
 
 /// The root view controller of the developer menu.
-final class DMViewController: UITableViewController {
+
+// :BE: add risk detection
+final class DMViewController: UITableViewController, RequiresAppDependencies {
 	// MARK: Creating a developer menu view controller
 
 	init(
@@ -30,8 +32,6 @@ final class DMViewController: UITableViewController {
 		exposureManager: ExposureManager
 	) {
 		self.client = client
-		self.store = store
-		self.exposureManager = exposureManager
 		super.init(style: .plain)
 		title = "👩🏾‍💻🧑‍💻"
 	}
@@ -44,8 +44,6 @@ final class DMViewController: UITableViewController {
 	// MARK: Properties
 
 	private let client: Client
-	private let store: Store
-	private let exposureManager: ExposureManager
 	private var keys = [SAP_TemporaryExposureKey]() {
 		didSet {
 			keys = self.keys.sorted()
@@ -71,11 +69,13 @@ final class DMViewController: UITableViewController {
 				target: self,
 				action: #selector(showConfiguration)
 			),
+			
+			// :BE: manual risk detection
 			UIBarButtonItem(
-				image: UIImage(systemName: "trash"),
+				image: UIImage(systemName: "tray.and.arrow.down"),
 				style: .plain,
 				target: self,
-				action: #selector(clearRegToken)
+				action: #selector(checkExposureRisk)
 			)
 		]
 
@@ -116,6 +116,14 @@ final class DMViewController: UITableViewController {
 		let alert = UIAlertController(title: "Reg Token", message: "Reg Token deleted", preferredStyle: .alert)
 		alert.addAction(UIAlertAction(title: AppStrings.Common.alertActionOk, style: .cancel))
 		self.present(alert, animated: true, completion: nil)
+	}
+	
+	// :BE: do risk test manually
+	@objc
+	private func checkExposureRisk() {
+		self.dismiss(animated: true) {
+			self.riskProvider.requestRisk(userInitiated: true)
+		}
 	}
 
 	// MARK: Fetching Keys

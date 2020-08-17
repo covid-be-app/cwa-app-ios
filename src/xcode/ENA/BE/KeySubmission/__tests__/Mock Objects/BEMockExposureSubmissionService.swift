@@ -96,5 +96,7 @@ class BEMockExposureSubmissionService : BEExposureSubmissionService {
 		
 	}
 	
-	
+	func deleteTestIfOutdated() -> Bool {
+		return false
+	}
 }
