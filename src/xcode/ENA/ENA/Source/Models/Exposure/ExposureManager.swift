@@ -228,7 +228,13 @@ final class ENAExposureManager: NSObject, ExposureManager {
 			return
 		}
 		// see: https://github.com/corona-warn-app/cwa-app-ios/issues/169
-		manager.getDiagnosisKeys(completionHandler: completionHandler)
+		
+		// :BE: Add key of today in debug builds
+		#if DEBUG
+			manager.getTestDiagnosisKeys(completionHandler: completionHandler)
+		#else
+			manager.getDiagnosisKeys(completionHandler: completionHandler)
+		#endif
 	}
 
 	// MARK: Error Handling
