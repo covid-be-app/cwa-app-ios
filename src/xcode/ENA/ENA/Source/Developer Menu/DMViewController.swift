@@ -121,6 +121,8 @@ final class DMViewController: UITableViewController, RequiresAppDependencies {
 	// :BE: do risk test manually
 	@objc
 	private func checkExposureRisk() {
+		downloadedPackagesStore.reset()
+		downloadedPackagesStore.open()
 		self.dismiss(animated: true) {
 			self.riskProvider.requestRisk(userInitiated: true)
 		}
