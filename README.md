@@ -86,7 +86,6 @@ Use `brew install swiftlint` to install SwiftLint or download it manually from h
 [cwa-server]: https://github.com/covid-be-app/cwa-server
 
 
-
 ## Licensing
 
 Copyright (c) 2020 SAP SE or an SAP affiliate company.
