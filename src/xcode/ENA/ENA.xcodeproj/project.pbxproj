@@ -251,6 +251,8 @@
 		A92076CC24E3F56400AE8748 /* BEExposureSubmissionServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076CB24E3F56400AE8748 /* BEExposureSubmissionServiceTests.swift */; };
 		A92076CE24E40BFC00AE8748 /* BEIntervalNumberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076CD24E40BFC00AE8748 /* BEIntervalNumberTests.swift */; };
 		A92076D124E426D600AE8748 /* BEMockExposureSubmissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076D024E426D600AE8748 /* BEMockExposureSubmissionService.swift */; };
+		A92076DB24EA770F00AE8748 /* BEDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076DA24EA770F00AE8748 /* BEDate.swift */; };
+		A92076DD24EA7C5D00AE8748 /* BEDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076DC24EA7C5D00AE8748 /* BEDateTests.swift */; };
 		A929A71724DC3EE50039B997 /* BEHTTPClientSubmitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A929A71624DC3EE50039B997 /* BEHTTPClientSubmitTests.swift */; };
 		A935EE5624E0060400B33B66 /* BEENAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A935EE5524E0060400B33B66 /* BEENAUITests.swift */; };
 		A951618524DAEB3A00631519 /* BEDecimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A951618424DAEB3A00631519 /* BEDecimal.swift */; };
@@ -719,6 +721,8 @@
 		A92076CB24E3F56400AE8748 /* BEExposureSubmissionServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEExposureSubmissionServiceTests.swift; sourceTree = "<group>"; };
 		A92076CD24E40BFC00AE8748 /* BEIntervalNumberTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEIntervalNumberTests.swift; sourceTree = "<group>"; };
 		A92076D024E426D600AE8748 /* BEMockExposureSubmissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEMockExposureSubmissionService.swift; sourceTree = "<group>"; };
+		A92076DA24EA770F00AE8748 /* BEDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDate.swift; sourceTree = "<group>"; };
+		A92076DC24EA7C5D00AE8748 /* BEDateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDateTests.swift; sourceTree = "<group>"; };
 		A929A71624DC3EE50039B997 /* BEHTTPClientSubmitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEHTTPClientSubmitTests.swift; sourceTree = "<group>"; };
 		A935EE5524E0060400B33B66 /* BEENAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEENAUITests.swift; sourceTree = "<group>"; };
 		A951618424DAEB3A00631519 /* BEDecimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDecimal.swift; sourceTree = "<group>"; };
@@ -1820,6 +1824,7 @@
 				A9DD2CFC24D018AE0035081A /* BESymmetricKey.swift */,
 				A980D59C24D822F400A5BB8E /* BEIntervalNumber.swift */,
 				A951618424DAEB3A00631519 /* BEDecimal.swift */,
+				A92076DA24EA770F00AE8748 /* BEDate.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1830,6 +1835,7 @@
 				A9DD2CF724CFF9720035081A /* BEStringTests.swift */,
 				A9DD2CFE24D01A940035081A /* BESymmetricKeyTests.swift */,
 				A92076CD24E40BFC00AE8748 /* BEIntervalNumberTests.swift */,
+				A92076DC24EA7C5D00AE8748 /* BEDateTests.swift */,
 			);
 			path = __tests__;
 			sourceTree = "<group>";
@@ -2718,6 +2724,7 @@
 				51D420B924583B8300AD70CA /* UIViewController+AppStoryboard.swift in Sources */,
 				71B804542485273C00D53506 /* RiskLegendDotBodyCell.swift in Sources */,
 				EE22DB8A247FB43A001B0A71 /* ImageTableViewCell.swift in Sources */,
+				A92076DB24EA770F00AE8748 /* BEDate.swift in Sources */,
 				B11E619C246EE4E9004A056A /* UIFont+DynamicType.swift in Sources */,
 				71330E4524810A0500EB10F6 /* DynamicTableViewHeader.swift in Sources */,
 				0DF6BBB5248C04CF007E8B0C /* app_config_attenuation_duration.pb.swift in Sources */,
@@ -2954,6 +2961,7 @@
 				F22C6E2324917E3200712A6B /* DynamicTableViewControllerRowsTests.swift in Sources */,
 				A1E4195D249818060016E52A /* RiskTests.swift in Sources */,
 				B18C411D246DB30000B8D8CB /* URL+Helper.swift in Sources */,
+				A92076DD24EA7C5D00AE8748 /* BEDateTests.swift in Sources */,
 				CDF27BD5246ADBF30044D32B /* HTTPClient+DaysAndHoursTests.swift in Sources */,
 				A17DA5E32486D8EF006F310F /* RiskLevelTests.swift in Sources */,
 				B117909824914D77007FF821 /* StoreTests.swift in Sources */,

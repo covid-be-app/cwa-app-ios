@@ -31,7 +31,7 @@ struct BEMobileTestId {
 	// Components used to calculate mobile test id
 	let randomString:String				// R0
 	let secretKey:SymmetricKey			// K
-	let datePatientInfectious:String    // t0
+	let datePatientInfectious:BEDateString    // t0
 	
 	let creationDate:Date
 
@@ -64,7 +64,7 @@ struct BEMobileTestId {
 	}
 
 	// this is the t0 date, in YYYY-MM-DD format
-	init(datePatientInfectious:String) {
+	init(datePatientInfectious:BEDateString) {
 		#if DEBUG
 			if datePatientInfectious.dateWithoutTime == nil {
 				preconditionFailure("Wrong format")
@@ -89,7 +89,7 @@ struct BEMobileTestId {
 		randomString = localRandomString
 		secretKey = localSecretKey
 		
-		let valueToCalculateChecksumOn = Decimal(string:"\(datePatientInfectious.compactDateNumber)\(id)")!
+		let valueToCalculateChecksumOn = Decimal(string:"\(datePatientInfectious.compactDateInt)\(id)")!
 		checksum = String.init(format:"%02d",Self.calculateCheckDigits(R1:valueToCalculateChecksumOn))
 		
 		creationDate = Date()

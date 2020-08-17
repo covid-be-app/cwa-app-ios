@@ -121,6 +121,8 @@ final class DMViewController: UITableViewController, RequiresAppDependencies {
 	// :BE: do risk test manually
 	@objc
 	private func checkExposureRisk() {
+		downloadedPackagesStore.reset()
+		downloadedPackagesStore.open()
 		self.dismiss(animated: true) {
 			self.riskProvider.requestRisk(userInitiated: true)
 		}
@@ -143,6 +145,14 @@ final class DMViewController: UITableViewController, RequiresAppDependencies {
 			}
 			self.keys = keys.map { $0.sapKey }
 			self.tableView.reloadData()
+			
+			// :BE: update tracing history with keys
+			self.store.tracingStatusHistory = []
+			
+			keys.reversed().forEach { key in
+				let date = key.rollingStartNumber.date
+				self.store.tracingStatusHistory = self.store.tracingStatusHistory.consumingState(ExposureManagerState(authorized: true, enabled: true, status: .active), date)
+			}
 		}
 	}
 

@@ -58,7 +58,7 @@ class BEMobileTestIdTests: XCTestCase {
 		XCTAssertNotEqual(Int(testId.id),nil)
 		XCTAssertNotEqual(Int(testId.checksum),nil)
 		
-		let fullNumber = Decimal(string:"\(testId.datePatientInfectious.compactDateNumber)\(testId.id)")! * 100 + Decimal(string:testId.checksum)!
+		let fullNumber = Decimal(string:"\(testId.datePatientInfectious.compactDateInt)\(testId.id)")! * 100 + Decimal(string:testId.checksum)!
 		let modulo = fullNumber % 97
 		
 		XCTAssertEqual(modulo,0)

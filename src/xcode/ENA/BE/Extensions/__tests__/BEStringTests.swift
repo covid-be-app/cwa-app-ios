@@ -22,65 +22,6 @@ import XCTest
 
 class BEStringTests: XCTestCase {
 
-	func testFromDateWithoutTime() throws {
-        let date = Date()
-		let string = String.fromDateWithoutTime(date:date)
-		let stringComponents = string.split(separator:"-")
-		
-		XCTAssertEqual(
-			stringComponents.count,
-			3
-		)
-
-		XCTAssertEqual(
-			stringComponents[0].count,
-			4
-		)
-
-		XCTAssertEqual(
-			stringComponents[1].count,
-			2
-		)
-
-		XCTAssertEqual(
-			stringComponents[2].count,
-			2
-		)
-    }
-	
-	func testDateWithoutTime() throws {
-		let string = String("2020-05-10")
-		let date = string.dateWithoutTime!
-		let yearFormatter = DateFormatter()
-		yearFormatter.dateFormat = "YYYY"
-		let monthFormatter = DateFormatter()
-		monthFormatter.dateFormat = "MM"
-		let dayFormatter = DateFormatter()
-		dayFormatter.dateFormat = "dd"
-
-		XCTAssertEqual(
-			yearFormatter.string(from: date),
-			"2020"
-		)
-
-		XCTAssertEqual(
-			monthFormatter.string(from: date),
-			"05"
-		)
-
-		XCTAssertEqual(
-			dayFormatter.string(from: date),
-			"10"
-		)
-	}
-	
-	func testCompactDate() throws {
-		let string = String("2020-05-10")
-		let dateNumber = string.compactDateNumber
-		
-		XCTAssertEqual(dateNumber, 200510)
-	}
-
     func testRandom() throws {
 		let randomString = String.random(length:10)
 		
