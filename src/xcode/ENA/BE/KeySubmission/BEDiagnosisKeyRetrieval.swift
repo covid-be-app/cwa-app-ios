@@ -21,7 +21,7 @@ import Foundation
 import ExposureNotification
 
 extension DiagnosisKeysRetrieval {
-	func getKeysInDateRange(startDate:Date,endDate:Date,completionHandler: @escaping ENGetDiagnosisKeysHandler) {
+	func getKeysInDateRange(startDate:BEDateInt,endDate:BEDateInt,completionHandler: @escaping ENGetDiagnosisKeysHandler) {
 		accessDiagnosisKeys { keys, error in
 			if let error = error {
 				logError(message: "Error while retrieving diagnosis keys: \(error.localizedDescription)")
@@ -35,7 +35,7 @@ extension DiagnosisKeysRetrieval {
 			}
 			
 			let filteredKeys = keys.filter{ key in
-				let keyDate = key.rollingStartNumber.date
+				let keyDate = key.rollingStartNumber.dateInt
 				
 				return keyDate >= startDate && keyDate <= endDate
 			}

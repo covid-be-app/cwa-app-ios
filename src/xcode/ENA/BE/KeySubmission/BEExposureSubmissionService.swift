@@ -117,14 +117,10 @@ class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposure
 				return
 		}
 		
-		guard
-			let dateTestCommunicated = testResult.dateTestCommunicated.dateWithoutTime,
-			let datePatientInfectious = mobileTestId.datePatientInfectious.dateWithoutTime else {
-				completionHandler(.failure(ExposureSubmissionError.internal))
-				return
-		}
+		let dateTestCommunicatedInt = testResult.dateTestCommunicated.dateInt
+		let datePatientInfectiousInt = mobileTestId.datePatientInfectious.dateInt
 
-		diagnosiskeyRetrieval.getKeysInDateRange(startDate: datePatientInfectious, endDate: dateTestCommunicated) { keys,error in
+		diagnosiskeyRetrieval.getKeysInDateRange(startDate: datePatientInfectiousInt, endDate: dateTestCommunicatedInt) { keys,error in
 			
 			if error == nil && keys == nil {
 				completionHandler(.failure(.noKeys))

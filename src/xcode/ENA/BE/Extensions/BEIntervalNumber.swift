@@ -21,13 +21,29 @@ import Foundation
 import ExposureNotification
 
 extension ENIntervalNumber {
+	var dateInt:BEDateInt {
+		get {
+			let timeInterval = TimeInterval(self) * 600
+			return String.fromDateWithoutTime(date: Date(timeIntervalSince1970: timeInterval)).dateInt
+		}
+	}
+	
+	// only use this for visualisation, never to do logic or comparisons
+	// as we can have time zone issues
 	var date:Date {
 		get {
 			return Date(timeIntervalSince1970: TimeInterval(self) * 600)
 		}
 	}
 	
-	static func fromDate(_ date:Date) -> ENIntervalNumber {
-		ENIntervalNumber(Int(date.timeIntervalSince1970) / 600)
+	static func fromDateInt(_ dateInt:BEDateInt) -> ENIntervalNumber {
+		let string = String("\(dateInt)")
+		let year = Int(string[0...4])
+		let month = Int(string[4...6])
+		let day = Int(string[6...8])
+
+		let date = Calendar.current.date(from: DateComponents(year:year,month:month,day:day))!
+		
+		return ENIntervalNumber(Int(date.timeIntervalSince1970) / 600)
 	}
 }
