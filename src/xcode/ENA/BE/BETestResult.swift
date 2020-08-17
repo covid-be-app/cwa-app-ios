@@ -41,10 +41,10 @@ struct TestResult : Codable, Hashable {
 
 	let result:Result
 	let resultChannel:Channel
-	let dateSampleCollected:String   // t1
-	let dateTestCommunicated:String  // t3
+	let dateSampleCollected:BEDateString   // t1
+	let dateTestCommunicated:BEDateString  // t3
 	
-	init(result:Result,channel:Channel,dateCollected:String,dateTestCommunicated:String) {
+	init(result:Result,channel:Channel,dateCollected:BEDateString,dateTestCommunicated:BEDateString) {
 		self.result = result
 		self.resultChannel = channel
 		self.dateSampleCollected = dateCollected

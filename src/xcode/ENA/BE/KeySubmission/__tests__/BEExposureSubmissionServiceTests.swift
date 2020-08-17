@@ -35,7 +35,7 @@ class BEExposureSubmissionServiceTests: XCTestCase {
 			let key = ENTemporaryExposureKey()
 			key.transmissionRiskLevel = .zero
 			key.rollingPeriod = 100
-			key.rollingStartNumber = ENIntervalNumber.fromDate(date)
+			key.rollingStartNumber = ENIntervalNumber.fromDateInt(BEDateInt.fromDate(date))
 			
 			keys.append(key)
 		}
