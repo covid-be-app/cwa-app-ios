@@ -143,6 +143,14 @@ final class DMViewController: UITableViewController, RequiresAppDependencies {
 			}
 			self.keys = keys.map { $0.sapKey }
 			self.tableView.reloadData()
+			
+			// :BE: update tracing history with keys
+			self.store.tracingStatusHistory = []
+			
+			keys.reversed().forEach { key in
+				let date = key.rollingStartNumber.date
+				self.store.tracingStatusHistory = self.store.tracingStatusHistory.consumingState(ExposureManagerState(authorized: true, enabled: true, status: .active), date)
+			}
 		}
 	}
 
