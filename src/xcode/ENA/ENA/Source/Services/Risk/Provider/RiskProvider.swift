@@ -104,7 +104,8 @@ extension RiskProvider: RiskProviding {
 		completion: @escaping (Summaries) -> Void
 	) {
 		// Here we are in automatic mode and thus we have to check the validity of the current summary
-		let enoughTimeHasPassed = configuration.shouldPerformExposureDetection(
+		// :BE: force for user initiated
+		let enoughTimeHasPassed = userInitiated || configuration.shouldPerformExposureDetection(
 			activeTracingHours: store.tracingStatusHistory.activeTracing().inHours,
 			lastExposureDetectionDate: store.summary?.date
 		)
