@@ -104,6 +104,7 @@ platform :ios do
     
     upload_to_testflight(
       username: "technical@devside.com",
+      apple_id:"1526431891",
       skip_waiting_for_build_processing: true,
       skip_submission: true  # only upload
     )
