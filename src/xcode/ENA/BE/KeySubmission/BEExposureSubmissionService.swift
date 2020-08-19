@@ -28,8 +28,11 @@ protocol BEExposureSubmissionService : ExposureSubmissionService {
 	
 	func retrieveDiagnosisKeys(completionHandler: @escaping BEExposureSubmissionGetKeysHandler)
 	func submitExposure(keys:[ENTemporaryExposureKey],countries:[BECountry], completionHandler: @escaping ExposureSubmissionHandler)
+	func submitFakeExposure(completionHandler: @escaping ExposureSubmissionHandler)
 	
 	func deleteTestIfOutdated() -> Bool
+	
+	func getFakeTestResult(_ isLast:Bool, completion: @escaping(() -> Void))
 }
 
 class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposureSubmissionService {
@@ -92,7 +95,20 @@ class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposure
 			}
 		}
 	}
-	
+
+	func getFakeTestResult(_ isLast:Bool, completion: @escaping(() -> Void)) {
+		
+		httpClient.getTestResult(forDevice: BEMobileTestId.fakeRegistrationToken) { result in
+			if isLast {
+				self.httpClient.ackTestDownload(forDevice: BEMobileTestId.fakeRegistrationToken) {
+					completion()
+				}
+			} else {
+				completion()
+			}
+		}
+	}
+
 	func deleteTestIfOutdated() -> Bool {
 		guard let mobileTestId = store.mobileTestId else {
 			fatalError("No mobile test id present")
@@ -147,6 +163,20 @@ class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposure
 			keys:keys,
 			countries:countries,
 			completion: completionHandler)
+	}
+	
+	func submitFakeExposure(completionHandler: @escaping ExposureSubmissionHandler) {
+		httpClient.submit(
+			keys: [],
+			countries:[],
+			isFake: true) { error in
+			if let error = error {
+				logError(message: "Error while submiting diagnosis keys: \(error.localizedDescription)")
+				completionHandler(self.parseError(error))
+				return
+			}
+			completionHandler(nil)
+		}
 	}
 
 	// no longer used

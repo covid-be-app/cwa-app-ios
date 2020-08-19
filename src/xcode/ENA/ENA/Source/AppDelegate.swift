@@ -125,6 +125,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	private var exposureDetection: ExposureDetection?
 	// :BE: use BE protocol as variable type
 	private var exposureSubmissionService: BEExposureSubmissionService?
+	
+	// :BE: Add fake requests executor
+	private lazy var fakeRequestsExecutor: BEFakeRequestsExecutor = {
+		BEFakeRequestsExecutor(store: self.store, exposureManager: self.exposureManager, client: self.client)
+	}()
 
 	let downloadedPackagesStore: DownloadedPackagesStore = DownloadedPackagesSQLLiteStore(fileName: "packages")
 
@@ -173,15 +178,20 @@ extension AppDelegate: ENATaskExecutionDelegate {
 
 	/// This method executes the background tasks needed for: a) fetching test results and b) performing exposure detection requests
 	func executeENABackgroundTask(task: BGTask, completion: @escaping ((Bool) -> Void)) {
-		log(message: "Running background task...")
-		executeFetchTestResults(task: task) { fetchTestResultSuccess in
-			log(message: "Start exposure detection...")
 
-			// NOTE: We are currently fetching the test result first, and then execute
-			// the exposure detection check. Instead of implementing this behaviour in the completion handler,
-			// queues could be used as well. Due to time/resource constraints, we settled for this option.
-			self.executeExposureDetectionRequest(task: task) { exposureDetectionSuccess in
-				completion(fetchTestResultSuccess && exposureDetectionSuccess)
+		log(message: "Running background task...")
+		
+		// :BE: Add fake requests
+		fakeRequestsExecutor.execute {
+			self.executeFetchTestResults(task: task) { fetchTestResultSuccess in
+				log(message: "Start exposure detection...")
+
+				// NOTE: We are currently fetching the test result first, and then execute
+				// the exposure detection check. Instead of implementing this behaviour in the completion handler,
+				// queues could be used as well. Due to time/resource constraints, we settled for this option.
+				self.executeExposureDetectionRequest(task: task) { exposureDetectionSuccess in
+					completion(fetchTestResultSuccess && exposureDetectionSuccess)
+				}
 			}
 		}
 	}
@@ -244,3 +254,4 @@ extension AppDelegate: ENATaskExecutionDelegate {
 		}
 	}
 }
+

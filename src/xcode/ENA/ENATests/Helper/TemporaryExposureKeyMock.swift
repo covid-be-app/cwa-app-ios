@@ -22,7 +22,7 @@ import ExposureNotification
 
 final class TemporaryExposureKeyMock: ENTemporaryExposureKey {
 	init(
-		keyData: Data = Data(),
+		keyData: Data = Data(count: 16),  // :BE: make 16 byte buffers
 		rollingPeriod: ENIntervalNumber = 0,
 		rollingStartNumber: ENIntervalNumber = 0,
 		transmissionRiskLevel: ENRiskLevel = 0

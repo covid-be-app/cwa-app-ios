@@ -73,7 +73,7 @@ class BEMockExposureSubmissionService : BEExposureSubmissionService {
 	}
 	
 	func getTestResult(_ completeWith: @escaping TestResultHandler) {
-		
+		completeWith(.success(TestResult.positive))
 	}
 	
 	func hasRegistrationToken() -> Bool {
@@ -98,5 +98,17 @@ class BEMockExposureSubmissionService : BEExposureSubmissionService {
 	
 	func deleteTestIfOutdated() -> Bool {
 		return false
+	}
+	
+	func getFakeTestResult(_ completeWith: @escaping TestResultHandler) {
+		completeWith(.success(TestResult.positive))
+	}
+	
+	func submitFakeExposure(completionHandler: @escaping ExposureSubmissionHandler) {
+		completionHandler(nil)
+	}
+	
+	func getFakeTestResult(_ isLast: Bool, completion: @escaping (() -> Void)) {
+		completion()
 	}
 }
