@@ -95,7 +95,7 @@ extension URLRequest {
 		// we can remove one byte, as an array bigger than 127 bytes will need 2 bytes to store its length
 		// thereby increasing the total payload size with 1 byte
 		if byteCount > 128 {
-			byteCount = byteCount - 1
+			byteCount -= 1
 		}
 		
 		guard let data = (String.random(length: byteCount)).data(using: .ascii) else { return Data() }

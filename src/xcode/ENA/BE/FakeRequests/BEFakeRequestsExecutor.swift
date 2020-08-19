@@ -117,7 +117,7 @@ class BEFakeRequestsExecutor {
 	
 	private func doFakeFetchTestResult(service:BEExposureSubmissionService ,completion: @escaping (() -> Void)) {
 		log(message:"Get fake test result")
-		store.fakeRequestTestResultFetchIndex = store.fakeRequestTestResultFetchIndex + 1
+		store.fakeRequestTestResultFetchIndex += 1
 		let isLast = self.store.fakeRequestTestResultFetchIndex == self.store.fakeRequestAmountOfTestResultFetchesToDo
 		
 		service.getFakeTestResult(isLast) { 

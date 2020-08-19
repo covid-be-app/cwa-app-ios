@@ -200,7 +200,7 @@ class BEFakeRequestsExecutorTests: XCTestCase {
 		}
 	}
 	
-	private func makeMockSessionForFakeKeyUpload() -> BEMockURLSession {
+	private func makeMockSessionForFakeKeyUpload() throws -> BEMockURLSession {
 		let configuration = HTTPClient.Configuration.fake
 		var datas:[Data?] = []
 		var nextResponses:[URLResponse?] = []
@@ -221,7 +221,7 @@ class BEFakeRequestsExecutorTests: XCTestCase {
 
 		for _ in 0..<store.fakeRequestAmountOfTestResultFetchesToDo {
 			let result = TestResult.pending
-			let data = try! JSONEncoder().encode(result)
+			let data = try JSONEncoder().encode(result)
 			datas.append(data)
 			nextResponses.append(HTTPURLResponse(url: configuration.testResultURL, statusCode: 200, httpVersion: "2", headerFields: nil))
 		}
