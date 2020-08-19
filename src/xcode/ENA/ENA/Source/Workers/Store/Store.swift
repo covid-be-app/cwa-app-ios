@@ -102,4 +102,19 @@ protocol Store: AnyObject {
 	var testResult: TestResult? { get set }
 	
 	var deleteMobileTestIdAfterTimeInterval: TimeInterval {get set}
+
+	/// True if the app is allowed to execute fake requests (for plausible deniability) in the background.
+	var isAllowedToPerformBackgroundFakeRequests: Bool { get set }
+
+	/// Time when the app started the last background fake request.
+	var lastBackgroundFakeRequest: Date { get set }
+
+	/// If the app is currently in fake request mode
+	var isDoingFakeRequests: Bool { get set }
+	
+	/// Amount of fake fetch test results to do in 1 playbook execution run
+	var fakeRequestAmountOfTestResultFetchesToDo: Int { get set }
+
+	/// How many fake test fetches did we currently do
+	var fakeRequestTestResultFetchIndex: Int { get set }
 }

@@ -29,12 +29,10 @@ class BEHTTPClient : HTTPClient {
 	
 	override func getTestResult(forDevice registrationToken: String, completion completeWith: @escaping TestResultHandler) {
 		let url = configuration.testResultURL
-
-		// :BE: update key name for body
 		let bodyValues = ["testResultPollingToken": registrationToken]
+
 		do {
 			let encoder = JSONEncoder()
-			encoder.outputFormatting = .prettyPrinted
 
 			let data = try encoder.encode(bodyValues)
 
@@ -58,21 +56,8 @@ class BEHTTPClient : HTTPClient {
 						)
 						
 						if testResult.result != .pending {
-							let ackUrl = self.configuration.ackTestResultURL
-							
-							// we don't wait for this to return as even if it fails it's not an issue
-							// failure would mean that the test result is not deleted immediately from the server
-							// but it will be cleaned up in the auto-delete of old test results ran server-side anyway after a couple of days.
-							// Normally this will happen very rarely, since we just managed to do a succesful test download request
-							// so the connection should still work in 99.9% of the cases
-							
-							self.session.POST(ackUrl, data) { result in
-								switch result {
-								case .success:
-									log(message:"Ack succeeded")
-								case let .failure(error):
-									logError(message: "Ack failed due to error: \(error).")
-								}
+							self.ackTestDownload(forDevice: registrationToken) {
+								log(message:"Ack finished")
 							}
 						}
 						
@@ -91,19 +76,58 @@ class BEHTTPClient : HTTPClient {
 			return
 		}
 	}
+	
+	func ackTestDownload(forDevice registrationToken: String, completionBlock: @escaping(() -> Void)) {
+		let ackUrl = self.configuration.ackTestResultURL
+		let bodyValues = ["testResultPollingToken": registrationToken]
+		let encoder = JSONEncoder()
+
+		// we don't need this to run succesfully.
+		// failure would mean that the test result is not deleted immediately from the server
+		// but it will be cleaned up in the auto-delete of old test results ran server-side anyway after a couple of days.
+		// Normally this will happen very rarely, since we just managed to do a succesful test download request
+		// so the connection should still work in 99.9% of the cases
+		
+		if let data = try? encoder.encode(bodyValues) {
+			self.session.POST(ackUrl, data) { result in
+				switch result {
+				case .success:
+					log(message:"Ack succeeded")
+				case let .failure(error):
+					logError(message: "Ack failed due to error: \(error).")
+				}
+				
+				completionBlock()
+			}
+		} else {
+			completionBlock()
+		}
+	}
 
 	
 	func submit(
 		keys: [ENTemporaryExposureKey],
 		countries: [BECountry],
-		mobileTestId: BEMobileTestId,
-		testResult:TestResult,
+		mobileTestId: BEMobileTestId? = nil,
+		testResult:TestResult? = nil,
+		isFake:Bool = false,
 		completion: @escaping SubmitKeysCompletionHandler
 	) {
+		if !isFake {
+			guard
+				let _ = testResult,
+				let _ = mobileTestId else {
+					fatalError("Real requests require real test result and mobile test id")
+			}
+		}
+		
+		let mobileTestIdToUse = mobileTestId ?? BEMobileTestId.random
+		let testResultToUse = testResult ?? TestResult.positive
+		
 		guard let request = try? URLRequest.submitKeysRequest(
 			configuration: configuration,
-			mobileTestId: mobileTestId,
-			testResult: testResult,
+			mobileTestId: mobileTestIdToUse,
+			testResult: testResultToUse,
 			keys: keys,
 			countries: countries
 		) else {
@@ -127,73 +151,3 @@ class BEHTTPClient : HTTPClient {
 		}
 	}
 }
-
-private extension URLRequest {
-	static func submitKeysRequest(
-		configuration: HTTPClient.Configuration,
-		mobileTestId: BEMobileTestId,
-		testResult:TestResult,
-		keys: [ENTemporaryExposureKey],
-		countries: [BECountry]
-	) throws -> URLRequest {
-		let payload = SAP_SubmissionPayload.with {
-			$0.keys = keys.map { $0.sapKey }
-			$0.countries = countries.map { $0.code3 }
-		}
-		let payloadData = try payload.serializedData()
-		let url = configuration.submissionURL
-		/*
-		let fileManager = FileManager.default
-		let directoryURL = try! fileManager
-			.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-			.appendingPathComponent("keys.dat")
-
-		try! payloadData.write(to:directoryURL)
-*/
-		var request = URLRequest(url: url)
-
-		request.setValue(
-			mobileTestId.secretKeyBase64String,
-			forHTTPHeaderField: "Secret-Key"
-		)
-
-		request.setValue(
-			mobileTestId.randomString,
-			forHTTPHeaderField: "Random-String"
-		)
-
-		request.setValue(
-			mobileTestId.datePatientInfectious,
-			forHTTPHeaderField: "Date-Patient-Infectious"
-		)
-
-		request.setValue(
-			testResult.dateTestCommunicated,
-			forHTTPHeaderField: "Date-Test-Communicated"
-		)
-
-		request.setValue(
-			"\(testResult.resultChannel.rawValue)",
-			forHTTPHeaderField: "Result-Channel"
-		)
-
-		request.setValue(
-			"0",
-			// Requests with a value of "0" will be fully processed.
-			// Any other value indicates that this request shall be
-			// handled as a fake request." ,
-			forHTTPHeaderField: "cwa-fake"
-		)
-
-		request.setValue(
-			"application/x-protobuf",
-			forHTTPHeaderField: "Content-Type"
-		)
-
-		request.httpMethod = "POST"
-		request.httpBody = payloadData
-
-		return request
-	}
-}
-

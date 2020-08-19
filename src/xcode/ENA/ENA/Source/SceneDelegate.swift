@@ -164,6 +164,9 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate, RequiresAppDepend
 	@objc
 	func isOnboardedDidChange(_: NSNotification) {
 		store.isOnboarded ? showHome() : showOnboarding()
+		
+		// :BE: enable fake requests
+		store.isAllowedToPerformBackgroundFakeRequests = store.isOnboarded
 	}
 
 	private var privacyProtectionWindow: UIWindow?

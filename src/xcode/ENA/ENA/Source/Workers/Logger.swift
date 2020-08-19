@@ -29,7 +29,7 @@ func log(
 ) {
 	#if !RELEASE
 	print("\(level.rawValue.uppercased()): [\((file as NSString).lastPathComponent):\(line) - \(function)]\n \(message)")
-	os_log("%{public}@:[%{public}@:%d - %{public}@]\n %{public}@", type:.debug ,level.rawValue.uppercased(), (file as NSString).lastPathComponent, line, function, message)
+	//os_log("%{public}@:[%{public}@:%d - %{public}@]\n %{public}@", type:.debug ,level.rawValue.uppercased(), (file as NSString).lastPathComponent, line, function, message)
 	#endif
 }
 
