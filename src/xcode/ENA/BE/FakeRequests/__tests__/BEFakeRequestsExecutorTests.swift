@@ -165,7 +165,7 @@ class BEFakeRequestsExecutorTests: XCTestCase {
 	}
 
 	func testUploadKeys() throws {
-		let mockURLSession = makeMockSessionForFakeKeyUpload()
+		let mockURLSession = try makeMockSessionForFakeKeyUpload()
 
 		let networkStack = MockNetworkStack(
 			mockSession: mockURLSession
