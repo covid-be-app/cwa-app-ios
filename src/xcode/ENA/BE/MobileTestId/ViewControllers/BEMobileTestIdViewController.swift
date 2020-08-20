@@ -57,6 +57,7 @@ class BEMobileTestIdViewController: UIViewController, ENANavigationControllerWit
 		navigationItem.title = BEAppStrings.BEMobileTestId.title
 		navigationFooterItem?.primaryButtonTitle = BEAppStrings.BEMobileTestId.save
 		navigationFooterItem?.isPrimaryButtonEnabled = true
+		navigationFooterItem?.isSecondaryButtonHidden = true
 		saveExplanationLabel.text = BEAppStrings.BEMobileTestId.saveExplanation
 
 		let qrCodeImage = UIImage.generateQRCode("\(mobileTestId.datePatientInfectious)|\(mobileTestId.fullString)", size: qrCodeImageView.bounds.size.width * self.view.contentScaleFactor)
