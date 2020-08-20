@@ -49,7 +49,6 @@ class ENAUITests_02_AppInformation: XCTestCase {
 
 		XCTAssert(app.cells["AppStrings.AppInformation.aboutNavigation"].waitForExistence(timeout: 5.0))
 		XCTAssert(app.cells["AppStrings.AppInformation.faqNavigation"].waitForExistence(timeout: 5.0))
-		XCTAssert(app.cells["AppStrings.AppInformation.contactNavigation"].waitForExistence(timeout: 5.0))
 		XCTAssert(app.cells["AppStrings.AppInformation.privacyNavigation"].waitForExistence(timeout: 5.0))
 		XCTAssert(app.cells["AppStrings.AppInformation.termsNavigation"].waitForExistence(timeout: 5.0))
 
@@ -91,6 +90,8 @@ class ENAUITests_02_AppInformation: XCTestCase {
 		// XCTAssert(app.staticTexts["Done"].waitForExistence(timeout: 5.0))
 	}
 
+	// :BE: No longer used
+	/*
 	func test_0023_AppInformationFlow_contact() throws {
 		app.launch()
 
@@ -107,7 +108,8 @@ class ENAUITests_02_AppInformation: XCTestCase {
 
 		XCTAssert(app.staticTexts["AppStrings.AppInformation.contactTitle"].waitForExistence(timeout: 5.0))
 	}
-
+*/
+	
 	func test_0024_AppInformationFlow_privacy() throws {
 		app.launch()
 

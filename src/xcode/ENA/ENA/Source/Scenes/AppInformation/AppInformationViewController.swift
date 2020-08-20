@@ -47,7 +47,9 @@ extension AppInformationViewController {
 		case terms
 		case privacy
 		case legal
-		case contact
+		
+		// :BE: remove hotline
+		//case contact
 		case imprint
 	}
 }
