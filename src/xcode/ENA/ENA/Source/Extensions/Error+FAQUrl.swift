@@ -23,6 +23,9 @@ import ExposureNotification
 // These extensions enable some of the errors in our project to have their corresponding
 // FAQ links.
 
+// :BE: no longer used
+
+/*
 extension ExposureSubmissionError {
 	/// Returns the correct shortlink based on the underlying EN notification error.
 	var faqURL: URL? {
@@ -51,3 +54,5 @@ extension ENError {
 		}
 	}
 }
+
+*/

@@ -31,16 +31,23 @@ extension ExposureDetection.DidEndPrematurelyReason {
 
 		switch unwrappedError {
 		case let unwrappedError as ENError:
+					// :BE: no longer used
+			/*
 			let openFAQ: (() -> Void)? = {
 				guard let url = unwrappedError.faqURL else { return nil }
 				return {
 					UIApplication.shared.open(url, options: [:])
 				}
 			}()
+*/
 			return rootController.setupErrorAlert(
-				message: localizedDescription,
+				message: localizedDescription
+				// :BE: no longer used
+				/*
+				,
 				secondaryActionTitle: AppStrings.Common.errorAlertActionMoreInfo,
 				secondaryActionCompletion: openFAQ
+*/
 			)
 		default:
 			return rootController.setupErrorAlert(

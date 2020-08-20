@@ -16,10 +16,7 @@
 "Common_BackgroundFetch_SettingsTitle" = "Open instellingen";
 "Common_BackgroundFetch_OKTitle" = "Start contacttracing handmatig";
 "Common_BackgroundFetch_AlertTitle" = "Updates op de achtergrond uitgeschakeld";
-"General_moreInfo_URL" = " https://coronalert.be/nl/faq";
-"General_moreInfo_URL_EN5" = " https://coronalert.be/nl/faq";
-"General_moreInfo_URL_EN11" = " https://coronalert.be/nl/faq";
-"General_moreInfo_URL_EN13" = " https://coronalert.be/nl/faq";
+"General_moreInfo_URL" = "https://coronalert.be/nl/faq";
 "AccessibilityLabel_Close" = "Sluiten";
 "AccessibilityLabel_PhoneNumber" = "Telefoonnummer";
 "ExposureDetection_Off" = "Contacttracing stopgezet";
@@ -261,7 +258,6 @@
 "ExposureNotificationSetting_Dismiss_Action" = "Annuleren";
 "ExposureNotificationSetting_GeneralError_Title" = "Fout";
 "ExposureNotificationSetting_GeneralError_LearnMore_Action" = "Ontdek meer";
-"ExposureNotificationSetting_GeneralError_LearnMore_URL" = " https://coronalert.be/nl/faq";
 "ExposureNotificationSetting_AuthenticationError" = "Er heeft zich een fout voorgedaan tijdens het activeren van de contacttracing. Controleer in de instellingen van uw telefoon of u de COVID-19-contacttracing heeft geactiveerd.";
 "ExposureNotificationSetting_exposureNotification_Required" = "Er heeft zich een fout voorgedaan tijdens het activeren van de contacttracing. Controleer in de instellingen van uw telefoon of de meldingen voor de COVID-19-contacttracing geactiveerd zijn voor de app.";
 "ExposureNotificationSetting_exposureNotification_unavailable" = "Er heeft zich een fout voorgedaan tijdens het activeren van de contacttracing. Controleer in de instellingen van uw telefoon of deze app is geselecteerd als de actieve app voor COVID-19-contacttracing. Ga voor meer informatie naar onze FAQ-pagina.";
@@ -384,7 +380,7 @@
 "Reset_ConfirmDialog_Description" = "Er wordt niet langer gemeld dat u contact heeft gehad en u kunt andere gebruikers niet langer waarschuwen. Deze procedure kan niet ongedaan gemaakt worden.";
 "Reset_ConfirmDialog_Cancel" = "Annuleren";
 "Reset_ConfirmDialog_Confirm" = "Opnieuw instellen";
-"safari_corona_website" = " https://coronalert.be/nl/faq";
+"safari_corona_website" = "https://coronalert.be/nl/faq";
 "local_notifications_ignore" = "Negeren";
 "local_notifications_detectexposure_title" = "CoronAlert";
 "local_notifications_detectexposure_body" = "U heeft nieuwe berichten van CoronAlert.";

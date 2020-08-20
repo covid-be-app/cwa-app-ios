@@ -17,9 +17,6 @@
 "Common_BackgroundFetch_OKTitle" = "Start Exposure Logging Manually";
 "Common_BackgroundFetch_AlertTitle" = "Background updates deactivated";
 "General_moreInfo_URL" = "https://coronalert.be/en/faq";
-"General_moreInfo_URL_EN5" = "https://coronalert.be/en/faq";
-"General_moreInfo_URL_EN11" = "https://coronalert.be/en/faq";
-"General_moreInfo_URL_EN13" = "https://coronalert.be/en/faq";
 "AccessibilityLabel_Close" = "Close";
 "AccessibilityLabel_PhoneNumber" = "Phone number";
 "ExposureDetection_Off" = "Exposure logging stopped";
@@ -261,7 +258,6 @@
 "ExposureNotificationSetting_Dismiss_Action" = "Cancel";
 "ExposureNotificationSetting_GeneralError_Title" = "Error";
 "ExposureNotificationSetting_GeneralError_LearnMore_Action" = "Find out more";
-"ExposureNotificationSetting_GeneralError_LearnMore_URL" = "https://coronalert.be/en/faq";
 "ExposureNotificationSetting_AuthenticationError" = "An error occurred while activating the exposure logging feature. Please check whether you have activated the COVID-19 exposure log in your settings.";
 "ExposureNotificationSetting_exposureNotification_Required" = "An error occurred while activating the exposure logging feature. Please check whether the COVID-19 exposure notification feature in your settings is activated for the app.";
 "ExposureNotificationSetting_exposureNotification_unavailable" = "An error occurred while activating the exposure logging feature. Please check whether this app is selected as the active app for COVID-19 exposure logging in your settings. For more information, visit our FAQ page.";
