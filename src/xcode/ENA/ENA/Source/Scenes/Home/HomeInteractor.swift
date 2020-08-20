@@ -118,8 +118,8 @@ final class HomeInteractor: RequiresAppDependencies {
 		sections = initialCellConfigurators()
 	}
 
+	// :BE: merge sections
 	private func initialCellConfigurators() -> SectionConfiguration {
-
 		let info1Configurator = HomeInfoCellConfigurator(
 			title: AppStrings.Home.infoCardShareTitle,
 			description: nil, // :BE: no description
@@ -130,14 +130,14 @@ final class HomeInteractor: RequiresAppDependencies {
 		let info2Configurator = HomeInfoCellConfigurator(
 			title: AppStrings.Home.infoCardAboutTitle,
 			description: nil, // :BE: no description
-			position: .last,
+			position: .other,
 			accessibilityIdentifier: AccessibilityIdentifiers.Home.infoCardAboutTitle
 		)
 
 		let appInformationConfigurator = HomeInfoCellConfigurator(
 			title: AppStrings.Home.appInformationCardTitle,
 			description: nil,
-			position: .first,
+			position: .other,
 			accessibilityIdentifier: AccessibilityIdentifiers.Home.appInformationCardTitle
 		)
 
@@ -148,15 +148,16 @@ final class HomeInteractor: RequiresAppDependencies {
 			accessibilityIdentifier: AccessibilityIdentifiers.Home.settingsCardTitle
 		)
 
-		let infosConfigurators: [CollectionViewCellConfiguratorAny] = [info1Configurator, info2Configurator]
-		let settingsConfigurators: [CollectionViewCellConfiguratorAny] = [appInformationConfigurator, settingsConfigurator]
+		let infosConfigurators: [CollectionViewCellConfiguratorAny] = [info1Configurator, info2Configurator, appInformationConfigurator, settingsConfigurator]
+		// let settingsConfigurators: [CollectionViewCellConfiguratorAny] = [appInformationConfigurator, settingsConfigurator]
 
 		let actionsSection: SectionDefinition = setupActionSectionDefinition()
 		let infoSection: SectionDefinition = (.infos, infosConfigurators)
-		let settingsSection: SectionDefinition = (.settings, settingsConfigurators)
+		
+		//let settingsSection: SectionDefinition = (.settings, settingsConfigurators)
 
 		var sections: [(section: HomeViewController.Section, cellConfigurators: [CollectionViewCellConfiguratorAny])] = []
-		sections.append(contentsOf: [actionsSection, infoSection, settingsSection])
+		sections.append(contentsOf: [actionsSection, infoSection/*, settingsSection*/])
 
 		return sections
 	}

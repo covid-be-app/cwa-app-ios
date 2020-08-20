@@ -74,7 +74,9 @@ final class HomeViewController: UIViewController, RequiresAppDependencies {
 	enum Section: Int {
 		case actions
 		case infos
-		case settings
+		
+		// :BE: remove section
+		// case settings
 	}
 
 	// MARK: UIViewController
@@ -228,17 +230,22 @@ final class HomeViewController: UIViewController, RequiresAppDependencies {
 		case .actions:
 			showScreenForActionSectionForCell(at: indexPath)
 		case .infos:
-			if row == 0 {
+			
+			// :BE: change structure
+			switch row {
+			case 0:
 				delegate?.showInviteFriends()
-			} else {
+			case 1:
 				delegate?.showWebPage(from: self, urlString: AppStrings.SafariView.targetURL)
-			}
-		case .settings:
-			if row == 0 {
+			case 2:
 				delegate?.showAppInformation()
-			} else {
+			case 3:
 				delegate?.showSettings(enState: self.homeInteractor.state.enState)
+			default:
+				fatalError("Unknown entry")
 			}
+			default:
+				fatalError("Unknown entry")
 		}
 	}
 
