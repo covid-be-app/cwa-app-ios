@@ -368,7 +368,7 @@
 "InviteFriends_NavTitle" = "Partager";
 "InviteFriends_Title" = "Luttons ensemble contre le coronavirus !";
 "InviteFriends_Button" = "Envoyer le lien de téléchargement";
-"InviteFriends_ShareTitle" = "Luttons ensemble contre les coronavirus. Je suis dans le coup, toi aussi ?";
+"InviteFriends_ShareTitle" = "Téléchargez l'application Coronalert via ce lien";
 "InviteFriends_ShareUrl" = "http://onelink.to/j8nrvj";
 "InviteFriends_Illustration_Label" = "Une personne partage l'application Coronalert avec quatre autres personnes.";
 "Reset_NavTitle" = "Réinitialisation";

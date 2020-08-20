@@ -368,9 +368,9 @@
 "InviteFriends_NavTitle" = "Deel";
 "InviteFriends_Title" = "Samen krijgen we het coronavirus klein";
 "InviteFriends_Button" = "Downloadlink verzenden";
-"InviteFriends_ShareTitle" = "Samen krijgen we het coronavirus klein. Ik doe mee, u ook?";
+"InviteFriends_ShareTitle" = "Download de Coronalert applicatie via deze link";
 "InviteFriends_ShareUrl" = "http://onelink.to/j8nrvj";
-"InviteFriends_Illustration_Label" = "Een man deelt CoronAlert met vier andere mensen.";
+"InviteFriends_Illustration_Label" = "Een man deelt Coronalert met vier andere mensen.";
 "Reset_NavTitle" = "Opnieuw instellen";
 "Reset_Header1" = "Weet u zeker dat u de app opnieuw wilt instellen?";
 "Reset_Descrition1" = "Er wordt niet langer gemeld dat u contact heeft gehad en u kunt andere gebruikers niet langer waarschuwen. ";
