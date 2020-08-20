@@ -16,10 +16,10 @@
 "Common_BackgroundFetch_SettingsTitle" = "Open instellingen";
 "Common_BackgroundFetch_OKTitle" = "Start contacttracing handmatig";
 "Common_BackgroundFetch_AlertTitle" = "Updates op de achtergrond uitgeschakeld";
-"General_moreInfo_URL" = "https://www.coronalert.be";
-"General_moreInfo_URL_EN5" = "https://www.coronalert.be";
-"General_moreInfo_URL_EN11" = "https://www.coronalert.be";
-"General_moreInfo_URL_EN13" = "https://www.coronalert.be";
+"General_moreInfo_URL" = " https://coronalert.be/nl/faq";
+"General_moreInfo_URL_EN5" = " https://coronalert.be/nl/faq";
+"General_moreInfo_URL_EN11" = " https://coronalert.be/nl/faq";
+"General_moreInfo_URL_EN13" = " https://coronalert.be/nl/faq";
 "AccessibilityLabel_Close" = "Sluiten";
 "AccessibilityLabel_PhoneNumber" = "Telefoonnummer";
 "ExposureDetection_Off" = "Contacttracing stopgezet";
@@ -261,7 +261,7 @@
 "ExposureNotificationSetting_Dismiss_Action" = "Annuleren";
 "ExposureNotificationSetting_GeneralError_Title" = "Fout";
 "ExposureNotificationSetting_GeneralError_LearnMore_Action" = "Ontdek meer";
-"ExposureNotificationSetting_GeneralError_LearnMore_URL" = "https://www.coronalert.be";
+"ExposureNotificationSetting_GeneralError_LearnMore_URL" = " https://coronalert.be/nl/faq";
 "ExposureNotificationSetting_AuthenticationError" = "Er heeft zich een fout voorgedaan tijdens het activeren van de contacttracing. Controleer in de instellingen van uw telefoon of u de COVID-19-contacttracing heeft geactiveerd.";
 "ExposureNotificationSetting_exposureNotification_Required" = "Er heeft zich een fout voorgedaan tijdens het activeren van de contacttracing. Controleer in de instellingen van uw telefoon of de meldingen voor de COVID-19-contacttracing geactiveerd zijn voor de app.";
 "ExposureNotificationSetting_exposureNotification_unavailable" = "Er heeft zich een fout voorgedaan tijdens het activeren van de contacttracing. Controleer in de instellingen van uw telefoon of deze app is geselecteerd als de actieve app voor COVID-19-contacttracing. Ga voor meer informatie naar onze FAQ-pagina.";
@@ -338,7 +338,7 @@
 "App_Information_About_ImageDescription" = "";
 "App_Information_About_Title" = "Samen krijgen we het coronavirus klein";
 "App_Information_About_Description" = "Sciensano is het federale onderzoekscentrum voor de volksgezondheid, de diergezondheid en de voedselveiligheid van België. Het lanceert CoronAlert namens de federale regering. De app is bedoeld als digitale aanvulling op de reeds ingevoerde maatregelen op het gebied van volksgezondheid: een veilige afstand aanhouden, hygiënemaatregelen naleven en een mondmasker dragen.";
-"App_Information_About_Text" = "Gebruikers van de app helpen bij het opsporen en doorbreken van infectieketens. De app slaat contacten met andere mensen lokaal op uw toestel op. U krijgt een melding als u in contact bent gekomen met mensen die later een COVID-19-diagnose hebben gekregen. Uw identiteit en privacy zijn altijd beschermd.";
+"App_Information_About_Text" = "Als gebruiker van de app helpt u bij het opsporen en doorbreken van infectieketens. De app slaat contacten met andere mensen lokaal op uw toestel op. U krijgt een melding als u in contact bent gekomen met mensen die later een COVID-19-diagnose hebben gekregen. Uw identiteit en privacy zijn altijd beschermd.";
 "App_Information_FAQ_Navigation" = "FAQ";
 "App_Information_Contact_Navigation" = "Technische hotline";
 "App_Information_Contact_ImageDescription" = "Een man met een koptelefoon telefoneert.";
@@ -369,7 +369,7 @@
 "InviteFriends_Title" = "Samen krijgen we het coronavirus klein";
 "InviteFriends_Button" = "Downloadlink verzenden";
 "InviteFriends_ShareTitle" = "Samen krijgen we het coronavirus klein. Ik doe mee, u ook?";
-"InviteFriends_ShareUrl" = "https://www.coronalert.be";
+"InviteFriends_ShareUrl" = "http://onelink.to/j8nrvj";
 "InviteFriends_Illustration_Label" = "Een man deelt CoronAlert met vier andere mensen.";
 "Reset_NavTitle" = "Opnieuw instellen";
 "Reset_Header1" = "Weet u zeker dat u de app opnieuw wilt instellen?";
@@ -384,7 +384,7 @@
 "Reset_ConfirmDialog_Description" = "Er wordt niet langer gemeld dat u contact heeft gehad en u kunt andere gebruikers niet langer waarschuwen. Deze procedure kan niet ongedaan gemaakt worden.";
 "Reset_ConfirmDialog_Cancel" = "Annuleren";
 "Reset_ConfirmDialog_Confirm" = "Opnieuw instellen";
-"safari_corona_website" = "https://www.coronalert.be";
+"safari_corona_website" = " https://coronalert.be/nl/faq";
 "local_notifications_ignore" = "Negeren";
 "local_notifications_detectexposure_title" = "CoronAlert";
 "local_notifications_detectexposure_body" = "U heeft nieuwe berichten van CoronAlert.";
@@ -431,7 +431,7 @@
 "BEMobileTestId_Select" = "Kies";
 "BEMobileTestId_Date" = "Datum";
 "BEMobileTestId_Save" = "Opslaan";
-"BEMobileTestId_saveExplanation" = "Laat dit nummer zien aan de persoon die de test afneemt.\nTik op \"Opslaan\", zodat u een melding krijgt zodra het resultaat beschikbaar is.";
+"BEMobileTestId_saveExplanation" = "Toon onderstaande informatie aan de persoon die de test afneemt. Tik op \"Opslaan\", zodat u een melding krijgt zodra het resultaat beschikbaar is.";
 "BELanguage" = "nl";
 "BESelectKeyCountries_title" = "Kies Landen";
 "BESelectKeyCountries_explanation" = "Als u op een van de onderstaande datums niet in België was en u deze informatie (anoniem) wilt delen, selecteer dan het land dat u op die datum heeft bezocht. Tik op de lijn die u wilt wijzigen.";

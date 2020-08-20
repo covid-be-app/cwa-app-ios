@@ -16,10 +16,10 @@
 "Common_BackgroundFetch_SettingsTitle" = "Open Device Settings";
 "Common_BackgroundFetch_OKTitle" = "Start Exposure Logging Manually";
 "Common_BackgroundFetch_AlertTitle" = "Background updates deactivated";
-"General_moreInfo_URL" = "https://www.coronalert.be";
-"General_moreInfo_URL_EN5" = "https://www.coronalert.be";
-"General_moreInfo_URL_EN11" = "https://www.coronalert.be";
-"General_moreInfo_URL_EN13" = "https://www.coronalert.be";
+"General_moreInfo_URL" = "https://coronalert.be/en/faq";
+"General_moreInfo_URL_EN5" = "https://coronalert.be/en/faq";
+"General_moreInfo_URL_EN11" = "https://coronalert.be/en/faq";
+"General_moreInfo_URL_EN13" = "https://coronalert.be/en/faq";
 "AccessibilityLabel_Close" = "Close";
 "AccessibilityLabel_PhoneNumber" = "Phone number";
 "ExposureDetection_Off" = "Exposure logging stopped";
@@ -261,7 +261,7 @@
 "ExposureNotificationSetting_Dismiss_Action" = "Cancel";
 "ExposureNotificationSetting_GeneralError_Title" = "Error";
 "ExposureNotificationSetting_GeneralError_LearnMore_Action" = "Find out more";
-"ExposureNotificationSetting_GeneralError_LearnMore_URL" = "https://www.coronalert.be";
+"ExposureNotificationSetting_GeneralError_LearnMore_URL" = "https://coronalert.be/en/faq";
 "ExposureNotificationSetting_AuthenticationError" = "An error occurred while activating the exposure logging feature. Please check whether you have activated the COVID-19 exposure log in your settings.";
 "ExposureNotificationSetting_exposureNotification_Required" = "An error occurred while activating the exposure logging feature. Please check whether the COVID-19 exposure notification feature in your settings is activated for the app.";
 "ExposureNotificationSetting_exposureNotification_unavailable" = "An error occurred while activating the exposure logging feature. Please check whether this app is selected as the active app for COVID-19 exposure logging in your settings. For more information, visit our FAQ page.";
@@ -369,7 +369,7 @@
 "InviteFriends_Title" = "Let's fight coronavirus together";
 "InviteFriends_Button" = "Send Download Link";
 "InviteFriends_ShareTitle" = "Fighting coronavirus together. I'm in on this, you too?";
-"InviteFriends_ShareUrl" = "https://www.coronalert.be";
+"InviteFriends_ShareUrl" = "http://onelink.to/j8nrvj";
 "InviteFriends_Illustration_Label" = "A man shares Coronalert with four other persons.";
 "Reset_NavTitle" = "Reset";
 "Reset_Header1" = "Are you sure you want to reset the app?";
@@ -384,7 +384,7 @@
 "Reset_ConfirmDialog_Description" = "You will no longer be notified of your exposures and you will no longer be able to warn other users. This procedure cannot be undone.";
 "Reset_ConfirmDialog_Cancel" = "Cancel";
 "Reset_ConfirmDialog_Confirm" = "Reset";
-"safari_corona_website" = "https://www.coronalert.be";
+"safari_corona_website" = "https://coronalert.be/en/faq";
 "local_notifications_ignore" = "Ignore";
 "local_notifications_detectexposure_title" = "Coronalert";
 "local_notifications_detectexposure_body" = "You have new messages from Coronalert.";
@@ -431,7 +431,7 @@
 "BEMobileTestId_Select" = "Select";
 "BEMobileTestId_Date" = "Date";
 "BEMobileTestId_Save" = "Save";
-"BEMobileTestId_saveExplanation" = "Show this number to the person doing the test.\nTap \"Save\" so you can be notified as soon as the test result is available";
+"BEMobileTestId_saveExplanation" = "Show the information below to the person doing the test. Tap \"Save\" so you can be notified as soon as the test result is available.";
 "BELanguage" = "en";
 "BESelectKeyCountries_title" = "Select Countries";
 "BESelectKeyCountries_explanation" = "For each of the below dates, if you have not been in Belgium and you would like to share this information (anonymously), please select the country you visited on that date by tapping the line you want to change.";
