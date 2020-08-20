@@ -17,9 +17,6 @@
 "Common_BackgroundFetch_OKTitle" = "Kontaktverfolgung manuell starten";
 "Common_BackgroundFetch_AlertTitle" = "Hintergrund-Updates deaktiviert";
 "General_moreInfo_URL" = "https://coronalert.be/de/faq";
-"General_moreInfo_URL_EN5" = "https://coronalert.be/de/faq";
-"General_moreInfo_URL_EN11" = "https://coronalert.be/de/faq";
-"General_moreInfo_URL_EN13" = "https://coronalert.be/de/faq";
 "AccessibilityLabel_Close" = "Schließen";
 "AccessibilityLabel_PhoneNumber" = "Telefonnummer";
 "ExposureDetection_Off" = "Kontaktverfolgung angehalten";
@@ -261,7 +258,6 @@
 "ExposureNotificationSetting_Dismiss_Action" = "Abbrechen";
 "ExposureNotificationSetting_GeneralError_Title" = "Fehler";
 "ExposureNotificationSetting_GeneralError_LearnMore_Action" = "Mehr erfahren";
-"ExposureNotificationSetting_GeneralError_LearnMore_URL" = "https://coronalert.be/de/faq";
 "ExposureNotificationSetting_AuthenticationError" = "Bei der Aktivierung des Kontaktlogbuchs ist ein Fehler aufgetreten. Bitte prüfen Sie in den Einstellungen, ob Sie das COVID-19-Logbuch aktiviert haben.";
 "ExposureNotificationSetting_exposureNotification_Required" = "Bei der Aktivierung des Kontaktlogbuchs ist ein Fehler aufgetreten. Bitte prüfen Sie in den Einstellungen, ob für diese App die COVID-19-Kontaktmeldung aktiviert wurde.";
 "ExposureNotificationSetting_exposureNotification_unavailable" = "Bei der Aktivierung des Kontaktlogbuchs ist ein Fehler aufgetreten. Bitte in den Einstellungen prüfen, ob diese App für die COVID-19-Risiko-Kontaktverfolgung als aktive App gewählt wurde. Besuchen Sie die FAQ-Website für weitere Infos.";

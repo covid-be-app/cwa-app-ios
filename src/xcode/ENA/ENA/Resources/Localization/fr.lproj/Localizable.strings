@@ -17,9 +17,6 @@
 "Common_BackgroundFetch_OKTitle" = "Démarrer l'enregistrement de l'exposition manuellement";
 "Common_BackgroundFetch_AlertTitle" = "Mises à jour en l'arrière-plan désactivées";
 "General_moreInfo_URL" = "https://coronalert.be/fr/faq";
-"General_moreInfo_URL_EN5" = "https://coronalert.be/fr/faq";
-"General_moreInfo_URL_EN11" = "https://coronalert.be/fr/faq";
-"General_moreInfo_URL_EN13" = "https://coronalert.be/fr/faq";
 "AccessibilityLabel_Close" = "Fermer";
 "AccessibilityLabel_PhoneNumber" = "Numéro de téléphone";
 "ExposureDetection_Off" = "Enregistrement de l'exposition arrêté";
@@ -261,7 +258,6 @@
 "ExposureNotificationSetting_Dismiss_Action" = "Annuler";
 "ExposureNotificationSetting_GeneralError_Title" = "Erreur";
 "ExposureNotificationSetting_GeneralError_LearnMore_Action" = "En savoir plus";
-"ExposureNotificationSetting_GeneralError_LearnMore_URL" = "https://coronalert.be/fr/faq";
 "ExposureNotificationSetting_AuthenticationError" = "Une erreur s'est produite lors de l'activation de la fonction d'enregistrement de l'exposition. Veuillez vérifier dans vos paramètres si vous avez activé l'enregistrement de l'exposition au COVID-19.";
 "ExposureNotificationSetting_exposureNotification_Required" = "Une erreur s'est produite lors de l'activation de la fonction d'enregistrement de l'exposition. Veuillez vérifier dans vos paramètres que la fonction de notification de l'exposition au COVID-19 est activée pour cette application.";
 "ExposureNotificationSetting_exposureNotification_unavailable" = "Une erreur s'est produite lors de l'activation de la fonction d'enregistrement de l'exposition. Veuillez vérifier dans vos paramètres si l'enregistrement de l'exposition au COVID-19 est activé pour cette application. Pour plus d'informations, consultez la FAQ.";
