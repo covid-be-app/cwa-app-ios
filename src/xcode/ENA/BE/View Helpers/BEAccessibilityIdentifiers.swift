@@ -24,6 +24,7 @@ enum BEAccessibilityIdentifiers {
 	enum BEMobileTestId {
 		static let selectDate = "BEAppStrings.BEMobileTestId.select"
 		static let save = "BEAppStrings.BEMobileTestId.save"
+		static let saveExplanation = "BEAppStrings.BEMobileTestId.saveExplanation"
 	}
 	
 	enum BESelectSymptomsDate {

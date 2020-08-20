@@ -278,7 +278,6 @@
 		A9D9D1AD24D54AAF009BEDD9 /* BECountriesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D9D1AC24D54AAF009BEDD9 /* BECountriesTest.swift */; };
 		A9D9D1AF24D6B1FB009BEDD9 /* BEExposureSubmissionWarnOthersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D9D1AE24D6B1FB009BEDD9 /* BEExposureSubmissionWarnOthersViewController.swift */; };
 		A9DD2CE724CEF0680035081A /* BEMobileTestIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2CE524CEF0680035081A /* BEMobileTestIdViewController.swift */; };
-		A9DD2CE824CEF0680035081A /* BEMobileTestIdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9DD2CE624CEF0680035081A /* BEMobileTestIdViewController.xib */; };
 		A9DD2CEB24CEF3C70035081A /* BEExposureSubmissionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2CEA24CEF3C70035081A /* BEExposureSubmissionCoordinator.swift */; };
 		A9DD2CED24CF0BC00035081A /* BEAppStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2CEC24CF0BC00035081A /* BEAppStrings.swift */; };
 		A9DD2CEF24CF293E0035081A /* BEMobileTestId.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2CEE24CF293E0035081A /* BEMobileTestId.swift */; };
@@ -762,7 +761,6 @@
 		A9D9D1AC24D54AAF009BEDD9 /* BECountriesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BECountriesTest.swift; sourceTree = "<group>"; };
 		A9D9D1AE24D6B1FB009BEDD9 /* BEExposureSubmissionWarnOthersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEExposureSubmissionWarnOthersViewController.swift; sourceTree = "<group>"; };
 		A9DD2CE524CEF0680035081A /* BEMobileTestIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEMobileTestIdViewController.swift; sourceTree = "<group>"; };
-		A9DD2CE624CEF0680035081A /* BEMobileTestIdViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BEMobileTestIdViewController.xib; sourceTree = "<group>"; };
 		A9DD2CEA24CEF3C70035081A /* BEExposureSubmissionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEExposureSubmissionCoordinator.swift; sourceTree = "<group>"; };
 		A9DD2CEC24CF0BC00035081A /* BEAppStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEAppStrings.swift; sourceTree = "<group>"; };
 		A9DD2CEE24CF293E0035081A /* BEMobileTestId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEMobileTestId.swift; sourceTree = "<group>"; };
@@ -1845,7 +1843,6 @@
 			isa = PBXGroup;
 			children = (
 				A9DD2CE524CEF0680035081A /* BEMobileTestIdViewController.swift */,
-				A9DD2CE624CEF0680035081A /* BEMobileTestIdViewController.xib */,
 				A951618624DB027F00631519 /* BESelectSymptomsDateViewController.swift */,
 				A951618724DB027F00631519 /* BESelectSymptomsDateViewController.xib */,
 			);
@@ -2574,7 +2571,6 @@
 				51C7790C24867F16004582F8 /* RiskListItemView.xib in Resources */,
 				EE92A33E245D96DA006B97B0 /* Localizable.stringsdict in Resources */,
 				A328424D248B91E0006B1F09 /* HomeTestResultLoadingCell.xib in Resources */,
-				A9DD2CE824CEF0680035081A /* BEMobileTestIdViewController.xib in Resources */,
 				EE278B2D245F2BBB008B06F9 /* InviteFriends.storyboard in Resources */,
 				EE70C23D245B09EA00AC9B2F /* Localizable.strings in Resources */,
 				51CE1B85246078B6002CF42A /* ActivateCollectionViewCell.xib in Resources */,
