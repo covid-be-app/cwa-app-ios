@@ -124,11 +124,14 @@ extension AppInformationViewController {
 			accessibilityIdentifier: AccessibilityIdentifiers.AppInformation.legalNavigation,
 			action: .push(model: legalModel, separators: true, withTitle:  AppStrings.AppInformation.legalNavigation)
 		),
+		// :BE: remove hotline
+		/*
 		.contact: (
 			text: AppStrings.AppInformation.contactNavigation,
 			accessibilityIdentifier: AccessibilityIdentifiers.AppInformation.contactNavigation,
 			action: .push(model: contactModel, withTitle:  AppStrings.AppInformation.contactNavigation)
 		),
+*/
 		.imprint: (
 			text: AppStrings.AppInformation.imprintNavigation,
 			accessibilityIdentifier: AccessibilityIdentifiers.AppInformation.imprintNavigation,

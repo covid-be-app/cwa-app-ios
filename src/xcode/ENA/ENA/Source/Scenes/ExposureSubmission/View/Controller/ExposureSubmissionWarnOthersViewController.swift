@@ -118,7 +118,9 @@ class ExposureSubmissionWarnOthersViewController: DynamicTableViewController, EN
 	/// Creates an error alert for the EN errors.
 	func createENAlert(_ error: ExposureSubmissionError) -> UIAlertController {
 		return self.setupErrorAlert(
-			message: error.localizedDescription,
+			message: error.localizedDescription
+			// :BE: No longer used
+			/*,
 			secondaryActionTitle: AppStrings.Common.errorAlertActionMoreInfo,
 			secondaryActionCompletion: {
 				guard let url = error.faqURL else {
@@ -130,7 +132,7 @@ class ExposureSubmissionWarnOthersViewController: DynamicTableViewController, EN
 					url,
 					options: [:]
 				)
-		 })
+		 }*/)
 	}
 }
 

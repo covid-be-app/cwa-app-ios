@@ -16,10 +16,7 @@
 "Common_BackgroundFetch_SettingsTitle" = "Geräteeinstellungen öffnen";
 "Common_BackgroundFetch_OKTitle" = "Kontaktverfolgung manuell starten";
 "Common_BackgroundFetch_AlertTitle" = "Hintergrund-Updates deaktiviert";
-"General_moreInfo_URL" = "https://www.coronalert.be";
-"General_moreInfo_URL_EN5" = "https://www.coronalert.be";
-"General_moreInfo_URL_EN11" = "https://www.coronalert.be";
-"General_moreInfo_URL_EN13" = "https://www.coronalert.be";
+"General_moreInfo_URL" = "https://coronalert.be/de/faq";
 "AccessibilityLabel_Close" = "Schließen";
 "AccessibilityLabel_PhoneNumber" = "Telefonnummer";
 "ExposureDetection_Off" = "Kontaktverfolgung angehalten";
@@ -261,7 +258,6 @@
 "ExposureNotificationSetting_Dismiss_Action" = "Abbrechen";
 "ExposureNotificationSetting_GeneralError_Title" = "Fehler";
 "ExposureNotificationSetting_GeneralError_LearnMore_Action" = "Mehr erfahren";
-"ExposureNotificationSetting_GeneralError_LearnMore_URL" = "https://www.coronalert.be";
 "ExposureNotificationSetting_AuthenticationError" = "Bei der Aktivierung des Kontaktlogbuchs ist ein Fehler aufgetreten. Bitte prüfen Sie in den Einstellungen, ob Sie das COVID-19-Logbuch aktiviert haben.";
 "ExposureNotificationSetting_exposureNotification_Required" = "Bei der Aktivierung des Kontaktlogbuchs ist ein Fehler aufgetreten. Bitte prüfen Sie in den Einstellungen, ob für diese App die COVID-19-Kontaktmeldung aktiviert wurde.";
 "ExposureNotificationSetting_exposureNotification_unavailable" = "Bei der Aktivierung des Kontaktlogbuchs ist ein Fehler aufgetreten. Bitte in den Einstellungen prüfen, ob diese App für die COVID-19-Risiko-Kontaktverfolgung als aktive App gewählt wurde. Besuchen Sie die FAQ-Website für weitere Infos.";
@@ -368,8 +364,8 @@
 "InviteFriends_NavTitle" = "Teilen";
 "InviteFriends_Title" = "Gemeinsam gegen Corona";
 "InviteFriends_Button" = "Download-Link versenden";
-"InviteFriends_ShareTitle" = "Gemeinsam gegen Corona. Ich bin dabei. Du auch?";
-"InviteFriends_ShareUrl" = "https://www.coronalert.be";
+"InviteFriends_ShareTitle" = "Laden Sie die Anwendung Coronalert über diesen Link herunter";
+"InviteFriends_ShareUrl" = "http://onelink.to/j8nrvj";
 "InviteFriends_Illustration_Label" = "Ein Mann teilt Coronalert mit vier anderen Personen.";
 "Reset_NavTitle" = "Zurücksetzen";
 "Reset_Header1" = "Die App wirklich zurücksetzen?";
@@ -384,7 +380,7 @@
 "Reset_ConfirmDialog_Description" = "Sie werden nicht mehr über Ihre Kontakte informiert und können andere Benutzer nicht mehr warnen. Dieses Verfahren kann nicht rückgängig gemacht werden.";
 "Reset_ConfirmDialog_Cancel" = "Abbrechen";
 "Reset_ConfirmDialog_Confirm" = "Zurücksetzen";
-"safari_corona_website" = "https://www.coronalert.be";
+"safari_corona_website" = "https://coronalert.be/de/faq";
 "local_notifications_ignore" = "Ignorieren";
 "local_notifications_detectexposure_title" = "Coronalert";
 "local_notifications_detectexposure_body" = "Neue Coronalert-Berichte.";
@@ -431,7 +427,7 @@
 "BEMobileTestId_Select" = "Wählen";
 "BEMobileTestId_Date" = "Datum";
 "BEMobileTestId_Save" = "Speichern";
-"BEMobileTestId_saveExplanation" = "Diese Nummer der Testperson zeigen.\n'Speichern' antippen, damit Sie das verfügbare Testergebnis erhalten.";
+"BEMobileTestId_saveExplanation" = "Zeigen Sie der Testperson die folgenden Informationen. Tippen Sie auf \"Speichern\", damit Sie benachrichtigt werden, sobald das Testergebnis verfügbar ist.";
 "BELanguage" = "de";
 "BESelectKeyCountries_title" = "Länder wählen";
 "BESelectKeyCountries_explanation" = "Wenn Sie an allen aufgeführten Daten nicht in Belgien waren und diese Informationen (anonym) weitergeben möchten, bitte in der anzupassenden Zeile das Land, das Sie an diesem Datum besucht haben, antippen.";

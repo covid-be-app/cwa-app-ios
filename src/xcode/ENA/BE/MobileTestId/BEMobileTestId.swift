@@ -21,6 +21,22 @@ import Foundation
 import CryptoKit
 
 struct BEMobileTestId {
+	
+	static let fakeId = "000000000000000"
+	static let fakeDatePatientInfectious = "2020-01-01"
+	
+	static var fakeRegistrationToken:String {
+		get {
+			return "\(fakeId)|\(fakeDatePatientInfectious)"
+		}
+	}
+	
+	static var random:BEMobileTestId {
+		get {
+			return BEMobileTestId(datePatientInfectious: String.fromDateWithoutTime(date: Date()))
+		}
+	}
+	
 	// R1. This is a string because it can start with 0. 15 digits
 	let id:String
 	

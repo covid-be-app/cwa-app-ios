@@ -44,9 +44,6 @@ enum AppStrings {
 
 	enum Links {
 		static let appFaq = NSLocalizedString("General_moreInfo_URL", comment: "")
-		static let appFaqENError5 = NSLocalizedString("General_moreInfo_URL_EN5", comment: "")
-		static let appFaqENError11 = NSLocalizedString("General_moreInfo_URL_EN11", comment: "")
-		static let appFaqENError13 = NSLocalizedString("General_moreInfo_URL_EN13", comment: "")
 	}
 
 	enum AccessibilityLabel {
@@ -381,8 +378,6 @@ enum AppStrings {
 		static let generalErrorTitle = NSLocalizedString("ExposureNotificationSetting_GeneralError_Title", comment: "")
 
 		static let learnMoreActionTitle = NSLocalizedString("ExposureNotificationSetting_GeneralError_LearnMore_Action", comment: "")
-
-		static let learnMoreURL = NSLocalizedString("ExposureNotificationSetting_GeneralError_LearnMore_URL", comment: "")
 
 		static let enAuthorizationError = NSLocalizedString("ExposureNotificationSetting_AuthenticationError", comment: "")
 

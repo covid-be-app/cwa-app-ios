@@ -253,6 +253,11 @@
 		A92076D124E426D600AE8748 /* BEMockExposureSubmissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076D024E426D600AE8748 /* BEMockExposureSubmissionService.swift */; };
 		A92076DB24EA770F00AE8748 /* BEDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076DA24EA770F00AE8748 /* BEDate.swift */; };
 		A92076DD24EA7C5D00AE8748 /* BEDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076DC24EA7C5D00AE8748 /* BEDateTests.swift */; };
+		A92076E124ED33EA00AE8748 /* BEURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076E024ED33EA00AE8748 /* BEURLRequest.swift */; };
+		A92076E324ED342500AE8748 /* BEURLRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076E224ED342500AE8748 /* BEURLRequestTests.swift */; };
+		A92076E624ED407A00AE8748 /* BEFakeRequestsExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076E524ED407A00AE8748 /* BEFakeRequestsExecutor.swift */; };
+		A92076E924ED41F400AE8748 /* BEFakeRequestsExecutorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076E824ED41F400AE8748 /* BEFakeRequestsExecutorTests.swift */; };
+		A92076EC24ED542900AE8748 /* BEMockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076EB24ED542900AE8748 /* BEMockURLSession.swift */; };
 		A929A71724DC3EE50039B997 /* BEHTTPClientSubmitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A929A71624DC3EE50039B997 /* BEHTTPClientSubmitTests.swift */; };
 		A935EE5624E0060400B33B66 /* BEENAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A935EE5524E0060400B33B66 /* BEENAUITests.swift */; };
 		A951618524DAEB3A00631519 /* BEDecimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A951618424DAEB3A00631519 /* BEDecimal.swift */; };
@@ -273,7 +278,6 @@
 		A9D9D1AD24D54AAF009BEDD9 /* BECountriesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D9D1AC24D54AAF009BEDD9 /* BECountriesTest.swift */; };
 		A9D9D1AF24D6B1FB009BEDD9 /* BEExposureSubmissionWarnOthersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D9D1AE24D6B1FB009BEDD9 /* BEExposureSubmissionWarnOthersViewController.swift */; };
 		A9DD2CE724CEF0680035081A /* BEMobileTestIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2CE524CEF0680035081A /* BEMobileTestIdViewController.swift */; };
-		A9DD2CE824CEF0680035081A /* BEMobileTestIdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9DD2CE624CEF0680035081A /* BEMobileTestIdViewController.xib */; };
 		A9DD2CEB24CEF3C70035081A /* BEExposureSubmissionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2CEA24CEF3C70035081A /* BEExposureSubmissionCoordinator.swift */; };
 		A9DD2CED24CF0BC00035081A /* BEAppStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2CEC24CF0BC00035081A /* BEAppStrings.swift */; };
 		A9DD2CEF24CF293E0035081A /* BEMobileTestId.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2CEE24CF293E0035081A /* BEMobileTestId.swift */; };
@@ -723,6 +727,11 @@
 		A92076D024E426D600AE8748 /* BEMockExposureSubmissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEMockExposureSubmissionService.swift; sourceTree = "<group>"; };
 		A92076DA24EA770F00AE8748 /* BEDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDate.swift; sourceTree = "<group>"; };
 		A92076DC24EA7C5D00AE8748 /* BEDateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDateTests.swift; sourceTree = "<group>"; };
+		A92076E024ED33EA00AE8748 /* BEURLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEURLRequest.swift; sourceTree = "<group>"; };
+		A92076E224ED342500AE8748 /* BEURLRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEURLRequestTests.swift; sourceTree = "<group>"; };
+		A92076E524ED407A00AE8748 /* BEFakeRequestsExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEFakeRequestsExecutor.swift; sourceTree = "<group>"; };
+		A92076E824ED41F400AE8748 /* BEFakeRequestsExecutorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEFakeRequestsExecutorTests.swift; sourceTree = "<group>"; };
+		A92076EB24ED542900AE8748 /* BEMockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEMockURLSession.swift; sourceTree = "<group>"; };
 		A929A71624DC3EE50039B997 /* BEHTTPClientSubmitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEHTTPClientSubmitTests.swift; sourceTree = "<group>"; };
 		A935EE5524E0060400B33B66 /* BEENAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEENAUITests.swift; sourceTree = "<group>"; };
 		A951618424DAEB3A00631519 /* BEDecimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDecimal.swift; sourceTree = "<group>"; };
@@ -752,7 +761,6 @@
 		A9D9D1AC24D54AAF009BEDD9 /* BECountriesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BECountriesTest.swift; sourceTree = "<group>"; };
 		A9D9D1AE24D6B1FB009BEDD9 /* BEExposureSubmissionWarnOthersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEExposureSubmissionWarnOthersViewController.swift; sourceTree = "<group>"; };
 		A9DD2CE524CEF0680035081A /* BEMobileTestIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEMobileTestIdViewController.swift; sourceTree = "<group>"; };
-		A9DD2CE624CEF0680035081A /* BEMobileTestIdViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BEMobileTestIdViewController.xib; sourceTree = "<group>"; };
 		A9DD2CEA24CEF3C70035081A /* BEExposureSubmissionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEExposureSubmissionCoordinator.swift; sourceTree = "<group>"; };
 		A9DD2CEC24CF0BC00035081A /* BEAppStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEAppStrings.swift; sourceTree = "<group>"; };
 		A9DD2CEE24CF293E0035081A /* BEMobileTestId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEMobileTestId.swift; sourceTree = "<group>"; };
@@ -1701,6 +1709,31 @@
 			path = "Mock Objects";
 			sourceTree = "<group>";
 		};
+		A92076E424ED406500AE8748 /* FakeRequests */ = {
+			isa = PBXGroup;
+			children = (
+				A92076E724ED41DE00AE8748 /* __tests__ */,
+				A92076E524ED407A00AE8748 /* BEFakeRequestsExecutor.swift */,
+			);
+			path = FakeRequests;
+			sourceTree = "<group>";
+		};
+		A92076E724ED41DE00AE8748 /* __tests__ */ = {
+			isa = PBXGroup;
+			children = (
+				A92076E824ED41F400AE8748 /* BEFakeRequestsExecutorTests.swift */,
+			);
+			path = __tests__;
+			sourceTree = "<group>";
+		};
+		A92076EA24ED540D00AE8748 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				A92076EB24ED542900AE8748 /* BEMockURLSession.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		A929A71324DC3C470039B997 /* __tests__ */ = {
 			isa = PBXGroup;
 			children = (
@@ -1778,6 +1811,8 @@
 		A9DD2CE224CEEEF40035081A /* BE */ = {
 			isa = PBXGroup;
 			children = (
+				A92076EA24ED540D00AE8748 /* Mocks */,
+				A92076E424ED406500AE8748 /* FakeRequests */,
 				A935EE5424E005A200B33B66 /* ENAUITests */,
 				A9DD2D0224D020F80035081A /* __tests__ */,
 				A980D59E24D84DE900A5BB8E /* Country */,
@@ -1808,7 +1843,6 @@
 			isa = PBXGroup;
 			children = (
 				A9DD2CE524CEF0680035081A /* BEMobileTestIdViewController.swift */,
-				A9DD2CE624CEF0680035081A /* BEMobileTestIdViewController.xib */,
 				A951618624DB027F00631519 /* BESelectSymptomsDateViewController.swift */,
 				A951618724DB027F00631519 /* BESelectSymptomsDateViewController.xib */,
 			);
@@ -1825,6 +1859,7 @@
 				A980D59C24D822F400A5BB8E /* BEIntervalNumber.swift */,
 				A951618424DAEB3A00631519 /* BEDecimal.swift */,
 				A92076DA24EA770F00AE8748 /* BEDate.swift */,
+				A92076E024ED33EA00AE8748 /* BEURLRequest.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1836,6 +1871,7 @@
 				A9DD2CFE24D01A940035081A /* BESymmetricKeyTests.swift */,
 				A92076CD24E40BFC00AE8748 /* BEIntervalNumberTests.swift */,
 				A92076DC24EA7C5D00AE8748 /* BEDateTests.swift */,
+				A92076E224ED342500AE8748 /* BEURLRequestTests.swift */,
 			);
 			path = __tests__;
 			sourceTree = "<group>";
@@ -2535,7 +2571,6 @@
 				51C7790C24867F16004582F8 /* RiskListItemView.xib in Resources */,
 				EE92A33E245D96DA006B97B0 /* Localizable.stringsdict in Resources */,
 				A328424D248B91E0006B1F09 /* HomeTestResultLoadingCell.xib in Resources */,
-				A9DD2CE824CEF0680035081A /* BEMobileTestIdViewController.xib in Resources */,
 				EE278B2D245F2BBB008B06F9 /* InviteFriends.storyboard in Resources */,
 				EE70C23D245B09EA00AC9B2F /* Localizable.strings in Resources */,
 				51CE1B85246078B6002CF42A /* ActivateCollectionViewCell.xib in Resources */,
@@ -2678,6 +2713,7 @@
 				B1C7EEAE24941A3B00F1F284 /* ManualExposureDetectionState.swift in Sources */,
 				51486DA22485101500FCE216 /* RiskInactiveCollectionViewCell.swift in Sources */,
 				710021DC248E44A6001F0B63 /* ENAFont.swift in Sources */,
+				A92076E624ED407A00AE8748 /* BEFakeRequestsExecutor.swift in Sources */,
 				A9DD2D0124D01F980035081A /* BESecureStore.swift in Sources */,
 				B1FE13FF2489708200D012E5 /* CachedAppConfiguration.swift in Sources */,
 				EE22DB8B247FB43A001B0A71 /* ActionDetailTableViewCell.swift in Sources */,
@@ -2690,6 +2726,7 @@
 				710224EC248FC150000C5DEF /* HomeTestResultCellConfigurator.swift in Sources */,
 				71330E4724810A0C00EB10F6 /* DynamicTableViewFooter.swift in Sources */,
 				B1D431CB246C84A400E728AD /* DownloadedPackagesStore.swift in Sources */,
+				A92076E124ED33EA00AE8748 /* BEURLRequest.swift in Sources */,
 				714194EA247A65C60072A090 /* DynamicTableViewHeaderSeparatorView.swift in Sources */,
 				2F26CE2E248B9C4F00BE30EE /* UIViewController+BackButton.swift in Sources */,
 				A16714BB248D18D20031B111 /* SummaryMetadata.swift in Sources */,
@@ -2879,12 +2916,14 @@
 			files = (
 				A1BABD0924A57B88000ED515 /* TemporaryExposureKeyMock.swift in Sources */,
 				A1E41949249548770016E52A /* HTTPClient+SubmitTests.swift in Sources */,
+				A92076EC24ED542900AE8748 /* BEMockURLSession.swift in Sources */,
 				A1E41941249410AF0016E52A /* SAPDownloadedPackage+Helpers.swift in Sources */,
 				015692E424B48C3F0033F35E /* TimeInterval+Convenience.swift in Sources */,
 				516E42FE24B7773E0008CC30 /* HomeLowRiskCellConfiguratorTests.swift in Sources */,
 				B1EAEC8F247118D1003BE9A2 /* URLSession+ConvenienceTests.swift in Sources */,
 				A372DA4224BF3E29003248BB /* MockExposureSubmissionCoordinator.swift in Sources */,
 				A1E419582495A8F90016E52A /* HTTPClient+RegistrationTokenTests.swift in Sources */,
+				A92076E924ED41F400AE8748 /* BEFakeRequestsExecutorTests.swift in Sources */,
 				A1E419552495A8060016E52A /* HTTPClient+GetTestResultTests.swift in Sources */,
 				A9DD2CFF24D01A940035081A /* BESymmetricKeyTests.swift in Sources */,
 				A3284259248E7672006B1F09 /* MockExposureSubmissionQRScannerViewController.swift in Sources */,
@@ -2906,6 +2945,7 @@
 				A3E851B524ADDAC000402485 /* CountdownTimerTests.swift in Sources */,
 				F2DC808E248989CE00EDC40A /* DynamicTableViewControllerRegisterCellsTests.swift in Sources */,
 				51F1256024BEFB8F00126C86 /* HomeUnknown48hRiskCellConfiguratorTests.swift in Sources */,
+				A92076E324ED342500AE8748 /* BEURLRequestTests.swift in Sources */,
 				EE22DB91247FB479001B0A71 /* MockStateHandlerObserverDelegate.swift in Sources */,
 				B1C7EE4624938EB700F1F284 /* ExposureDetection_DidEndPrematurelyReason+ErrorHandlingTests.swift in Sources */,
 				A92076CE24E40BFC00AE8748 /* BEIntervalNumberTests.swift in Sources */,
