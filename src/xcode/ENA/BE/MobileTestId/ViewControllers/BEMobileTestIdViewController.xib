@@ -36,7 +36,7 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbI-Jt-oKt" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
-                                    <rect key="frame" x="165.33333333333334" y="190" width="43.666666666666657" height="20.333333333333343"/>
+                                    <rect key="frame" x="166.33333333333334" y="190" width="41.666666666666657" height="20.333333333333343"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -45,7 +45,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYR-uV-FUS" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
-                                    <rect key="frame" x="165.33333333333334" y="250.33333333333334" width="43.666666666666657" height="20.333333333333343"/>
+                                    <rect key="frame" x="166.33333333333334" y="250.33333333333334" width="41.666666666666657" height="20.333333333333343"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
