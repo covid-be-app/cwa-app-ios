@@ -120,7 +120,6 @@
 "ExposureSubmission_Hotline_Number" = "0800 14 689";
 "ExposureSubmission_DataPrivacyTitle" = "Data Privacy";
 "ExposureSubmission_Continue_actionText" = "Next";
-"ExposureSubmission_DataPrivacyDescription" = "By tapping on “Accept”, you consent to the App querying the status of your coronavirus test and displaying it in the App. This feature is available to you if you have received a QR code and have consented to your test result being transmitted to the App’s server system. As soon as the testing lab has stored your test result on the server, you will be able to see the result in the App. If you have enabled notifications, you will also receive a notification outside the App telling you that your test result has been received. However, for privacy reasons, the test result itself will only be displayed in the App. You can withdraw this consent at any time by deleting your test registration in the App. Withdrawing your consent will not affect the lawfulness of processing before its withdrawal. Further information can be found in the menu under “Data Privacy Information”.";
 "ExposureSubmissionDataPrivacy_AcceptTitle" = "Accept";
 "ExposureSubmissionDataPrivacy_DontAcceptTitle" = "Do Not Accept";
 "ExposureSubmission_Submit" = "Enter TAN";
@@ -148,18 +147,12 @@
 "ExposureSubmissionHotline_iconAccessibilityLabel1" = "Step 1 of 2";
 "ExposureSubmissionHotline_iconAccessibilityLabel2" = "Step 2 of 2";
 "ExposureSubmission_PhoneNumber" = "0800 14 689";
-"ExposureSubmission_PhoneDetailDescription" = "Languages: \nGerman, English, Turkish\n\nBusiness hours:\nMonday to Friday: 9am-5pm\n\nThe call is free of charge.";
 "ExposureSubmission_SectionDescription2" = "Register the test by entering the TAN in the app.";
 "ExposureSubmission_CallButtonTitle" = "Call";
 "ExposureSubmission_TANInputButtonTitle" = "Enter TAN";
 "ExposureSubmissionHotline_imageDescription" = "Hotline communicates a TAN.";
 "ExposureSubmissionQRScanner_notFoundAlertTitle" = "Diagnosis cannot be found";
 "ExposureSubmissionQRScanner_otherError" = "An unknown error occurred.";
-"ExposureSubmissionQRScanner_CameraFlash" = "Camera flash";
-"ExposureSubmissionQRScanner_CameraFlash_On" = "Turned On";
-"ExposureSubmissionQRScanner_CameraFlash_Off" = "Turned Off";
-"ExposureSubmissionQRScanner_CameraFlash_Enable" = "Turn on camera flash";
-"ExposureSubmissionQRScanner_CameraFlash_Disable" = "Turn off camera flash";
 "ExposureSubmissionSuccess_Title" = "Thank you!";
 "ExposureSubmissionSuccess_AccImageDescription" = "Everyone in the group is cheering because someone has shared their test result.";
 "ExposureSubmissionSuccess_Button" = "That’s it!";
@@ -280,7 +273,7 @@
 "Home_Risk_Last_Activate_Item_High_Title" = "Higher Risk";
 "Home_RiskCard_Update_Button" = "Update";
 "Home_RiskCard_Unknown_Item_Title" = "Since you have not had exposure logging turned on for long enough, we cannot calculate your risk of infection.";
-"Home_RiskCard_Unknown48h_Body" = "Ihre Risiko-Berechnung wurde seit mehr als 48 Stunden nicht aktualisiert. Bitte aktualisieren Sie die Berechnung.";
+"Home_RiskCard_Unknown48h_Body" = "Your infection risk calculation has not been updated for more than 48 hours. Please update the calculation.";
 "Home_Risk_Inactive_NoCalculation_Possible_Title" = "Exposure logging stopped";
 "Home_Risk_Inactive_Outdated_Results_Title" = "Exposure logging is not possible";
 "Home_Risk_Inactive_NoCalculation_Possible_Body" = "Activate exposure logging to evaluate your risk status today.";
@@ -333,7 +326,7 @@
 "App_Information_About_Navigation" = "About the App";
 "App_Information_About_ImageDescription" = "";
 "App_Information_About_Title" = "Let's fight coronavirus together";
-"App_Information_About_Description" = "TODO";
+"App_Information_About_Description" = "Sciensano is the Belgian federal public health body. It publishes the Coronalert app on behalf of the federal government. The application is intended to be a digital complement to the public health measures already in place: social distancing, hygiene and face masks.";
 "App_Information_About_Text" = "Whoever uses the app helps to trace and break chains of infection. The app saves encounters with other people locally on your device. You are notified if you have encountered people who were later diagnosed with COVID-19. Your identity and privacy are always protected.";
 "App_Information_FAQ_Navigation" = "FAQ";
 "App_Information_Contact_Navigation" = "Technical Hotline";
