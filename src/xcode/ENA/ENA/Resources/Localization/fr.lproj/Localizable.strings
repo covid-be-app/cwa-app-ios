@@ -399,3 +399,4 @@
 "BESelectSymptomsDate_title" = "Sélectionner la date";
 "BESelectSymptomsDate_next" = "Suivant";
 "InviteFriends_Description" = "Plus il y a de personnes qui utilisent l'application, plus vite nous pourrons briser la chaîne d'infection. Veuillez inviter votre famille et vos amis à télécharger l'application.";
+"RiskLegend_Legend2_Title" = "Risque d'infection";
