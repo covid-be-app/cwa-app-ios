@@ -17,6 +17,17 @@
 
 import Foundation
 
+// :BE: endpoints for each build target
+#if RELEASE
+	let distributionBaseURL = URL(staticString: "https://c19distcdn-stg.ixor.be")
+	let submissionBaseURL = URL(staticString: "https://c19-submission-stg.ixor.be")
+	let verificationBaseURL = URL(staticString: "https://c19-verification-stg.ixor.be")
+#else
+	let distributionBaseURL = URL(staticString: "https://c19distcdn-tst.ixor.be")
+	let submissionBaseURL = URL(staticString: "https://c19-submission-tst.ixor.be")
+	let verificationBaseURL = URL(staticString: "https://c19-verification-tst.ixor.be")
+#endif
+
 extension HTTPClient {
 	struct Configuration {
 		// MARK: Default Instances
@@ -28,15 +39,15 @@ extension HTTPClient {
 			country: "BE",
 			endpoints: Configuration.Endpoints(
 				distribution: .init(
-					baseURL: URL(staticString: "https://c19distcdn-tst.ixor.be"),
+					baseURL: distributionBaseURL,
 					requiresTrailingSlash: false
 				),
 				submission: .init(
-					baseURL: URL(staticString: "https://c19-submission-tst.ixor.be"),
+					baseURL: submissionBaseURL,
 					requiresTrailingSlash: false
 				),
 				verification: .init(
-					baseURL: URL(staticString: "https://c19-verification-tst.ixor.be"),
+					baseURL: verificationBaseURL,
 					requiresTrailingSlash: false
 				)
 			)
