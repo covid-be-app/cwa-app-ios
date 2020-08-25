@@ -93,7 +93,7 @@
 "Onboarding_DoNotActivate_actionText" = "Ne pas activer";
 "Onboarding_DeactivateExposureConfirmation_title" = "Cela signifie que l'application Coronalert ne peut pas envoyer ou recevoir de notifications concernant votre statut de risque COVID-19.";
 "Onboarding_DeactivateExposureConfirmation_message" = "Vous pouvez désactiver cette fonction à tout moment.";
-"OnboardingInfo_togetherAgainstCoronaPage_imageDescription" = "Un groupe de personnes utilisent leurs smartphones en ville.";
+"OnboardingInfo_togetherAgainstCoronaPage_imageDescription" = "Un groupe de personnes utilisent leurs smartphones en ville. Logos officiels du gouvernement fédéral, du gouvernement flamand, de la Région wallonne, de la Région de Bruxelles-Capitale et de la Communauté germanophone.";
 "OnboardingInfo_togetherAgainstCoronaPage_title" = "Luttons ensemble contre le coronavirus !";
 "OnboardingInfo_togetherAgainstCoronaPage_boldText" = "Plus de protection pour vous et pour nous tous. En utilisant l'application Coronalert, nous pouvons briser les chaînes d'infection beaucoup plus rapidement.";
 "OnboardingInfo_togetherAgainstCoronaPage_normalText" = "Transformez votre smartphone en système d'alerte corona. Obtenez un aperçu de votre statut de risque et découvrez si vous avez été en contact étroit avec des personnes diagnostiquées positives au COVID-19 au cours des 14 derniers jours. \n\nL'application enregistre les rencontres entre individus par leurs smartphones en échangeant des identifiants aléatoires cryptés, et sans accéder à aucune donnée personnelle.";
@@ -280,7 +280,7 @@
 "Home_SubmitCard_Body" = "Aidez-nous à briser la chaîne d'infection en informant les autres.";
 "Home_SubmitCard_Button" = "En savoir plus";
 "Home_InfoCard_ShareTitle" = "Partagez l'application Coronalert";
-"Home_InfoCard_AboutTitle" = "FAQ";
+"Home_InfoCard_AboutTitle" = "Questions fréquemment posées";
 "Home_SettingsCard_Title" = "Paramètres";
 "Home_AppInformationCard_Title" = "Informations complémentaires";
 "Home_AppInformationCard_Version" = "Version";
@@ -300,10 +300,10 @@
 "App_Information_About_Title" = "Luttons ensemble contre le coronavirus !";
 "App_Information_About_Description" = "Sciensano est l'organisme fédéral belge de santé publique. Il publie l'application Coronalert au nom du gouvernement fédéral. L'application se veut un complément numérique aux mesures de santé publique déjà mises en place : distanciation sociale, hygiène et masques faciaux.";
 "App_Information_About_Text" = "Quiconque utilise l'application aide à tracer et à briser les chaînes d'infection. L'application enregistre les rencontres avec d'autres personnes localement sur votre smartphone. Vous êtes averti si vous avez rencontré des personnes chez qui le COVID-19 a été diagnostiqué par la suite. Votre identité et votre vie privée sont toujours protégées.";
-"App_Information_FAQ_Navigation" = "FAQ";
+"App_Information_FAQ_Navigation" = "Questions fréquemment posées";
 "App_Information_Contact_ImageDescription" = "Un homme porte un casque d'écoute lorsqu'il passe un appel téléphonique.";
 "App_Information_Contact_Title" = "Comment pouvons-nous vous aider ?";
-"App_Information_Imprint_Navigation" = "Société";
+"App_Information_Imprint_Navigation" = "Information";
 "App_Information_Imprint_ImageDescription" = "Une main tient un smartphone qui affiche un texte à l'écran. À côté du texte se trouve un symbole représentant les mentions légales.";
 "App_Information_Imprint_Section2_Title" = "Publié par Sciensano";
 "App_Information_Imprint_Section2_Text" = "Rue Juliette Wytsmanstraat 14\n1050 Bruxelles (Belgique)\nreprésenté par son président";
