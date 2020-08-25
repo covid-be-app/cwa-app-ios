@@ -28,7 +28,7 @@
 "ExposureDetection_Refreshed" = "Aktualisiert: %@";
 "ExposureDetection_Refreshed_Never" = "Unbekannt";
 "ExposureDetection_RefreshingIn" = "Aktualisierung in %02d:%02d Minuten";
-"ExposureDetection_RefreshIn" = "Aktualisierung in %@";
+"ExposureDetection_RefreshIn" = "Aktualisierung in %@h";
 "ExposureDetection_Refresh_24h" = "Regelmäßig aktualisiert";
 "ExposureDetection_LastRiskLevel" = "Letzte Kontaktverfolgung: %@";
 "ExposureDetection_OffText" = "Aktivieren Sie das Kontaktlogbuch, um sofort Ihren Risikostatus zu berechnen.";

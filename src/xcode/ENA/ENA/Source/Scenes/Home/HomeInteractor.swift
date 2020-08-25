@@ -481,7 +481,9 @@ extension HomeInteractor: CountdownTimerDelegate {
 		guard let cell = homeViewController.cellForItem(at: indexPath) as? RiskLevelCollectionViewCell else { return }
 
 		// We pass the time and let the configurator decide whether the button can be activated or not.
-		riskLevelConfigurator?.timeUntilUpdate = time
+		
+		// :BE: only show hours
+		riskLevelConfigurator?.timeUntilUpdate = "\(timer.hourCeil)"
 		riskLevelConfigurator?.configureButton(for: cell)
 	}
 }

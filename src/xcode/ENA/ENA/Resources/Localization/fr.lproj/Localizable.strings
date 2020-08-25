@@ -28,7 +28,7 @@
 "ExposureDetection_Refreshed" = "Mise à jour : %@";
 "ExposureDetection_Refreshed_Never" = "inconnu";
 "ExposureDetection_RefreshingIn" = "Mise à jour en %02d:%02d minutes";
-"ExposureDetection_RefreshIn" = "Mise à jour en %@";
+"ExposureDetection_RefreshIn" = "Sera mise à jour en %@h";
 "ExposureDetection_Refresh_24h" = "Régulièrement mis à jour";
 "ExposureDetection_LastRiskLevel" = "Dernier enregistrement d'exposition : %@";
 "ExposureDetection_OffText" = "Activez mise à jour de l'exposition pour évaluer votre statut de risque aujourd'hui.";
@@ -295,7 +295,7 @@
 "Home_resultCard_InvalidTitle" = "Test non valide";
 "Home_resultCard_InvalidDesc" = "Votre test ne peut pas être évalué";
 "Home_resultCard_LoadingErrorTitle" = "Le résultat de votre test ne peut pas être chargé.";
-"App_Information_About_Navigation" = "À propos de l'application";
+"App_Information_About_Navigation" = "À propos";
 "App_Information_About_ImageDescription" = "Vide";
 "App_Information_About_Title" = "Luttons ensemble contre le coronavirus !";
 "App_Information_About_Description" = "Sciensano est l'organisme fédéral belge de santé publique. Il publie l'application Coronalert au nom du gouvernement fédéral. L'application se veut un complément numérique aux mesures de santé publique déjà mises en place : distanciation sociale, hygiène et masques faciaux.";

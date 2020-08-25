@@ -265,7 +265,8 @@ extension ExposureDetectionViewController {
 extension ExposureDetectionViewController: CountdownTimerDelegate {
 
 	func countdownTimer(_ timer: CountdownTimer, didUpdate time: String) {
-		self.updateCheckButton(time)
+		// :BE: only show hours
+		self.updateCheckButton("\(timer.hourCeil)")
 	}
 
 	func countdownTimer(_ timer: CountdownTimer, didEnd done: Bool) {
