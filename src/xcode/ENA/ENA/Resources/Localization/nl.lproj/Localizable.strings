@@ -93,7 +93,7 @@
 "Onboarding_DoNotActivate_actionText" = "Niet activeren";
 "Onboarding_DeactivateExposureConfirmation_title" = "Dit betekent dat Coronalert geen meldingen over uw COVID-19-risicostatus kan verzenden of ontvangen.";
 "Onboarding_DeactivateExposureConfirmation_message" = "U kunt deze functie op elk moment uitschakelen.";
-"OnboardingInfo_togetherAgainstCoronaPage_imageDescription" = "Een groep mensen gebruikt hun toestellen in de stad.";
+"OnboardingInfo_togetherAgainstCoronaPage_imageDescription" = "Een groep mensen gebruikt hun toestellen in de stad. Officiële logo’s van de federale overheid, de Vlaamse overheid, het Waals Gewest, Het Brussels Hoofdstedelijk Gewest en de Duitstalige Gemeenschap.";
 "OnboardingInfo_togetherAgainstCoronaPage_title" = "Samen krijgen we het coronavirus klein";
 "OnboardingInfo_togetherAgainstCoronaPage_boldText" = "Bescherm uzelf en ons allemaal. Gebruik Coronalert, zo kunnen we de infectieketens sneller doorbreken.";
 "OnboardingInfo_togetherAgainstCoronaPage_normalText" = "Maak van uw toestel een corona-waarschuwingssysteem. U krijgt een overzicht van uw risicostatus en krijgt te horen of u de voorbije 14 dagen nauw contact heeft gehad met mensen die een COVID-19-diagnose hebben gekregen. \n\nDe app registreert contacten tussen mensen. Hun toestellen wisselen versleutelde willekeurige ID's uit, maar hebben geen toegang tot persoonlijke gegevens.";
@@ -280,7 +280,7 @@
 "Home_SubmitCard_Body" = "Waarschuw anderen en help zo mee de infectieketen te doorbreken.";
 "Home_SubmitCard_Button" = "Meer informatie";
 "Home_InfoCard_ShareTitle" = "Deel Coronalert";
-"Home_InfoCard_AboutTitle" = "FAQ";
+"Home_InfoCard_AboutTitle" = "Veelgestelde vragen";
 "Home_SettingsCard_Title" = "Instellingen";
 "Home_AppInformationCard_Title" = "Informatie app";
 "Home_AppInformationCard_Version" = "Versie";
@@ -300,10 +300,10 @@
 "App_Information_About_Title" = "Samen krijgen we het coronavirus klein";
 "App_Information_About_Description" = "Sciensano is het federale onderzoekscentrum voor de volksgezondheid, de diergezondheid en de voedselveiligheid van België. Het lanceert Coronalert namens de federale regering. De app is bedoeld als digitale aanvulling op de reeds ingevoerde maatregelen op het gebied van volksgezondheid: een veilige afstand aanhouden, hygiënemaatregelen naleven en een mondmasker dragen.";
 "App_Information_About_Text" = "Als gebruiker van de app helpt u bij het opsporen en doorbreken van infectieketens. De app slaat contacten met andere mensen lokaal op uw toestel op. U krijgt een melding als u in contact bent gekomen met mensen die later een COVID-19-diagnose hebben gekregen. Uw identiteit en privacy zijn altijd beschermd.";
-"App_Information_FAQ_Navigation" = "FAQ";
+"App_Information_FAQ_Navigation" = "Veelgestelde vragen";
 "App_Information_Contact_ImageDescription" = "Een man met een koptelefoon telefoneert.";
 "App_Information_Contact_Title" = "Hoe kunnen we u helpen?";
-"App_Information_Imprint_Navigation" = "Bedrijf";
+"App_Information_Imprint_Navigation" = "Informatie";
 "App_Information_Imprint_ImageDescription" = "U ziet een hand met een smartphone met een grote hoeveelheid tekst op het schermpje. Het symbooltje naast de tekst verwijst naar het colofon.";
 "App_Information_Imprint_Section2_Title" = "Gepubliceerd door Sciensano";
 "App_Information_Imprint_Section2_Text" = "Juliette Wytsmanstraat 14\n1050 Brussel";
