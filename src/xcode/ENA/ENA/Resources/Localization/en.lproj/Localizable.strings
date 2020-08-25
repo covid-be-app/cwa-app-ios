@@ -28,7 +28,7 @@
 "ExposureDetection_Refreshed" = "Updated: %@";
 "ExposureDetection_Refreshed_Never" = "Unknown";
 "ExposureDetection_RefreshingIn" = "Update in %02d:%02d minutes";
-"ExposureDetection_RefreshIn" = "Update in %@";
+"ExposureDetection_RefreshIn" = "Will update in %@h";
 "ExposureDetection_Refresh_24h" = "Regularly updated";
 "ExposureDetection_LastRiskLevel" = "Last exposure logging: %@";
 "ExposureDetection_OffText" = "Activate exposure logging to evaluate your risk status today.";

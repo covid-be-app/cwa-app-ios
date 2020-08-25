@@ -28,7 +28,7 @@
 "ExposureDetection_Refreshed" = "Bijgewerkt: %@";
 "ExposureDetection_Refreshed_Never" = "Onbekend";
 "ExposureDetection_RefreshingIn" = "Bijwerken over %02d:%02d minuten";
-"ExposureDetection_RefreshIn" = "Bijwerken over %@";
+"ExposureDetection_RefreshIn" = "Wordt bijgewerkt na %@h";
 "ExposureDetection_Refresh_24h" = "Regelmatig bijgewerkt";
 "ExposureDetection_LastRiskLevel" = "Laatste contacttracing: %@";
 "ExposureDetection_OffText" = "Activeer contactlogboek om uw risicostatus vandaag te evalueren.";

@@ -269,6 +269,8 @@
 		A986053024D33231003D0865 /* BEAccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A986052F24D33231003D0865 /* BEAccessibilityIdentifiers.swift */; };
 		A9A5F21B24D1C757004B01FC /* BETestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A5F21A24D1C757004B01FC /* BETestResult.swift */; };
 		A9A64C6A24D3130000B3D25F /* BEHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A64C6924D3130000B3D25F /* BEHTTPClient.swift */; };
+		A9D0BF8224F585A200DEBD99 /* BECountdownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D0BF8124F585A200DEBD99 /* BECountdownTimer.swift */; };
+		A9D0BF8424F5864000DEBD99 /* BECountdownTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D0BF8324F5864000DEBD99 /* BECountdownTimerTests.swift */; };
 		A9D9D1A124D459C1009BEDD9 /* BESelectKeyCountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D9D19F24D459C1009BEDD9 /* BESelectKeyCountriesViewController.swift */; };
 		A9D9D1A224D459C1009BEDD9 /* BESelectKeyCountriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9D9D1A024D459C1009BEDD9 /* BESelectKeyCountriesViewController.xib */; };
 		A9D9D1A424D45D6B009BEDD9 /* BESelectKeyCountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D9D1A324D45D6B009BEDD9 /* BESelectKeyCountryCell.swift */; };
@@ -753,6 +755,8 @@
 		A986052F24D33231003D0865 /* BEAccessibilityIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEAccessibilityIdentifiers.swift; sourceTree = "<group>"; };
 		A9A5F21A24D1C757004B01FC /* BETestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BETestResult.swift; sourceTree = "<group>"; };
 		A9A64C6924D3130000B3D25F /* BEHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEHTTPClient.swift; sourceTree = "<group>"; };
+		A9D0BF8124F585A200DEBD99 /* BECountdownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BECountdownTimer.swift; sourceTree = "<group>"; };
+		A9D0BF8324F5864000DEBD99 /* BECountdownTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BECountdownTimerTests.swift; sourceTree = "<group>"; };
 		A9D9D19F24D459C1009BEDD9 /* BESelectKeyCountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BESelectKeyCountriesViewController.swift; sourceTree = "<group>"; };
 		A9D9D1A024D459C1009BEDD9 /* BESelectKeyCountriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BESelectKeyCountriesViewController.xib; sourceTree = "<group>"; };
 		A9D9D1A324D45D6B009BEDD9 /* BESelectKeyCountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BESelectKeyCountryCell.swift; sourceTree = "<group>"; };
@@ -1860,6 +1864,7 @@
 				A951618424DAEB3A00631519 /* BEDecimal.swift */,
 				A92076DA24EA770F00AE8748 /* BEDate.swift */,
 				A92076E024ED33EA00AE8748 /* BEURLRequest.swift */,
+				A9D0BF8124F585A200DEBD99 /* BECountdownTimer.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1872,6 +1877,7 @@
 				A92076CD24E40BFC00AE8748 /* BEIntervalNumberTests.swift */,
 				A92076DC24EA7C5D00AE8748 /* BEDateTests.swift */,
 				A92076E224ED342500AE8748 /* BEURLRequestTests.swift */,
+				A9D0BF8324F5864000DEBD99 /* BECountdownTimerTests.swift */,
 			);
 			path = __tests__;
 			sourceTree = "<group>";
@@ -2670,6 +2676,7 @@
 				515BBDEB2484F8E500CDB674 /* HomeThankYouRiskCellConfigurator.swift in Sources */,
 				514C0A0D247AFB0200F235F6 /* RiskTextItemView.swift in Sources */,
 				CD99A3A9245C272400BF12AF /* ExposureSubmissionService.swift in Sources */,
+				A9D0BF8224F585A200DEBD99 /* BECountdownTimer.swift in Sources */,
 				71F54191248BF677006DB793 /* HtmlTextView.swift in Sources */,
 				51B5B41C246EC8B800DC5D3E /* HomeCardCollectionViewCell.swift in Sources */,
 				B1EDFD8D248E74D000E7EAFF /* URL+StaticString.swift in Sources */,
@@ -2964,6 +2971,7 @@
 				516E430224B89AED0008CC30 /* CoordinatorTests.swift in Sources */,
 				B117521A248ACFFC00C3325C /* SAP_RiskScoreClass+LowAndHighTests.swift in Sources */,
 				B11655932491437600316087 /* RiskProvidingConfigurationTests.swift in Sources */,
+				A9D0BF8424F5864000DEBD99 /* BECountdownTimerTests.swift in Sources */,
 				B1A76E9F24714AC700EA5208 /* HTTPClient+Configuration.swift in Sources */,
 				516E430024B777B20008CC30 /* HomeHighRiskCellConfiguratorTests.swift in Sources */,
 				A9DD2CF824CFF9720035081A /* BEStringTests.swift in Sources */,
