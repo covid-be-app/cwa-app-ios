@@ -39,4 +39,22 @@ class BECountriesTest: XCTestCase {
 		
 		XCTAssertEqual(firstCountry.name["fr"]!.compare(secondCountry.name["fr"]!),.orderedAscending)
     }
+
+    func testCountryLoading3() throws {
+		let countries = BECountry.load("nl")
+		
+		let firstCountry = countries[0]
+		let secondCountry = countries[1]
+		
+		XCTAssertEqual(firstCountry.name["nl"]!.compare(secondCountry.name["nl"]!),.orderedAscending)
+    }
+
+    func testCountryLoading4() throws {
+		let countries = BECountry.load("de")
+		
+		let firstCountry = countries[0]
+		let secondCountry = countries[1]
+		
+		XCTAssertEqual(firstCountry.name["de"]!.compare(secondCountry.name["de"]!),.orderedAscending)
+    }
 }
