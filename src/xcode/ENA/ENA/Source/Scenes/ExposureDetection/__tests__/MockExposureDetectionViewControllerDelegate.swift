@@ -20,19 +20,11 @@
 import Foundation
 @testable import ENA
 
+// :BE: adapt mock to new delegate
 class MockExposureDetectionViewControllerDelegate: ExposureDetectionViewControllerDelegate {
-	func exposureDetectionViewController(
-		_ controller: ExposureDetectionViewController,
-		setExposureManagerEnabled enabled: Bool,
-		completionHandler completion: @escaping (ExposureNotificationError?) -> Void) {
-		completion(nil)
-	}
-
-	func didStartLoading(exposureDetectionViewController: ExposureDetectionViewController) {
-		return
-	}
-
-	func didFinishLoading(exposureDetectionViewController: ExposureDetectionViewController) {
-		return
+	func exposureDetectionViewControllerShowExposureNotificationSettings(
+		viewController: ExposureDetectionViewController,
+		state: ENStateHandler.State) {
+		
 	}
 }

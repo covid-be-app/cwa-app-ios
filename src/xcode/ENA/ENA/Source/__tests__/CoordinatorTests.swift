@@ -95,13 +95,6 @@ class CoordinatorTests: XCTestCase {
 		XCTAssertTrue(pushViewControllerWasCalled)
 	}
 
-	func test_coordinator_shouldShowExposureDetection() {
-		let state = HomeInteractor.State(detectionMode: .automatic, exposureManagerState: .init(), enState: .unknown, risk: nil)
-		coordinator.showExposureDetection(state: state, isRequestRiskRunning: false)
-		let presentWasCalled = coordinator.mockNavigationController.presentWasCalled
-		XCTAssertTrue(presentWasCalled)
-	}
-
 	func test_coordinator_shouldShowExposureSubmission() {
 		coordinator.showExposureSubmission()
 		let presentWasCalled = coordinator.mockNavigationController.presentWasCalled

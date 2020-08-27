@@ -51,4 +51,8 @@ enum BEAppStrings {
 		static let sendKeys = NSLocalizedString("BESelectKeyCountries_sendKeys", comment: "")
 	}
 	
+	enum BEExposureDetection {
+		static let offShort = NSLocalizedString("BEExposureDetection_OffShort", comment: "")
+	}
+	
 }
