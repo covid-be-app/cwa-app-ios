@@ -25,6 +25,10 @@
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
 	<string>31</string>
+	<key>ENAPIVersion</key>
+	<string>1</string>
+	<key>ENDeveloperRegion</key>
+	<string>BEL</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
@@ -71,9 +75,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>ENDeveloperRegion</key>
-	<string>BEL</string>
-	<key>ENAPIVersion</key>
-	<string>1</string>
 </dict>
 </plist>
