@@ -35,14 +35,6 @@ extension URLRequest {
 		}
 		let payloadData = try payload.serializedData()
 		let url = configuration.submissionURL
-		/*
-		let fileManager = FileManager.default
-		let directoryURL = try! fileManager
-			.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-			.appendingPathComponent("keys.dat")
-
-		try! payloadData.write(to:directoryURL)
-*/
 		var request = URLRequest(url: url)
 
 		request.setValue(
