@@ -4,6 +4,8 @@
 //
 
 import Foundation
+import ExposureNotification
+
 extension ENStateHandler {
 	enum State {
 		/// Exposure Notification is enabled.
@@ -18,5 +20,41 @@ extension ENStateHandler {
 		case notAuthorized
 		///The user was never asked the consent before, that's why unknown.
 		case unknown
+
+		// :BE: moved function so it can be used in different places
+		static func determineCurrentState(from enManagerState: ExposureManagerState) -> State {
+			switch enManagerState.status {
+			case .active:
+				return .enabled
+			case .bluetoothOff:
+				guard !enManagerState.enabled == false else {
+					return .disabled
+				}
+				return .bluetoothOff
+			case .disabled:
+				return .disabled
+			case .restricted:
+				return differentiateRestrictedCase()
+			case .unknown:
+				return .disabled
+			@unknown default:
+				fatalError("New state was added that is not being covered by ENStateHandler")
+			}
+		}
+
+		private static func differentiateRestrictedCase() -> State {
+			switch ENManager.authorizationStatus {
+			case .notAuthorized:
+				return .notAuthorized
+			case .restricted:
+				return .restricted
+			case .unknown:
+				return .unknown
+			case .authorized:
+				return .disabled
+			@unknown default:
+				fatalError("New state was added that is not being covered by ENStateHandler")
+			}
+		}
 	}
 }

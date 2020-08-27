@@ -16,7 +16,7 @@
 "Common_BackgroundFetch_SettingsTitle" = "Open instellingen";
 "Common_BackgroundFetch_OKTitle" = "Start contacttracing handmatig";
 "Common_BackgroundFetch_AlertTitle" = "Updates op de achtergrond uitgeschakeld";
-"General_moreInfo_URL" = "https://coronalert.be/nl/faq";
+"General_moreInfo_URL" = "https://coronalert.be/nl/faq/";
 "AccessibilityLabel_Close" = "Sluiten";
 "AccessibilityLabel_PhoneNumber" = "Telefoonnummer";
 "ExposureDetection_Off" = "Contacttracing stopgezet";
@@ -338,7 +338,7 @@
 "Reset_ConfirmDialog_Description" = "Er wordt niet langer gemeld dat u contact heeft gehad en u kunt andere gebruikers niet langer waarschuwen. Deze procedure kan niet ongedaan gemaakt worden.";
 "Reset_ConfirmDialog_Cancel" = "Annuleren";
 "Reset_ConfirmDialog_Confirm" = "Opnieuw instellen";
-"safari_corona_website" = "https://coronalert.be/nl/faq";
+"safari_corona_website" = "https://coronalert.be/nl/faq/";
 "local_notifications_ignore" = "Negeren";
 "local_notifications_detectexposure_title" = "Coronalert";
 "local_notifications_detectexposure_body" = "U heeft nieuwe berichten van Coronalert.";
@@ -400,3 +400,4 @@
 "BESelectSymptomsDate_next" = "Volgende";
 "InviteFriends_Description" = "Hoe meer mensen de app gebruiken, hoe sneller we de infectieketen kunnen doorbreken. Nodig uw familie en vrienden uit om de app te downloaden.";
 "RiskLegend_Legend2_Title" = "Infectierisico";
+"BEExposureDetection_OffShort" = "Stopgezet";
