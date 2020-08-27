@@ -390,8 +390,17 @@ extension HomeInteractor {
 extension HomeInteractor {
 	func updateTestResults() {
 		// Avoid unnecessary loading.
-		// :BE: testresult enum to struct
-		guard testResult == nil || testResult?.result != .positive else { return }
+		// :BE: testresult enum to struct and make sure we retry as long as test is pending
+
+		// Early out
+		if let resultObject = testResult {
+			if resultObject.result != .pending {
+				self.reloadTestResult(with: resultObject)
+				return
+			}
+		}
+		
+		guard testResult == nil || testResult?.result == .pending else { return }
 		guard store.registrationToken != nil else { return }
 
 		// Make sure to make the loading cell appear for at least `minRequestTime`.
