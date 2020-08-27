@@ -60,15 +60,6 @@ extension ExposureSubmissionServiceFactory {
 		let service = BEMockExposureSubmissionService()
 
 		// :BE: registration token fetching does not exist on our side
-		/*
-		if isEnabled(.getRegistrationTokenSuccess) {
-			service.getRegistrationTokenCallback = { _, completeWith in
-				DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-					completeWith(.success("dummyRegToken"))
-				}
-			}
-		}
-*/
 
 		if isEnabled(.submitExposureSuccess) {
 			service.submitExposureCallback = { completeWith in
