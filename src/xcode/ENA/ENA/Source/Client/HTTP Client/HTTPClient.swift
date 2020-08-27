@@ -194,48 +194,6 @@ class HTTPClient: Client {
 		// :BE: disable code
 		
 		fatalError("Implemented in subclass")
-		/*
-		let url = configuration.testResultURL
-
-		let bodyValues = ["registrationToken": registrationToken]
-		do {
-			let encoder = JSONEncoder()
-			encoder.outputFormatting = .prettyPrinted
-
-			let data = try encoder.encode(bodyValues)
-
-			session.POST(url, data) { result in
-				switch result {
-				case let .success(response):
-					guard response.hasAcceptableStatusCode else {
-						completeWith(.failure(.serverError(response.statusCode)))
-						return
-					}
-					guard let testResultResponseData = response.body else {
-						completeWith(.failure(.invalidResponse))
-						logError(message: "Failed to register Device with invalid response")
-						return
-					}
-					do {
-						let testResult = try decoder.decode(
-							[String: Int].self,
-							from: testResultResponseData
-						)
-						completeWith(.success(testResult))
-					} catch {
-						logError(message: "Failed to register Device with invalid response payload structure")
-						completeWith(.failure(.invalidResponse))
-					}
-				case let .failure(error):
-					completeWith(.failure(error))
-					logError(message: "Failed to registerDevices due to error: \(error).")
-				}
-			}
-		} catch {
-			completeWith(.failure(.invalidResponse))
-			return
-		}
-		*/
 	}
 
 	func getTANForExposureSubmit(forDevice registrationToken: String, completion completeWith: @escaping TANHandler) {
