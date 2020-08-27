@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DFY-cN-Vfe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DFY-cN-Vfe">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="QWK-uI-Gcu">
-                                <rect key="frame" x="0.0" y="73.5" width="414" height="1026.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="1100"/>
                                 <color key="backgroundColor" name="ENA Background Color"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="riskCell" id="XQi-Gr-JdM" customClass="ExposureDetectionRiskCell" customModule="ENA" customModuleProvider="target">
@@ -550,65 +550,16 @@
                                 </view>
                                 <blurEffect style="regular"/>
                             </visualEffectView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7J8-aC-PDv">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="73.5"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tYy-qm-bQA" userLabel="Title View">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="73.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Current Risk Level" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LpH-l8-dtB" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="24" width="342" height="33.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" name="ENA Text Contrast Color"/>
-                                                <nil key="highlightedColor"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="title1"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </label>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="LpH-l8-dtB" firstAttribute="top" secondItem="tYy-qm-bQA" secondAttribute="topMargin" id="40D-FQ-cij"/>
-                                            <constraint firstItem="LpH-l8-dtB" firstAttribute="leading" secondItem="tYy-qm-bQA" secondAttribute="leadingMargin" id="9Jw-1A-Hb2"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="LpH-l8-dtB" secondAttribute="trailing" id="WiJ-yO-3Yb"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="LpH-l8-dtB" secondAttribute="bottom" id="xHy-yB-Lh8"/>
-                                        </constraints>
-                                        <edgeInsets key="layoutMargins" top="24" left="16" bottom="16" right="16"/>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" name="ENA Risk High Color"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="tYy-qm-bQA" secondAttribute="bottom" id="U4j-Lr-Z60"/>
-                                    <constraint firstItem="tYy-qm-bQA" firstAttribute="top" secondItem="7J8-aC-PDv" secondAttribute="top" id="ZGR-cT-QrY"/>
-                                    <constraint firstItem="tYy-qm-bQA" firstAttribute="leading" secondItem="7J8-aC-PDv" secondAttribute="leading" id="sOB-7f-mys"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vb4-F2-qe9">
-                                <rect key="frame" x="360" y="18" width="44" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="Zfh-FA-14b"/>
-                                    <constraint firstAttribute="height" constant="44" id="mju-z3-xfe"/>
-                                </constraints>
-                                <state key="normal" image="Icons - Close - Contrast"/>
-                                <connections>
-                                    <action selector="tappedClose" destination="DFY-cN-Vfe" eventType="primaryActionTriggered" id="c1n-dX-iAq"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" name="ENA Background Color"/>
                         <constraints>
-                            <constraint firstItem="QWK-uI-Gcu" firstAttribute="top" secondItem="tYy-qm-bQA" secondAttribute="bottom" id="8HO-Nr-P15"/>
-                            <constraint firstItem="7J8-aC-PDv" firstAttribute="leading" secondItem="rGF-GP-JTN" secondAttribute="leading" id="DCW-gT-1wi"/>
                             <constraint firstItem="QWK-uI-Gcu" firstAttribute="leading" secondItem="rGF-GP-JTN" secondAttribute="leading" id="Ft0-4H-dgJ"/>
                             <constraint firstAttribute="bottom" secondItem="iKv-vN-XYX" secondAttribute="bottom" id="GqU-0v-TjV"/>
                             <constraint firstAttribute="bottom" secondItem="QWK-uI-Gcu" secondAttribute="bottom" id="NCO-tT-C5e"/>
                             <constraint firstAttribute="trailing" secondItem="QWK-uI-Gcu" secondAttribute="trailing" id="Wbr-2O-nMf"/>
                             <constraint firstItem="iKv-vN-XYX" firstAttribute="leading" secondItem="rGF-GP-JTN" secondAttribute="leading" id="XLP-9z-beX"/>
-                            <constraint firstAttribute="trailing" secondItem="7J8-aC-PDv" secondAttribute="trailing" id="hDJ-Yl-zM1"/>
-                            <constraint firstItem="vb4-F2-qe9" firstAttribute="top" secondItem="rGF-GP-JTN" secondAttribute="top" constant="18" id="mEj-jv-mHj"/>
-                            <constraint firstAttribute="trailing" secondItem="vb4-F2-qe9" secondAttribute="trailing" constant="10" id="p9e-HJ-GJT"/>
+                            <constraint firstItem="QWK-uI-Gcu" firstAttribute="top" secondItem="rGF-GP-JTN" secondAttribute="top" id="m6u-AK-pWR"/>
                             <constraint firstAttribute="trailing" secondItem="iKv-vN-XYX" secondAttribute="trailing" id="rI0-zy-NO7"/>
-                            <constraint firstItem="vb4-F2-qe9" firstAttribute="leading" secondItem="LpH-l8-dtB" secondAttribute="trailing" constant="2" id="s8e-GO-BUb"/>
-                            <constraint firstItem="7J8-aC-PDv" firstAttribute="top" secondItem="rGF-GP-JTN" secondAttribute="top" id="ykl-uj-O1j"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aWL-92-gDJ"/>
                     </view>
@@ -616,12 +567,8 @@
                     <size key="freeformSize" width="414" height="1154"/>
                     <connections>
                         <outlet property="checkButton" destination="cMV-Lp-NXE" id="z3i-Tb-KeN"/>
-                        <outlet property="closeButton" destination="vb4-F2-qe9" id="lOt-Oy-6Uw"/>
                         <outlet property="footerView" destination="iKv-vN-XYX" id="YGA-MS-mvA"/>
-                        <outlet property="headerView" destination="7J8-aC-PDv" id="xOD-4t-OhH"/>
                         <outlet property="tableView" destination="QWK-uI-Gcu" id="xbz-d0-nYX"/>
-                        <outlet property="titleLabel" destination="LpH-l8-dtB" id="1Vn-eG-2NK"/>
-                        <outlet property="titleViewBottomConstraint" destination="U4j-Lr-Z60" id="EAb-64-LzL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zv7-gq-1kz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -630,7 +577,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Icons - Close - Contrast" width="30" height="30"/>
         <image name="Icons - Home" width="32" height="32"/>
         <image name="Icons_Dot" width="32" height="32"/>
         <image name="Icons_RisikoBegegnung" width="32" height="32"/>
@@ -645,13 +591,13 @@
             <color red="1" green="1" blue="1" alpha="0.20000000298023224" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ENA Risk High Color">
-            <color red="0.75294117647058822" green="0.058823529411764705" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.9882352941176471" green="0.13333333333333333" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ENA Risk Low Color">
-            <color red="0.1803921568627451" green="0.52156862745098043" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.14509803921568629" green="0.72941176470588232" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ENA Risk Neutral Color">
-            <color red="0.36470588235294116" green="0.43529411764705883" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.41960784313725491" green="0.51372549019607838" blue="0.51764705882352946" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ENA Separator Color">
             <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -669,10 +615,10 @@
             <color red="0.090196078431372548" green="0.098039215686274508" blue="0.10196078431372549" alpha="0.30000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ENA Text Tint Color">
-            <color red="0.0" green="0.49803921568627452" blue="0.67843137254901964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.14509803921568629" green="0.72941176470588232" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ENA Tint Color">
-            <color red="0.0" green="0.49803921568627452" blue="0.67843137254901964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.14509803921568629" green="0.72941176470588232" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

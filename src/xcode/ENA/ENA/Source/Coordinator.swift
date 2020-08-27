@@ -168,7 +168,9 @@ extension Coordinator: HomeViewControllerDelegate {
 			)
 		}
 		exposureDetectionController = vc as? ExposureDetectionViewController
-		rootViewController.present(vc, animated: true)
+		
+		// :BE: pushed on stack instead of modal
+		rootViewController.pushViewController(vc, animated: true)
 	}
 
 	func setExposureDetectionState(state: HomeInteractor.State, isRequestRiskRunning: Bool) {
@@ -244,12 +246,12 @@ extension Coordinator: ExposureNotificationSettingViewControllerDelegate {
 }
 
 extension Coordinator: ExposureDetectionViewControllerDelegate {
-	func exposureDetectionViewController(
-		_: ExposureDetectionViewController,
-		setExposureManagerEnabled enabled: Bool,
-		completionHandler completion: @escaping (ExposureNotificationError?) -> Void
-	) {
-		setExposureManagerEnabled(enabled, then: completion)
+	
+	// :BE: new protocol
+	func exposureDetectionViewControllerShowExposureNotificationSettings(
+		viewController: ExposureDetectionViewController,
+		state: ENStateHandler.State) {
+		showExposureNotificationSetting(enState: state)
 	}
 }
 

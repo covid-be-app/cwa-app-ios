@@ -127,26 +127,10 @@ extension ExposureNotificationSettingViewController {
 	}
 
 	private func askConsentToUser() {
-		let alert = UIAlertController(
-			title: AppStrings.Onboarding.onboardingInfo_enableLoggingOfContactsPage_panelTitle,
-			message: AppStrings.Onboarding.onboardingInfo_enableLoggingOfContactsPage_panelBody,
-			preferredStyle: .alert
-		)
-		let completionHandler: (UIAlertAction) -> Void = { action in
-			switch action.style {
-			case .default:
-				self.persistForDPP(accepted: true)
-				self.setExposureManagerEnabled(true, then: self.silentErrorIfNeed)
-			case .cancel, .destructive:
-				self.lastActionCell?.configure(for: self.enState, delegate: self)
-				self.tableView.reloadData()
-			@unknown default:
-				fatalError("Not all cases of actions covered when handling the bluetooth")
-			}
-		}
-		alert.addAction(UIAlertAction(title: AppStrings.ExposureNotificationSetting.privacyConsentActivateAction, style: .default, handler: { action in completionHandler(action) }))
-		alert.addAction(UIAlertAction(title: AppStrings.ExposureNotificationSetting.privacyConsentDismissAction, style: .cancel, handler: { action in completionHandler(action) }))
-		self.present(alert, animated: true, completion: nil)
+		// :BE: Remove confirmation dialog
+		self.persistForDPP(accepted: true)
+		self.setExposureManagerEnabled(true, then: self.silentErrorIfNeed)
+		
 	}
 
 	func persistForDPP(accepted: Bool) {

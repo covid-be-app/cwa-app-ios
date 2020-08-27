@@ -16,7 +16,7 @@
 "Common_BackgroundFetch_SettingsTitle" = "Open Device Settings";
 "Common_BackgroundFetch_OKTitle" = "Start Exposure Logging Manually";
 "Common_BackgroundFetch_AlertTitle" = "Background updates deactivated";
-"General_moreInfo_URL" = "https://coronalert.be/en/faq";
+"General_moreInfo_URL" = "https://coronalert.be/en/faq/";
 "AccessibilityLabel_Close" = "Close";
 "AccessibilityLabel_PhoneNumber" = "Phone number";
 "ExposureDetection_Off" = "Exposure logging stopped";
@@ -338,7 +338,7 @@
 "Reset_ConfirmDialog_Description" = "You will no longer be notified of your exposures and you will no longer be able to warn other users. This procedure cannot be undone.";
 "Reset_ConfirmDialog_Cancel" = "Cancel";
 "Reset_ConfirmDialog_Confirm" = "Reset";
-"safari_corona_website" = "https://coronalert.be/en/faq";
+"safari_corona_website" = "https://coronalert.be/en/faq/";
 "local_notifications_ignore" = "Ignore";
 "local_notifications_detectexposure_title" = "Coronalert";
 "local_notifications_detectexposure_body" = "You have new messages from Coronalert.";
@@ -400,3 +400,4 @@
 "BESelectSymptomsDate_next" = "Next";
 "InviteFriends_Description" = "The more people who use the app, the faster we can break the infection chain. Please invite your family and friends to download the app.";
 "RiskLegend_Legend2_Title" = "Risk of Infection";
+"BEExposureDetection_OffShort" = "Stopped";
