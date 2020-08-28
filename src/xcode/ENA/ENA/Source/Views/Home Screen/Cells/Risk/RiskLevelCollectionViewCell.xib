@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -45,7 +45,7 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="749" insetsLayoutMarginsFromSafeArea="NO" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Sq-Fu-7Ci" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="49.5" width="595" height="77"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="595" height="53"/>
                                         <string key="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" name="ENA Text Contrast Color"/>
@@ -54,42 +54,11 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="body"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1VM-pd-4gu">
-                                        <rect key="frame" x="0.0" y="142.5" width="595" height="93.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1VM-pd-4gu">
+                                        <rect key="frame" x="0.0" y="118.5" width="595" height="93.5"/>
                                     </stackView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JLu-j3-Z7j">
-                                        <rect key="frame" x="0.0" y="252" width="595" height="26"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" verticalHuggingPriority="1000" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyD-er-ora" userLabel="Label Container" customClass="ExposureDetectionRoundedView" customModule="ENA" customModuleProvider="target">
-                                                <rect key="frame" x="190" y="0.0" width="215" height="26"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="1000" insetsLayoutMarginsFromSafeArea="NO" text="Aktualisierung in 51:08 Minuten" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNo-PQ-bh2" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
-                                                        <rect key="frame" x="12" y="5" width="191" height="16"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" name="ENA Text Contrast Color"/>
-                                                        <nil key="highlightedColor"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="footnote"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" name="ENA Text Primary 3 Color"/>
-                                                <constraints>
-                                                    <constraint firstItem="NNo-PQ-bh2" firstAttribute="top" secondItem="eyD-er-ora" secondAttribute="topMargin" id="8Fo-Jl-3TD"/>
-                                                    <constraint firstItem="NNo-PQ-bh2" firstAttribute="leading" secondItem="eyD-er-ora" secondAttribute="leadingMargin" id="9dL-i6-SkD"/>
-                                                    <constraint firstAttribute="trailingMargin" secondItem="NNo-PQ-bh2" secondAttribute="trailing" id="DGf-mj-rja"/>
-                                                    <constraint firstAttribute="bottomMargin" secondItem="NNo-PQ-bh2" secondAttribute="bottom" id="ekz-RU-Ojc"/>
-                                                </constraints>
-                                                <edgeInsets key="layoutMargins" top="5" left="12" bottom="5" right="12"/>
-                                            </view>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="eyD-er-ora" firstAttribute="centerX" secondItem="JLu-j3-Z7j" secondAttribute="centerX" id="Ca2-dB-B0H"/>
-                                            <constraint firstItem="eyD-er-ora" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JLu-j3-Z7j" secondAttribute="leading" id="Zhf-dK-c4P"/>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eyD-er-ora" secondAttribute="trailing" id="aa8-ea-eap"/>
-                                            <constraint firstAttribute="bottom" secondItem="eyD-er-ora" secondAttribute="bottom" id="kN4-EH-pxQ"/>
-                                            <constraint firstItem="eyD-er-ora" firstAttribute="top" secondItem="JLu-j3-Z7j" secondAttribute="top" id="wNC-1t-Xjg"/>
-                                        </constraints>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JLu-j3-Z7j">
+                                        <rect key="frame" x="0.0" y="228" width="595" height="50"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b20-mf-cB4" customClass="ENAButton" customModule="ENA" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="294" width="595" height="50"/>
@@ -129,7 +98,6 @@
             <connections>
                 <outlet property="bodyLabel" destination="8Sq-Fu-7Ci" id="QZe-bX-pDV"/>
                 <outlet property="chevronImageView" destination="nJl-O5-rry" id="Pnf-9I-Xn0"/>
-                <outlet property="detectionIntervalLabel" destination="NNo-PQ-bh2" id="cMO-t7-M00"/>
                 <outlet property="detectionIntervalLabelContainer" destination="JLu-j3-Z7j" id="pqX-Tq-37d"/>
                 <outlet property="riskViewStackView" destination="1VM-pd-4gu" id="53x-2q-AlK"/>
                 <outlet property="stackView" destination="vPX-Xb-EeD" id="Rly-Le-zRW"/>
@@ -144,13 +112,10 @@
     <resources>
         <image name="Icons_Chevron" width="30" height="30"/>
         <namedColor name="ENA Risk Low Color">
-            <color red="0.1803921568627451" green="0.52156862745098043" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.14509803921568629" green="0.72941176470588232" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ENA Text Contrast Color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="ENA Text Primary 3 Color">
-            <color red="0.090196078431372548" green="0.098039215686274508" blue="0.10196078431372549" alpha="0.30000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

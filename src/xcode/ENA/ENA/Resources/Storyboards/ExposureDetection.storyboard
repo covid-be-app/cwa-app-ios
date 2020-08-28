@@ -75,52 +75,8 @@
                                             <outlet property="textLabel" destination="ZWt-6z-94P" id="kqY-oe-0ew"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="riskRefreshCell" id="C1x-XW-iAf">
-                                        <rect key="frame" x="0.0" y="119.5" width="414" height="26"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="C1x-XW-iAf" id="4Ci-t5-5hN">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="26"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4CM-02-z5M" customClass="ExposureDetectionRoundedView" customModule="ENA" customModuleProvider="target">
-                                                    <rect key="frame" x="157.5" y="0.0" width="99.5" height="26"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Regular Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBg-Oe-vjR" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
-                                                            <rect key="frame" x="12" y="5" width="75.5" height="16"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" name="ENA Text Contrast Color"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="footnote"/>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" name="ENA Text Primary 3 Color"/>
-                                                    <constraints>
-                                                        <constraint firstItem="YBg-Oe-vjR" firstAttribute="leading" secondItem="4CM-02-z5M" secondAttribute="leadingMargin" id="LFO-Rq-5s2"/>
-                                                        <constraint firstAttribute="bottomMargin" secondItem="YBg-Oe-vjR" secondAttribute="bottom" id="LoO-aA-rYP"/>
-                                                        <constraint firstItem="YBg-Oe-vjR" firstAttribute="top" secondItem="4CM-02-z5M" secondAttribute="topMargin" id="ZFC-dI-2Yw"/>
-                                                        <constraint firstAttribute="trailingMargin" secondItem="YBg-Oe-vjR" secondAttribute="trailing" id="c1G-SN-aPL"/>
-                                                    </constraints>
-                                                    <edgeInsets key="layoutMargins" top="5" left="12" bottom="5" right="12"/>
-                                                </view>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="4CM-02-z5M" secondAttribute="trailing" id="4tP-AG-XWS"/>
-                                                <constraint firstItem="4CM-02-z5M" firstAttribute="centerX" secondItem="4Ci-t5-5hN" secondAttribute="centerX" id="eiq-ba-nrW"/>
-                                                <constraint firstItem="4CM-02-z5M" firstAttribute="top" secondItem="4Ci-t5-5hN" secondAttribute="top" id="fEH-ww-OKW"/>
-                                                <constraint firstAttribute="bottom" secondItem="4CM-02-z5M" secondAttribute="bottom" id="fZj-5X-1RE"/>
-                                                <constraint firstItem="4CM-02-z5M" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4Ci-t5-5hN" secondAttribute="leadingMargin" id="mDc-Qd-ssT"/>
-                                            </constraints>
-                                            <edgeInsets key="layoutMargins" top="0.0" left="16" bottom="0.0" right="16"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" name="ENA Risk High Color"/>
-                                        <connections>
-                                            <outlet property="textLabel" destination="YBg-Oe-vjR" id="Kth-z4-7LA"/>
-                                        </connections>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="riskTextCell" id="Lst-iM-wzk">
-                                        <rect key="frame" x="0.0" y="145.5" width="414" height="52.5"/>
+                                        <rect key="frame" x="0.0" y="119.5" width="414" height="52.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lst-iM-wzk" id="8rA-hw-37s">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="52.5"/>
@@ -150,7 +106,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="riskLoadingCell" id="qD6-Lh-8Di" customClass="ExposureDetectionLoadingCell" customModule="ENA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="198" width="414" height="64"/>
+                                        <rect key="frame" x="0.0" y="172" width="414" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qD6-Lh-8Di" id="25g-Uf-ecN">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
@@ -195,7 +151,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="headerCell" id="qVO-bK-CJi" customClass="ExposureDetectionHeaderCell" customModule="ENA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="262" width="414" height="77.5"/>
+                                        <rect key="frame" x="0.0" y="236" width="414" height="77.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qVO-bK-CJi" id="5pY-2Z-14e">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="77.5"/>
@@ -240,7 +196,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="guideCell" id="FgQ-yE-pyy">
-                                        <rect key="frame" x="0.0" y="339.5" width="414" height="52.5"/>
+                                        <rect key="frame" x="0.0" y="313.5" width="414" height="52.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FgQ-yE-pyy" id="2eB-lg-C7b">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="52.5"/>
@@ -280,7 +236,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="longGuideCell" id="W6c-GP-eXV" customClass="ExposureDetectionLongGuideCell" customModule="ENA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="392" width="414" height="208"/>
+                                        <rect key="frame" x="0.0" y="366" width="414" height="208"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W6c-GP-eXV" id="nZu-3B-4eD">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="208"/>
@@ -403,7 +359,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="linkCell" id="z8e-Nz-uvF">
-                                        <rect key="frame" x="0.0" y="600" width="414" height="42.5"/>
+                                        <rect key="frame" x="0.0" y="574" width="414" height="42.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z8e-Nz-uvF" id="13g-cc-9YC">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="42.5"/>
@@ -432,7 +388,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="hotlineCell" id="vF7-GN-ERX" customClass="InsetTableViewCell" customModule="ENA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="642.5" width="414" height="224"/>
+                                        <rect key="frame" x="0.0" y="616.5" width="414" height="224"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vF7-GN-ERX" id="lVw-Sq-Bxs">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="224"/>
@@ -610,9 +566,6 @@
         </namedColor>
         <namedColor name="ENA Text Primary 2 Color">
             <color red="0.090196078431372548" green="0.098039215686274508" blue="0.10196078431372549" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="ENA Text Primary 3 Color">
-            <color red="0.090196078431372548" green="0.098039215686274508" blue="0.10196078431372549" alpha="0.30000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ENA Text Tint Color">
             <color red="0.14509803921568629" green="0.72941176470588232" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
