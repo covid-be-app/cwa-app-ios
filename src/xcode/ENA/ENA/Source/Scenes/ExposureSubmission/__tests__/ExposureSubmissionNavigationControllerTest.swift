@@ -20,6 +20,12 @@
 import XCTest
 @testable import ENA
 
+extension TimeInterval {
+	static let short = 1.0
+	static let long = 3.0
+}
+
+
 final class ExposureSubmissionNavigationControllerTest: XCTestCase {
 
 	private func createVC() -> ExposureSubmissionNavigationController {

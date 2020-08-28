@@ -71,12 +71,10 @@ final class HomeViewController: UIViewController, RequiresAppDependencies {
 
 	private weak var delegate: HomeViewControllerDelegate?
 
+	// :BE: remove settings
 	enum Section: Int {
 		case actions
 		case infos
-		
-		// :BE: remove section
-		// case settings
 	}
 
 	// MARK: UIViewController
@@ -231,7 +229,6 @@ final class HomeViewController: UIViewController, RequiresAppDependencies {
 			showScreenForActionSectionForCell(at: indexPath)
 		case .infos:
 			
-			// :BE: change structure
 			switch row {
 			case 0:
 				delegate?.showInviteFriends()

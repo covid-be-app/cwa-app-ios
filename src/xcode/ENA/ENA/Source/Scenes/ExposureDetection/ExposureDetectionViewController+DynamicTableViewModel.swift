@@ -55,8 +55,6 @@ private extension DynamicHeader {
 
 // MARK: - Supported Cell Types
 
-// :BE: remove refresh cell
-
 private extension DynamicCell {
 	private enum ReusableCellIdentifer: String, TableViewCellReuseIdentifiers {
 		case risk = "riskCell"
@@ -297,41 +295,9 @@ extension ExposureDetectionViewController {
 			header: .backgroundSpace(height: 8),
 			footer: .backgroundSpace(height: 16),
 			cells: [
-				// :BE: no longer used
-				/*
-				.header(
-					title: AppStrings.ExposureDetection.explanationTitle,
-					subtitle: isActive ? AppStrings.ExposureDetection.explanationSubtitleActive : AppStrings.ExposureDetection.explanationSubtitleInactive
-				),
-				.body(text: text, accessibilityIdentifier: accessibilityIdentifier)
-*/
 			]
 		)
 	}
-	
-	// :BE: no longer used
-
-	/*
-	private func highRiskExplanationSection(daysSinceLastExposureText: String, explanationText: String, isActive: Bool, accessibilityIdentifier: String?) -> DynamicSection {
-		let daysSinceLastExposure = state.risk?.details.daysSinceLastExposure ?? 0
-		return .section(
-			header: .backgroundSpace(height: 8),
-			footer: .backgroundSpace(height: 16),
-			cells: [
-				.header(
-					title: AppStrings.ExposureDetection.explanationTitle,
-					subtitle: isActive ? AppStrings.ExposureDetection.explanationSubtitleActive : AppStrings.ExposureDetection.explanationSubtitleInactive
-				),
-				.body(
-					text: [
-						.localizedStringWithFormat(daysSinceLastExposureText, daysSinceLastExposure),
-						explanationText
-					].joined(),
-					accessibilityIdentifier: accessibilityIdentifier)
-			]
-		)
-	}
-*/
 
 	private var offModel: DynamicTableViewModel {
 		DynamicTableViewModel([
@@ -380,7 +346,6 @@ extension ExposureDetectionViewController {
 			]),
 			riskLoadingSection,
 			standardGuideSection
-			// :BE: remove explanation
 		])
 	}
 
@@ -397,7 +362,6 @@ extension ExposureDetectionViewController {
 			riskLoadingSection,
 			standardGuideSection,
 			activeTracingSection(accessibilityIdentifier: "hello")
-				// :BE: remove explanation
 		])
 	}
 
@@ -428,7 +392,6 @@ extension ExposureDetectionViewController {
 			activeTracingSection(
 				accessibilityIdentifier: AccessibilityIdentifiers.ExposureDetection.activeTracingSectionText
 			)
-			// :BE: remove high risk explanation
 		])
 	}
 }
