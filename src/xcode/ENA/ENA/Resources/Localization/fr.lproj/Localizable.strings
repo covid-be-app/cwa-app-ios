@@ -8,7 +8,7 @@
 "Alert_CancelAction_Later" = "Plus tard";
 "Alert_DefaultAction_OpenSettings" = "Ouvrir les paramètres";
 "General_BackButtonTitle" = "Retour";
-"Common_ENError5_Description" = "Erreur 5 : Une erreur est survenue. Votre niveau de risque ne peut être déterminé. Nous cherchons une solution.";
+"Common_ENError5_Description" = "Erreur 5: erreur iOS. Votre niveau de risque ne peut être déterminé. Nous réessayerons plus tard.";
 "Common_ENError11_Description" = "Erreur 11 : Une erreur est survenue. Votre niveau de risque ne peut pas être déterminé. Veuillez redémarrer votre smartphone et réessayer demain.";
 "Common_ENError13_Description" = "Erreur 13 : Votre enregistrement de l'exposition pour aujourd'hui a déjà été effectué. Veuillez réessayer dans 24 heures.";
 "Common_Alert_Action_moreInfo" = "En savoir plus";
@@ -29,7 +29,6 @@
 "ExposureDetection_Refreshed_Never" = "inconnu";
 "ExposureDetection_RefreshingIn" = "Mise à jour en %02d:%02d minutes";
 "ExposureDetection_RefreshIn" = "Sera mise à jour en %@h";
-"ExposureDetection_Refresh_24h" = "Régulièrement mis à jour";
 "ExposureDetection_LastRiskLevel" = "Dernier enregistrement d'exposition : %@";
 "ExposureDetection_OffText" = "Activez mise à jour de l'exposition pour évaluer votre statut de risque aujourd'hui.";
 "ExposureDetection_OutdatedText" = "Votre enregistrement d'exposition n'a pas pu être mis à jour depuis plus de 48 heures.";
@@ -111,8 +110,8 @@
 "OnboardingInfo_enableLoggingOfContactsPage_stateStopped" = "Inactif";
 "OnboardingInfo_howDoesDataExchangeWorkPage_imageDescription" = "Un diagnostic positif crypté est transmis au système qui avertit alors les autres utilisateurs.";
 "OnboardingInfo_howDoesDataExchangeWorkPage_title" = "Si vous êtes diagnostiqué positif au COVID-19...";
-"OnboardingInfo_howDoesDataExchangeWorkPage_boldText" = "...veuillez le signaler dans l'application Coronalert. Le partage de vos résultats de test est volontaire et sécurisé. Veuillez le faire dans l'intérêt de la santé de tous.";
-"OnboardingInfo_howDoesDataExchangeWorkPage_normalText" = "Votre notification est cryptée de manière sécurisée et traitée sur un serveur sécurisé. Les personnes dont les identifiants aléatoires cryptés ont été collectés par votre smartphone, recevront désormais un avertissement ainsi que des informations sur ce qu'elles doivent faire.";
+"OnboardingInfo_howDoesDataExchangeWorkPage_boldText" = "...veuillez le signaler dans cette application. Le partage de vos résultats de test reste toujours volontaire et anonyme. Nous vous encourageons donc à le faire afin de continuer à protéger la santé de tous.";
+"OnboardingInfo_howDoesDataExchangeWorkPage_normalText" = "Cette information sera toujours traitée de manière anonyme et sécurisée. Votre nom et vos données personnelles ne seront pas partagées. Seuls des identifiants aléatoires seront envoyés vers les téléphones des personnes avec qui vous avez eu un contact rapproché et qui utilisent l'application. Cela leur permettra de connaître leur risque sans pour autant en connaître l'origine. Elles recevront également des informations sur les étapes à suivre.";
 "OnboardingInfo_alwaysStayInformedPage_imageDescription" = "Une femme reçoit une notification de son application Coronalert.";
 "OnboardingInfo_alwaysStayInformedPage_title" = "Recevoir des avertissements et identifier les risques.";
 "OnboardingInfo_alwaysStayInformedPage_boldText" = "L'application peut vous informer automatiquement de votre statut de risque et vous avertir des nouvelles infections de personnes auxquelles vous avez été exposé. Autorisez l'application à vous avertir dès maintenant. ";
@@ -236,7 +235,6 @@
 "Home_Activate_Card_Internet_Off_Title" = "Pas de connexion Internet";
 "Home_Risk_Date_Item_Title" = "Mise à jour : %@";
 "Home_Risk_No_Date_Title" = "inconnu";
-"Home_Risk_Period_Update_Title" = "Régulièrement mis à jour";
 "Home_Risk_Period_Disabled_Button_Title" = "Mise à jour seulement toutes les %@ heures";
 "Home_Risk_Unknown_Title" = "risque inconnu";
 "Home_Risk_Last_Activate_Item_Title" = "Dernier enregistrement de l'exposition : %@";

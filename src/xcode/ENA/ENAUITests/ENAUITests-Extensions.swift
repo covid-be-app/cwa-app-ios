@@ -77,13 +77,7 @@ extension XCUIApplication {
 		let range = start..<end
 
 		let locale = str[range]
-		
-		// :BE: remove base
-		/*
-		if locale == "en" {
-			return "en"
-		}*/
-		
+
 		return String(locale)
 	}
 

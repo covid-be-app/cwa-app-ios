@@ -86,7 +86,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	lazy var riskProvider: RiskProvider = {
 		
 		// :BE: change detection interval to every 2 hours
-		//let exposureDetectionInterval = self.store.hourlyFetchingEnabled ? DateComponents(minute: 45) : DateComponents(hour: 24)
 		let exposureDetectionInterval = DateComponents(hour: 2)
 
 		let config = RiskProvidingConfiguration(

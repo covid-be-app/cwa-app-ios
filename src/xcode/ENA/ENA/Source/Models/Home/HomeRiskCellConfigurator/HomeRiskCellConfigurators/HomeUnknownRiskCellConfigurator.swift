@@ -32,7 +32,7 @@ final class HomeUnknownRiskCellConfigurator: HomeRiskLevelCellConfigurator {
 			isLoading: isLoading,
 			isButtonEnabled: manualExposureDetectionState == .possible,
 			isButtonHidden: detectionMode == .automatic,
-			detectionIntervalLabelHidden: detectionMode != .automatic,
+			detectionIntervalLabelHidden: true,  // :BE: remove label
 			lastUpdateDate: lastUpdateDate,
 			detectionInterval: detectionInterval
 		)

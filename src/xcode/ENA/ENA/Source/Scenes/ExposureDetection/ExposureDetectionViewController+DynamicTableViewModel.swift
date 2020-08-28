@@ -59,7 +59,6 @@ private extension DynamicCell {
 	private enum ReusableCellIdentifer: String, TableViewCellReuseIdentifiers {
 		case risk = "riskCell"
 		case riskText = "riskTextCell"
-		case riskRefresh = "riskRefreshCell"
 		case riskLoading = "riskLoadingCell"
 		case header = "headerCell"
 		case guide = "guideCell"
@@ -164,14 +163,6 @@ private extension DynamicCell {
 		}
 	}
 
-	static func riskRefresh(text: String) -> DynamicCell {
-		.exposureDetectionCell(ReusableCellIdentifer.riskRefresh) { viewController, cell, _ in
-			let state = viewController.state
-			cell.backgroundColor = state.riskTintColor
-			cell.textLabel?.text = AppStrings.ExposureDetection.refresh24h
-		}
-	}
-
 	static func riskLoading(text: String) -> DynamicCell {
 		.exposureDetectionCell(ReusableCellIdentifer.riskLoading) { viewController, cell, _ in
 			let state = viewController.state
@@ -243,19 +234,6 @@ extension ExposureDetectionViewController {
 		)
 	}
 
-	private var riskRefreshSection: DynamicSection {
-		riskSection(
-			isHidden: { viewController in
-				guard let state = (viewController as? ExposureDetectionViewController)?.state else { return true }
-				if state.isLoading { return true }
-				return state.detectionMode != .automatic
-			},
-			cells: [
-				.riskRefresh(text: AppStrings.ExposureDetection.refreshingIn)
-			]
-		)
-	}
-
 	private var riskLoadingSection: DynamicSection {
 		.section(
 			header: .none,
@@ -317,41 +295,9 @@ extension ExposureDetectionViewController {
 			header: .backgroundSpace(height: 8),
 			footer: .backgroundSpace(height: 16),
 			cells: [
-				// :BE: no longer used
-				/*
-				.header(
-					title: AppStrings.ExposureDetection.explanationTitle,
-					subtitle: isActive ? AppStrings.ExposureDetection.explanationSubtitleActive : AppStrings.ExposureDetection.explanationSubtitleInactive
-				),
-				.body(text: text, accessibilityIdentifier: accessibilityIdentifier)
-*/
 			]
 		)
 	}
-	
-	// :BE: no longer used
-
-	/*
-	private func highRiskExplanationSection(daysSinceLastExposureText: String, explanationText: String, isActive: Bool, accessibilityIdentifier: String?) -> DynamicSection {
-		let daysSinceLastExposure = state.risk?.details.daysSinceLastExposure ?? 0
-		return .section(
-			header: .backgroundSpace(height: 8),
-			footer: .backgroundSpace(height: 16),
-			cells: [
-				.header(
-					title: AppStrings.ExposureDetection.explanationTitle,
-					subtitle: isActive ? AppStrings.ExposureDetection.explanationSubtitleActive : AppStrings.ExposureDetection.explanationSubtitleInactive
-				),
-				.body(
-					text: [
-						.localizedStringWithFormat(daysSinceLastExposureText, daysSinceLastExposure),
-						explanationText
-					].joined(),
-					accessibilityIdentifier: accessibilityIdentifier)
-			]
-		)
-	}
-*/
 
 	private var offModel: DynamicTableViewModel {
 		DynamicTableViewModel([
@@ -398,17 +344,8 @@ extension ExposureDetectionViewController {
 			riskDataSection(cells: [
 				.riskText(text: AppStrings.ExposureDetection.unknownText)
 			]),
-			riskRefreshSection,
 			riskLoadingSection,
 			standardGuideSection
-			// :BE: remove explanation
-			/*
-			explanationSection(
-				text: AppStrings.ExposureDetection.explanationTextUnknown,
-				isActive: false,
-				accessibilityIdentifier: AccessibilityIdentifiers.ExposureDetection.explanationTextUnknown
-			)
-*/
 		])
 	}
 
@@ -422,18 +359,9 @@ extension ExposureDetectionViewController {
 				.riskStored(activeTracing: activeTracing, imageName: "Icons_TracingCircle-Dark_Step %u"),
 				.riskRefreshed(text: AppStrings.ExposureDetection.refreshed, image: UIImage(named: "Icons_Aktualisiert"))
 			]),
-			riskRefreshSection,
 			riskLoadingSection,
 			standardGuideSection,
 			activeTracingSection(accessibilityIdentifier: "hello")
-				// :BE: remove explanation
-					/*
-						explanationSection(
-				text: AppStrings.ExposureDetection.explanationTextLow,
-				isActive: true,
-				accessibilityIdentifier: AccessibilityIdentifiers.ExposureDetection.explanationTextLow
-			)
-*/
 		])
 	}
 
@@ -446,7 +374,6 @@ extension ExposureDetectionViewController {
 				.riskStored(activeTracing: activeTracing, imageName: "Icons_TracingCircle-Dark_Step %u"),
 				.riskRefreshed(text: AppStrings.ExposureDetection.refreshed, image: UIImage(named: "Icons_Aktualisiert"))
 			]),
-			riskRefreshSection,
 			riskLoadingSection,
 			.section(
 				header: .backgroundSpace(height: 16),
@@ -465,15 +392,6 @@ extension ExposureDetectionViewController {
 			activeTracingSection(
 				accessibilityIdentifier: AccessibilityIdentifiers.ExposureDetection.activeTracingSectionText
 			)
-			// :BE:
-			/*
-			highRiskExplanationSection(
-				daysSinceLastExposureText: AppStrings.ExposureDetection.explanationTextHighDaysSinceLastExposure,
-				explanationText: AppStrings.ExposureDetection.explanationTextHigh,
-				isActive: true,
-				accessibilityIdentifier: AccessibilityIdentifiers.ExposureDetection.explanationTextHigh
-			)
-*/
 		])
 	}
 }

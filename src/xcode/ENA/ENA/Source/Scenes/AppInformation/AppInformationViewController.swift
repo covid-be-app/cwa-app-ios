@@ -43,13 +43,9 @@ class AppInformationViewController: DynamicTableViewController {
 extension AppInformationViewController {
 	enum Category: Int, Hashable, CaseIterable {
 		case about
-		case faq
 		case terms
 		case privacy
 		case legal
-		
-		// :BE: remove hotline
-		//case contact
 		case imprint
 	}
 }

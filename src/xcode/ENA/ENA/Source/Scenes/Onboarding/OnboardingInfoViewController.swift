@@ -181,14 +181,6 @@ final class OnboardingInfoViewController: UIViewController {
 
 		switch pageType {
 			
-			// :BE: remove panel
-			/*
-		case .enableLoggingOfContactsPage:
-			addPanel(
-				title: AppStrings.Onboarding.onboardingInfo_enableLoggingOfContactsPage_panelTitle,
-				body: AppStrings.Onboarding.onboardingInfo_enableLoggingOfContactsPage_panelBody
-			)
-*/
 		case .privacyPage:
 			innerStackView.isHidden = true
 			let textView = HtmlTextView()

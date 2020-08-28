@@ -104,11 +104,6 @@ extension AppInformationViewController {
 			accessibilityIdentifier: AccessibilityIdentifiers.AppInformation.aboutNavigation,
 			action: .push(model: aboutModel, withTitle:  AppStrings.AppInformation.aboutNavigation)
 		),
-		.faq: (
-			text: AppStrings.AppInformation.faqNavigation,
-			accessibilityIdentifier: AccessibilityIdentifiers.AppInformation.faqNavigation,
-			action: .safari
-		),
 		.terms: (
 			text: AppStrings.AppInformation.termsTitle,
 			accessibilityIdentifier: AccessibilityIdentifiers.AppInformation.termsNavigation,
@@ -124,14 +119,6 @@ extension AppInformationViewController {
 			accessibilityIdentifier: AccessibilityIdentifiers.AppInformation.legalNavigation,
 			action: .push(model: legalModel, separators: true, withTitle:  AppStrings.AppInformation.legalNavigation)
 		),
-		// :BE: remove hotline
-		/*
-		.contact: (
-			text: AppStrings.AppInformation.contactNavigation,
-			accessibilityIdentifier: AccessibilityIdentifiers.AppInformation.contactNavigation,
-			action: .push(model: contactModel, withTitle:  AppStrings.AppInformation.contactNavigation)
-		),
-*/
 		.imprint: (
 			text: AppStrings.AppInformation.imprintNavigation,
 			accessibilityIdentifier: AccessibilityIdentifiers.AppInformation.imprintNavigation,
@@ -188,16 +175,6 @@ extension AppInformationViewController {
 						   accessibilityIdentifier: AccessibilityIdentifiers.AppInformation.imprintImageDescription,
 						   height: 230),
 			cells: [
-				
-				// :BE: remove irrelevant text
-				/*
-				.headline(text: AppStrings.AppInformation.imprintSection1Title,
-						  accessibilityIdentifier: AccessibilityIdentifiers.AppInformation.imprintSection1Title,
-						  accessibilityTraits: .header),
-				.bodyWithoutTopInset(text: AppStrings.AppInformation.imprintSection1Text,
-									 style: .textView([]),
-									 accessibilityIdentifier: AccessibilityIdentifiers.AppInformation.imprintSection1Text),
-*/
 				.headlineWithoutBottomInset(text: AppStrings.AppInformation.imprintSection2Title,
 											accessibilityIdentifier: AccessibilityIdentifiers.AppInformation.imprintSection2Title),
 				.bodyWithoutTopInset(text: AppStrings.AppInformation.imprintSection2Text,

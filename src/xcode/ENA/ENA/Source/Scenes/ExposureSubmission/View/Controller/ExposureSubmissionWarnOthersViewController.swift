@@ -119,20 +119,7 @@ class ExposureSubmissionWarnOthersViewController: DynamicTableViewController, EN
 	func createENAlert(_ error: ExposureSubmissionError) -> UIAlertController {
 		return self.setupErrorAlert(
 			message: error.localizedDescription
-			// :BE: No longer used
-			/*,
-			secondaryActionTitle: AppStrings.Common.errorAlertActionMoreInfo,
-			secondaryActionCompletion: {
-				guard let url = error.faqURL else {
-					logError(message: "Unable to open FAQ page.", level: .error)
-					return
-				}
-
-				UIApplication.shared.open(
-					url,
-					options: [:]
-				)
-		 }*/)
+		)
 	}
 }
 

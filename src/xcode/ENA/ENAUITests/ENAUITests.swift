@@ -92,7 +92,6 @@ class ENAUITests: XCTestCase {
 		XCTAssertTrue(app.buttons["AppStrings.ExposureSubmission.continueText"].waitForExistence(timeout: 5.0))
 		app.buttons["AppStrings.ExposureSubmission.continueText"].tap()
 
-		// :BE: no more qr scan screen
 		XCTAssertTrue(app.alerts.firstMatch.exists)
 		app.alerts.buttons.firstMatch.tap()
 		XCTAssertTrue(app.buttons["BEAppStrings.BESelectSymptomsDate.next"].waitForExistence(timeout: 5.0))
@@ -102,8 +101,6 @@ class ENAUITests: XCTestCase {
 		XCTAssertTrue(app.buttons["BEAppStrings.BEMobileTestId.save"].waitForExistence(timeout: 5.0))
 		if snapshotsActive { snapshot("AppStore_0006") }
 		
-		// :BE: - end
-
 		//// ScreenShot_0007: Share screen
 		// todo: need accessibility for Back (navigation bar back button)
 		XCTAssertTrue(app.buttons["AppStrings.AccessibilityLabel.close"].waitForExistence(timeout: 5.0))
