@@ -55,11 +55,12 @@ private extension DynamicHeader {
 
 // MARK: - Supported Cell Types
 
+// :BE: remove refresh cell
+
 private extension DynamicCell {
 	private enum ReusableCellIdentifer: String, TableViewCellReuseIdentifiers {
 		case risk = "riskCell"
 		case riskText = "riskTextCell"
-		case riskRefresh = "riskRefreshCell"
 		case riskLoading = "riskLoadingCell"
 		case header = "headerCell"
 		case guide = "guideCell"
@@ -164,14 +165,6 @@ private extension DynamicCell {
 		}
 	}
 
-	static func riskRefresh(text: String) -> DynamicCell {
-		.exposureDetectionCell(ReusableCellIdentifer.riskRefresh) { viewController, cell, _ in
-			let state = viewController.state
-			cell.backgroundColor = state.riskTintColor
-			cell.textLabel?.text = AppStrings.ExposureDetection.refresh24h
-		}
-	}
-
 	static func riskLoading(text: String) -> DynamicCell {
 		.exposureDetectionCell(ReusableCellIdentifer.riskLoading) { viewController, cell, _ in
 			let state = viewController.state
@@ -240,19 +233,6 @@ extension ExposureDetectionViewController {
 		riskSection(
 			isHidden: { (($0 as? Self)?.state.isLoading ?? false) },
 			cells: cells
-		)
-	}
-
-	private var riskRefreshSection: DynamicSection {
-		riskSection(
-			isHidden: { viewController in
-				guard let state = (viewController as? ExposureDetectionViewController)?.state else { return true }
-				if state.isLoading { return true }
-				return state.detectionMode != .automatic
-			},
-			cells: [
-				.riskRefresh(text: AppStrings.ExposureDetection.refreshingIn)
-			]
 		)
 	}
 
@@ -398,17 +378,9 @@ extension ExposureDetectionViewController {
 			riskDataSection(cells: [
 				.riskText(text: AppStrings.ExposureDetection.unknownText)
 			]),
-			riskRefreshSection,
 			riskLoadingSection,
 			standardGuideSection
 			// :BE: remove explanation
-			/*
-			explanationSection(
-				text: AppStrings.ExposureDetection.explanationTextUnknown,
-				isActive: false,
-				accessibilityIdentifier: AccessibilityIdentifiers.ExposureDetection.explanationTextUnknown
-			)
-*/
 		])
 	}
 
@@ -422,18 +394,10 @@ extension ExposureDetectionViewController {
 				.riskStored(activeTracing: activeTracing, imageName: "Icons_TracingCircle-Dark_Step %u"),
 				.riskRefreshed(text: AppStrings.ExposureDetection.refreshed, image: UIImage(named: "Icons_Aktualisiert"))
 			]),
-			riskRefreshSection,
 			riskLoadingSection,
 			standardGuideSection,
 			activeTracingSection(accessibilityIdentifier: "hello")
 				// :BE: remove explanation
-					/*
-						explanationSection(
-				text: AppStrings.ExposureDetection.explanationTextLow,
-				isActive: true,
-				accessibilityIdentifier: AccessibilityIdentifiers.ExposureDetection.explanationTextLow
-			)
-*/
 		])
 	}
 
@@ -446,7 +410,6 @@ extension ExposureDetectionViewController {
 				.riskStored(activeTracing: activeTracing, imageName: "Icons_TracingCircle-Dark_Step %u"),
 				.riskRefreshed(text: AppStrings.ExposureDetection.refreshed, image: UIImage(named: "Icons_Aktualisiert"))
 			]),
-			riskRefreshSection,
 			riskLoadingSection,
 			.section(
 				header: .backgroundSpace(height: 16),
@@ -465,15 +428,7 @@ extension ExposureDetectionViewController {
 			activeTracingSection(
 				accessibilityIdentifier: AccessibilityIdentifiers.ExposureDetection.activeTracingSectionText
 			)
-			// :BE:
-			/*
-			highRiskExplanationSection(
-				daysSinceLastExposureText: AppStrings.ExposureDetection.explanationTextHighDaysSinceLastExposure,
-				explanationText: AppStrings.ExposureDetection.explanationTextHigh,
-				isActive: true,
-				accessibilityIdentifier: AccessibilityIdentifiers.ExposureDetection.explanationTextHigh
-			)
-*/
+			// :BE: remove high risk explanation
 		])
 	}
 }
