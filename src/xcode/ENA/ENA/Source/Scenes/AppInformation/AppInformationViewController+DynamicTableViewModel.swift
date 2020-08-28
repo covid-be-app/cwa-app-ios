@@ -104,11 +104,15 @@ extension AppInformationViewController {
 			accessibilityIdentifier: AccessibilityIdentifiers.AppInformation.aboutNavigation,
 			action: .push(model: aboutModel, withTitle:  AppStrings.AppInformation.aboutNavigation)
 		),
+		
+		// :BE: remove faq
+		/*
 		.faq: (
 			text: AppStrings.AppInformation.faqNavigation,
 			accessibilityIdentifier: AccessibilityIdentifiers.AppInformation.faqNavigation,
 			action: .safari
 		),
+*/
 		.terms: (
 			text: AppStrings.AppInformation.termsTitle,
 			accessibilityIdentifier: AccessibilityIdentifiers.AppInformation.termsNavigation,
