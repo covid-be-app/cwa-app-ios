@@ -21,8 +21,6 @@ protocol RiskLevelCollectionViewCellDelegate: AnyObject {
 	func updateButtonTapped(cell: RiskLevelCollectionViewCell)
 }
 
-// :BE: removed detection interval label
-
 /// A cell that visualizes the current risk and allows the user to calculate he/his current risk.
 final class RiskLevelCollectionViewCell: HomeCardCollectionViewCell {
 	// MARK: Properties
@@ -87,7 +85,6 @@ final class RiskLevelCollectionViewCell: HomeCardCollectionViewCell {
 		updateButton.accessibilityIdentifier = accessibilityIdentifier
 	}
 
-	// :BE: No longer show detection interval
 	func configureDetectionIntervalLabel(text: String, isHidden: Bool) {
 		return
 	}

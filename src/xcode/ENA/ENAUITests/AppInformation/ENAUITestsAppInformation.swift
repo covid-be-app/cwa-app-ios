@@ -48,7 +48,6 @@ class ENAUITests_02_AppInformation: XCTestCase {
 		app.cells["AppStrings.Home.appInformationCardTitle"].tap()
 
 		XCTAssert(app.cells["AppStrings.AppInformation.aboutNavigation"].waitForExistence(timeout: 5.0))
-		XCTAssert(app.cells["AppStrings.AppInformation.faqNavigation"].waitForExistence(timeout: 5.0))
 		XCTAssert(app.cells["AppStrings.AppInformation.privacyNavigation"].waitForExistence(timeout: 5.0))
 		XCTAssert(app.cells["AppStrings.AppInformation.termsNavigation"].waitForExistence(timeout: 5.0))
 
@@ -71,45 +70,6 @@ class ENAUITests_02_AppInformation: XCTestCase {
 		XCTAssert(app.staticTexts["AppStrings.AppInformation.aboutTitle"].waitForExistence(timeout: 5.0))
 	}
 
-	func test_0022_AppInformationFlow_faq() throws {
-		app.launch()
-
-		// only run if onboarding screen is present
-		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
-
-		app.swipeUp()
-		// assert cells
-		XCTAssert(app.cells["AppStrings.Home.appInformationCardTitle"].waitForExistence(timeout: 5.0))
-		app.cells["AppStrings.Home.appInformationCardTitle"].tap()
-
-		XCTAssert(app.cells["AppStrings.AppInformation.faqNavigation"].waitForExistence(timeout: 5.0))
-		app.cells["AppStrings.AppInformation.faqNavigation"].tap()
-
-		// :BE: disabled because of language bug
-		// https://github.com/corona-warn-app/cwa-app-ios/issues/1020
-		// XCTAssert(app.staticTexts["Done"].waitForExistence(timeout: 5.0))
-	}
-
-	// :BE: No longer used
-	/*
-	func test_0023_AppInformationFlow_contact() throws {
-		app.launch()
-
-		// only run if onboarding screen is present
-		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
-
-		app.swipeUp()
-		// assert cells
-		XCTAssert(app.cells["AppStrings.Home.appInformationCardTitle"].waitForExistence(timeout: 5.0))
-		app.cells["AppStrings.Home.appInformationCardTitle"].tap()
-
-		XCTAssert(app.cells["AppStrings.AppInformation.contactNavigation"].waitForExistence(timeout: 5.0))
-		app.cells["AppStrings.AppInformation.contactNavigation"].tap()
-
-		XCTAssert(app.staticTexts["AppStrings.AppInformation.contactTitle"].waitForExistence(timeout: 5.0))
-	}
-*/
-	
 	func test_0024_AppInformationFlow_privacy() throws {
 		app.launch()
 

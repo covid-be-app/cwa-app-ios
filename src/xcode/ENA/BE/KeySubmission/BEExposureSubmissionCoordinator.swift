@@ -156,10 +156,6 @@ class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
 		fatalError("Deprecated")
 	}
 
-	func showQRScreen(qrScannerDelegate: ExposureSubmissionQRScannerDelegate) {
-		fatalError("Deprecated")
-	}
-
 	func showTestResultScreen(with result: TestResult) {
 		fatalError("Deprecated")
 	}
@@ -193,7 +189,7 @@ class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
 			return createTestResultViewController(with: .negative)
 		}
 
-		// :BE: add positive
+		// :BE: add positive result
 		if ProcessInfo.processInfo.arguments.contains("-positiveResult") {
 			return createTestResultViewController(with: .positive)
 		}

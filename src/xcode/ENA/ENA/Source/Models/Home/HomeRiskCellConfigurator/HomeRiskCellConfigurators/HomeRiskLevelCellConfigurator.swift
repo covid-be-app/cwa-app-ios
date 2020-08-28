@@ -18,8 +18,6 @@
 
 import UIKit
 
-// :BE: remove detection interval label
-
 class HomeRiskLevelCellConfigurator: HomeRiskCellConfigurator {
 
 	// MARK: Properties

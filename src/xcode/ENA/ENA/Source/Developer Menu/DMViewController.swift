@@ -22,7 +22,6 @@ import UIKit
 
 /// The root view controller of the developer menu.
 
-// :BE: add risk detection
 final class DMViewController: UITableViewController, RequiresAppDependencies {
 	// MARK: Creating a developer menu view controller
 
