@@ -8,7 +8,7 @@
 "Alert_CancelAction_Later" = "Später";
 "Alert_DefaultAction_OpenSettings" = "Einstellungen öffnen";
 "General_BackButtonTitle" = "Zurück";
-"Common_ENError5_Description" = "Fehler 5: Es ist ein Fehler aufgetreten. Ihr Risikograd konnte nicht ermittelt werden. Wir arbeiten an einer Lösung für dieses Problem.";
+"Common_ENError5_Description" = "Fehler 5: iOS-Fehler. Ihr Risikoniveau kann nicht bestimmt werden. Wir werden es später noch einmal versuchen.";
 "Common_ENError11_Description" = "Fehler 11: Es ist ein Fehler aufgetreten. Ihr Risikograd konnte nicht ermittelt werden. Bitte das Handy neu starten und morgen erneut versuchen.";
 "Common_ENError13_Description" = "Fehler 13: Ihre Kontaktverfolgung wurde heute bereits durchgeführt. Bitte in 24 Stunden erneut versuchen.";
 "Common_Alert_Action_moreInfo" = "Mehr erfahren";
@@ -29,7 +29,6 @@
 "ExposureDetection_Refreshed_Never" = "Unbekannt";
 "ExposureDetection_RefreshingIn" = "Aktualisierung in %02d:%02d Minuten";
 "ExposureDetection_RefreshIn" = "Aktualisierung in %@h";
-"ExposureDetection_Refresh_24h" = "Regelmäßig aktualisiert";
 "ExposureDetection_LastRiskLevel" = "Letzte Kontaktverfolgung: %@";
 "ExposureDetection_OffText" = "Aktivieren Sie das Kontaktlogbuch, um sofort Ihren Risikostatus zu berechnen.";
 "ExposureDetection_OutdatedText" = "Ihr Kontaktlogbuch konnte über 48 Stunden lang nicht aktualisiert werden.";
@@ -111,8 +110,8 @@
 "OnboardingInfo_enableLoggingOfContactsPage_stateStopped" = "Angehalten";
 "OnboardingInfo_howDoesDataExchangeWorkPage_imageDescription" = "Eine verschlüsselte positive Testdiagnose wird an das System übertragen, das nun andere Benutzer warnt.";
 "OnboardingInfo_howDoesDataExchangeWorkPage_title" = "Wenn bei Ihnen COVID-19 diagnostiziert wird,";
-"OnboardingInfo_howDoesDataExchangeWorkPage_boldText" = "melden Sie es bitte über Coronalert. Freiwillig und sicher. Für die Gesundheit aller.";
-"OnboardingInfo_howDoesDataExchangeWorkPage_normalText" = "Ihre Benachrichtigung wird sicher verschlüsselt und auf einem sicheren Server verarbeitet. Personen, deren verschlüsselte Zufalls-IDs Ihr Gerät gesammelt hat, erhalten nun eine Warnung und Informationen über das Vorgehen.";
+"OnboardingInfo_howDoesDataExchangeWorkPage_boldText" = "... bitte melden Sie es in diesem Antrag. Die Weitergabe Ihrer Testergebnisse ist immer freiwillig und anonym. Wir ermutigen Sie daher, dies zu tun, um weiterhin die Gesundheit aller zu schützen.";
+"OnboardingInfo_howDoesDataExchangeWorkPage_normalText" = "Diese Informationen werden stets anonym und sicher behandelt. Ihr Name und Ihre persönlichen Daten werden nicht weitergegeben. An die Telefone der Personen, mit denen Sie engen Kontakt hatten und die die Anwendung benutzen, werden nur zufällige Kennungen gesendet. Dies wird es ihnen ermöglichen, ihr Risiko zu kennen, ohne den Ursprung des Risikos zu kennen. Sie werden auch Informationen über die zu befolgenden Schritte erhalten.";
 "OnboardingInfo_alwaysStayInformedPage_imageDescription" = "Eine Frau erhält eine Mitteilung von Coronalert.";
 "OnboardingInfo_alwaysStayInformedPage_title" = "Warnungen erhalten, Risiken erkennen";
 "OnboardingInfo_alwaysStayInformedPage_boldText" = "Die App kann Sie automatisch über Ihren Risikostatus informieren und Sie vor Neuinfektionen von Personen warnen, denen Sie begegnet sind. Lassen Sie sich jetzt von der App benachrichtigen. ";
@@ -236,7 +235,6 @@
 "Home_Activate_Card_Internet_Off_Title" = "Keine Internetverbindung";
 "Home_Risk_Date_Item_Title" = "Aktualisiert: %@";
 "Home_Risk_No_Date_Title" = "Unbekannt";
-"Home_Risk_Period_Update_Title" = "Regelmäßig aktualisiert";
 "Home_Risk_Period_Disabled_Button_Title" = "Aktualisierung nur alle %@ Stunden";
 "Home_Risk_Unknown_Title" = "Unbekanntes Risiko";
 "Home_Risk_Last_Activate_Item_Title" = "Letzte Kontaktverfolgung: %@";
