@@ -23,7 +23,7 @@
                                 <rect key="frame" x="16" y="16" width="595" height="344"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pke-Vc-HHn">
-                                        <rect key="frame" x="0.0" y="0.0" width="595" height="33.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="595" height="71"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title 1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gno-nj-MZX" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="557" height="33.5"/>
@@ -45,7 +45,7 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="749" insetsLayoutMarginsFromSafeArea="NO" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Sq-Fu-7Ci" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="49.5" width="595" height="53"/>
+                                        <rect key="frame" x="0.0" y="87" width="595" height="81.5"/>
                                         <string key="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" name="ENA Text Contrast Color"/>
@@ -54,12 +54,9 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="body"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1VM-pd-4gu">
-                                        <rect key="frame" x="0.0" y="118.5" width="595" height="93.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1VM-pd-4gu">
+                                        <rect key="frame" x="0.0" y="184.5" width="595" height="93.5"/>
                                     </stackView>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JLu-j3-Z7j">
-                                        <rect key="frame" x="0.0" y="228" width="595" height="50"/>
-                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b20-mf-cB4" customClass="ENAButton" customModule="ENA" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="294" width="595" height="50"/>
                                         <constraints>
@@ -98,7 +95,6 @@
             <connections>
                 <outlet property="bodyLabel" destination="8Sq-Fu-7Ci" id="QZe-bX-pDV"/>
                 <outlet property="chevronImageView" destination="nJl-O5-rry" id="Pnf-9I-Xn0"/>
-                <outlet property="detectionIntervalLabelContainer" destination="JLu-j3-Z7j" id="pqX-Tq-37d"/>
                 <outlet property="riskViewStackView" destination="1VM-pd-4gu" id="53x-2q-AlK"/>
                 <outlet property="stackView" destination="vPX-Xb-EeD" id="Rly-Le-zRW"/>
                 <outlet property="titleLabel" destination="gno-nj-MZX" id="mus-pa-Ikd"/>
