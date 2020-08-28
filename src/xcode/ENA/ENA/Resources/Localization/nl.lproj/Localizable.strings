@@ -8,7 +8,7 @@
 "Alert_CancelAction_Later" = "Later";
 "Alert_DefaultAction_OpenSettings" = "Open instellingen";
 "General_BackButtonTitle" = "Terug";
-"Common_ENError5_Description" = "Error 5: Er is iets misgegaan. Uw risiconiveau kan niet bepaald worden. We werken aan een oplossing voor het probleem.";
+"Common_ENError5_Description" = "Fout 5: iOS-fout. Uw risiconiveau kan niet worden bepaald. We zullen het later opnieuw proberen.";
 "Common_ENError11_Description" = "Error 11: Er is iets misgegaan. Uw risiconiveau kan niet bepaald worden. Start uw toestel opnieuw op en probeer het morgen opnieuw.";
 "Common_ENError13_Description" = "Error 13: Uw contactlogboek voor vandaag werd al gemaakt. Probeer het over 24 uur opnieuw.";
 "Common_Alert_Action_moreInfo" = "Ontdek meer";
@@ -29,7 +29,6 @@
 "ExposureDetection_Refreshed_Never" = "Onbekend";
 "ExposureDetection_RefreshingIn" = "Bijwerken over %02d:%02d minuten";
 "ExposureDetection_RefreshIn" = "Wordt bijgewerkt na %@h";
-"ExposureDetection_Refresh_24h" = "Regelmatig bijgewerkt";
 "ExposureDetection_LastRiskLevel" = "Laatste contacttracing: %@";
 "ExposureDetection_OffText" = "Activeer contactlogboek om uw risicostatus vandaag te evalueren.";
 "ExposureDetection_OutdatedText" = "Uw contactlogboek kon gedurende meer dan 48 uur niet worden geüpdatet.";
@@ -111,8 +110,8 @@
 "OnboardingInfo_enableLoggingOfContactsPage_stateStopped" = "Stopgezet";
 "OnboardingInfo_howDoesDataExchangeWorkPage_imageDescription" = "Er wordt een gecodeerde positieve diagnose naar het systeem gestuurd, dat nu andere gebruikers zal waarschuwen.";
 "OnboardingInfo_howDoesDataExchangeWorkPage_title" = "Als u een COVID-19-diagnose krijgt ...";
-"OnboardingInfo_howDoesDataExchangeWorkPage_boldText" = "... meld dit in Coronalert. Het delen van uw testresultaten gebeurt vrijwillig en is veilig. Doe dit alstublieft in het belang van ieders gezondheid.";
-"OnboardingInfo_howDoesDataExchangeWorkPage_normalText" = "Uw melding is veilig versleuteld en wordt verwerkt op een beveiligde server. De mensen van wie uw toestel de versleutelde willekeurige ID's heeft verzameld, ontvangen nu een waarschuwing samen met informatie over wat ze nu moeten doen.";
+"OnboardingInfo_howDoesDataExchangeWorkPage_boldText" = "... rapporteer het in deze app. Het delen van uw testresultaten is altijd vrijwillig en anoniem. Wij moedigen u dan ook aan dit te doen om de gezondheid van iedereen te blijven beschermen. ";
+"OnboardingInfo_howDoesDataExchangeWorkPage_normalText" = "Deze informatie wordt altijd anoniem en veilig behandeld. Uw naam en persoonlijke gegevens worden niet gedeeld. Alleen willekeurige ID’s worden naar de telefoons gestuurd van mensen met wie je nauw contact hebt gehad en die de applicatie gebruiken. Zo kunnen ze hun risico's kennen zonder de oorsprong ervan te kennen. Zij zullen ook informatie ontvangen over de te volgen stappen.";
 "OnboardingInfo_alwaysStayInformedPage_imageDescription" = "Een vrouw krijgt een melding van Coronalert.";
 "OnboardingInfo_alwaysStayInformedPage_title" = "Waarschuwingen ontvangen en risico's identificeren";
 "OnboardingInfo_alwaysStayInformedPage_boldText" = "De app kan u automatisch op de hoogte brengen van uw risicostatus en u waarschuwen voor nieuwe besmettingen van mensen met wie u contact heeft gehad. Geef toestemming om u via de app op de hoogte te laten brengen. ";
@@ -236,7 +235,6 @@
 "Home_Activate_Card_Internet_Off_Title" = "Geen internetverbinding";
 "Home_Risk_Date_Item_Title" = "Bijgewerkt: %@";
 "Home_Risk_No_Date_Title" = "Onbekend";
-"Home_Risk_Period_Update_Title" = "Regelmatig bijgewerkt";
 "Home_Risk_Period_Disabled_Button_Title" = "Slechts om de %@ uur bijgewerkt";
 "Home_Risk_Unknown_Title" = "Onbekend risico";
 "Home_Risk_Last_Activate_Item_Title" = "Laatste contacttracing: %@";
