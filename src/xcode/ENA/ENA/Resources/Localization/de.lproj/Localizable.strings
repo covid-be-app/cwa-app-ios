@@ -34,10 +34,10 @@
 "ExposureDetection_OutdatedText" = "Ihr Kontaktlogbuch konnte über 48 Stunden lang nicht aktualisiert werden.";
 "ExposureDetection_UnknownText" = "Da Sie das Kontaktlogbuch noch nicht lange genug aktiviert haben, konnten wir für Sie kein Infektionsrisiko berechnen.";
 "ExposureDetection_LoadingText" = "Aktuelle Daten werden heruntergeladen und geprüft. Das kann mehrere Minuten dauern.";
-"ExposureDetection_Behavior_Title" = "Richtlinien";
+"ExposureDetection_Behavior_Title" = "Vorbeugende Maßnahmen";
 "ExposureDetection_Behavior_Subtitle" = "So verhalten Sie sich richtig";
 "ExposureDetection_Guide_Hands" = "Waschen Sie Ihre Hände regelmäßig.";
-"ExposureDetection_Guide_Mask" = "Tragen Sie einen Mund-Nasen-Schutz bei Begegnungen mit anderen Personen.";
+"ExposureDetection_Guide_Mask" = "Tragen Sie einen Mundschutz bei Begegnungen mit anderen Personen, sowie an Orten, an denen dies vorgeschrieben ist.";
 "ExposureDetection_Guide_Distance" = "Halten Sie mindestens 1,5 Meter Abstand zu anderen Personen.";
 "ExposureDetection_Guide_Sneeze" = "Niesen oder husten Sie in die Armbeuge oder in ein Taschentuch.";
 "ExposureDetection_Guide_Home" = "Gehen Sie, wenn möglich, nach Hause bzw. bleiben Sie zu Hause.";
@@ -276,7 +276,7 @@
 "Home_Finding_Positive_Card_Button" = "Weiter";
 "Home_SubmitCard_Title" = "Ich möchte mich testen lassen.";
 "Home_SubmitCard_Body" = "Helfen Sie mit, die Infektionskette zu durchbrechen, indem Sie andere warnen.";
-"Home_SubmitCard_Button" = "Mehr Info";
+"Home_SubmitCard_Button" = "Ich lasse mich testen";
 "Home_InfoCard_ShareTitle" = "Coronalert teilen";
 "Home_InfoCard_AboutTitle" = "Häufig gestellte Fragen";
 "Home_SettingsCard_Title" = "Einstellungen";
@@ -296,9 +296,8 @@
 "App_Information_About_Navigation" = "Über die App";
 "App_Information_About_ImageDescription" = "Leer";
 "App_Information_About_Title" = "Gemeinsam gegen Corona";
-"App_Information_About_Description" = "Sciensano ist die belgische Gesundheitsbehörde. Sie veröffentlicht die Coronalert-App im Auftrag der Bundesregierung. Die Anwendung soll eine digitale Ergänzung zu den bereits bestehenden Maßnahmen im Bereich der öffentlichen Gesundheit sein: soziale Distanzierung, Hygiene und Gesichtsmasken.";
+"App_Information_About_Description" = "Sciensano ist eine belgische Bundesbehörde für öffentliche Gesundheit. Sie veröffentlicht den Coronalert-Antrag im Namen der Regierungen der föderalen Entitäten. Die Anwendung ist als digitale Ergänzung zu den bereits bestehenden Maßnahmen im Bereich der öffentlichen Gesundheit gedacht.";
 "App_Information_About_Text" = "Nutzer helfen, Infektionsketten zu verfolgen und zu durchbrechen. Die App speichert Begegnungen dezentral auf Ihrem Handy. Sie werden informiert, wenn Sie nachweislich infizierten Personen begegnet sind. Ihre Identität und Privatsphäre bleiben dabei geschützt.";
-"App_Information_FAQ_Navigation" = "Häufig gestellte Fragen";
 "App_Information_Contact_ImageDescription" = "Ein Mann trägt ein Headset beim Telefonieren.";
 "App_Information_Contact_Title" = "Wie können wir Ihnen helfen?";
 "App_Information_Imprint_Navigation" = "Information";
@@ -321,7 +320,7 @@
 "InviteFriends_Title" = "Gemeinsam gegen Corona";
 "InviteFriends_Button" = "Download-Link versenden";
 "InviteFriends_ShareTitle" = "Laden Sie die Anwendung Coronalert über diesen Link herunter";
-"InviteFriends_ShareUrl" = "http://onelink.to/j8nrvj";
+"InviteFriends_ShareUrl" = "https://coronalert.be";
 "InviteFriends_Illustration_Label" = "Ein Mann teilt Coronalert mit vier anderen Personen.";
 "Reset_NavTitle" = "Zurücksetzen";
 "Reset_Header1" = "Die App wirklich zurücksetzen?";
@@ -364,7 +363,7 @@
 "RiskLegend_Contact_Title" = "Kontakte";
 "RiskLegend_Contact_Text" = "Begegnungen über einen längeren Zeitraum und in der Nähe von Menschen, bei denen COVID-19 diagnostiziert wurde.";
 "RiskLegend_Notification_Title" = "Kontaktmeldung";
-"RiskLegend_Notification_Text" = "Anzeige der Kontakte in Coronalert.";
+"RiskLegend_Notification_Text" = "Wenn Sie in engem Kontakt mit einer Person gestanden haben, die positiv auf COVID-19 getestet und ihr Ergebnis im Coronalert-Antrag mitgeteilt hat, werden Sie über die Expositionsmeldung benachrichtigt.";
 "RiskLegend_Random_Title" = "Zufallscodes";
 "RiskLegend_Random_Text" = "Zufallscodes sind zufällig erzeugte Zahlen- und Buchstabenkombinationen. Sie werden zwischen benachbarten Handys ausgetauscht. Zufallscodes lassen sich nicht einer bestimmten Person zuordnen und werden nach 14 Tagen automatisch gelöscht. Eine Corona-positiv getestete Person kann ihre Zufallscodes von bis zu 14 Tage freiwillig mit anderen App-Nutzern teilen.";
 "RiskLegend_Image1_AccLabel" = "Ein Gerät zeigt unterschiedlich nummerierte Inhalte an.";
