@@ -21,7 +21,7 @@
 "AccessibilityLabel_PhoneNumber" = "Numéro de téléphone";
 "ExposureDetection_Off" = "Enregistrement de l'exposition arrêté";
 "ExposureDetection_Outdated" = "L'enregistrement de l'exposition n'est pas possible.";
-"ExposureDetection_Unknown" = "risque inconnu";
+"ExposureDetection_Unknown" = "Risque inconnu";
 "ExposureDetection_Low" = "Faible risque";
 "ExposureDetection_High" = "Risque important";
 "ExposureDetection_NumberOfDaysStored" = "%d sur 14 jours d'activité";
@@ -34,10 +34,10 @@
 "ExposureDetection_OutdatedText" = "Votre enregistrement d'exposition n'a pas pu être mis à jour depuis plus de 48 heures.";
 "ExposureDetection_UnknownText" = "Comme l'enregistrement de l'exposition n'est pas activé depuis suffisamment longtemps, nous ne pouvons pas calculer votre risque d'infection. ";
 "ExposureDetection_LoadingText" = "Les données actuelles sont en cours de téléchargement et de vérification. Cela peut prendre plusieurs minutes.";
-"ExposureDetection_Behavior_Title" = "Directives";
+"ExposureDetection_Behavior_Title" = "Mesures de prévention";
 "ExposureDetection_Behavior_Subtitle" = "Voici ce que vous devez faire";
 "ExposureDetection_Guide_Hands" = "Lavez-vous les mains régulièrement.";
-"ExposureDetection_Guide_Mask" = "Portez un masque facial lorsque vous rencontrez d'autres personnes.";
+"ExposureDetection_Guide_Mask" = "Portez un masque facial lorsque vous rencontrez d'autres personnes, ainsi que sur les lieux où c'est obligatoire.";
 "ExposureDetection_Guide_Distance" = "Gardez au moins 1,5 mètre de distance avec les autres personnes.";
 "ExposureDetection_Guide_Sneeze" = "Éternuez ou toussez dans votre coude ou dans un mouchoir en papier. ";
 "ExposureDetection_Guide_Home" = "Si possible, rentrez et restez chez vous.";
@@ -103,7 +103,7 @@
 "OnboardingInfo_enableLoggingOfContactsPage_imageDescription" = "Trois personnes ont activé l'enregistrement de l'exposition sur leur smartphone, leur éventuelle rencontre sera donc enregistrée.";
 "OnboardingInfo_enableLoggingOfContactsPage_title" = "Comment activer la journalisation de l'exposition ?";
 "OnboardingInfo_enableLoggingOfContactsPage_boldText" = "Pour déterminer si vous êtes exposé à un risque d'infection, vous devez activer la fonction d'enregistrement de l'exposition.";
-"OnboardingInfo_enableLoggingOfContactsPage_normalText" = "La journalisation de l'exposition fonctionne en ce sens que votre smartphone reçoit, via Bluetooth, les identifiants aléatoires chiffrés des autres utilisateurs et transmet votre propre identifiant aléatoire à leurs smartphones. Cette fonction peut être désactivée à tout moment. \n\nLes identifiants aléatoires cryptés ne transmettent à d'autres personnes que des informations sur la date, la durée et la proximité (calculée en fonction de la puissance du signal). Les données personnelles telles que le nom, l'adresse et le lieu ne sont jamais enregistrées. Les individus ne peuvent pas être identifiés.";
+"OnboardingInfo_enableLoggingOfContactsPage_normalText" = "La journalisation de l'exposition fonctionne en ce sens que votre smartphone reçoit, via Bluetooth, les identifiants aléatoires chiffrés des autres utilisateurs et transmet votre propre identifiant aléatoire à leurs smartphones. Cette fonction peut être désactivée à tout moment. \n\nLes identifiants aléatoires cryptés ne transmettent à d'autres personnes que des informations sur la date, la durée et la proximité (calculée en fonction de la puissance du signal). Les données personnelles telles que le nom, l'adresse, le lieu et l'heure ne sont jamais enregistrées. Les individus ne peuvent pas être identifiés.";
 "OnboardingInfo_enableLoggingOfContactsPage_stateHeader" = "Statut";
 "OnboardingInfo_enableLoggingOfContactsPage_stateTitle" = "Enregistrement de l'exposition";
 "OnboardingInfo_enableLoggingOfContactsPage_stateActive" = "Actif";
@@ -114,7 +114,7 @@
 "OnboardingInfo_howDoesDataExchangeWorkPage_normalText" = "Cette information sera toujours traitée de manière anonyme et sécurisée. Votre nom et vos données personnelles ne seront pas partagées. Seuls des identifiants aléatoires seront envoyés vers les téléphones des personnes avec qui vous avez eu un contact rapproché et qui utilisent l'application. Cela leur permettra de connaître leur risque sans pour autant en connaître l'origine. Elles recevront également des informations sur les étapes à suivre.";
 "OnboardingInfo_alwaysStayInformedPage_imageDescription" = "Une femme reçoit une notification de son application Coronalert.";
 "OnboardingInfo_alwaysStayInformedPage_title" = "Recevoir des avertissements et identifier les risques.";
-"OnboardingInfo_alwaysStayInformedPage_boldText" = "L'application peut vous informer automatiquement de votre statut de risque et vous avertir des nouvelles infections de personnes auxquelles vous avez été exposé. Autorisez l'application à vous avertir dès maintenant. ";
+"OnboardingInfo_alwaysStayInformedPage_boldText" = "L'application peut vous informer automatiquement si vous avez été exposé à d'éventuels risques et vous avertir des nouvelles infections de personnes auxquelles vous avez été exposé. Autorisez l'application à vous avertir dès maintenant.";
 "OnboardingInfo_alwaysStayInformedPage_normalText" = "Vous pouvez alors vous isoler pour protéger les autres et chercher un endroit où vous faire tester.";
 "ExposureSubmission_DataPrivacyTitle" = "Confidentialité des données";
 "ExposureSubmission_Continue_actionText" = "Suivant";
@@ -236,9 +236,9 @@
 "Home_Risk_Date_Item_Title" = "Mise à jour : %@";
 "Home_Risk_No_Date_Title" = "inconnu";
 "Home_Risk_Period_Disabled_Button_Title" = "Mise à jour seulement toutes les %@ heures";
-"Home_Risk_Unknown_Title" = "risque inconnu";
+"Home_Risk_Unknown_Title" = "Risque inconnu";
 "Home_Risk_Last_Activate_Item_Title" = "Dernier enregistrement de l'exposition : %@";
-"Home_Risk_Last_Activate_Item_Unknown_Title" = "risque inconnu";
+"Home_Risk_Last_Activate_Item_Unknown_Title" = "Risque inconnu";
 "Home_Risk_Last_Activate_Item_Low_Title" = "Risque faible";
 "Home_Risk_Last_Activate_Item_High_Title" = "Risque plus élevé";
 "Home_RiskCard_Update_Button" = "Mise à jour";
@@ -276,7 +276,7 @@
 "Home_Finding_Positive_Card_Button" = "Suivant";
 "Home_SubmitCard_Title" = "Je souhaite faire mon test";
 "Home_SubmitCard_Body" = "Aidez-nous à briser la chaîne d'infection en informant les autres.";
-"Home_SubmitCard_Button" = "En savoir plus";
+"Home_SubmitCard_Button" = "Je me fais tester";
 "Home_InfoCard_ShareTitle" = "Partagez l'application Coronalert";
 "Home_InfoCard_AboutTitle" = "Questions fréquemment posées";
 "Home_SettingsCard_Title" = "Paramètres";
@@ -296,9 +296,8 @@
 "App_Information_About_Navigation" = "À propos";
 "App_Information_About_ImageDescription" = "Vide";
 "App_Information_About_Title" = "Luttons ensemble contre le coronavirus !";
-"App_Information_About_Description" = "Sciensano est l'organisme fédéral belge de santé publique. Il publie l'application Coronalert au nom du gouvernement fédéral. L'application se veut un complément numérique aux mesures de santé publique déjà mises en place : distanciation sociale, hygiène et masques faciaux.";
-"App_Information_About_Text" = "Quiconque utilise l'application aide à tracer et à briser les chaînes d'infection. L'application enregistre les rencontres avec d'autres personnes localement sur votre smartphone. Vous êtes averti si vous avez rencontré des personnes chez qui le COVID-19 a été diagnostiqué par la suite. Votre identité et votre vie privée sont toujours protégées.";
-"App_Information_FAQ_Navigation" = "Questions fréquemment posées";
+"App_Information_About_Description" = "Sciensano est un organisme fédéral belge de santé publique. Il publie l'application Coronalert au nom des gouvernements des entités fédérées. L'application se veut un complément numérique aux mesures de santé publique déjà mises en place.";
+"App_Information_About_Text" = "Quiconque utilise l'application aide à tracer et à briser les chaînes d'infection. L'application enregistre les rencontres avec d'autres personnes localement sur votre smartphone de manière anonyme. Vous êtes averti si vous avez rencontré des personnes chez qui le COVID-19 a été diagnostiqué par la suite. Votre identité et votre vie privée sont toujours protégées.";
 "App_Information_Contact_ImageDescription" = "Un homme porte un casque d'écoute lorsqu'il passe un appel téléphonique.";
 "App_Information_Contact_Title" = "Comment pouvons-nous vous aider ?";
 "App_Information_Imprint_Navigation" = "Information";
@@ -321,7 +320,7 @@
 "InviteFriends_Title" = "Luttons ensemble contre le coronavirus !";
 "InviteFriends_Button" = "Envoyer le lien de téléchargement";
 "InviteFriends_ShareTitle" = "Téléchargez l'application Coronalert via ce lien";
-"InviteFriends_ShareUrl" = "http://onelink.to/j8nrvj";
+"InviteFriends_ShareUrl" = "https://coronalert.be";
 "InviteFriends_Illustration_Label" = "Une personne partage l'application Coronalert avec quatre autres personnes.";
 "Reset_NavTitle" = "Réinitialisation";
 "Reset_Header1" = "Etes-vous sûr de vouloir réinitialiser l'application ?";
@@ -352,10 +351,10 @@
 "RiskLegend_Legend2_High_Color" = "Rouge";
 "RiskLegend_Legend2_Low" = "Risque faible";
 "RiskLegend_Legend2_Low_Color" = "Vert";
-"RiskLegend_Legend2_Unknown" = "risque inconnu";
+"RiskLegend_Legend2_Unknown" = "Risque inconnu";
 "RiskLegend_Legend2_Unknown_Color" = "Gris";
 "RiskLegend_Legend3_Title" = "Notification aux autres utilisateurs";
-"RiskLegend_Legend3_Text" = "Une autre fonction centrale est l'enregistrement de votre test et la récupération du résultat. Si l'on vous diagnostique le COVID-19, vous pouvez le notifier aux autres utilisateurs et briser la chaîne d'infection.";
+"RiskLegend_Legend3_Text" = "Il est également possible d'enregistrer son test pour pouvoir ensuite recevoir le résultat sur cette même application. En cas de test positif au COVID-19, vous pourrez alors le notifier aux autres utilisateurs et briser la chaîne de transmission du virus.";
 "RiskLegend_Definitions_Title" = "Définition des termes";
 "RiskLegend_Store_Title" = "Journal d'exposition";
 "RiskLegend_Store_Text" = "Liste des identifiants reçus et des identifiants aléatoires temporaires enregistrés dans le stockage du système d'exploitation. Cette liste est lue lorsque les expositions sont contrôlées. Tous les identifiants aléatoires sont automatiquement supprimés après 14 jours.";
@@ -364,9 +363,9 @@
 "RiskLegend_Contact_Title" = "Expositions";
 "RiskLegend_Contact_Text" = "Rencontres sur une longue durée et à proximité de personnes diagnostiquées positives au COVID-19.";
 "RiskLegend_Notification_Title" = "Notification d'exposition";
-"RiskLegend_Notification_Text" = "L'affichage des expositions dans l'application Coronalert";
+"RiskLegend_Notification_Text" = "Si vous avez été en contact rapproché avec une personne testée positive au COVID-19 et qui a partagé son résultat dans l'application Coronalert, vous en serez averti à travers la notification d'exposition.";
 "RiskLegend_Random_Title" = "Identifiants aléatoires";
-"RiskLegend_Random_Text" = "Les identifiants aléatoires sont des combinaisons de chiffres et de lettres générées de manière aléatoire. Ils sont échangés entre des dispositifs situés à proximité les uns des autres. Les identifiants aléatoires ne peuvent pas être rattachés à une personne spécifique et sont automatiquement supprimés après 14 jours. Les personnes diagnostiquées positives au COVID-19 peuvent choisir de partager leurs identifiants aléatoires des 14 derniers jours avec d'autres utilisateurs de l'application.";
+"RiskLegend_Random_Text" = "Les identifiants aléatoires sont des combinaisons de chiffres et de lettres générées de manière aléatoire. Ils sont échangés entre des smartphones situés à proximité les uns des autres. Les identifiants aléatoires ne peuvent pas être rattachés à une personne spécifique et sont automatiquement supprimés après 14 jours. Les personnes diagnostiquées positives au COVID-19 peuvent choisir de partager leurs identifiants aléatoires des 14 derniers jours avec d'autres utilisateurs de l'application.";
 "RiskLegend_Image1_AccLabel" = "Un smartphone affiche des contenus chiffrés différents.";
 "Update_Message_Title" = "Mise à jour disponible";
 "Update_Message_Text" = "Il y a une mise à jour disponible pour l'application Coronalert.";
@@ -382,8 +381,8 @@
 "BESelectSymptomsDate_explanation" = "Sélectionnez la date à laquelle vous avez commencé à avoir des symptômes.";
 "BEMobileTestId_Select" = "Confirmer";
 "BEMobileTestId_Date" = "Date";
-"BEMobileTestId_Save" = "Sauvegarder";
-"BEMobileTestId_saveExplanation" = "Montrez les informations ci-dessous à la personne effectuant le test. Appuyez sur \"Enregistrer\" pour être averti dès que le résultat du test est disponible.";
+"BEMobileTestId_Save" = "Enregistrer";
+"BEMobileTestId_saveExplanation" = "Montrez ce numéro au médecin ou au laboratoire qui vous fera le test. Cliquez sur \"Enregistrer\" pour être averti dès que le résultat sera disponible.";
 "BELanguage" = "fr";
 "BESelectKeyCountries_title" = "Sélectionnez votre pays";
 "BESelectKeyCountries_explanation" = "Si vous n'étiez pas en Belgique à certaines des dates ci-dessous et que vous voulez partager cette information (de façon anonyme), veuillez sélectionner le pays dans lequel vous étiez à ces dates.";
@@ -396,6 +395,6 @@
 "BEExposureSubmission_cancel" = "Annuler";
 "BESelectSymptomsDate_title" = "Sélectionner la date";
 "BESelectSymptomsDate_next" = "Suivant";
-"InviteFriends_Description" = "Plus il y a de personnes qui utilisent l'application, plus vite nous pourrons briser la chaîne d'infection. Veuillez inviter votre famille et vos amis à télécharger l'application.";
+"InviteFriends_Description" = "Plus il y a de personnes qui utilisent l'application, plus vite nous pourrons briser la chaîne d'infection. N'hésitez pas à inviter votre famille et vos amis à télécharger l'application.";
 "RiskLegend_Legend2_Title" = "Risque d'infection";
 "BEExposureDetection_OffShort" = "Arrêté";
