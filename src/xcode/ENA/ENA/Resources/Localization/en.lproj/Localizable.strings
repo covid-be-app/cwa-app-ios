@@ -34,10 +34,10 @@
 "ExposureDetection_OutdatedText" = "Your exposure logging could not be updated for more than 48 hours.";
 "ExposureDetection_UnknownText" = "Since you have not activated exposure logging for long enough, we cannot calculate your risk of infection.";
 "ExposureDetection_LoadingText" = "Current data is being downloaded and checked. This can take several minutes.";
-"ExposureDetection_Behavior_Title" = "Guidelines";
+"ExposureDetection_Behavior_Title" = "Preventive measures";
 "ExposureDetection_Behavior_Subtitle" = "This is what you should do";
 "ExposureDetection_Guide_Hands" = "Wash your hands regularly.";
-"ExposureDetection_Guide_Mask" = "Wear a face mask when you encounter other people.";
+"ExposureDetection_Guide_Mask" = "Wear a face mask when you encounter other people, as well as in places where it is mandatory.";
 "ExposureDetection_Guide_Distance" = "Keep at least 1.5 meters distance from other people.";
 "ExposureDetection_Guide_Sneeze" = "Sneeze or cough into your elbow or a tissue. ";
 "ExposureDetection_Guide_Home" = "If possible, please go home and stay at home.";
@@ -103,7 +103,7 @@
 "OnboardingInfo_enableLoggingOfContactsPage_imageDescription" = "Three people have activated exposure logging on their devices, which will log their encounters with each other.";
 "OnboardingInfo_enableLoggingOfContactsPage_title" = "How to Enable Exposure Logging";
 "OnboardingInfo_enableLoggingOfContactsPage_boldText" = "To identify whether you are at risk of infection, you must activate the exposure logging feature.";
-"OnboardingInfo_enableLoggingOfContactsPage_normalText" = "Exposure logging works by your device receiving, via Bluetooth, encrypted random IDs of other users and passing your own random ID to their devices. This feature can be deactivated at any time. \n\nEncrypted random IDs only pass information about date, duration, and proximity (calculated using signal strength) to other people. Personal data such as name, address, and location is never recorded. Individuals cannot be identified.";
+"OnboardingInfo_enableLoggingOfContactsPage_normalText" = "Exposure logging works by your device receiving, via Bluetooth, encrypted random IDs of other users and passing your own random ID to their devices. This feature can be deactivated at any time. \n\nEncrypted random IDs only pass information about date, duration, and proximity (calculated using signal strength) to other people. Personal data such as name, address, location and time is never recorded. Individuals cannot be identified.";
 "OnboardingInfo_enableLoggingOfContactsPage_stateHeader" = "Status";
 "OnboardingInfo_enableLoggingOfContactsPage_stateTitle" = "Exposure Logging";
 "OnboardingInfo_enableLoggingOfContactsPage_stateActive" = "Active";
@@ -276,7 +276,7 @@
 "Home_Finding_Positive_Card_Button" = "Next";
 "Home_SubmitCard_Title" = "I want to do a test";
 "Home_SubmitCard_Body" = "Help to break the infection chain by notifying others.";
-"Home_SubmitCard_Button" = "Learn More";
+"Home_SubmitCard_Button" = "I will be tested";
 "Home_InfoCard_ShareTitle" = "Share Coronalert";
 "Home_InfoCard_AboutTitle" = "Frequently Asked Questions";
 "Home_SettingsCard_Title" = "Settings";
@@ -296,9 +296,8 @@
 "App_Information_About_Navigation" = "About the App";
 "App_Information_About_ImageDescription" = "";
 "App_Information_About_Title" = "Let's fight coronavirus together";
-"App_Information_About_Description" = "Sciensano is the Belgian federal public health body. It publishes the Coronalert app on behalf of the federal government. The application is intended to be a digital complement to the public health measures already in place: social distancing, hygiene and face masks.";
+"App_Information_About_Description" = "Sciensano is a Belgian federal public health agency. It publishes the Coronalert application on behalf of the governments of the federated entities. The application is intended as a digital complement to the public health measures already in place.";
 "App_Information_About_Text" = "Whoever uses the app helps to trace and break chains of infection. The app saves encounters with other people locally on your device. You are notified if you have encountered people who were later diagnosed with COVID-19. Your identity and privacy are always protected.";
-"App_Information_FAQ_Navigation" = "Frequently Asked Questions";
 "App_Information_Contact_ImageDescription" = "A man wears a headset while making a phone call.";
 "App_Information_Contact_Title" = "How can we help you?";
 "App_Information_Imprint_Navigation" = "Information";
@@ -321,7 +320,7 @@
 "InviteFriends_Title" = "Let's fight coronavirus together";
 "InviteFriends_Button" = "Send Download Link";
 "InviteFriends_ShareTitle" = "Download the Coronalert application via this link";
-"InviteFriends_ShareUrl" = "http://onelink.to/j8nrvj";
+"InviteFriends_ShareUrl" = "https://coronalert.be";
 "InviteFriends_Illustration_Label" = "A man shares Coronalert with four other persons.";
 "Reset_NavTitle" = "Reset";
 "Reset_Header1" = "Are you sure you want to reset the app?";
@@ -364,7 +363,7 @@
 "RiskLegend_Contact_Title" = "Exposures";
 "RiskLegend_Contact_Text" = "Encounters over a longer duration and close proximity to people diagnosed with COVID-19.";
 "RiskLegend_Notification_Title" = "Exposure Notification";
-"RiskLegend_Notification_Text" = "The display of exposures in Coronalert.";
+"RiskLegend_Notification_Text" = "If you have been in close contact with a person who has tested positive for COVID-19 and who has shared his or her result in the Coronalert application, you will be notified through the exposure notification.";
 "RiskLegend_Random_Title" = "Random IDs";
 "RiskLegend_Random_Text" = "Random IDs are combinations of digits and letters generated randomly. They are exchanged between devices in close proximity. Random IDs cannot be traced to a specific person and are automatically deleted after 14 days. Persons diagnosed with COVID-19 can opt to share their random IDs of up to the last 14 days with other app users.";
 "RiskLegend_Image1_AccLabel" = "A device is showing different numbered contents.";
