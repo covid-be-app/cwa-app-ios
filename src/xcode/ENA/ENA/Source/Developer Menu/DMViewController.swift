@@ -170,13 +170,6 @@ final class DMViewController: UITableViewController, RequiresAppDependencies {
 		)
 	}
 
-	// MARK: QR Code related
-
-	@objc
-	private func showScanner() {
-		present(DMQRCodeScanViewController(delegate: self), animated: true)
-	}
-
 	// MARK: Test Keys
 
 	// This method generates test keys and submits them to the backend.
@@ -225,18 +218,6 @@ final class DMViewController: UITableViewController, RequiresAppDependencies {
 	}
 
 	override func tableView(_: UITableView, didSelectRowAt _: IndexPath) {}
-}
-
-extension DMViewController: DMQRCodeScanViewControllerDelegate {
-	func debugCodeScanViewController(_: DMQRCodeScanViewController, didScan diagnosisKey: SAP_TemporaryExposureKey) {
-		client.submit(
-			keys: [diagnosisKey.temporaryExposureKey],
-			tan: "not needed"
-		) { [weak self] _ in
-			guard let self = self else { return }
-			self.resetAndFetchKeys()
-		}
-	}
 }
 
 private extension DateFormatter {
