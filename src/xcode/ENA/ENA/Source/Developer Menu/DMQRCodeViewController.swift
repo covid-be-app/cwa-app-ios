@@ -15,7 +15,8 @@
 // specific language governing permissions and limitations
 // under the License.
 
-#if !RELEASE
+// :TEMP:
+//#if !RELEASE
 
 import UIKit
 
@@ -104,4 +105,4 @@ private extension UIView {
 	}
 }
 
-#endif
+//#endif
