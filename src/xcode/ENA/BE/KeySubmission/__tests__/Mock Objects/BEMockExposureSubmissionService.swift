@@ -22,16 +22,6 @@ import ExposureNotification
 
 class BEMockExposureSubmissionService : BEExposureSubmissionService {
 	var submitExposureCallback: ((@escaping ExposureSubmissionHandler) -> Void)?
-
-	var httpClient: BEHTTPClient {
-		get {
-			fatalError("Not allowed")
-		}
-		set {
-			fatalError("Not allowed")
-		}
-	}
-	
 	var mobileTestId: BEMobileTestId?
 	
 	private var keys:[ENTemporaryExposureKey]

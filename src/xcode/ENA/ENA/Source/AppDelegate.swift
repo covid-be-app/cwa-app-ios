@@ -132,8 +132,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	let downloadedPackagesStore: DownloadedPackagesStore = DownloadedPackagesSQLLiteStore(fileName: "packages")
 
-	// :BE: replace HTTPClient
-	var client: HTTPClient = BEHTTPClient(configuration: .backendBaseURLs)
+	var client: HTTPClient = HTTPClient(configuration: .backendBaseURLs)
 
 	// TODO: REMOVE ME
 	var lastRiskCalculation: String = ""

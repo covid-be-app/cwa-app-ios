@@ -23,7 +23,6 @@ import ExposureNotification
 protocol BEExposureSubmissionService : ExposureSubmissionService {
 	typealias BEExposureSubmissionGetKeysHandler = (Result<[ENTemporaryExposureKey], ExposureSubmissionError>) -> Void
 	
-	var httpClient:BEHTTPClient { get }
 	var mobileTestId:BEMobileTestId? { get set }
 	
 	func retrieveDiagnosisKeys(completionHandler: @escaping BEExposureSubmissionGetKeysHandler)
@@ -36,14 +35,6 @@ protocol BEExposureSubmissionService : ExposureSubmissionService {
 }
 
 class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposureSubmissionService {
-	
-	lazy var httpClient:BEHTTPClient = {
-		guard let beClient = client as? BEHTTPClient else {
-			fatalError("Wrong subclass")
-		}
-		
-		return beClient
-	}()
 	
 	var mobileTestId:BEMobileTestId? {
 		get {
@@ -98,9 +89,9 @@ class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposure
 
 	func getFakeTestResult(_ isLast:Bool, completion: @escaping(() -> Void)) {
 		
-		httpClient.getTestResult(forDevice: BEMobileTestId.fakeRegistrationToken) { result in
+		client.getTestResult(forDevice: BEMobileTestId.fakeRegistrationToken) { result in
 			if isLast {
-				self.httpClient.ackTestDownload(forDevice: BEMobileTestId.fakeRegistrationToken) {
+				self.client.ackTestDownload(forDevice: BEMobileTestId.fakeRegistrationToken) {
 					completion()
 				}
 			} else {
@@ -166,10 +157,13 @@ class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposure
 	}
 	
 	func submitFakeExposure(completionHandler: @escaping ExposureSubmissionHandler) {
-		httpClient.submit(
+		client.submit(
 			keys: [],
-			countries:[],
-			isFake: true) { error in
+			countries: [],
+			mobileTestId: nil,
+			testResult: nil,
+			isFake: true
+			) { error in
 			if let error = error {
 				logError(message: "Error while submiting diagnosis keys: \(error.localizedDescription)")
 				completionHandler(self.parseError(error))
@@ -185,7 +179,6 @@ class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposure
 	}
 
 	private func submit(keys: [ENTemporaryExposureKey], countries:[BECountry], completion: @escaping ExposureSubmissionHandler) {
-		
 		guard
 			let testResult = store.testResult,
 			let mobileTestId = store.mobileTestId
@@ -194,11 +187,12 @@ class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposure
 			return
 		}
 		
-		httpClient.submit(
+		client.submit(
 			keys: keys,
 			countries:countries,
 			mobileTestId: mobileTestId,
-			testResult: testResult) { error in
+			testResult: testResult,
+			isFake: false) { error in
 			if let error = error {
 				logError(message: "Error while submiting diagnosis keys: \(error.localizedDescription)")
 				completion(self.parseError(error))
