@@ -72,7 +72,7 @@ class CoordinatorTests: XCTestCase {
 	func test_coordinator_shouldShowHome() {
 		let delegate = MockStateHandlerObserverDelegate()
 		let enStateHandler = ENStateHandler(initialExposureManagerState: .init(), delegate: delegate)
-		coordinator.showHome(enStateHandler: enStateHandler, state: .init(exposureManager: .init(), detectionMode: .automatic, risk: nil))
+		coordinator.showHome(enStateHandler: enStateHandler, state: .init(exposureManager: .init(), detectionMode: .automatic, risk: nil), statisticsService: BEStatisticsService(client: ClientMock()))
 		let setViewControllersWasCalled = coordinator.mockNavigationController.setViewControllersWasCalled
 		XCTAssertTrue(setViewControllersWasCalled)
 	}

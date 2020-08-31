@@ -101,7 +101,11 @@ protocol Client {
 	)
 	
 	// :BE:
-	
+	typealias InfectionSummaryHandler = (Result<BEInfectionSummary, Failure>) -> Void
+
+	/// Stats
+	func getInfectionSummary(completion: @escaping InfectionSummaryHandler)
+
 	/// Acknowledge we downloaded a test result
 	func ackTestDownload(forDevice registrationToken: String, completionBlock: @escaping(() -> Void))
 	

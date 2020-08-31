@@ -23,23 +23,14 @@ import Combine
 class BEStatisticsService {
 	typealias InfectionSummaryHandler = (Result<BEInfectionSummary, Error>) -> Void
 	
-	private let client:BEHTTPClient
+	private let client:Client
 
 	@Published private(set) var infectionSummary:BEInfectionSummary?
 	@Published private(set) var infectionSummaryUpdatedAt:Date?
 	private let infectionSummaryUpdateInterval:TimeInterval = 3600
 	
-	// We use Client and not BEHTTPClient because otherwise we would need to modify the German code in quite a few places
-	// We know we have a BEHTTPClient instance here, so we check for it
-	// This could be done cleaner by adding the new methods to the Client protocol
-	// but because we try to keep the belgian and german code separated as much as possible (for maintenance/bugfix pulls)
-	// we do not do this as this requires modifying original files
 	init(client:Client) {
-		guard let beClient = client as? BEHTTPClient else {
-			preconditionFailure("Only BE client allowed")
-		}
-		
-		self.client = beClient
+		self.client = client
 	}
 	
 	func getInfectionSummary(completion: @escaping InfectionSummaryHandler) {
