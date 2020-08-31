@@ -18,18 +18,15 @@
 //
 
 import Foundation
+import Combine
 
-protocol BEStatisticsService {
+class BEStatisticsService {
 	typealias InfectionSummaryHandler = (Result<BEInfectionSummary, Error>) -> Void
-	func getInfectionSummary(completion: @escaping InfectionSummaryHandler)
-}
-
-class BEStatisticsServiceImpl : BEStatisticsService {
 	
 	private let client:BEHTTPClient
 
-	private var infectionSummary:BEInfectionSummary?
-	private var infectionSummaryUpdatedAt:Date?
+	@Published private(set) var infectionSummary:BEInfectionSummary?
+	@Published private(set) var infectionSummaryUpdatedAt:Date?
 	private let infectionSummaryUpdateInterval:TimeInterval = 3600
 	
 	// We use Client and not BEHTTPClient because otherwise we would need to modify the German code in quite a few places

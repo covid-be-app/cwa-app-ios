@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="BEInfectionSummaryCollectionViewCell" id="SN5-NA-BG1" customClass="BEInfectionSummaryCollectionViewCell" customModule="ENA" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="345" height="558"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9TO-Pc-qS4">
+                <rect key="frame" x="0.0" y="0.0" width="345" height="558"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" insetsLayoutMarginsFromSafeArea="NO" text="Infection Summary" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p96-ZP-SeE" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
+                        <rect key="frame" x="16" y="16" width="247.5" height="33.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" name="ENA Text Primary 1 Color"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="title1"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Xwo-UB-jhO">
+                        <rect key="frame" x="16" y="65.5" width="313" height="476.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" insetsLayoutMarginsFromSafeArea="NO" text="august 21th - august 27th" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdW-9n-5dj" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="206" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="ENA Text Primary 2 Color"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="headline"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Uej-lQ-ZOG">
+                                <rect key="frame" x="0.0" y="36.5" width="204.5" height="408"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iFc-Fw-Jtb">
+                                        <rect key="frame" x="0.0" y="0.0" width="192.5" height="136"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" image="Icons_Dark_Dot" translatesAutoresizingMaskIntoConstraints="NO" id="ZTG-5T-Auy">
+                                                <rect key="frame" x="0.0" y="52" width="32" height="32"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="430 detected (-15%)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nza-9L-OBF" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
+                                                <rect key="frame" x="32" y="58" width="160.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" name="ENA Text Primary 1 Color"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="body"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7S8-Lk-am5">
+                                        <rect key="frame" x="0.0" y="136" width="204.5" height="136"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons_Dark_Dot" translatesAutoresizingMaskIntoConstraints="NO" id="7bR-G7-QOW">
+                                                <rect key="frame" x="0.0" y="52" width="32" height="32"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="20 hospitalized (-15%)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ir-4l-6GU" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
+                                                <rect key="frame" x="32" y="58" width="172.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" name="ENA Text Primary 1 Color"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="body"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FSJ-3S-ARR">
+                                        <rect key="frame" x="0.0" y="272" width="184.5" height="136"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons_Dark_Dot" translatesAutoresizingMaskIntoConstraints="NO" id="TUe-MG-kI9">
+                                                <rect key="frame" x="0.0" y="52" width="32" height="32"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="12 deceased (-15%)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcg-8L-eUm" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
+                                                <rect key="frame" x="32" y="58" width="152.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" name="ENA Text Primary 1 Color"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="body"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" insetsLayoutMarginsFromSafeArea="NO" text="Last update: 20/08/2020 - 8:34" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSD-DU-56X" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="460.5" width="193.5" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="ENA Text Primary 3 Color"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="footnote"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <color key="backgroundColor" name="ENA Background Color"/>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="Xwo-UB-jhO" secondAttribute="trailing" id="1cp-uv-sRD"/>
+                    <constraint firstItem="p96-ZP-SeE" firstAttribute="leading" secondItem="9TO-Pc-qS4" secondAttribute="leadingMargin" id="Lgq-ce-to4"/>
+                    <constraint firstItem="Xwo-UB-jhO" firstAttribute="leading" secondItem="9TO-Pc-qS4" secondAttribute="leadingMargin" id="Rqi-hV-eWJ"/>
+                    <constraint firstItem="Xwo-UB-jhO" firstAttribute="top" secondItem="p96-ZP-SeE" secondAttribute="bottom" constant="16" id="TAI-KI-bUQ"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Xwo-UB-jhO" secondAttribute="bottom" id="aIQ-s4-HSe"/>
+                    <constraint firstItem="p96-ZP-SeE" firstAttribute="top" secondItem="9TO-Pc-qS4" secondAttribute="topMargin" id="xeV-SL-o3p"/>
+                </constraints>
+                <edgeInsets key="layoutMargins" top="16" left="16" bottom="16" right="16"/>
+            </collectionViewCellContentView>
+            <size key="customSize" width="345" height="558"/>
+            <connections>
+                <outlet property="averageDeceasedLabel" destination="rcg-8L-eUm" id="fWr-Zf-ir4"/>
+                <outlet property="averageHospitalisedLabel" destination="7Ir-4l-6GU" id="DjZ-ih-hDE"/>
+                <outlet property="averageInfectedLabel" destination="Nza-9L-OBF" id="OtT-8S-clT"/>
+                <outlet property="averagesView" destination="Xwo-UB-jhO" id="V9S-Am-XY2"/>
+                <outlet property="dateRangeLabel" destination="sdW-9n-5dj" id="B12-FT-X8a"/>
+                <outlet property="lastUpdatedLabel" destination="GSD-DU-56X" id="vjv-wu-fXx"/>
+                <outlet property="titleLabel" destination="p96-ZP-SeE" id="uE2-iT-dNv"/>
+            </connections>
+            <point key="canvasLocation" x="58.695652173913047" y="35.491071428571423"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Icons_Dark_Dot" width="32" height="32"/>
+        <namedColor name="ENA Background Color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ENA Text Primary 1 Color">
+            <color red="0.090196078431372548" green="0.098039215686274508" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ENA Text Primary 2 Color">
+            <color red="0.090196078431372548" green="0.098039215686274508" blue="0.10196078431372549" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ENA Text Primary 3 Color">
+            <color red="0.090196078431372548" green="0.098039215686274508" blue="0.10196078431372549" alpha="0.30000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

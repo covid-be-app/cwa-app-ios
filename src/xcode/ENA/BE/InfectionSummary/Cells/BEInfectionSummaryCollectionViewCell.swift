@@ -18,15 +18,14 @@
 //
 
 import Foundation
+import UIKit
 
-struct BEInfectionSummary : Decodable, Hashable {
-	let averageInfected:Int
-	let averageInfectedChangePercentage:Int
-	let averageHospitalised:Int
-	let averageHospitalisedChangePercentage:Int
-	let averageDeceased:Int
-	let averageDeceasedChangePercentage:Int
-
-	let startDate:BEDateString
-	let endDate:BEDateString
+class BEInfectionSummaryCollectionViewCell: HomeCardCollectionViewCell {
+	@IBOutlet weak var titleLabel:UILabel!
+	@IBOutlet weak var dateRangeLabel:UILabel!
+	@IBOutlet weak var averagesView:UIStackView!
+	@IBOutlet weak var averageInfectedLabel:UILabel!
+	@IBOutlet weak var averageHospitalisedLabel:UILabel!
+	@IBOutlet weak var averageDeceasedLabel:UILabel!
+	@IBOutlet weak var lastUpdatedLabel:UILabel!
 }

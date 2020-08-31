@@ -18,15 +18,13 @@
 //
 
 import Foundation
+import UIKit
 
-struct BEInfectionSummary : Decodable, Hashable {
-	let averageInfected:Int
-	let averageInfectedChangePercentage:Int
-	let averageHospitalised:Int
-	let averageHospitalisedChangePercentage:Int
-	let averageDeceased:Int
-	let averageDeceasedChangePercentage:Int
-
-	let startDate:BEDateString
-	let endDate:BEDateString
+extension UIStackView {
+	
+	func setContentsHidden(_ hidden:Bool) {
+		self.arrangedSubviews.forEach{ view in
+			view.isHidden = hidden
+		}
+	}
 }

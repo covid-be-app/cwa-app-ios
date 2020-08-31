@@ -18,6 +18,7 @@
 import ExposureNotification
 import Foundation
 import UIKit
+import Combine
 
 // swiftlint:disable file_length
 
@@ -30,12 +31,26 @@ final class HomeInteractor: RequiresAppDependencies {
 	init(
 		homeViewController: HomeViewController,
 		state: State,
-		exposureSubmissionService: ExposureSubmissionService
+		exposureSubmissionService: ExposureSubmissionService,
+		// :BE: add stats
+		statisticsService: BEStatisticsService
 	) {
 		self.homeViewController = homeViewController
 		self.state = state
 		self.exposureSubmissionService = exposureSubmissionService
-
+		self.statisticsService = statisticsService
+		
+		summarySubscriber = statisticsService.$infectionSummary.sink { [weak self] _ in
+			// make sure we are initialized before doing updates
+			guard let self = self else {
+				return
+			}
+			
+			if !self.sections.isEmpty {
+				self.infectionSummaryUpdated()
+			}
+		}
+		
 		observeRisk()
 	}
 
@@ -65,12 +80,11 @@ final class HomeInteractor: RequiresAppDependencies {
 	var testResult: TestResult? {
 		return store.testResult
 	}
-
-	// :BE: stats
-	private lazy var statisticsService: BEStatisticsService = {
-		return BEStatisticsServiceImpl(client: self.client)
-	}()
 	
+	// :BE: stats
+	let statisticsService: BEStatisticsService
+	private var summarySubscriber: AnyCancellable?
+
 	private lazy var isRequestRiskRunning = riskProvider.isLoading
 	private let riskConsumer = RiskConsumer()
 
@@ -290,6 +304,13 @@ extension HomeInteractor {
 		activeConfigurator = setupActiveConfigurator()
 		actionsConfigurators.append(activeConfigurator)
 
+		// :BE:
+		// MARK: - Add summary card
+		
+		if let summaryConfigurator = setupInfectionSummaryConfigurator() {
+			actionsConfigurators.append(summaryConfigurator)
+		}
+
 		// MARK: - Add cards depending on result state.
 
 		if store.lastSuccessfulSubmitDiagnosisKeyTimestamp != nil {
@@ -364,7 +385,7 @@ extension HomeInteractor {
 		}
 		return nil
 	}
-
+	
 	private func indexPathForActiveCell() -> IndexPath? {
 		for section in sections {
 			let index = section.cellConfigurators.firstIndex { cellConfigurator in
@@ -447,7 +468,33 @@ extension HomeInteractor {
 
 extension HomeInteractor {
 	func requestInfectionSummary() {
+		statisticsService.getInfectionSummary { result in
+			switch result {
+			case .failure(let error):
+				logError(message: error.localizedDescription)
+			case .success:
+				log(message: "Summary loaded")
+			}
+		}
+	}
+	
+	func infectionSummaryUpdated() {
+		self.reloadActionSection()
+	}
+	
+	func setupInfectionSummaryConfigurator() -> CollectionViewCellConfiguratorAny? {
+		guard
+			let summary = statisticsService.infectionSummary,
+			let date = statisticsService.infectionSummaryUpdatedAt else {
+				//return BEHomeNoInfectionSummaryCellConfigurator()
+				return nil
+		}
+		let infectionSummaryConfigurator = BEHomeInfectionSummaryCellConfigurator()
 		
+		infectionSummaryConfigurator.infectionSummary = summary
+		infectionSummaryConfigurator.infectionSummaryUpdatedAt = date
+		
+		return infectionSummaryConfigurator
 	}
 }
 

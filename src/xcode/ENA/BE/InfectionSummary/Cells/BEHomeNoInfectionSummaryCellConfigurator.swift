@@ -19,14 +19,18 @@
 
 import Foundation
 
-struct BEInfectionSummary : Decodable, Hashable {
-	let averageInfected:Int
-	let averageInfectedChangePercentage:Int
-	let averageHospitalised:Int
-	let averageHospitalisedChangePercentage:Int
-	let averageDeceased:Int
-	let averageDeceasedChangePercentage:Int
+class BEHomeNoInfectionSummaryCellConfigurator: CollectionViewCellConfigurator {
 
-	let startDate:BEDateString
-	let endDate:BEDateString
+	func configure(cell: BENoInfectionSummaryCollectionViewCell) {
+		cell.titleLabel.text = BEAppStrings.BENoInfectionSummary.title
+	}
+	
+	// MARK: Hashable
+
+	func hash(into hasher: inout Swift.Hasher) {
+	}
+
+	static func == (lhs: BEHomeNoInfectionSummaryCellConfigurator, rhs: BEHomeNoInfectionSummaryCellConfigurator) -> Bool {
+		return true
+	}
 }

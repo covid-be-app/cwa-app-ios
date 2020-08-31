@@ -398,3 +398,9 @@
 "InviteFriends_Description" = "Je häufiger die App benutzt wird, desto eher gebieten wir der Infektion Einhalt. Bitten Sie Familie, Freunde und Bekannte, die App herunterzuladen!";
 "RiskLegend_Legend2_Title" = "Infektionsrisiko";
 "BEExposureDetection_OffShort" = "Angehalten";
+"BENoInfectionSummary_title" = "Zahlen nicht verfügbar";
+"BEInfectionSummary_title" = "Epidemiologische Situation";
+"BEInfectionSummary_averageInfected" = "%d tägliche Infektionen (%d%%)";
+"BEInfectionSummary_averageHospitalised" = "%d Krankenhausaufenthalte (%d%%)";
+"BEInfectionSummary_averageDeceased" = "%d verstorben (%d%%)";
+"BEInfectionSummary_updatedAt" = "Zuletzt aktualisiert am %@";

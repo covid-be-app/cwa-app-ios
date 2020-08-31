@@ -209,7 +209,7 @@
 "ExposureNotificationSetting_Detail_Action_Button" = "Ouvrir les réglages du smartphone.";
 "ExposureNotificationSetting_Activate_OSENSetting" = "Activer l'enregistrement et les notifications d'exposition au COVID-19.";
 "ExposureNotificationSetting_Activate_OSENSetting_Description" = "Pour l'enregistrement de l'exposition, il faut activer cette fonction dans les réglages de votre smartphone. Veuillez activer \"Enregistrement et notifications des expositions au COVID-19\" dans vos réglages.";
-"ExposureNotificationSetting_ParentalControls_OSENSetting" = "Activer l'enregistrement et les notifications d'exposition au COVID-19.";
+"ExposureNotificationSetting_ParentalControls_OSENSetting" = "Activer l'enregistrement et les notifications d'exposition au COVID-19";
 "ExposureNotificationSetting_ParentalControls_OSENSetting_Description" = "Pour l'enregistrement de l'exposition, il faut activer cette fonction dans les réglages de votre smartphone. Veuillez activer \"Enregistrement et notifications des expositions au COVID-19\" dans vos réglages.";
 "ExposureNotificationSetting_AuthorizationRequired_OSENSetting" = "Autorisation requise";
 "ExposureNotificationSetting_AuthorizationRequired_OSENSetting_Description" = "Veuillez confirmer l'utilisation de l'enregistrement de l'exposition au COVID-19.";
@@ -244,7 +244,7 @@
 "Home_RiskCard_Update_Button" = "Mise à jour";
 "Home_RiskCard_Unknown_Item_Title" = "Étant donné que vous n'avez pas activé la connexion à l'exposition depuis suffisamment longtemps, nous ne pouvons pas calculer votre risque d'infection.";
 "Home_RiskCard_Unknown48h_Body" = "Votre calcul de risque d'infection n'a pas été mis à jour depuis plus de 48 heures. Veuillez mettre à jour le calcul.";
-"Home_Risk_Inactive_NoCalculation_Possible_Title" = "Arrêt de l'enregistrement de l'exposition.";
+"Home_Risk_Inactive_NoCalculation_Possible_Title" = "Arrêt de l'enregistrement de l'exposition";
 "Home_Risk_Inactive_Outdated_Results_Title" = "L'enregistrement de l'exposition est impossible.";
 "Home_Risk_Inactive_NoCalculation_Possible_Body" = "Activer l'enregistrement de l'exposition pour évaluer votre statut de risque aujourd'hui.";
 "Home_Risk_Inactive_Outdated_Results_Body" = "Votre enregistrement d'exposition n'a pas pu être mis à jour depuis plus de 24 heures.";
@@ -398,3 +398,9 @@
 "InviteFriends_Description" = "Plus il y a de personnes qui utilisent l'application, plus vite nous pourrons briser la chaîne d'infection. N'hésitez pas à inviter votre famille et vos amis à télécharger l'application.";
 "RiskLegend_Legend2_Title" = "Risque d'infection";
 "BEExposureDetection_OffShort" = "Arrêté";
+"BENoInfectionSummary_title" = "Pas de chiffres disponible";
+"BEInfectionSummary_title" = "Rapport Épidémiologique";
+"BEInfectionSummary_averageInfected" = "%d infections quotidiennes (%d%%)";
+"BEInfectionSummary_averageHospitalised" = "%d admissions (%d%%)";
+"BEInfectionSummary_averageDeceased" = "%d décès (%d%%)";
+"BEInfectionSummary_updatedAt" = "Dernière mise à jour le %@";

@@ -63,7 +63,8 @@ class Coordinator: RequiresAppDependencies {
 		enStateUpdateList.removeAllObjects()
 	}
 
-	func showHome(enStateHandler: ENStateHandler, state: SceneDelegate.State) {
+	// :BE: add stats
+	func showHome(enStateHandler: ENStateHandler, state: SceneDelegate.State, statisticsService: BEStatisticsService) {
 		let homeController = AppStoryboard.home.initiate(viewControllerType: HomeViewController.self) { [unowned self] coder in
 			HomeViewController(
 				coder: coder,
@@ -72,7 +73,8 @@ class Coordinator: RequiresAppDependencies {
 				exposureManagerState: state.exposureManager,
 				initialEnState: enStateHandler.state,
 				risk: state.risk,
-				exposureSubmissionService: self.exposureSubmissionService
+				exposureSubmissionService: self.exposureSubmissionService,
+				statisticsService: statisticsService
 			)
 		}
 

@@ -40,6 +40,11 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate, RequiresAppDepend
 
 	private var enStateHandler: ENStateHandler?
 
+	// :BE: stats
+	private lazy var statisticsService: BEStatisticsService = {
+		return BEStatisticsService(client: self.client)
+	}()
+
 	// MARK: UISceneDelegate
 
 	private let riskConsumer = RiskConsumer()
@@ -81,6 +86,9 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate, RequiresAppDepend
 		let state = exposureManager.preconditions()
 		updateExposureState(state)
 		appUpdateChecker.checkAppVersionDialog(for: window?.rootViewController)
+		
+		// :BE: get stats, ignore errors and result
+		statisticsService.getInfectionSummary { _ in }
 	}
 
 	func sceneDidEnterBackground(_ scene: UIScene) {
@@ -154,7 +162,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate, RequiresAppDepend
 			fatalError("It should not happen.")
 		}
 
-		coordinator.showHome(enStateHandler: enStateHandler, state: state)
+		coordinator.showHome(enStateHandler: enStateHandler, state: state, statisticsService: self.statisticsService)
 	}
 
 	private func showOnboarding() {
