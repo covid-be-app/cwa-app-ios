@@ -56,11 +56,12 @@ final class BEHTTPClientSubmitTests: XCTestCase {
 		let expectation = self.expectation(description: "completion handler is called without an error")
 
 		// Act
-		BEHTTPClient.makeWith(mock: stack).submit(
+		HTTPClient.makeWith(mock: stack).submit(
 			keys: keys,
 			countries: countries,
 			mobileTestId: mobileTestId,
-			testResult: result) { error in
+			testResult: result,
+			isFake: false) { error in
 			defer { expectation.fulfill() }
 			XCTAssertTrue(error == nil)
 		}
@@ -86,7 +87,8 @@ final class BEHTTPClientSubmitTests: XCTestCase {
 			keys: keys,
 			countries: countries,
 			mobileTestId: mobileTestId,
-			testResult: testResult) {
+			testResult: testResult,
+			isFake: false) {
 			error = $0
 			expectation.fulfill()
 		}
@@ -114,7 +116,8 @@ final class BEHTTPClientSubmitTests: XCTestCase {
 			keys: keys,
 			countries: countries,
 			mobileTestId: mobileTestId,
-			testResult: testResult) { error in
+			testResult: testResult,
+			isFake: false) { error in
 			defer {
 				expectation.fulfill()
 			}
@@ -147,7 +150,8 @@ final class BEHTTPClientSubmitTests: XCTestCase {
 			keys: keys,
 			countries: countries,
 			mobileTestId: mobileTestId,
-			testResult: testResult) { error in
+			testResult: testResult,
+			isFake: false) { error in
 			defer {
 				expectation.fulfill()
 			}
@@ -178,7 +182,8 @@ final class BEHTTPClientSubmitTests: XCTestCase {
 			keys: keys,
 			countries: countries,
 			mobileTestId: mobileTestId,
-			testResult: testResult) { error in
+			testResult: testResult,
+			isFake: false) { error in
 			defer { expectation.fulfill() }
 			guard let error = error else {
 				XCTFail("error expected")
@@ -207,7 +212,8 @@ final class BEHTTPClientSubmitTests: XCTestCase {
 			keys: keys,
 			countries: countries,
 			mobileTestId: mobileTestId,
-			testResult: testResult) { error in
+			testResult: testResult,
+			isFake: false) { error in
 			defer { expectation.fulfill() }
 			guard let error = error else {
 				XCTFail("error expected")

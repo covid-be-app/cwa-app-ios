@@ -19,8 +19,7 @@ import ExposureNotification
 import Foundation
 import ZIPFoundation
 
-// :BE: remove final so we can subclass
-class HTTPClient: Client {
+final class HTTPClient: Client {
 	// MARK: Creating
 	init(
 		configuration: Configuration,
@@ -35,8 +34,7 @@ class HTTPClient: Client {
 	// MARK: Properties
 	let configuration: Configuration
 	
-	// :BE: remove private so we can use in subclass
-	let session: URLSession
+	private let session: URLSession
 	private let packageVerifier: SAPDownloadedPackage.Verification
 
 	func appConfiguration(completion: @escaping AppConfigurationCompletion) {
@@ -87,36 +85,6 @@ class HTTPClient: Client {
 				return
 			}
 			completion(try? ENExposureConfiguration(from: config.exposureConfig))
-		}
-	}
-
-	func submit(
-		keys: [ENTemporaryExposureKey],
-		tan: String,
-		completion: @escaping SubmitKeysCompletionHandler
-	) {
-		guard let request = try? URLRequest.submitKeysRequest(
-			configuration: configuration,
-			tan: tan,
-			keys: keys
-		) else {
-			completion(.requestCouldNotBeBuilt)
-			return
-		}
-
-		session.response(for: request) { result in
-			switch result {
-			case let .success(response):
-				switch response.statusCode {
-				case 200: completion(nil)
-				case 201: completion(nil)
-				case 400: completion(.invalidPayloadOrHeaders)
-				case 403: completion(.invalidTan)
-				default: completion(.serverError(response.statusCode))
-				}
-			case let .failure(error):
-				completion(.other(error))
-			}
 		}
 	}
 
@@ -188,12 +156,6 @@ class HTTPClient: Client {
 				completeWith(.failure(error))
 			}
 		}
-	}
-
-	func getTestResult(forDevice registrationToken: String, completion completeWith: @escaping TestResultHandler) {
-		// :BE: disable code
-		
-		fatalError("Implemented in subclass")
 	}
 
 	func getTANForExposureSubmit(forDevice registrationToken: String, completion completeWith: @escaping TANHandler) {
@@ -362,7 +324,134 @@ class HTTPClient: Client {
 			}
 		}
 	}
-}
+	
+	// :BE:
+
+	// no longer supported
+	func submit(keys: [ENTemporaryExposureKey], tan: String, completion: @escaping HTTPClient.SubmitKeysCompletionHandler) {
+		fatalError("Deprecated")
+	}
+	
+	func getTestResult(forDevice registrationToken: String, completion completeWith: @escaping TestResultHandler) {
+		let url = configuration.testResultURL
+		let bodyValues = ["testResultPollingToken": registrationToken]
+
+		do {
+			let encoder = JSONEncoder()
+
+			let data = try encoder.encode(bodyValues)
+
+			session.POST(url, data) { result in
+				switch result {
+				case let .success(response):
+					guard response.hasAcceptableStatusCode else {
+						completeWith(.failure(.serverError(response.statusCode)))
+						return
+					}
+					guard let testResultResponseData = response.body else {
+						completeWith(.failure(.invalidResponse))
+						logError(message: "Failed to register Device with invalid response")
+						return
+					}
+					do {
+						let decoder = JSONDecoder()
+						let testResult = try decoder.decode(
+							TestResult.self,
+							from: testResultResponseData
+						)
+						
+						if testResult.result != .pending {
+							self.ackTestDownload(forDevice: registrationToken) {
+								log(message:"Ack finished")
+							}
+						}
+						
+						completeWith(.success(testResult))
+					} catch {
+						logError(message: "Failed to get test result with invalid response payload structure")
+						completeWith(.failure(.invalidResponse))
+					}
+				case let .failure(error):
+					completeWith(.failure(error))
+					logError(message: "Failed to get test result due to error: \(error).")
+				}
+			}
+		} catch {
+			completeWith(.failure(.invalidResponse))
+			return
+		}
+	}
+	
+	func ackTestDownload(forDevice registrationToken: String, completionBlock: @escaping(() -> Void)) {
+		let ackUrl = self.configuration.ackTestResultURL
+		let bodyValues = ["testResultPollingToken": registrationToken]
+		let encoder = JSONEncoder()
+
+		// we don't need this to run succesfully.
+		// failure would mean that the test result is not deleted immediately from the server
+		// but it will be cleaned up in the auto-delete of old test results ran server-side anyway after a couple of days.
+		// Normally this will happen very rarely, since we just managed to do a succesful test download request
+		// so the connection should still work in 99.9% of the cases
+		
+		if let data = try? encoder.encode(bodyValues) {
+			self.session.POST(ackUrl, data) { result in
+				switch result {
+				case .success:
+					log(message:"Ack succeeded")
+				case let .failure(error):
+					logError(message: "Ack failed due to error: \(error).")
+				}
+				
+				completionBlock()
+			}
+		} else {
+			completionBlock()
+		}
+	}
+	
+	func submit(
+		keys: [ENTemporaryExposureKey],
+		countries: [BECountry],
+		mobileTestId: BEMobileTestId?,
+		testResult: TestResult?,
+		isFake: Bool,
+		completion: @escaping SubmitKeysCompletionHandler
+	) {
+		if !isFake {
+			if testResult == nil || mobileTestId == nil {
+				fatalError("Real requests require real test result and mobile test id")
+			}
+		}
+		
+		let mobileTestIdToUse = mobileTestId ?? BEMobileTestId.random
+		let testResultToUse = testResult ?? TestResult.positive
+		
+		guard let request = try? URLRequest.submitKeysRequest(
+			configuration: configuration,
+			mobileTestId: mobileTestIdToUse,
+			testResult: testResultToUse,
+			keys: keys,
+			countries: countries
+		) else {
+			completion(.requestCouldNotBeBuilt)
+			return
+		}
+
+		session.response(for: request) { result in
+			switch result {
+			case let .success(response):
+				switch response.statusCode {
+				case 200: completion(nil)
+				case 201: completion(nil)
+				case 400: completion(.invalidPayloadOrHeaders)
+				case 403: completion(.invalidTan)
+				default: completion(.serverError(response.statusCode))
+				}
+			case let .failure(error):
+				completion(.other(error))
+			}
+		}
+	}}
 
 // MARK: Extensions
 
