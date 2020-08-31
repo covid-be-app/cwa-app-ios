@@ -15,7 +15,9 @@
 // specific language governing permissions and limitations
 // under the License.
 
-#if !RELEASE
+
+// :TEMP:
+//#if !RELEASE
 
 import ExposureNotification
 import UIKit
@@ -294,4 +296,4 @@ extension DMViewController: DMSubmissionStateViewControllerDelegate {
 	}
 }
 
-#endif
+//#endif

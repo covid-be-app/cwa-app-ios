@@ -116,4 +116,13 @@ extension ClientMock: Client {
 	func getTANForExposureSubmit(forDevice device: String, completion completeWith: @escaping TANHandler) {
 		completeWith(.success("dummyTan"))
 	}
+	
+	// :BE:
+	func ackTestDownload(forDevice registrationToken: String, completionBlock: @escaping (() -> Void)) {
+		completionBlock()
+	}
+	
+	func submit(keys: [ENTemporaryExposureKey], countries: [BECountry], mobileTestId: BEMobileTestId?, testResult: TestResult?, isFake: Bool, completion: @escaping SubmitKeysCompletionHandler) {
+		completion(nil)
+	}
 }
