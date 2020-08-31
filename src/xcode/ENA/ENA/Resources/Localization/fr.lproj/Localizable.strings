@@ -399,7 +399,7 @@
 "RiskLegend_Legend2_Title" = "Risque d'infection";
 "BEExposureDetection_OffShort" = "Arrêté";
 "BENoInfectionSummary_title" = "Pas de chiffres disponible";
-"BEInfectionSummary_title" = "Rapport Épidémiologique";
+"BEInfectionSummary_title" = "Statistiques";
 "BEInfectionSummary_averageInfected" = "%d infections quotidiennes (%d%%)";
 "BEInfectionSummary_averageHospitalised" = "%d admissions (%d%%)";
 "BEInfectionSummary_averageDeceased" = "%d décès (%d%%)";
