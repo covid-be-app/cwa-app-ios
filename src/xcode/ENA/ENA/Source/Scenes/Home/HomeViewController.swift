@@ -40,7 +40,9 @@ final class HomeViewController: UIViewController, RequiresAppDependencies {
 		exposureManagerState: ExposureManagerState,
 		initialEnState: ENStateHandler.State,
 		risk: Risk?,
-		exposureSubmissionService: ExposureSubmissionService
+		exposureSubmissionService: ExposureSubmissionService,
+		// :BE: add stats
+		statisticsService: BEStatisticsService
 	) {
 		self.delegate = delegate
 		//self.enState = initialEnState
@@ -52,7 +54,10 @@ final class HomeViewController: UIViewController, RequiresAppDependencies {
 				exposureManagerState: exposureManagerState,
 				enState: initialEnState,
 				risk: risk
-			), exposureSubmissionService: exposureSubmissionService)
+			),
+			exposureSubmissionService: exposureSubmissionService,
+			statisticsService: statisticsService
+		)
 		navigationItem.largeTitleDisplayMode = .never
 		delegate.addToEnStateUpdateList(homeInteractor)
 	}
@@ -98,6 +103,9 @@ final class HomeViewController: UIViewController, RequiresAppDependencies {
 		super.viewWillAppear(animated)
 		homeInteractor.updateTestResults()
 		homeInteractor.requestRisk(userInitiated: false)
+		
+		// :BE:
+		homeInteractor.requestInfectionSummary()
 		updateBackgroundColor()
 	}
 
@@ -271,6 +279,9 @@ final class HomeViewController: UIViewController, RequiresAppDependencies {
 
 		let cellTypes: [UICollectionViewCell.Type] = [
 			ActivateCollectionViewCell.self,
+			// :BE: add summary
+			BEInfectionSummaryCollectionViewCell.self,
+			BENoInfectionSummaryCollectionViewCell.self,
 			RiskLevelCollectionViewCell.self,
 			InfoCollectionViewCell.self,
 			HomeTestResultCollectionViewCell.self,

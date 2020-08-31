@@ -125,4 +125,8 @@ extension ClientMock: Client {
 	func submit(keys: [ENTemporaryExposureKey], countries: [BECountry], mobileTestId: BEMobileTestId?, testResult: TestResult?, isFake: Bool, completion: @escaping SubmitKeysCompletionHandler) {
 		completion(nil)
 	}
+	
+	func getInfectionSummary(completion: @escaping InfectionSummaryHandler) {
+		completion(.failure(.noResponse))
+	}
 }

@@ -45,6 +45,7 @@ class ENAUITests_01_Home: XCTestCase {
 		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
 
 		app.swipeUp()
+		app.swipeUp()
 		// assert cells
 		XCTAssert(app.cells["AppStrings.Home.infoCardShareTitle"].waitForExistence(timeout: 5.0))
 		XCTAssert(app.cells["AppStrings.Home.infoCardAboutTitle"].waitForExistence(timeout: 5.0))
@@ -60,6 +61,7 @@ class ENAUITests_01_Home: XCTestCase {
 		// only run if home screen is present
 		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
 
+		app.swipeUp()
 		app.swipeUp()
 		// assert cells
 		XCTAssert(app.cells["AppStrings.Home.infoCardShareTitle"].waitForExistence(timeout: 5.0))
