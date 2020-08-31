@@ -98,6 +98,9 @@ final class HomeViewController: UIViewController, RequiresAppDependencies {
 		super.viewWillAppear(animated)
 		homeInteractor.updateTestResults()
 		homeInteractor.requestRisk(userInitiated: false)
+		
+		// :BE:
+		homeInteractor.requestInfectionSummary()
 		updateBackgroundColor()
 	}
 

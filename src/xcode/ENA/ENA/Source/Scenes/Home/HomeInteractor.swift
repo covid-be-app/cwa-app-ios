@@ -35,6 +35,7 @@ final class HomeInteractor: RequiresAppDependencies {
 		self.homeViewController = homeViewController
 		self.state = state
 		self.exposureSubmissionService = exposureSubmissionService
+
 		observeRisk()
 	}
 
@@ -65,6 +66,11 @@ final class HomeInteractor: RequiresAppDependencies {
 		return store.testResult
 	}
 
+	// :BE: stats
+	private lazy var statisticsService: BEStatisticsService = {
+		return BEStatisticsServiceImpl(client: self.client)
+	}()
+	
 	private lazy var isRequestRiskRunning = riskProvider.isLoading
 	private let riskConsumer = RiskConsumer()
 
@@ -433,6 +439,15 @@ extension HomeInteractor {
 				}
 			}
 		}
+	}
+}
+
+// :BE:
+// MARK: Infection Summary
+
+extension HomeInteractor {
+	func requestInfectionSummary() {
+		
 	}
 }
 
