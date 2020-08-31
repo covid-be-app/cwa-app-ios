@@ -99,6 +99,25 @@ protocol Client {
 		tan: String,
 		completion: @escaping SubmitKeysCompletionHandler
 	)
+	
+	// :BE:
+	typealias InfectionSummaryHandler = (Result<BEInfectionSummary, Failure>) -> Void
+
+	/// Stats
+	func getInfectionSummary(completion: @escaping InfectionSummaryHandler)
+
+	/// Acknowledge we downloaded a test result
+	func ackTestDownload(forDevice registrationToken: String, completionBlock: @escaping(() -> Void))
+	
+	/// Send keys to backend including countries
+	func submit(
+		keys: [ENTemporaryExposureKey],
+		countries: [BECountry],
+		mobileTestId: BEMobileTestId?,
+		testResult: TestResult?,
+		isFake: Bool,
+		completion: @escaping SubmitKeysCompletionHandler
+	)
 }
 
 enum SubmissionError: Error {

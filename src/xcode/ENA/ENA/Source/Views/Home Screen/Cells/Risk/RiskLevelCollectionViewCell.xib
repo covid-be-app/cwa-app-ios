@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="595" height="71"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title 1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gno-nj-MZX" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="557" height="33.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="557" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" name="ENA Text Contrast Color"/>
                                                 <nil key="highlightedColor"/>

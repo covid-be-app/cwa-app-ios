@@ -398,3 +398,9 @@
 "InviteFriends_Description" = "Hoe meer mensen de app gebruiken, hoe sneller we de verspreiding van het virus kunnen tegengaan. Nodig uw familie en vrienden uit om de app te downloaden.";
 "RiskLegend_Legend2_Title" = "Besmettingsrisico";
 "BEExposureDetection_OffShort" = "Stopgezet";
+"BENoInfectionSummary_title" = "Cijfers niet beschikbaar";
+"BEInfectionSummary_title" = "Statistieken";
+"BEInfectionSummary_averageInfected" = "%d dagelijkse besmettingen (%d%%)";
+"BEInfectionSummary_averageHospitalised" = "%d opnames (%d%%)";
+"BEInfectionSummary_averageDeceased" = "%d overlijdens (%d%%)";
+"BEInfectionSummary_updatedAt" = "Laatst bijgewerkt op %@";

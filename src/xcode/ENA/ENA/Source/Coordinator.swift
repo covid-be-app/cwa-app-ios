@@ -63,7 +63,8 @@ class Coordinator: RequiresAppDependencies {
 		enStateUpdateList.removeAllObjects()
 	}
 
-	func showHome(enStateHandler: ENStateHandler, state: SceneDelegate.State) {
+	// :BE: add stats
+	func showHome(enStateHandler: ENStateHandler, state: SceneDelegate.State, statisticsService: BEStatisticsService) {
 		let homeController = AppStoryboard.home.initiate(viewControllerType: HomeViewController.self) { [unowned self] coder in
 			HomeViewController(
 				coder: coder,
@@ -72,7 +73,8 @@ class Coordinator: RequiresAppDependencies {
 				exposureManagerState: state.exposureManager,
 				initialEnState: enStateHandler.state,
 				risk: state.risk,
-				exposureSubmissionService: self.exposureSubmissionService
+				exposureSubmissionService: self.exposureSubmissionService,
+				statisticsService: statisticsService
 			)
 		}
 
@@ -82,9 +84,10 @@ class Coordinator: RequiresAppDependencies {
 			self.rootViewController.setViewControllers([homeController], animated: false)
 		})
 
-		#if !RELEASE
+		// :TEMP:
+		//#if !RELEASE
 		enableDeveloperMenuIfAllowed(in: homeController)
-		#endif
+		//#endif
 	}
 
 	func showOnboarding() {
@@ -108,7 +111,8 @@ class Coordinator: RequiresAppDependencies {
 		homeController?.updateState(detectionMode: detectionMode, exposureManagerState: exposureManagerState, risk: risk)
 	}
 
-	#if !RELEASE
+	// :TEMP:
+	// #if !RELEASE
 	private var developerMenu: DMDeveloperMenu?
 	private func enableDeveloperMenuIfAllowed(in controller: UIViewController) {
 		developerMenu = DMDeveloperMenu(
@@ -119,7 +123,7 @@ class Coordinator: RequiresAppDependencies {
 		)
 		developerMenu?.enableIfAllowed()
 	}
-	#endif
+	//#endif
 
 	private func setExposureManagerEnabled(_ enabled: Bool, then completion: @escaping (ExposureNotificationError?) -> Void) {
 		if enabled {

@@ -398,3 +398,9 @@
 "InviteFriends_Description" = "The more people who use the app, the faster we can break the infection chain. Please invite your family and friends to download the app.";
 "RiskLegend_Legend2_Title" = "Risk of Infection";
 "BEExposureDetection_OffShort" = "Stopped";
+"BENoInfectionSummary_title" = "No report available";
+"BEInfectionSummary_title" = "Statistics";
+"BEInfectionSummary_averageInfected" = "%d daily infections (%d%%)";
+"BEInfectionSummary_averageHospitalised" = "%d hospitalisations (%d%%)";
+"BEInfectionSummary_averageDeceased" = "%d deceased (%d%%)";
+"BEInfectionSummary_updatedAt" = "Last updated on %@";

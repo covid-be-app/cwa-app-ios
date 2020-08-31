@@ -257,14 +257,22 @@
 		A951618524DAEB3A00631519 /* BEDecimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A951618424DAEB3A00631519 /* BEDecimal.swift */; };
 		A951618824DB027F00631519 /* BESelectSymptomsDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A951618624DB027F00631519 /* BESelectSymptomsDateViewController.swift */; };
 		A951618924DB027F00631519 /* BESelectSymptomsDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A951618724DB027F00631519 /* BESelectSymptomsDateViewController.xib */; };
+		A95EE81424FCE11100AFECBD /* BEStatisticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95EE81324FCE11100AFECBD /* BEStatisticsService.swift */; };
+		A95EE81624FCF2A600AFECBD /* BEHomeInfectionSummaryCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95EE81524FCF2A600AFECBD /* BEHomeInfectionSummaryCellConfigurator.swift */; };
+		A95EE81824FCF67000AFECBD /* BEInfectionSummaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95EE81724FCF66F00AFECBD /* BEInfectionSummaryCollectionViewCell.swift */; };
+		A95EE81A24FCF6C700AFECBD /* BEInfectionSummaryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A95EE81924FCF6C700AFECBD /* BEInfectionSummaryCollectionViewCell.xib */; };
+		A95EE81C24FD0A6A00AFECBD /* BEUIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95EE81B24FD0A6A00AFECBD /* BEUIStackView.swift */; };
+		A95EE81E24FD0EEC00AFECBD /* BENoInfectionSummaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95EE81D24FD0EEC00AFECBD /* BENoInfectionSummaryCollectionViewCell.swift */; };
+		A95EE82024FD0EFE00AFECBD /* BENoInfectionSummaryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A95EE81F24FD0EFE00AFECBD /* BENoInfectionSummaryCollectionViewCell.xib */; };
+		A95EE82224FD0FCD00AFECBD /* BEHomeNoInfectionSummaryCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95EE82124FD0FCD00AFECBD /* BEHomeNoInfectionSummaryCellConfigurator.swift */; };
 		A980D59D24D822F400A5BB8E /* BEIntervalNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980D59C24D822F400A5BB8E /* BEIntervalNumber.swift */; };
 		A980D5A124D84E2D00A5BB8E /* BESelectCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980D5A024D84E2D00A5BB8E /* BESelectCountryViewController.swift */; };
 		A980D5A324D84FA900A5BB8E /* BESelectCountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980D5A224D84FA900A5BB8E /* BESelectCountryCell.swift */; };
 		A986053024D33231003D0865 /* BEAccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A986052F24D33231003D0865 /* BEAccessibilityIdentifiers.swift */; };
 		A9A5F21B24D1C757004B01FC /* BETestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A5F21A24D1C757004B01FC /* BETestResult.swift */; };
-		A9A64C6A24D3130000B3D25F /* BEHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A64C6924D3130000B3D25F /* BEHTTPClient.swift */; };
 		A9D0BF8224F585A200DEBD99 /* BECountdownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D0BF8124F585A200DEBD99 /* BECountdownTimer.swift */; };
 		A9D0BF8424F5864000DEBD99 /* BECountdownTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D0BF8324F5864000DEBD99 /* BECountdownTimerTests.swift */; };
+		A9D0BF8E24FBA20E00DEBD99 /* BEInfectionSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D0BF8D24FBA20E00DEBD99 /* BEInfectionSummary.swift */; };
 		A9D9D1A124D459C1009BEDD9 /* BESelectKeyCountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D9D19F24D459C1009BEDD9 /* BESelectKeyCountriesViewController.swift */; };
 		A9D9D1A224D459C1009BEDD9 /* BESelectKeyCountriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9D9D1A024D459C1009BEDD9 /* BESelectKeyCountriesViewController.xib */; };
 		A9D9D1A424D45D6B009BEDD9 /* BESelectKeyCountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D9D1A324D45D6B009BEDD9 /* BESelectKeyCountryCell.swift */; };
@@ -727,6 +735,14 @@
 		A951618424DAEB3A00631519 /* BEDecimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDecimal.swift; sourceTree = "<group>"; };
 		A951618624DB027F00631519 /* BESelectSymptomsDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BESelectSymptomsDateViewController.swift; sourceTree = "<group>"; };
 		A951618724DB027F00631519 /* BESelectSymptomsDateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BESelectSymptomsDateViewController.xib; sourceTree = "<group>"; };
+		A95EE81324FCE11100AFECBD /* BEStatisticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEStatisticsService.swift; sourceTree = "<group>"; };
+		A95EE81524FCF2A600AFECBD /* BEHomeInfectionSummaryCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEHomeInfectionSummaryCellConfigurator.swift; sourceTree = "<group>"; };
+		A95EE81724FCF66F00AFECBD /* BEInfectionSummaryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEInfectionSummaryCollectionViewCell.swift; sourceTree = "<group>"; };
+		A95EE81924FCF6C700AFECBD /* BEInfectionSummaryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BEInfectionSummaryCollectionViewCell.xib; sourceTree = "<group>"; };
+		A95EE81B24FD0A6A00AFECBD /* BEUIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEUIStackView.swift; sourceTree = "<group>"; };
+		A95EE81D24FD0EEC00AFECBD /* BENoInfectionSummaryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BENoInfectionSummaryCollectionViewCell.swift; sourceTree = "<group>"; };
+		A95EE81F24FD0EFE00AFECBD /* BENoInfectionSummaryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BENoInfectionSummaryCollectionViewCell.xib; sourceTree = "<group>"; };
+		A95EE82124FD0FCD00AFECBD /* BEHomeNoInfectionSummaryCellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEHomeNoInfectionSummaryCellConfigurator.swift; sourceTree = "<group>"; };
 		A96E9FC224CD710000F845DB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = fr; path = fr.lproj/usage.html; sourceTree = "<group>"; };
 		A96E9FC324CD710000F845DB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = fr; path = "fr.lproj/privacy-policy.html"; sourceTree = "<group>"; };
 		A96E9FC424CD710000F845DB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -742,9 +758,9 @@
 		A980D5A224D84FA900A5BB8E /* BESelectCountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BESelectCountryCell.swift; sourceTree = "<group>"; };
 		A986052F24D33231003D0865 /* BEAccessibilityIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEAccessibilityIdentifiers.swift; sourceTree = "<group>"; };
 		A9A5F21A24D1C757004B01FC /* BETestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BETestResult.swift; sourceTree = "<group>"; };
-		A9A64C6924D3130000B3D25F /* BEHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEHTTPClient.swift; sourceTree = "<group>"; };
 		A9D0BF8124F585A200DEBD99 /* BECountdownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BECountdownTimer.swift; sourceTree = "<group>"; };
 		A9D0BF8324F5864000DEBD99 /* BECountdownTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BECountdownTimerTests.swift; sourceTree = "<group>"; };
+		A9D0BF8D24FBA20E00DEBD99 /* BEInfectionSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEInfectionSummary.swift; sourceTree = "<group>"; };
 		A9D9D19F24D459C1009BEDD9 /* BESelectKeyCountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BESelectKeyCountriesViewController.swift; sourceTree = "<group>"; };
 		A9D9D1A024D459C1009BEDD9 /* BESelectKeyCountriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BESelectKeyCountriesViewController.xib; sourceTree = "<group>"; };
 		A9D9D1A324D45D6B009BEDD9 /* BESelectKeyCountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BESelectKeyCountryCell.swift; sourceTree = "<group>"; };
@@ -1738,6 +1754,27 @@
 			path = ENAUITests;
 			sourceTree = "<group>";
 		};
+		A95EE81224FCE0CF00AFECBD /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				A95EE81324FCE11100AFECBD /* BEStatisticsService.swift */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		A95EE82324FD2EDA00AFECBD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A95EE81524FCF2A600AFECBD /* BEHomeInfectionSummaryCellConfigurator.swift */,
+				A95EE81724FCF66F00AFECBD /* BEInfectionSummaryCollectionViewCell.swift */,
+				A95EE81924FCF6C700AFECBD /* BEInfectionSummaryCollectionViewCell.xib */,
+				A95EE82124FD0FCD00AFECBD /* BEHomeNoInfectionSummaryCellConfigurator.swift */,
+				A95EE81D24FD0EEC00AFECBD /* BENoInfectionSummaryCollectionViewCell.swift */,
+				A95EE81F24FD0EFE00AFECBD /* BENoInfectionSummaryCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		A980D59E24D84DE900A5BB8E /* Country */ = {
 			isa = PBXGroup;
 			children = (
@@ -1763,6 +1800,15 @@
 				A986052F24D33231003D0865 /* BEAccessibilityIdentifiers.swift */,
 			);
 			path = "View Helpers";
+			sourceTree = "<group>";
+		};
+		A9D0BF8A24FBA19C00DEBD99 /* InfectionSummary */ = {
+			isa = PBXGroup;
+			children = (
+				A95EE82324FD2EDA00AFECBD /* Cells */,
+				A9D0BF8D24FBA20E00DEBD99 /* BEInfectionSummary.swift */,
+			);
+			path = InfectionSummary;
 			sourceTree = "<group>";
 		};
 		A9D9D19E24D45995009BEDD9 /* KeySubmission */ = {
@@ -1799,6 +1845,8 @@
 		A9DD2CE224CEEEF40035081A /* BE */ = {
 			isa = PBXGroup;
 			children = (
+				A95EE81224FCE0CF00AFECBD /* Statistics */,
+				A9D0BF8A24FBA19C00DEBD99 /* InfectionSummary */,
 				A92076EA24ED540D00AE8748 /* Mocks */,
 				A92076E424ED406500AE8748 /* FakeRequests */,
 				A935EE5424E005A200B33B66 /* ENAUITests */,
@@ -1849,6 +1897,7 @@
 				A92076DA24EA770F00AE8748 /* BEDate.swift */,
 				A92076E024ED33EA00AE8748 /* BEURLRequest.swift */,
 				A9D0BF8124F585A200DEBD99 /* BECountdownTimer.swift */,
+				A95EE81B24FD0A6A00AFECBD /* BEUIStackView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1886,7 +1935,6 @@
 			isa = PBXGroup;
 			children = (
 				A929A71324DC3C470039B997 /* __tests__ */,
-				A9A64C6924D3130000B3D25F /* BEHTTPClient.swift */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -2549,6 +2597,7 @@
 				51486DA72485237200FCE216 /* RiskThankYouCollectionViewCell.xib in Resources */,
 				2F785752248506BD00323A9C /* HomeTestResultCollectionViewCell.xib in Resources */,
 				A951618924DB027F00631519 /* BESelectSymptomsDateViewController.xib in Resources */,
+				A95EE82024FD0EFE00AFECBD /* BENoInfectionSummaryCollectionViewCell.xib in Resources */,
 				EE269508248FCB0300BAE234 /* InfoPlist.strings in Resources */,
 				85D7594E24570491008175F0 /* LaunchScreen.storyboard in Resources */,
 				710224EE2490E2FD000C5DEF /* ExposureSubmissionStepCell.xib in Resources */,
@@ -2579,6 +2628,7 @@
 				A9D9D1A724D54613009BEDD9 /* countries.json in Resources */,
 				51FE277D247535C400BB8144 /* RiskLoadingItemView.xib in Resources */,
 				853D98832469DC5000490DBA /* ExposureNotificationSetting.storyboard in Resources */,
+				A95EE81A24FCF6C700AFECBD /* BEInfectionSummaryCollectionViewCell.xib in Resources */,
 				51D420B12458397300AD70CA /* Onboarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2653,6 +2703,7 @@
 				51895EDC245E16CD0085DA38 /* ENAColor.swift in Sources */,
 				A372DA3B24BDA075003248BB /* ExposureSubmissionCoordinating.swift in Sources */,
 				51FE277B2475340300BB8144 /* HomeRiskLoadingItemViewConfigurator.swift in Sources */,
+				A95EE81C24FD0A6A00AFECBD /* BEUIStackView.swift in Sources */,
 				0D5611B4247F852C00B5B094 /* SQLiteKeyValueStore.swift in Sources */,
 				13BAE9B12472FB1E00CEE58A /* CellConfiguratorIndexPosition.swift in Sources */,
 				515BBDEB2484F8E500CDB674 /* HomeThankYouRiskCellConfigurator.swift in Sources */,
@@ -2683,6 +2734,7 @@
 				71FE1C7C247AC2B500851FEB /* ExposureSubmissionOverviewViewController.swift in Sources */,
 				B1FE13EC24891CFE00D012E5 /* RiskProviding.swift in Sources */,
 				011E4B032483A92A002E6412 /* MockExposureManager.swift in Sources */,
+				A9D0BF8E24FBA20E00DEBD99 /* BEInfectionSummary.swift in Sources */,
 				2FE15A3C249B8C0B0077BD8D /* AccessibilityIdentifiers.swift in Sources */,
 				51FE277F247535E300BB8144 /* RiskLoadingItemView.swift in Sources */,
 				514C0A0824772F5E00F235F6 /* RiskItemView.swift in Sources */,
@@ -2734,6 +2786,7 @@
 				71FE1C7D247AC2B500851FEB /* ExposureSubmissionTanInputViewController.swift in Sources */,
 				EE22DB81247FB40A001B0A71 /* ENStateHandler.swift in Sources */,
 				A16714AF248CA1B70031B111 /* Bundle+ReadPlist.swift in Sources */,
+				A95EE81824FCF67000AFECBD /* BEInfectionSummaryCollectionViewCell.swift in Sources */,
 				2F80CFDB247EDDB3000F06AF /* ExposureSubmissionHotlineViewController.swift in Sources */,
 				2F80CFD9247ED988000F06AF /* ExposureSubmissionIntroViewController.swift in Sources */,
 				A3C4F96024812CD20047F23E /* ExposureSubmissionWarnOthersViewController.swift in Sources */,
@@ -2801,6 +2854,7 @@
 				0DF6BB97248AD616007E8B0C /* AppUpdateCheckHelper.swift in Sources */,
 				0DD260FF248D549B007C3B2C /* KeychainHelper.swift in Sources */,
 				2FF1D63024880FCF00381FFB /* DynamicTableViewRoundedCell.swift in Sources */,
+				A95EE81E24FD0EEC00AFECBD /* BENoInfectionSummaryCollectionViewCell.swift in Sources */,
 				85D7593F2457048F008175F0 /* AppDelegate.swift in Sources */,
 				CDD87C56247556DE007CE6CA /* MainSettingsTableViewCell.swift in Sources */,
 				B153096C24706F2400A4A1BD /* URLSessionConfiguration+Default.swift in Sources */,
@@ -2817,7 +2871,6 @@
 				EE22DB89247FB43A001B0A71 /* TracingHistoryTableViewCell.swift in Sources */,
 				A3EE6E61249BC57F00C64B61 /* MockExposureSubmissionService.swift in Sources */,
 				71B804472484CC0800D53506 /* ENALabel.swift in Sources */,
-				A9A64C6A24D3130000B3D25F /* BEHTTPClient.swift in Sources */,
 				71FE1C7F247AC2B500851FEB /* ExposureSubmissionTestResultViewController.swift in Sources */,
 				B1D6B002247DA0320079DDD3 /* ExposureDetectionViewControllerDelegate.swift in Sources */,
 				713EA25B247818B000AB7EE8 /* DynamicTypeButton.swift in Sources */,
@@ -2870,6 +2923,7 @@
 				B1741B492462C207006275D9 /* Client.swift in Sources */,
 				514C0A0624772F3400F235F6 /* HomeRiskViewConfigurator.swift in Sources */,
 				71EF33DB2497F419007B7E1B /* ENANavigationFooterItem.swift in Sources */,
+				A95EE81424FCE11100AFECBD /* BEStatisticsService.swift in Sources */,
 				A980D5A124D84E2D00A5BB8E /* BESelectCountryViewController.swift in Sources */,
 				710ABB1F2475115500948792 /* UITableViewController+Enum.swift in Sources */,
 				51CE1B8B246078B6002CF42A /* InfoCollectionViewCell.swift in Sources */,
@@ -2880,11 +2934,13 @@
 				514E81342461B97800636861 /* ExposureManager.swift in Sources */,
 				71176E32248957C3004B0C9F /* AppNavigationController.swift in Sources */,
 				B14D0CD9246E946E00D5BEBC /* ExposureDetection.swift in Sources */,
+				A95EE81624FCF2A600AFECBD /* BEHomeInfectionSummaryCellConfigurator.swift in Sources */,
 				B161782524804AC3006E435A /* DownloadedPackagesSQLLiteStore.swift in Sources */,
 				51CE1BBF2460B222002CF42A /* HomeRiskCellConfigurator.swift in Sources */,
 				EE22DB82247FB40A001B0A71 /* ENSettingModel.swift in Sources */,
 				713EA26324798F8500AB7EE8 /* ExposureDetectionHeaderCell.swift in Sources */,
 				FEDCE09E9F78ABEB4AA9A484 /* ExposureDetectionExecutor.swift in Sources */,
+				A95EE82224FD0FCD00AFECBD /* BEHomeNoInfectionSummaryCellConfigurator.swift in Sources */,
 				FEDCE50B4AC5E24D4E11AA52 /* RequiresAppDependencies.swift in Sources */,
 				FEDCE29E414945F14E7CE576 /* ENStateHandler+State.swift in Sources */,
 				A9DD2CEF24CF293E0035081A /* BEMobileTestId.swift in Sources */,

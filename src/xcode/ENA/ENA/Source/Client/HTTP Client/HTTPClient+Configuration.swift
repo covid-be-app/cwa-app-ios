@@ -22,10 +22,12 @@ import Foundation
 	let distributionBaseURL = URL(staticString: "https://c19distcdn-stg.ixor.be")
 	let submissionBaseURL = URL(staticString: "https://c19-submission-stg.ixor.be")
 	let verificationBaseURL = URL(staticString: "https://c19-verification-stg.ixor.be")
+	let statisticsBaseURL = URL(staticString: "https://c19-statistics-stg.ixor.be")
 #else
 	let distributionBaseURL = URL(staticString: "https://c19distcdn-tst.ixor.be")
 	let submissionBaseURL = URL(staticString: "https://c19-submission-tst.ixor.be")
 	let verificationBaseURL = URL(staticString: "https://c19-verification-tst.ixor.be")
+	let statisticsBaseURL = URL(staticString: "https://c19-statistics-stg.ixor.be")
 #endif
 
 extension HTTPClient {
@@ -48,6 +50,12 @@ extension HTTPClient {
 				),
 				verification: .init(
 					baseURL: verificationBaseURL,
+					requiresTrailingSlash: false
+				),
+				
+				// :BE: add statistics
+				statistics: .init(
+					baseURL: statisticsBaseURL,
 					requiresTrailingSlash: false
 				)
 			)
@@ -199,6 +207,18 @@ extension HTTPClient {
 					"tan"
 				)
 		}
+		
+		// :BE: add statistics
+		
+		var infectionSummaryURL: URL {
+			endpoints
+				.statistics
+				.appending(
+					"version",
+					apiVersion,
+					"infectionsummary"
+				)
+		}
 	}
 }
 
@@ -241,5 +261,8 @@ extension HTTPClient.Configuration {
 		let distribution: Endpoint
 		let submission: Endpoint
 		let verification: Endpoint
+		
+		// :BE: add statistics
+		let statistics: Endpoint
 	}
 }
