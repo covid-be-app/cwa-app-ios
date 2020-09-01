@@ -135,6 +135,15 @@ final class OnboardingInfoViewController: UIViewController {
 	}
 
 	func runIgnoreActionForPageType(completion: @escaping () -> Void) {
+		
+		// :BE: remove notifications when not wanting them
+		if pageType == .alwaysStayInformedPage {
+			store.allowRiskChangesNotification = false
+			store.allowTestsStatusNotification = false
+			completion()
+			return
+		}
+
 		guard pageType == .enableLoggingOfContactsPage, !exposureManager.preconditions().authorized else {
 			completion()
 			return
