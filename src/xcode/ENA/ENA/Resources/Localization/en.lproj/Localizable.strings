@@ -404,3 +404,5 @@
 "BEInfectionSummary_averageHospitalised" = "%d hospitalisations (%d%%)";
 "BEInfectionSummary_averageDeceased" = "%d deceased (%d%%)";
 "BEInfectionSummary_updatedAt" = "Last updated on %@";
+"BEMobileTestId_dateInfectious" = "Date of infectiousness";
+"BEMobileTestId_code" = "Code";
