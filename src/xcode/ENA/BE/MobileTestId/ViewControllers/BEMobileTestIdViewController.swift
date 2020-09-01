@@ -86,7 +86,9 @@ class BEMobileTestIdViewController: DynamicTableViewController, ENANavigationCon
 				cells: [
 					.body(text: BEAppStrings.BEMobileTestId.saveExplanation,
 						  accessibilityIdentifier: BEAccessibilityIdentifiers.BEMobileTestId.saveExplanation),
+					.title2(text: BEAppStrings.BEMobileTestId.dateInfectious, accessibilityIdentifier: nil),
 					.headline(text: dateFormatter.string(from:mobileTestId.datePatientInfectious.dateWithoutTime!), accessibilityIdentifier: nil),
+					.title2(text: BEAppStrings.BEMobileTestId.code, accessibilityIdentifier: nil),
 					.headline(text:mobileTestId.fullString, accessibilityIdentifier: nil)
 				]
 			)

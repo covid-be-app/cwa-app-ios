@@ -37,6 +37,9 @@ enum BEAppStrings {
 
 		static let save = NSLocalizedString("BEMobileTestId_Save", comment: "")
 		static let saveExplanation = NSLocalizedString("BEMobileTestId_saveExplanation", comment: "")
+		
+		static let dateInfectious = NSLocalizedString("BEMobileTestId_dateInfectious", comment: "")
+		static let code = NSLocalizedString("BEMobileTestId_code", comment: "")
 	}
 
 	enum BESelectSymptomsDate {
