@@ -25,10 +25,9 @@ class BEENAUITests: XCTestCase {
 	override func setUpWithError() throws {
 		continueAfterFailure = false
 		app = XCUIApplication()
+		setupSnapshot(app)
 		app.setDefaults()
 		app.launchArguments.append(contentsOf: ["-isOnboarded", "YES"])
-		app.launchArguments += ["-AppleLanguages", "(en)"]
-		app.launchArguments += ["-AppleLocale", "en_US"]
 	}
 
 	func testGetKeyWithoutSymptoms() throws {
