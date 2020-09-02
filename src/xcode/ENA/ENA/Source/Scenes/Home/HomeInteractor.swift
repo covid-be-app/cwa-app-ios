@@ -483,6 +483,10 @@ extension HomeInteractor {
 	}
 	
 	func setupInfectionSummaryConfigurator() -> CollectionViewCellConfiguratorAny? {
+		
+		// :TEMP: remove infection summary for now
+		return nil
+		
 		guard
 			let summary = statisticsService.infectionSummary,
 			let date = statisticsService.infectionSummaryUpdatedAt else {
