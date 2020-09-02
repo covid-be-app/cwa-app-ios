@@ -44,7 +44,6 @@ class BEIntervalNumberTests: XCTestCase {
 	
 	func testToDateInt() throws {
 		let dateInt:BEDateInt = 20200805
-		let date = Calendar.current.date(from: DateComponents(year:2020,month:08,day:05))!
 		let intervalNumber = ENIntervalNumber.fromDateInt(dateInt)
 
 		XCTAssertEqual(intervalNumber.dateInt, dateInt)

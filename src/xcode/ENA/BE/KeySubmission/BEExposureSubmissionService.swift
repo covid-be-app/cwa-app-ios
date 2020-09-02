@@ -26,6 +26,7 @@ protocol BEExposureSubmissionService : ExposureSubmissionService {
 	var mobileTestId:BEMobileTestId? { get set }
 	
 	func retrieveDiagnosisKeys(completionHandler: @escaping BEExposureSubmissionGetKeysHandler)
+	func finalizeSubmissionWithoutKeys()
 	func submitExposure(keys:[ENTemporaryExposureKey],countries:[BECountry], completionHandler: @escaping ExposureSubmissionHandler)
 	func submitFakeExposure(completionHandler: @escaping ExposureSubmissionHandler)
 	
@@ -144,6 +145,10 @@ class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposure
 			processedKeys.processedForSubmission()
 			completionHandler(.success(processedKeys))
 		}
+	}
+	
+	func finalizeSubmissionWithoutKeys() {
+		self.submitExposureCleanup()
 	}
 	
 	/// This method submits the exposure keys. Additionally, after successful completion,
