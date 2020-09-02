@@ -84,10 +84,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	let taskScheduler: ENATaskScheduler = ENATaskScheduler.shared
 
 	lazy var riskProvider: RiskProvider = {
+		let exposureDetectionInterval = self.store.hourlyFetchingEnabled ? DateComponents(minute: 45) : DateComponents(hour: 24)
 		
-		// :BE: change detection interval to every 2 hours
-		let exposureDetectionInterval = DateComponents(hour: 2)
-
 		let config = RiskProvidingConfiguration(
 			exposureDetectionValidityDuration: DateComponents(day: 2),
 			exposureDetectionInterval: exposureDetectionInterval,
@@ -95,13 +93,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		)
 
 
-		return RiskProvider(
+		let provider = RiskProvider(
 			configuration: config,
 			store: self.store,
 			exposureSummaryProvider: self,
 			appConfigurationProvider: CachedAppConfiguration(client: self.client),
 			exposureManagerState: self.exposureManager.preconditions()
 		)
+		
+		#if UITESTING
+			// :BE: add positive risk
+			if let isAtRisk = UserDefaults.standard.value(forKey: "isAtRisk") as? String {
+				if isAtRisk != "NO" {
+					provider.setHighRiskForTesting()
+				}
+			}
+		#endif
+
+		return provider
 	}()
 
 	#if targetEnvironment(simulator) || COMMUNITY
@@ -115,7 +124,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		tempKey.keyData = Data(count: 16)
 		
 		let keys = [tempKey]
-		return MockExposureManager(exposureNotificationError: nil, diagnosisKeysResult: (keys, nil))
+		let manager = MockExposureManager(exposureNotificationError: nil, diagnosisKeysResult: (keys, nil))
+
+		return manager
 	}()
 	#else
 		let exposureManager: ExposureManager = ENAExposureManager()

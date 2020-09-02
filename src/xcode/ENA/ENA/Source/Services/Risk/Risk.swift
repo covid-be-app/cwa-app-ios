@@ -38,10 +38,18 @@ extension Risk {
 
 #if UITESTING
 extension Risk {
-	static let mocked = Risk(
+	static let mockedLow = Risk(
 		level: .low,
 		details: Risk.Details(
 			numberOfExposures: 0,
+			activeTracing: .init(interval: 336 * 3600),  // two weeks
+			exposureDetectionDate: Date()),
+		riskLevelHasChanged: true
+	)
+	static let mockedIncreased = Risk(
+		level: .increased,
+		details: Risk.Details(
+			numberOfExposures: 1,
 			activeTracing: .init(interval: 336 * 3600),  // two weeks
 			exposureDetectionDate: Date()),
 		riskLevelHasChanged: true

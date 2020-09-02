@@ -212,8 +212,7 @@ extension HomeInteractor {
 		riskLevelConfigurator = nil
 		inactiveConfigurator = nil
 
-		// :BE: check every 2 hours and not once per day
-		let detectionInterval = (riskProvider.configuration.exposureDetectionInterval.hour ?? 24)
+		let detectionInterval = (riskProvider.configuration.exposureDetectionInterval.day ?? 1) * 24
 
 		let riskLevel: RiskLevel? = state.exposureManagerState.enabled ? state.riskLevel : .inactive
 
@@ -483,6 +482,10 @@ extension HomeInteractor {
 	}
 	
 	func setupInfectionSummaryConfigurator() -> CollectionViewCellConfiguratorAny? {
+		
+		// :TEMP: remove infection summary for now
+		return nil
+		
 		guard
 			let summary = statisticsService.infectionSummary,
 			let date = statisticsService.infectionSummaryUpdatedAt else {

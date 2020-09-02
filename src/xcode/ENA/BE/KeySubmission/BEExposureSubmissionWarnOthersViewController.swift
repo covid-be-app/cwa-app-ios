@@ -48,6 +48,7 @@ class BEExposureSubmissionWarnOthersViewController: ExposureSubmissionWarnOthers
 			case .failure(let error):
 				switch error {
 				case .noKeys:
+					self.beExposureSubmissionService.finalizeSubmissionWithoutKeys()
 					self.coordinator!.showThankYouScreen()
 					// Custom error handling for EN framework related errors.
 				case .internal, .unsupported, .rateLimited:

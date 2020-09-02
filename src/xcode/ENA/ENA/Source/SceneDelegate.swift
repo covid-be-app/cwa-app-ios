@@ -60,6 +60,8 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate, RequiresAppDepend
 		if let isOnboarded = UserDefaults.standard.value(forKey: "isOnboarded") as? String {
 			store.isOnboarded = (isOnboarded != "NO")
 		}
+		store.userNeedsToBeInformedAboutHowRiskDetectionWorks = false
+		
 		#endif
 
 		exposureManager.resume(observer: self)
