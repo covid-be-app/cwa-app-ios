@@ -51,9 +51,11 @@ class ENAUITests_02_AppInformation: XCTestCase {
 		XCTAssert(app.cells["AppStrings.AppInformation.aboutNavigation"].waitForExistence(timeout: 5.0))
 		XCTAssert(app.cells["AppStrings.AppInformation.privacyNavigation"].waitForExistence(timeout: 5.0))
 		XCTAssert(app.cells["AppStrings.AppInformation.termsNavigation"].waitForExistence(timeout: 5.0))
+		XCTAssert(app.cells["AppStrings.AppInformation.legalNavigation"].waitForExistence(timeout: 5.0))
+		XCTAssert(app.cells["AppStrings.AppInformation.imprintNavigation"].waitForExistence(timeout: 5.0))
+		snapshot("ScreenShot_\(#function)_001")
 
 	}
-
 	func test_0021_AppInformationFlow_about() throws {
 		app.launch()
 
@@ -70,6 +72,7 @@ class ENAUITests_02_AppInformation: XCTestCase {
 		app.cells["AppStrings.AppInformation.aboutNavigation"].tap()
 
 		XCTAssert(app.staticTexts["AppStrings.AppInformation.aboutTitle"].waitForExistence(timeout: 5.0))
+		snapshot("ScreenShot_\(#function)_001")
 	}
 
 	func test_0024_AppInformationFlow_privacy() throws {
@@ -88,6 +91,7 @@ class ENAUITests_02_AppInformation: XCTestCase {
 		app.cells["AppStrings.AppInformation.privacyNavigation"].tap()
 
 		XCTAssert(app.images["AppStrings.AppInformation.privacyImageDescription"].waitForExistence(timeout: 5.0))
+		snapshot("ScreenShot_\(#function)_001")
 	}
 
 	func test_0025_AppInformationFlow_terms() throws {
@@ -106,5 +110,56 @@ class ENAUITests_02_AppInformation: XCTestCase {
 		app.cells["AppStrings.AppInformation.termsNavigation"].tap()
 
 		XCTAssert(app.images["AppStrings.AppInformation.termsImageDescription"].waitForExistence(timeout: 5.0))
+		snapshot("ScreenShot_\(#function)_001")
+	}
+	
+	func test_0025_AppInformationFlow_legal() throws {
+		app.launch()
+
+		// only run if onboarding screen is present
+		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
+
+		app.swipeUp()
+		app.swipeUp()
+		// assert cells
+		XCTAssert(app.cells["AppStrings.Home.appInformationCardTitle"].waitForExistence(timeout: 5.0))
+		app.cells["AppStrings.Home.appInformationCardTitle"].tap()
+
+		XCTAssert(app.cells["AppStrings.AppInformation.legalNavigation"].waitForExistence(timeout: 5.0))
+		app.cells["AppStrings.AppInformation.legalNavigation"].tap()
+
+		XCTAssert(app.images["AppStrings.AppInformation.legalImageDescription"].waitForExistence(timeout: 5.0))
+		snapshot("ScreenShot_\(#function)_001")
+	}
+	
+	func test_0025_AppInformationFlow_imprint() throws {
+		app.launch()
+
+		// only run if onboarding screen is present
+		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
+
+		app.swipeUp()
+		app.swipeUp()
+		// assert cells
+		XCTAssert(app.cells["AppStrings.Home.appInformationCardTitle"].waitForExistence(timeout: 5.0))
+		app.cells["AppStrings.Home.appInformationCardTitle"].tap()
+
+		XCTAssert(app.cells["AppStrings.AppInformation.imprintNavigation"].waitForExistence(timeout: 5.0))
+		app.cells["AppStrings.AppInformation.imprintNavigation"].tap()
+
+		XCTAssert(app.images["AppStrings.AppInformation.imprintImageDescription"].waitForExistence(timeout: 5.0))
+		snapshot("ScreenShot_\(#function)_001")
+	}
+
+	func test_0025_AppInformationFlow_info() throws {
+		app.launch()
+
+		// only run if onboarding screen is present
+		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
+
+		app.buttons["AppStrings.Home.rightBarButtonDescription"].tap()
+
+		XCTAssert(app.images["AppStrings.RiskLegend.titleImageAccLabel"].waitForExistence(timeout: 5.0))
+		snapshot("ScreenShot_\(#function)_001")
 	}
 }
