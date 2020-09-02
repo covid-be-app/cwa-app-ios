@@ -187,8 +187,9 @@ final class SecureStore: Store {
 		set { kvStore["previousRiskLevel"] = newValue?.rawValue }
 	}
 
+	// :BE: disable this popup
 	var userNeedsToBeInformedAboutHowRiskDetectionWorks: Bool {
-		get { kvStore["userNeedsToBeInformedAboutHowRiskDetectionWorks"] as Bool? ?? true }
+		get { kvStore["userNeedsToBeInformedAboutHowRiskDetectionWorks"] as Bool? ?? false }
 		set { kvStore["userNeedsToBeInformedAboutHowRiskDetectionWorks"] = newValue }
 	}
 }
