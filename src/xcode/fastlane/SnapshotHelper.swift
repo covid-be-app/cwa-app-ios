@@ -116,7 +116,7 @@ open class Snapshot: NSObject {
         }
 
         if !locale.isEmpty {
-            app.launchArguments += ["-AppleLocale", "\"\(locale)\""]
+            app.launchArguments += ["-AppleLocale", "\(locale)"]
         }
     }
 
