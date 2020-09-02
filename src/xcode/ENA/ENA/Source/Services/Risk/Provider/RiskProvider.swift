@@ -62,6 +62,10 @@ final class RiskProvider {
 	var exposureManagerState: ExposureManagerState
 	var configuration: RiskProvidingConfiguration
 	private(set) var isLoading: Bool = false
+	
+	#if UITESTING
+		private var riskLevelForTesting = Risk.mockedLow
+	#endif
 }
 
 private extension RiskConsumer {
@@ -168,11 +172,16 @@ extension RiskProvider: RiskProviding {
 	}
 
 	#if UITESTING
+
+	func setHighRiskForTesting() {
+		riskLevelForTesting = Risk.mockedIncreased
+	}
+
 	private func _requestRiskLevel(userInitiated: Bool, completion: Completion? = nil) {
-		let risk = Risk.mocked
+		let risk = riskLevelForTesting
 
 		targetQueue.async {
-			completion?(.mocked)
+			completion?(self.riskLevelForTesting)
 		}
 
 		for consumer in consumers {
@@ -293,7 +302,7 @@ extension RiskProvider: RiskProviding {
 
 	private func _provideRisk(_ risk: Risk, to consumer: RiskConsumer?) {
 		#if UITESTING
-		consumer?.provideRisk(.mocked)
+		consumer?.provideRisk(riskLevelForTesting)
 		#else
 		consumer?.provideRisk(risk)
 		#endif

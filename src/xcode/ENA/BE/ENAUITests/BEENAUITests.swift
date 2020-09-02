@@ -29,7 +29,6 @@ class BEENAUITests: XCTestCase {
 		app.launchArguments.append(contentsOf: ["-isOnboarded", "YES"])
 		app.launchArguments += ["-AppleLanguages", "(en)"]
 		app.launchArguments += ["-AppleLocale", "en_US"]
-
 	}
 
 	func testGetKeyWithoutSymptoms() throws {
@@ -44,17 +43,21 @@ class BEENAUITests: XCTestCase {
 		app.buttons["AppStrings.Home.submitCardButton"].tap()
 		// todo: need accessibility for Next
 		XCTAssertTrue(app.buttons["AppStrings.ExposureSubmission.continueText"].waitForExistence(timeout: 5.0))
+		snapshot("ScreenShot_\(#function)_001")
 		app.buttons["AppStrings.ExposureSubmission.continueText"].tap()
 		XCTAssertTrue(app.alerts.firstMatch.exists)
-		
+		snapshot("ScreenShot_\(#function)_002")
+
 		// tap NO
 		app.alerts.buttons.element(boundBy: 1).tap()
 
 		XCTAssertTrue(app.buttons["BEAppStrings.BEMobileTestId.save"].waitForExistence(timeout: 5.0))
-		
+		snapshot("ScreenShot_\(#function)_003")
+
 		app.buttons["BEAppStrings.BEMobileTestId.save"].tap()
 
 		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
+		snapshot("ScreenShot_\(#function)_004")
 	}
 	
 	func testGetKeyWithSymptoms() throws {
@@ -62,7 +65,6 @@ class BEENAUITests: XCTestCase {
 
 		// only run if home screen is present
 		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
-
 		app.swipeUp()
 		
 		XCTAssertTrue(app.buttons["AppStrings.Home.submitCardButton"].waitForExistence(timeout: 5.0))
@@ -76,11 +78,11 @@ class BEENAUITests: XCTestCase {
 		app.alerts.buttons.firstMatch.tap()
 
 		XCTAssertTrue(app.buttons["BEAppStrings.BESelectSymptomsDate.next"].waitForExistence(timeout: 5.0))
-
+		snapshot("ScreenShot_\(#function)_001")
 		app.buttons["BEAppStrings.BESelectSymptomsDate.next"].tap()
-
 		XCTAssertTrue(app.buttons["BEAppStrings.BEMobileTestId.save"].waitForExistence(timeout: 5.0))
-		
+		snapshot("ScreenShot_\(#function)_002")
+
 		app.buttons["BEAppStrings.BEMobileTestId.save"].tap()
 
 		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
@@ -96,19 +98,39 @@ class BEENAUITests: XCTestCase {
 		app.launch()
 
 		XCTAssertTrue(app.buttons["AppStrings.Home.submitCardButton"].waitForExistence(timeout: 5.0))
+		snapshot("ScreenShot_\(#function)_001")
 		app.swipeUp()
 		app.buttons["AppStrings.Home.submitCardButton"].tap()
 
 		XCTAssertTrue(app.buttons["BEAppStrings.BETestResult.next"].waitForExistence(timeout: 5.0))
+		snapshot("ScreenShot_\(#function)_002")
 		app.buttons["BEAppStrings.BETestResult.next"].tap()
 
 		XCTAssertTrue(app.buttons["BEAppStrings.BEWarnOthers.next"].waitForExistence(timeout: 5.0))
+		snapshot("ScreenShot_\(#function)_003")
 		app.buttons["BEAppStrings.BEWarnOthers.next"].tap()
-		
+
 		XCTAssertTrue(app.buttons["BEAppStrings.BESelectKeyCountries.shareIds"].waitForExistence(timeout: 5.0))
-		
+		snapshot("ScreenShot_\(#function)_004")
+
 		app.tables.cells.element(boundBy: 0).tap()
 		sleep(1)
+		snapshot("ScreenShot_\(#function)_005")
 		app.tables.cells.element(boundBy: 0).tap()
+		sleep(1)
+		snapshot("ScreenShot_\(#function)_006")
 	}
+	
+	func testIncreasedRisk() throws {
+		app.launchArguments.append(contentsOf: ["-isAtRisk", "YES"])
+		app.launch()
+
+		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
+		XCTAssertTrue(app.buttons["RiskLevelCollectionViewCell.topContainer"].waitForExistence(timeout: 5.0))
+		snapshot("ScreenShot_\(#function)_001")
+		app.buttons["RiskLevelCollectionViewCell.topContainer"].tap()
+		XCTAssertTrue(app.navigationBars.buttons.element(boundBy: 0).waitForExistence(timeout: 5.0))
+		snapshot("ScreenShot_\(#function)_002")
+	}
+
 }
