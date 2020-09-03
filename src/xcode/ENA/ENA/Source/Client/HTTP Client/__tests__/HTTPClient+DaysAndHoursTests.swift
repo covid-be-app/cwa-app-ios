@@ -28,11 +28,7 @@ final class HTTPClientDaysAndHoursTests: XCTestCase {
 	let tan = "1234"
 
 	private var keys: [ENTemporaryExposureKey] {
-		let key = ENTemporaryExposureKey()
-		key.keyData = Data(bytes: [1, 2, 3], count: 3)
-		key.rollingPeriod = 1337
-		key.rollingStartNumber = 42
-		key.transmissionRiskLevel = 8
+		let key = ENTemporaryExposureKey.random(Date())
 
 		return [key]
 	}

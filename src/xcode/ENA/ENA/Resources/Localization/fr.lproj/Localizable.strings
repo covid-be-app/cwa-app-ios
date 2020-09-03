@@ -16,7 +16,7 @@
 "Common_BackgroundFetch_SettingsTitle" = "Ouvrir les réglages du smartphone.";
 "Common_BackgroundFetch_OKTitle" = "Démarrer l'enregistrement de l'exposition manuellement";
 "Common_BackgroundFetch_AlertTitle" = "Mises à jour en l'arrière-plan désactivées";
-"General_moreInfo_URL" = "https://coronalert.be/fr/faq/";
+"General_moreInfo_URL" = "https://coronalert.be/fr/faq-fr/";
 "AccessibilityLabel_Close" = "Fermer";
 "AccessibilityLabel_PhoneNumber" = "Numéro de téléphone";
 "ExposureDetection_Off" = "Enregistrement de l'exposition arrêté";
@@ -335,7 +335,7 @@
 "Reset_ConfirmDialog_Description" = "Vous ne recevrez plus de notification de vos expositions et vous ne pourrez plus avertir les autres utilisateurs. Cette procédure est irréversible.";
 "Reset_ConfirmDialog_Cancel" = "Annuler";
 "Reset_ConfirmDialog_Confirm" = "Réinitialiser";
-"safari_corona_website" = "https://coronalert.be/fr/faq/";
+"safari_corona_website" = "https://coronalert.be/fr/faq-fr/";
 "local_notifications_ignore" = "Ignorer";
 "local_notifications_detectexposure_title" = "Coronalert";
 "local_notifications_detectexposure_body" = "Vous avez de nouveaux messages de votre application Coronalert.";
