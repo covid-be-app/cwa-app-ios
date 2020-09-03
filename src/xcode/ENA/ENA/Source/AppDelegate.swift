@@ -189,8 +189,11 @@ extension AppDelegate: ENATaskExecutionDelegate {
 	// :BE: Add fake requests and refactor
 	func executeENABackgroundTask(completion: @escaping ((Bool) -> Void)) {
 		self.fakeRequestsExecutor.execute {
+			log(message: "Fake requests done")
 			self.executeFetchTestResults {
+				log(message: "Fetch test results done")
 				self.executeExposureDetectionRequest {
+					log(message: "Exposure detection done")
 					completion(true)
 				}
 			}
@@ -236,9 +239,10 @@ extension AppDelegate: ENATaskExecutionDelegate {
 	/// This method performs a check for the current exposure detection state. Only if the risk level has changed compared to the
 	/// previous state, a local notification is shown.
 	private func executeExposureDetectionRequest(completion: @escaping (() -> Void)) {
+		log(message: "Start exposure detection...")
 
-		let detectionMode = DetectionMode.fromBackgroundStatus()
-		riskProvider.configuration.detectionMode = detectionMode
+		// At this point we are already in background so it is safe to assume background mode is available.
+		riskProvider.configuration.detectionMode = .fromBackgroundStatus(.available)
 
 		riskProvider.requestRisk(userInitiated: false) { risk in
 			// present a notification if the risk score has increased.

@@ -34,9 +34,9 @@ protocol ENATaskExecutionDelegate: AnyObject {
 }
 
 /// - NOTE: To simulate the execution of a background task, use the following:
-///         e -l objc -- (void)[[BGTaskScheduler sharedScheduler] _simulateLaunchForTaskWithIdentifier:@"be.sciensano.coronalert.exposure-notification"]
+///         e -l objc -- (void)[[BGTaskScheduler sharedScheduler] _simulateLaunchForTaskWithIdentifier:@"be.sciensano.coronalertbe.exposure-notification"]
 ///         To simulate the expiration of a background task, use the following:
-///         e -l objc -- (void)[[BGTaskScheduler sharedScheduler] _simulateExpirationForTaskWithIdentifier:@"be.sciensano.coronalert.exposure-notification"]
+///         e -l objc -- (void)[[BGTaskScheduler sharedScheduler] _simulateExpirationForTaskWithIdentifier:@"be.sciensano.coronalertbe.exposure-notification"]
 final class ENATaskScheduler {
 
 	// MARK: - Static.
