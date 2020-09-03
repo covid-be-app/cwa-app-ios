@@ -43,7 +43,7 @@ class BEExposureSubmissionServiceTests: XCTestCase {
 		dateFormatter = DateFormatter()
 		dateFormatter.dateFormat = "YYYY-MM-dd"
 	}
-
+	
 	// We want to test that the correct range of keys is returned.
 	// if we don't apply any filtering all keys will be returned, but we are only interested in the keys in the range [t0 .. t3]
 	// whereby t0 is the date the user is infectious
