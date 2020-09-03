@@ -21,7 +21,7 @@ import XCTest
 
 class ExposureSubmissionServiceTests: XCTestCase {
 	let expectationsTimeout: TimeInterval = 2
-	let keys = [ENTemporaryExposureKey()]
+	let keys = [ENTemporaryExposureKey.random(Date())]
 
 	// MARK: - Exposure Submission Tests
 

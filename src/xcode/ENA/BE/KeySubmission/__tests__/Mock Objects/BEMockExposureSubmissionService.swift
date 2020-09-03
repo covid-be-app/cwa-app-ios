@@ -33,10 +33,7 @@ class BEMockExposureSubmissionService : BEExposureSubmissionService {
 		
 		for x in 0..<dayCount+1 {
 			let date = Calendar.current.date(byAdding: .day, value: x, to: startDate, wrappingComponents: true)!
-			let key = ENTemporaryExposureKey()
-			key.transmissionRiskLevel = .zero
-			key.rollingPeriod = 100
-			key.rollingStartNumber = ENIntervalNumber.fromDateInt(BEDateInt.fromDate(date))
+			let key = ENTemporaryExposureKey.random(date)
 			
 			diagnosisKeys.append(key)
 		}

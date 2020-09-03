@@ -117,11 +117,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	// Enable third party contributors that do not have the required
 	// entitlements to also use the app
 	let exposureManager: ExposureManager = {
-		let tempKey = ENTemporaryExposureKey()
-		tempKey.rollingPeriod = 144
-		tempKey.rollingStartNumber = 10
-		tempKey.transmissionRiskLevel = .min
-		tempKey.keyData = Data(count: 16)
+		let tempKey = ENTemporaryExposureKey.random(Date())
 		
 		let keys = [tempKey]
 		let manager = MockExposureManager(exposureNotificationError: nil, diagnosisKeysResult: (keys, nil))
