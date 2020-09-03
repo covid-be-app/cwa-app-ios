@@ -254,6 +254,7 @@
 		A92076EC24ED542900AE8748 /* BEMockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076EB24ED542900AE8748 /* BEMockURLSession.swift */; };
 		A929A71724DC3EE50039B997 /* BEHTTPClientSubmitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A929A71624DC3EE50039B997 /* BEHTTPClientSubmitTests.swift */; };
 		A935EE5624E0060400B33B66 /* BEENAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A935EE5524E0060400B33B66 /* BEENAUITests.swift */; };
+		A94BF68925012C5B009404D2 /* BEENTemporaryExposureKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94BF68825012C5B009404D2 /* BEENTemporaryExposureKey.swift */; };
 		A951618524DAEB3A00631519 /* BEDecimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A951618424DAEB3A00631519 /* BEDecimal.swift */; };
 		A951618824DB027F00631519 /* BESelectSymptomsDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A951618624DB027F00631519 /* BESelectSymptomsDateViewController.swift */; };
 		A951618924DB027F00631519 /* BESelectSymptomsDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A951618724DB027F00631519 /* BESelectSymptomsDateViewController.xib */; };
@@ -730,6 +731,7 @@
 		A92076EB24ED542900AE8748 /* BEMockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEMockURLSession.swift; sourceTree = "<group>"; };
 		A929A71624DC3EE50039B997 /* BEHTTPClientSubmitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEHTTPClientSubmitTests.swift; sourceTree = "<group>"; };
 		A935EE5524E0060400B33B66 /* BEENAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEENAUITests.swift; sourceTree = "<group>"; };
+		A94BF68825012C5B009404D2 /* BEENTemporaryExposureKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEENTemporaryExposureKey.swift; sourceTree = "<group>"; };
 		A951618424DAEB3A00631519 /* BEDecimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDecimal.swift; sourceTree = "<group>"; };
 		A951618624DB027F00631519 /* BESelectSymptomsDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BESelectSymptomsDateViewController.swift; sourceTree = "<group>"; };
 		A951618724DB027F00631519 /* BESelectSymptomsDateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BESelectSymptomsDateViewController.xib; sourceTree = "<group>"; };
@@ -1894,6 +1896,7 @@
 				A92076E024ED33EA00AE8748 /* BEURLRequest.swift */,
 				A9D0BF8124F585A200DEBD99 /* BECountdownTimer.swift */,
 				A95EE81B24FD0A6A00AFECBD /* BEUIStackView.swift */,
+				A94BF68825012C5B009404D2 /* BEENTemporaryExposureKey.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -2835,6 +2838,7 @@
 				51CE1BBD2460B1CB002CF42A /* CollectionViewCellConfigurator.swift in Sources */,
 				71D3C19A2494EFAC00DBABA8 /* ENANavigationControllerWithFooter.swift in Sources */,
 				CD2EC329247D82EE00C6B3F9 /* NotificationSettingsViewController.swift in Sources */,
+				A94BF68925012C5B009404D2 /* BEENTemporaryExposureKey.swift in Sources */,
 				A1BABD1024A57D03000ED515 /* ENTemporaryExposureKey+Processing.swift in Sources */,
 				51C737BD245B349700286105 /* OnboardingInfoViewController.swift in Sources */,
 				B1FE13FB24896E6700D012E5 /* AppConfigurationProviding.swift in Sources */,
