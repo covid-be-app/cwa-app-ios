@@ -182,20 +182,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate: ENATaskExecutionDelegate {
 
 	/// This method executes the background tasks needed for: a) fetching test results and b) performing exposure detection requests
-	func executeENABackgroundTask(task: BGTask, completion: @escaping ((Bool) -> Void)) {
-
-		log(message: "Running background task...")
-		
-		// :BE: Add fake requests
-		fakeRequestsExecutor.execute {
-			self.executeFetchTestResults(task: task) { fetchTestResultSuccess in
-				log(message: "Start exposure detection...")
-
-				// NOTE: We are currently fetching the test result first, and then execute
-				// the exposure detection check. Instead of implementing this behaviour in the completion handler,
-				// queues could be used as well. Due to time/resource constraints, we settled for this option.
-				self.executeExposureDetectionRequest(task: task) { exposureDetectionSuccess in
-					completion(fetchTestResultSuccess && exposureDetectionSuccess)
+	// :BE: Add fake requests and refactor
+	func executeENABackgroundTask(completion: @escaping ((Bool) -> Void)) {
+		self.fakeRequestsExecutor.execute {
+			log(message: "Fake requests done")
+			self.executeFetchTestResults {
+				log(message: "Fetch test results done")
+				self.executeExposureDetectionRequest {
+					log(message: "Exposure detection done")
+					completion(true)
 				}
 			}
 		}
@@ -203,8 +198,7 @@ extension AppDelegate: ENATaskExecutionDelegate {
 
 	/// This method executes a  test result fetch, and if it is successful, and the test result is different from the one that was previously
 	/// part of the app, a local notification is shown.
-	/// NOTE: This method will always return true.
-	private func executeFetchTestResults(task: BGTask, completion: @escaping ((Bool) -> Void)) {
+	private func executeFetchTestResults(completion: @escaping (() -> Void)) {
 		log(message: "Start fetch test results...")
 		// :BE: replace ENAExposureSubmissionService with BEExposureSubmissionService
 		let service = BEExposureSubmissionServiceImpl(diagnosiskeyRetrieval: exposureManager, client: client, store: store)
@@ -224,26 +218,27 @@ extension AppDelegate: ENATaskExecutionDelegate {
 							UNUserNotificationCenter.current().presentNotification(
 								title: AppStrings.LocalNotifications.testResultsTitle,
 								body: AppStrings.LocalNotifications.testResultsBody,
-								identifier: task.identifier
+								identifier: ENATaskIdentifier.exposureNotification.backgroundTaskSchedulerIdentifier + ".test-result"
+
 							)
 						}
 					}
-					completion(true)
+					completion()
 				}
 				return
 			}
 		}
 		
-		completion(true)
+		completion()
 	}
 
 	/// This method performs a check for the current exposure detection state. Only if the risk level has changed compared to the
 	/// previous state, a local notification is shown.
-	/// NOTE: This method will always return true.
-	private func executeExposureDetectionRequest(task: BGTask, completion: @escaping ((Bool) -> Void)) {
+	private func executeExposureDetectionRequest(completion: @escaping (() -> Void)) {
+		log(message: "Start exposure detection...")
 
-		let detectionMode = DetectionMode.fromBackgroundStatus()
-		riskProvider.configuration.detectionMode = detectionMode
+		// At this point we are already in background so it is safe to assume background mode is available.
+		riskProvider.configuration.detectionMode = .fromBackgroundStatus(.available)
 
 		riskProvider.requestRisk(userInitiated: false) { risk in
 			// present a notification if the risk score has increased.
@@ -252,10 +247,10 @@ extension AppDelegate: ENATaskExecutionDelegate {
 				UNUserNotificationCenter.current().presentNotification(
 					title: AppStrings.LocalNotifications.detectExposureTitle,
 					body: AppStrings.LocalNotifications.detectExposureBody,
-					identifier: task.identifier
+					identifier: ENATaskIdentifier.exposureNotification.backgroundTaskSchedulerIdentifier + ".risk-detection"
 				)
 			}
-			completion(true)
+			completion()
 		}
 	}
 }

@@ -406,3 +406,5 @@
 "BEInfectionSummary_updatedAt" = "Zuletzt aktualisiert am %@";
 "BEMobileTestId_dateInfectious" = "Datum der Infektiosität";
 "BEMobileTestId_code" = "Code";
+"Common_Deadman_AlertTitle" = "Ihr Risikostatus";
+"Common_Deadman_AlertBody" = "Bitte denken Sie daran, die Coronalert-App regelmäßig zu öffnen, um Ihren Risikostatus zu überprüfen.";

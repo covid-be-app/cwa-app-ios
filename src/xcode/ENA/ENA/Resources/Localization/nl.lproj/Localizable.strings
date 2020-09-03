@@ -406,3 +406,5 @@
 "BEInfectionSummary_updatedAt" = "Laatst bijgewerkt op %@";
 "BEMobileTestId_dateInfectious" = "Datum van besmettelijkheid";
 "BEMobileTestId_code" = "Code";
+"Common_Deadman_AlertTitle" = "Uw Blootstellingsrisico";
+"Common_Deadman_AlertBody" = "Open Coronalert regelmatig zodat uw blootstellingsrisico kan worden bijgewerkt.";
