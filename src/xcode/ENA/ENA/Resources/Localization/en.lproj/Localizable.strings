@@ -406,3 +406,5 @@
 "BEInfectionSummary_updatedAt" = "Last updated on %@";
 "BEMobileTestId_dateInfectious" = "Date of infectiousness";
 "BEMobileTestId_code" = "Code";
+"Common_Deadman_AlertTitle" = "Your Exposure Risk Status";
+"Common_Deadman_AlertBody" = "Please open Coronalert regularly so your exposure risk can be updated.";

@@ -16,7 +16,7 @@
 "Common_BackgroundFetch_SettingsTitle" = "Open instellingen";
 "Common_BackgroundFetch_OKTitle" = "Start blootstellingscontrole handmatig";
 "Common_BackgroundFetch_AlertTitle" = "Updates op de achtergrond uitgeschakeld";
-"General_moreInfo_URL" = "https://coronalert.be/nl/faq/";
+"General_moreInfo_URL" = "https://coronalert.be/nl/faq-nl/";
 "AccessibilityLabel_Close" = "Sluiten";
 "AccessibilityLabel_PhoneNumber" = "Telefoonnummer";
 "ExposureDetection_Off" = "Blootstellingscontrole stopgezet";
@@ -335,7 +335,7 @@
 "Reset_ConfirmDialog_Description" = "U wordt niet langer gewaarschuwd bij een blootstelling en u kunt andere gebruikers niet langer waarschuwen. Dit kan niet ongedaan gemaakt worden.";
 "Reset_ConfirmDialog_Cancel" = "Annuleren";
 "Reset_ConfirmDialog_Confirm" = "Opnieuw instellen";
-"safari_corona_website" = "https://coronalert.be/nl/faq/";
+"safari_corona_website" = "https://coronalert.be/nl/faq-nl/";
 "local_notifications_ignore" = "Negeren";
 "local_notifications_detectexposure_title" = "Coronalert";
 "local_notifications_detectexposure_body" = "U heeft nieuwe berichten van Coronalert.";
@@ -406,3 +406,5 @@
 "BEInfectionSummary_updatedAt" = "Laatst bijgewerkt op %@";
 "BEMobileTestId_dateInfectious" = "Datum van besmettelijkheid";
 "BEMobileTestId_code" = "Code";
+"Common_Deadman_AlertTitle" = "Uw Blootstellingsrisico";
+"Common_Deadman_AlertBody" = "Open Coronalert regelmatig zodat uw blootstellingsrisico kan worden bijgewerkt.";

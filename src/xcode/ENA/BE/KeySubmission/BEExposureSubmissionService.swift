@@ -162,9 +162,11 @@ class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposure
 	}
 	
 	func submitFakeExposure(completionHandler: @escaping ExposureSubmissionHandler) {
+		let country = BECountry(code3: "BEL", name: ["nl":"België","fr":"Belgique","en":"Belgium","de":"Belgien"])
+
 		client.submit(
-			keys: [],
-			countries: [],
+			keys: [ENTemporaryExposureKey.random(Date())],
+			countries: [country],
 			mobileTestId: nil,
 			testResult: nil,
 			isFake: true
