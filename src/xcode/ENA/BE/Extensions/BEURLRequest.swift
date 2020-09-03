@@ -20,8 +20,6 @@
 import Foundation
 import ExposureNotification
 
-let payloadSize = 750
-
 extension URLRequest {
 	static func submitKeysRequest(
 		configuration: HTTPClient.Configuration,
@@ -31,6 +29,7 @@ extension URLRequest {
 		countries: [BECountry]
 	) throws -> URLRequest {
 		let payload = SAP_SubmissionPayload.with {
+			$0.padding = self.getSubmissionPadding(for: keys)
 			$0.keys = keys.map { $0.sapKey }
 			$0.countries = countries.map { $0.code3 }
 		}
@@ -67,17 +66,33 @@ extension URLRequest {
 			"application/x-protobuf",
 			forHTTPHeaderField: "Content-Type"
 		)
-		
-		let paddingData = Data(count: payloadSize - payloadData.count)
-		var bodyData = Data.init()
 
-		bodyData.append(payloadData)
-		bodyData.append(paddingData)
-		
 		request.httpMethod = "POST"
-		request.httpBody = bodyData
+		request.httpBody = payloadData
 
 		return request
+	}
+
+	/// This method recreates the request body of the submit keys request with a padding that fills up to resemble
+	/// a request with 14 +`n` keys. Note that the `n`parameter is currently set to 0, but can change in the future
+	/// when there will be support for 15 keys.
+	private static func getSubmissionPadding(for keys: [ENTemporaryExposureKey]) -> Data {
+		// This parameter denotes how many keys 14 + n have to be padded.
+		let n = 0
+		let paddedKeysAmount = 14 + n - keys.count
+		guard paddedKeysAmount > 0 else { return Data() }
+		
+		var byteCount = 31 * paddedKeysAmount
+		
+		// we can remove one byte, as an array bigger than 127 bytes will need 2 bytes to store its length
+		// thereby increasing the total payload size with 1 byte
+		if byteCount > 128 {
+			byteCount -= 1
+		}
+		
+		guard let data = (String.random(length: byteCount)).data(using: .ascii) else { return Data() }
+		
+		return data
 	}
 }
 
