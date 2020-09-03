@@ -112,6 +112,8 @@ class BEFakeRequestsExecutor {
 			return
 		}
 		
+		// just in case
+		self.store.isDoingFakeRequests = false
 		completion()
 	}
 	
