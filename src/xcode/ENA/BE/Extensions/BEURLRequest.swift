@@ -28,12 +28,8 @@ extension URLRequest {
 		keys: [ENTemporaryExposureKey],
 		countries: [BECountry]
 	) throws -> URLRequest {
-		let payload = SAP_SubmissionPayload.with {
-			$0.padding = self.getSubmissionPadding(for: keys)
-			$0.keys = keys.map { $0.sapKey }
-			$0.countries = countries.map { $0.code3 }
-		}
-		let payloadData = try payload.serializedData()
+		
+		let payloadData = try getPaddedPayloadData(keys: keys, countries: countries)
 		let url = configuration.submissionURL
 		var request = URLRequest(url: url)
 
@@ -72,27 +68,45 @@ extension URLRequest {
 
 		return request
 	}
+	
+	/// Is this efficient? No
+	/// Does it work? Yes
+	///
+	/// The problem is we try to get a fixed size buffer built on something containing variable length fields,
+	/// e.g. every int stored in a protobuffer can be represented in 1 or multiple bytes depending on its value.
+	/// The same goes for the lengths of strings and byte buffers. So in order avoid implementing 'intelligent' code
+	/// that tries to incorporate all those variables and risking forgetting one or more corner cases
+	/// (since the size depends on the actual value that is stored)
+	/// we simply append bytes to the result object until we arrive at the given size.
+	///
+	/// Worst case this means the below loop runs `wantedByteCount` amount of times, but since this call is only used
+	/// when uploading keys and therefore not happens very often we don't really care about its performance. Even
+	/// 700 iterations will not slow down the app in a noticeable way
+	private static func getPaddedPayloadData(keys: [ENTemporaryExposureKey], countries: [BECountry]) throws -> Data {
+		// padd all to 700 bytes
+		let wantedByteCount = 700
+		var currentByteCount = 0
+		var payloadData:Data!
+		var currentPaddingCount = 0
+		
+		while currentByteCount < wantedByteCount {
+			guard let paddingData = String.random(length: currentPaddingCount).data(using: .ascii) else {
+				fatalError("This should never happen")
+			}
+			
+			let payload = SAP_SubmissionPayload.with {
+				$0.padding = paddingData
+				$0.keys = keys.map { $0.sapKey }
+				$0.countries = countries.map { $0.code3 }
+			}
+			
+			payloadData = try payload.serializedData()
 
-	/// This method recreates the request body of the submit keys request with a padding that fills up to resemble
-	/// a request with 14 +`n` keys. Note that the `n`parameter is currently set to 0, but can change in the future
-	/// when there will be support for 15 keys.
-	private static func getSubmissionPadding(for keys: [ENTemporaryExposureKey]) -> Data {
-		// This parameter denotes how many keys 14 + n have to be padded.
-		let n = 0
-		let paddedKeysAmount = 14 + n - keys.count
-		guard paddedKeysAmount > 0 else { return Data() }
-		
-		var byteCount = 31 * paddedKeysAmount
-		
-		// we can remove one byte, as an array bigger than 127 bytes will need 2 bytes to store its length
-		// thereby increasing the total payload size with 1 byte
-		if byteCount > 128 {
-			byteCount -= 1
+			currentByteCount = payloadData.count
+			currentPaddingCount += 1
 		}
 		
-		guard let data = (String.random(length: byteCount)).data(using: .ascii) else { return Data() }
-		
-		return data
+		return payloadData
 	}
 }
 

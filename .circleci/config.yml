@@ -15,6 +15,7 @@ jobs:
           name: Build
           command: cd src/xcode && bundle exec fastlane build
   test:
+    resource_class: large
     macos:
       xcode: 11.6.0
     shell: zsh
@@ -65,6 +66,7 @@ jobs:
             - ~/sonar/
 
   grab-screenshots:
+    resource_class: large
     macos:
       xcode: 11.6.0
     steps:
