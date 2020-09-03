@@ -30,11 +30,13 @@ enum ENATaskIdentifier: String, CaseIterable {
 }
 
 protocol ENATaskExecutionDelegate: AnyObject {
-	func executeENABackgroundTask(task: BGTask, completion: @escaping ((Bool) -> Void))
+	func executeENABackgroundTask(completion: @escaping ((Bool) -> Void))
 }
 
 /// - NOTE: To simulate the execution of a background task, use the following:
-///         e -l objc -- (void)[[BGTaskScheduler sharedScheduler] _simulateLaunchForTaskWithIdentifier:@"de.rki.coronawarnapp-dev.exposure-notification"]
+///         e -l objc -- (void)[[BGTaskScheduler sharedScheduler] _simulateLaunchForTaskWithIdentifier:@"be.sciensano.coronalert.exposure-notification"]
+///         To simulate the expiration of a background task, use the following:
+///         e -l objc -- (void)[[BGTaskScheduler sharedScheduler] _simulateExpirationForTaskWithIdentifier:@"be.sciensano.coronalert.exposure-notification"]
 final class ENATaskScheduler {
 
 	// MARK: - Static.
@@ -56,11 +58,19 @@ final class ENATaskScheduler {
 	private func registerTask(with taskIdentifier: ENATaskIdentifier, execute: @escaping ((BGTask) -> Void)) {
 		let identifierString = taskIdentifier.backgroundTaskSchedulerIdentifier
 		BGTaskScheduler.shared.register(forTaskWithIdentifier: identifierString, using: .main) { task in
+			self.scheduleTask()
+			let backgroundTask = DispatchWorkItem {
+				execute(task)
+			}
+
 			task.expirationHandler = {
+				self.scheduleTask()
+				backgroundTask.cancel()
+				logError(message: "Task has expired.")
 				task.setTaskCompleted(success: false)
 			}
-			// Make sure to set expiration handler before doing any work.
-			execute(task)
+
+			DispatchQueue.global().async(execute: backgroundTask)
 		}
 	}
 
@@ -68,6 +78,7 @@ final class ENATaskScheduler {
 
 	func scheduleTask() {
 		do {
+			ENATaskScheduler.scheduleDeadmanNotification()
 			let taskRequest = BGProcessingTaskRequest(identifier: ENATaskIdentifier.exposureNotification.backgroundTaskSchedulerIdentifier)
 			taskRequest.requiresNetworkConnectivity = true
 			taskRequest.requiresExternalPower = false
@@ -81,9 +92,50 @@ final class ENATaskScheduler {
 	// MARK: - Task execution handlers.
 
 	private func exposureNotificationTask(_ task: BGTask) {
-		delegate?.executeENABackgroundTask(task: task) { success in
+		delegate?.executeENABackgroundTask { success in
 			task.setTaskCompleted(success: success)
-			self.scheduleTask()
 		}
 	}
+
+	// MARK: - Deadman notifications.
+
+	/// Schedules a local notification to fire 30 hours from now.
+	/// In case the background execution fails  there will be a backup notification for the
+	/// user to be notified to open the app. If everything runs smoothly,
+	/// the current notification will always be moved to the future, thus never firing.
+	static func scheduleDeadmanNotification() {
+		let notificationCenter = UNUserNotificationCenter.current()
+
+		let content = UNMutableNotificationContent()
+		content.title = AppStrings.Common.deadmanAlertTitle
+		content.body = AppStrings.Common.deadmanAlertBody
+		content.sound = .default
+
+		let trigger = UNTimeIntervalNotificationTrigger(
+			timeInterval: 30 * 60 * 60,
+			repeats: false
+		)
+
+		// bundleIdentifier is defined in Info.plist and can never be nil!
+		guard let bundleID = Bundle.main.bundleIdentifier else {
+			logError(message: "Could not access bundle identifier")
+			return
+		}
+
+		let request = UNNotificationRequest(
+			identifier: bundleID + ".notifications.cwa-deadman",
+			content: content,
+			trigger: trigger
+		)
+
+		notificationCenter.add(request) { error in
+		   if error != nil {
+			  logError(message: "Deadman notification could not be scheduled.")
+		   }
+		}
+	}
+
 }
+
+
+
