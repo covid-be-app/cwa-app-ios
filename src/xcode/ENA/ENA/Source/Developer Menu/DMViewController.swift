@@ -24,7 +24,9 @@ import UIKit
 
 /// The root view controller of the developer menu.
 
-final class DMViewController: UITableViewController, RequiresAppDependencies {
+final class DMViewController: UITableViewController, RequiresAppDependencies, SpinnerInjectable {
+	var spinner: UIActivityIndicatorView?
+	
 	// MARK: Creating a developer menu view controller
 
 	init(
@@ -80,11 +82,12 @@ final class DMViewController: UITableViewController, RequiresAppDependencies {
 			)
 		]
 
+		// :BE: use to trigger fake requests
 		navigationItem.rightBarButtonItems = [
 			UIBarButtonItem(
-				barButtonSystemItem: .action,
+				barButtonSystemItem: .play,
 				target: self,
-				action: #selector(generateTestKeys)
+				action: #selector(doFakeRequests)
 			),
 			UIBarButtonItem(
 				title: "State Check",
@@ -199,6 +202,30 @@ final class DMViewController: UITableViewController, RequiresAppDependencies {
 			}
 			log(message: "Got diagnosis keys: \(_keys)", level: .info)
 			self.resetAndFetchKeys()
+		}
+	}
+	
+	// MARK: Fake submission
+	
+	@objc
+	private func doFakeRequests() {
+		self.startSpinner()
+		let fakeExecutor = BEFakeRequestsExecutor(store: self.store, exposureManager: self.exposureManager, client: self.client, isTest: true)
+		
+		// in test mode we need to specify how many fetches we want to do
+		self.store.fakeRequestAmountOfTestResultFetchesToDo = 4
+		
+		let group = DispatchGroup()
+		
+		group.enter()
+		
+		// start test
+		fakeExecutor.execute {
+			group.leave()
+		}
+		
+		group.notify(queue: .main) {
+			self.stopSpinner()
 		}
 	}
 

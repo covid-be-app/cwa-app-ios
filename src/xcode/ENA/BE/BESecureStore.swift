@@ -51,8 +51,8 @@ extension SecureStore {
 	}
 
 	var fakeRequestTestResultFetchIndex: Int {
-		get { kvStore["fakeRequestAmountOfTestResultFetchesToDo"] as Int? ?? 0 }
-		set { kvStore["fakeRequestAmountOfTestResultFetchesToDo"] = newValue }
+		get { kvStore["fakeRequestTestResultFetchIndex"] as Int? ?? 0 }
+		set { kvStore["fakeRequestTestResultFetchIndex"] = newValue }
 	}
 
 	var isAllowedToPerformBackgroundFakeRequests: Bool {
