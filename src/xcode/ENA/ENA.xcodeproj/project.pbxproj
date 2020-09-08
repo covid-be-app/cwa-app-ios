@@ -263,9 +263,6 @@
 		A95EE81824FCF67000AFECBD /* BEInfectionSummaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95EE81724FCF66F00AFECBD /* BEInfectionSummaryCollectionViewCell.swift */; };
 		A95EE81A24FCF6C700AFECBD /* BEInfectionSummaryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A95EE81924FCF6C700AFECBD /* BEInfectionSummaryCollectionViewCell.xib */; };
 		A95EE81C24FD0A6A00AFECBD /* BEUIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95EE81B24FD0A6A00AFECBD /* BEUIStackView.swift */; };
-		A95EE81E24FD0EEC00AFECBD /* BENoInfectionSummaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95EE81D24FD0EEC00AFECBD /* BENoInfectionSummaryCollectionViewCell.swift */; };
-		A95EE82024FD0EFE00AFECBD /* BENoInfectionSummaryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A95EE81F24FD0EFE00AFECBD /* BENoInfectionSummaryCollectionViewCell.xib */; };
-		A95EE82224FD0FCD00AFECBD /* BEHomeNoInfectionSummaryCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95EE82124FD0FCD00AFECBD /* BEHomeNoInfectionSummaryCellConfigurator.swift */; };
 		A980D59D24D822F400A5BB8E /* BEIntervalNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980D59C24D822F400A5BB8E /* BEIntervalNumber.swift */; };
 		A980D5A124D84E2D00A5BB8E /* BESelectCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980D5A024D84E2D00A5BB8E /* BESelectCountryViewController.swift */; };
 		A980D5A324D84FA900A5BB8E /* BESelectCountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980D5A224D84FA900A5BB8E /* BESelectCountryCell.swift */; };
@@ -740,9 +737,6 @@
 		A95EE81724FCF66F00AFECBD /* BEInfectionSummaryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEInfectionSummaryCollectionViewCell.swift; sourceTree = "<group>"; };
 		A95EE81924FCF6C700AFECBD /* BEInfectionSummaryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BEInfectionSummaryCollectionViewCell.xib; sourceTree = "<group>"; };
 		A95EE81B24FD0A6A00AFECBD /* BEUIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEUIStackView.swift; sourceTree = "<group>"; };
-		A95EE81D24FD0EEC00AFECBD /* BENoInfectionSummaryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BENoInfectionSummaryCollectionViewCell.swift; sourceTree = "<group>"; };
-		A95EE81F24FD0EFE00AFECBD /* BENoInfectionSummaryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BENoInfectionSummaryCollectionViewCell.xib; sourceTree = "<group>"; };
-		A95EE82124FD0FCD00AFECBD /* BEHomeNoInfectionSummaryCellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEHomeNoInfectionSummaryCellConfigurator.swift; sourceTree = "<group>"; };
 		A96E9FC224CD710000F845DB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = fr; path = fr.lproj/usage.html; sourceTree = "<group>"; };
 		A96E9FC324CD710000F845DB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = fr; path = "fr.lproj/privacy-policy.html"; sourceTree = "<group>"; };
 		A96E9FC424CD710000F845DB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -1766,9 +1760,6 @@
 				A95EE81524FCF2A600AFECBD /* BEHomeInfectionSummaryCellConfigurator.swift */,
 				A95EE81724FCF66F00AFECBD /* BEInfectionSummaryCollectionViewCell.swift */,
 				A95EE81924FCF6C700AFECBD /* BEInfectionSummaryCollectionViewCell.xib */,
-				A95EE82124FD0FCD00AFECBD /* BEHomeNoInfectionSummaryCellConfigurator.swift */,
-				A95EE81D24FD0EEC00AFECBD /* BENoInfectionSummaryCollectionViewCell.swift */,
-				A95EE81F24FD0EFE00AFECBD /* BENoInfectionSummaryCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -2594,7 +2585,6 @@
 				51486DA72485237200FCE216 /* RiskThankYouCollectionViewCell.xib in Resources */,
 				2F785752248506BD00323A9C /* HomeTestResultCollectionViewCell.xib in Resources */,
 				A951618924DB027F00631519 /* BESelectSymptomsDateViewController.xib in Resources */,
-				A95EE82024FD0EFE00AFECBD /* BENoInfectionSummaryCollectionViewCell.xib in Resources */,
 				EE269508248FCB0300BAE234 /* InfoPlist.strings in Resources */,
 				85D7594E24570491008175F0 /* LaunchScreen.storyboard in Resources */,
 				710224EE2490E2FD000C5DEF /* ExposureSubmissionStepCell.xib in Resources */,
@@ -2850,7 +2840,6 @@
 				0DF6BB97248AD616007E8B0C /* AppUpdateCheckHelper.swift in Sources */,
 				0DD260FF248D549B007C3B2C /* KeychainHelper.swift in Sources */,
 				2FF1D63024880FCF00381FFB /* DynamicTableViewRoundedCell.swift in Sources */,
-				A95EE81E24FD0EEC00AFECBD /* BENoInfectionSummaryCollectionViewCell.swift in Sources */,
 				85D7593F2457048F008175F0 /* AppDelegate.swift in Sources */,
 				CDD87C56247556DE007CE6CA /* MainSettingsTableViewCell.swift in Sources */,
 				B153096C24706F2400A4A1BD /* URLSessionConfiguration+Default.swift in Sources */,
@@ -2936,7 +2925,6 @@
 				EE22DB82247FB40A001B0A71 /* ENSettingModel.swift in Sources */,
 				713EA26324798F8500AB7EE8 /* ExposureDetectionHeaderCell.swift in Sources */,
 				FEDCE09E9F78ABEB4AA9A484 /* ExposureDetectionExecutor.swift in Sources */,
-				A95EE82224FD0FCD00AFECBD /* BEHomeNoInfectionSummaryCellConfigurator.swift in Sources */,
 				FEDCE50B4AC5E24D4E11AA52 /* RequiresAppDependencies.swift in Sources */,
 				FEDCE29E414945F14E7CE576 /* ENStateHandler+State.swift in Sources */,
 				A9DD2CEF24CF293E0035081A /* BEMobileTestId.swift in Sources */,
@@ -3371,7 +3359,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "${PROJECT}/Resources/ENA.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 45;
 				DEVELOPMENT_TEAM = UK48F668XR;
 				GCC_PREPROCESSOR_DEFINITIONS = "SQLITE_HAS_CODEC=1";
@@ -3391,7 +3380,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = be.sciensano.coronalertbe;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = ENA;
-				PROVISIONING_PROFILE_SPECIFIER = "match Development be.sciensano.coronalertbe";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore be.sciensano.coronalertbe";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = APP_STORE;
 				SWIFT_OBJC_BRIDGING_HEADER = "ENA-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

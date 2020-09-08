@@ -27,10 +27,19 @@ class BEStatisticsService {
 
 	@Published private(set) var infectionSummary:BEInfectionSummary?
 	@Published private(set) var infectionSummaryUpdatedAt:Date?
+	
 	private let infectionSummaryUpdateInterval:TimeInterval = 3600
 	
-	init(client:Client) {
+	private var observers:Set<AnyCancellable> = []
+	
+	init(client: Client, store: Store) {
 		self.client = client
+
+		infectionSummary = store.infectionSummary
+		infectionSummaryUpdatedAt = store.infectionSummaryUpdatedAt
+		
+		$infectionSummary.assign(to: \.infectionSummary, on: store).store(in: &observers)
+		$infectionSummaryUpdatedAt.assign(to: \.infectionSummaryUpdatedAt, on: store).store(in: &observers)
 	}
 	
 	func getInfectionSummary(completion: @escaping InfectionSummaryHandler) {

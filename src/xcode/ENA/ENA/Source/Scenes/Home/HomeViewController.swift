@@ -282,7 +282,6 @@ final class HomeViewController: UIViewController, RequiresAppDependencies {
 			ActivateCollectionViewCell.self,
 			// :BE: add summary
 			BEInfectionSummaryCollectionViewCell.self,
-			BENoInfectionSummaryCollectionViewCell.self,
 			RiskLevelCollectionViewCell.self,
 			InfoCollectionViewCell.self,
 			HomeTestResultCollectionViewCell.self,

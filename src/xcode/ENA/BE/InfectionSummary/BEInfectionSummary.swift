@@ -19,7 +19,7 @@
 
 import Foundation
 
-struct BEInfectionSummary : Decodable, Hashable {
+struct BEInfectionSummary : Codable, Hashable {
 	let averageInfected:Int
 	let averageInfectedChangePercentage:Int
 	let averageHospitalised:Int
