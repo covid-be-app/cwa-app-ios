@@ -42,7 +42,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate, RequiresAppDepend
 
 	// :BE: stats
 	private lazy var statisticsService: BEStatisticsService = {
-		return BEStatisticsService(client: self.client)
+		return BEStatisticsService(client: self.client, store: self.store)
 	}()
 
 	// MARK: UISceneDelegate

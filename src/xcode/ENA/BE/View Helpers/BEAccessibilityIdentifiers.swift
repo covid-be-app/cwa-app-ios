@@ -42,4 +42,8 @@ enum BEAccessibilityIdentifiers {
 	enum BETestResult {
 		static let next = "BEAppStrings.BETestResult.next"
 	}
+	
+	enum BERiskLegend {
+		static let infectionSummaryText = "BEAppStrings.BERiskLegend.infectionSummaryText"
+	}
 }

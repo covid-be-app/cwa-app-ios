@@ -19,16 +19,18 @@ import Foundation
 
 // :BE: endpoints for each build target
 #if RELEASE
-	let distributionBaseURL = URL(staticString: "https://c19distcdn-stg.ixor.be")
-	let submissionBaseURL = URL(staticString: "https://c19-submission-stg.ixor.be")
-	let verificationBaseURL = URL(staticString: "https://c19-verification-stg.ixor.be")
-	let statisticsBaseURL = URL(staticString: "https://c19-statistics-stg.ixor.be")
+	let suffix = "stg"
 #else
-	let distributionBaseURL = URL(staticString: "https://c19distcdn-tst.ixor.be")
-	let submissionBaseURL = URL(staticString: "https://c19-submission-tst.ixor.be")
-	let verificationBaseURL = URL(staticString: "https://c19-verification-tst.ixor.be")
-	let statisticsBaseURL = URL(staticString: "https://c19-statistics-stg.ixor.be")
+	let suffix = "tst"
 #endif
+
+// swiftlint:disable force_unwrapping
+let distributionBaseURL = URL(string: "https://c19distcdn-\(suffix).ixor.be")!
+let submissionBaseURL = URL(string: "https://c19-submission-\(suffix).ixor.be")!
+let verificationBaseURL = URL(string: "https://c19-verification-\(suffix).ixor.be")!
+let statisticsBaseURL = URL(string: "https://c19statcdn-\(suffix).ixor.be")!
+// swiftlint:enable force_unwrapping
+
 
 extension HTTPClient {
 	struct Configuration {
@@ -214,9 +216,8 @@ extension HTTPClient {
 			endpoints
 				.statistics
 				.appending(
-					"version",
-					apiVersion,
-					"infectionsummary"
+					"statistics",
+					"statistics.json"
 				)
 		}
 	}

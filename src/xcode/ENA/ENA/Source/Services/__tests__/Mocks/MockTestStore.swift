@@ -60,4 +60,7 @@ final class MockTestStore: Store {
 	var isDoingFakeRequests: Bool = false
 	var fakeRequestAmountOfTestResultFetchesToDo: Int = 3
 	var fakeRequestTestResultFetchIndex: Int = 0
+	var infectionSummary: BEInfectionSummary?
+	var infectionSummaryUpdatedAt: Date?
+
 }

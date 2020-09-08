@@ -1,6 +1,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -101,7 +104,7 @@ protocol Store: AnyObject {
 
 	var testResult: TestResult? { get set }
 	
-	var deleteMobileTestIdAfterTimeInterval: TimeInterval {get set}
+	var deleteMobileTestIdAfterTimeInterval: TimeInterval { get set }
 
 	/// True if the app is allowed to execute fake requests (for plausible deniability) in the background.
 	var isAllowedToPerformBackgroundFakeRequests: Bool { get set }
@@ -117,4 +120,7 @@ protocol Store: AnyObject {
 
 	/// How many fake test fetches did we currently do
 	var fakeRequestTestResultFetchIndex: Int { get set }
+	
+	var infectionSummary: BEInfectionSummary? { get set }
+	var infectionSummaryUpdatedAt: Date? { get set }
 }
