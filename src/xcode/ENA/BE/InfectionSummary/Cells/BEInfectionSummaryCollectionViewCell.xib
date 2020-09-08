@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -122,7 +122,7 @@
                 <outlet property="averageDeceasedLabel" destination="rcg-8L-eUm" id="fWr-Zf-ir4"/>
                 <outlet property="averageHospitalisedLabel" destination="7Ir-4l-6GU" id="DjZ-ih-hDE"/>
                 <outlet property="averageInfectedLabel" destination="Nza-9L-OBF" id="OtT-8S-clT"/>
-                <outlet property="averagesView" destination="Xwo-UB-jhO" id="V9S-Am-XY2"/>
+                <outlet property="averagesView" destination="Uej-lQ-ZOG" id="7EV-K5-R3K"/>
                 <outlet property="dateRangeLabel" destination="sdW-9n-5dj" id="B12-FT-X8a"/>
                 <outlet property="lastUpdatedLabel" destination="GSD-DU-56X" id="vjv-wu-fXx"/>
                 <outlet property="titleLabel" destination="p96-ZP-SeE" id="uE2-iT-dNv"/>

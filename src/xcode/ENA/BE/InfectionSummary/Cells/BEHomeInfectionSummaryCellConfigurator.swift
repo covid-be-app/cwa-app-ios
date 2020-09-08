@@ -19,9 +19,38 @@
 
 import Foundation
 
+extension BEInfectionSummary {
+	var averageInfectedChangePercentageSign:String {
+		get {
+			return signForNumber(averageInfectedChangePercentage)
+		}
+	}
+
+	var averageHospitalisedChangePercentageSign:String {
+		get {
+			return signForNumber(averageHospitalisedChangePercentage)
+		}
+	}
+
+	var averageDeceasedChangePercentageSign:String {
+		get {
+			return signForNumber(averageDeceasedChangePercentage)
+		}
+	}
+
+	// Only show a + if positive, for the other cases the number itself will contain the sign
+	private func signForNumber(_ number:Int) -> String {
+		if number > 0 {
+			return "+"
+		}
+		
+		return ""
+	}
+}
+
 class BEHomeInfectionSummaryCellConfigurator: CollectionViewCellConfigurator {
-	var infectionSummary: BEInfectionSummary!
-	var infectionSummaryUpdatedAt: Date!
+	var infectionSummary: BEInfectionSummary?
+	var infectionSummaryUpdatedAt: Date?
 	
 	private let updatedAtFormatter: DateFormatter
 	private let dateRangeFormatter: DateFormatter
@@ -38,11 +67,43 @@ class BEHomeInfectionSummaryCellConfigurator: CollectionViewCellConfigurator {
 	func configure(cell: BEInfectionSummaryCollectionViewCell) {
 		cell.titleLabel.text = BEAppStrings.BEInfectionSummary.title
 
-		cell.averageInfectedLabel.text = String(format:BEAppStrings.BEInfectionSummary.averageInfected, infectionSummary.averageInfected, infectionSummary.averageInfectedChangePercentage)
-		cell.averageHospitalisedLabel.text = String(format:BEAppStrings.BEInfectionSummary.averageHospitalised, infectionSummary.averageHospitalised, infectionSummary.averageHospitalisedChangePercentage)
-		cell.averageDeceasedLabel.text = String(format:BEAppStrings.BEInfectionSummary.averageDeceased, infectionSummary.averageDeceased, infectionSummary.averageDeceasedChangePercentage)
+		guard
+			let infectionSummary = self.infectionSummary,
+			let infectionSummaryUpdatedAt = self.infectionSummaryUpdatedAt
+		else {
+			cell.averageInfectedLabel.text = nil
+			cell.averageHospitalisedLabel.text = nil
+			cell.averageDeceasedLabel.text = nil
+			cell.lastUpdatedLabel.text = nil
+			cell.dateRangeLabel.text = BEAppStrings.BEInfectionSummary.notAvailable
+			cell.averagesView.isHidden = true
+			
+			return
+		}
 		
-		cell.lastUpdatedLabel.text = String(format:BEAppStrings.BEInfectionSummary.updatedAt, updatedAtFormatter.string(from: infectionSummaryUpdatedAt))
+		cell.averagesView.isHidden = false
+		
+		cell.averageInfectedLabel.text = String(format:
+			BEAppStrings.BEInfectionSummary.averageInfected,
+			infectionSummary.averageInfected,
+			infectionSummary.averageInfectedChangePercentageSign,
+			infectionSummary.averageInfectedChangePercentage)
+		
+		cell.averageHospitalisedLabel.text = String(format:
+			BEAppStrings.BEInfectionSummary.averageHospitalised,
+			infectionSummary.averageHospitalised,
+			infectionSummary.averageHospitalisedChangePercentageSign,
+			infectionSummary.averageHospitalisedChangePercentage)
+		
+		cell.averageDeceasedLabel.text = String(format:
+			BEAppStrings.BEInfectionSummary.averageDeceased,
+			infectionSummary.averageDeceased,
+			infectionSummary.averageDeceasedChangePercentageSign,
+			infectionSummary.averageDeceasedChangePercentage)
+		
+		cell.lastUpdatedLabel.text = String(format:
+			BEAppStrings.BEInfectionSummary.updatedAt,
+			updatedAtFormatter.string(from: infectionSummaryUpdatedAt))
 
 
 		guard

@@ -400,9 +400,9 @@
 "BEExposureDetection_OffShort" = "Angehalten";
 "BENoInfectionSummary_title" = "Zahlen nicht verfügbar";
 "BEInfectionSummary_title" = "Statistiken";
-"BEInfectionSummary_averageInfected" = "%d tägliche Infektionen (%d%%)";
-"BEInfectionSummary_averageHospitalised" = "%d Krankenhausaufenthalte (%d%%)";
-"BEInfectionSummary_averageDeceased" = "%d verstorben (%d%%)";
+"BEInfectionSummary_averageInfected" = "%d tägliche Infektionen (%@%d%%)";
+"BEInfectionSummary_averageHospitalised" = "%d Krankenhausaufenthalte (%@%d%%)";
+"BEInfectionSummary_averageDeceased" = "%d verstorben (%@%d%%)";
 "BEInfectionSummary_updatedAt" = "Zuletzt aktualisiert am %@";
 "BEMobileTestId_dateInfectious" = "Datum der Infektiosität";
 "BEMobileTestId_code" = "Code";

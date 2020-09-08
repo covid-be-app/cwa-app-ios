@@ -400,9 +400,9 @@
 "BEExposureDetection_OffShort" = "Stopgezet";
 "BENoInfectionSummary_title" = "Cijfers niet beschikbaar";
 "BEInfectionSummary_title" = "Statistieken";
-"BEInfectionSummary_averageInfected" = "%d dagelijkse besmettingen (%d%%)";
-"BEInfectionSummary_averageHospitalised" = "%d opnames (%d%%)";
-"BEInfectionSummary_averageDeceased" = "%d overlijdens (%d%%)";
+"BEInfectionSummary_averageInfected" = "%d dagelijkse besmettingen (%@%d%%)";
+"BEInfectionSummary_averageHospitalised" = "%d opnames (%@%d%%)";
+"BEInfectionSummary_averageDeceased" = "%d overlijdens (%@%d%%)";
 "BEInfectionSummary_updatedAt" = "Laatst bijgewerkt op %@";
 "BEMobileTestId_dateInfectious" = "Datum van besmettelijkheid";
 "BEMobileTestId_code" = "Code";

@@ -192,6 +192,16 @@ final class SecureStore: Store {
 		get { kvStore["userNeedsToBeInformedAboutHowRiskDetectionWorks"] as Bool? ?? false }
 		set { kvStore["userNeedsToBeInformedAboutHowRiskDetectionWorks"] = newValue }
 	}
+	
+	var infectionSummary: BEInfectionSummary? {
+		get { kvStore["infectionSummary"] as BEInfectionSummary? }
+		set { kvStore["infectionSummary"] = newValue }
+	}
+	
+	var infectionSummaryUpdatedAt: Date? {
+		get { kvStore["infectionSummaryUpdatedAt"] as Date? }
+		set { kvStore["infectionSummaryUpdatedAt"] = newValue }
+	}
 }
 
 

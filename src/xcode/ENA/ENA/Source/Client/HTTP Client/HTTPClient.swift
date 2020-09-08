@@ -454,42 +454,8 @@ final class HTTPClient: Client {
 	}
 	
 	func getInfectionSummary(completion: @escaping InfectionSummaryHandler) {
-		
-		// :TEMP:
-		DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-			let string = """
-			{
-				"averageInfected":400,
-				"averageInfectedChangePercentage":-15,
-				"averageHospitalised":15,
-				"averageHospitalisedChangePercentage":-10,
-				"averageDeceased":5,
-				"averageDeceasedChangePercentage":2,
-				"startDate":"2020-08-20",
-				"endDate":"2020-08-26"
-			}
-			"""
-			
-			let summaryResponseData = string.data(using:.utf8)!
-			do {
-				let decoder = JSONDecoder()
-				let infectionSummary = try decoder.decode(
-					BEInfectionSummary.self,
-					from: summaryResponseData
-				)
-				completion(.success(infectionSummary))
-			} catch {
-				completion(.failure(.invalidResponse))
-			}
-		}
-		
-		return
-
-		
-		
 		let url = configuration.infectionSummaryURL
-		
-		session.GET(url) { result in
+		self.session.GET(url) { result in
 			switch result {
 			case let .success(response):
 				guard response.hasAcceptableStatusCode else {
