@@ -87,7 +87,8 @@ final class HomeViewController: UIViewController, RequiresAppDependencies {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		setupBackgroundFetchAlert()
+		// :BE: disable background fetch alert as tests have shown it has no influence on the covid exposure checks
+		
 		configureCollectionView()
 		configureDataSource()
 		setupAccessibility()
