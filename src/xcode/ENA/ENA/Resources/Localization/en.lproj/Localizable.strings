@@ -274,9 +274,9 @@
 "Home_Finding_Positive_Card_Home_Item_Title" = "You are infectious. Isolate yourself from other people.";
 "Home_Finding_Positive_Card_Share_Item_Title" = "Share your random IDs so that others can be warned.";
 "Home_Finding_Positive_Card_Button" = "Next";
-"Home_SubmitCard_Title" = "I want to do a test";
-"Home_SubmitCard_Body" = "Help to break the infection chain by notifying others.";
-"Home_SubmitCard_Button" = "I will be tested";
+"Home_SubmitCard_Title" = "Receive your test result";
+"Home_SubmitCard_Body" = "Generate the code to receive your test result on your smartphone.";
+"Home_SubmitCard_Button" = "Generate the code";
 "Home_InfoCard_ShareTitle" = "Share Coronalert";
 "Home_InfoCard_AboutTitle" = "Frequently Asked Questions";
 "Home_SettingsCard_Title" = "Settings";
@@ -344,7 +344,7 @@
 "RiskLegend_Title" = "Overview";
 "RiskLegend_Subtitle" = "Important Functions and Concepts";
 "RiskLegend_Legend1_Title" = "Exposure Logging";
-"RiskLegend_Legend1_Text" = "Exposure logging is one of the three central features of the app. When you activate it, encounters with people's devices are logged. You don't have to do anything else.";
+"RiskLegend_Legend1_Text" = "Exposure logging is one of the central features of the app. When you activate it, encounters with people's devices are logged. You don't have to do anything else.";
 "RiskLegend_Legend2_Text" = "If you have had contact within the last 14 days with a person who was diagnosed with COVID-19, the app calculates your personal risk of infection. It does this by measuring duration and proximity of the exposure.";
 "RiskLegend_Legend2_RiskLevels" = "The following risk status can be shown:";
 "RiskLegend_Legend2_High" = "Higher Risk";
@@ -408,3 +408,5 @@
 "BEMobileTestId_code" = "Code";
 "Common_Deadman_AlertTitle" = "Your Exposure Risk Status";
 "Common_Deadman_AlertBody" = "Please open Coronalert regularly so your exposure risk can be updated.";
+"BERiskLegend_infectionSummaryTitle" = "Statistics";
+"BERiskLegend_infectionSummaryText" = "Contains the seven-day average of the number of new infections, hospitalisations and deaths.";

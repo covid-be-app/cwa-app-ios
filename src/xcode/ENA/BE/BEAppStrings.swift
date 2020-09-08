@@ -67,4 +67,8 @@ enum BEAppStrings {
 		static let updatedAt = NSLocalizedString("BEInfectionSummary_updatedAt", comment: "")
 	}
 	
+	enum BERiskLegend {
+		static let infectionSummaryTitle = NSLocalizedString("BERiskLegend_infectionSummaryTitle", comment: "")
+		static let infectionSummaryText = NSLocalizedString("BERiskLegend_infectionSummaryText", comment: "")
+	}
 }

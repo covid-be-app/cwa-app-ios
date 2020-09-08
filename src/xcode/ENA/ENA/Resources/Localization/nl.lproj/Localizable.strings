@@ -274,9 +274,9 @@
 "Home_Finding_Positive_Card_Home_Item_Title" = "U bent besmettelijk. Ga in zelfisolatie.";
 "Home_Finding_Positive_Card_Share_Item_Title" = "Deel uw willekeurige ID's, zodat anderen gewaarschuwd kunnen worden.";
 "Home_Finding_Positive_Card_Button" = "Volgende";
-"Home_SubmitCard_Title" = "Ik wil een test doen";
-"Home_SubmitCard_Body" = "Waarschuw anderen en help zo mee de infectieketen te doorbreken.";
-"Home_SubmitCard_Button" = "Ik laat me testen";
+"Home_SubmitCard_Title" = "Ontvang je testresultaat";
+"Home_SubmitCard_Body" = "Genereer de code om je testresultaat op je smartphone te ontvangen.";
+"Home_SubmitCard_Button" = "Genereer de code";
 "Home_InfoCard_ShareTitle" = "Deel Coronalert";
 "Home_InfoCard_AboutTitle" = "Veelgestelde vragen";
 "Home_SettingsCard_Title" = "Instellingen";
@@ -344,7 +344,7 @@
 "RiskLegend_Title" = "Overzicht";
 "RiskLegend_Subtitle" = "Belangrijke functies en concepten";
 "RiskLegend_Legend1_Title" = "Blootstellingscontrole";
-"RiskLegend_Legend1_Text" = "Blootstellingscontrole is één van de drie belangrijke features van de app. Zodra u het activeert worden ontmoetingen met toestellen van andere gebruikers geregistreerd. U hoeft niets anders te doen.";
+"RiskLegend_Legend1_Text" = "Blootstellingscontrole is één van de belangrijke features van de app. Zodra u het activeert worden ontmoetingen met toestellen van andere gebruikers geregistreerd. U hoeft niets anders te doen.";
 "RiskLegend_Legend2_Text" = "Als u in de afgelopen 14 dagen contact heeft gehad met iemand die een COVID-19-diagnose heeft gekregen, dan berekent de app uw persoonlijke besmettingsrisico. Hiervoor meet hij de duur en de nabijheid van de blootstelling.";
 "RiskLegend_Legend2_RiskLevels" = "De volgende risicostatus kan getoond worden:";
 "RiskLegend_Legend2_High" = "Hoog risico";
@@ -408,3 +408,5 @@
 "BEMobileTestId_code" = "Code";
 "Common_Deadman_AlertTitle" = "Uw Blootstellingsrisico";
 "Common_Deadman_AlertBody" = "Open Coronalert regelmatig zodat uw blootstellingsrisico kan worden bijgewerkt.";
+"BERiskLegend_infectionSummaryTitle" = "Statistieken";
+"BERiskLegend_infectionSummaryText" = "Bevat het zevendaagse gemiddelde van het aantal nieuwe infecties, ziekenhuisopnames en sterfgevallen.";

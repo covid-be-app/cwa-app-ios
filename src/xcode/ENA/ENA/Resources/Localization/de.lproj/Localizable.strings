@@ -274,9 +274,9 @@
 "Home_Finding_Positive_Card_Home_Item_Title" = "Sie sind ansteckend. Isolieren Sie sich von anderen Menschen.";
 "Home_Finding_Positive_Card_Share_Item_Title" = "Teilen Sie Ihre Zufallscodes, damit andere gewarnt werden können.";
 "Home_Finding_Positive_Card_Button" = "Weiter";
-"Home_SubmitCard_Title" = "Ich möchte mich testen lassen.";
-"Home_SubmitCard_Body" = "Helfen Sie mit, die Infektionskette zu durchbrechen, indem Sie andere warnen.";
-"Home_SubmitCard_Button" = "Ich lasse mich testen";
+"Home_SubmitCard_Title" = "Erhalten Sie Ihr Testergebnis";
+"Home_SubmitCard_Body" = "Generieren Sie den Code, um Ihr Testergebnis auf Ihrem Smartphone zu erhalten.";
+"Home_SubmitCard_Button" = "Generieren Sie den Code";
 "Home_InfoCard_ShareTitle" = "Coronalert teilen";
 "Home_InfoCard_AboutTitle" = "Häufig gestellte Fragen";
 "Home_SettingsCard_Title" = "Einstellungen";
@@ -344,7 +344,7 @@
 "RiskLegend_Title" = "Übersicht";
 "RiskLegend_Subtitle" = "Wichtige Funktionen und Konzepte";
 "RiskLegend_Legend1_Title" = "Kontakterfassung";
-"RiskLegend_Legend1_Text" = "Das Kontaktlogbuch ist eine der drei zentralen Funktionen der App. Ist es aktiv, werden Begegnungen aufgezeichnet. Sie brauchen sich um nichts mehr zu kümmern.";
+"RiskLegend_Legend1_Text" = "Das Kontaktlogbuch ist eine der zentralen Funktionen der App. Ist es aktiv, werden Begegnungen aufgezeichnet. Sie brauchen sich um nichts mehr zu kümmern.";
 "RiskLegend_Legend2_Text" = "Wenn Sie in den vergangenen 14 Tagen Kontakt mit einer mit COVID-19 infizierten Person hatten, errechnet die App Ihr persönliches Infektionsrisiko. Dazu misst sie die Dauer und die Nähe des Kontakts.";
 "RiskLegend_Legend2_RiskLevels" = "Folgender Risikostatus möglich:";
 "RiskLegend_Legend2_High" = "Erhöhtes Risiko";
@@ -408,3 +408,5 @@
 "BEMobileTestId_code" = "Code";
 "Common_Deadman_AlertTitle" = "Ihr Risikostatus";
 "Common_Deadman_AlertBody" = "Bitte denken Sie daran, die Coronalert-App regelmäßig zu öffnen, um Ihren Risikostatus zu überprüfen.";
+"BERiskLegend_infectionSummaryTitle" = "Statistiken";
+"BERiskLegend_infectionSummaryText" = "Enthält den 7-Tage-Durchschnitt der Anzahl neuer Infektionen, Krankenhausaufenthalte und Todesfälle.";
