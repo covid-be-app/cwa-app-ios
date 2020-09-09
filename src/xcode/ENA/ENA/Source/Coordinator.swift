@@ -111,8 +111,8 @@ class Coordinator: RequiresAppDependencies {
 		homeController?.updateState(detectionMode: detectionMode, exposureManagerState: exposureManagerState, risk: risk)
 	}
 
-	// :TEMP:
-	// #if !RELEASE
+	#if DEVELOPER_MENU || DEBUG
+	
 	private var developerMenu: DMDeveloperMenu?
 	private func enableDeveloperMenuIfAllowed(in controller: UIViewController) {
 		developerMenu = DMDeveloperMenu(
@@ -123,7 +123,8 @@ class Coordinator: RequiresAppDependencies {
 		)
 		developerMenu?.enableIfAllowed()
 	}
-	//#endif
+	
+	#endif
 
 	private func setExposureManagerEnabled(_ enabled: Bool, then completion: @escaping (ExposureNotificationError?) -> Void) {
 		if enabled {
