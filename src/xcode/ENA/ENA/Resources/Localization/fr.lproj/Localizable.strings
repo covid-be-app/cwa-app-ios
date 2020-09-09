@@ -41,10 +41,10 @@
 "ExposureDetection_Guide_Distance" = "Gardez au moins 1,5 mètre de distance avec les autres personnes.";
 "ExposureDetection_Guide_Sneeze" = "Éternuez ou toussez dans votre coude ou dans un mouchoir en papier. ";
 "ExposureDetection_Guide_Home" = "Si possible, rentrez et restez chez vous.";
-"ExposureDetection_Guide_Hotline1" = "Si vous avez des questions sur les symptômes, la disponibilité des tests ou l'auto-isolement, veuillez contacter l'une des personnes suivantes :";
+"ExposureDetection_Guide_Hotline1" = "Avez-vous des symptômes qui peuvent indiquer la présence de Covid-19, tels que fatigue, fièvre, toux sèche, maux de tête, perte de goût ou d'odorat ? Veuillez contacter l'une des personnes suivantes :";
 "ExposureDetection_Guide_Hotline2" = "Votre médecin généraliste";
-"ExposureDetection_Guide_Hotline3" = "Service médicale au numéro de téléphone 1733";
-"ExposureDetection_Guide_Hotline4" = "Votre autorité de santé publique";
+"ExposureDetection_Guide_Hotline3" = "Le service de garde médical sur le numéro 1733";
+"ExposureDetection_Guide_Hotline4" = "Vous n'avez pas de symptômes ? Si tel est le cas, veuillez prendre contact avec :";
 "ExposureDetection_Explanation_Title" = "Risque d'infection";
 "ExposureDetection_Explanation_Subtitle_Inactive" = "C'est ainsi que votre risque est calculé.";
 "ExposureDetection_Button_Enable" = "Activer le journal d'exposition";
@@ -410,3 +410,5 @@
 "Common_Deadman_AlertBody" = "Veuillez ouvrir régulièrement Coronalert afin que votre risque d'exposition puisse être mis à jour.";
 "BERiskLegend_infectionSummaryTitle" = "Statistiques";
 "BERiskLegend_infectionSummaryText" = "Contient la moyenne sur sept jours du nombre de nouvelles infections, hospitalisations et décès.";
+"ExposureDetection_Guide_Hotline5" = "Le centre de contact au 02 214.19.19";
+"ExposureDetection_Guide_GetTested" = "Faites-vous tester dès que possible.";
