@@ -109,7 +109,7 @@ jobs:
           key: 1-gems-{{ checksum "src/xcode/Gemfile.lock" }}
           paths:
             - src/xcode/vendor/bundle     
-     - run:
+      - run:
           name: fastlane
           command: cd src/xcode && bundle exec fastlane productionRelease
 
