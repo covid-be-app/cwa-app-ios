@@ -22,7 +22,7 @@ import ExposureNotification
 
 class BEMockExposureSubmissionService : BEExposureSubmissionService {
 	var submitExposureCallback: ((@escaping ExposureSubmissionHandler) -> Void)?
-	var mobileTestId: BEMobileTestId?
+	private (set) var mobileTestId: BEMobileTestId?
 	
 	private var keys:[ENTemporaryExposureKey]
 	
@@ -39,6 +39,14 @@ class BEMockExposureSubmissionService : BEExposureSubmissionService {
 		}
 		
 		keys = diagnosisKeys
+	}
+
+	func generateMobileTestId(_ symptomsDate: Date?) -> BEMobileTestId {
+		let datePatientInfectious = BEMobileTestId.calculateDatePatientInfectious(symptomsStartDate: symptomsDate)
+		let testId = BEMobileTestId(datePatientInfectious: String.fromDateWithoutTime(date:datePatientInfectious))
+		self.mobileTestId = testId
+		
+		return testId
 	}
 
 	func retrieveDiagnosisKeys(completionHandler: @escaping BEExposureSubmissionGetKeysHandler) {

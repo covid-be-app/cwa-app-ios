@@ -377,12 +377,12 @@
 "ENATanInput_CharacterIndex" = "Zeichen %1$u von %2$u";
 "Active_Tracing_Interval_Partially_Active" = "Kontaktlogbuch war an %1$u der letzten 14 Tage aktiv";
 "Active_Tracing_Interval_Permanently_Active" = "Kontaktlogbuch dauerhaft aktiv";
-"BEMobileTestId_title" = "Lassen Sie sich testen";
+"BEMobileTestId_title" = "Erhalten Sie den Test";
 "BESelectSymptomsDate_explanation" = "Datum wählen, an dem Symptome entdeckt wurden.";
 "BEMobileTestId_Select" = "Wählen";
 "BEMobileTestId_Date" = "Datum";
-"BEMobileTestId_Save" = "Speichern";
-"BEMobileTestId_saveExplanation" = "Zeigen Sie der Testperson die folgenden Informationen. Tippen Sie auf \"Speichern\", damit Sie benachrichtigt werden, sobald das Testergebnis verfügbar ist.";
+"BEMobileTestId_Close" = "Schließen";
+"BEMobileTestId_saveExplanation" = "Zeigen Sie diese Nummer dem Arzt oder dem Labor, das den Test durchführt, um Ihr Smartphone daran anzuschließen.";
 "BELanguage" = "de";
 "BESelectKeyCountries_title" = "Länder wählen";
 "BESelectKeyCountries_explanation" = "Wenn Sie an allen aufgeführten Daten nicht in Belgien waren und diese Informationen (anonym) weitergeben möchten, bitte in der anzupassenden Zeile das Land, das Sie an diesem Datum besucht haben, antippen.";

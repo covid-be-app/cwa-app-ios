@@ -377,12 +377,12 @@
 "ENATanInput_CharacterIndex" = "Character %1$u of %2$u";
 "Active_Tracing_Interval_Partially_Active" = "Exposure logging was active for %1$u of the past 14 days.";
 "Active_Tracing_Interval_Permanently_Active" = "Exposure logging permanently active";
-"BEMobileTestId_title" = "Get tested";
+"BEMobileTestId_title" = "Receive the test";
 "BESelectSymptomsDate_explanation" = "Select the date on which you started having symptoms.";
 "BEMobileTestId_Select" = "Select";
 "BEMobileTestId_Date" = "Date";
-"BEMobileTestId_Save" = "Save";
-"BEMobileTestId_saveExplanation" = "Show the information below to the person doing the test. Tap \"Save\" so you can be notified as soon as the test result is available.";
+"BEMobileTestId_Close" = "Close";
+"BEMobileTestId_saveExplanation" = "Show this number to the doctor or laboratory that will perform the test in order to link your smartphone to it.";
 "BELanguage" = "en";
 "BESelectKeyCountries_title" = "Select Countries";
 "BESelectKeyCountries_explanation" = "For each of the below dates, if you have not been in Belgium and you would like to share this information (anonymously), please select the country you visited on that date by tapping the line you want to change.";

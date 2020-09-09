@@ -377,12 +377,12 @@
 "ENATanInput_CharacterIndex" = "Caractère %1$u de %2$u";
 "Active_Tracing_Interval_Partially_Active" = "L'enregistrement de l'exposition était actif pour %1$u des 14 derniers jours.";
 "Active_Tracing_Interval_Permanently_Active" = "L'enregistrement de l'exposition est actif en permanence.";
-"BEMobileTestId_title" = "Faites un test";
+"BEMobileTestId_title" = "Recevoir le test";
 "BESelectSymptomsDate_explanation" = "Sélectionnez la date à laquelle vous avez commencé à avoir des symptômes.";
 "BEMobileTestId_Select" = "Confirmer";
 "BEMobileTestId_Date" = "Date";
-"BEMobileTestId_Save" = "Enregistrer";
-"BEMobileTestId_saveExplanation" = "Montrez ce numéro au médecin ou au laboratoire qui vous fera le test. Cliquez sur \"Enregistrer\" pour être averti dès que le résultat sera disponible.";
+"BEMobileTestId_Close" = "Fermer";
+"BEMobileTestId_saveExplanation" = "Montrez ce numéro au médecin ou au laboratoire qui vous fera le test afin de relier votre smartphone à celui-ci.";
 "BELanguage" = "fr";
 "BESelectKeyCountries_title" = "Sélectionnez votre pays";
 "BESelectKeyCountries_explanation" = "Si vous n'étiez pas en Belgique à certaines des dates ci-dessous et que vous voulez partager cette information (de façon anonyme), veuillez sélectionner le pays dans lequel vous étiez à ces dates.";
