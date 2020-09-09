@@ -129,7 +129,7 @@
 "ExposureSubmission_CallButtonTitle" = "Appeler";
 "ExposureSubmissionSuccess_Title" = "Merci !";
 "ExposureSubmissionSuccess_AccImageDescription" = "Tout le monde dans le groupe applaudit parce que quelqu'un a partagé le résultat de son test.";
-"ExposureSubmissionSuccess_Button" = "C'est tout !";
+"ExposureSubmissionSuccess_Button" = "Fermer";
 "ExposureSubmissionSuccess_Description" = "Grâce à votre soutien, d'autres personnes peuvent maintenant être averties et réagir de manière appropriée.";
 "ExposureSubmissionSuccess_subTitle" = "Autres informations :";
 "ExposureSubmissionSuccess_listTitle" = "Veuillez noter que :";

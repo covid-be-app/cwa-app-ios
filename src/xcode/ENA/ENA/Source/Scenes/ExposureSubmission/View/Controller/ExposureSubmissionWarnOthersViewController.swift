@@ -55,6 +55,7 @@ class ExposureSubmissionWarnOthersViewController: DynamicTableViewController, EN
 
 	private func setupView() {
 		navigationItem.title = AppStrings.ExposureSubmissionWarnOthers.title
+		navigationItem.accessibilityLabel = AppStrings.ExposureSubmissionWarnOthers.title
 		navigationFooterItem?.primaryButtonTitle = AppStrings.ExposureSubmissionWarnOthers.continueButton
 		setupTableView()
 	}
