@@ -1,6 +1,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -98,6 +101,9 @@ final class HomeViewController: UIViewController, RequiresAppDependencies {
 		applySnapshotFromSections()
 
 		setStateOfChildViewControllers()
+		
+		// :BE: show env label if not production
+		showEnvironmentLabel()
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
@@ -237,7 +243,6 @@ final class HomeViewController: UIViewController, RequiresAppDependencies {
 		case .actions:
 			showScreenForActionSectionForCell(at: indexPath)
 		case .infos:
-			
 			switch row {
 			case 0:
 				delegate?.showInviteFriends()
@@ -250,8 +255,19 @@ final class HomeViewController: UIViewController, RequiresAppDependencies {
 			default:
 				fatalError("Unknown entry")
 			}
-			default:
-				fatalError("Unknown entry")
+		}
+	}
+	
+	private func showEnvironmentLabel() {
+		if BEEnvironment.current != .production {
+			let label = UILabel(frame: .zero)
+			label.translatesAutoresizingMaskIntoConstraints = false
+			label.textColor = .red
+			label.font = .systemFont(ofSize: 16)
+			label.text = "ENVIRONMENT: \(BEEnvironment.current.rawValue)"
+			self.view.addSubview(label)
+			view.topAnchor.constraint(equalTo: label.topAnchor, constant: 16).isActive = true
+			view.centerXAnchor.constraint(equalTo: label.centerXAnchor).isActive = true
 		}
 	}
 
