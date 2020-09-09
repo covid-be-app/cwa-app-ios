@@ -20,22 +20,23 @@
 import Foundation
 
 extension BEInfectionSummary {
-	var averageInfectedChangePercentageSign:String {
-		get {
-			return signForNumber(averageInfectedChangePercentage)
-		}
+
+	var averageInfectedChangePercentageString:String {
+		return deltaText(self.averageInfectedChangePercentage)
 	}
 
-	var averageHospitalisedChangePercentageSign:String {
-		get {
-			return signForNumber(averageHospitalisedChangePercentage)
-		}
+	var averageDeceasedChangePercentageString:String {
+		return deltaText(self.averageDeceasedChangePercentage)
 	}
 
-	var averageDeceasedChangePercentageSign:String {
-		get {
-			return signForNumber(averageDeceasedChangePercentage)
-		}
+	var averageHospitalisedChangePercentageString:String {
+		return deltaText(self.averageHospitalisedChangePercentage)
+	}
+
+	private func deltaText(_ number:Int) -> String {
+		let deltaString = "(%@%d%%)"
+		
+		return String(format: deltaString, signForNumber(number), number)
 	}
 
 	// Only show a + if positive, for the other cases the number itself will contain the sign
@@ -83,23 +84,11 @@ class BEHomeInfectionSummaryCellConfigurator: CollectionViewCellConfigurator {
 		
 		cell.averagesView.isHidden = false
 		
-		cell.averageInfectedLabel.text = String(format:
-			BEAppStrings.BEInfectionSummary.averageInfected,
-			infectionSummary.averageInfected,
-			infectionSummary.averageInfectedChangePercentageSign,
-			infectionSummary.averageInfectedChangePercentage)
+		cell.averageInfectedLabel.text = "\(String(format: BEAppStrings.BEInfectionSummary.averageInfected, infectionSummary.averageInfected)) \(infectionSummary.averageInfectedChangePercentageString)"
 		
-		cell.averageHospitalisedLabel.text = String(format:
-			BEAppStrings.BEInfectionSummary.averageHospitalised,
-			infectionSummary.averageHospitalised,
-			infectionSummary.averageHospitalisedChangePercentageSign,
-			infectionSummary.averageHospitalisedChangePercentage)
+		cell.averageHospitalisedLabel.text = "\(String(format: BEAppStrings.BEInfectionSummary.averageHospitalised, infectionSummary.averageHospitalised)) \(infectionSummary.averageHospitalisedChangePercentageString)"
 		
-		cell.averageDeceasedLabel.text = String(format:
-			BEAppStrings.BEInfectionSummary.averageDeceased,
-			infectionSummary.averageDeceased,
-			infectionSummary.averageDeceasedChangePercentageSign,
-			infectionSummary.averageDeceasedChangePercentage)
+		cell.averageDeceasedLabel.text = "\(String(format: BEAppStrings.BEInfectionSummary.averageDeceased, infectionSummary.averageDeceased)) \(infectionSummary.averageDeceasedChangePercentageString)"
 		
 		cell.lastUpdatedLabel.text = String(format:
 			BEAppStrings.BEInfectionSummary.updatedAt,
