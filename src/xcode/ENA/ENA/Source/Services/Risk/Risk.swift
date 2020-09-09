@@ -1,6 +1,8 @@
 //
 // Corona-Warn-App
 //
+// Modified by Devside SRL
+//
 // SAP SE and all other contributors
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
@@ -33,6 +35,25 @@ extension Risk {
 		var activeTracing: ActiveTracing
 		var numberOfDaysWithActiveTracing: Int { activeTracing.inDays }
 		var exposureDetectionDate: Date?
+
+		// :BE: get the correct number of days, taking into account when exposure was last calculated
+		var calendarDaysSinceLastExposure: Int? {
+			if  var daysSinceLastExposure = daysSinceLastExposure,
+				let date = exposureDetectionDate {
+				let calendar = Calendar.current
+				let exposureDetectionDate = calendar.startOfDay(for: date)
+				let today = calendar.startOfDay(for: Date())
+				let components = calendar.dateComponents([.day], from: exposureDetectionDate, to: today)
+				
+				if let days = components.day {
+					daysSinceLastExposure += days
+				}
+
+				return daysSinceLastExposure
+			}
+			
+			return nil
+		}
 	}
 }
 
