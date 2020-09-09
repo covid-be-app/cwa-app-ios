@@ -377,12 +377,12 @@
 "ENATanInput_CharacterIndex" = "Karakter %1$u van %2$u";
 "Active_Tracing_Interval_Partially_Active" = "Blootstellingscontrole was %1$u van de voorbije 14 dagen actief.";
 "Active_Tracing_Interval_Permanently_Active" = "Uitwisseling blootstelling permanent actief";
-"BEMobileTestId_title" = "Ontvang je testresultaat";
+"BEMobileTestId_title" = "Ontvang de test";
 "BESelectSymptomsDate_explanation" = "Kies de datum waarop u symptomen begon te krijgen.";
 "BEMobileTestId_Select" = "Kies";
 "BEMobileTestId_Date" = "Datum";
-"BEMobileTestId_Save" = "Opslaan";
-"BEMobileTestId_saveExplanation" = "Toon onderstaande informatie aan de persoon die de test afneemt. Tik op \"Opslaan\", zodat u een melding krijgt zodra het resultaat beschikbaar is.";
+"BEMobileTestId_Close" = "Sluiten";
+"BEMobileTestId_saveExplanation" = "Toon dit nummer aan de dokter of het labo dat de test zal uitvoeren om uw smartphone aan te sluiten.";
 "BELanguage" = "nl";
 "BESelectKeyCountries_title" = "Kies Landen";
 "BESelectKeyCountries_explanation" = "Als u op een van de onderstaande datums niet in België was en u deze informatie (anoniem) wilt delen, selecteer dan het land dat u op die datum heeft bezocht. Tik op de lijn die u wilt wijzigen.";

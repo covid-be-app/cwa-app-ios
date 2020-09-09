@@ -20,7 +20,7 @@
 import UIKit
 
 protocol BEMobileTestIdViewControllerDelegate : class {
-	func mobileTestIdViewController(_ vc:BEMobileTestIdViewController, finshedWithMobileTestId mobileTestId:BEMobileTestId )
+	func mobileTestIdViewControllerFinished(_ vc:BEMobileTestIdViewController)
 }
 
 class BEMobileTestIdViewController: DynamicTableViewController, ENANavigationControllerWithFooterChild {
@@ -36,10 +36,8 @@ class BEMobileTestIdViewController: DynamicTableViewController, ENANavigationCon
 	weak var delegate:BEMobileTestIdViewControllerDelegate?
 	private let mobileTestId:BEMobileTestId
 	
-	init(symptomsDate:Date? = nil) {
-		let datePatientInfectious = BEMobileTestId.calculateDatePatientInfectious(symptomsStartDate: symptomsDate)
-		self.mobileTestId = BEMobileTestId(datePatientInfectious: String.fromDateWithoutTime(date:datePatientInfectious))
-		
+	init(_ mobileTestId: BEMobileTestId) {
+		self.mobileTestId = mobileTestId
 		super.init(nibName: nil, bundle: nil)
 	}
 	
@@ -50,9 +48,11 @@ class BEMobileTestIdViewController: DynamicTableViewController, ENANavigationCon
     override func viewDidLoad() {
         super.viewDidLoad()
 		navigationItem.title = BEAppStrings.BEMobileTestId.title
-		navigationFooterItem?.primaryButtonTitle = BEAppStrings.BEMobileTestId.save
+		navigationFooterItem?.primaryButtonTitle = BEAppStrings.BEMobileTestId.close
 		navigationFooterItem?.isPrimaryButtonEnabled = true
 		navigationFooterItem?.isSecondaryButtonHidden = true
+		
+		navigationItem.hidesBackButton = true
 
 		tableView.separatorStyle = .none
 		tableView.backgroundColor = UIColor(enaColor:.background)
@@ -64,6 +64,15 @@ class BEMobileTestIdViewController: DynamicTableViewController, ENANavigationCon
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		footerView?.primaryButton?.accessibilityIdentifier = BEAccessibilityIdentifiers.BEMobileTestId.save
+	}
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+	
+		// I have no idea why this needs to be here as we don't show a back button anyway
+		// but if I keep the back button hidden, the navigation footer button disappears as soon
+		// as we scroll the contents. This does not happen if I enabled it again
+		navigationItem.hidesBackButton = false
 	}
 	
 	private func setupView() {
@@ -102,9 +111,8 @@ private extension BEMobileTestIdViewController {
 	}
 }
 
-
 extension BEMobileTestIdViewController {
 	func navigationController(_ navigationController: ENANavigationControllerWithFooter, didTapPrimaryButton button: UIButton) {
-		delegate?.mobileTestIdViewController(self, finshedWithMobileTestId: mobileTestId)
+		delegate?.mobileTestIdViewControllerFinished(self)
 	}
 }
