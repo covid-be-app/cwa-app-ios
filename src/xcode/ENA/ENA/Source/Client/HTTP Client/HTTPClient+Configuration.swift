@@ -21,30 +21,18 @@
 import Foundation
 
 // :BE: endpoints for each build target
-#if RELEASE
-	let suffix = "stg"
-#else
-	let suffix = "tst"
-#endif
-
-// swiftlint:disable force_unwrapping
-let distributionBaseURL = URL(string: "https://c19distcdn-\(suffix).ixor.be")!
-let submissionBaseURL = URL(string: "https://c19-submission-\(suffix).ixor.be")!
-let verificationBaseURL = URL(string: "https://c19-verification-\(suffix).ixor.be")!
-let statisticsBaseURL = URL(string: "https://c19statcdn-\(suffix).ixor.be")!
-// swiftlint:enable force_unwrapping
-
 
 extension HTTPClient {
-	static var isProduction: Bool {
-		return suffix == "prd"
-	}
-	
-	static var environment: String {
-		return suffix
-	}
-	
+
 	struct Configuration {
+
+		// swiftlint:disable force_unwrapping
+		static let distributionBaseURL = URL(string: "https://c19distcdn-\(BEEnvironment.current.urlSuffix()).ixor.be")!
+		static let submissionBaseURL = URL(string: "https://c19-submission-\(BEEnvironment.current.urlSuffix()).ixor.be")!
+		static let verificationBaseURL = URL(string: "https://c19-verification-\(BEEnvironment.current.urlSuffix()).ixor.be")!
+		static let statisticsBaseURL = URL(string: "https://c19statcdn-\(BEEnvironment.current.urlSuffix()).ixor.be")!
+		// swiftlint:enable force_unwrapping
+		
 		// MARK: Default Instances
 
 		static let backendBaseURLs = Configuration(

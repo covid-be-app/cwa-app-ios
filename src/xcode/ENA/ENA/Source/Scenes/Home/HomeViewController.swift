@@ -259,12 +259,12 @@ final class HomeViewController: UIViewController, RequiresAppDependencies {
 	}
 	
 	private func showEnvironmentLabel() {
-		if !HTTPClient.isProduction {
+		if BEEnvironment.current != .production {
 			let label = UILabel(frame: .zero)
 			label.translatesAutoresizingMaskIntoConstraints = false
 			label.textColor = .red
 			label.font = .systemFont(ofSize: 16)
-			label.text = "ENVIRONMENT: \(HTTPClient.environment)"
+			label.text = "ENVIRONMENT: \(BEEnvironment.current.rawValue)"
 			self.view.addSubview(label)
 			view.topAnchor.constraint(equalTo: label.topAnchor, constant: 16).isActive = true
 			view.centerXAnchor.constraint(equalTo: label.centerXAnchor).isActive = true
