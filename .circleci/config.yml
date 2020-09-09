@@ -94,6 +94,23 @@ jobs:
       - run:
           name: fastlane
           command: cd src/xcode && bundle exec fastlane betaRelease
+          
+  production-release:
+    macos:
+      xcode: 11.6.0
+    shell: zsh
+    steps:
+      - checkout
+      - restore_cache:
+          key: 1-gems-{{ checksum "src/xcode/Gemfile.lock" }}
+      - run: cd src/xcode && bundle check || bundle install --path vendor/bundle
+      - save_cache:
+          key: 1-gems-{{ checksum "src/xcode/Gemfile.lock" }}
+          paths:
+            - src/xcode/vendor/bundle	  
+     - run:
+          name: fastlane
+          command: cd src/xcode && bundle exec fastlane productionRelease
 
 workflows:
     process:
@@ -106,3 +123,10 @@ workflows:
               branches:
                 only:
                   - staging
+        - production-release:
+            requires:
+              - test
+            filters:
+              branches:
+                only:
+                  - release
