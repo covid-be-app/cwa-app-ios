@@ -400,9 +400,6 @@
 "BEExposureDetection_OffShort" = "Stopped";
 "BENoInfectionSummary_title" = "No report available";
 "BEInfectionSummary_title" = "Statistics";
-"BEInfectionSummary_averageInfected" = "%d daily infections (%@%d%%)";
-"BEInfectionSummary_averageHospitalised" = "%d hospitalisations (%@%d%%)";
-"BEInfectionSummary_averageDeceased" = "%d deceased (%@%d%%)";
 "BEInfectionSummary_updatedAt" = "Last updated on %@";
 "BEMobileTestId_dateInfectious" = "Date of infectiousness";
 "BEMobileTestId_code" = "Code";
