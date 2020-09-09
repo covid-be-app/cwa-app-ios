@@ -1,6 +1,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -18,20 +21,18 @@
 import Foundation
 
 // :BE: endpoints for each build target
-#if RELEASE
-	let distributionBaseURL = URL(staticString: "https://c19distcdn-stg.ixor.be")
-	let submissionBaseURL = URL(staticString: "https://c19-submission-stg.ixor.be")
-	let verificationBaseURL = URL(staticString: "https://c19-verification-stg.ixor.be")
-	let statisticsBaseURL = URL(staticString: "https://c19-statistics-stg.ixor.be")
-#else
-	let distributionBaseURL = URL(staticString: "https://c19distcdn-tst.ixor.be")
-	let submissionBaseURL = URL(staticString: "https://c19-submission-tst.ixor.be")
-	let verificationBaseURL = URL(staticString: "https://c19-verification-tst.ixor.be")
-	let statisticsBaseURL = URL(staticString: "https://c19-statistics-stg.ixor.be")
-#endif
 
 extension HTTPClient {
+
 	struct Configuration {
+
+		// swiftlint:disable force_unwrapping
+		static let distributionBaseURL = URL(string: "https://c19distcdn-\(BEEnvironment.current.urlSuffix()).ixor.be")!
+		static let submissionBaseURL = URL(string: "https://c19-submission-\(BEEnvironment.current.urlSuffix()).ixor.be")!
+		static let verificationBaseURL = URL(string: "https://c19-verification-\(BEEnvironment.current.urlSuffix()).ixor.be")!
+		static let statisticsBaseURL = URL(string: "https://c19statcdn-\(BEEnvironment.current.urlSuffix()).ixor.be")!
+		// swiftlint:enable force_unwrapping
+		
 		// MARK: Default Instances
 
 		static let backendBaseURLs = Configuration(
@@ -214,9 +215,8 @@ extension HTTPClient {
 			endpoints
 				.statistics
 				.appending(
-					"version",
-					apiVersion,
-					"infectionsummary"
+					"statistics",
+					"statistics.json"
 				)
 		}
 	}

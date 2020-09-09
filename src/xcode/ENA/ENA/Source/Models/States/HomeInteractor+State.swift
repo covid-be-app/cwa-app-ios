@@ -2,6 +2,9 @@
 // Created by Hu, Hao on 08.06.20.
 // Copyright (c) 2020 SAP SE. All rights reserved.
 //
+// Modified by Devside SRL
+//
+
 
 import Foundation
 extension HomeInteractor {
@@ -17,7 +20,8 @@ extension HomeInteractor {
 		}
 
 		var daysSinceLastExposure: Int? {
-			risk?.details.daysSinceLastExposure
+			// :BE: Add day offset
+			risk?.details.calendarDaysSinceLastExposure
 		}
 
 		init(detectionMode: DetectionMode, exposureManagerState: ExposureManagerState, enState: ENStateHandler.State, risk: Risk?) {

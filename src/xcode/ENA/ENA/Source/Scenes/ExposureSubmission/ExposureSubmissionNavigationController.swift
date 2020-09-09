@@ -1,6 +1,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -18,7 +21,8 @@
 import Foundation
 import UIKit
 
-final class ExposureSubmissionNavigationController: ENANavigationControllerWithFooter, UINavigationControllerDelegate {
+// :BE: remove internal delegate
+final class ExposureSubmissionNavigationController: ENANavigationControllerWithFooter {
 
 	// MARK: - Attributes.
 
@@ -56,8 +60,6 @@ final class ExposureSubmissionNavigationController: ENANavigationControllerWithF
 
 		navigationItem.rightBarButtonItem = barButtonItem
 		navigationBar.accessibilityLabel = AccessibilityIdentifiers.General.exposureSubmissionNavigationControllerTitle
-
-		delegate = self
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
@@ -74,7 +76,7 @@ final class ExposureSubmissionNavigationController: ENANavigationControllerWithF
 		coordinator.delegate?.exposureSubmissionCoordinatorWillDisappear(coordinator)
 	}
 
-	private func applyDefaultRightBarButtonItem(to viewController: UIViewController?) {
+	func applyDefaultRightBarButtonItem(to viewController: UIViewController?) {
 		if let viewController = viewController,
 			viewController.navigationItem.rightBarButtonItem == nil ||
 				viewController.navigationItem.rightBarButtonItem == navigationItem.rightBarButtonItem {
@@ -85,11 +87,5 @@ final class ExposureSubmissionNavigationController: ENANavigationControllerWithF
 	@objc
 	func close() {
 		self.coordinator.dismiss()
-	}
-}
-
-extension ExposureSubmissionNavigationController {
-	func navigationController(_: UINavigationController, willShow viewController: UIViewController, animated _: Bool) {
-		applyDefaultRightBarButtonItem(to: viewController)
 	}
 }

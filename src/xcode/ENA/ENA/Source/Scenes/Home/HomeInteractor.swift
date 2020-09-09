@@ -41,7 +41,7 @@ final class HomeInteractor: RequiresAppDependencies {
 		self.statisticsService = statisticsService
 		
 		summarySubscriber = statisticsService.$infectionSummary.sink { [weak self] _ in
-			// make sure we are initialized before doing updates
+
 			guard let self = self else {
 				return
 			}
@@ -482,20 +482,10 @@ extension HomeInteractor {
 	}
 	
 	func setupInfectionSummaryConfigurator() -> CollectionViewCellConfiguratorAny? {
-		
-		// :TEMP: remove infection summary for now
-		return nil
-		
-		guard
-			let summary = statisticsService.infectionSummary,
-			let date = statisticsService.infectionSummaryUpdatedAt else {
-				//return BEHomeNoInfectionSummaryCellConfigurator()
-				return nil
-		}
 		let infectionSummaryConfigurator = BEHomeInfectionSummaryCellConfigurator()
 		
-		infectionSummaryConfigurator.infectionSummary = summary
-		infectionSummaryConfigurator.infectionSummaryUpdatedAt = date
+		infectionSummaryConfigurator.infectionSummary = statisticsService.infectionSummary
+		infectionSummaryConfigurator.infectionSummaryUpdatedAt = statisticsService.infectionSummaryUpdatedAt
 		
 		return infectionSummaryConfigurator
 	}

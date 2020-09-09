@@ -21,7 +21,7 @@ import Foundation
 import UIKit
 import ExposureNotification
 
-class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
+class BEExposureSubmissionCoordinator : NSObject, ExposureSubmissionCoordinating {
 
 	
 	// MARK: - Attributes.
@@ -73,6 +73,7 @@ class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
 		/// The navigation controller keeps a strong reference to the coordinator. The coordinator only reaches reference count 0
 		/// when UIKit dismisses the navigationController.
 		let navigationController = createNavigationController(rootViewController: initialVC)
+		navigationController.delegate = self
 		parentNavigationController.present(navigationController, animated: true)
 		self.navigationController = navigationController
 	}
@@ -160,8 +161,13 @@ class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
 		fatalError("Deprecated")
 	}
 	
+	// MARK: - Mobile test id
+	
 	func showMobileTestIdViewController(symptomsDate:Date? = nil) {
-		let vc = BEMobileTestIdViewController(symptomsDate: symptomsDate)
+		
+		let mobileTestId = exposureSubmissionService.generateMobileTestId(symptomsDate)
+		
+		let vc = BEMobileTestIdViewController(mobileTestId)
 		vc.delegate = self
 
 		self.push(vc)
@@ -237,8 +243,7 @@ class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
 
 extension BEExposureSubmissionCoordinator : BEMobileTestIdViewControllerDelegate {
 	
-	func mobileTestIdViewController(_ vc: BEMobileTestIdViewController, finshedWithMobileTestId mobileTestId: BEMobileTestId) {
-		exposureSubmissionService.mobileTestId = mobileTestId
+	func mobileTestIdViewControllerFinished(_ vc: BEMobileTestIdViewController) {
 		self.navigationController?.dismiss(animated: true)
 	}
 }
@@ -254,5 +259,19 @@ extension BEExposureSubmissionCoordinator : BESelectCountryViewControllerDelegat
 		selectCountryDelegate?.selectCountryViewController(vc, selectedCountry: country)
 		self.navigationController?.popViewController(animated: true)
 		selectCountryDelegate = nil
+	}
+}
+
+extension BEExposureSubmissionCoordinator : UINavigationControllerDelegate {
+	func navigationController(_ controller: UINavigationController, willShow viewController: UIViewController, animated _: Bool) {
+		if let navigationController = controller as? ExposureSubmissionNavigationController {
+			navigationController.applyDefaultRightBarButtonItem(to: viewController)
+		}
+	}
+	
+	func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+		if viewController.isKind(of: BEMobileTestIdViewController.self) {
+			navigationController.setViewControllers([viewController], animated: false)
+		}
 	}
 }

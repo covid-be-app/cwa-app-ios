@@ -53,7 +53,7 @@ private extension RiskLevel {
 		switch self {
 		case .unknownInitial: return AppStrings.ExposureDetection.unknown
 		case .unknownOutdated: return AppStrings.ExposureDetection.outdated
-		case .inactive: return AppStrings.ExposureDetection.off
+		case .inactive: return BEAppStrings.BEExposureDetection.offShort  // :BE: shorten title
 		case .low: return AppStrings.ExposureDetection.low
 		case .increased: return AppStrings.ExposureDetection.high
 		}

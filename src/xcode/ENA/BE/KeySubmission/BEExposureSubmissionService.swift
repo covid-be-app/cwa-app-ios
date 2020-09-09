@@ -23,7 +23,9 @@ import ExposureNotification
 protocol BEExposureSubmissionService : ExposureSubmissionService {
 	typealias BEExposureSubmissionGetKeysHandler = (Result<[ENTemporaryExposureKey], ExposureSubmissionError>) -> Void
 	
-	var mobileTestId:BEMobileTestId? { get set }
+	var mobileTestId:BEMobileTestId? { get }
+	
+	func generateMobileTestId(_ symptomsDate: Date?) -> BEMobileTestId
 	
 	func retrieveDiagnosisKeys(completionHandler: @escaping BEExposureSubmissionGetKeysHandler)
 	func finalizeSubmissionWithoutKeys()
@@ -37,7 +39,7 @@ protocol BEExposureSubmissionService : ExposureSubmissionService {
 
 class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposureSubmissionService {
 	
-	var mobileTestId:BEMobileTestId? {
+	private(set) var mobileTestId:BEMobileTestId? {
 		get {
 			return store.mobileTestId
 		}
@@ -52,6 +54,14 @@ class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposure
 				store.devicePairingSuccessfulTimestamp = Int64(Date().timeIntervalSince1970)
 			}
 		}
+	}
+	
+	func generateMobileTestId(_ symptomsDate: Date?) -> BEMobileTestId {
+		let datePatientInfectious = BEMobileTestId.calculateDatePatientInfectious(symptomsStartDate: symptomsDate)
+		let testId = BEMobileTestId(datePatientInfectious: String.fromDateWithoutTime(date:datePatientInfectious))
+		self.mobileTestId = testId
+		
+		return testId
 	}
 	
 	override func deleteTest() {

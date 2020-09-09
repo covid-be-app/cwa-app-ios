@@ -18,9 +18,37 @@
 //
 
 import Foundation
-import UIKit
 
-class BENoInfectionSummaryCollectionViewCell: HomeCardCollectionViewCell {
-	@IBOutlet weak var titleLabel:UILabel!
+enum BEEnvironment: String {
+	case production = "production"
+	case staging = "staging"
+	case test = "test"
 
+	func urlSuffix() -> String {
+		switch self {
+		case .production:
+			return "prd"
+		case .staging:
+			return "stg"
+		case .test:
+			return "tst"
+		}
+	}
+	
+	static var current: BEEnvironment {
+		if let value = Bundle.main.infoDictionary?["BEEnvironment"] as? String {
+			guard let environment = BEEnvironment(rawValue: value) else {
+				fatalError()
+			}
+			
+			return environment
+		}
+		
+		#if RELEASE
+			return .staging
+		#else
+			return .test
+		#endif
+	}
 }
+

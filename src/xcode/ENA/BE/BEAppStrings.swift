@@ -35,7 +35,7 @@ enum BEAppStrings {
 		static let title = NSLocalizedString("BEMobileTestId_title", comment: "")
 		static let select = NSLocalizedString("BEMobileTestId_Select", comment: "")
 
-		static let save = NSLocalizedString("BEMobileTestId_Save", comment: "")
+		static let close = NSLocalizedString("BEMobileTestId_Close", comment: "")
 		static let saveExplanation = NSLocalizedString("BEMobileTestId_saveExplanation", comment: "")
 		
 		static let dateInfectious = NSLocalizedString("BEMobileTestId_dateInfectious", comment: "")
@@ -58,11 +58,8 @@ enum BEAppStrings {
 		static let offShort = NSLocalizedString("BEExposureDetection_OffShort", comment: "")
 	}
 	
-	enum BENoInfectionSummary {
-		static let title = NSLocalizedString("BENoInfectionSummary_title", comment: "")
-	}
-	
 	enum BEInfectionSummary {
+		static let notAvailable = NSLocalizedString("BENoInfectionSummary_title", comment: "")
 		static let title = NSLocalizedString("BEInfectionSummary_title", comment: "")
 		static let averageInfected = NSLocalizedString("BEInfectionSummary_averageInfected", comment: "")
 		static let averageHospitalised = NSLocalizedString("BEInfectionSummary_averageHospitalised", comment: "")
@@ -70,4 +67,8 @@ enum BEAppStrings {
 		static let updatedAt = NSLocalizedString("BEInfectionSummary_updatedAt", comment: "")
 	}
 	
+	enum BERiskLegend {
+		static let infectionSummaryTitle = NSLocalizedString("BERiskLegend_infectionSummaryTitle", comment: "")
+		static let infectionSummaryText = NSLocalizedString("BERiskLegend_infectionSummaryText", comment: "")
+	}
 }
