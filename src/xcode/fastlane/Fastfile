@@ -142,7 +142,7 @@ platform :ios do
 
     update_info_plist( 
       xcodeproj: "ENA/ENA.xcodeproj",
-      plist_path: "ENA/ENA/Resources/Info.plist",
+      plist_path: "ENA/Resources/Info.plist",
       block: proc do |plist|
         plist["BEEnvironment"] = "production"
       end
