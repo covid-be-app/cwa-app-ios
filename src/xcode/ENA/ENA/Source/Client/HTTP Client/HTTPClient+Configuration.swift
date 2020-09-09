@@ -1,6 +1,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -33,6 +36,14 @@ let statisticsBaseURL = URL(string: "https://c19statcdn-\(suffix).ixor.be")!
 
 
 extension HTTPClient {
+	static var isProduction: Bool {
+		return suffix == "prd"
+	}
+	
+	static var environment: String {
+		return suffix
+	}
+	
 	struct Configuration {
 		// MARK: Default Instances
 
