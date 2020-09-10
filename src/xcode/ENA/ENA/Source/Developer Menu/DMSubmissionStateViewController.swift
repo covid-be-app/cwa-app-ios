@@ -15,8 +15,7 @@
 // specific language governing permissions and limitations
 // under the License.
 
-// :TEMP:
-//#if !RELEASE
+#if DEVELOPER_MENU || DEBUG
 
 import ExposureNotification
 import UIKit
@@ -162,4 +161,4 @@ private extension Array where Element == Apple_TemporaryExposureKey {
 	}
 }
 
-//#endif
+#endif

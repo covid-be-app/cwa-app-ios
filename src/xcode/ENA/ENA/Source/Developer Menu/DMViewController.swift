@@ -16,8 +16,7 @@
 // under the License.
 
 
-// :TEMP:
-//#if !RELEASE
+#if DEVELOPER_MENU || DEBUG
 
 import ExposureNotification
 import UIKit
@@ -304,4 +303,4 @@ extension DMViewController: DMSubmissionStateViewControllerDelegate {
 	}
 }
 
-//#endif
+#endif

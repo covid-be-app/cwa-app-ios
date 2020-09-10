@@ -99,7 +99,8 @@ platform :ios do
     build_ios_app(
       scheme: "ENA",
       configuration: "Release",
-      clean: true
+      clean: true,
+      xcargs: "OTHER_SWIFT_FLAGS='$(inherited) -DDEVELOPER_MENU=1'"
     )
     
     upload_to_testflight(
