@@ -212,7 +212,8 @@ extension HomeInteractor {
 		riskLevelConfigurator = nil
 		inactiveConfigurator = nil
 
-		let detectionInterval = (riskProvider.configuration.exposureDetectionInterval.day ?? 1) * 24
+		// :BE: check every 2 hours and not once per day
+		let detectionInterval = (riskProvider.configuration.exposureDetectionInterval.hour ?? 2)
 
 		let riskLevel: RiskLevel? = state.exposureManagerState.enabled ? state.riskLevel : .inactive
 

@@ -21,7 +21,7 @@ import Foundation
 
 enum BEAppStrings {
 	
-	static let currentLanguage = NSLocalizedString("BELanguage", comment: "") == "BELanguage" ? "en" : NSLocalizedString("BELanguage", comment: "")  // :TEMP:
+	static let currentLanguage = NSLocalizedString("BELanguage", comment: "")
 
 	enum BEExposureSubmission {
 		static let symptomsTitle = NSLocalizedString("BEExposureSubmission_symptomsTitle", comment: "")
