@@ -2,6 +2,8 @@
 // Created by Hu, Hao on 06.06.20.
 // Copyright (c) 2020 SAP SE. All rights reserved.
 //
+// Modified by Devside SRL
+//
 
 import Foundation
 import ExposureNotification
@@ -32,7 +34,14 @@ final class ExposureDetectionExecutor: ExposureDetectionDelegate {
 		client.availableDays { result in
 			switch result {
 			case let .success(days):
-				completion((days: days, hours: []))
+				self.client.availableHours(day: .formattedToday()) { result in
+					switch result {
+					case let .success(hours):
+						completion((days: days, hours: hours))
+					case .failure:
+						completion(nil)
+					}
+				}
 			case .failure:
 				completion(nil)
 			}
@@ -77,7 +86,9 @@ final class ExposureDetectionExecutor: ExposureDetectionDelegate {
 		let rootDir = fileManager.temporaryDirectory.appendingPathComponent(UUID().uuidString, isDirectory: true)
 		do {
 			try fileManager.createDirectory(at: rootDir, withIntermediateDirectories: true, attributes: nil)
-			let packages = downloadedPackagesStore.allPackages(for: .formattedToday(), onlyHours: store.hourlyFetchingEnabled)
+			
+			// :BE: remove unused parameters
+			let packages = downloadedPackagesStore.allPackages()
 			let writer = AppleFilesWriter(rootDir: rootDir, keyPackages: packages)
 			return writer.writeAllPackages()
 		} catch {
@@ -129,18 +140,15 @@ extension DownloadedPackagesStore {
 }
 
 private extension DownloadedPackagesStore {
-	func allPackages(for day: String, onlyHours: Bool) -> [SAPDownloadedPackage] {
+	func allPackages() -> [SAPDownloadedPackage] {
 		var packages = [SAPDownloadedPackage]()
+		let fullDays = allDays()
+		packages.append(
+			contentsOf: fullDays.map { package(for: $0) }.compactMap { $0 }
+		)
 
-		if onlyHours {  // Testing only: Feed last three hours into framework
-			let allHoursForToday = hourlyPackages(for: .formattedToday())
-			packages.append(contentsOf: Array(allHoursForToday.prefix(3)))
-		} else {
-			let fullDays = allDays()
-			packages.append(
-				contentsOf: fullDays.map { package(for: $0) }.compactMap { $0 }
-			)
-		}
+		let allHoursForToday = hourlyPackages(for: .formattedToday())
+		packages.append(contentsOf: allHoursForToday)
 
 		return packages
 	}

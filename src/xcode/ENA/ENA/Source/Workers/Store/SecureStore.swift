@@ -173,7 +173,7 @@ final class SecureStore: Store {
 	}
 
 	var hourlyFetchingEnabled: Bool {
-		get { kvStore["hourlyFetchingEnabled"] as Bool? ?? false }
+		get { kvStore["hourlyFetchingEnabled"] as Bool? ?? true }
 		set { kvStore["hourlyFetchingEnabled"] = newValue }
 	}
 

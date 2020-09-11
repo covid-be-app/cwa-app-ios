@@ -2,6 +2,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -40,7 +43,7 @@ final class ExposureDetectionExecutorTests: XCTestCase {
 
 				XCTAssertEqual(daysAndHours?.days, testDaysAndHours.days)
 				// Hours are explicitly returned as empty
-				XCTAssertEqual(daysAndHours?.hours, [])
+				XCTAssertEqual(daysAndHours?.hours, [23])
 			}
 		)
 		waitForExpectations(timeout: 2.0)
@@ -191,54 +194,6 @@ final class ExposureDetectionExecutorTests: XCTestCase {
 		waitForExpectations(timeout: 2.0)
 	}
 
-	// MARK: - Write Downloaded Package Tests
-
-	func testWriteDownloadedPackage_NoHourlyFetching() throws {
-		// Test the case where the exector is asked to write the downloaded packages
-		// to disk and return the URLs (for later exposure detection use)
-		// We expect that the .bin and .sig files are written in the App's temp directory
-		// Hourly fetching is disabled
-
-		let todayString = Calendar.gregorianUTC.startOfDay(for: Date()).formatted
-		let downloadedPackageStore = DownloadedPackagesSQLLiteStore.openInMemory
-		try downloadedPackageStore.set(day: todayString, package: .makePackage())
-		// Below package is stored but should not be written to disk as hourly fetching is disabled
-		try downloadedPackageStore.set(hour: 3, day: todayString, package: .makePackage())
-		let store = MockTestStore()
-		store.hourlyFetchingEnabled = false
-
-		let sut = ExposureDetectionExecutor.makeWith(
-			packageStore: downloadedPackageStore,
-			store: store
-		)
-
-		let result = sut.exposureDetectionWriteDownloadedPackages(
-			ExposureDetection(delegate: sut)
-		)
-		let writtenPackages = try XCTUnwrap(result, "Written packages was unexpectedly nil!")
-
-		XCTAssertFalse(
-			writtenPackages.urls.isEmpty,
-			"The package was not saved!"
-		)
-		XCTAssertTrue(
-			writtenPackages.urls.count == 2,
-			"Hourly fetching disabled - there should only be one sig/bin combination written!"
-		)
-
-		let fileManager = FileManager.default
-		for url in writtenPackages.urls {
-			XCTAssertTrue(
-				url.absoluteString.starts(with: fileManager.temporaryDirectory.absoluteString),
-				"The packages were not written in the temporary directory!"
-			)
-		}
-		// Cleanup
-		let firstURL = try XCTUnwrap(writtenPackages.urls.first, "Written packages URLs is empty!")
-		let parentDir = firstURL.deletingLastPathComponent()
-		try fileManager.removeItem(at: parentDir)
-	}
-
 	func testWriteDownloadedPackage_HourlyFetchingEnabled() throws {
 		// Test the case where the exector is asked to write the downloaded packages
 		// to disk and return the URLs (for later exposure detection use)
@@ -262,7 +217,7 @@ final class ExposureDetectionExecutorTests: XCTestCase {
 			"The package was not saved!"
 		)
 		XCTAssertTrue(
-			writtenPackages.urls.count == 4,
+			writtenPackages.urls.count == 6,
 			"Hourly fetching enabled - there should be two sig/bin combination written!"
 		)
 
