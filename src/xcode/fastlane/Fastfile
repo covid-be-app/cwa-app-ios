@@ -99,7 +99,8 @@ platform :ios do
     build_ios_app(
       scheme: "ENA",
       configuration: "Release",
-      clean: true
+      clean: true,
+      xcargs: "OTHER_SWIFT_FLAGS='$(inherited) -DDEVELOPER_MENU=1'"
     )
     
     upload_to_testflight(
@@ -142,7 +143,7 @@ platform :ios do
 
     update_info_plist( 
       xcodeproj: "ENA/ENA.xcodeproj",
-      plist_path: "ENA/ENA/Resources/Info.plist",
+      plist_path: "ENA/Resources/Info.plist",
       block: proc do |plist|
         plist["BEEnvironment"] = "production"
       end

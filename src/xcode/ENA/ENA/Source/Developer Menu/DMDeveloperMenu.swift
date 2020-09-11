@@ -15,8 +15,7 @@
 // specific language governing permissions and limitations
 // under the License.
 
-// :TEMP:
-//#if !RELEASE
+#if DEVELOPER_MENU || DEBUG
 
 import UIKit
 
@@ -82,5 +81,5 @@ final class DMDeveloperMenu {
 		true
 	}
 }
-// :TEMP:
-//#endif
+
+#endif
