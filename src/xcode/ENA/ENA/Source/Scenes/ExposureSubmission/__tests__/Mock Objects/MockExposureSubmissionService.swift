@@ -2,6 +2,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -61,6 +64,8 @@ class MockExposureSubmissionService: ExposureSubmissionService {
 	var devicePairingConsentAcceptTimestamp: Int64?
 
 	var devicePairingSuccessfulTimestamp: Int64?
+	
+	var mobileTestId: BEMobileTestId?
 
 	func preconditions() -> ExposureManagerState {
 		return preconditionsCallback?() ?? ExposureManagerState(authorized: false, enabled: false, status: .unknown)

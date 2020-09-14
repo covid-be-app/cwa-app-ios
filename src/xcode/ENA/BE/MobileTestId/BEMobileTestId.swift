@@ -164,7 +164,12 @@ extension BEMobileTestId : Codable {
 }
 
 extension BEMobileTestId {
-	static func calculateDatePatientInfectious(symptomsStartDate:Date? = nil) -> Date {
+	static func generate(_ symptomsStartDate: Date? = nil) -> BEMobileTestId {
+		let datePatientInfectious = calculateDatePatientInfectious(symptomsStartDate: symptomsStartDate)
+		return BEMobileTestId(datePatientInfectious: String.fromDateWithoutTime(date:datePatientInfectious))
+	}
+
+	static private func calculateDatePatientInfectious(symptomsStartDate:Date?) -> Date {
 		
 		if let startDate = symptomsStartDate {
 			return Calendar.current.date(byAdding: .day, value: -2, to: startDate)!
