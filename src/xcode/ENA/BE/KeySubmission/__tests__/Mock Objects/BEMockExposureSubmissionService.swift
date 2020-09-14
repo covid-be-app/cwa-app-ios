@@ -42,8 +42,7 @@ class BEMockExposureSubmissionService : BEExposureSubmissionService {
 	}
 
 	func generateMobileTestId(_ symptomsDate: Date?) -> BEMobileTestId {
-		let datePatientInfectious = BEMobileTestId.calculateDatePatientInfectious(symptomsStartDate: symptomsDate)
-		let testId = BEMobileTestId(datePatientInfectious: String.fromDateWithoutTime(date:datePatientInfectious))
+		let testId = BEMobileTestId.generate(symptomsDate)
 		self.mobileTestId = testId
 		
 		return testId
