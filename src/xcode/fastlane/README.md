@@ -46,6 +46,11 @@ Build and upload for testing
 fastlane ios screenshots
 ```
 
+### ios productionRelease
+```
+fastlane ios productionRelease
+```
+Build and upload for App Store
 
 ----
 

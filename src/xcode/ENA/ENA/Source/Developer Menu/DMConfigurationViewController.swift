@@ -15,8 +15,7 @@
 // specific language governing permissions and limitations
 // under the License.
 
-// :TEMP:
-//#if !RELEASE
+#if DEVELOPER_MENU || DEBUG
 
 import UIKit
 
@@ -139,4 +138,4 @@ private class DMConfigurationCell: UITableViewCell {
 	}
 }
 
-// #endif
+#endif

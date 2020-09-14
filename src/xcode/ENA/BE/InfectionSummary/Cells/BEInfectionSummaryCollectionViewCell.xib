@@ -60,7 +60,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="Nza-9L-OBF" secondAttribute="bottom" id="39Z-Tg-XLU"/>
                                                     <constraint firstItem="Nza-9L-OBF" firstAttribute="leading" secondItem="k72-XK-fR2" secondAttribute="leading" id="QEj-e6-5gN"/>
@@ -89,7 +89,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="7Ir-4l-6GU" firstAttribute="top" secondItem="z6i-Mp-vQf" secondAttribute="top" id="0Wc-Bj-6CP"/>
                                                     <constraint firstAttribute="trailing" secondItem="7Ir-4l-6GU" secondAttribute="trailing" id="DQ0-9J-LVQ"/>
@@ -118,7 +118,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="rcg-8L-eUm" firstAttribute="top" secondItem="iUE-gf-Hsy" secondAttribute="top" id="2jn-hO-ccY"/>
                                                     <constraint firstAttribute="bottom" secondItem="rcg-8L-eUm" secondAttribute="bottom" id="ThF-mi-yWd"/>

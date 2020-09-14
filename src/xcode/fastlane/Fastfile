@@ -96,10 +96,19 @@ platform :ios do
       xcodeproj: "ENA/ENA.xcodeproj"
     )
 
+    update_info_plist( 
+      xcodeproj: "ENA/ENA.xcodeproj",
+      plist_path: "ENA/Resources/Info.plist",
+      block: proc do |plist|
+        plist["BEEnvironment"] = "staging"
+      end
+    )
+
     build_ios_app(
       scheme: "ENA",
       configuration: "Release",
-      clean: true
+      clean: true,
+      xcargs: "OTHER_SWIFT_FLAGS='$(inherited) -DDEVELOPER_MENU=1'"
     )
     
     upload_to_testflight(
@@ -107,6 +116,14 @@ platform :ios do
       apple_id:"1526431891",
       skip_waiting_for_build_processing: true,
       skip_submission: true  # only upload
+    )
+    
+    update_info_plist( 
+      xcodeproj: "ENA/ENA.xcodeproj",
+      plist_path: "ENA/Resources/Info.plist",
+      block: proc do |plist|
+        plist["BEEnvironment"] = "test"
+      end
     )
     
     commit_version_bump(
@@ -147,6 +164,7 @@ platform :ios do
         plist["BEEnvironment"] = "production"
       end
     )
+
     build_ios_app(
       scheme: "ENA",
       configuration: "Release",
@@ -158,6 +176,14 @@ platform :ios do
       apple_id:"1526431891",
       skip_waiting_for_build_processing: true,
       skip_submission: true  # only upload
+    )
+
+    update_info_plist( 
+      xcodeproj: "ENA/ENA.xcodeproj",
+      plist_path: "ENA/Resources/Info.plist",
+      block: proc do |plist|
+        plist["BEEnvironment"] = "test"
+      end
     )
     
     commit_version_bump(
