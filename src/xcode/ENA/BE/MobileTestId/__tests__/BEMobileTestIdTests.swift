@@ -26,7 +26,11 @@ class BEMobileTestIdTests: XCTestCase {
 		let twoDaysAgo = Calendar.current.date(byAdding: .day, value: -2, to: Date())!
 		let twoDaysAgoComponents = Calendar.current.dateComponents([.day,.year,.month], from: twoDaysAgo)
 
-		let dateInfectiousNoSymptoms = BEMobileTestId.calculateDatePatientInfectious()
+		let mobileTestId = BEMobileTestId.generate()
+		guard let dateInfectiousNoSymptoms = mobileTestId.datePatientInfectious.dateWithoutTime else {
+			XCTFail("Wrong date")
+			return
+		}
 		let infectiousComponents = Calendar.current.dateComponents([.day,.year,.month], from: dateInfectiousNoSymptoms)
 		
 		XCTAssertEqual(twoDaysAgoComponents.day!,infectiousComponents.day!)
@@ -39,7 +43,11 @@ class BEMobileTestIdTests: XCTestCase {
 		let twoDaysAgo = Calendar.current.date(byAdding: .day, value: -2, to: symptomsDate)!
 		let twoDaysAgoComponents = Calendar.current.dateComponents([.day,.year,.month], from: twoDaysAgo)
 
-		let dateInfectiousNoSymptoms = BEMobileTestId.calculateDatePatientInfectious(symptomsStartDate: symptomsDate)
+		let mobileTestId = BEMobileTestId.generate(symptomsDate)
+		guard let dateInfectiousNoSymptoms = mobileTestId.datePatientInfectious.dateWithoutTime else {
+			XCTFail("Wrong date")
+			return
+		}
 		let infectiousComponents = Calendar.current.dateComponents([.day,.year,.month], from: dateInfectiousNoSymptoms)
 		
 		XCTAssertEqual(twoDaysAgoComponents.day!,infectiousComponents.day!)

@@ -1,6 +1,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -24,7 +27,7 @@ enum DeviceRegistrationKey {
 }
 
 // :BE: replaced TestResult with a more complex structure
-
+// :BE: added access to mobile test id
 
 protocol ExposureSubmissionService: class {
 	typealias ExposureSubmissionHandler = (_ error: ExposureSubmissionError?) -> Void
@@ -42,6 +45,7 @@ protocol ExposureSubmissionService: class {
 	func deleteTest()
 	var devicePairingConsentAcceptTimestamp: Int64? { get }
 	var devicePairingSuccessfulTimestamp: Int64? { get }
+	var mobileTestId: BEMobileTestId? { get }
 	func preconditions() -> ExposureManagerState
 	func acceptPairing()
 }
@@ -64,6 +68,10 @@ class ENAExposureSubmissionService: ExposureSubmissionService {
 	private(set) var devicePairingSuccessfulTimestamp: Int64? {
 		get { self.store.devicePairingSuccessfulTimestamp }
 		set { self.store.devicePairingSuccessfulTimestamp = newValue }
+	}
+	
+	var mobileTestId: BEMobileTestId? {
+		self.store.mobileTestId
 	}
 
 	init(diagnosiskeyRetrieval: DiagnosisKeysRetrieval, client: Client, store: Store) {
