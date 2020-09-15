@@ -26,9 +26,9 @@ class BEFakeRequestsExecutor {
 	private let exposureManager:ExposureManager
 	private let client:Client
 
-	// we want to run a fake request approx every 5 days, and the function deciding it is called every 2 hours
-	// so we want a 1 in 12 * 5 = a 1 in 60 chance of this happening
-	private var fakeRequestProbability:UInt32 = 60
+	// we want to run a fake request approx every 5 days, and the function deciding it is called every 4 hours
+	// so we want a 1 in 6 * 5 = a 1 in 30 chance of this happening
+	private var fakeRequestProbability:UInt32 = 30
 	
 
 	private var isTest:Bool = false

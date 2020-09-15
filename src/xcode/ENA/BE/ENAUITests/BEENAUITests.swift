@@ -131,6 +131,8 @@ class BEENAUITests: XCTestCase {
 		app.buttons["RiskLevelCollectionViewCell.topContainer"].tap()
 		XCTAssertTrue(app.navigationBars.buttons.element(boundBy: 0).waitForExistence(timeout: 5.0))
 		snapshot("ScreenShot_\(#function)_002")
+		app.swipeUp()
+		snapshot("ScreenShot_\(#function)_003")
 	}
 
 }
