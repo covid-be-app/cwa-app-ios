@@ -1,7 +1,7 @@
 //
 // Corona-Warn-App
 //
-// SAP SE and all other contributors /
+// SAP SE and all other contributors 
 //
 // Modified by Devside SRL
 //
