@@ -3,4 +3,4 @@ Coronalert is built with security and data privacy in mind to ensure your data i
 
 **Please do not report security vulnerabilities directly on GitHub. GitHub Issues can be publicly seen and therefore would result in a direct disclosure.**
 
-* Please address questions about data privacy, security concepts, and other media requests to the **** mailbox.
+* Please address questions about data privacy, security concepts, and other media requests to the security@coronalert.be mailbox.
