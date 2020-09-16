@@ -108,7 +108,7 @@ platform :ios do
       scheme: "ENA",
       configuration: "Release",
       clean: true,
-      xcargs: "OTHER_SWIFT_FLAGS='$(inherited) -DDEVELOPER_MENU=1'"
+      xcargs: "OTHER_SWIFT_FLAGS='$(inherited) -D DEVELOPER_MENU'"
     )
     
     upload_to_testflight(

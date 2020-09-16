@@ -40,7 +40,11 @@ extension DiagnosisKeysRetrieval {
 				return keyDate >= startDate && keyDate <= endDate
 			}
 			
-			completionHandler(filteredKeys, nil)
+			if filteredKeys.isEmpty {
+				completionHandler(nil, nil)
+			} else {
+				completionHandler(filteredKeys, nil)
+			}
 		}
 	}
 }
