@@ -29,4 +29,35 @@ extension SecureStore {
 		get { kvStore["testResult"] as TestResult?}
 		set { kvStore["testResult"] = newValue }
 	}
+	
+	var deleteMobileTestIdAfterTimeInterval: TimeInterval {
+		get { kvStore["testIdDeleteTimeInterval"] as TimeInterval? ?? 14*60*60*24 }
+		set { kvStore["testIdDeleteTimeInterval"] = newValue }
+	}
+	
+	var lastBackgroundFakeRequest: Date {
+		get { kvStore["lastBackgroundFakeRequest"] as Date? ?? Date() }
+		set { kvStore["lastBackgroundFakeRequest"] = newValue }
+	}
+
+	var isDoingFakeRequests: Bool {
+		get { kvStore["isDoingFakeRequests"] as Bool? ?? false }
+		set { kvStore["isDoingFakeRequests"] = newValue }
+	}
+	
+	var fakeRequestAmountOfTestResultFetchesToDo: Int {
+		get { kvStore["fakeRequestAmountOfTestResultFetchesToDo"] as Int? ?? 4 }
+		set { kvStore["fakeRequestAmountOfTestResultFetchesToDo"] = newValue }
+	}
+
+	var fakeRequestTestResultFetchIndex: Int {
+		get { kvStore["fakeRequestTestResultFetchIndex"] as Int? ?? 0 }
+		set { kvStore["fakeRequestTestResultFetchIndex"] = newValue }
+	}
+
+	var isAllowedToPerformBackgroundFakeRequests: Bool {
+		get { kvStore["shouldPerformBackgroundFakeRequests"] as Bool? ?? false }
+		set { kvStore["shouldPerformBackgroundFakeRequests"] = newValue }
+	}
+
 }

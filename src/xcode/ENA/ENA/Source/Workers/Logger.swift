@@ -1,6 +1,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -29,7 +32,7 @@ func log(
 ) {
 	#if !RELEASE
 	print("\(level.rawValue.uppercased()): [\((file as NSString).lastPathComponent):\(line) - \(function)]\n \(message)")
-	os_log("%{public}@:[%{public}@:%d - %{public}@]\n %{public}@", type:.debug ,level.rawValue.uppercased(), (file as NSString).lastPathComponent, line, function, message)
+	//os_log("%{public}@:[%{public}@:%d - %{public}@]\n %{public}@", type:.debug ,level.rawValue.uppercased(), (file as NSString).lastPathComponent, line, function, message)
 	#endif
 }
 

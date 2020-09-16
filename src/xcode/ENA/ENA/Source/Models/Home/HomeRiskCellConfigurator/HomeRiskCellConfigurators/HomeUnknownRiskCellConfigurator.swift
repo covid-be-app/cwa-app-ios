@@ -1,6 +1,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -32,7 +35,7 @@ final class HomeUnknownRiskCellConfigurator: HomeRiskLevelCellConfigurator {
 			isLoading: isLoading,
 			isButtonEnabled: manualExposureDetectionState == .possible,
 			isButtonHidden: detectionMode == .automatic,
-			detectionIntervalLabelHidden: detectionMode != .automatic,
+			detectionIntervalLabelHidden: true,  // :BE: remove label
 			lastUpdateDate: lastUpdateDate,
 			detectionInterval: detectionInterval
 		)

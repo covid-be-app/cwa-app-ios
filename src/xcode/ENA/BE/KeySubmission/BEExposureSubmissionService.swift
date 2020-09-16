@@ -20,19 +20,24 @@
 import Foundation
 import ExposureNotification
 
-
-class BEExposureSubmissionService : ENAExposureSubmissionService {
+protocol BEExposureSubmissionService : ExposureSubmissionService {
 	typealias BEExposureSubmissionGetKeysHandler = (Result<[ENTemporaryExposureKey], ExposureSubmissionError>) -> Void
 	
-	lazy var httpClient:BEHTTPClient = {
-		guard let beClient = client as? BEHTTPClient else {
-			fatalError("Wrong subclass")
-		}
-		
-		return beClient
-	}()
+	func generateMobileTestId(_ symptomsDate: Date?) -> BEMobileTestId
 	
-	var mobileTestId:BEMobileTestId? {
+	func retrieveDiagnosisKeys(completionHandler: @escaping BEExposureSubmissionGetKeysHandler)
+	func finalizeSubmissionWithoutKeys()
+	func submitExposure(keys:[ENTemporaryExposureKey],countries:[BECountry], completionHandler: @escaping ExposureSubmissionHandler)
+	func submitFakeExposure(completionHandler: @escaping ExposureSubmissionHandler)
+	
+	func deleteTestIfOutdated() -> Bool
+	
+	func getFakeTestResult(_ isLast:Bool, completion: @escaping(() -> Void))
+}
+
+class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposureSubmissionService {
+	
+	private(set) override var mobileTestId:BEMobileTestId? {
 		get {
 			return store.mobileTestId
 		}
@@ -44,8 +49,16 @@ class BEExposureSubmissionService : ENAExposureSubmissionService {
 				store.registrationToken = newValue!.registrationToken
 				// set as pending so the home view controller shows the right state
 				store.testResult = .pending
+				store.devicePairingSuccessfulTimestamp = Int64(Date().timeIntervalSince1970)
 			}
 		}
+	}
+	
+	func generateMobileTestId(_ symptomsDate: Date?) -> BEMobileTestId {
+		let id = BEMobileTestId.generate(symptomsDate)
+		self.mobileTestId = id
+		
+		return id
 	}
 	
 	override func deleteTest() {
@@ -81,26 +94,69 @@ class BEExposureSubmissionService : ENAExposureSubmissionService {
 			}
 		}
 	}
+
+	func getFakeTestResult(_ isLast:Bool, completion: @escaping(() -> Void)) {
+		
+		client.getTestResult(forDevice: BEMobileTestId.fakeRegistrationToken) { result in
+			if isLast {
+				self.client.ackTestDownload(forDevice: BEMobileTestId.fakeRegistrationToken) {
+					completion()
+				}
+			} else {
+				completion()
+			}
+		}
+	}
+
+	func deleteTestIfOutdated() -> Bool {
+		guard let mobileTestId = store.mobileTestId else {
+			fatalError("No mobile test id present")
+		}
+		
+		let endDate = mobileTestId.creationDate.addingTimeInterval(store.deleteMobileTestIdAfterTimeInterval)
+		
+		if endDate < Date() {
+			deleteTest()
+			log(message: "Deleted outdated test request")
+			return true
+		}
+		
+		return false
+	}
 	
 	func retrieveDiagnosisKeys(completionHandler: @escaping BEExposureSubmissionGetKeysHandler) {
-		diagnosiskeyRetrieval.accessDiagnosisKeys { keys, error in
+		guard
+			let mobileTestId = store.mobileTestId,
+			let testResult = store.testResult else {
+				completionHandler(.failure(ExposureSubmissionError.internal))
+				return
+		}
+		
+		let dateTestCommunicatedInt = testResult.dateTestCommunicated.dateInt
+		let datePatientInfectiousInt = mobileTestId.datePatientInfectious.dateInt
+
+		diagnosiskeyRetrieval.getKeysInDateRange(startDate: datePatientInfectiousInt, endDate: dateTestCommunicatedInt) { keys,error in
+			
+			if error == nil && keys == nil {
+				completionHandler(.failure(.noKeys))
+				return
+			}
+			
 			if let error = error {
 				logError(message: "Error while retrieving diagnosis keys: \(error.localizedDescription)")
 				completionHandler(.failure(self.parseError(error)))
 				return
 			}
 
-			guard var keys = keys, !keys.isEmpty else {
-				completionHandler(.failure(.noKeys))
-				return
-			}
-			keys.processedForSubmission()
-
-			completionHandler(.success(keys))
+			var processedKeys = keys!
+			processedKeys.processedForSubmission()
+			completionHandler(.success(processedKeys))
 		}
-
 	}
-
+	
+	func finalizeSubmissionWithoutKeys() {
+		self.submitExposureCleanup()
+	}
 	
 	/// This method submits the exposure keys. Additionally, after successful completion,
 	/// the timestamp of the key submission is updated.
@@ -111,6 +167,25 @@ class BEExposureSubmissionService : ENAExposureSubmissionService {
 			countries:countries,
 			completion: completionHandler)
 	}
+	
+	func submitFakeExposure(completionHandler: @escaping ExposureSubmissionHandler) {
+		let country = BECountry(code3: "BEL", name: ["nl":"België","fr":"Belgique","en":"Belgium","de":"Belgien"])
+
+		client.submit(
+			keys: [ENTemporaryExposureKey.random(Date())],
+			countries: [country],
+			mobileTestId: nil,
+			testResult: nil,
+			isFake: true
+			) { error in
+			if let error = error {
+				logError(message: "Error while submiting diagnosis keys: \(error.localizedDescription)")
+				completionHandler(self.parseError(error))
+				return
+			}
+			completionHandler(nil)
+		}
+	}
 
 	// no longer used
 	override func submitExposure( completionHandler: @escaping ExposureSubmissionHandler) {
@@ -118,7 +193,6 @@ class BEExposureSubmissionService : ENAExposureSubmissionService {
 	}
 
 	private func submit(keys: [ENTemporaryExposureKey], countries:[BECountry], completion: @escaping ExposureSubmissionHandler) {
-		
 		guard
 			let testResult = store.testResult,
 			let mobileTestId = store.mobileTestId
@@ -127,7 +201,12 @@ class BEExposureSubmissionService : ENAExposureSubmissionService {
 			return
 		}
 		
-		httpClient.submit(keys: keys, countries:countries, mobileTestId: mobileTestId, dateTestCommunicated: testResult.dateTestCommunicated) { error in
+		client.submit(
+			keys: keys,
+			countries:countries,
+			mobileTestId: mobileTestId,
+			testResult: testResult,
+			isFake: false) { error in
 			if let error = error {
 				logError(message: "Error while submiting diagnosis keys: \(error.localizedDescription)")
 				completion(self.parseError(error))

@@ -15,7 +15,8 @@
 // specific language governing permissions and limitations
 // under the License.
 
-#if !RELEASE
+#if DEVELOPER_MENU || DEBUG
+
 import UIKit
 
 /// If enabled, the developer can be revealed by tripple-tapping anywhere within the `presentingViewController`.
@@ -55,7 +56,7 @@ final class DMDeveloperMenu {
 			return
 		}
 		let showDeveloperMenuGesture = UITapGestureRecognizer(target: self, action: #selector(showDeveloperMenu(_:)))
-		showDeveloperMenuGesture.numberOfTapsRequired = 3
+		showDeveloperMenuGesture.numberOfTapsRequired = 5
 		presentingViewController.view.addGestureRecognizer(showDeveloperMenuGesture)
 	}
 
@@ -80,4 +81,5 @@ final class DMDeveloperMenu {
 		true
 	}
 }
+
 #endif

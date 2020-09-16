@@ -24,6 +24,7 @@ enum BEAccessibilityIdentifiers {
 	enum BEMobileTestId {
 		static let selectDate = "BEAppStrings.BEMobileTestId.select"
 		static let save = "BEAppStrings.BEMobileTestId.save"
+		static let saveExplanation = "BEAppStrings.BEMobileTestId.saveExplanation"
 	}
 	
 	enum BESelectSymptomsDate {
@@ -31,5 +32,18 @@ enum BEAccessibilityIdentifiers {
 	}
 	enum BESelectKeyCountries {
 		static let explanation = "BEAppStrings.BESelectKeyCountries.explanation"
+		static let shareIds = "BEAppStrings.BESelectKeyCountries.shareIds"
+	}
+	
+	enum BEWarnOthers {
+		static let next = "BEAppStrings.BEWarnOthers.next"
+	}
+	
+	enum BETestResult {
+		static let next = "BEAppStrings.BETestResult.next"
+	}
+	
+	enum BERiskLegend {
+		static let infectionSummaryText = "BEAppStrings.BERiskLegend.infectionSummaryText"
 	}
 }

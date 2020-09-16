@@ -26,7 +26,11 @@ class BEMobileTestIdTests: XCTestCase {
 		let twoDaysAgo = Calendar.current.date(byAdding: .day, value: -2, to: Date())!
 		let twoDaysAgoComponents = Calendar.current.dateComponents([.day,.year,.month], from: twoDaysAgo)
 
-		let dateInfectiousNoSymptoms = BEMobileTestId.calculateDatePatientInfectious()
+		let mobileTestId = BEMobileTestId.generate()
+		guard let dateInfectiousNoSymptoms = mobileTestId.datePatientInfectious.dateWithoutTime else {
+			XCTFail("Wrong date")
+			return
+		}
 		let infectiousComponents = Calendar.current.dateComponents([.day,.year,.month], from: dateInfectiousNoSymptoms)
 		
 		XCTAssertEqual(twoDaysAgoComponents.day!,infectiousComponents.day!)
@@ -39,7 +43,11 @@ class BEMobileTestIdTests: XCTestCase {
 		let twoDaysAgo = Calendar.current.date(byAdding: .day, value: -2, to: symptomsDate)!
 		let twoDaysAgoComponents = Calendar.current.dateComponents([.day,.year,.month], from: twoDaysAgo)
 
-		let dateInfectiousNoSymptoms = BEMobileTestId.calculateDatePatientInfectious(symptomsStartDate: symptomsDate)
+		let mobileTestId = BEMobileTestId.generate(symptomsDate)
+		guard let dateInfectiousNoSymptoms = mobileTestId.datePatientInfectious.dateWithoutTime else {
+			XCTFail("Wrong date")
+			return
+		}
 		let infectiousComponents = Calendar.current.dateComponents([.day,.year,.month], from: dateInfectiousNoSymptoms)
 		
 		XCTAssertEqual(twoDaysAgoComponents.day!,infectiousComponents.day!)
@@ -52,13 +60,13 @@ class BEMobileTestIdTests: XCTestCase {
 		
 		XCTAssertEqual(testId.id.count, 15)
 		XCTAssertEqual(testId.checksum.count,2)
-		XCTAssertEqual(testId.fullString.count,28)
+		XCTAssertEqual(testId.fullString.count,21)
 		
 		
 		XCTAssertNotEqual(Int(testId.id),nil)
 		XCTAssertNotEqual(Int(testId.checksum),nil)
 		
-		let fullNumber = Decimal(string:"\(testId.datePatientInfectious.compactDateNumber)\(testId.id)")! * 100 + Decimal(string:testId.checksum)!
+		let fullNumber = Decimal(string:"\(testId.datePatientInfectious.compactDateInt)\(testId.id)")! * 100 + Decimal(string:testId.checksum)!
 		let modulo = fullNumber % 97
 		
 		XCTAssertEqual(modulo,0)

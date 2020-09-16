@@ -21,7 +21,7 @@ import Foundation
 import UIKit
 import ExposureNotification
 
-class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
+class BEExposureSubmissionCoordinator : NSObject, ExposureSubmissionCoordinating {
 
 	
 	// MARK: - Attributes.
@@ -73,6 +73,7 @@ class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
 		/// The navigation controller keeps a strong reference to the coordinator. The coordinator only reaches reference count 0
 		/// when UIKit dismisses the navigationController.
 		let navigationController = createNavigationController(rootViewController: initialVC)
+		navigationController.delegate = self
 		parentNavigationController.present(navigationController, animated: true)
 		self.navigationController = navigationController
 	}
@@ -86,28 +87,6 @@ class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
 	// In the original app it will show you the 3 possibilities to register a test, in our case we go directly to the code generator
 	
 	func showOverviewScreen() {
-		/*
-		let alert = UIAlertController(
-			title: AppStrings.ExposureSubmission.dataPrivacyTitle,
-			message: AppStrings.ExposureSubmission.dataPrivacyDisclaimer,
-			preferredStyle: .alert
-		)
-		let acceptAction = UIAlertAction(title: AppStrings.ExposureSubmission.dataPrivacyAcceptTitle,
-										 style: .default, handler: { _ in
-											let vc = self.createMobileTestIdController()
-											self.push(vc)
-											self.exposureSubmissionService.acceptPairing()
-		})
-		alert.addAction(acceptAction)
-
-		alert.addAction(.init(title: AppStrings.ExposureSubmission.dataPrivacyDontAcceptTitle,
-							  style: .cancel,
-							  handler: { _ in
-								alert.dismiss(animated: true, completion: nil) }
-			))
-		alert.preferredAction = acceptAction
-		present(alert)
-*/
 		let alert = UIAlertController(
 			title: BEAppStrings.BEExposureSubmission.symptomsExplanation,
 			message: nil,
@@ -126,15 +105,9 @@ class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
 											self.exposureSubmissionService.acceptPairing()
 											self.showMobileTestIdViewController()
 		})
-/*
-		let cancelAction = UIAlertAction(title: BEAppStrings.BEExposureSubmission.cancel,
-										 style: .cancel, handler: { _ in
-											alert.dismiss(animated: true, completion: nil)
-		})
-*/
+
 		alert.addAction(yesAction)
 		alert.addAction(noAction)
-	//	alert.addAction(cancelAction)
 
 		present(alert)
 	}
@@ -184,16 +157,17 @@ class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
 		fatalError("Deprecated")
 	}
 
-	func showQRScreen(qrScannerDelegate: ExposureSubmissionQRScannerDelegate) {
-		fatalError("Deprecated")
-	}
-
 	func showTestResultScreen(with result: TestResult) {
 		fatalError("Deprecated")
 	}
 	
+	// MARK: - Mobile test id
+	
 	func showMobileTestIdViewController(symptomsDate:Date? = nil) {
-		let vc = BEMobileTestIdViewController(symptomsDate: symptomsDate)
+		
+		let mobileTestId = exposureSubmissionService.generateMobileTestId(symptomsDate)
+		
+		let vc = BEMobileTestIdViewController(mobileTestId)
 		vc.delegate = self
 
 		self.push(vc)
@@ -219,6 +193,11 @@ class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
 		#if UITESTING
 		if ProcessInfo.processInfo.arguments.contains("-negativeResult") {
 			return createTestResultViewController(with: .negative)
+		}
+
+		// :BE: add positive result
+		if ProcessInfo.processInfo.arguments.contains("-positiveResult") {
+			return createTestResultViewController(with: .positive)
 		}
 
 		#else
@@ -264,8 +243,7 @@ class BEExposureSubmissionCoordinator : ExposureSubmissionCoordinating {
 
 extension BEExposureSubmissionCoordinator : BEMobileTestIdViewControllerDelegate {
 	
-	func mobileTestIdViewController(_ vc: BEMobileTestIdViewController, finshedWithMobileTestId mobileTestId: BEMobileTestId) {
-		exposureSubmissionService.mobileTestId = mobileTestId
+	func mobileTestIdViewControllerFinished(_ vc: BEMobileTestIdViewController) {
 		self.navigationController?.dismiss(animated: true)
 	}
 }
@@ -281,5 +259,19 @@ extension BEExposureSubmissionCoordinator : BESelectCountryViewControllerDelegat
 		selectCountryDelegate?.selectCountryViewController(vc, selectedCountry: country)
 		self.navigationController?.popViewController(animated: true)
 		selectCountryDelegate = nil
+	}
+}
+
+extension BEExposureSubmissionCoordinator : UINavigationControllerDelegate {
+	func navigationController(_ controller: UINavigationController, willShow viewController: UIViewController, animated _: Bool) {
+		if let navigationController = controller as? ExposureSubmissionNavigationController {
+			navigationController.applyDefaultRightBarButtonItem(to: viewController)
+		}
+	}
+	
+	func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+		if viewController.isKind(of: BEMobileTestIdViewController.self) {
+			navigationController.setViewControllers([viewController], animated: false)
+		}
 	}
 }

@@ -64,11 +64,11 @@ class ENAUITests: XCTestCase {
 		//// ScreenShot_0003: Risk view (low risk)
 		XCTAssertTrue(app.buttons["RiskLevelCollectionViewCell.topContainer"].waitForExistence(timeout: 5.0))
 		app.buttons["RiskLevelCollectionViewCell.topContainer"].tap()
-		XCTAssertTrue(app.buttons["AppStrings.AccessibilityLabel.close"].waitForExistence(timeout: 5.0))
+		XCTAssertTrue(app.navigationBars.buttons.element(boundBy: 0).waitForExistence(timeout: 5.0))
 		if snapshotsActive { snapshot("AppStore_0003") }
 
 		//// ScreenShot_0004: Settings > Risk exposure
-		app.buttons["AppStrings.AccessibilityLabel.close"].tap()
+		app.navigationBars.buttons.element(boundBy: 0).tap()
 		XCTAssertTrue(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
 		app.swipeUp()
 		XCTAssertTrue(app.cells["AppStrings.Home.settingsCardTitle"].waitForExistence(timeout: 5.0))
@@ -92,7 +92,6 @@ class ENAUITests: XCTestCase {
 		XCTAssertTrue(app.buttons["AppStrings.ExposureSubmission.continueText"].waitForExistence(timeout: 5.0))
 		app.buttons["AppStrings.ExposureSubmission.continueText"].tap()
 
-		// :BE: no more qr scan screen
 		XCTAssertTrue(app.alerts.firstMatch.exists)
 		app.alerts.buttons.firstMatch.tap()
 		XCTAssertTrue(app.buttons["BEAppStrings.BESelectSymptomsDate.next"].waitForExistence(timeout: 5.0))
@@ -102,8 +101,6 @@ class ENAUITests: XCTestCase {
 		XCTAssertTrue(app.buttons["BEAppStrings.BEMobileTestId.save"].waitForExistence(timeout: 5.0))
 		if snapshotsActive { snapshot("AppStore_0006") }
 		
-		// :BE: - end
-
 		//// ScreenShot_0007: Share screen
 		// todo: need accessibility for Back (navigation bar back button)
 		XCTAssertTrue(app.buttons["AppStrings.AccessibilityLabel.close"].waitForExistence(timeout: 5.0))

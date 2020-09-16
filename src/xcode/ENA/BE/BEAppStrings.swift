@@ -21,7 +21,7 @@ import Foundation
 
 enum BEAppStrings {
 	
-	static let currentLanguage = NSLocalizedString("BELanguage", comment: "") == "BELanguage" ? "en" : NSLocalizedString("BELanguage", comment: "")  // :TEMP:
+	static let currentLanguage = NSLocalizedString("BELanguage", comment: "")
 
 	enum BEExposureSubmission {
 		static let symptomsTitle = NSLocalizedString("BEExposureSubmission_symptomsTitle", comment: "")
@@ -35,8 +35,11 @@ enum BEAppStrings {
 		static let title = NSLocalizedString("BEMobileTestId_title", comment: "")
 		static let select = NSLocalizedString("BEMobileTestId_Select", comment: "")
 
-		static let save = NSLocalizedString("BEMobileTestId_Save", comment: "")
+		static let close = NSLocalizedString("BEMobileTestId_Close", comment: "")
 		static let saveExplanation = NSLocalizedString("BEMobileTestId_saveExplanation", comment: "")
+		
+		static let dateInfectious = NSLocalizedString("BEMobileTestId_dateInfectious", comment: "")
+		static let code = NSLocalizedString("BEMobileTestId_code", comment: "")
 	}
 
 	enum BESelectSymptomsDate {
@@ -51,4 +54,21 @@ enum BEAppStrings {
 		static let sendKeys = NSLocalizedString("BESelectKeyCountries_sendKeys", comment: "")
 	}
 	
+	enum BEExposureDetection {
+		static let offShort = NSLocalizedString("BEExposureDetection_OffShort", comment: "")
+	}
+	
+	enum BEInfectionSummary {
+		static let notAvailable = NSLocalizedString("BENoInfectionSummary_title", comment: "")
+		static let title = NSLocalizedString("BEInfectionSummary_title", comment: "")
+		static let averageInfected = NSLocalizedString("BEInfectionSummary_averageInfected", comment: "")
+		static let averageHospitalised = NSLocalizedString("BEInfectionSummary_averageHospitalised", comment: "")
+		static let averageDeceased = NSLocalizedString("BEInfectionSummary_averageDeceased", comment: "")
+		static let updatedAt = NSLocalizedString("BEInfectionSummary_updatedAt", comment: "")
+	}
+	
+	enum BERiskLegend {
+		static let infectionSummaryTitle = NSLocalizedString("BERiskLegend_infectionSummaryTitle", comment: "")
+		static let infectionSummaryText = NSLocalizedString("BERiskLegend_infectionSummaryText", comment: "")
+	}
 }

@@ -30,9 +30,20 @@ struct SAP_SubmissionPayload {
   /// The ISO 3166 3 letter country code for each key
   var countries: [String] = []
 
+  var padding: Data {
+    get {return _padding ?? SwiftProtobuf.Internal.emptyData}
+    set {_padding = newValue}
+  }
+  /// Returns true if `padding` has been explicitly set.
+  var hasPadding: Bool {return self._padding != nil}
+  /// Clears the value of `padding`. Subsequent reads from it will return its default value.
+  mutating func clearPadding() {self._padding = nil}
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
+
+  fileprivate var _padding: Data? = nil
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -44,6 +55,7 @@ extension SAP_SubmissionPayload: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "keys"),
     2: .same(proto: "countries"),
+    3: .same(proto: "padding"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -51,6 +63,7 @@ extension SAP_SubmissionPayload: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.keys)
       case 2: try decoder.decodeRepeatedStringField(value: &self.countries)
+      case 3: try decoder.decodeSingularBytesField(value: &self._padding)
       default: break
       }
     }
@@ -63,12 +76,16 @@ extension SAP_SubmissionPayload: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     if !self.countries.isEmpty {
       try visitor.visitRepeatedStringField(value: self.countries, fieldNumber: 2)
     }
+    if let v = self._padding {
+      try visitor.visitSingularBytesField(value: v, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: SAP_SubmissionPayload, rhs: SAP_SubmissionPayload) -> Bool {
     if lhs.keys != rhs.keys {return false}
     if lhs.countries != rhs.countries {return false}
+    if lhs._padding != rhs._padding {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -1,6 +1,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -40,7 +43,9 @@ final class HomeViewController: UIViewController, RequiresAppDependencies {
 		exposureManagerState: ExposureManagerState,
 		initialEnState: ENStateHandler.State,
 		risk: Risk?,
-		exposureSubmissionService: ExposureSubmissionService
+		exposureSubmissionService: ExposureSubmissionService,
+		// :BE: add stats
+		statisticsService: BEStatisticsService
 	) {
 		self.delegate = delegate
 		//self.enState = initialEnState
@@ -52,7 +57,10 @@ final class HomeViewController: UIViewController, RequiresAppDependencies {
 				exposureManagerState: exposureManagerState,
 				enState: initialEnState,
 				risk: risk
-			), exposureSubmissionService: exposureSubmissionService)
+			),
+			exposureSubmissionService: exposureSubmissionService,
+			statisticsService: statisticsService
+		)
 		navigationItem.largeTitleDisplayMode = .never
 		delegate.addToEnStateUpdateList(homeInteractor)
 	}
@@ -71,10 +79,10 @@ final class HomeViewController: UIViewController, RequiresAppDependencies {
 
 	private weak var delegate: HomeViewControllerDelegate?
 
+	// :BE: remove settings
 	enum Section: Int {
 		case actions
 		case infos
-		case settings
 	}
 
 	// MARK: UIViewController
@@ -82,7 +90,8 @@ final class HomeViewController: UIViewController, RequiresAppDependencies {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		setupBackgroundFetchAlert()
+		// :BE: disable background fetch alert as tests have shown it has no influence on the covid exposure checks
+		
 		configureCollectionView()
 		configureDataSource()
 		setupAccessibility()
@@ -92,12 +101,18 @@ final class HomeViewController: UIViewController, RequiresAppDependencies {
 		applySnapshotFromSections()
 
 		setStateOfChildViewControllers()
+		
+		// :BE: show env label if not production
+		showEnvironmentLabel()
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		homeInteractor.updateTestResults()
 		homeInteractor.requestRisk(userInitiated: false)
+		
+		// :BE:
+		homeInteractor.requestInfectionSummary()
 		updateBackgroundColor()
 	}
 
@@ -228,17 +243,31 @@ final class HomeViewController: UIViewController, RequiresAppDependencies {
 		case .actions:
 			showScreenForActionSectionForCell(at: indexPath)
 		case .infos:
-			if row == 0 {
+			switch row {
+			case 0:
 				delegate?.showInviteFriends()
-			} else {
+			case 1:
 				delegate?.showWebPage(from: self, urlString: AppStrings.SafariView.targetURL)
-			}
-		case .settings:
-			if row == 0 {
+			case 2:
 				delegate?.showAppInformation()
-			} else {
+			case 3:
 				delegate?.showSettings(enState: self.homeInteractor.state.enState)
+			default:
+				fatalError("Unknown entry")
 			}
+		}
+	}
+	
+	private func showEnvironmentLabel() {
+		if BEEnvironment.current != .production {
+			let label = UILabel(frame: .zero)
+			label.translatesAutoresizingMaskIntoConstraints = false
+			label.textColor = .red
+			label.font = .systemFont(ofSize: 16)
+			label.text = "ENVIRONMENT: \(BEEnvironment.current.rawValue)"
+			self.view.addSubview(label)
+			view.topAnchor.constraint(equalTo: label.topAnchor, constant: 16).isActive = true
+			view.centerXAnchor.constraint(equalTo: label.centerXAnchor).isActive = true
 		}
 	}
 
@@ -267,6 +296,8 @@ final class HomeViewController: UIViewController, RequiresAppDependencies {
 
 		let cellTypes: [UICollectionViewCell.Type] = [
 			ActivateCollectionViewCell.self,
+			// :BE: add summary
+			BEInfectionSummaryCollectionViewCell.self,
 			RiskLevelCollectionViewCell.self,
 			InfoCollectionViewCell.self,
 			HomeTestResultCollectionViewCell.self,

@@ -46,8 +46,6 @@ extension UICollectionViewLayout {
 			return mainSection()
 		case .infos:
 			return infoSection()
-		case .settings:
-			return settingsSection()
 		}
 	}
 
@@ -73,23 +71,9 @@ extension UICollectionViewLayout {
 		let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
 
 		let section = NSCollectionLayoutSection(group: group)
-
-		let sectionBackgroundDecoration = NSCollectionLayoutDecorationItem.background(elementKind: SectionSystemBackgroundDecorationView.reusableViewIdentifier)
-		section.decorationItems = [sectionBackgroundDecoration]
-
-		return section
-	}
-
-	private static func settingsSection() -> NSCollectionLayoutSection {
-		let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(50.0))
-		let item = NSCollectionLayoutItem(layoutSize: itemSize)
-
-		let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(50.0))
-		let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
-
-		let section = NSCollectionLayoutSection(group: group)
+		
 		section.contentInsets = .init(top: 32.0, leading: 0.0, bottom: 32.0 + bottomBackgroundOverflowHeight, trailing: 0.0)
-
+		
 		let sectionBackgroundDecoration = NSCollectionLayoutDecorationItem.background(elementKind: SectionSystemBackgroundDecorationView.reusableViewIdentifier)
 		section.decorationItems = [sectionBackgroundDecoration]
 

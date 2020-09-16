@@ -93,6 +93,7 @@ open class Snapshot: NSObject {
             app.launchArguments += ["-AppleLanguages", "(\(deviceLanguage))"]
         } catch {
             NSLog("Couldn't detect/set language...")
+			app.launchArguments += ["-AppleLanguages", "(de)"]
         }
     }
 
@@ -116,8 +117,10 @@ open class Snapshot: NSObject {
         }
 
         if !locale.isEmpty {
-            app.launchArguments += ["-AppleLocale", "\"\(locale)\""]
-        }
+            app.launchArguments += ["-AppleLocale", "\(locale)"]
+		} else {
+			app.launchArguments += ["-AppleLocale", "de_DE"]
+		}
     }
 
     class func setLaunchArguments(_ app: XCUIApplication) {

@@ -28,9 +28,6 @@ class ENAUITests_01_Home: XCTestCase {
 		setupSnapshot(app)
 		app.setDefaults()
 		app.launchArguments.append(contentsOf: ["-isOnboarded", "YES"])
-		app.launchArguments += ["-AppleLanguages", "(de)"]
-		app.launchArguments += ["-AppleLocale", "de_DE"]
-
 	}
 
 	override func tearDownWithError() throws {
@@ -43,14 +40,16 @@ class ENAUITests_01_Home: XCTestCase {
 
 		// only run if home screen is present
 		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
+		snapshot("ScreenShot_\(#function)_001")
 
+		app.swipeUp()
 		app.swipeUp()
 		// assert cells
 		XCTAssert(app.cells["AppStrings.Home.infoCardShareTitle"].waitForExistence(timeout: 5.0))
 		XCTAssert(app.cells["AppStrings.Home.infoCardAboutTitle"].waitForExistence(timeout: 5.0))
 		XCTAssert(app.cells["AppStrings.Home.appInformationCardTitle"].waitForExistence(timeout: 5.0))
 		XCTAssert(app.cells["AppStrings.Home.settingsCardTitle"].waitForExistence(timeout: 5.0))
-		//snapshot("ScreenShot_\(#function)")
+		snapshot("ScreenShot_\(#function)_002")
 	}
 
 	func test_0011_HomeFlow_extrasmall() throws {
@@ -60,6 +59,7 @@ class ENAUITests_01_Home: XCTestCase {
 		// only run if home screen is present
 		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
 
+		app.swipeUp()
 		app.swipeUp()
 		// assert cells
 		XCTAssert(app.cells["AppStrings.Home.infoCardShareTitle"].waitForExistence(timeout: 5.0))

@@ -15,7 +15,7 @@
 // specific language governing permissions and limitations
 // under the License.
 
-#if !RELEASE
+#if DEVELOPER_MENU || DEBUG
 
 import ExposureNotification
 import UIKit
@@ -122,6 +122,9 @@ final class DMSubmissionStateViewController: UITableViewController {
 				preferredStyle: .actionSheet
 			)
 			self.present(resultAlert, animated: true, completion: nil)
+			DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+				resultAlert.dismiss(animated: true)
+			}
 		}
 	}
 }

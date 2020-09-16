@@ -1,6 +1,8 @@
 //
 // Corona-Warn-App
 //
+// Modified by Devside SRL
+//
 // SAP SE and all other contributors
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
@@ -45,6 +47,22 @@ final class RiskTests: XCTestCase {
 	func testGetNumberOfDaysActiveTracing_FourteenDaysExact() {
 		let details = mockDetails(activeTracing: .init(interval: .init(hours: 14 * 24)))
 		XCTAssertEqual(details.numberOfDaysWithActiveTracing, 14)
+	}
+	
+	func testDaysSinceLastExposure() {
+		let risk = Risk(
+			level: .increased,
+			details: Risk.Details(
+				daysSinceLastExposure: 0,
+				numberOfExposures: 1,
+				activeTracing: .init(interval: 336 * 3600),
+				exposureDetectionDate: Date().addingTimeInterval( -48 * 60 * 60 )
+			),
+			riskLevelHasChanged: true
+		)
+
+		XCTAssertEqual(risk.details.daysSinceLastExposure, 0)
+		XCTAssertEqual(risk.details.calendarDaysSinceLastExposure, 2)
 	}
 }
 

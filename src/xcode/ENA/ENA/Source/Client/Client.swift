@@ -1,6 +1,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -97,6 +100,25 @@ protocol Client {
 	func submit(
 		keys: [ENTemporaryExposureKey],
 		tan: String,
+		completion: @escaping SubmitKeysCompletionHandler
+	)
+	
+	// :BE:
+	typealias InfectionSummaryHandler = (Result<BEInfectionSummary, Failure>) -> Void
+
+	/// Stats
+	func getInfectionSummary(completion: @escaping InfectionSummaryHandler)
+
+	/// Acknowledge we downloaded a test result
+	func ackTestDownload(forDevice registrationToken: String, completionBlock: @escaping(() -> Void))
+	
+	/// Send keys to backend including countries
+	func submit(
+		keys: [ENTemporaryExposureKey],
+		countries: [BECountry],
+		mobileTestId: BEMobileTestId?,
+		testResult: TestResult?,
+		isFake: Bool,
 		completion: @escaping SubmitKeysCompletionHandler
 	)
 }

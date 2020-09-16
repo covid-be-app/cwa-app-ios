@@ -2,6 +2,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -20,19 +23,11 @@
 import Foundation
 @testable import ENA
 
+// :BE: adapt mock to new delegate
 class MockExposureDetectionViewControllerDelegate: ExposureDetectionViewControllerDelegate {
-	func exposureDetectionViewController(
-		_ controller: ExposureDetectionViewController,
-		setExposureManagerEnabled enabled: Bool,
-		completionHandler completion: @escaping (ExposureNotificationError?) -> Void) {
-		completion(nil)
-	}
-
-	func didStartLoading(exposureDetectionViewController: ExposureDetectionViewController) {
-		return
-	}
-
-	func didFinishLoading(exposureDetectionViewController: ExposureDetectionViewController) {
-		return
+	func exposureDetectionViewControllerShowExposureNotificationSettings(
+		viewController: ExposureDetectionViewController,
+		state: ENStateHandler.State) {
+		
 	}
 }

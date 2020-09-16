@@ -21,6 +21,22 @@ import Foundation
 import CryptoKit
 
 struct BEMobileTestId {
+	
+	static let fakeId = "000000000000000"
+	static let fakeDatePatientInfectious = "2020-01-01"
+	
+	static var fakeRegistrationToken:String {
+		get {
+			return "\(fakeId)|\(fakeDatePatientInfectious)"
+		}
+	}
+	
+	static var random:BEMobileTestId {
+		get {
+			return BEMobileTestId(datePatientInfectious: String.fromDateWithoutTime(date: Date()))
+		}
+	}
+	
 	// R1. This is a string because it can start with 0. 15 digits
 	let id:String
 	
@@ -31,20 +47,19 @@ struct BEMobileTestId {
 	// Components used to calculate mobile test id
 	let randomString:String				// R0
 	let secretKey:SymmetricKey			// K
-	let datePatientInfectious:String    // t0
+	let datePatientInfectious:BEDateString    // t0
 	
 	let creationDate:Date
 
 	var fullString:String {
-		let stringToSplit = "\(datePatientInfectious.compactDateNumber)\(id)\(checksum)"
+		let stringToSplit = "\(id)\(checksum)"
 		let part1 = stringToSplit[0...4]
 		let part2 = stringToSplit[4...8]
 		let part3 = stringToSplit[8...12]
 		let part4 = stringToSplit[12...16]
-		let part5 = stringToSplit[16...20]
-		let part6 = stringToSplit[20...23]
+		let part5 = stringToSplit[16...17]
 
-		return "\(part1)-\(part2)-\(part3)-\(part4)-\(part5)-\(part6)"
+		return "\(part1)-\(part2)-\(part3)-\(part4)-\(part5)"
 	}
 	
 	// the string used as registrationToken in the networking calls to fetch the test result
@@ -65,7 +80,7 @@ struct BEMobileTestId {
 	}
 
 	// this is the t0 date, in YYYY-MM-DD format
-	init(datePatientInfectious:String) {
+	init(datePatientInfectious:BEDateString) {
 		#if DEBUG
 			if datePatientInfectious.dateWithoutTime == nil {
 				preconditionFailure("Wrong format")
@@ -90,7 +105,7 @@ struct BEMobileTestId {
 		randomString = localRandomString
 		secretKey = localSecretKey
 		
-		let valueToCalculateChecksumOn = Decimal(string:"\(datePatientInfectious.compactDateNumber)\(id)")!
+		let valueToCalculateChecksumOn = Decimal(string:"\(datePatientInfectious.compactDateInt)\(id)")!
 		checksum = String.init(format:"%02d",Self.calculateCheckDigits(R1:valueToCalculateChecksumOn))
 		
 		creationDate = Date()
@@ -149,7 +164,12 @@ extension BEMobileTestId : Codable {
 }
 
 extension BEMobileTestId {
-	static func calculateDatePatientInfectious(symptomsStartDate:Date? = nil) -> Date {
+	static func generate(_ symptomsStartDate: Date? = nil) -> BEMobileTestId {
+		let datePatientInfectious = calculateDatePatientInfectious(symptomsStartDate: symptomsStartDate)
+		return BEMobileTestId(datePatientInfectious: String.fromDateWithoutTime(date:datePatientInfectious))
+	}
+
+	static private func calculateDatePatientInfectious(symptomsStartDate:Date?) -> Date {
 		
 		if let startDate = symptomsStartDate {
 			return Calendar.current.date(byAdding: .day, value: -2, to: startDate)!

@@ -1,6 +1,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -19,6 +22,8 @@ import ExposureNotification
 import Foundation
 import UIKit
 
+// :BE: lots of modifications to make it work in a navigationcontroller stack
+
 final class ExposureDetectionViewController: DynamicTableViewController, RequiresAppDependencies {
 	// MARK: - Properties.
 
@@ -26,10 +31,6 @@ final class ExposureDetectionViewController: DynamicTableViewController, Require
 
 	// MARK: - IB Outlets.
 
-	@IBOutlet var closeButton: UIButton!
-	@IBOutlet var headerView: UIView!
-	@IBOutlet var titleViewBottomConstraint: NSLayoutConstraint!
-	@IBOutlet var titleLabel: UILabel!
 	@IBOutlet var footerView: UIView!
 	@IBOutlet var checkButton: ENAButton!
 
@@ -68,13 +69,6 @@ extension ExposureDetectionViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		titleLabel.accessibilityTraits = .header
-
-		closeButton.isAccessibilityElement = true
-		closeButton.accessibilityTraits = .button
-		closeButton.accessibilityLabel = AppStrings.AccessibilityLabel.close
-		closeButton.accessibilityIdentifier = AccessibilityIdentifiers.AccessibilityLabel.close
-
 		consumer.didCalculateRisk = { [weak self] risk in
 			self?.state.risk = risk
 			self?.updateUI()
@@ -84,6 +78,7 @@ extension ExposureDetectionViewController {
 		}
 
 		riskProvider.observeRisk(consumer)
+		
 		updateUI()
 	}
 
@@ -121,18 +116,6 @@ extension ExposureDetectionViewController {
 	}
 }
 
-extension ExposureDetectionViewController {
-	func scrollViewDidScroll(_ scrollView: UIScrollView) {
-		let offset = scrollView.contentOffset.y
-
-		if offset > 0 {
-			titleViewBottomConstraint.constant = 0
-		} else {
-			titleViewBottomConstraint.constant = -offset
-		}
-	}
-}
-
 private extension ExposureDetectionViewController {
 	@IBAction private func tappedClose() {
 		dismiss(animated: true)
@@ -140,11 +123,10 @@ private extension ExposureDetectionViewController {
 
 	@IBAction private func tappedBottomButton() {
 		guard state.isTracingEnabled else {
-			delegate?.exposureDetectionViewController(self, setExposureManagerEnabled: true) { error in
-				if let error = error {
-					self.alertError(message: error.localizedDescription, title: AppStrings.Common.alertTitleGeneral)
-				}
-			}
+			let enManagerState = state.exposureManagerState
+			let state = ENStateHandler.State.determineCurrentState(from: enManagerState)
+			
+			delegate?.exposureDetectionViewControllerShowExposureNotificationSettings(viewController: self, state: state)
 			return
 		}
 		riskProvider.requestRisk(userInitiated: true)
@@ -162,7 +144,6 @@ extension ExposureDetectionViewController {
 	func updateUI() {
 		dynamicTableViewModel = dynamicTableViewModel(for: state.riskLevel, isTracingEnabled: state.isTracingEnabled)
 
-		updateCloseButton()
 		updateHeader()
 		updateTableView()
 		updateCheckButton()
@@ -170,20 +151,9 @@ extension ExposureDetectionViewController {
 		view.setNeedsLayout()
 	}
 
-	private func updateCloseButton() {
-		if state.isTracingEnabled && state.riskLevel != .unknownOutdated && state.riskLevel != .inactive {
-			closeButton.setImage(UIImage(named: "Icons - Close - Contrast"), for: .normal)
-			closeButton.setImage(UIImage(named: "Icons - Close - Tap - Contrast"), for: .highlighted)
-		} else {
-			closeButton.setImage(UIImage(named: "Icons - Close"), for: .normal)
-			closeButton.setImage(UIImage(named: "Icons - Close - Tap"), for: .highlighted)
-		}
-	}
-
 	private func updateHeader() {
-		headerView.backgroundColor = state.riskTintColor
-		titleLabel.text = state.riskText
-		titleLabel.textColor = state.riskContrastColor
+		navigationItem.title = state.riskText
+		navigationItem.largeTitleDisplayMode = .always
 	}
 
 	private func updateTableView() {
@@ -265,7 +235,8 @@ extension ExposureDetectionViewController {
 extension ExposureDetectionViewController: CountdownTimerDelegate {
 
 	func countdownTimer(_ timer: CountdownTimer, didUpdate time: String) {
-		self.updateCheckButton(time)
+		// :BE: only show hours
+		self.updateCheckButton("\(timer.hourCeil)")
 	}
 
 	func countdownTimer(_ timer: CountdownTimer, didEnd done: Bool) {

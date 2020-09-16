@@ -2,6 +2,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -173,7 +176,7 @@ final class SecureStore: Store {
 	}
 
 	var hourlyFetchingEnabled: Bool {
-		get { kvStore["hourlyFetchingEnabled"] as Bool? ?? false }
+		get { kvStore["hourlyFetchingEnabled"] as Bool? ?? true }
 		set { kvStore["hourlyFetchingEnabled"] = newValue }
 	}
 
@@ -187,9 +190,20 @@ final class SecureStore: Store {
 		set { kvStore["previousRiskLevel"] = newValue?.rawValue }
 	}
 
+	// :BE: disable this popup
 	var userNeedsToBeInformedAboutHowRiskDetectionWorks: Bool {
-		get { kvStore["userNeedsToBeInformedAboutHowRiskDetectionWorks"] as Bool? ?? true }
+		get { kvStore["userNeedsToBeInformedAboutHowRiskDetectionWorks"] as Bool? ?? false }
 		set { kvStore["userNeedsToBeInformedAboutHowRiskDetectionWorks"] = newValue }
+	}
+	
+	var infectionSummary: BEInfectionSummary? {
+		get { kvStore["infectionSummary"] as BEInfectionSummary? }
+		set { kvStore["infectionSummary"] = newValue }
+	}
+	
+	var infectionSummaryUpdatedAt: Date? {
+		get { kvStore["infectionSummaryUpdatedAt"] as Date? }
+		set { kvStore["infectionSummaryUpdatedAt"] = newValue }
 	}
 }
 

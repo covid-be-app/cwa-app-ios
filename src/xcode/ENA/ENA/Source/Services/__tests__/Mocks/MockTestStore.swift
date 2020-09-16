@@ -1,6 +1,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -19,6 +22,9 @@ import Foundation
 @testable import ENA
 
 final class MockTestStore: Store {
+	var isAllowedToPerformBackgroundFakeRequests = false
+	var firstPlaybookExecution: Date?
+	var lastBackgroundFakeRequest: Date = .init()
 	var hasSeenBackgroundFetchAlert: Bool = false
 	var previousRiskLevel: EitherLowOrIncreasedRiskLevel?
 	var summary: SummaryMetadata?
@@ -53,4 +59,11 @@ final class MockTestStore: Store {
 	// :BE: added properties
 	var mobileTestId: BEMobileTestId?
 	var testResult: TestResult?
+	var deleteMobileTestIdAfterTimeInterval: TimeInterval = 600
+	var isDoingFakeRequests: Bool = false
+	var fakeRequestAmountOfTestResultFetchesToDo: Int = 3
+	var fakeRequestTestResultFetchIndex: Int = 0
+	var infectionSummary: BEInfectionSummary?
+	var infectionSummaryUpdatedAt: Date?
+
 }

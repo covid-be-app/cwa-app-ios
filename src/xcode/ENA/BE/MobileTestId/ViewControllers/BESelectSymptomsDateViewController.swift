@@ -43,6 +43,7 @@ class BESelectSymptomsDateViewController: UIViewController, ENANavigationControl
         // Do any additional setup after loading the view.
 		navigationFooterItem?.primaryButtonTitle = BEAppStrings.BESelectSymptomsDate.next
 		navigationFooterItem?.isPrimaryButtonEnabled = true
+		navigationFooterItem?.isSecondaryButtonHidden = true
 		navigationItem.title = BEAppStrings.BESelectSymptomsDate.selectDateTitle
 
 		enterDateExplanationLabel.text = BEAppStrings.BESelectSymptomsDate.dateExplanation

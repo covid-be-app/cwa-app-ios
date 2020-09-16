@@ -104,6 +104,12 @@ class BESelectKeyCountriesViewController: DynamicTableViewController, ENANavigat
 		footerItem.isPrimaryButtonEnabled = true
     }
 	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		footerView?.primaryButton.accessibilityIdentifier = BEAccessibilityIdentifiers.BESelectKeyCountries.shareIds
+	}
+	
 	private func selectCountry(forKeyAtIndex index:Int) {
 		editedKeyIndex = index
 		let key = exposureKeys[index]

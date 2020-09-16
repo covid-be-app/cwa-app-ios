@@ -27,11 +27,7 @@ final class BEHTTPClientSubmitTests: XCTestCase {
 	let expectationsTimeout: TimeInterval = 2
 
 	private var keys: [ENTemporaryExposureKey] {
-		let key = ENTemporaryExposureKey()
-		key.keyData = Data(bytes: [1, 2, 3], count: 3)
-		key.rollingPeriod = 1337
-		key.rollingStartNumber = 42
-		key.transmissionRiskLevel = 8
+		let key = ENTemporaryExposureKey.random(Date())
 
 		return [key]
 	}
@@ -52,11 +48,16 @@ final class BEHTTPClientSubmitTests: XCTestCase {
 			// cannot be nil since this is not a a completion handler can be in (response + nil body)
 			responseData: Data()
 		)
-
+		let result = TestResult.positive
 		let expectation = self.expectation(description: "completion handler is called without an error")
 
 		// Act
-		BEHTTPClient.makeWith(mock: stack).submit(keys: keys, countries: countries, mobileTestId: mobileTestId, dateTestCommunicated:dateTestCommunicated) { error in
+		HTTPClient.makeWith(mock: stack).submit(
+			keys: keys,
+			countries: countries,
+			mobileTestId: mobileTestId,
+			testResult: result,
+			isFake: false) { error in
 			defer { expectation.fulfill() }
 			XCTAssertTrue(error == nil)
 		}
@@ -74,11 +75,16 @@ final class BEHTTPClientSubmitTests: XCTestCase {
 				error: TestError.error
 			)
 		)
-
+		let testResult = TestResult.positive
 		let expectation = self.expectation(description: AppStrings.ExposureSubmission.generalErrorTitle)
 
 		// Act
-		HTTPClient.makeWith(mock: stack).submit(keys: keys, countries: countries, mobileTestId: mobileTestId, dateTestCommunicated:dateTestCommunicated) {
+		HTTPClient.makeWith(mock: stack).submit(
+			keys: keys,
+			countries: countries,
+			mobileTestId: mobileTestId,
+			testResult: testResult,
+			isFake: false) {
 			error = $0
 			expectation.fulfill()
 		}
@@ -98,10 +104,16 @@ final class BEHTTPClientSubmitTests: XCTestCase {
 				error: TestError.error
 			)
 		)
+		let testResult = TestResult.positive
 		let expectation = self.expectation(description: "SpecificError")
 
 		// Act
-		HTTPClient.makeWith(mock: stack).submit(keys: keys, countries: countries, mobileTestId: mobileTestId, dateTestCommunicated:dateTestCommunicated) { error in
+		HTTPClient.makeWith(mock: stack).submit(
+			keys: keys,
+			countries: countries,
+			mobileTestId: mobileTestId,
+			testResult: testResult,
+			isFake: false) { error in
 			defer {
 				expectation.fulfill()
 			}
@@ -126,10 +138,16 @@ final class BEHTTPClientSubmitTests: XCTestCase {
 		let stack = MockNetworkStack(
 			mockSession: mockURLSession
 		)
+		let testResult = TestResult.positive
 		let expectation = self.expectation(description: "ResponseNil")
 
 		// Act
-		HTTPClient.makeWith(mock: stack).submit(keys: keys, countries: countries, mobileTestId: mobileTestId, dateTestCommunicated:dateTestCommunicated) { error in
+		HTTPClient.makeWith(mock: stack).submit(
+			keys: keys,
+			countries: countries,
+			mobileTestId: mobileTestId,
+			testResult: testResult,
+			isFake: false) { error in
 			defer {
 				expectation.fulfill()
 			}
@@ -152,11 +170,16 @@ final class BEHTTPClientSubmitTests: XCTestCase {
 			httpStatus: 400,
 			responseData: Data()
 		)
-
+		let testResult = TestResult.positive
 		let expectation = self.expectation(description: "Response400")
 
 		// Act
-		HTTPClient.makeWith(mock: stack).submit(keys: keys, countries: countries, mobileTestId: mobileTestId, dateTestCommunicated:dateTestCommunicated) { error in
+		HTTPClient.makeWith(mock: stack).submit(
+			keys: keys,
+			countries: countries,
+			mobileTestId: mobileTestId,
+			testResult: testResult,
+			isFake: false) { error in
 			defer { expectation.fulfill() }
 			guard let error = error else {
 				XCTFail("error expected")
@@ -177,11 +200,16 @@ final class BEHTTPClientSubmitTests: XCTestCase {
 			httpStatus: 403,
 			responseData: Data()
 		)
-
+		let testResult = TestResult.positive
 		let expectation = self.expectation(description: "Response403")
 
 		// Act
-		HTTPClient.makeWith(mock: stack).submit(keys: keys, countries: countries, mobileTestId: mobileTestId, dateTestCommunicated:dateTestCommunicated) { error in
+		HTTPClient.makeWith(mock: stack).submit(
+			keys: keys,
+			countries: countries,
+			mobileTestId: mobileTestId,
+			testResult: testResult,
+			isFake: false) { error in
 			defer { expectation.fulfill() }
 			guard let error = error else {
 				XCTFail("error expected")

@@ -28,8 +28,6 @@ class ENAUITests_00_Onboarding: XCTestCase {
 		setupSnapshot(app)
 		app.setDefaults()
 		app.launchArguments.append(contentsOf: ["-isOnboarded", "NO"])
-		app.launchArguments += ["-AppleLanguages", "(de)"]
-		app.launchArguments += ["-AppleLocale", "de_DE"]
 	}
 
 	override func tearDownWithError() throws {
@@ -72,19 +70,19 @@ class ENAUITests_00_Onboarding: XCTestCase {
 		XCTAssert(app.staticTexts["AppStrings.Onboarding.onboardingInfo_togetherAgainstCoronaPage_title"].waitForExistence(timeout: 5.0))
 
 		// tap through the onboarding screens
-		//snapshot("ScreenShot_\(#function)_0000")
+		snapshot("ScreenShot_\(#function)_0000")
 		XCTAssertTrue(app.buttons["AppStrings.Onboarding.onboardingLetsGo"].waitForExistence(timeout: 5.0))
 		app.buttons["AppStrings.Onboarding.onboardingLetsGo"].tap()
-		//snapshot("ScreenShot_\(#function)_0001")
+		snapshot("ScreenShot_\(#function)_0001")
 		XCTAssertTrue(app.buttons["AppStrings.Onboarding.onboardingContinue"].waitForExistence(timeout: 5.0))
 		app.buttons["AppStrings.Onboarding.onboardingContinue"].tap()
-		//snapshot("ScreenShot_\(#function)_0002")
+		snapshot("ScreenShot_\(#function)_0002")
 		XCTAssertTrue(app.buttons["AppStrings.Onboarding.onboardingInfo_enableLoggingOfContactsPage_button"].waitForExistence(timeout: 5.0))
 		app.buttons["AppStrings.Onboarding.onboardingInfo_enableLoggingOfContactsPage_button"].tap()
-		//snapshot("ScreenShot_\(#function)_0003")
+		snapshot("ScreenShot_\(#function)_0003")
 		XCTAssertTrue(app.buttons["AppStrings.Onboarding.onboardingContinue"].waitForExistence(timeout: 5.0))
 		app.buttons["AppStrings.Onboarding.onboardingContinue"].tap()
-		//snapshot("ScreenShot_\(#function)_0004")
+		snapshot("ScreenShot_\(#function)_0004")
 		XCTAssertTrue(app.buttons["AppStrings.Onboarding.onboardingContinue"].waitForExistence(timeout: 5.0))
 		app.buttons["AppStrings.Onboarding.onboardingContinue"].tap()
 

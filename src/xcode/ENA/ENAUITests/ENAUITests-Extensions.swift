@@ -1,6 +1,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -77,13 +80,7 @@ extension XCUIApplication {
 		let range = start..<end
 
 		let locale = str[range]
-		
-		// :BE: remove base
-		/*
-		if locale == "en" {
-			return "en"
-		}*/
-		
+
 		return String(locale)
 	}
 

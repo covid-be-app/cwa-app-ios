@@ -2,6 +2,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -63,7 +66,8 @@ class Coordinator: RequiresAppDependencies {
 		enStateUpdateList.removeAllObjects()
 	}
 
-	func showHome(enStateHandler: ENStateHandler, state: SceneDelegate.State) {
+	// :BE: add stats
+	func showHome(enStateHandler: ENStateHandler, state: SceneDelegate.State, statisticsService: BEStatisticsService) {
 		let homeController = AppStoryboard.home.initiate(viewControllerType: HomeViewController.self) { [unowned self] coder in
 			HomeViewController(
 				coder: coder,
@@ -72,7 +76,8 @@ class Coordinator: RequiresAppDependencies {
 				exposureManagerState: state.exposureManager,
 				initialEnState: enStateHandler.state,
 				risk: state.risk,
-				exposureSubmissionService: self.exposureSubmissionService
+				exposureSubmissionService: self.exposureSubmissionService,
+				statisticsService: statisticsService
 			)
 		}
 
@@ -82,8 +87,8 @@ class Coordinator: RequiresAppDependencies {
 			self.rootViewController.setViewControllers([homeController], animated: false)
 		})
 
-		#if !RELEASE
-		enableDeveloperMenuIfAllowed(in: homeController)
+		#if DEVELOPER_MENU || DEBUG
+			enableDeveloperMenuIfAllowed(in: homeController)
 		#endif
 	}
 
@@ -108,7 +113,8 @@ class Coordinator: RequiresAppDependencies {
 		homeController?.updateState(detectionMode: detectionMode, exposureManagerState: exposureManagerState, risk: risk)
 	}
 
-	#if !RELEASE
+	#if DEVELOPER_MENU || DEBUG
+	
 	private var developerMenu: DMDeveloperMenu?
 	private func enableDeveloperMenuIfAllowed(in controller: UIViewController) {
 		developerMenu = DMDeveloperMenu(
@@ -119,6 +125,7 @@ class Coordinator: RequiresAppDependencies {
 		)
 		developerMenu?.enableIfAllowed()
 	}
+	
 	#endif
 
 	private func setExposureManagerEnabled(_ enabled: Bool, then completion: @escaping (ExposureNotificationError?) -> Void) {
@@ -168,7 +175,9 @@ extension Coordinator: HomeViewControllerDelegate {
 			)
 		}
 		exposureDetectionController = vc as? ExposureDetectionViewController
-		rootViewController.present(vc, animated: true)
+		
+		// :BE: pushed on stack instead of modal
+		rootViewController.pushViewController(vc, animated: true)
 	}
 
 	func setExposureDetectionState(state: HomeInteractor.State, isRequestRiskRunning: Bool) {
@@ -244,12 +253,12 @@ extension Coordinator: ExposureNotificationSettingViewControllerDelegate {
 }
 
 extension Coordinator: ExposureDetectionViewControllerDelegate {
-	func exposureDetectionViewController(
-		_: ExposureDetectionViewController,
-		setExposureManagerEnabled enabled: Bool,
-		completionHandler completion: @escaping (ExposureNotificationError?) -> Void
-	) {
-		setExposureManagerEnabled(enabled, then: completion)
+	
+	// :BE: new protocol
+	func exposureDetectionViewControllerShowExposureNotificationSettings(
+		viewController: ExposureDetectionViewController,
+		state: ENStateHandler.State) {
+		showExposureNotificationSetting(enState: state)
 	}
 }
 

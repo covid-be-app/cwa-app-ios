@@ -1,6 +1,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -35,7 +38,7 @@ extension ExposureDetectionViewController {
 		var actualRiskText: String { riskLevel.text }
 
 		var riskText: String {
-			 isTracingEnabled ? riskLevel.text : AppStrings.ExposureDetection.off
+			 isTracingEnabled ? riskLevel.text : BEAppStrings.BEExposureDetection.offShort
 		}
 
 		var riskTintColor: UIColor {
@@ -53,7 +56,7 @@ private extension RiskLevel {
 		switch self {
 		case .unknownInitial: return AppStrings.ExposureDetection.unknown
 		case .unknownOutdated: return AppStrings.ExposureDetection.outdated
-		case .inactive: return AppStrings.ExposureDetection.off
+		case .inactive: return BEAppStrings.BEExposureDetection.offShort  // :BE: shorten title
 		case .low: return AppStrings.ExposureDetection.low
 		case .increased: return AppStrings.ExposureDetection.high
 		}

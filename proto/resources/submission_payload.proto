@@ -7,4 +7,5 @@ message SubmissionPayload {
   repeated SAP.TemporaryExposureKey keys = 1;
   // The ISO 3166 3 letter country code for each key
   repeated string countries = 2;
+  optional bytes padding = 3;
 }

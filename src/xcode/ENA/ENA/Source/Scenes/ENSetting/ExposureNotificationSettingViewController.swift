@@ -33,7 +33,6 @@ final class ExposureNotificationSettingViewController: UITableViewController {
 
 	private var lastActionCell: ActionCell?
 
-	// :BE: remove description cell
 	let model = ENSettingModel(content: [.banner, .actionCell, .actionDetailCell])
 	let store: Store
 	var enState: ENStateHandler.State
@@ -85,7 +84,6 @@ extension ExposureNotificationSettingViewController {
 	}
 
 	private func handleEnableError(_ error: ExposureNotificationError, alert: Bool) {
-		let faqAction = UIAlertAction(title: AppStrings.ExposureNotificationError.learnMoreActionTitle, style: .default, handler: { _ in LinkHelper.showWebPage(from: self, urlString: AppStrings.ExposureNotificationError.learnMoreURL) })
 		var errorMessage = ""
 		switch error {
 		case .exposureNotificationAuthorization:
@@ -100,7 +98,7 @@ extension ExposureNotificationSettingViewController {
 			errorMessage = AppStrings.ExposureNotificationError.apiMisuse
 		}
 		if alert {
-			alertError(message: errorMessage, title: AppStrings.ExposureNotificationError.generalErrorTitle, optInActions: [faqAction])
+			alertError(message: errorMessage, title: AppStrings.ExposureNotificationError.generalErrorTitle)
 		}
 		logError(message: error.localizedDescription + " with message: " + errorMessage, level: .error)
 		if let mySceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate {
@@ -126,26 +124,9 @@ extension ExposureNotificationSettingViewController {
 	}
 
 	private func askConsentToUser() {
-		let alert = UIAlertController(
-			title: AppStrings.Onboarding.onboardingInfo_enableLoggingOfContactsPage_panelTitle,
-			message: AppStrings.Onboarding.onboardingInfo_enableLoggingOfContactsPage_panelBody,
-			preferredStyle: .alert
-		)
-		let completionHandler: (UIAlertAction) -> Void = { action in
-			switch action.style {
-			case .default:
-				self.persistForDPP(accepted: true)
-				self.setExposureManagerEnabled(true, then: self.silentErrorIfNeed)
-			case .cancel, .destructive:
-				self.lastActionCell?.configure(for: self.enState, delegate: self)
-				self.tableView.reloadData()
-			@unknown default:
-				fatalError("Not all cases of actions covered when handling the bluetooth")
-			}
-		}
-		alert.addAction(UIAlertAction(title: AppStrings.ExposureNotificationSetting.privacyConsentActivateAction, style: .default, handler: { action in completionHandler(action) }))
-		alert.addAction(UIAlertAction(title: AppStrings.ExposureNotificationSetting.privacyConsentDismissAction, style: .cancel, handler: { action in completionHandler(action) }))
-		self.present(alert, animated: true, completion: nil)
+		self.persistForDPP(accepted: true)
+		self.setExposureManagerEnabled(true, then: self.silentErrorIfNeed)
+		
 	}
 
 	func persistForDPP(accepted: Bool) {

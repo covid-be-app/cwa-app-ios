@@ -1,6 +1,8 @@
 //
 // Corona-Warn-App
 //
+// Modified by Devside SRL
+//
 // SAP SE and all other contributors
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
@@ -33,15 +35,42 @@ extension Risk {
 		var activeTracing: ActiveTracing
 		var numberOfDaysWithActiveTracing: Int { activeTracing.inDays }
 		var exposureDetectionDate: Date?
+
+		// :BE: get the correct number of days, taking into account when exposure was last calculated
+		var calendarDaysSinceLastExposure: Int? {
+			if  var daysSinceLastExposure = daysSinceLastExposure,
+				let date = exposureDetectionDate {
+				let calendar = Calendar.current
+				let exposureDetectionDate = calendar.startOfDay(for: date)
+				let today = calendar.startOfDay(for: Date())
+				let components = calendar.dateComponents([.day], from: exposureDetectionDate, to: today)
+				
+				if let days = components.day {
+					daysSinceLastExposure += days
+				}
+
+				return daysSinceLastExposure
+			}
+			
+			return nil
+		}
 	}
 }
 
 #if UITESTING
 extension Risk {
-	static let mocked = Risk(
+	static let mockedLow = Risk(
 		level: .low,
 		details: Risk.Details(
 			numberOfExposures: 0,
+			activeTracing: .init(interval: 336 * 3600),  // two weeks
+			exposureDetectionDate: Date()),
+		riskLevelHasChanged: true
+	)
+	static let mockedIncreased = Risk(
+		level: .increased,
+		details: Risk.Details(
+			numberOfExposures: 1,
 			activeTracing: .init(interval: 336 * 3600),  // two weeks
 			exposureDetectionDate: Date()),
 		riskLevelHasChanged: true

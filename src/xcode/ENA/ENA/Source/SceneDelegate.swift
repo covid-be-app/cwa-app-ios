@@ -1,6 +1,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -40,6 +43,11 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate, RequiresAppDepend
 
 	private var enStateHandler: ENStateHandler?
 
+	// :BE: stats
+	private lazy var statisticsService: BEStatisticsService = {
+		return BEStatisticsService(client: self.client, store: self.store)
+	}()
+
 	// MARK: UISceneDelegate
 
 	private let riskConsumer = RiskConsumer()
@@ -55,6 +63,8 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate, RequiresAppDepend
 		if let isOnboarded = UserDefaults.standard.value(forKey: "isOnboarded") as? String {
 			store.isOnboarded = (isOnboarded != "NO")
 		}
+		store.userNeedsToBeInformedAboutHowRiskDetectionWorks = false
+		
 		#endif
 
 		exposureManager.resume(observer: self)
@@ -81,6 +91,9 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate, RequiresAppDepend
 		let state = exposureManager.preconditions()
 		updateExposureState(state)
 		appUpdateChecker.checkAppVersionDialog(for: window?.rootViewController)
+		
+		// :BE: get stats, ignore errors and result
+		statisticsService.getInfectionSummary { _ in }
 	}
 
 	func sceneDidEnterBackground(_ scene: UIScene) {
@@ -154,7 +167,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate, RequiresAppDepend
 			fatalError("It should not happen.")
 		}
 
-		coordinator.showHome(enStateHandler: enStateHandler, state: state)
+		coordinator.showHome(enStateHandler: enStateHandler, state: state, statisticsService: self.statisticsService)
 	}
 
 	private func showOnboarding() {
@@ -164,6 +177,9 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate, RequiresAppDepend
 	@objc
 	func isOnboardedDidChange(_: NSNotification) {
 		store.isOnboarded ? showHome() : showOnboarding()
+		
+		// :BE: enable fake requests
+		store.isAllowedToPerformBackgroundFakeRequests = store.isOnboarded
 	}
 
 	private var privacyProtectionWindow: UIWindow?

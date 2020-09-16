@@ -44,7 +44,6 @@ protocol ExposureSubmissionCoordinating: class {
 	func showTestResultScreen(with result: TestResult)
 	func showHotlineScreen()
 	func showTanScreen()
-	func showQRScreen(qrScannerDelegate: ExposureSubmissionQRScannerDelegate)
 	func showWarnOthersScreen()
 	func showThankYouScreen()
 }
@@ -158,11 +157,6 @@ extension ExposureSubmissionCoordinator {
 		push(vc)
 	}
 
-	func showQRScreen(qrScannerDelegate: ExposureSubmissionQRScannerDelegate) {
-		let vc = createQRScannerViewController(qrScannerDelegate: qrScannerDelegate)
-		present(vc)
-	}
-
 	func showWarnOthersScreen() {
 		let vc = createWarnOthersViewController()
 		push(vc)
@@ -217,14 +211,6 @@ extension ExposureSubmissionCoordinator {
 				exposureSubmissionService: self.exposureSubmissionService,
 				testResult: result
 			)
-		}
-	}
-
-	private func createQRScannerViewController(qrScannerDelegate: ExposureSubmissionQRScannerDelegate) -> ExposureSubmissionQRScannerNavigationController {
-		AppStoryboard.exposureSubmission.initiate(viewControllerType: ExposureSubmissionQRScannerNavigationController.self) { coder -> UIViewController? in
-			let vc = ExposureSubmissionQRScannerNavigationController(coder: coder, coordinator: self, exposureSubmissionService: self.exposureSubmissionService)
-			vc?.scannerViewController?.delegate = qrScannerDelegate
-			return vc
 		}
 	}
 

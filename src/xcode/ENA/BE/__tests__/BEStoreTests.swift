@@ -43,4 +43,12 @@ class BEStoreTests: XCTestCase {
 		let loadedResult = store.testResult!
 		XCTAssertEqual(loadedResult.dateSampleCollected,result.dateSampleCollected)
 	}
+	
+	func testStoreTestIdDeletionTime() throws {
+		let timeInterval:TimeInterval = 300
+		XCTAssertEqual(store.deleteMobileTestIdAfterTimeInterval,14*60*60*24)
+		store.deleteMobileTestIdAfterTimeInterval = timeInterval
+		XCTAssertEqual(store.deleteMobileTestIdAfterTimeInterval,timeInterval)
+
+	}
 }

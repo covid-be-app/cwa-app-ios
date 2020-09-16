@@ -2,6 +2,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -29,7 +32,7 @@ class ExposureSubmissionServiceFactory { }
 
 extension ExposureSubmissionServiceFactory {
 	static func create(diagnosiskeyRetrieval: DiagnosisKeysRetrieval, client: Client, store: Store) -> ExposureSubmissionService {
-		return BEExposureSubmissionService(
+		return BEExposureSubmissionServiceImpl(
 			diagnosiskeyRetrieval: diagnosiskeyRetrieval,
 			client: client,
 			store: store
@@ -49,22 +52,17 @@ extension ExposureSubmissionServiceFactory {
 	static func create(diagnosiskeyRetrieval: DiagnosisKeysRetrieval, client: Client, store: Store) -> ExposureSubmissionService {
 
 		guard isEnabled(.useMock) else {
-			return BEExposureSubmissionService(
+			return BEExposureSubmissionServiceImpl(
 				diagnosiskeyRetrieval: diagnosiskeyRetrieval,
 				client: client,
 				store: store
 			)
 		}
 
-		let service = MockExposureSubmissionService()
+		// :BE: mock BE service
+		let service = BEMockExposureSubmissionService()
 
-		if isEnabled(.getRegistrationTokenSuccess) {
-			service.getRegistrationTokenCallback = { _, completeWith in
-				DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-					completeWith(.success("dummyRegToken"))
-				}
-			}
-		}
+		// :BE: registration token fetching does not exist on our side
 
 		if isEnabled(.submitExposureSuccess) {
 			service.submitExposureCallback = { completeWith in

@@ -1,7 +1,10 @@
 //
 // Corona-Warn-App
 //
-// SAP SE and all other contributors /
+// SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -62,6 +65,10 @@ final class RiskProvider {
 	var exposureManagerState: ExposureManagerState
 	var configuration: RiskProvidingConfiguration
 	private(set) var isLoading: Bool = false
+	
+	#if UITESTING
+		private var riskLevelForTesting = Risk.mockedLow
+	#endif
 }
 
 private extension RiskConsumer {
@@ -104,7 +111,8 @@ extension RiskProvider: RiskProviding {
 		completion: @escaping (Summaries) -> Void
 	) {
 		// Here we are in automatic mode and thus we have to check the validity of the current summary
-		let enoughTimeHasPassed = configuration.shouldPerformExposureDetection(
+		// :BE: force for user initiated
+		let enoughTimeHasPassed = userInitiated || configuration.shouldPerformExposureDetection(
 			activeTracingHours: store.tracingStatusHistory.activeTracing().inHours,
 			lastExposureDetectionDate: store.summary?.date
 		)
@@ -167,11 +175,16 @@ extension RiskProvider: RiskProviding {
 	}
 
 	#if UITESTING
+
+	func setHighRiskForTesting() {
+		riskLevelForTesting = Risk.mockedIncreased
+	}
+
 	private func _requestRiskLevel(userInitiated: Bool, completion: Completion? = nil) {
-		let risk = Risk.mocked
+		let risk = riskLevelForTesting
 
 		targetQueue.async {
-			completion?(.mocked)
+			completion?(self.riskLevelForTesting)
 		}
 
 		for consumer in consumers {
@@ -292,7 +305,7 @@ extension RiskProvider: RiskProviding {
 
 	private func _provideRisk(_ risk: Risk, to consumer: RiskConsumer?) {
 		#if UITESTING
-		consumer?.provideRisk(.mocked)
+		consumer?.provideRisk(riskLevelForTesting)
 		#else
 		consumer?.provideRisk(risk)
 		#endif

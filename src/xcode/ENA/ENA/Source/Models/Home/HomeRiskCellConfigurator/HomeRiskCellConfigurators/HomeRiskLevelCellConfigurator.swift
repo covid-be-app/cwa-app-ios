@@ -106,19 +106,16 @@ class HomeRiskLevelCellConfigurator: HomeRiskCellConfigurator {
 
 		cell.topContainer.isAccessibilityElement = true
 		cell.bodyLabel.isAccessibilityElement = true
-		cell.detectionIntervalLabel.isAccessibilityElement = true
 		cell.updateButton.isAccessibilityElement = true
 
 		cell.topContainer.accessibilityTraits = [.updatesFrequently, .button]
 		cell.bodyLabel.accessibilityTraits = [.updatesFrequently]
-		cell.detectionIntervalLabel.accessibilityTraits = [.updatesFrequently]
 		cell.updateButton.accessibilityTraits = [.updatesFrequently, .button]
 
 		cell.topContainer.accessibilityLabel = cell.titleLabel.text ?? ""
 
 		cell.topContainer.accessibilityIdentifier = AccessibilityIdentifiers.RiskCollectionViewCell.topContainer
 		cell.bodyLabel.accessibilityIdentifier = AccessibilityIdentifiers.RiskCollectionViewCell.bodyLabel
-		cell.detectionIntervalLabel.accessibilityIdentifier = AccessibilityIdentifiers.RiskCollectionViewCell.detectionIntervalLabel
 		cell.updateButton.accessibilityIdentifier = AccessibilityIdentifiers.RiskCollectionViewCell.updateButton
 	}
 

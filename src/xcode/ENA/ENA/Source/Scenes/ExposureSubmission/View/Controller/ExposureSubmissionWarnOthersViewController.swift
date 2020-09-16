@@ -1,6 +1,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -44,11 +47,20 @@ class ExposureSubmissionWarnOthersViewController: DynamicTableViewController, EN
 		super.viewDidLoad()
 		setupView()
 	}
+	
+	// :BE: add acc. identifier to next button
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		self.footerView?.primaryButton.accessibilityIdentifier = BEAccessibilityIdentifiers.BEWarnOthers.next
+	}
 
 	// MARK: Setup helpers.
 
 	private func setupView() {
 		navigationItem.title = AppStrings.ExposureSubmissionWarnOthers.title
+		
+		// :BE: accessibility
+		navigationItem.accessibilityLabel = AppStrings.ExposureSubmissionWarnOthers.title
 		navigationFooterItem?.primaryButtonTitle = AppStrings.ExposureSubmissionWarnOthers.continueButton
 		setupTableView()
 	}
@@ -112,19 +124,8 @@ class ExposureSubmissionWarnOthersViewController: DynamicTableViewController, EN
 	/// Creates an error alert for the EN errors.
 	func createENAlert(_ error: ExposureSubmissionError) -> UIAlertController {
 		return self.setupErrorAlert(
-			message: error.localizedDescription,
-			secondaryActionTitle: AppStrings.Common.errorAlertActionMoreInfo,
-			secondaryActionCompletion: {
-				guard let url = error.faqURL else {
-					logError(message: "Unable to open FAQ page.", level: .error)
-					return
-				}
-
-				UIApplication.shared.open(
-					url,
-					options: [:]
-				)
-		 })
+			message: error.localizedDescription
+		)
 	}
 }
 

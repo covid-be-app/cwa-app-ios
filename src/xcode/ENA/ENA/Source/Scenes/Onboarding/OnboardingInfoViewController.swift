@@ -1,6 +1,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -135,6 +138,15 @@ final class OnboardingInfoViewController: UIViewController {
 	}
 
 	func runIgnoreActionForPageType(completion: @escaping () -> Void) {
+		
+		// :BE: remove notifications when not wanting them
+		if pageType == .alwaysStayInformedPage {
+			store.allowRiskChangesNotification = false
+			store.allowTestsStatusNotification = false
+			completion()
+			return
+		}
+
 		guard pageType == .enableLoggingOfContactsPage, !exposureManager.preconditions().authorized else {
 			completion()
 			return
@@ -181,14 +193,6 @@ final class OnboardingInfoViewController: UIViewController {
 
 		switch pageType {
 			
-			// :BE: remove panel
-			/*
-		case .enableLoggingOfContactsPage:
-			addPanel(
-				title: AppStrings.Onboarding.onboardingInfo_enableLoggingOfContactsPage_panelTitle,
-				body: AppStrings.Onboarding.onboardingInfo_enableLoggingOfContactsPage_panelBody
-			)
-*/
 		case .privacyPage:
 			innerStackView.isHidden = true
 			let textView = HtmlTextView()

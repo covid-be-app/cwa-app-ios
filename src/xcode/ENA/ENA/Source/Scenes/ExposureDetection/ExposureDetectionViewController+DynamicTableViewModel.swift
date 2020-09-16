@@ -1,6 +1,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -59,7 +62,6 @@ private extension DynamicCell {
 	private enum ReusableCellIdentifer: String, TableViewCellReuseIdentifiers {
 		case risk = "riskCell"
 		case riskText = "riskTextCell"
-		case riskRefresh = "riskRefreshCell"
 		case riskLoading = "riskLoadingCell"
 		case header = "headerCell"
 		case guide = "guideCell"
@@ -121,7 +123,8 @@ private extension DynamicCell {
 
 	static func riskLastExposure(text: String, image: UIImage?) -> DynamicCell {
 		.risk { viewController, cell, _ in
-			let daysSinceLastExposure = viewController.state.risk?.details.daysSinceLastExposure ?? 0
+			// :BE: offsets if not calculated today, to reflect the correct number of days since last exposure
+			var daysSinceLastExposure = viewController.state.risk?.details.calendarDaysSinceLastExposure ?? 0
 			cell.textLabel?.text = .localizedStringWithFormat(text, daysSinceLastExposure)
 			cell.imageView?.image = image
 		}
@@ -161,14 +164,6 @@ private extension DynamicCell {
 			cell.backgroundColor = state.riskTintColor
 			cell.textLabel?.textColor = state.riskContrastColor
 			cell.textLabel?.text = text
-		}
-	}
-
-	static func riskRefresh(text: String) -> DynamicCell {
-		.exposureDetectionCell(ReusableCellIdentifer.riskRefresh) { viewController, cell, _ in
-			let state = viewController.state
-			cell.backgroundColor = state.riskTintColor
-			cell.textLabel?.text = AppStrings.ExposureDetection.refresh24h
 		}
 	}
 
@@ -243,19 +238,6 @@ extension ExposureDetectionViewController {
 		)
 	}
 
-	private var riskRefreshSection: DynamicSection {
-		riskSection(
-			isHidden: { viewController in
-				guard let state = (viewController as? ExposureDetectionViewController)?.state else { return true }
-				if state.isLoading { return true }
-				return state.detectionMode != .automatic
-			},
-			cells: [
-				.riskRefresh(text: AppStrings.ExposureDetection.refreshingIn)
-			]
-		)
-	}
-
 	private var riskLoadingSection: DynamicSection {
 		.section(
 			header: .none,
@@ -317,38 +299,9 @@ extension ExposureDetectionViewController {
 			header: .backgroundSpace(height: 8),
 			footer: .backgroundSpace(height: 16),
 			cells: [
-				.header(
-					title: AppStrings.ExposureDetection.explanationTitle,
-					subtitle: isActive ? AppStrings.ExposureDetection.explanationSubtitleActive : AppStrings.ExposureDetection.explanationSubtitleInactive
-				),
-				.body(text: text, accessibilityIdentifier: accessibilityIdentifier)
 			]
 		)
 	}
-	
-	// :BE: no longer used
-
-	/*
-	private func highRiskExplanationSection(daysSinceLastExposureText: String, explanationText: String, isActive: Bool, accessibilityIdentifier: String?) -> DynamicSection {
-		let daysSinceLastExposure = state.risk?.details.daysSinceLastExposure ?? 0
-		return .section(
-			header: .backgroundSpace(height: 8),
-			footer: .backgroundSpace(height: 16),
-			cells: [
-				.header(
-					title: AppStrings.ExposureDetection.explanationTitle,
-					subtitle: isActive ? AppStrings.ExposureDetection.explanationSubtitleActive : AppStrings.ExposureDetection.explanationSubtitleInactive
-				),
-				.body(
-					text: [
-						.localizedStringWithFormat(daysSinceLastExposureText, daysSinceLastExposure),
-						explanationText
-					].joined(),
-					accessibilityIdentifier: accessibilityIdentifier)
-			]
-		)
-	}
-*/
 
 	private var offModel: DynamicTableViewModel {
 		DynamicTableViewModel([
@@ -395,17 +348,8 @@ extension ExposureDetectionViewController {
 			riskDataSection(cells: [
 				.riskText(text: AppStrings.ExposureDetection.unknownText)
 			]),
-			riskRefreshSection,
 			riskLoadingSection,
 			standardGuideSection
-			// :BE: remove explanation
-			/*
-			explanationSection(
-				text: AppStrings.ExposureDetection.explanationTextUnknown,
-				isActive: false,
-				accessibilityIdentifier: AccessibilityIdentifiers.ExposureDetection.explanationTextUnknown
-			)
-*/
 		])
 	}
 
@@ -419,18 +363,9 @@ extension ExposureDetectionViewController {
 				.riskStored(activeTracing: activeTracing, imageName: "Icons_TracingCircle-Dark_Step %u"),
 				.riskRefreshed(text: AppStrings.ExposureDetection.refreshed, image: UIImage(named: "Icons_Aktualisiert"))
 			]),
-			riskRefreshSection,
 			riskLoadingSection,
 			standardGuideSection,
 			activeTracingSection(accessibilityIdentifier: "hello")
-				// :BE: remove explanation
-					/*
-						explanationSection(
-				text: AppStrings.ExposureDetection.explanationTextLow,
-				isActive: true,
-				accessibilityIdentifier: AccessibilityIdentifiers.ExposureDetection.explanationTextLow
-			)
-*/
 		])
 	}
 
@@ -443,7 +378,6 @@ extension ExposureDetectionViewController {
 				.riskStored(activeTracing: activeTracing, imageName: "Icons_TracingCircle-Dark_Step %u"),
 				.riskRefreshed(text: AppStrings.ExposureDetection.refreshed, image: UIImage(named: "Icons_Aktualisiert"))
 			]),
-			riskRefreshSection,
 			riskLoadingSection,
 			.section(
 				header: .backgroundSpace(height: 16),
@@ -451,26 +385,21 @@ extension ExposureDetectionViewController {
 					.header(title: AppStrings.ExposureDetection.behaviorTitle, subtitle: AppStrings.ExposureDetection.behaviorSubtitle),
 					.guide(text: AppStrings.ExposureDetection.guideHome, image: UIImage(named: "Icons - Home")),
 					.guide(text: AppStrings.ExposureDetection.guideDistance, image: UIImage(named: "Icons - Abstand")),
+					.guide(text: AppStrings.ExposureDetection.getTested, image: UIImage(named: "Icons -Warning")),
 					.guide(image: UIImage(named: "Icons - Hotline"), text: [
 						AppStrings.ExposureDetection.guideHotline1,
 						AppStrings.ExposureDetection.guideHotline2,
-						AppStrings.ExposureDetection.guideHotline3,
-						AppStrings.ExposureDetection.guideHotline4
+						AppStrings.ExposureDetection.guideHotline3
+					]),
+					.guide(image: UIImage(named: "Icons - Hotline"), text: [
+						AppStrings.ExposureDetection.guideHotline4,
+						AppStrings.ExposureDetection.guideHotline5
 					])
 				]
 			),
 			activeTracingSection(
 				accessibilityIdentifier: AccessibilityIdentifiers.ExposureDetection.activeTracingSectionText
 			)
-			// :BE:
-			/*
-			highRiskExplanationSection(
-				daysSinceLastExposureText: AppStrings.ExposureDetection.explanationTextHighDaysSinceLastExposure,
-				explanationText: AppStrings.ExposureDetection.explanationTextHigh,
-				isActive: true,
-				accessibilityIdentifier: AccessibilityIdentifiers.ExposureDetection.explanationTextHigh
-			)
-*/
 		])
 	}
 }

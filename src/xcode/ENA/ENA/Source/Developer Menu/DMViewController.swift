@@ -1,6 +1,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -15,13 +18,17 @@
 // specific language governing permissions and limitations
 // under the License.
 
-#if !RELEASE
+
+#if DEVELOPER_MENU || DEBUG
 
 import ExposureNotification
 import UIKit
 
 /// The root view controller of the developer menu.
-final class DMViewController: UITableViewController {
+
+final class DMViewController: UITableViewController, RequiresAppDependencies, SpinnerInjectable {
+	var spinner: UIActivityIndicatorView?
+	
 	// MARK: Creating a developer menu view controller
 
 	init(
@@ -30,8 +37,6 @@ final class DMViewController: UITableViewController {
 		exposureManager: ExposureManager
 	) {
 		self.client = client
-		self.store = store
-		self.exposureManager = exposureManager
 		super.init(style: .plain)
 		title = "👩🏾‍💻🧑‍💻"
 	}
@@ -44,8 +49,6 @@ final class DMViewController: UITableViewController {
 	// MARK: Properties
 
 	private let client: Client
-	private let store: Store
-	private let exposureManager: ExposureManager
 	private var keys = [SAP_TemporaryExposureKey]() {
 		didSet {
 			keys = self.keys.sorted()
@@ -71,19 +74,22 @@ final class DMViewController: UITableViewController {
 				target: self,
 				action: #selector(showConfiguration)
 			),
+			
+			// :BE: manual risk detection
 			UIBarButtonItem(
-				image: UIImage(systemName: "trash"),
+				image: UIImage(systemName: "tray.and.arrow.down"),
 				style: .plain,
 				target: self,
-				action: #selector(clearRegToken)
+				action: #selector(checkExposureRisk)
 			)
 		]
 
+		// :BE: use to trigger fake requests
 		navigationItem.rightBarButtonItems = [
 			UIBarButtonItem(
-				barButtonSystemItem: .action,
+				barButtonSystemItem: .play,
 				target: self,
-				action: #selector(generateTestKeys)
+				action: #selector(doFakeRequests)
 			),
 			UIBarButtonItem(
 				title: "State Check",
@@ -117,6 +123,16 @@ final class DMViewController: UITableViewController {
 		alert.addAction(UIAlertAction(title: AppStrings.Common.alertActionOk, style: .cancel))
 		self.present(alert, animated: true, completion: nil)
 	}
+	
+	// :BE: do risk test manually
+	@objc
+	private func checkExposureRisk() {
+		downloadedPackagesStore.reset()
+		downloadedPackagesStore.open()
+		self.dismiss(animated: true) {
+			self.riskProvider.requestRisk(userInitiated: true)
+		}
+	}
 
 	// MARK: Fetching Keys
 
@@ -135,6 +151,14 @@ final class DMViewController: UITableViewController {
 			}
 			self.keys = keys.map { $0.sapKey }
 			self.tableView.reloadData()
+			
+			// :BE: update tracing history with keys
+			self.store.tracingStatusHistory = []
+			
+			keys.reversed().forEach { key in
+				let date = key.rollingStartNumber.date
+				self.store.tracingStatusHistory = self.store.tracingStatusHistory.consumingState(ExposureManagerState(authorized: true, enabled: true, status: .active), date)
+			}
 		}
 	}
 
@@ -149,13 +173,6 @@ final class DMViewController: UITableViewController {
 			),
 			animated: true
 		)
-	}
-
-	// MARK: QR Code related
-
-	@objc
-	private func showScanner() {
-		present(DMQRCodeScanViewController(delegate: self), animated: true)
 	}
 
 	// MARK: Test Keys
@@ -189,6 +206,30 @@ final class DMViewController: UITableViewController {
 			self.resetAndFetchKeys()
 		}
 	}
+	
+	// MARK: Fake submission
+	
+	@objc
+	private func doFakeRequests() {
+		self.startSpinner()
+		let fakeExecutor = BEFakeRequestsExecutor(store: self.store, exposureManager: self.exposureManager, client: self.client, isTest: true)
+		
+		// in test mode we need to specify how many fetches we want to do
+		self.store.fakeRequestAmountOfTestResultFetchesToDo = 4
+		
+		let group = DispatchGroup()
+		
+		group.enter()
+		
+		// start test
+		fakeExecutor.execute {
+			group.leave()
+		}
+		
+		group.notify(queue: .main) {
+			self.stopSpinner()
+		}
+	}
 
 	// MARK: UITableView
 
@@ -206,18 +247,6 @@ final class DMViewController: UITableViewController {
 	}
 
 	override func tableView(_: UITableView, didSelectRowAt _: IndexPath) {}
-}
-
-extension DMViewController: DMQRCodeScanViewControllerDelegate {
-	func debugCodeScanViewController(_: DMQRCodeScanViewController, didScan diagnosisKey: SAP_TemporaryExposureKey) {
-		client.submit(
-			keys: [diagnosisKey.temporaryExposureKey],
-			tan: "not needed"
-		) { [weak self] _ in
-			guard let self = self else { return }
-			self.resetAndFetchKeys()
-		}
-	}
 }
 
 private extension DateFormatter {

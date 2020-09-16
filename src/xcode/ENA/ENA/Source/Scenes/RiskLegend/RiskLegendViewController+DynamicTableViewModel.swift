@@ -1,7 +1,10 @@
 //
 // Corona-Warn-App
 //
-// SAP SE and all other contributors /
+// SAP SE and all other contributors 
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -39,10 +42,20 @@ extension RiskLegendViewController {
 						accessibilityIdentifier: AccessibilityIdentifiers.RiskLegend.legend1Text)
 				]
 			),
+			// :BE: Add stats section
 			.section(
 				footer: .space(height: 32),
 				cells: [
-					.icon(UIImage(named: "Icons_Ueberblick_2"), text: AppStrings.RiskLegend.legend2Title, style: .title2) { _, cell, _ in cell.accessibilityTraits = .header },
+					.icon(UIImage(named: "Icons_Ueberblick_2"), text: BEAppStrings.BERiskLegend.infectionSummaryTitle, style: .title2) { _, cell, _ in cell.accessibilityTraits = .header },
+					.body(
+						text: BEAppStrings.BERiskLegend.infectionSummaryText,
+						accessibilityIdentifier: BEAccessibilityIdentifiers.BERiskLegend.infectionSummaryText)
+				]
+			),
+			.section(
+				footer: .space(height: 32),
+				cells: [
+					.icon(UIImage(named: "Icons_Ueberblick_3"), text: AppStrings.RiskLegend.legend2Title, style: .title2) { _, cell, _ in cell.accessibilityTraits = .header },
 					.body(
 						text: AppStrings.RiskLegend.legend2Text,
 						accessibilityIdentifier: AccessibilityIdentifiers.RiskLegend.legend2Text),
@@ -71,7 +84,7 @@ extension RiskLegendViewController {
 			.section(
 				footer: .separator(color: .enaColor(for: .hairline), insets: UIEdgeInsets(top: 32, left: 0, bottom: 32, right: 0)),
 				cells: [
-					.icon(UIImage(named: "Icons_Ueberblick_3"), text: AppStrings.RiskLegend.legend3Title, style: .title2) { _, cell, _ in cell.accessibilityTraits = .header },
+					.icon(UIImage(named: "Icons_Ueberblick_4"), text: AppStrings.RiskLegend.legend3Title, style: .title2) { _, cell, _ in cell.accessibilityTraits = .header },
 					.body(
 						text: AppStrings.RiskLegend.legend3Text,
 						accessibilityIdentifier: AccessibilityIdentifiers.RiskLegend.legend3Text)

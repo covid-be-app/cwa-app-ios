@@ -11,9 +11,9 @@ ios_version(
 
 languages([
   "en-US",
-#  "de-DE",
-#  "fr-BE",
-#  "nl-BE"
+  "de-DE",
+  "fr-BE",
+  "nl-BE"
 #  "bg-BG",
 #  "ro-RO",
 #  "pl-PL"

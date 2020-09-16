@@ -54,10 +54,6 @@ struct SAPDownloadedPackage {
 		}
 
 		func verify(_ package: SAPDownloadedPackage) -> Bool {
-			
-			// :TEMP:
-			return true
-			
 			guard
 				let parsedSignatureFile = try? SAP_TEKSignatureList(serializedData: package.signature),
 				let bundleId = Bundle.main.bundleIdentifier

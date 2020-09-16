@@ -1,6 +1,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -18,9 +21,9 @@
 import Foundation
 
 protocol ExposureDetectionViewControllerDelegate: AnyObject {
-	func exposureDetectionViewController(
-		_ controller: ExposureDetectionViewController,
-		setExposureManagerEnabled enabled: Bool,
-		completionHandler completion: @escaping (ExposureNotificationError?) -> Void
-	)
+	
+	// :BE: change protocol
+	func exposureDetectionViewControllerShowExposureNotificationSettings(
+		viewController: ExposureDetectionViewController,
+		state: ENStateHandler.State)
 }

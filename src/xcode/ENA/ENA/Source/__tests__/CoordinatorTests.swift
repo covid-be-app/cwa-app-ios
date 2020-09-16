@@ -72,7 +72,7 @@ class CoordinatorTests: XCTestCase {
 	func test_coordinator_shouldShowHome() {
 		let delegate = MockStateHandlerObserverDelegate()
 		let enStateHandler = ENStateHandler(initialExposureManagerState: .init(), delegate: delegate)
-		coordinator.showHome(enStateHandler: enStateHandler, state: .init(exposureManager: .init(), detectionMode: .automatic, risk: nil))
+		coordinator.showHome(enStateHandler: enStateHandler, state: .init(exposureManager: .init(), detectionMode: .automatic, risk: nil), statisticsService: BEStatisticsService(client: ClientMock(), store: MockTestStore()))
 		let setViewControllersWasCalled = coordinator.mockNavigationController.setViewControllersWasCalled
 		XCTAssertTrue(setViewControllersWasCalled)
 	}
@@ -93,13 +93,6 @@ class CoordinatorTests: XCTestCase {
 		coordinator.showExposureNotificationSetting(enState: .unknown)
 		let pushViewControllerWasCalled = coordinator.mockNavigationController.pushViewControllerWasCalled
 		XCTAssertTrue(pushViewControllerWasCalled)
-	}
-
-	func test_coordinator_shouldShowExposureDetection() {
-		let state = HomeInteractor.State(detectionMode: .automatic, exposureManagerState: .init(), enState: .unknown, risk: nil)
-		coordinator.showExposureDetection(state: state, isRequestRiskRunning: false)
-		let presentWasCalled = coordinator.mockNavigationController.presentWasCalled
-		XCTAssertTrue(presentWasCalled)
 	}
 
 	func test_coordinator_shouldShowExposureSubmission() {

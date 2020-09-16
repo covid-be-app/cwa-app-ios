@@ -15,7 +15,7 @@
 // specific language governing permissions and limitations
 // under the License.
 
-#if !RELEASE
+#if DEVELOPER_MENU || DEBUG
 
 import UIKit
 

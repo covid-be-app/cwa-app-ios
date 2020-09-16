@@ -57,9 +57,8 @@ final class ExposureDetection_DidEndPrematurelyReason_ErrorHandlingTests: XCTest
 
 		XCTAssertEqual(alert?.title, AppStrings.ExposureDetectionError.errorAlertTitle)
 		XCTAssertEqual(alert?.message, AppStrings.Common.enError5Description)
-		XCTAssertEqual(alert?.actions.count, 2)
+		XCTAssertEqual(alert?.actions.count, 1)
 		XCTAssertEqual(alert?.actions[0].title, AppStrings.Common.alertActionOk)
-		XCTAssertEqual(alert?.actions[1].title, AppStrings.Common.errorAlertActionMoreInfo)
 	}
 
 	func testError_ENError_Internal() {
@@ -68,9 +67,8 @@ final class ExposureDetection_DidEndPrematurelyReason_ErrorHandlingTests: XCTest
 
 		XCTAssertEqual(alert?.title, AppStrings.ExposureDetectionError.errorAlertTitle)
 		XCTAssertEqual(alert?.message, AppStrings.Common.enError11Description)
-		XCTAssertEqual(alert?.actions.count, 2)
+		XCTAssertEqual(alert?.actions.count, 1)
 		XCTAssertEqual(alert?.actions[0].title, AppStrings.Common.alertActionOk)
-		XCTAssertEqual(alert?.actions[1].title, AppStrings.Common.errorAlertActionMoreInfo)
 	}
 
 	func testError_ENError_RateLimit() {
@@ -79,22 +77,8 @@ final class ExposureDetection_DidEndPrematurelyReason_ErrorHandlingTests: XCTest
 
 		XCTAssertEqual(alert?.title, AppStrings.ExposureDetectionError.errorAlertTitle)
 		XCTAssertEqual(alert?.message, AppStrings.Common.enError13Description)
-		XCTAssertEqual(alert?.actions.count, 2)
+		XCTAssertEqual(alert?.actions.count, 1)
 		XCTAssertEqual(alert?.actions[0].title, AppStrings.Common.alertActionOk)
-		XCTAssertEqual(alert?.actions[1].title, AppStrings.Common.errorAlertActionMoreInfo)
 	}
 
-	// MARK: - ENError FAQ URL mapping tests
-
-	func testENError_Unsupported_FAQURL() {
-		XCTAssertEqual(ENError(.unsupported).faqURL, URL(string: AppStrings.Links.appFaqENError5))
-	}
-
-	func testENError_Internal_FAQURL() {
-		XCTAssertEqual(ENError(.internal).faqURL, URL(string: AppStrings.Links.appFaqENError11))
-	}
-
-	func testENError_RateLimited_FAQURL() {
-		XCTAssertEqual(ENError(.rateLimited).faqURL, URL(string: AppStrings.Links.appFaqENError13))
-	}
 }

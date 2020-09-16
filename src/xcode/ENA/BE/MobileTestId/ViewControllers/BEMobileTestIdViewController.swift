@@ -20,10 +20,10 @@
 import UIKit
 
 protocol BEMobileTestIdViewControllerDelegate : class {
-	func mobileTestIdViewController(_ vc:BEMobileTestIdViewController, finshedWithMobileTestId mobileTestId:BEMobileTestId )
+	func mobileTestIdViewControllerFinished(_ vc:BEMobileTestIdViewController)
 }
 
-class BEMobileTestIdViewController: UIViewController, ENANavigationControllerWithFooterChild {
+class BEMobileTestIdViewController: DynamicTableViewController, ENANavigationControllerWithFooterChild {
 
 	private var footerItem = ENANavigationFooterItem()
 	
@@ -33,17 +33,11 @@ class BEMobileTestIdViewController: UIViewController, ENANavigationControllerWit
 		}
 	}
 
-	@IBOutlet weak var codeLabel:UILabel!
-	@IBOutlet weak var qrCodeImageView:UIImageView!
-	@IBOutlet weak var saveExplanationLabel:UILabel!
-	
 	weak var delegate:BEMobileTestIdViewControllerDelegate?
 	private let mobileTestId:BEMobileTestId
 	
-	init(symptomsDate:Date? = nil) {
-		let datePatientInfectious = BEMobileTestId.calculateDatePatientInfectious(symptomsStartDate: symptomsDate)
-		self.mobileTestId = BEMobileTestId(datePatientInfectious: String.fromDateWithoutTime(date:datePatientInfectious))
-		
+	init(_ mobileTestId: BEMobileTestId) {
+		self.mobileTestId = mobileTestId
 		super.init(nibName: nil, bundle: nil)
 	}
 	
@@ -54,25 +48,71 @@ class BEMobileTestIdViewController: UIViewController, ENANavigationControllerWit
     override func viewDidLoad() {
         super.viewDidLoad()
 		navigationItem.title = BEAppStrings.BEMobileTestId.title
-		navigationFooterItem?.primaryButtonTitle = BEAppStrings.BEMobileTestId.save
+		navigationFooterItem?.primaryButtonTitle = BEAppStrings.BEMobileTestId.close
 		navigationFooterItem?.isPrimaryButtonEnabled = true
-		saveExplanationLabel.text = BEAppStrings.BEMobileTestId.saveExplanation
-
-		let qrCodeImage = UIImage.generateQRCode(mobileTestId.fullString, size: qrCodeImageView.bounds.size.width * self.view.contentScaleFactor)
+		navigationFooterItem?.isSecondaryButtonHidden = true
 		
-		qrCodeImageView.image = qrCodeImage
-		codeLabel.text = mobileTestId.fullString
+		navigationItem.hidesBackButton = true
+
+		tableView.separatorStyle = .none
+		tableView.backgroundColor = UIColor(enaColor:.background)
+		tableView.allowsSelection = false
+
+		setupView()
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		footerView?.primaryButton?.accessibilityIdentifier = BEAccessibilityIdentifiers.BEMobileTestId.save
 	}
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+	
+		// I have no idea why this needs to be here as we don't show a back button anyway
+		// but if I keep the back button hidden, the navigation footer button disappears as soon
+		// as we scroll the contents. This does not happen if I enabled it again
+		navigationItem.hidesBackButton = false
+	}
+	
+	private func setupView() {
+		let dateFormatter = DateFormatter()
+		dateFormatter.dateStyle = .medium
+		dateFormatter.timeStyle = .none
+
+		tableView.dataSource = self
+		tableView.delegate = self
+		tableView.register(UINib(nibName: String(describing: ExposureSubmissionStepCell.self), bundle: nil), forCellReuseIdentifier: CustomCellReuseIdentifiers.stepCell.rawValue)
+		dynamicTableViewModel = DynamicTableViewModel([
+			.section(
+				header: .image(
+					UIImage(named: "Illu_Submission_Funktion1"),
+					accessibilityLabel: AppStrings.ExposureSubmissionIntroduction.accImageDescription,
+					accessibilityIdentifier: AccessibilityIdentifiers.General.image,
+					height: 200
+				),
+				separators: false,
+				cells: [
+					.body(text: BEAppStrings.BEMobileTestId.saveExplanation,
+						  accessibilityIdentifier: BEAccessibilityIdentifiers.BEMobileTestId.saveExplanation),
+					.title2(text: BEAppStrings.BEMobileTestId.dateInfectious, accessibilityIdentifier: nil),
+					.headline(text: dateFormatter.string(from:mobileTestId.datePatientInfectious.dateWithoutTime!), accessibilityIdentifier: nil),
+					.title2(text: BEAppStrings.BEMobileTestId.code, accessibilityIdentifier: nil),
+					.headline(text:mobileTestId.fullString, accessibilityIdentifier: nil)
+				]
+			)
+		])
+	}
 }
 
+private extension BEMobileTestIdViewController {
+	enum CustomCellReuseIdentifiers: String, TableViewCellReuseIdentifiers {
+		case stepCell
+	}
+}
 
 extension BEMobileTestIdViewController {
 	func navigationController(_ navigationController: ENANavigationControllerWithFooter, didTapPrimaryButton button: UIButton) {
-		delegate?.mobileTestIdViewController(self, finshedWithMobileTestId: mobileTestId)
+		delegate?.mobileTestIdViewControllerFinished(self)
 	}
 }

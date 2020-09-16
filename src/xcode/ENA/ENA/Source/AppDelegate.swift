@@ -1,6 +1,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -86,7 +89,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	lazy var riskProvider: RiskProvider = {
 		
 		// :BE: change detection interval to every 2 hours
-		//let exposureDetectionInterval = self.store.hourlyFetchingEnabled ? DateComponents(minute: 45) : DateComponents(hour: 24)
 		let exposureDetectionInterval = DateComponents(hour: 2)
 
 		let config = RiskProvidingConfiguration(
@@ -96,40 +98,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		)
 
 
-		return RiskProvider(
+		let provider = RiskProvider(
 			configuration: config,
 			store: self.store,
 			exposureSummaryProvider: self,
 			appConfigurationProvider: CachedAppConfiguration(client: self.client),
 			exposureManagerState: self.exposureManager.preconditions()
 		)
+		
+		#if UITESTING
+			// :BE: add positive risk
+			if let isAtRisk = UserDefaults.standard.value(forKey: "isAtRisk") as? String {
+				if isAtRisk != "NO" {
+					provider.setHighRiskForTesting()
+				}
+			}
+		#endif
+
+		return provider
 	}()
 
 	#if targetEnvironment(simulator) || COMMUNITY
 	// Enable third party contributors that do not have the required
 	// entitlements to also use the app
 	let exposureManager: ExposureManager = {
-		let tempKey = ENTemporaryExposureKey()
-		tempKey.rollingPeriod = 144
-		tempKey.rollingStartNumber = 10
-		tempKey.transmissionRiskLevel = .min
-		tempKey.keyData = Data(count: 16)
+		let tempKey = ENTemporaryExposureKey.random(Date())
 		
 		let keys = [tempKey]
-		return MockExposureManager(exposureNotificationError: nil, diagnosisKeysResult: (keys, nil))
+		let manager = MockExposureManager(exposureNotificationError: nil, diagnosisKeysResult: (keys, nil))
+
+		return manager
 	}()
 	#else
 		let exposureManager: ExposureManager = ENAExposureManager()
 	#endif
 
 	private var exposureDetection: ExposureDetection?
-	// :BE: use protocol and not subclass as variable type
-	private var exposureSubmissionService: ExposureSubmissionService?
+	// :BE: use BE protocol as variable type
+	private var exposureSubmissionService: BEExposureSubmissionService?
+	
+	// :BE: Add fake requests executor
+	private lazy var fakeRequestsExecutor: BEFakeRequestsExecutor = {
+		BEFakeRequestsExecutor(store: self.store, exposureManager: self.exposureManager, client: self.client)
+	}()
 
 	let downloadedPackagesStore: DownloadedPackagesStore = DownloadedPackagesSQLLiteStore(fileName: "packages")
 
-	// :BE: replace HTTPClient
-	var client: HTTPClient = BEHTTPClient(configuration: .backendBaseURLs)
+	var client: HTTPClient = HTTPClient(configuration: .backendBaseURLs)
 
 	// TODO: REMOVE ME
 	var lastRiskCalculation: String = ""
@@ -172,58 +187,63 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate: ENATaskExecutionDelegate {
 
 	/// This method executes the background tasks needed for: a) fetching test results and b) performing exposure detection requests
-	func executeENABackgroundTask(task: BGTask, completion: @escaping ((Bool) -> Void)) {
-		log(message: "Running background task...")
-		executeFetchTestResults(task: task) { fetchTestResultSuccess in
-			log(message: "Start exposure detection...")
-
-			// NOTE: We are currently fetching the test result first, and then execute
-			// the exposure detection check. Instead of implementing this behaviour in the completion handler,
-			// queues could be used as well. Due to time/resource constraints, we settled for this option.
-			self.executeExposureDetectionRequest(task: task) { exposureDetectionSuccess in
-				completion(fetchTestResultSuccess && exposureDetectionSuccess)
+	// :BE: Add fake requests and refactor
+	func executeENABackgroundTask(completion: @escaping ((Bool) -> Void)) {
+		self.fakeRequestsExecutor.execute {
+			log(message: "Fake requests done")
+			self.executeFetchTestResults {
+				log(message: "Fetch test results done")
+				self.executeExposureDetectionRequest {
+					log(message: "Exposure detection done")
+					completion(true)
+				}
 			}
 		}
 	}
 
 	/// This method executes a  test result fetch, and if it is successful, and the test result is different from the one that was previously
 	/// part of the app, a local notification is shown.
-	/// NOTE: This method will always return true.
-	private func executeFetchTestResults(task: BGTask, completion: @escaping ((Bool) -> Void)) {
+	private func executeFetchTestResults(completion: @escaping (() -> Void)) {
 		log(message: "Start fetch test results...")
 		// :BE: replace ENAExposureSubmissionService with BEExposureSubmissionService
-		exposureSubmissionService = BEExposureSubmissionService(diagnosiskeyRetrieval: exposureManager, client: client, store: store)
+		let service = BEExposureSubmissionServiceImpl(diagnosiskeyRetrieval: exposureManager, client: client, store: store)
+		exposureSubmissionService = service
 
 		if store.registrationToken != nil && store.testResultReceivedTimeStamp == nil {
-			self.exposureSubmissionService?.getTestResult { result in
-				switch result {
-				case .failure(let error):
-					logError(message: error.localizedDescription)
-				case .success(let testResult):
-					if testResult != .pending {
-						UNUserNotificationCenter.current().presentNotification(
-							title: AppStrings.LocalNotifications.testResultsTitle,
-							body: AppStrings.LocalNotifications.testResultsBody,
-							identifier: task.identifier
-						)
+			// :BE: see if we passed the validity time for this test result
+			if !service.deleteTestIfOutdated() {
+				self.exposureSubmissionService?.getTestResult { result in
+					switch result {
+					case .failure(let error):
+						logError(message: error.localizedDescription)
+					case .success(let testResult):
+						
+						// :BE: testresult enum to struct
+						if testResult.result != .pending {
+							UNUserNotificationCenter.current().presentNotification(
+								title: AppStrings.LocalNotifications.testResultsTitle,
+								body: AppStrings.LocalNotifications.testResultsBody,
+								identifier: ENATaskIdentifier.exposureNotification.backgroundTaskSchedulerIdentifier + ".test-result"
+
+							)
+						}
 					}
+					completion()
 				}
-
-				completion(true)
+				return
 			}
-		} else {
-			completion(true)
 		}
-
+		
+		completion()
 	}
 
 	/// This method performs a check for the current exposure detection state. Only if the risk level has changed compared to the
 	/// previous state, a local notification is shown.
-	/// NOTE: This method will always return true.
-	private func executeExposureDetectionRequest(task: BGTask, completion: @escaping ((Bool) -> Void)) {
+	private func executeExposureDetectionRequest(completion: @escaping (() -> Void)) {
+		log(message: "Start exposure detection...")
 
-		let detectionMode = DetectionMode.fromBackgroundStatus()
-		riskProvider.configuration.detectionMode = detectionMode
+		// At this point we are already in background so it is safe to assume background mode is available.
+		riskProvider.configuration.detectionMode = .fromBackgroundStatus(.available)
 
 		riskProvider.requestRisk(userInitiated: false) { risk in
 			// present a notification if the risk score has increased.
@@ -232,10 +252,11 @@ extension AppDelegate: ENATaskExecutionDelegate {
 				UNUserNotificationCenter.current().presentNotification(
 					title: AppStrings.LocalNotifications.detectExposureTitle,
 					body: AppStrings.LocalNotifications.detectExposureBody,
-					identifier: task.identifier
+					identifier: ENATaskIdentifier.exposureNotification.backgroundTaskSchedulerIdentifier + ".risk-detection"
 				)
 			}
-			completion(true)
+			completion()
 		}
 	}
 }
+

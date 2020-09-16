@@ -2,6 +2,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -22,7 +25,7 @@ import ExposureNotification
 
 final class TemporaryExposureKeyMock: ENTemporaryExposureKey {
 	init(
-		keyData: Data = Data(),
+		keyData: Data = Data(count: 16),  // :BE: make 16 byte buffers
 		rollingPeriod: ENIntervalNumber = 0,
 		rollingStartNumber: ENIntervalNumber = 0,
 		transmissionRiskLevel: ENRiskLevel = 0

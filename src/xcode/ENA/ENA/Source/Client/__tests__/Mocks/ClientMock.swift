@@ -1,6 +1,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -115,5 +118,18 @@ extension ClientMock: Client {
 
 	func getTANForExposureSubmit(forDevice device: String, completion completeWith: @escaping TANHandler) {
 		completeWith(.success("dummyTan"))
+	}
+	
+	// :BE:
+	func ackTestDownload(forDevice registrationToken: String, completionBlock: @escaping (() -> Void)) {
+		completionBlock()
+	}
+	
+	func submit(keys: [ENTemporaryExposureKey], countries: [BECountry], mobileTestId: BEMobileTestId?, testResult: TestResult?, isFake: Bool, completion: @escaping SubmitKeysCompletionHandler) {
+		completion(nil)
+	}
+	
+	func getInfectionSummary(completion: @escaping InfectionSummaryHandler) {
+		completion(.failure(.noResponse))
 	}
 }

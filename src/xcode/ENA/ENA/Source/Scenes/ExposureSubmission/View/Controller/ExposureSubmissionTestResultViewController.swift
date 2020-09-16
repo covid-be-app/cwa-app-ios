@@ -1,6 +1,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -24,6 +27,7 @@ class ExposureSubmissionTestResultViewController: DynamicTableViewController, EN
 
 	var testResult: TestResult?
 	var timeStamp: Int64?
+	
 	private(set) weak var coordinator: ExposureSubmissionCoordinating?
 	private(set) weak var exposureSubmissionService: ExposureSubmissionService?
 
@@ -79,6 +83,9 @@ class ExposureSubmissionTestResultViewController: DynamicTableViewController, EN
 		self.navigationFooterItem?.isSecondaryButtonEnabled = false
 		self.navigationFooterItem?.isSecondaryButtonHidden = true
 
+		// :BE: add accessibility identifier
+		self.footerView?.primaryButton?.accessibilityIdentifier = BEAccessibilityIdentifiers.BETestResult.next
+		
 		switch result {
 		case .positive:
 			navigationFooterItem?.primaryButtonTitle = AppStrings.ExposureSubmissionResult.continueButton
@@ -405,7 +412,7 @@ private extension ExposureSubmissionTestResultViewController {
 
 				ExposureSubmissionDynamicCell.stepCell(
 					title: AppStrings.ExposureSubmissionResult.testAdded,
-					description: AppStrings.ExposureSubmissionResult.testAddedDesc,
+					description: exposureSubmissionService?.mobileTestId?.descriptionForPendingTestResult, // :BE: longer description
 					icon: UIImage(named: "Icons_Grey_Check"),
 					hairline: .iconAttached
 				),
@@ -418,5 +425,31 @@ private extension ExposureSubmissionTestResultViewController {
 				)
 			]
 		)
+	}
+}
+
+// :BE: longer description
+extension BEMobileTestId {
+	fileprivate var descriptionForPendingTestResult: String {
+		var descriptionText = AppStrings.ExposureSubmissionResult.testAddedDesc
+		guard let dateWithoutTime = self.datePatientInfectious.dateWithoutTime else {
+			fatalError("Wrong date format")
+		}
+		
+		let dateFormatter = DateFormatter()
+		dateFormatter.dateStyle = .medium
+		dateFormatter.timeStyle = .none
+
+		descriptionText += "\n\n"
+		descriptionText += BEAppStrings.BEMobileTestId.dateInfectious
+		descriptionText += "\n"
+		descriptionText += dateFormatter.string(from: dateWithoutTime)
+		descriptionText += "\n\n"
+		descriptionText += BEAppStrings.BEMobileTestId.code
+		descriptionText += "\n"
+		descriptionText += self.fullString
+		descriptionText += "\n"
+
+		return descriptionText
 	}
 }

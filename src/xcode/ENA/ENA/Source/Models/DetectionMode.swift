@@ -2,6 +2,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -30,9 +33,8 @@ enum DetectionMode {
 extension DetectionMode {
 	static func fromBackgroundStatus(_ backgroundStatus: UIBackgroundRefreshStatus = UIApplication.shared.backgroundRefreshStatus) -> DetectionMode {
 		switch backgroundStatus {
-		case .restricted, .denied:
-			return .manual
-		case .available:
+			// :BE: background status does not influence detection mode. It always works
+		case .restricted, .denied, .available:
 			return .automatic
 		default:
 			return .manual

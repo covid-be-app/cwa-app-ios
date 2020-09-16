@@ -91,13 +91,79 @@ platform :ios do
       type:"appstore",
       readonly: true
     )
-
-    testflight_build_number = latest_testflight_build_number(username:"technical@devside.com",app_identifier:"be.sciensano.coronalertbe")
     
     increment_build_number(
-        build_number: testflight_build_number + 1,
-        xcodeproj: "ENA/ENA.xcodeproj"
-      )
+      xcodeproj: "ENA/ENA.xcodeproj"
+    )
+
+    update_info_plist( 
+      xcodeproj: "ENA/ENA.xcodeproj",
+      plist_path: "ENA/Resources/Info.plist",
+      block: proc do |plist|
+        plist["BEEnvironment"] = "staging"
+      end
+    )
+
+    build_ios_app(
+      scheme: "ENA",
+      configuration: "Release",
+      clean: true,
+      xcargs: "OTHER_SWIFT_FLAGS='$(inherited) -D DEVELOPER_MENU'"
+    )
+    
+    upload_to_testflight(
+      username: "technical@devside.com",
+      apple_id:"1526431891",
+      skip_waiting_for_build_processing: true,
+      skip_submission: true  # only upload
+    )
+    
+    update_info_plist( 
+      xcodeproj: "ENA/ENA.xcodeproj",
+      plist_path: "ENA/Resources/Info.plist",
+      block: proc do |plist|
+        plist["BEEnvironment"] = "test"
+      end
+    )
+    
+    commit_version_bump(
+      message:"[skip ci] version bump",
+      xcodeproj: "ENA/ENA.xcodeproj"
+    )
+    
+    add_git_tag
+
+    push_to_git_remote
+    
+    create_pull_request(
+      repo: "covid-be-app/cwa-app-ios",
+      title: "Version Bump",
+      base: "develop", # optional, defaults to "master"
+    )
+  end
+  
+  lane :screenshots do
+    capture_screenshots
+  end
+
+  desc "Build and upload for App Store"
+  lane :productionRelease do
+    match(
+      type:"appstore",
+      readonly: true
+    )
+    
+    increment_build_number(
+      xcodeproj: "ENA/ENA.xcodeproj"
+    )
+
+    update_info_plist( 
+      xcodeproj: "ENA/ENA.xcodeproj",
+      plist_path: "ENA/Resources/Info.plist",
+      block: proc do |plist|
+        plist["BEEnvironment"] = "production"
+      end
+    )
 
     build_ios_app(
       scheme: "ENA",
@@ -107,17 +173,34 @@ platform :ios do
     
     upload_to_testflight(
       username: "technical@devside.com",
+      apple_id:"1526431891",
       skip_waiting_for_build_processing: true,
       skip_submission: true  # only upload
     )
-    
-    add_git_tag
-    
-    push_to_git_remote
-  end
-  
-  lane :screenshots do
-    capture_screenshots
-  end
 
+    update_info_plist( 
+      xcodeproj: "ENA/ENA.xcodeproj",
+      plist_path: "ENA/Resources/Info.plist",
+      block: proc do |plist|
+        plist["BEEnvironment"] = "test"
+      end
+    )
+    
+    commit_version_bump(
+      message:"[skip ci] version bump",
+      xcodeproj: "ENA/ENA.xcodeproj"
+    )
+    
+    add_git_tag(
+      grouping: "releases"
+    )
+
+    push_to_git_remote
+    
+    create_pull_request(
+      repo: "covid-be-app/cwa-app-ios",
+      title: "Version Bump",
+      base: "develop",
+    )
+  end
 end

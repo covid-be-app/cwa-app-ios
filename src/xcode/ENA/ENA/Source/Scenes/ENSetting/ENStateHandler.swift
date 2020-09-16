@@ -44,7 +44,7 @@ final class ENStateHandler {
 	) {
 		self.delegate = delegate
 		self.latestExposureManagerState = initialExposureManagerState
-		self.currentState = determineCurrentState(from: latestExposureManagerState)
+		self.currentState = State.determineCurrentState(from: latestExposureManagerState)
 	}
 
 	private func stateDidChange() {
@@ -54,46 +54,11 @@ final class ENStateHandler {
 		delegate.updateEnState(currentState)
 	}
 
-	private func determineCurrentState(from enManagerState: ExposureManagerState) -> State {
-
-		switch enManagerState.status {
-		case .active:
-			return .enabled
-		case .bluetoothOff:
-			guard !enManagerState.enabled == false else {
-				return .disabled
-			}
-			return .bluetoothOff
-		case .disabled:
-			return .disabled
-		case .restricted:
-			return differentiateRestrictedCase()
-		case .unknown:
-			return .disabled
-		@unknown default:
-			fatalError("New state was added that is not being covered by ENStateHandler")
-		}
-	}
-
-	private func differentiateRestrictedCase() -> State {
-		switch ENManager.authorizationStatus {
-		case .notAuthorized:
-			return .notAuthorized
-		case .restricted:
-			return .restricted
-		case .unknown:
-			return .unknown
-		case .authorized:
-			return .disabled
-		@unknown default:
-			fatalError("New state was added that is not being covered by ENStateHandler")
-		}
-	}
 }
 
 extension ENStateHandler: ExposureStateUpdating {
 	func updateExposureState(_ state: ExposureManagerState) {
 		latestExposureManagerState = state
-		currentState = determineCurrentState(from: state)
+		currentState = State.determineCurrentState(from: state)
 	}
 }

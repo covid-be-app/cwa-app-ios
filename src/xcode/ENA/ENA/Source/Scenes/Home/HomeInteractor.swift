@@ -1,6 +1,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -18,6 +21,7 @@
 import ExposureNotification
 import Foundation
 import UIKit
+import Combine
 
 // swiftlint:disable file_length
 
@@ -30,11 +34,26 @@ final class HomeInteractor: RequiresAppDependencies {
 	init(
 		homeViewController: HomeViewController,
 		state: State,
-		exposureSubmissionService: ExposureSubmissionService
+		exposureSubmissionService: ExposureSubmissionService,
+		// :BE: add stats
+		statisticsService: BEStatisticsService
 	) {
 		self.homeViewController = homeViewController
 		self.state = state
 		self.exposureSubmissionService = exposureSubmissionService
+		self.statisticsService = statisticsService
+		
+		summarySubscriber = statisticsService.$infectionSummary.sink { [weak self] _ in
+
+			guard let self = self else {
+				return
+			}
+			
+			if !self.sections.isEmpty {
+				self.infectionSummaryUpdated()
+			}
+		}
+		
 		observeRisk()
 	}
 
@@ -64,6 +83,10 @@ final class HomeInteractor: RequiresAppDependencies {
 	var testResult: TestResult? {
 		return store.testResult
 	}
+	
+	// :BE: stats
+	let statisticsService: BEStatisticsService
+	private var summarySubscriber: AnyCancellable?
 
 	private lazy var isRequestRiskRunning = riskProvider.isLoading
 	private let riskConsumer = RiskConsumer()
@@ -118,26 +141,26 @@ final class HomeInteractor: RequiresAppDependencies {
 		sections = initialCellConfigurators()
 	}
 
+	// :BE: merge sections
 	private func initialCellConfigurators() -> SectionConfiguration {
-
 		let info1Configurator = HomeInfoCellConfigurator(
 			title: AppStrings.Home.infoCardShareTitle,
-			description: nil, // :BE: no description
+			description: nil,
 			position: .first,
 			accessibilityIdentifier: AccessibilityIdentifiers.Home.infoCardShareTitle
 		)
 
 		let info2Configurator = HomeInfoCellConfigurator(
 			title: AppStrings.Home.infoCardAboutTitle,
-			description: nil, // :BE: no description
-			position: .last,
+			description: nil,
+			position: .other,
 			accessibilityIdentifier: AccessibilityIdentifiers.Home.infoCardAboutTitle
 		)
 
 		let appInformationConfigurator = HomeInfoCellConfigurator(
 			title: AppStrings.Home.appInformationCardTitle,
 			description: nil,
-			position: .first,
+			position: .other,
 			accessibilityIdentifier: AccessibilityIdentifiers.Home.appInformationCardTitle
 		)
 
@@ -148,15 +171,13 @@ final class HomeInteractor: RequiresAppDependencies {
 			accessibilityIdentifier: AccessibilityIdentifiers.Home.settingsCardTitle
 		)
 
-		let infosConfigurators: [CollectionViewCellConfiguratorAny] = [info1Configurator, info2Configurator]
-		let settingsConfigurators: [CollectionViewCellConfiguratorAny] = [appInformationConfigurator, settingsConfigurator]
+		let infosConfigurators: [CollectionViewCellConfiguratorAny] = [info1Configurator, info2Configurator, appInformationConfigurator, settingsConfigurator]
 
 		let actionsSection: SectionDefinition = setupActionSectionDefinition()
 		let infoSection: SectionDefinition = (.infos, infosConfigurators)
-		let settingsSection: SectionDefinition = (.settings, settingsConfigurators)
-
+		
 		var sections: [(section: HomeViewController.Section, cellConfigurators: [CollectionViewCellConfiguratorAny])] = []
-		sections.append(contentsOf: [actionsSection, infoSection, settingsSection])
+		sections.append(contentsOf: [actionsSection, infoSection/*, settingsSection*/])
 
 		return sections
 	}
@@ -195,7 +216,7 @@ extension HomeInteractor {
 		inactiveConfigurator = nil
 
 		// :BE: check every 2 hours and not once per day
-		let detectionInterval = (riskProvider.configuration.exposureDetectionInterval.hour ?? 24)
+		let detectionInterval = (riskProvider.configuration.exposureDetectionInterval.hour ?? 2)
 
 		let riskLevel: RiskLevel? = state.exposureManagerState.enabled ? state.riskLevel : .inactive
 
@@ -286,6 +307,13 @@ extension HomeInteractor {
 		activeConfigurator = setupActiveConfigurator()
 		actionsConfigurators.append(activeConfigurator)
 
+		// :BE:
+		// MARK: - Add summary card
+		
+		if let summaryConfigurator = setupInfectionSummaryConfigurator() {
+			actionsConfigurators.append(summaryConfigurator)
+		}
+
 		// MARK: - Add cards depending on result state.
 
 		if store.lastSuccessfulSubmitDiagnosisKeyTimestamp != nil {
@@ -360,7 +388,7 @@ extension HomeInteractor {
 		}
 		return nil
 	}
-
+	
 	private func indexPathForActiveCell() -> IndexPath? {
 		for section in sections {
 			let index = section.cellConfigurators.firstIndex { cellConfigurator in
@@ -389,7 +417,17 @@ extension HomeInteractor {
 extension HomeInteractor {
 	func updateTestResults() {
 		// Avoid unnecessary loading.
-		guard testResult == nil || testResult != .positive else { return }
+		// :BE: testresult enum to struct and make sure we retry as long as test is pending
+
+		// Early out
+		if let resultObject = testResult {
+			if resultObject.result != .pending {
+				self.reloadTestResult(with: resultObject)
+				return
+			}
+		}
+		
+		guard testResult == nil || testResult?.result == .pending else { return }
 		guard store.registrationToken != nil else { return }
 
 		// Make sure to make the loading cell appear for at least `minRequestTime`.
@@ -408,7 +446,6 @@ extension HomeInteractor {
 					completion: {
 						
 						// :BE: remove storage of non-loaded test result
-						//self?.testResult = .pending
 						self?.reloadTestResult(with: .pending)
 					}
 				)
@@ -426,6 +463,35 @@ extension HomeInteractor {
 				}
 			}
 		}
+	}
+}
+
+// :BE:
+// MARK: Infection Summary
+
+extension HomeInteractor {
+	func requestInfectionSummary() {
+		statisticsService.getInfectionSummary { result in
+			switch result {
+			case .failure(let error):
+				logError(message: error.localizedDescription)
+			case .success:
+				log(message: "Summary loaded")
+			}
+		}
+	}
+	
+	func infectionSummaryUpdated() {
+		self.reloadActionSection()
+	}
+	
+	func setupInfectionSummaryConfigurator() -> CollectionViewCellConfiguratorAny? {
+		let infectionSummaryConfigurator = BEHomeInfectionSummaryCellConfigurator()
+		
+		infectionSummaryConfigurator.infectionSummary = statisticsService.infectionSummary
+		infectionSummaryConfigurator.infectionSummaryUpdatedAt = statisticsService.infectionSummaryUpdatedAt
+		
+		return infectionSummaryConfigurator
 	}
 }
 
@@ -479,7 +545,9 @@ extension HomeInteractor: CountdownTimerDelegate {
 		guard let cell = homeViewController.cellForItem(at: indexPath) as? RiskLevelCollectionViewCell else { return }
 
 		// We pass the time and let the configurator decide whether the button can be activated or not.
-		riskLevelConfigurator?.timeUntilUpdate = time
+		
+		// :BE: only show hours
+		riskLevelConfigurator?.timeUntilUpdate = "\(timer.hourCeil)"
 		riskLevelConfigurator?.configureButton(for: cell)
 	}
 }

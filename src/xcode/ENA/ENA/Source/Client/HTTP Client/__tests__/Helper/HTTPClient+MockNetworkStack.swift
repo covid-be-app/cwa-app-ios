@@ -22,11 +22,11 @@ import Foundation
 
 /// Helper struct to easily create a `MockUrlSession` that sends the desired HTTP status code and `URLResponse`
 struct MockNetworkStack {
-	var urlSession: MockUrlSession
+	var urlSession: URLSession
 	var packageVerifier: SAPDownloadedPackage.Verification
 
 	init(
-		mockSession: MockUrlSession,
+		mockSession: URLSession,
 		packageVerifier:  @escaping SAPDownloadedPackage.Verification = { _ in return true }
 	) {
 		self.urlSession = mockSession
@@ -61,9 +61,8 @@ struct MockNetworkStack {
 
 extension HTTPClient {
 	/// Configure a `HTTPClient` with `.fake` configuration and mocked `URLSession`
-	// :BE: create the BE client
-	static func makeWith(mock stack: MockNetworkStack) -> BEHTTPClient {
-		BEHTTPClient(
+	static func makeWith(mock stack: MockNetworkStack) -> HTTPClient {
+		HTTPClient(
 			configuration: .fake,
 			packageVerifier: stack.packageVerifier,
 			session: stack.urlSession
