@@ -155,7 +155,7 @@
 "ExposureSubmissionResult_testAdded" = "Test succesvol toegevoegd";
 "ExposureSubmissionResult_testAddedDesc" = "Uw test is opgeslagen in Coronalert.";
 "ExposureSubmissionResult_warnOthers" = "Anderen waarschuwen";
-"ExposureSubmissionResult_warnOthersDesc" = "Deel uw willekeurige ID's van de voorbije 14 dagen om anderen te beschermen en de infectieketen te doorbreken.";
+"ExposureSubmissionResult_warnOthersDesc" = "Deel uw willekeurige ID's van de voorbije dagen om anderen te beschermen en de infectieketen te doorbreken.";
 "ExposureSubmissionResult_testPositive" = "Positieve diagnose";
 "ExposureSubmissionResult_testPositiveDesc" = "Uw testresultaat is positief.";
 "ExposureSubmissionResult_testNegative" = "Negatieve diagnose";
@@ -178,8 +178,8 @@
 "ExposureSubmissionWarnOthers_AccImageDescription" = "Een toestel stuurt een versleutelde positieve diagnose naar het systeem.";
 "ExposureSubmissionWarnOthers_continueButton" = "Volgende";
 "ExposureSubmissionWarnOthers_sectionTitle" = "We helpen elkaar!";
-"ExposureSubmissionWarnOthers_description" = "Vervolgens kunt u ook aangeven dat Coronalert uw willekeurige ID's van de voorbije 14 dagen met anderen deelt. Zo kunt u andere mensen waarschuwen en de infectieketen helpen doorbreken. \n\nEr worden alleen onpersoonlijke willekeurige ID's doorgegeven. U blijft anoniem.";
-"ExposureSubmissionWarnOthers_dataPrivacyDescription" = "Door op \"Accepteren\" te tikken, stemt u ermee in dat de app uw positieve testresultaat samen met uw willekeurige ID's van de voorbije 14 dagen naar het serversysteem van de app stuurt, zodat andere gebruikers van de app die blootstellingscontrole hebben ingeschakeld, er automatisch van op de hoogte kunnen worden gesteld dat ze eventueel aan een risico op besmetting blootgesteld zijn. De willekeurige ID's die voor dit doel worden verzonden, bevatten geen informatie op basis waarvan conclusies over uw identiteit of persoon getrokken kunnen worden. \n\nHet verzenden van uw testresultaat via de app gebeurt op vrijwillige basis. U wordt niet gestraft als u uw testresultaat niet doorgeeft. Aangezien het niet mogelijk is om te traceren of te controleren of en hoe u de app gebruikt, weet alleen u of u de informatie dat u besmet bent, heeft verzonden. \n\nU kunt uw toestemming op eender welk moment intrekken door deze app te verwijderen. Het intrekken van uw toestemming heeft geen invloed op de rechtmatigheid van de verwerking op basis van de toestemming voorafgaand aan de intrekking. Meer informatie kunt u terugvinden in het menu onder \"Informatie over privacy van gegevens\".";
+"ExposureSubmissionWarnOthers_description" = "Vervolgens kunt u ook aangeven dat Coronalert uw willekeurige ID's van de voorbije dagen met anderen deelt. Zo kunt u andere mensen waarschuwen en de infectieketen helpen doorbreken. \n\nEr worden alleen onpersoonlijke willekeurige ID's doorgegeven. U blijft anoniem.";
+"ExposureSubmissionWarnOthers_dataPrivacyDescription" = "Door op \"Accepteren\" te tikken, stemt u ermee in dat de app uw positieve testresultaat samen met uw willekeurige ID's van de voorbije dagen naar het serversysteem van de app stuurt, zodat andere gebruikers van de app die blootstellingscontrole hebben ingeschakeld, er automatisch van op de hoogte kunnen worden gesteld dat ze eventueel aan een risico op besmetting blootgesteld zijn. De willekeurige ID's die voor dit doel worden verzonden, bevatten geen informatie op basis waarvan conclusies over uw identiteit of persoon getrokken kunnen worden. \n\nHet verzenden van uw testresultaat via de app gebeurt op vrijwillige basis. U wordt niet gestraft als u uw testresultaat niet doorgeeft. Aangezien het niet mogelijk is om te traceren of te controleren of en hoe u de app gebruikt, weet alleen u of u de informatie dat u besmet bent, heeft verzonden. \n\nU kunt uw toestemming op eender welk moment intrekken door deze app te verwijderen. Het intrekken van uw toestemming heeft geen invloed op de rechtmatigheid van de verwerking op basis van de toestemming voorafgaand aan de intrekking. Meer informatie kunt u terugvinden in het menu onder \"Informatie over privacy van gegevens\".";
 "ExposureSubmissionWarnOthers_dataPrivacyTitle" = "Privacy van gegevens";
 "ExposureSubmissionResult_RemoveAlert_Title" = "Test verwijderen?";
 "ExposureSubmissionResult_RemoveAlert_Text" = "De test wordt permanent verwijderd uit Coronalert en kan niet opnieuw worden toegevoegd. Deze procedure kan niet ongedaan gemaakt worden.";
@@ -305,7 +305,7 @@
 "App_Information_Imprint_Section2_Title" = "Gepubliceerd door Sciensano";
 "App_Information_Imprint_Section2_Text" = "Juliette Wytsmanstraat 14\n1050 Brussel";
 "App_Information_Imprint_Section3_Title" = "Contact";
-"App_Information_Imprint_Section3_Text" = "E-mail:  coronalert@sciensano.be \nTelefoon:   0800 14 0689";
+"App_Information_Imprint_Section3_Text" = "E-mail:  coronalert@sciensano.be\nTelefoon:   0800 14 0689";
 "App_Information_Imprint_Section4_Title" = "BTW-nummer";
 "App_Information_Imprint_Section4_Text" = "BE0693.876.830";
 "App_Information_Legal_Navigation" = "Wettelijke vermeldingen";
