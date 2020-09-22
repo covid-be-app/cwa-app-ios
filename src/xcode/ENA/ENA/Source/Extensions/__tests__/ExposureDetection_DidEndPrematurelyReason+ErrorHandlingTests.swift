@@ -81,4 +81,11 @@ final class ExposureDetection_DidEndPrematurelyReason_ErrorHandlingTests: XCTest
 		XCTAssertEqual(alert?.actions[0].title, AppStrings.Common.alertActionOk)
 	}
 
+	func testError_ENError_16() {
+		let root = UIViewController()
+		let alert = Reason.noSummary(ENError(.dataInaccessible)).errorAlertController(rootController: root)
+
+		XCTAssertEqual(alert, nil)
+	}
+
 }

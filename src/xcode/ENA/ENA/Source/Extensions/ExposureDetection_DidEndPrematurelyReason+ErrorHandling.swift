@@ -31,6 +31,10 @@ extension ExposureDetection.DidEndPrematurelyReason {
 
 		switch unwrappedError {
 		case let unwrappedError as ENError:
+			if unwrappedError.code == .dataInaccessible {
+				return nil
+			}
+			
 			return rootController.setupErrorAlert(
 				message: localizedDescription
 			)
