@@ -216,17 +216,17 @@
 			<key>NSStringFormatValueTypeKey</key>
 			<string>u</string>
 			<key>zero</key>
-			<string>%u overlijdens</string>
+			<string>%u dagelijkse overlijdens</string>
 			<key>one</key>
-			<string>%u overlijden</string>
+			<string>%u dagelijks overlijden</string>
 			<key>few</key>
-			<string>%u overlijdens</string>
+			<string>%u dagelijkse overlijdens</string>
 			<key>many</key>
-			<string>%u overlijdens</string>
+			<string>%u dagelijkse overlijdens</string>
 			<key>two</key>
-			<string>%u overlijdens</string>
+			<string>%u dagelijkse overlijdens</string>
 			<key>other</key>
-			<string>%u overlijdens</string>
+			<string>%u dagelijkse overlijdens</string>
 		</dict>
 	</dict>
 	<key>BEInfectionSummary_averageHospitalised</key>
@@ -240,17 +240,17 @@
 			<key>NSStringFormatValueTypeKey</key>
 			<string>u</string>
 			<key>zero</key>
-			<string>%u opnames</string>
+			<string>%u dagelijkse opnames</string>
 			<key>one</key>
-			<string>%u opname</string>
+			<string>%u dagelijkse opname</string>
 			<key>few</key>
-			<string>%u opnames</string>
+			<string>%u dagelijkse opnames</string>
 			<key>many</key>
-			<string>%u opnames</string>
+			<string>%u dagelijkse opnames</string>
 			<key>two</key>
-			<string>%u opnames</string>
+			<string>%u dagelijkse opnames</string>
 			<key>other</key>
-			<string>%u opnames</string>
+			<string>%u dagelijkse opnames</string>
 		</dict>
 	</dict>
 	<key>BEInfectionSummary_averageInfected</key>

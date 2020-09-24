@@ -122,7 +122,7 @@ class BEFakeRequestsExecutor {
 		store.fakeRequestTestResultFetchIndex += 1
 		let isLast = self.store.fakeRequestTestResultFetchIndex == self.store.fakeRequestAmountOfTestResultFetchesToDo
 		
-		service.getFakeTestResult(isLast) { 
+		service.getFakeTestResult { 
 			log(message:"Get fake test result done")
 			if isLast {
 				self.doFakeKeyUpload(service:service, completion:completion)
