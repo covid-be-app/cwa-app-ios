@@ -150,7 +150,7 @@
 "ExposureSubmissionResult_CardPositive" = "Positief";
 "ExposureSubmissionResult_CardNegative" = "Negatief";
 "ExposureSubmissionResult_CardInvalid" = "Evaluatie niet mogelijk";
-"ExposureSubmissionResult_CardPending" = "Je resultaat is nog niet beschikbaar";
+"ExposureSubmissionResult_CardPending" = "Resultaat nog niet beschikbaar";
 "ExposureSubmissionResult_Procedure" = "Hoe werkt dit:";
 "ExposureSubmissionResult_testAdded" = "Test succesvol toegevoegd";
 "ExposureSubmissionResult_testAddedDesc" = "Je test is opgeslagen in Coronalert.";
@@ -167,7 +167,7 @@
 "ExposureSubmissionResult_furtherInfos_hint_testAgain" = "Als je symptomen verergeren, heb je misschien nog een SARS-CoV-2-test nodig.";
 "ExposureSubmissionResult_testInvalid" = "Test heeft fouten";
 "ExposureSubmissionResult_testInvalidDesc" = "Er was een probleem met de evaluatie van je test. Neem contact op met de dienst volksgezondheid om te weten wat je nu moet doen.";
-"ExposureSubmissionResult_testPending" = "Testresultaat is nog niet beschikbaar";
+"ExposureSubmissionResult_testPending" = "Resultaat nog niet beschikbaar";
 "ExposureSubmissionResult_testPendingDesc" = "Je testresultaat is nog niet beschikbaar.";
 "ExposureSubmissionResult_testRemove" = "Test verwijderen";
 "ExposureSubmissionResult_testRemoveDesc" = "Verwijder de test uit Coronalert, zodat je hier indien nodig een nieuwe testcode kunt opslaan.";

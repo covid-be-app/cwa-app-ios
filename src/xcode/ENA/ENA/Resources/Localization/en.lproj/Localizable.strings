@@ -150,7 +150,7 @@
 "ExposureSubmissionResult_CardPositive" = "Positive";
 "ExposureSubmissionResult_CardNegative" = "Negative";
 "ExposureSubmissionResult_CardInvalid" = "Evaluation not possible";
-"ExposureSubmissionResult_CardPending" = "Your result is not yet available";
+"ExposureSubmissionResult_CardPending" = "Result not yet available";
 "ExposureSubmissionResult_Procedure" = "How this works:";
 "ExposureSubmissionResult_testAdded" = "Test added successfully";
 "ExposureSubmissionResult_testAddedDesc" = "Your test has been stored in the Coronalert.";
@@ -167,7 +167,7 @@
 "ExposureSubmissionResult_furtherInfos_hint_testAgain" = "If your symptoms worsen, you might need a further SARS-CoV-2 test.";
 "ExposureSubmissionResult_testInvalid" = "Test has errors";
 "ExposureSubmissionResult_testInvalidDesc" = "There was a problem evaluating your test. Please contact the public health authority to find out how to proceed. ";
-"ExposureSubmissionResult_testPending" = "Test result is not yet available";
+"ExposureSubmissionResult_testPending" = "Result not yet available";
 "ExposureSubmissionResult_testPendingDesc" = "Your test result is not yet available.";
 "ExposureSubmissionResult_testRemove" = "Delete test";
 "ExposureSubmissionResult_testRemoveDesc" = "Please delete the test from Coronalert, so that you can save a new test code here if necessary.";
