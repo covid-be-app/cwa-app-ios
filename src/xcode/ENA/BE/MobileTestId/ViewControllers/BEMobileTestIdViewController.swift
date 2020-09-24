@@ -83,6 +83,25 @@ class BEMobileTestIdViewController: DynamicTableViewController, ENANavigationCon
 		tableView.dataSource = self
 		tableView.delegate = self
 		tableView.register(UINib(nibName: String(describing: ExposureSubmissionStepCell.self), bundle: nil), forCellReuseIdentifier: CustomCellReuseIdentifiers.stepCell.rawValue)
+
+		// We do 2 things here
+		// - enable the copy functionality on the label (implemented in a UILabel extension)
+		// - remove the trailing constraint on the label, because by default in the German code the label is spanning the entire width of the containing cell, minus margins
+		//   the problem with that is that the "copy" text does not appear centered above the code, so we remove that constraint. No need for it since the code will never be multi-line
+		let codeCell = DynamicCell.headline(text:mobileTestId.fullString, accessibilityIdentifier: nil) { viewController, cell, indexPath in
+			if
+				let textLabel = cell.textLabel,
+				let superview = textLabel.superview {
+				textLabel.isCopyingEnabled = true
+				
+				let constraint = superview.constraints.first{ constraint in
+					return constraint.firstAnchor == textLabel.trailingAnchor || constraint.secondAnchor == textLabel.trailingAnchor
+				}
+				
+				constraint?.isActive = false
+			}
+		}
+		
 		dynamicTableViewModel = DynamicTableViewModel([
 			.section(
 				header: .image(
@@ -98,7 +117,7 @@ class BEMobileTestIdViewController: DynamicTableViewController, ENANavigationCon
 					.title2(text: BEAppStrings.BEMobileTestId.dateInfectious, accessibilityIdentifier: nil),
 					.headline(text: dateFormatter.string(from:mobileTestId.datePatientInfectious.dateWithoutTime!), accessibilityIdentifier: nil),
 					.title2(text: BEAppStrings.BEMobileTestId.code, accessibilityIdentifier: nil),
-					.headline(text:mobileTestId.fullString, accessibilityIdentifier: nil)
+					codeCell
 				]
 			)
 		])

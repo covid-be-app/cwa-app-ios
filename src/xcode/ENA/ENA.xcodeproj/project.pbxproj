@@ -253,6 +253,7 @@
 		A92076E924ED41F400AE8748 /* BEFakeRequestsExecutorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076E824ED41F400AE8748 /* BEFakeRequestsExecutorTests.swift */; };
 		A92076EC24ED542900AE8748 /* BEMockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076EB24ED542900AE8748 /* BEMockURLSession.swift */; };
 		A929A71724DC3EE50039B997 /* BEHTTPClientSubmitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A929A71624DC3EE50039B997 /* BEHTTPClientSubmitTests.swift */; };
+		A92B66AD251CBF9B00F9B8DD /* BEUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B66AC251CBF9B00F9B8DD /* BEUILabel.swift */; };
 		A935EE5624E0060400B33B66 /* BEENAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A935EE5524E0060400B33B66 /* BEENAUITests.swift */; };
 		A94BF68925012C5B009404D2 /* BEENTemporaryExposureKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94BF68825012C5B009404D2 /* BEENTemporaryExposureKey.swift */; };
 		A94BF6982508F114009404D2 /* BEEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94BF6972508F114009404D2 /* BEEnvironment.swift */; };
@@ -728,6 +729,7 @@
 		A92076E824ED41F400AE8748 /* BEFakeRequestsExecutorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEFakeRequestsExecutorTests.swift; sourceTree = "<group>"; };
 		A92076EB24ED542900AE8748 /* BEMockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEMockURLSession.swift; sourceTree = "<group>"; };
 		A929A71624DC3EE50039B997 /* BEHTTPClientSubmitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEHTTPClientSubmitTests.swift; sourceTree = "<group>"; };
+		A92B66AC251CBF9B00F9B8DD /* BEUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEUILabel.swift; sourceTree = "<group>"; };
 		A935EE5524E0060400B33B66 /* BEENAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEENAUITests.swift; sourceTree = "<group>"; };
 		A94BF68825012C5B009404D2 /* BEENTemporaryExposureKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEENTemporaryExposureKey.swift; sourceTree = "<group>"; };
 		A94BF6972508F114009404D2 /* BEEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEEnvironment.swift; sourceTree = "<group>"; };
@@ -1891,6 +1893,7 @@
 				A9D0BF8124F585A200DEBD99 /* BECountdownTimer.swift */,
 				A95EE81B24FD0A6A00AFECBD /* BEUIStackView.swift */,
 				A94BF68825012C5B009404D2 /* BEENTemporaryExposureKey.swift */,
+				A92B66AC251CBF9B00F9B8DD /* BEUILabel.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -2936,6 +2939,7 @@
 				FEDCE6E2763B0BABFADF36BA /* ExposureDetectionViewController+State.swift in Sources */,
 				FEDCECC1B2111AB537AEF7E5 /* HomeInteractor+State.swift in Sources */,
 				A92076D124E426D600AE8748 /* BEMockExposureSubmissionService.swift in Sources */,
+				A92B66AD251CBF9B00F9B8DD /* BEUILabel.swift in Sources */,
 				B1221BE02492ECE800E6C4E4 /* CFDictionary+KeychainQuery.swift in Sources */,
 				FEDCE77AED78E9C25999BB35 /* SceneDelegate+State.swift in Sources */,
 			);
