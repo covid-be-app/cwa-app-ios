@@ -32,7 +32,7 @@ protocol BEExposureSubmissionService : ExposureSubmissionService {
 	
 	func deleteTestIfOutdated() -> Bool
 	
-	func getFakeTestResult(_ isLast:Bool, completion: @escaping(() -> Void))
+	func getFakeTestResult(completion: @escaping(() -> Void))
 }
 
 class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposureSubmissionService {
@@ -95,16 +95,9 @@ class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposure
 		}
 	}
 
-	func getFakeTestResult(_ isLast:Bool, completion: @escaping(() -> Void)) {
-		
-		client.getTestResult(forDevice: BEMobileTestId.fakeRegistrationToken) { result in
-			if isLast {
-				self.client.ackTestDownload(forDevice: BEMobileTestId.fakeRegistrationToken) {
-					completion()
-				}
-			} else {
-				completion()
-			}
+	func getFakeTestResult(completion: @escaping(() -> Void)) {
+		client.getTestResult(forDevice: BEMobileTestId.fakeRegistrationToken) { _ in
+			completion()
 		}
 	}
 
