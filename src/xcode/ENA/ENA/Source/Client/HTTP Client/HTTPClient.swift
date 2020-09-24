@@ -367,6 +367,10 @@ final class HTTPClient: Client {
 							self.ackTestDownload(forDevice: registrationToken) {
 								log(message:"Ack finished")
 							}
+						} else {
+							self.ackTestDownload(forDevice: BEMobileTestId.fakeRegistrationToken) {
+								log(message:"Fake ack finished")
+							}
 						}
 						
 						completeWith(.success(testResult))

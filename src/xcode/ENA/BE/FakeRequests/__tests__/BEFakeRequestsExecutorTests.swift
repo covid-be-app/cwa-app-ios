@@ -205,15 +205,18 @@ class BEFakeRequestsExecutorTests: XCTestCase {
 		var datas:[Data?] = []
 		var nextResponses:[URLResponse?] = []
 		
-		// we do a bunch of get test results, only the last should return a result and then we ack it
+		// we do a bunch of get test results
 		// and finally we upload fake keys
-		self.urlSequence = Array.init(repeating: configuration.testResultURL, count: self.store.fakeRequestAmountOfTestResultFetchesToDo)
-		self.urlSequence.append(configuration.ackTestResultURL)
+		for _ in 0..<self.store.fakeRequestAmountOfTestResultFetchesToDo {
+			self.urlSequence.append(configuration.testResultURL)
+			self.urlSequence.append(configuration.ackTestResultURL)
+		}
+
 		self.urlSequence.append(configuration.submissionURL)
 
 		let runHTTPRequestObserver:MockUrlSession.URLRequestObserver = { request in
 			let url = request.url!
-			
+
 			XCTAssertEqual(self.urlSequence.first!,url)
 			self.urlSequence.remove(at: 0)
 		}
@@ -224,11 +227,12 @@ class BEFakeRequestsExecutorTests: XCTestCase {
 			let data = try JSONEncoder().encode(result)
 			datas.append(data)
 			nextResponses.append(HTTPURLResponse(url: configuration.testResultURL, statusCode: 200, httpVersion: "2", headerFields: nil))
+
+			// response for ACK
+			datas.append(Data())
+			nextResponses.append(HTTPURLResponse(url: configuration.testResultURL, statusCode: 204, httpVersion: "2", headerFields: nil))
 		}
 		
-		// response for ACK
-		datas.append(Data())
-		nextResponses.append(HTTPURLResponse(url: configuration.testResultURL, statusCode: 204, httpVersion: "2", headerFields: nil))
 
 		// response for upload
 		datas.append(Data())

@@ -106,7 +106,7 @@ class BEMockExposureSubmissionService : BEExposureSubmissionService {
 		completionHandler(nil)
 	}
 	
-	func getFakeTestResult(_ isLast: Bool, completion: @escaping (() -> Void)) {
+	func getFakeTestResult(completion: @escaping (() -> Void)) {
 		completion()
 	}
 }

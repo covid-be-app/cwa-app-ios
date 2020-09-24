@@ -62,6 +62,7 @@ class BEHomeInfectionSummaryCellConfigurator: CollectionViewCellConfigurator {
 		updatedAtFormatter.timeStyle = .short
 		
 		dateRangeFormatter = DateFormatter()
+		dateRangeFormatter.locale = NSLocale.current
 		dateRangeFormatter.setLocalizedDateFormatFromTemplate("dd MMM")
 	}
 	
@@ -104,7 +105,8 @@ class BEHomeInfectionSummaryCellConfigurator: CollectionViewCellConfigurator {
 		
 		let startString = dateRangeFormatter.string(from: startDate)
 		let endString = dateRangeFormatter.string(from: endDate)
-		cell.dateRangeLabel.text = "\(startString) - \(endString)"
+		
+		cell.dateRangeLabel.text = "\(BEAppStrings.BEInfectionSummary.forWeek) \(startString) - \(endString)"
 	}
 	
 	// MARK: Hashable

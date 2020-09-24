@@ -82,4 +82,12 @@ class BEMobileTestIdTests: XCTestCase {
 		XCTAssertEqual(firstPart,testId.id)
 		XCTAssertEqual(secondPart,testId.datePatientInfectious)
    }
+	
+	func testFakeRegistrationToken() throws {
+		let testId = BEMobileTestId(datePatientInfectious: "2020-07-10")
+		let registrationToken = testId.registrationToken
+		let fakeToken = BEMobileTestId.fakeRegistrationToken
+		
+		XCTAssertEqual(fakeToken.count, registrationToken.count)
+	}
 }

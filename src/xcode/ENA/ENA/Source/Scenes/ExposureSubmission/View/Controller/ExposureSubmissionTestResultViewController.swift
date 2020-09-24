@@ -301,15 +301,17 @@ private extension ExposureSubmissionTestResultViewController {
 				ExposureSubmissionDynamicCell.stepCell(
 					title: AppStrings.ExposureSubmissionResult.testPositive,
 					description: AppStrings.ExposureSubmissionResult.testPositiveDesc,
-					icon: UIImage(named: "Icons_Grey_Error"),
+					icon: UIImage(named: "Icons -Warning"),
 					hairline: .topAttached
 				),
-
+				
 				ExposureSubmissionDynamicCell.stepCell(
-					title: AppStrings.ExposureSubmissionResult.warnOthers,
-					description: AppStrings.ExposureSubmissionResult.warnOthersDesc,
-					icon: UIImage(named: "Icons_Grey_Warnen"),
-					hairline: .none
+					bulletPoint: AppStrings.ExposureSubmissionResult.testPositiveIsolationDesc,
+					hairline: .topAttached
+				),
+				ExposureSubmissionDynamicCell.stepCell(
+					bulletPoint: AppStrings.ExposureSubmissionResult.testPositiveWarnOthersDesc,
+					hairline: .topAttached
 				)
 			]
 		)
