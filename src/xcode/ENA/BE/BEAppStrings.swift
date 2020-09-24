@@ -61,6 +61,7 @@ enum BEAppStrings {
 	enum BEInfectionSummary {
 		static let notAvailable = NSLocalizedString("BENoInfectionSummary_title", comment: "")
 		static let title = NSLocalizedString("BEInfectionSummary_title", comment: "")
+		static let forWeek = NSLocalizedString("BEInfectionSummary_forWeek", comment: "")
 		static let averageInfected = NSLocalizedString("BEInfectionSummary_averageInfected", comment: "")
 		static let averageHospitalised = NSLocalizedString("BEInfectionSummary_averageHospitalised", comment: "")
 		static let averageDeceased = NSLocalizedString("BEInfectionSummary_averageDeceased", comment: "")
