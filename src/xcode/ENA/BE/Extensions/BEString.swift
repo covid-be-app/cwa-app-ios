@@ -23,13 +23,16 @@ import Foundation
 extension String {
 
     static func random(length: Int) -> String {
-
         let base = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" as String
         var randomString: String = ""
+		var bytes = [UInt8](repeating: 0, count: length)
+		let result = SecRandomCopyBytes(kSecRandomDefault, bytes.count, &bytes)
+		guard result == errSecSuccess else {
+			fatalError("Error creating random bytes.")
+		}
 
-        for _ in 0..<length {
-
-            let randomValue = arc4random_uniform(UInt32(base.count))
+        for x in 0..<length {
+			let randomValue = Int(bytes[x]) % base.count
             let index = String.Index(utf16Offset: Int(randomValue), in: base)
             randomString += "\(base[index])"
         }
