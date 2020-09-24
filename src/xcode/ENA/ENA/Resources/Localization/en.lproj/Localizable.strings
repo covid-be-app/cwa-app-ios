@@ -399,7 +399,7 @@
 "RiskLegend_Legend2_Title" = "Risk of Infection";
 "BEExposureDetection_OffShort" = "Stopped";
 "BENoInfectionSummary_title" = "No report available";
-"BEInfectionSummary_title" = "Statistics";
+"BEInfectionSummary_title" = "Weekly Average";
 "BEInfectionSummary_updatedAt" = "Last updated on %@";
 "BEMobileTestId_dateInfectious" = "Date of infectiousness";
 "BEMobileTestId_code" = "Code";
@@ -409,3 +409,4 @@
 "BERiskLegend_infectionSummaryText" = "Contains the seven-day average of the number of new infections, hospitalisations and deaths.";
 "ExposureDetection_Guide_Hotline5" = "The contact center on 02 214.19.19";
 "ExposureDetection_Guide_GetTested" = "Get tested as soon as possible.";
+"BEInfectionSummary_forWeek" = "For week";
