@@ -150,7 +150,7 @@
 "ExposureSubmissionResult_CardPositive" = "Positif";
 "ExposureSubmissionResult_CardNegative" = "Négatif";
 "ExposureSubmissionResult_CardInvalid" = "Évaluation impossible";
-"ExposureSubmissionResult_CardPending" = "Votre résultat n'est pas encore disponible.";
+"ExposureSubmissionResult_CardPending" = "Résultat pas encore disponible";
 "ExposureSubmissionResult_Procedure" = "Comment ça marche ?";
 "ExposureSubmissionResult_testAdded" = "Test ajouté avec succès";
 "ExposureSubmissionResult_testAddedDesc" = "Votre test a été enregistré dans l'application Coronalert.";
@@ -167,7 +167,7 @@
 "ExposureSubmissionResult_furtherInfos_hint_testAgain" = "Si vos symptômes s'aggravent, vous pourriez avoir besoin d'un nouveau test SRAS-CoV-2.";
 "ExposureSubmissionResult_testInvalid" = "Le test comporte des erreurs.";
 "ExposureSubmissionResult_testInvalidDesc" = "Il y a eu un problème d'évaluation de votre test. Veuillez contacter l'autorité de santé publique pour savoir comment procéder. ";
-"ExposureSubmissionResult_testPending" = "Le résultat du test n'est pas encore disponible.";
+"ExposureSubmissionResult_testPending" = "Résultat pas encore disponible.";
 "ExposureSubmissionResult_testPendingDesc" = "Le résultat de votre test n'est pas encore disponible.";
 "ExposureSubmissionResult_testRemove" = "Supprimer le test";
 "ExposureSubmissionResult_testRemoveDesc" = "Veuillez supprimer le test de l'application Coronalert, afin de pouvoir enregistrer un nouveau code de test ici si nécessaire.";
@@ -282,8 +282,8 @@
 "Home_SettingsCard_Title" = "Paramètres";
 "Home_AppInformationCard_Title" = "Informations complémentaires";
 "Home_AppInformationCard_Version" = "Version";
-"Home_resultCard_ResultAvailableTitle" = "Votre résultat est disponible.";
-"Home_resultCard_ResultUnvailableTitle" = "Votre résultat n'est pas encore disponible.";
+"Home_resultCard_ResultAvailableTitle" = "Votre résultat est disponible";
+"Home_resultCard_ResultUnvailableTitle" = "Votre résultat n'est pas encore disponible";
 "Home_resultCard_ShowResultButton" = "Voir mon test";
 "Home_resultCard_LoadingBody" = "Les données actuelles sont en cours de téléchargement.\nCela peut prendre plusieurs minutes.";
 "Home_resultCard_LoadingTitle" = "Mise à jour en cours...";
