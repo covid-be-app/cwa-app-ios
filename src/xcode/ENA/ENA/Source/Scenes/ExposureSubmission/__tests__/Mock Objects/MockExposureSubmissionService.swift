@@ -61,8 +61,6 @@ class MockExposureSubmissionService: ExposureSubmissionService {
 		deleteTestCallback?()
 	}
 
-	var devicePairingConsentAcceptTimestamp: Int64?
-
 	var devicePairingSuccessfulTimestamp: Int64?
 	
 	var mobileTestId: BEMobileTestId?

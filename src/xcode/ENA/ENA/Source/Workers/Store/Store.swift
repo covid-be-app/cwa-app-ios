@@ -51,8 +51,6 @@ protocol Store: AnyObject {
 	// A secret allowing the client to upload the diagnosisKey set.
 	var tan: String? { get set }
 	var testGUID: String? { get set }
-	var devicePairingConsentAccept: Bool { get set }
-	var devicePairingConsentAcceptTimestamp: Int64? { get set }
 	var devicePairingSuccessfulTimestamp: Int64? { get set }
 	var isAllowedToSubmitDiagnosisKeys: Bool { get set }
 
