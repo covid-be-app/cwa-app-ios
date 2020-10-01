@@ -23,7 +23,7 @@ import ExposureNotification
 protocol BEExposureSubmissionService : ExposureSubmissionService {
 	typealias BEExposureSubmissionGetKeysHandler = (Result<[ENTemporaryExposureKey], ExposureSubmissionError>) -> Void
 	
-	func generateMobileTestId(_ symptomsDate: Date?) -> BEMobileTestId
+	@discardableResult func generateMobileTestId(_ symptomsDate: Date?) -> BEMobileTestId
 	
 	func retrieveDiagnosisKeys(completionHandler: @escaping BEExposureSubmissionGetKeysHandler)
 	func finalizeSubmissionWithoutKeys()
@@ -50,6 +50,10 @@ class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposure
 				// set as pending so the home view controller shows the right state
 				store.testResult = .pending
 				store.devicePairingSuccessfulTimestamp = Int64(Date().timeIntervalSince1970)
+			} else {
+				store.registrationToken = nil
+				store.testResult = nil
+				store.devicePairingSuccessfulTimestamp = nil
 			}
 		}
 	}
@@ -60,11 +64,10 @@ class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposure
 		
 		return id
 	}
-	
+
 	override func deleteTest() {
 		super.deleteTest()
-		store.mobileTestId = nil
-		store.testResult = nil
+		self.mobileTestId = nil
 	}
 	
 	// no longer supported

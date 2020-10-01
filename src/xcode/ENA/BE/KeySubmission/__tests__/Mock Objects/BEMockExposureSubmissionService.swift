@@ -82,16 +82,10 @@ class BEMockExposureSubmissionService : BEExposureSubmissionService {
 		
 	}
 	
-	var devicePairingConsentAcceptTimestamp: Int64?
-	
 	var devicePairingSuccessfulTimestamp: Int64?
 	
 	func preconditions() -> ExposureManagerState {
 		return ExposureManagerState(authorized: false, enabled: false, status: .unknown)
-	}
-	
-	func acceptPairing() {
-		
 	}
 	
 	func deleteTestIfOutdated() -> Bool {
