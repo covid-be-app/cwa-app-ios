@@ -91,6 +91,12 @@ class Coordinator: RequiresAppDependencies {
 			enableDeveloperMenuIfAllowed(in: homeController)
 		#endif
 	}
+	
+	// :BE: Add refresh
+	
+	func refreshTestResults() {
+		homeController?.updateTestResultState()
+	}
 
 	func showOnboarding() {
 		rootViewController.navigationBar.prefersLargeTitles = false

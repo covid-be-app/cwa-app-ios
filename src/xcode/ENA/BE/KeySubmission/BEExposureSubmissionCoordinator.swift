@@ -36,8 +36,9 @@ class BEExposureSubmissionCoordinator : NSObject, ExposureSubmissionCoordinating
 	let exposureSubmissionService: BEExposureSubmissionService
 
 	
-	private weak var selectCountryDelegate:BESelectCountryViewControllerDelegate?
+	private weak var selectCountryDelegate: BESelectCountryViewControllerDelegate?
 	
+	private var mobileTestIdGenerator: BEMobileTestIdGenerator?
 	// MARK: - Initializers.
 
 	init(
@@ -82,34 +83,15 @@ class BEExposureSubmissionCoordinator : NSObject, ExposureSubmissionCoordinating
 		navigationController?.dismiss(animated: true)
 	}
 
-	// We will "abuse" this name to show the QR code screen without having to modify the entire structure of the calls
+	// We will "abuse" this name to show the test code screen without having to modify the entire structure of the calls
 	// This is what is called after showing the intro screen
 	// In the original app it will show you the 3 possibilities to register a test, in our case we go directly to the code generator
 	
 	func showOverviewScreen() {
-		let alert = UIAlertController(
-			title: BEAppStrings.BEExposureSubmission.symptomsExplanation,
-			message: nil,
-			preferredStyle: .alert
-		)
-		let yesAction = UIAlertAction(title: BEAppStrings.BEExposureSubmission.yes,
-										 style: .default, handler: { _ in
-											self.exposureSubmissionService.acceptPairing()
-											let vc = BESelectSymptomsDateViewController()
-											vc.delegate = self
-											self.push(vc)
-		})
-
-		let noAction = UIAlertAction(title: BEAppStrings.BEExposureSubmission.no,
-										 style: .default, handler: { _ in
-											self.exposureSubmissionService.acceptPairing()
-											self.showMobileTestIdViewController()
-		})
-
-		alert.addAction(yesAction)
-		alert.addAction(noAction)
-
-		present(alert)
+		if let navController = navigationController {
+			self.mobileTestIdGenerator = BEMobileTestIdGenerator(exposureSubmissionService: exposureSubmissionService, parentViewController: navController, delegate: self)
+			self.mobileTestIdGenerator?.generate()
+		}
 	}
 
 	func showWarnOthersScreen() {
@@ -163,9 +145,11 @@ class BEExposureSubmissionCoordinator : NSObject, ExposureSubmissionCoordinating
 	
 	// MARK: - Mobile test id
 	
-	func showMobileTestIdViewController(symptomsDate:Date? = nil) {
+	func showMobileTestIdViewController() {
 		
-		let mobileTestId = exposureSubmissionService.generateMobileTestId(symptomsDate)
+		guard let mobileTestId = exposureSubmissionService.mobileTestId else {
+			fatalError("Missing mobile test id")
+		}
 		
 		let vc = BEMobileTestIdViewController(mobileTestId)
 		vc.delegate = self
@@ -241,16 +225,16 @@ class BEExposureSubmissionCoordinator : NSObject, ExposureSubmissionCoordinating
 	}
 }
 
+extension BEExposureSubmissionCoordinator: BEMobileTestIdGeneratorDelegate {
+	func mobileTestIdGenerator(_ generator:BEMobileTestIdGenerator, generatedNewMobileTestId: Bool) {
+		showMobileTestIdViewController()
+	}
+}
+
 extension BEExposureSubmissionCoordinator : BEMobileTestIdViewControllerDelegate {
 	
 	func mobileTestIdViewControllerFinished(_ vc: BEMobileTestIdViewController) {
 		self.navigationController?.dismiss(animated: true)
-	}
-}
-
-extension BEExposureSubmissionCoordinator : BESelectSymptomsDateViewControllerDelegate {
-	func selectSymptomsDateViewController(_ vc: BESelectSymptomsDateViewController, selectedDate date: Date) {
-		showMobileTestIdViewController(symptomsDate: date)
 	}
 }
 

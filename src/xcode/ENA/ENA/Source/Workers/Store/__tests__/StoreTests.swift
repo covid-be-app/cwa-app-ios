@@ -152,8 +152,6 @@ final class StoreTests: XCTestCase {
 		XCTAssertFalse(tmpStore.hourlyFetchingEnabled)
 		XCTAssertEqual(tmpStore.tan, "97RR2D5644")
 		XCTAssertEqual(tmpStore.testGUID, "00000000-0000-4000-8000-000000000000")
-		XCTAssertTrue(tmpStore.devicePairingConsentAccept)
-		XCTAssertEqual(tmpStore.devicePairingConsentAcceptTimestamp, testTimeStamp)
 		XCTAssertEqual(tmpStore.devicePairingSuccessfulTimestamp, testTimeStamp)
 		XCTAssertTrue(tmpStore.isAllowedToSubmitDiagnosisKeys)
 		XCTAssertTrue(tmpStore.allowRiskChangesNotification)

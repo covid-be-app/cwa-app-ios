@@ -412,3 +412,7 @@
 "BEInfectionSummary_forWeek" = "Voor week";
 "ExposureSubmissionResult_testPositiveIsolationDesc" = "Je bent besmet en daarom moet je minstens 7 dagen thuis in isolatie blijven. Verlaat je huis niet tot de symptomen voorbij zijn.";
 "ExposureSubmissionResult_testPositiveWarnOthersDesc" = "Je kan andere personen met wie je in contact kwam waarschuwen.";
+"BEMobileTestIdActivator_pageLoadError" = "Er is een probleem opgetreden bij het laden van de pagina. Probeer het a.u.b. opnieuw.";
+"BEMobileTestIdActivator_testActivatedTitle" = "Test succesvol gekoppeld";
+"BEMobileTestIdActivator_testActivatedMessage" = "Je test is succesvol gekoppeld aan je smartphone. Vanaf nu kan je je testresultaat ontvangen in Coronalert.";
+"BEMobileTestIdActivator_linkTestToPhoneTitle" = "Koppel Test";
