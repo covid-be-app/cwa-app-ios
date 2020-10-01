@@ -141,9 +141,7 @@ extension BEActivateMobileTestIdViewController: WKNavigationDelegate {
 		log(message: "Page loaded")
 		stopSpinner()
 		removeClutter()
-		DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-			self.fillFields()
-		}
+		fillFields()
 	}
 	
 	func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
