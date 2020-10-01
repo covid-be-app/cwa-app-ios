@@ -294,6 +294,11 @@
 		A9DD2D0124D01F980035081A /* BESecureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2D0024D01F980035081A /* BESecureStore.swift */; };
 		A9DD2D0424D0213B0035081A /* BEStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2D0324D0213B0035081A /* BEStoreTests.swift */; };
 		A9DD2D0724D02DFC0035081A /* BEExposureSubmissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2D0624D02DFC0035081A /* BEExposureSubmissionService.swift */; };
+		A9F53DAE2523D838008F95E0 /* BEMobileTestIdGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F53DAD2523D838008F95E0 /* BEMobileTestIdGenerator.swift */; };
+		A9F53DB32524718D008F95E0 /* BEMobileTestIdActivatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F53DB22524718D008F95E0 /* BEMobileTestIdActivatorTests.swift */; };
+		A9FC527F25222D0600660812 /* BEMobileTestIdActivator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC527E25222D0600660812 /* BEMobileTestIdActivator.swift */; };
+		A9FC52842522330900660812 /* BEActivateMobileTestIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC52822522330900660812 /* BEActivateMobileTestIdViewController.swift */; };
+		A9FC52852522330900660812 /* BEActivateMobileTestIdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9FC52832522330900660812 /* BEActivateMobileTestIdViewController.xib */; };
 		B10F9B8B249961BC00C418F4 /* DynamicTypeLabelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10F9B89249961B500C418F4 /* DynamicTypeLabelTests.swift */; };
 		B10F9B8C249961CE00C418F4 /* UIFont+DynamicTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B163D11424993F64001A322C /* UIFont+DynamicTypeTests.swift */; };
 		B10FD5ED246EAADC00E9D7F2 /* AppInformationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CC3E9E246D6B6800217F2C /* AppInformationDetailViewController.swift */; };
@@ -778,6 +783,11 @@
 		A9DD2D0024D01F980035081A /* BESecureStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BESecureStore.swift; sourceTree = "<group>"; };
 		A9DD2D0324D0213B0035081A /* BEStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEStoreTests.swift; sourceTree = "<group>"; };
 		A9DD2D0624D02DFC0035081A /* BEExposureSubmissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEExposureSubmissionService.swift; sourceTree = "<group>"; };
+		A9F53DAD2523D838008F95E0 /* BEMobileTestIdGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEMobileTestIdGenerator.swift; sourceTree = "<group>"; };
+		A9F53DB22524718D008F95E0 /* BEMobileTestIdActivatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEMobileTestIdActivatorTests.swift; sourceTree = "<group>"; };
+		A9FC527E25222D0600660812 /* BEMobileTestIdActivator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEMobileTestIdActivator.swift; sourceTree = "<group>"; };
+		A9FC52822522330900660812 /* BEActivateMobileTestIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEActivateMobileTestIdViewController.swift; sourceTree = "<group>"; };
+		A9FC52832522330900660812 /* BEActivateMobileTestIdViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BEActivateMobileTestIdViewController.xib; sourceTree = "<group>"; };
 		B102BDC22460410600CD55A2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B10F9B89249961B500C418F4 /* DynamicTypeLabelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTypeLabelTests.swift; sourceTree = "<group>"; };
 		B10FD5F3246EAC1700E9D7F2 /* AppleFilesWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleFilesWriter.swift; sourceTree = "<group>"; };
@@ -1834,6 +1844,7 @@
 		A9DD2CE224CEEEF40035081A /* BE */ = {
 			isa = PBXGroup;
 			children = (
+				A9FC52802522329600660812 /* TestActivation */,
 				A95EE81224FCE0CF00AFECBD /* Statistics */,
 				A9D0BF8A24FBA19C00DEBD99 /* InfectionSummary */,
 				A92076EA24ED540D00AE8748 /* Mocks */,
@@ -1861,6 +1872,7 @@
 				A9DD2CF924D001980035081A /* __tests__ */,
 				A9DD2CE424CEEF370035081A /* ViewControllers */,
 				A9DD2CEE24CF293E0035081A /* BEMobileTestId.swift */,
+				A9F53DAD2523D838008F95E0 /* BEMobileTestIdGenerator.swift */,
 			);
 			path = MobileTestId;
 			sourceTree = "<group>";
@@ -1929,6 +1941,33 @@
 				A929A71324DC3C470039B997 /* __tests__ */,
 			);
 			path = Client;
+			sourceTree = "<group>";
+		};
+		A9F53DB125247173008F95E0 /* __tests__ */ = {
+			isa = PBXGroup;
+			children = (
+				A9F53DB22524718D008F95E0 /* BEMobileTestIdActivatorTests.swift */,
+			);
+			path = __tests__;
+			sourceTree = "<group>";
+		};
+		A9FC52802522329600660812 /* TestActivation */ = {
+			isa = PBXGroup;
+			children = (
+				A9F53DB125247173008F95E0 /* __tests__ */,
+				A9FC5281252232A800660812 /* ViewControllers */,
+				A9FC527E25222D0600660812 /* BEMobileTestIdActivator.swift */,
+			);
+			path = TestActivation;
+			sourceTree = "<group>";
+		};
+		A9FC5281252232A800660812 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A9FC52822522330900660812 /* BEActivateMobileTestIdViewController.swift */,
+				A9FC52832522330900660812 /* BEActivateMobileTestIdViewController.xib */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		B102BDC12460405F00CD55A2 /* Backend */ = {
@@ -2586,6 +2625,7 @@
 				13156CFD248C19D000AFC472 /* usage.html in Resources */,
 				51486DA72485237200FCE216 /* RiskThankYouCollectionViewCell.xib in Resources */,
 				2F785752248506BD00323A9C /* HomeTestResultCollectionViewCell.xib in Resources */,
+				A9FC52852522330900660812 /* BEActivateMobileTestIdViewController.xib in Resources */,
 				A951618924DB027F00631519 /* BESelectSymptomsDateViewController.xib in Resources */,
 				EE269508248FCB0300BAE234 /* InfoPlist.strings in Resources */,
 				85D7594E24570491008175F0 /* LaunchScreen.storyboard in Resources */,
@@ -2672,7 +2712,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9FC527F25222D0600660812 /* BEMobileTestIdActivator.swift in Sources */,
 				B120C7CA24AFF12D00F68FF1 /* ActiveTracing.swift in Sources */,
+				A9F53DAE2523D838008F95E0 /* BEMobileTestIdGenerator.swift in Sources */,
 				B1A89F3B24819CE800DA1CEC /* LabelTableViewCell.swift in Sources */,
 				B1C7EE4424938E9E00F1F284 /* ExposureDetection_DidEndPrematurelyReason+ErrorHandling.swift in Sources */,
 				B1A89F3A24819CD300DA1CEC /* HomeRiskImageItemViewConfigurator.swift in Sources */,
@@ -2912,6 +2954,7 @@
 				514C0A0624772F3400F235F6 /* HomeRiskViewConfigurator.swift in Sources */,
 				71EF33DB2497F419007B7E1B /* ENANavigationFooterItem.swift in Sources */,
 				A95EE81424FCE11100AFECBD /* BEStatisticsService.swift in Sources */,
+				A9FC52842522330900660812 /* BEActivateMobileTestIdViewController.swift in Sources */,
 				A980D5A124D84E2D00A5BB8E /* BESelectCountryViewController.swift in Sources */,
 				710ABB1F2475115500948792 /* UITableViewController+Enum.swift in Sources */,
 				51CE1B8B246078B6002CF42A /* InfoCollectionViewCell.swift in Sources */,
@@ -3008,6 +3051,7 @@
 				A1E419462495479D0016E52A /* HTTPClient+MockNetworkStack.swift in Sources */,
 				B1CD333E24865E0000B06E9B /* TracingStatusHistoryTests.swift in Sources */,
 				B1FE13ED24891D0400D012E5 /* RiskProviderTests.swift in Sources */,
+				A9F53DB32524718D008F95E0 /* BEMobileTestIdActivatorTests.swift in Sources */,
 				A1E4194F2495A5AF0016E52A /* HTTPClient+ExposureConfigTests.swift in Sources */,
 				B1218920248AD79900496210 /* ClientMock.swift in Sources */,
 				A1E4194C2495A3A10016E52A /* HTTPClient+AppConfigTests.swift in Sources */,
