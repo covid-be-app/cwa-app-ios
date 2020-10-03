@@ -195,6 +195,11 @@ final class SecureStore: Store {
 		get { kvStore["infectionSummaryUpdatedAt"] as Date? }
 		set { kvStore["infectionSummaryUpdatedAt"] = newValue }
 	}
+	
+	var latestRisk: Risk? {
+		get { kvStore["latestRisk"] as Risk? }
+		set { kvStore["latestRisk"] = newValue }
+	}
 }
 
 

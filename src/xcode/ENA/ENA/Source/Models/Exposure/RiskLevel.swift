@@ -1,6 +1,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -21,7 +24,7 @@ import Foundation
 /// Exposure Risk level
 ///
 /// - important: Due to exception case, `CaseIterable` `allCases` does not produce a correctly sorted collection!
-enum RiskLevel: Int, CaseIterable {
+enum RiskLevel: Int, CaseIterable, Codable {
 	/*
 	RiskLevels are ordered according to these rules:
 	1. .low is least
@@ -39,8 +42,12 @@ enum RiskLevel: Int, CaseIterable {
 	case increased
 	/// Unknown risk  last calculation more than 24 hours old
 	///
+	
 	/// Will be shown when the last calculation is more than 24 hours old - until the calculation is run again
 	/// - important: Overrules `.increased` and `low`
+	
+	/// we do no longer support this as this generates incorrect user information
+	/// :TODO: reactivate it and show correct texts in the home view controller
 	case unknownOutdated
 	/// Unknown risk - no calculation has been performed yet
 	///
