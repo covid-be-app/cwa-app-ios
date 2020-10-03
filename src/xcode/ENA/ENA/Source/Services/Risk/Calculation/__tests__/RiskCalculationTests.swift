@@ -129,7 +129,9 @@ final class RiskCalculationTests: XCTestCase {
 			providerConfiguration: config
 		)
 
-		XCTAssertEqual(risk?.level, .unknownOutdated)
+		// :BE: We currently disabled this
+		//XCTAssertEqual(risk?.level, .unknownOutdated)
+		XCTAssertEqual(risk?.level, .low)
 	}
 
 	func testCalculateRisk_UnknownOutdated2() {
@@ -154,6 +156,7 @@ final class RiskCalculationTests: XCTestCase {
 
 		XCTAssertEqual(risk?.level, .unknownInitial)
 
+		// :BE: We currently disabled this
 		XCTAssertEqual(
 			RiskCalculation.risk(
 				summary: summaryLow,
@@ -164,7 +167,8 @@ final class RiskCalculationTests: XCTestCase {
 				previousRiskLevel: nil,
 				providerConfiguration: config
 				)?.level,
-			.unknownOutdated
+		//	.unknownOutdated
+			.low
 		)
 
 		XCTAssertEqual(

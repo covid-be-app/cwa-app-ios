@@ -65,5 +65,6 @@ final class MockTestStore: Store {
 	var fakeRequestTestResultFetchIndex: Int = 0
 	var infectionSummary: BEInfectionSummary?
 	var infectionSummaryUpdatedAt: Date?
+	var latestRisk: Risk?
 
 }

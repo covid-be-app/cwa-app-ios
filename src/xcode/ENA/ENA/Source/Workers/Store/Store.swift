@@ -123,4 +123,6 @@ protocol Store: AnyObject {
 	
 	var infectionSummary: BEInfectionSummary? { get set }
 	var infectionSummaryUpdatedAt: Date? { get set }
+	
+	var latestRisk: Risk? { get set }
 }
