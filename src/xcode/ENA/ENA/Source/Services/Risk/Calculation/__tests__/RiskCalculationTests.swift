@@ -478,8 +478,13 @@ final class RiskCalculationTests: XCTestCase {
 			previousRiskLevel: .increased,
 			providerConfiguration: config
 		)
+		
 		// The risk level did not change - we only care about changes between low and increased
-		XCTAssertFalse(risk?.riskLevelHasChanged ?? true)
+		// :BE: we keep the latest risk value and it should be low since we passed summaryLow to the calculation
+		// :TODO: improvement in CBA-440
+
+		//XCTAssertFalse(risk?.riskLevelHasChanged ?? true)
+		XCTAssertTrue(risk?.riskLevelHasChanged ?? true)
 	}
 }
 
