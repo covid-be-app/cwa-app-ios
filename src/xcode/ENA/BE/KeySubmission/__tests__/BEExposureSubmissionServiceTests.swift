@@ -55,10 +55,10 @@ class BEExposureSubmissionServiceTests: XCTestCase {
 		let dateTestCommunicated = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!
 		
 		// infectious 8 days ago
-		let datePatientInfectious = Calendar.current.date(byAdding: .day, value: -8, to: dateTestCommunicated, wrappingComponents: true)!
+		let datePatientInfectious = Calendar.current.date(byAdding: .day, value: -8, to: dateTestCommunicated)!
 		
 		// did test 4 days ago
-		let dateTestCollected = Calendar.current.date(byAdding: .day, value: -4, to: dateTestCommunicated, wrappingComponents: true)!
+		let dateTestCollected = Calendar.current.date(byAdding: .day, value: -4, to: dateTestCommunicated)!
 		
 		let patientInfectiousDateString = dateFormatter.string(from:datePatientInfectious)
 		let testCollectedDateString = dateFormatter.string(from:dateTestCollected)

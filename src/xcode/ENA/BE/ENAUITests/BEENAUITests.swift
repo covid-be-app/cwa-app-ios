@@ -134,5 +134,31 @@ class BEENAUITests: XCTestCase {
 		app.swipeUp()
 		snapshot("ScreenShot_\(#function)_003")
 	}
+	
+	// :TODO: activate these tests once the form is ready in production
+	
+	/*
+	func testWebFormWithoutSymptoms() throws {
+		app.launchArguments.append(contentsOf: ["-openWebForm", "https://coronalert.be/en/corona-alert-form/?pcr=0000000000000000"])
+		app.launch()
+
+		// tap NO
+		app.alerts.buttons.element(boundBy: 1).tap()
+		XCTAssertTrue(app.navigationBars.buttons.element(boundBy: 0).waitForExistence(timeout: 5.0))
+	}
+
+	func testWebFormWithSymptoms() throws {
+		app.launchArguments.append(contentsOf: ["-openWebForm", "https://coronalert.be/en/corona-alert-form/?pcr=0000000000000000"])
+		app.launch()
+
+		// tap YES
+		app.alerts.buttons.firstMatch.tap()
+
+		XCTAssertTrue(app.buttons["BEAppStrings.BESelectSymptomsDate.next"].waitForExistence(timeout: 5.0))
+		app.buttons["BEAppStrings.BESelectSymptomsDate.next"].tap()
+
+		XCTAssertTrue(app.navigationBars.buttons.element(boundBy: 0).waitForExistence(timeout: 5.0))
+	}
+*/
 
 }
