@@ -85,7 +85,7 @@
 			<key>NSStringFormatValueTypeKey</key>
 			<string>u</string>
 			<key>zero</key>
-			<string>%u Tage seit letzter Risiko-Begegnung</string>
+			<string>Weniger als einen Tag seit letzter Risiko-Begegnung</string>
 			<key>one</key>
 			<string>%u Tag seit letzter Risiko-Begegnung</string>
 			<key>few</key>
