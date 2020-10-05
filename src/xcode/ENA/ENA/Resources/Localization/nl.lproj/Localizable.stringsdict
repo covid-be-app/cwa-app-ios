@@ -77,9 +77,9 @@
 			<key>NSStringFormatValueTypeKey</key>
 			<string>u</string>
 			<key>zero</key>
-			<string>%u dagen sinds de laatste blootstelling</string>
+			<string>Minder dan een dag sinds de laatste blootstelling</string>
 			<key>one</key>
-			<string>%u dagen sinds de laatste blootstelling</string>
+			<string>%u dag sinds de laatste blootstelling</string>
 			<key>few</key>
 			<string>%u dagen sinds de laatste blootstelling</string>
 			<key>many</key>

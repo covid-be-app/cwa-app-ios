@@ -85,7 +85,7 @@
 			<key>NSStringFormatValueTypeKey</key>
 			<string>u</string>
 			<key>zero</key>
-			<string>%u days since last exposure</string>
+			<string>Less than one day since last exposure</string>
 			<key>one</key>
 			<string>%u day since last exposure</string>
 			<key>few</key>
