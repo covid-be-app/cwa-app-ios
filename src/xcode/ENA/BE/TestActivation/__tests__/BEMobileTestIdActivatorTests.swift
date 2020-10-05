@@ -46,6 +46,18 @@ class BEMobileTestIdActivatorTests: XCTestCase {
 		XCTAssertNil(activator)
     }
 
+    func testWrongURL4() throws {
+		let url = URL(string:"https://coronalert.be/en/corona-alert-form/?pcr=000abc00xx")!
+		let activator = buildActivator(url)
+		XCTAssertNil(activator)
+    }
+    
+	func testWrongURL5() throws {
+		let url = URL(string:"https://coronalert.be/en/corona-alert-form/?pcr=123456789012345")!
+		let activator = buildActivator(url)
+		XCTAssertNil(activator)
+    }
+	
     func testCorrectURL() throws {
 		let url = URL(string:"https://coronalert.be/en/corona-alert-form/?pcr=1234567890123456")!
 		let activator = buildActivator(url)
