@@ -124,7 +124,7 @@ private extension DynamicCell {
 	static func riskLastExposure(text: String, image: UIImage?) -> DynamicCell {
 		.risk { viewController, cell, _ in
 			// :BE: offsets if not calculated today, to reflect the correct number of days since last exposure
-			var daysSinceLastExposure = viewController.state.risk?.details.calendarDaysSinceLastExposure ?? 0
+			let daysSinceLastExposure = viewController.state.risk?.details.calendarDaysSinceLastExposure ?? 0
 			cell.textLabel?.text = .localizedStringWithFormat(text, daysSinceLastExposure)
 			cell.imageView?.image = image
 		}

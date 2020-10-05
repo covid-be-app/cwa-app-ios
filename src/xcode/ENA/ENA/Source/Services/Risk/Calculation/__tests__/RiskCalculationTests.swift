@@ -129,7 +129,9 @@ final class RiskCalculationTests: XCTestCase {
 			providerConfiguration: config
 		)
 
-		XCTAssertEqual(risk?.level, .unknownOutdated)
+		// :BE: We currently disabled this
+		//XCTAssertEqual(risk?.level, .unknownOutdated)
+		XCTAssertEqual(risk?.level, .low)
 	}
 
 	func testCalculateRisk_UnknownOutdated2() {
@@ -154,6 +156,7 @@ final class RiskCalculationTests: XCTestCase {
 
 		XCTAssertEqual(risk?.level, .unknownInitial)
 
+		// :BE: We currently disabled this
 		XCTAssertEqual(
 			RiskCalculation.risk(
 				summary: summaryLow,
@@ -164,7 +167,8 @@ final class RiskCalculationTests: XCTestCase {
 				previousRiskLevel: nil,
 				providerConfiguration: config
 				)?.level,
-			.unknownOutdated
+		//	.unknownOutdated
+			.low
 		)
 
 		XCTAssertEqual(
@@ -474,8 +478,13 @@ final class RiskCalculationTests: XCTestCase {
 			previousRiskLevel: .increased,
 			providerConfiguration: config
 		)
+		
 		// The risk level did not change - we only care about changes between low and increased
-		XCTAssertFalse(risk?.riskLevelHasChanged ?? true)
+		// :BE: we keep the latest risk value and it should be low since we passed summaryLow to the calculation
+		// :TODO: improvement in CBA-440
+
+		//XCTAssertFalse(risk?.riskLevelHasChanged ?? true)
+		XCTAssertTrue(risk?.riskLevelHasChanged ?? true)
 	}
 }
 

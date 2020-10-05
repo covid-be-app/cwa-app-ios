@@ -415,4 +415,4 @@
 "BEMobileTestIdActivator_pageLoadError" = "Beim Laden der Seite ist ein Problem aufgetreten. Bitte versuche es erneut.";
 "BEMobileTestIdActivator_testActivatedTitle" = "Test erfolgreich verknüpft";
 "BEMobileTestIdActivator_testActivatedMessage" = "Ihr Test wurde erfolgreich mit Ihrem Smartphone verknüpft. Ab sofort können Sie Ihr Testergebnis in Coronalert erhalten.";
-"BEMobileTestIdActivator_linkTestToPhoneTitle" = "Verknüpf Test";
+"BEMobileTestIdActivator_linkTestToPhoneTitle" = "Verknüpf Smartphone";

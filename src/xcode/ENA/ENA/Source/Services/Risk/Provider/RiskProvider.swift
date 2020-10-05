@@ -218,6 +218,17 @@ extension RiskProvider: RiskProviding {
 			activeTracing: tracingHistory.activeTracing(),
 			exposureDetectionDate: store.summary?.date
 		)
+		
+		/// this is to cover the case whereby the very first risk calculation fails because of an external issue (e.g. EN is active in the app but the server can't be reached)
+		/// the app would show a "exposure notification not active, push button to activate" message
+		/// which is confusing (and incorrect) to the user as everything is up and running, and the problem is external.
+		/// Since it is the very first calculation we will default to an unknown initial screen, since otherwise we would need to introduce an extra state in the app
+		/// which might cause more bugs than it solves, considering the complexity and the amount of indirections one has to go through in order to do a full risk calculation cycle.
+		if store.latestRisk == nil {
+			let risk = Risk(level: .unknownInitial, details: details, riskLevelHasChanged: false)
+			store.latestRisk = risk
+		}
+		
 
 		// Risk Calculation involves some potentially long running tasks, like exposure detection and
 		// fetching the configuration from the backend.
@@ -264,7 +275,7 @@ extension RiskProvider: RiskProviding {
 
 		guard group.wait(timeout: .now() + .seconds(60)) == .success else {
 			provideLoadingStatus(isLoading: false)
-			completeOnTargetQueue(risk: nil, completion: completion)
+			completeOnTargetQueue(risk: store.latestRisk, completion: completion)
 			return
 		}
 
@@ -274,7 +285,7 @@ extension RiskProvider: RiskProviding {
 	private func _requestRiskLevel(summaries: Summaries?, appConfiguration: SAP_ApplicationConfiguration?, completion: Completion? = nil) {
 		guard let _appConfiguration = appConfiguration else {
 			provideLoadingStatus(isLoading: false)
-			completeOnTargetQueue(risk: nil, completion: completion)
+			completeOnTargetQueue(risk: store.latestRisk, completion: completion)
 			return
 		}
 
@@ -293,12 +304,14 @@ extension RiskProvider: RiskProviding {
 			) else {
 				logError(message: "Serious error during risk calculation")
 				provideLoadingStatus(isLoading: false)
-				completeOnTargetQueue(risk: nil, completion: completion)
+				completeOnTargetQueue(risk: store.latestRisk, completion: completion)
 				return
 		}
 
 		provideLoadingStatus(isLoading: false)
+		
 		completeOnTargetQueue(risk: risk, completion: completion)
+		
 		saveRiskIfNeeded(risk)
 	}
 	#endif
@@ -325,6 +338,8 @@ extension RiskProvider: RiskProviding {
 	}
 
 	private func saveRiskIfNeeded(_ risk: Risk) {
+		store.latestRisk = risk
+		
 		switch risk.level {
 		case .low:
 			store.previousRiskLevel = .low

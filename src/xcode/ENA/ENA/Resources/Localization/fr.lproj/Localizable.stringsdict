@@ -77,9 +77,9 @@
 			<key>NSStringFormatValueTypeKey</key>
 			<string>u</string>
 			<key>zero</key>
-			<string>%u jours depuis la dernière exposition</string>
+			<string>Moins d&apos;un jour depuis la dernière exposition</string>
 			<key>one</key>
-			<string>%u jours depuis la dernière exposition</string>
+			<string>%u jour depuis la dernière exposition</string>
 			<key>few</key>
 			<string>%u jours depuis la dernière exposition</string>
 			<key>many</key>
@@ -129,13 +129,13 @@
 			<key>one</key>
 			<string>%u jour depuis la dernière exposition</string>
 			<key>few</key>
-			<string>%u jour depuis la dernière exposition</string>
+			<string>%u jours depuis la dernière exposition</string>
 			<key>many</key>
-			<string>%u jour depuis la dernière expositione</string>
+			<string>%u jours depuis la dernière exposition</string>
 			<key>two</key>
-			<string>%u jour depuis la dernière exposition</string>
+			<string>%u jours depuis la dernière exposition</string>
 			<key>other</key>
-			<string>%u jour depuis la dernière exposition</string>
+			<string>%u jours depuis la dernière exposition</string>
 		</dict>
 	</dict>
 	<key>Home_Risk_Status_Counter_Label</key>

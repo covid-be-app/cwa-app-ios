@@ -95,7 +95,9 @@ enum RiskCalculation {
 			!providerConfiguration.exposureDetectionIsValid(lastExposureDetectionDate: dateLastExposureDetection ?? .distantPast),
 			riskLevel < .unknownOutdated {
 			// The last exposure detection is not valid since it occurred too far in the past
-			riskLevel = .unknownOutdated
+			// :BE: Disable the below assignment for now as it creates confusion in the user interface (asks to activate EN while it is already active)
+			// :TODO: improvement in CBA-440
+//			riskLevel = .unknownOutdated
 		}
 
 		guard let summary = summary else {

@@ -122,6 +122,19 @@ class BEMobileTestIdActivator {
 			return nil
 		}
 		
+		if activationCodeValue.count != 16  {
+			logError(message: "Wrong activation code length")
+			return nil
+		}
+		
+		let onlyNumbers = activationCodeValue.reduce(true) { (onlyNumbers, character) -> Bool in
+			return onlyNumbers && character.isNumber
+		}
+		
+		if onlyNumbers == false {
+			logError(message: "Activation code should only contain digits")
+			return nil
+		}
 
 		return activationCodeValue
 	}
