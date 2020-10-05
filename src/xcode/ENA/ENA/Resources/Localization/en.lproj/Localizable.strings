@@ -415,4 +415,4 @@
 "BEMobileTestIdActivator_pageLoadError" = "There was a problem loading the page. Please try again.";
 "BEMobileTestIdActivator_testActivatedTitle" = "Test linked successfully";
 "BEMobileTestIdActivator_testActivatedMessage" = "Your test has been successfully linked to your smartphone. From now on you will be able to receive your test result in Coronalert.";
-"BEMobileTestIdActivator_linkTestToPhoneTitle" = "Link Smartphone";
+"BEMobileTestIdActivator_linkTestToPhoneTitle" = "Link your smartphone";
