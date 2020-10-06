@@ -93,7 +93,9 @@ class BEActivateMobileTestIdViewController: UIViewController, SpinnerInjectable 
 		document.getElementsByClassName("vc_row")[1].style.display = "none";
 		document.getElementsByClassName("upper-footer")[0].style.display = "none";
 		document.getElementById("wrapper").style.paddingTop = "0";
+		if(document.getElementById("cookie-notice")) document.getElementById("cookie-notice").style.display = "none";
 		"""
+	
 		
 		webView.evaluateJavaScript(javascriptCleanupCode) { _, error in
 			if let error = error {
