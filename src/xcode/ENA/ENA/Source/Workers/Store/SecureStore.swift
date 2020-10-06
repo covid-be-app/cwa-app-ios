@@ -93,16 +93,6 @@ final class SecureStore: Store {
 		set { kvStore["testGUID"] = newValue }
 	}
 
-	var devicePairingConsentAccept: Bool {
-		get { kvStore["devicePairingConsentAccept"] as Bool? ?? false }
-		set { kvStore["devicePairingConsentAccept"] = newValue }
-	}
-
-	var devicePairingConsentAcceptTimestamp: Int64? {
-		get { kvStore["devicePairingConsentAcceptTimestamp"] as Int64? ?? 0 }
-		set { kvStore["devicePairingConsentAcceptTimestamp"] = newValue }
-	}
-
 	var devicePairingSuccessfulTimestamp: Int64? {
 		get { kvStore["devicePairingSuccessfulTimestamp"] as Int64? ?? 0 }
 		set { kvStore["devicePairingSuccessfulTimestamp"] = newValue }
@@ -204,6 +194,11 @@ final class SecureStore: Store {
 	var infectionSummaryUpdatedAt: Date? {
 		get { kvStore["infectionSummaryUpdatedAt"] as Date? }
 		set { kvStore["infectionSummaryUpdatedAt"] = newValue }
+	}
+	
+	var latestRisk: Risk? {
+		get { kvStore["latestRisk"] as Risk? }
+		set { kvStore["latestRisk"] = newValue }
 	}
 }
 

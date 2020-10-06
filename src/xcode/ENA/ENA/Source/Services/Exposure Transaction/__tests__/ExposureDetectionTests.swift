@@ -1,7 +1,10 @@
 //
 // Corona-Warn-App
 //
-// SAP SE and all other contributors /
+// SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -91,10 +94,12 @@ final class ExposureDetectionTransactionTests: XCTestCase {
 }
 
 final class MutableENExposureDetectionSummary: ENExposureDetectionSummary {
-	init(daysSinceLastExposure: Int = 0, matchedKeyCount: UInt64 = 0, maximumRiskScore: ENRiskScore = .zero) {
+	init(daysSinceLastExposure: Int = 0, matchedKeyCount: UInt64 = 0, maximumRiskScore: ENRiskScore = .zero, attenuationDurations: [NSNumber] = [], metadata: [AnyHashable: Any]? = nil) {
 		self._daysSinceLastExposure = daysSinceLastExposure
 		self._matchedKeyCount = matchedKeyCount
 		self._maximumRiskScore = maximumRiskScore
+		self._attenuationDurations = attenuationDurations
+		self._metadata = metadata
 	}
 
 	private var _daysSinceLastExposure: Int
@@ -109,6 +114,12 @@ final class MutableENExposureDetectionSummary: ENExposureDetectionSummary {
 
 	private var _maximumRiskScore: ENRiskScore
 	override var maximumRiskScore: ENRiskScore { _maximumRiskScore }
+	
+	private var _attenuationDurations: [NSNumber]
+	override var attenuationDurations: [NSNumber] { _attenuationDurations }
+	
+	private var _metadata: [AnyHashable : Any]?
+	override var metadata: [AnyHashable : Any]? { _metadata }
 }
 
 private final class ExposureDetectionDelegateMock {

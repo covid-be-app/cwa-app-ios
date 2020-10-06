@@ -46,8 +46,6 @@ final class MockTestStore: Store {
 	var teleTan: String?
 	var tan: String?
 	var testGUID: String?
-	var devicePairingConsentAccept: Bool = false
-	var devicePairingConsentAcceptTimestamp: Int64?
 	var devicePairingSuccessfulTimestamp: Int64?
 	var isAllowedToSubmitDiagnosisKeys: Bool = false
 	var registrationToken: String?
@@ -65,5 +63,6 @@ final class MockTestStore: Store {
 	var fakeRequestTestResultFetchIndex: Int = 0
 	var infectionSummary: BEInfectionSummary?
 	var infectionSummaryUpdatedAt: Date?
+	var latestRisk: Risk?
 
 }

@@ -43,11 +43,9 @@ protocol ExposureSubmissionService: class {
 	func getTestResult(_ completeWith: @escaping TestResultHandler)
 	func hasRegistrationToken() -> Bool
 	func deleteTest()
-	var devicePairingConsentAcceptTimestamp: Int64? { get }
 	var devicePairingSuccessfulTimestamp: Int64? { get }
 	var mobileTestId: BEMobileTestId? { get }
 	func preconditions() -> ExposureManagerState
-	func acceptPairing()
 }
 
 class ENAExposureSubmissionService: ExposureSubmissionService {
@@ -56,15 +54,6 @@ class ENAExposureSubmissionService: ExposureSubmissionService {
 	let client: Client
 	let store: Store
 	
-	private var devicePairingConsentAccept: Bool {
-		get { self.store.devicePairingConsentAccept }
-		set { self.store.devicePairingConsentAccept = newValue }
-	}
-
-	private(set) var devicePairingConsentAcceptTimestamp: Int64? {
-		get { self.store.devicePairingConsentAcceptTimestamp }
-		set { self.store.devicePairingConsentAcceptTimestamp = newValue }
-	}
 	private(set) var devicePairingSuccessfulTimestamp: Int64? {
 		get { self.store.devicePairingSuccessfulTimestamp }
 		set { self.store.devicePairingSuccessfulTimestamp = newValue }
@@ -90,9 +79,7 @@ class ENAExposureSubmissionService: ExposureSubmissionService {
 	func deleteTest() {
 		store.registrationToken = nil
 		store.testResultReceivedTimeStamp = nil
-		store.devicePairingConsentAccept = false
 		store.devicePairingSuccessfulTimestamp = nil
-		store.devicePairingConsentAcceptTimestamp = nil
 		store.isAllowedToSubmitDiagnosisKeys = false
 	}
 
@@ -122,7 +109,6 @@ class ENAExposureSubmissionService: ExposureSubmissionService {
 				self.store.registrationToken = registrationToken
 				self.store.testResultReceivedTimeStamp = nil
 				self.store.devicePairingSuccessfulTimestamp = Int64(Date().timeIntervalSince1970)
-				self.store.devicePairingConsentAccept = true
 				completeWith(.success(registrationToken))
 			}
 		}
@@ -133,12 +119,6 @@ class ENAExposureSubmissionService: ExposureSubmissionService {
 		completion completeWith: @escaping TANHandler
 	) {
 		// alert+ store consent+ clientrequest
-		store.devicePairingConsentAccept = hasConsent
-
-		if !store.devicePairingConsentAccept {
-			completeWith(.failure(.noConsent))
-			return
-		}
 
 		guard let token = store.registrationToken else {
 			completeWith(.failure(.noRegistrationToken))
@@ -261,11 +241,6 @@ class ENAExposureSubmissionService: ExposureSubmissionService {
 
 	func preconditions() -> ExposureManagerState {
 		diagnosiskeyRetrieval.preconditions()
-	}
-
-	func acceptPairing() {
-		devicePairingConsentAccept = true
-		devicePairingConsentAcceptTimestamp = Int64(Date().timeIntervalSince1970)
 	}
 }
 

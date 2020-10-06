@@ -412,3 +412,7 @@
 "BEInfectionSummary_forWeek" = "Pour la semaine";
 "ExposureSubmissionResult_testPositiveIsolationDesc" = "Vous êtes infecté et vous devez donc rester à la maison en isolement pendant au moins 7 jours. Ne quittez pas votre domicile tant que les symptômes ne sont pas passés.";
 "ExposureSubmissionResult_testPositiveWarnOthersDesc" = "Vous pouvez avertir les autres personnes avec lesquelles vous êtes entré en contact.";
+"BEMobileTestIdActivator_pageLoadError" = "Un problème est survenu lors du chargement de la page. Veuillez réessayer.";
+"BEMobileTestIdActivator_testActivatedTitle" = "Test lié avec succès";
+"BEMobileTestIdActivator_testActivatedMessage" = "Votre test a été lié avec succès à votre smartphone. Désormais, vous pourrez recevoir votre résultat de test dans Coronalert.";
+"BEMobileTestIdActivator_linkTestToPhoneTitle" = "Liez votre smartphone";

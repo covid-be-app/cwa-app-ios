@@ -153,7 +153,7 @@
 "ExposureSubmissionResult_CardPending" = "Result not yet available";
 "ExposureSubmissionResult_Procedure" = "How this works:";
 "ExposureSubmissionResult_testAdded" = "Test added successfully";
-"ExposureSubmissionResult_testAddedDesc" = "Your test has been stored in the Coronalert.";
+"ExposureSubmissionResult_testAddedDesc" = "Your test has been stored in Coronalert.";
 "ExposureSubmissionResult_warnOthers" = "Warning Others";
 "ExposureSubmissionResult_warnOthersDesc" = "Share your random IDs of the last days in order to protect others and break the chain of infection.";
 "ExposureSubmissionResult_testPositive" = "Positive Diagnosis";
@@ -412,3 +412,7 @@
 "BEInfectionSummary_forWeek" = "For week";
 "ExposureSubmissionResult_testPositiveIsolationDesc" = "You are infected and therefore you must stay at home in isolation for at least 7 days. Don't leave your home until the symptoms have passed.";
 "ExposureSubmissionResult_testPositiveWarnOthersDesc" = "You can warn other people with whom you came into contact.";
+"BEMobileTestIdActivator_pageLoadError" = "There was a problem loading the page. Please try again.";
+"BEMobileTestIdActivator_testActivatedTitle" = "Test linked successfully";
+"BEMobileTestIdActivator_testActivatedMessage" = "Your test has been successfully linked to your smartphone. From now on you will be able to receive your test result in Coronalert.";
+"BEMobileTestIdActivator_linkTestToPhoneTitle" = "Link your smartphone";

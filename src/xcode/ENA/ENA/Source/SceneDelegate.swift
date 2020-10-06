@@ -48,11 +48,14 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate, RequiresAppDepend
 		return BEStatisticsService(client: self.client, store: self.store)
 	}()
 
+	// :BE: test activator
+	var mobileTestIdActivator: BEMobileTestIdActivator?
+	
 	// MARK: UISceneDelegate
 
 	private let riskConsumer = RiskConsumer()
 
-	func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options _: UIScene.ConnectionOptions) {
+	func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 		guard let windowScene = (scene as? UIWindowScene) else { return }
 		let window = UIWindow(windowScene: windowScene)
 		self.window = window
@@ -64,6 +67,17 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate, RequiresAppDepend
 			store.isOnboarded = (isOnboarded != "NO")
 		}
 		store.userNeedsToBeInformedAboutHowRiskDetectionWorks = false
+
+		// Test opening the app from the webform url
+		if let argIndex = ProcessInfo.processInfo.arguments.firstIndex(of: "-openWebForm") {
+			let urlString = ProcessInfo.processInfo.arguments[argIndex + 1]
+			
+			if let url = URL(string: urlString) {
+				DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+					self.processURLActivity(url)
+				}
+			}
+		}
 		
 		#endif
 
@@ -80,6 +94,10 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate, RequiresAppDepend
 
 		NotificationCenter.default.addObserver(self, selector: #selector(isOnboardedDidChange(_:)), name: .isOnboardedDidChange, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(backgroundRefreshStatusDidChange), name: UIApplication.backgroundRefreshStatusDidChangeNotification, object: nil)
+		
+		if let userActivity = connectionOptions.userActivities.first {
+		  self.scene(scene, continue: userActivity)
+		}
 	}
 
 	func sceneWillEnterForeground(_ scene: UIScene) {
@@ -306,4 +324,39 @@ extension SceneDelegate {
 
 private var currentDetectionMode: DetectionMode {
 	DetectionMode.fromBackgroundStatus()
+}
+
+// MARK: url handling
+
+extension SceneDelegate {
+	
+	func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+		if userActivity.activityType != NSUserActivityTypeBrowsingWeb {
+			return
+		}
+		
+		if let url = userActivity.webpageURL {
+			/// we add a small delay to make sure the GUI is completely up and running before manipulating it
+			/// this is necessary when the app was not running in the background
+			DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+				self.processURLActivity(url)
+			}
+		}
+	}
+	
+	private func processURLActivity(_ url: URL) {
+		let exposureSubmissionService = BEExposureSubmissionServiceImpl(diagnosiskeyRetrieval: self.exposureManager, client: self.client, store: self.store)
+
+		if let activator = BEMobileTestIdActivator(exposureSubmissionService, parentViewController: navigationController, url: url, delegate: self) {
+			mobileTestIdActivator = activator
+			activator.run()
+		}
+	}
+}
+
+extension SceneDelegate: BEMobileTestIdActivatorDelegate {
+	func mobileTestIdActivatorFinished(_: BEMobileTestIdActivator) {
+		mobileTestIdActivator = nil
+		coordinator.refreshTestResults()
+	}
 }

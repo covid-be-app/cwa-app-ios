@@ -72,4 +72,11 @@ enum BEAppStrings {
 		static let infectionSummaryTitle = NSLocalizedString("BERiskLegend_infectionSummaryTitle", comment: "")
 		static let infectionSummaryText = NSLocalizedString("BERiskLegend_infectionSummaryText", comment: "")
 	}
+	
+	enum BEMobileTestIdActivator {
+		static let linkTestToPhoneTitle = NSLocalizedString("BEMobileTestIdActivator_linkTestToPhoneTitle", comment: "")
+		static let pageLoadErrorMessage = NSLocalizedString("BEMobileTestIdActivator_pageLoadError", comment: "")
+		static let testActivatedTitle = NSLocalizedString("BEMobileTestIdActivator_testActivatedTitle", comment: "")
+		static let testActivatedMessage = NSLocalizedString("BEMobileTestIdActivator_testActivatedMessage", comment: "")
+	}
 }
