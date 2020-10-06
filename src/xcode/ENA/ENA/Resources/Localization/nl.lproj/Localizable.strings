@@ -415,4 +415,4 @@
 "BEMobileTestIdActivator_pageLoadError" = "Er is een probleem opgetreden bij het laden van de pagina. Probeer het a.u.b. opnieuw.";
 "BEMobileTestIdActivator_testActivatedTitle" = "Test succesvol gekoppeld";
 "BEMobileTestIdActivator_testActivatedMessage" = "Je test is succesvol gekoppeld aan je smartphone. Vanaf nu kan je je testresultaat ontvangen in Coronalert.";
-"BEMobileTestIdActivator_linkTestToPhoneTitle" = "Koppel Smartphone";
+"BEMobileTestIdActivator_linkTestToPhoneTitle" = "Koppel je smartphone";

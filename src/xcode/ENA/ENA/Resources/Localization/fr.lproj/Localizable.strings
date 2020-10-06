@@ -415,4 +415,4 @@
 "BEMobileTestIdActivator_pageLoadError" = "Un problème est survenu lors du chargement de la page. Veuillez réessayer.";
 "BEMobileTestIdActivator_testActivatedTitle" = "Test lié avec succès";
 "BEMobileTestIdActivator_testActivatedMessage" = "Votre test a été lié avec succès à votre smartphone. Désormais, vous pourrez recevoir votre résultat de test dans Coronalert.";
-"BEMobileTestIdActivator_linkTestToPhoneTitle" = "Lie Smartphone";
+"BEMobileTestIdActivator_linkTestToPhoneTitle" = "Liez votre smartphone";
