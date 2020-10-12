@@ -89,13 +89,13 @@ class BEExposureSubmissionServiceTests: XCTestCase {
 		store.mobileTestId = mobileTestId
 		sleep(4)
 		store.deleteMobileTestIdAfterTimeInterval = 2
-		XCTAssertEqual(service.deleteTestIfOutdated(),true)
+		XCTAssertEqual(service.deleteMobileTestIdIfOutdated(),true)
 		XCTAssert(store.mobileTestId == nil)
 
 		store.mobileTestId = mobileTestId
 		sleep(2)
 		store.deleteMobileTestIdAfterTimeInterval = 20
-		XCTAssertEqual(service.deleteTestIfOutdated(),false)
+		XCTAssertEqual(service.deleteMobileTestIdIfOutdated(),false)
 		XCTAssert(store.mobileTestId != nil)
 	}
 }

@@ -209,9 +209,12 @@ extension AppDelegate: ENATaskExecutionDelegate {
 		let service = BEExposureSubmissionServiceImpl(diagnosiskeyRetrieval: exposureManager, client: client, store: store)
 		exposureSubmissionService = service
 
+		// after showing the test result to the user, remove it after a certain time
+		service.deleteTestResultIfOutdated()
+		
 		if store.registrationToken != nil && store.testResultReceivedTimeStamp == nil {
 			// :BE: see if we passed the validity time for this test result
-			if !service.deleteTestIfOutdated() {
+			if !service.deleteMobileTestIdIfOutdated() {
 				self.exposureSubmissionService?.getTestResult { result in
 					switch result {
 					case .failure(let error):

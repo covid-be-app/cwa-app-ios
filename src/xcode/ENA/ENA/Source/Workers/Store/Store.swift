@@ -100,9 +100,14 @@ protocol Store: AnyObject {
 	// :BE: added values
 	var mobileTestId: BEMobileTestId? { get set }
 
-	var testResult: TestResult? { get set }
-	
 	var deleteMobileTestIdAfterTimeInterval: TimeInterval { get set }
+	
+	var deleteTestResultAfterTimeInterval: TimeInterval { get set }
+
+	var testResult: TestResult? { get set }
+
+	// if this is set, the test result should be deleted after that date
+	var deleteTestResultAfterDate: Date? { get set }
 
 	/// True if the app is allowed to execute fake requests (for plausible deniability) in the background.
 	var isAllowedToPerformBackgroundFakeRequests: Bool { get set }

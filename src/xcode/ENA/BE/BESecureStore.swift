@@ -30,11 +30,21 @@ extension SecureStore {
 		set { kvStore["testResult"] = newValue }
 	}
 	
+	var deleteTestResultAfterDate: Date? {
+		get { kvStore["deleteTestResultAfterDate"] as Date? ?? nil }
+		set { kvStore["deleteTestResultAfterDate"] = newValue }
+	}
+	
 	var deleteMobileTestIdAfterTimeInterval: TimeInterval {
 		get { kvStore["testIdDeleteTimeInterval"] as TimeInterval? ?? 14*60*60*24 }
 		set { kvStore["testIdDeleteTimeInterval"] = newValue }
 	}
-	
+
+	var deleteTestResultAfterTimeInterval: TimeInterval {
+		get { kvStore["testIdDeleteTimeInterval"] as TimeInterval? ?? 7*60*60*24 }
+		set { kvStore["testIdDeleteTimeInterval"] = newValue }
+	}
+
 	var lastBackgroundFakeRequest: Date {
 		get { kvStore["lastBackgroundFakeRequest"] as Date? ?? Date() }
 		set { kvStore["lastBackgroundFakeRequest"] = newValue }

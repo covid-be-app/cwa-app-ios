@@ -67,13 +67,13 @@ class ExposureSubmissionCoordinator: ExposureSubmissionCoordinating {
 	weak var navigationController: UINavigationController?
 
 	/// - NOTE: We need a strong (aka non-weak) reference here.
-	let exposureSubmissionService: ExposureSubmissionService
+	let exposureSubmissionService: BEExposureSubmissionService
 
 	// MARK: - Initializers.
 
 	init(
 		parentNavigationController: UINavigationController,
-		exposureSubmissionService: ExposureSubmissionService,
+		exposureSubmissionService: BEExposureSubmissionService,
 		delegate: ExposureSubmissionCoordinatorDelegate? = nil
 	) {
 		self.parentNavigationController = parentNavigationController

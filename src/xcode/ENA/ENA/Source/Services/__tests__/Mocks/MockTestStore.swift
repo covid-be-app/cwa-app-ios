@@ -58,6 +58,7 @@ final class MockTestStore: Store {
 	var mobileTestId: BEMobileTestId?
 	var testResult: TestResult?
 	var deleteMobileTestIdAfterTimeInterval: TimeInterval = 600
+	var deleteTestResultAfterTimeInterval: TimeInterval = 300
 	var isDoingFakeRequests: Bool = false
 	var fakeRequestAmountOfTestResultFetchesToDo: Int = 3
 	var fakeRequestTestResultFetchIndex: Int = 0

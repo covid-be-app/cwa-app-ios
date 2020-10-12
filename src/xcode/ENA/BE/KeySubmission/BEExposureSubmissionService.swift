@@ -30,7 +30,13 @@ protocol BEExposureSubmissionService : ExposureSubmissionService {
 	func submitExposure(keys:[ENTemporaryExposureKey],countries:[BECountry], completionHandler: @escaping ExposureSubmissionHandler)
 	func submitFakeExposure(completionHandler: @escaping ExposureSubmissionHandler)
 	
-	func deleteTestIfOutdated() -> Bool
+	func deleteMobileTestIdIfOutdated() -> Bool
+	
+	// remove the test result X time after it has been shown (default = 48h)
+	func deleteTestResultIfOutdated()
+	
+	// stores the fact that the test result was shown
+	func setTestResultShownOnScreen()
 	
 	func getFakeTestResult(completion: @escaping(() -> Void))
 }
@@ -104,7 +110,7 @@ class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposure
 		}
 	}
 
-	func deleteTestIfOutdated() -> Bool {
+	func deleteMobileTestIdIfOutdated() -> Bool {
 		guard let mobileTestId = store.mobileTestId else {
 			fatalError("No mobile test id present")
 		}
@@ -118,6 +124,48 @@ class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposure
 		}
 		
 		return false
+	}
+	
+	func deleteTestResultIfOutdated() {
+		guard let _ = store.testResult,
+		let timestamp = store.testResultReceivedTimeStamp else {
+			return
+		}
+
+		// if this is set we know the user has opened the test result screen
+		// so we can delete after 48h
+		if let deletionDate = store.deleteTestResultAfterDate {
+			if deletionDate < Date() {
+				deleteTest()
+				log(message:"Deleted test result after having shown it to the user")
+				return
+			}
+		} else {
+			// if the user didn't open the test result screen for a long time (default = 7 days after receiving the test result) we will also delete the test result
+			let endDate = Date(timeIntervalSince1970: TimeInterval(timestamp)).addingTimeInterval(store.deleteTestResultAfterTimeInterval)
+
+			if endDate < Date() {
+				deleteTest()
+				log(message: "Deleted test result because it is too old")
+				return
+			}
+		}
+	}
+	
+	func setTestResultShownOnScreen() {
+		guard let testResult = store.testResult else {
+			return
+		}
+		
+		// we don't care about pending
+		if testResult.result == .pending {
+			return
+		}
+	
+		// delete 48 hours after being shown for the first time
+		if store.deleteTestResultAfterDate == nil {
+			store.deleteTestResultAfterDate = Date().addingTimeInterval(48 * 60 * 60)
+		}
 	}
 	
 	func retrieveDiagnosisKeys(completionHandler: @escaping BEExposureSubmissionGetKeysHandler) {
