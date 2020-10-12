@@ -313,6 +313,10 @@ private extension ExposureSubmissionTestResultViewController {
 				ExposureSubmissionDynamicCell.stepCell(
 					bulletPoint: AppStrings.ExposureSubmissionResult.testPositiveWarnOthersDesc,
 					hairline: .topAttached
+				),
+				ExposureSubmissionDynamicCell.stepCell(
+					bulletPoint: AppStrings.ExposureSubmissionResult.testPositiveAutomaticDeletionDesc,
+					hairline: .topAttached
 				)
 			]
 		)

@@ -64,7 +64,7 @@ class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposure
 		}
 	}
 	
-	func generateMobileTestId(_ symptomsDate: Date?) -> BEMobileTestId {
+	@discardableResult func generateMobileTestId(_ symptomsDate: Date?) -> BEMobileTestId {
 		let id = BEMobileTestId.generate(symptomsDate)
 		self.mobileTestId = id
 		

@@ -21,8 +21,9 @@
 //
 
 import Foundation
+import ExposureNotification
 
-class MockExposureSubmissionService: ExposureSubmissionService {
+class MockExposureSubmissionService: BEExposureSubmissionService {
 
 	// MARK: - Mock callbacks.
 
@@ -71,5 +72,40 @@ class MockExposureSubmissionService: ExposureSubmissionService {
 
 	func acceptPairing() {
 		acceptPairingCallback?()
+	}
+	
+	func generateMobileTestId(_ symptomsDate: Date?) -> BEMobileTestId {
+		mobileTestId = BEMobileTestId.generate(symptomsDate)
+		
+		return mobileTestId!
+	}
+	
+	func retrieveDiagnosisKeys(completionHandler: @escaping BEExposureSubmissionGetKeysHandler) {
+		completionHandler(.success([]))
+	}
+	
+	func finalizeSubmissionWithoutKeys() {
+		
+	}
+	
+	func submitExposure(keys: [ENTemporaryExposureKey], countries: [BECountry], completionHandler: @escaping ExposureSubmissionHandler) {
+		completionHandler(nil)
+	}
+	
+	func submitFakeExposure(completionHandler: @escaping ExposureSubmissionHandler) {
+		completionHandler(nil)
+	}
+	
+	func deleteMobileTestIdIfOutdated() -> Bool {
+		return false
+	}
+	
+	func deleteTestResultIfOutdated() {
+	}
+	
+	func setTestResultShownOnScreen() {
+	}
+	
+	func getFakeTestResult(completion: @escaping (() -> Void)) {
 	}
 }

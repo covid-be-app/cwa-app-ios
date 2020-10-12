@@ -102,6 +102,7 @@ protocol Store: AnyObject {
 
 	var deleteMobileTestIdAfterTimeInterval: TimeInterval { get set }
 	
+	// Test result will be deleted at this interval after downloading it, irrespective of it being shown to the user
 	var deleteTestResultAfterTimeInterval: TimeInterval { get set }
 
 	var testResult: TestResult? { get set }
