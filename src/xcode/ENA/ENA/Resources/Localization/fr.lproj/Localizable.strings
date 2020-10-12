@@ -170,7 +170,7 @@
 "ExposureSubmissionResult_testPending" = "Résultat pas encore disponible.";
 "ExposureSubmissionResult_testPendingDesc" = "Le résultat de votre test n'est pas encore disponible.";
 "ExposureSubmissionResult_testRemove" = "Supprimer le test";
-"ExposureSubmissionResult_testRemoveDesc" = "Veuillez supprimer le test de l'application Coronalert, afin de pouvoir enregistrer un nouveau code de test ici si nécessaire.";
+"ExposureSubmissionResult_testRemoveDesc" = "Veuillez supprimer le test de l'application Coronalert, afin de pouvoir enregistrer un nouveau code de test ici si nécessaire.\nLe résultat de ce test sera supprimé de votre smartphone après 48 heures.";
 "ExposureSubmissionResult_continueButton" = "Suivant";
 "ExposureSubmissionResult_deleteButton" = "Supprimer le test";
 "ExposureSubmissionResult_refreshButton" = "Mise à jour";
@@ -416,3 +416,4 @@
 "BEMobileTestIdActivator_testActivatedTitle" = "Test lié avec succès";
 "BEMobileTestIdActivator_testActivatedMessage" = "Votre test a été lié avec succès à votre smartphone. Désormais, vous pourrez recevoir votre résultat de test dans Coronalert.";
 "BEMobileTestIdActivator_linkTestToPhoneTitle" = "Liez votre smartphone";
+"ExposureSubmissionResult_testPositiveAutomaticDeletionDesc" = "Le résultat de ce test sera supprimé de votre smartphone après 48 heures.";

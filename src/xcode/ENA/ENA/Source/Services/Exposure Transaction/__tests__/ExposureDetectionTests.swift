@@ -24,8 +24,8 @@ import XCTest
 @testable import ENA
 import ExposureNotification
 final class ExposureDetectionTransactionTests: XCTestCase {
-	// swiftlint:disable:next function_body_length
-    func testGivenThatEveryNeedIsSatisfiedTheDetectionFinishes() throws {
+
+	func testGivenThatEveryNeedIsSatisfiedTheDetectionFinishes() throws {
 		let delegate = ExposureDetectionDelegateMock()
 
 		let availableDataToBeCalled = expectation(description: "availableData called")
@@ -118,8 +118,8 @@ final class MutableENExposureDetectionSummary: ENExposureDetectionSummary {
 	private var _attenuationDurations: [NSNumber]
 	override var attenuationDurations: [NSNumber] { _attenuationDurations }
 	
-	private var _metadata: [AnyHashable : Any]?
-	override var metadata: [AnyHashable : Any]? { _metadata }
+	private var _metadata: [AnyHashable: Any]?
+	override var metadata: [AnyHashable: Any]? { _metadata }
 }
 
 private final class ExposureDetectionDelegateMock {

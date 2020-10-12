@@ -32,7 +32,6 @@ private extension DynamicCell {
 }
 
 
-// swiftlint:disable line_length
 extension AppInformationViewController {
 	static let legalModel = DynamicTableViewModel([
 		.section(
@@ -152,4 +151,3 @@ You may add Your own copyright statement to Your modifications and may provide a
 """)
 	]
 }
-// swiftlint:enable line_length

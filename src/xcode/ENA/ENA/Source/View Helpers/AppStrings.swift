@@ -105,6 +105,7 @@ enum AppStrings {
 		static let testPositiveDesc = NSLocalizedString("ExposureSubmissionResult_testPositiveDesc", comment: "")
 		static let testPositiveIsolationDesc = NSLocalizedString("ExposureSubmissionResult_testPositiveIsolationDesc", comment: "")
 		static let testPositiveWarnOthersDesc = NSLocalizedString("ExposureSubmissionResult_testPositiveWarnOthersDesc", comment: "")
+		static let testPositiveAutomaticDeletionDesc = NSLocalizedString("ExposureSubmissionResult_testPositiveAutomaticDeletionDesc", comment: "")
 		static let testNegative = NSLocalizedString("ExposureSubmissionResult_testNegative", comment: "")
 		static let testNegativeDesc = NSLocalizedString("ExposureSubmissionResult_testNegativeDesc", comment: "")
 		static let testInvalid = NSLocalizedString("ExposureSubmissionResult_testInvalid", comment: "")

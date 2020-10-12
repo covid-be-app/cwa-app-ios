@@ -95,13 +95,13 @@ class BEExposureSubmissionServiceTests: XCTestCase {
 		store.mobileTestId = mobileTestId
 		sleep(4)
 		store.deleteMobileTestIdAfterTimeInterval = 2
-		XCTAssertEqual(service.deleteTestIfOutdated(),true)
+		XCTAssertEqual(service.deleteMobileTestIdIfOutdated(),true)
 		XCTAssert(store.mobileTestId == nil)
 
 		store.mobileTestId = mobileTestId
 		sleep(2)
 		store.deleteMobileTestIdAfterTimeInterval = 20
-		XCTAssertEqual(service.deleteTestIfOutdated(),false)
+		XCTAssertEqual(service.deleteMobileTestIdIfOutdated(),false)
 		XCTAssert(store.mobileTestId != nil)
 	}
 	
@@ -157,6 +157,73 @@ class BEExposureSubmissionServiceTests: XCTestCase {
 		waitForExpectations(timeout: 20)
 	}
 	
+	func testTestDeletion() throws {
+		let keyRetrieval = MockDiagnosisKeysRetrieval(diagnosisKeysResult: (keys, nil))
+		let client = ClientMock()
+		let store = MockTestStore()
+		
+		let service = BEExposureSubmissionServiceImpl(diagnosiskeyRetrieval: keyRetrieval, client: client, store: store)
+		service.generateMobileTestId(nil)
+		store.testResult = TestResult.negative
+		store.testResultReceivedTimeStamp = Int64(Date().timeIntervalSince1970)
+
+		service.deleteTestResultIfOutdated()
+		XCTAssertNotNil(store.testResult)
+		
+		store.deleteTestResultAfterTimeInterval = 10000000
+		store.deleteTestResultAfterDate = Date().addingTimeInterval(1)
+		sleep(2)
+
+		service.deleteTestResultIfOutdated()
+		XCTAssertNil(store.testResult)
+		XCTAssertNil(store.mobileTestId)
+		XCTAssertNil(store.mobileTestId)
+		XCTAssertNil(store.deleteTestResultAfterDate)
+	}
+
+	func testTestDeletion2() throws {
+		let keyRetrieval = MockDiagnosisKeysRetrieval(diagnosisKeysResult: (keys, nil))
+		let client = ClientMock()
+		let store = MockTestStore()
+		
+		let service = BEExposureSubmissionServiceImpl(diagnosiskeyRetrieval: keyRetrieval, client: client, store: store)
+		service.generateMobileTestId(nil)
+		store.testResult = TestResult.negative
+		store.testResultReceivedTimeStamp = Int64(Date().timeIntervalSince1970)
+
+		service.deleteTestResultIfOutdated()
+		XCTAssertNotNil(store.testResult)
+		
+		store.deleteTestResultAfterTimeInterval = 1
+		sleep(2)
+
+		service.deleteTestResultIfOutdated()
+		XCTAssertNil(store.testResult)
+		XCTAssertNil(store.mobileTestId)
+		XCTAssertNil(store.mobileTestId)
+		XCTAssertNil(store.deleteTestResultAfterDate)
+	}
+
+	func testTestDeletion3() throws {
+		let keyRetrieval = MockDiagnosisKeysRetrieval(diagnosisKeysResult: (keys, nil))
+		let client = ClientMock()
+		let store = MockTestStore()
+		
+		let service = BEExposureSubmissionServiceImpl(diagnosiskeyRetrieval: keyRetrieval, client: client, store: store)
+		service.generateMobileTestId(nil)
+		store.testResult = TestResult.negative
+		store.testResultReceivedTimeStamp = Int64(Date().timeIntervalSince1970)
+
+		service.deleteTestResultIfOutdated()
+		XCTAssertNotNil(store.testResult)
+		
+		store.deleteTestResultAfterTimeInterval = 100
+		sleep(2)
+
+		service.deleteTestResultIfOutdated()
+		XCTAssertNotNil(store.testResult)
+	}
+	
 	private func makeMockSessionForFakeKeyUpload(testResult: TestResult) throws -> BEMockURLSession {
 		let configuration = HTTPClient.Configuration.fake
 		var datas:[Data?] = []
@@ -176,7 +243,7 @@ class BEExposureSubmissionServiceTests: XCTestCase {
 
 			XCTAssertEqual(self.urlSequence.first!,url)
 			self.urlSequence.remove(at: 0)
-			if self.urlSequence.count == 0 {
+			if self.urlSequence.isEmpty {
 				self.expectation.fulfill()
 			}
 		}

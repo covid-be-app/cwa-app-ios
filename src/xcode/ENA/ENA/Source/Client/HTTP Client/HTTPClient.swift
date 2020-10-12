@@ -365,11 +365,11 @@ final class HTTPClient: Client {
 						
 						if testResult.result != .pending {
 							self.ackTestDownload(forDevice: registrationToken) {
-								log(message:"Ack finished")
+								log(message: "Ack finished")
 							}
 						} else {
 							self.ackTestDownload(forDevice: BEMobileTestId.fakeRegistrationToken) {
-								log(message:"Fake ack finished")
+								log(message: "Fake ack finished")
 							}
 						}
 						
@@ -404,7 +404,7 @@ final class HTTPClient: Client {
 			self.session.POST(ackUrl, data) { result in
 				switch result {
 				case .success:
-					log(message:"Ack succeeded")
+					log(message: "Ack succeeded")
 				case let .failure(error):
 					logError(message: "Ack failed due to error: \(error).")
 				}

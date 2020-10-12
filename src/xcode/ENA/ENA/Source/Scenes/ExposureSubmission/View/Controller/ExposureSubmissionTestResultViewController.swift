@@ -29,11 +29,11 @@ class ExposureSubmissionTestResultViewController: DynamicTableViewController, EN
 	var timeStamp: Int64?
 	
 	private(set) weak var coordinator: ExposureSubmissionCoordinating?
-	private(set) weak var exposureSubmissionService: ExposureSubmissionService?
+	private(set) weak var exposureSubmissionService: BEExposureSubmissionService?
 
 	// MARK: - Initializers.
 
-	init?(coder: NSCoder, coordinator: ExposureSubmissionCoordinating, exposureSubmissionService: ExposureSubmissionService, testResult: TestResult?) {
+	init?(coder: NSCoder, coordinator: ExposureSubmissionCoordinating, exposureSubmissionService: BEExposureSubmissionService, testResult: TestResult?) {
 		self.coordinator = coordinator
 		self.exposureSubmissionService = exposureSubmissionService
 		self.testResult = testResult
@@ -176,6 +176,7 @@ class ExposureSubmissionTestResultViewController: DynamicTableViewController, EN
 	}
 
 	private func refreshView(for result: TestResult) {
+		exposureSubmissionService?.setTestResultShownOnScreen()
 		self.testResult = result
 		self.dynamicTableViewModel = self.dynamicTableViewModel(for: result)
 		self.tableView.reloadData()
@@ -311,6 +312,10 @@ private extension ExposureSubmissionTestResultViewController {
 				),
 				ExposureSubmissionDynamicCell.stepCell(
 					bulletPoint: AppStrings.ExposureSubmissionResult.testPositiveWarnOthersDesc,
+					hairline: .topAttached
+				),
+				ExposureSubmissionDynamicCell.stepCell(
+					bulletPoint: AppStrings.ExposureSubmissionResult.testPositiveAutomaticDeletionDesc,
 					hairline: .topAttached
 				)
 			]

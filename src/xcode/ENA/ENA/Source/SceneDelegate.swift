@@ -112,6 +112,11 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate, RequiresAppDepend
 		
 		// :BE: get stats, ignore errors and result
 		statisticsService.getInfectionSummary { _ in }
+		
+		let exposureSubmissionService = BEExposureSubmissionServiceImpl(diagnosiskeyRetrieval: self.exposureManager, client: self.client, store: self.store)
+
+		// remove test result if it is too old
+		exposureSubmissionService.deleteTestResultIfOutdated()
 	}
 
 	func sceneDidEnterBackground(_ scene: UIScene) {
