@@ -63,21 +63,6 @@ class ExposureSubmissionOverviewViewController: DynamicTableViewController, Spin
 
 	// MARK: - Helpers.
 
-	private func fetchResult() {
-		startSpinner()
-		service?.getTestResult { result in
-			self.stopSpinner()
-			switch result {
-			case let .failure(error):
-				logError(message: "An error occurred during result fetching: \(error)", level: .error)
-				let alert = self.setupErrorAlert(message: error.localizedDescription)
-				self.present(alert, animated: true, completion: nil)
-			case let .success(testResult):
-				self.coordinator?.showTestResultScreen(with: testResult)
-			}
-		}
-	}
-
 	/// Shows the data privacy disclaimer and only lets the
 	/// user scan a QR code after accepting.
 	func showDisclaimer() {
