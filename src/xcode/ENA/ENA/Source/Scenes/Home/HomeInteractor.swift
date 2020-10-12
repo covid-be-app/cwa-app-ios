@@ -23,8 +23,6 @@ import Foundation
 import UIKit
 import Combine
 
-// swiftlint:disable file_length
-
 final class HomeInteractor: RequiresAppDependencies {
 	typealias SectionDefinition = (section: HomeViewController.Section, cellConfigurators: [CollectionViewCellConfiguratorAny])
 	typealias SectionConfiguration = [SectionDefinition]
@@ -206,7 +204,6 @@ extension HomeInteractor {
 	private var risk: Risk? { state.risk }
 	private var riskDetails: Risk.Details? { risk?.details }
 
-	// swiftlint:disable:next function_body_length
 	func setupRiskConfigurator() -> CollectionViewCellConfiguratorAny? {
 
 		let detectionIsAutomatic = detectionMode == .automatic
