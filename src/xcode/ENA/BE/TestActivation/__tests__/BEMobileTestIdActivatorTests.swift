@@ -81,4 +81,27 @@ class BEMobileTestIdActivatorTests: XCTestCase {
 		let activator = buildActivator(url)
 		XCTAssertNotNil(activator)
     }
-}
+
+    func testCorrectURL5() throws {
+		let url = URL(string:"https://coronalert.be/en/corona-alert-form/?pcr=1aaa567890123456")!
+		let activator = buildActivator(url)
+		XCTAssertNotNil(activator)
+    }
+
+    func testCorrectURL6() throws {
+		let url = URL(string:"https://coronalert.be/fr/formulaire-coronalert/?pcr=123456b89c12D456")!
+		let activator = buildActivator(url)
+		XCTAssertNotNil(activator)
+    }
+
+    func testCorrectURL7() throws {
+		let url = URL(string:"https://coronalert.be/nl/coronalert-formulier/?pcr=123e567FF0123456")!
+		let activator = buildActivator(url)
+		XCTAssertNotNil(activator)
+    }
+
+    func testCorrectURL8() throws {
+		let url = URL(string:"https://coronalert.be/de/coronalert-formular/?pcr=123456dddd123456")!
+		let activator = buildActivator(url)
+		XCTAssertNotNil(activator)
+    }}
