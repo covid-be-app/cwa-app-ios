@@ -24,6 +24,8 @@ import ExposureNotification
 class BEExposureSubmissionServiceTests: XCTestCase {
 	var keys:[ENTemporaryExposureKey] = []
 	var dateFormatter:DateFormatter!
+	var urlSequence:[URL] = []
+	var expectation:XCTestExpectation!
 	
     override func setUpWithError() throws {
 		// generate fake keys for the last 2 weeks
@@ -46,6 +48,7 @@ class BEExposureSubmissionServiceTests: XCTestCase {
 	// whereby t0 is the date the user is infectious
 	// and t3 is the date on which the test result was communicated to the user
     func testGetKeys() throws {
+		let finishedExpectation = self.expectation(description: "finished getting keys")
 		let keyRetrieval = MockDiagnosisKeysRetrieval(diagnosisKeysResult: (keys, nil))
 		let client = ClientMock()
 		let store = MockTestStore()
@@ -76,8 +79,11 @@ class BEExposureSubmissionServiceTests: XCTestCase {
 					XCTAssert(datePatientInfectious <= key.rollingStartNumber.date,"Key \(key.rollingStartNumber.date) earlier than infectious date \(datePatientInfectious)")
 					XCTAssert(dateTestCommunicated >= key.rollingStartNumber.date,"Key later than test communicated date")
 				}
+				finishedExpectation.fulfill()
 			}
 		}
+		
+		waitForExpectations(timeout: 10)
     }
 	
 	func testOutdatedTestRequestDeletion() throws {
@@ -97,5 +103,99 @@ class BEExposureSubmissionServiceTests: XCTestCase {
 		store.deleteMobileTestIdAfterTimeInterval = 20
 		XCTAssertEqual(service.deleteMobileTestIdIfOutdated(),false)
 		XCTAssert(store.mobileTestId != nil)
+	}
+	
+	func testUploadKeysAfterNegativeTest() throws {
+		let keyRetrieval = MockDiagnosisKeysRetrieval(diagnosisKeysResult: (keys, nil))
+		let store = SecureStore(at: URL(staticString: ":memory:"), key: "123456")
+		let mockURLSession = try makeMockSessionForFakeKeyUpload(testResult:TestResult.negative)
+
+		let networkStack = MockNetworkStack(
+			mockSession: mockURLSession
+		)
+		
+		let client = HTTPClient.makeWith(mock: networkStack)
+		store.isAllowedToPerformBackgroundFakeRequests = true
+		
+		let service = BEExposureSubmissionServiceImpl(diagnosiskeyRetrieval: keyRetrieval, client: client, store: store)
+		service.generateMobileTestId(nil)
+		service.getTestResult{ result in
+			switch result {
+			case .failure:
+				XCTAssert(false)
+			case.success(let testResult):
+				XCTAssertEqual(testResult.result, TestResult.Result.negative)
+			}
+		}
+		
+		waitForExpectations(timeout: 20)
+	}
+	
+	func testDoNotUploadKeysAfterPositiveTest() throws {
+		let keyRetrieval = MockDiagnosisKeysRetrieval(diagnosisKeysResult: (keys, nil))
+		let store = SecureStore(at: URL(staticString: ":memory:"), key: "123456")
+		let mockURLSession = try makeMockSessionForFakeKeyUpload(testResult:TestResult.positive)
+
+		let networkStack = MockNetworkStack(
+			mockSession: mockURLSession
+		)
+		
+		let client = HTTPClient.makeWith(mock: networkStack)
+		store.isAllowedToPerformBackgroundFakeRequests = true
+		
+		let service = BEExposureSubmissionServiceImpl(diagnosiskeyRetrieval: keyRetrieval, client: client, store: store)
+		service.generateMobileTestId(nil)
+		service.getTestResult{ result in
+			switch result {
+			case .failure:
+				XCTAssert(false)
+			case.success(let testResult):
+				XCTAssertEqual(testResult.result, TestResult.Result.positive)
+			}
+		}
+		
+		waitForExpectations(timeout: 20)
+	}
+	
+	private func makeMockSessionForFakeKeyUpload(testResult: TestResult) throws -> BEMockURLSession {
+		let configuration = HTTPClient.Configuration.fake
+		var datas:[Data?] = []
+		var nextResponses:[URLResponse?] = []
+
+		expectation = self.expectation(description: "Fake upload done")
+
+		urlSequence.append(configuration.testResultURL)
+		urlSequence.append(configuration.ackTestResultURL)
+		
+		if testResult.result == .negative {
+			urlSequence.append(configuration.submissionURL)
+		}
+
+		let runHTTPRequestObserver:MockUrlSession.URLRequestObserver = { request in
+			let url = request.url!
+
+			XCTAssertEqual(self.urlSequence.first!,url)
+			self.urlSequence.remove(at: 0)
+			if self.urlSequence.count == 0 {
+				self.expectation.fulfill()
+			}
+		}
+		
+
+		let data = try JSONEncoder().encode(testResult)
+		datas.append(data)
+		nextResponses.append(HTTPURLResponse(url: configuration.testResultURL, statusCode: 200, httpVersion: "2", headerFields: nil))
+
+		// response for ACK
+		datas.append(Data())
+		nextResponses.append(HTTPURLResponse(url: configuration.testResultURL, statusCode: 204, httpVersion: "2", headerFields: nil))
+
+		// response for upload
+		if testResult.result == .negative {
+			datas.append(Data())
+			nextResponses.append(HTTPURLResponse(url: configuration.testResultURL, statusCode: 200, httpVersion: "2", headerFields: nil))
+		}
+
+		return BEMockURLSession(datas: datas, nextResponses: nextResponses, urlRequestObserver: runHTTPRequestObserver)
 	}
 }
