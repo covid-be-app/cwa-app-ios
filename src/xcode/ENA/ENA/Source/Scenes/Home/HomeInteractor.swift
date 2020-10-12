@@ -317,6 +317,8 @@ extension HomeInteractor {
 			// This is shown when we submitted keys! (Positive test result + actually decided to submit keys.)
 			// Once this state is reached, it cannot be left anymore.
 
+			// App version 1.1, we should never get to this state. If it is the case it's an old app that was updated.
+			
 			let thankYou = HomeThankYouRiskCellConfigurator()
 			actionsConfigurators.append(thankYou)
 			log(message: "Reached end of life state.", file: #file, line: #line, function: #function)

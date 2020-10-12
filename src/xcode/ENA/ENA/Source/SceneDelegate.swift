@@ -59,10 +59,17 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate, RequiresAppDepend
 		guard let windowScene = (scene as? UIWindowScene) else { return }
 		let window = UIWindow(windowScene: windowScene)
 		self.window = window
+		
+		/// this is migration code
+		/// we don't want the app stuck forever in the "thank you" state
+		/// if it was the case, simply reset the app
+		if store.lastSuccessfulSubmitDiagnosisKeyTimestamp != nil {
+			resetApplication()
+		}
 
 		#if UITESTING
 		// :BE: restart from scratch at every startup
-		coordinatorUserDidRequestReset()
+		resetApplication()
 		if let isOnboarded = UserDefaults.standard.value(forKey: "isOnboarded") as? String {
 			store.isOnboarded = (isOnboarded != "NO")
 		}
@@ -263,6 +270,14 @@ extension SceneDelegate: ENAExposureManagerObserver {
 extension SceneDelegate: CoordinatorDelegate {
 	/// Resets all stores and notifies the Onboarding.
 	func coordinatorUserDidRequestReset() {
+		resetApplication()
+	}
+}
+
+// app reset
+extension SceneDelegate {
+		
+	func resetApplication() {
 		let newKey = KeychainHelper.generateDatabaseKey()
 		store.clearAll(key: newKey)
 		UIApplication.coronaWarnDelegate().downloadedPackagesStore.reset()
@@ -273,6 +288,7 @@ extension SceneDelegate: CoordinatorDelegate {
 		}
 	}
 }
+
 
 extension SceneDelegate: UNUserNotificationCenterDelegate {
 	func userNotificationCenter(_: UNUserNotificationCenter, willPresent _: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {

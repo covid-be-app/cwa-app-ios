@@ -46,4 +46,9 @@ enum BEAccessibilityIdentifiers {
 	enum BERiskLegend {
 		static let infectionSummaryText = "BEAppStrings.BERiskLegend.infectionSummaryText"
 	}
+	
+	enum BEExposureSubmissionSuccess {
+		static let button = "BEAppStrings.BEExposureSubmissionSuccess.button"
+	}
+		
 }

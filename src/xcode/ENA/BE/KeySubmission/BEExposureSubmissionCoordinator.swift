@@ -82,6 +82,12 @@ class BEExposureSubmissionCoordinator : NSObject, ExposureSubmissionCoordinating
 	func dismiss() {
 		navigationController?.dismiss(animated: true)
 	}
+	
+	func resetApp() {
+		navigationController?.dismiss(animated: true) {
+			self.delegate?.exposureSubmissionCoordinatorRequestsAppReset()
+		}
+	}
 
 	// We will "abuse" this name to show the test code screen without having to modify the entire structure of the calls
 	// This is what is called after showing the intro screen
