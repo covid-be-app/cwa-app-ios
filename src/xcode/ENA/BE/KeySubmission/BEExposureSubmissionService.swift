@@ -92,6 +92,19 @@ class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposure
 				if testResult.result != .pending {
 					self.store.testResultReceivedTimeStamp = Int64(Date().timeIntervalSince1970)
 					self.store.testResult = testResult
+					
+					
+					// upload fake TEKs after negative so someone watching network traffic can't tell if it's a positive or negative test result
+					if testResult.result == .negative {
+						// introduce a random delay between 5 and 15 seconds
+						let delay = Double(5 + Int(arc4random_uniform(10)))
+						
+						DispatchQueue.global().asyncAfter(deadline: .now() + delay) {
+							self.submitFakeExposure { _ in
+								log(message:"Fake key upload after negative test result done")
+							}
+						}
+					}
 				}
 				completeWith(.success(testResult))
 			}
