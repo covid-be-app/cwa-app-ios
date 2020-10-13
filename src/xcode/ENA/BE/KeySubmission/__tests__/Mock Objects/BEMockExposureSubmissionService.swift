@@ -59,7 +59,7 @@ class BEMockExposureSubmissionService : BEExposureSubmissionService {
 	}
 	
 	func submitExposure(keys: [ENTemporaryExposureKey], countries: [BECountry], completionHandler: @escaping ExposureSubmissionHandler) {
-		submitExposureCallback?(completionHandler)
+		completionHandler(nil)
 	}
 	
 	func submitExposure(completionHandler: @escaping ExposureSubmissionHandler) {

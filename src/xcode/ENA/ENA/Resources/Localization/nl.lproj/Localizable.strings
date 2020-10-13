@@ -417,3 +417,5 @@
 "BEMobileTestIdActivator_testActivatedMessage" = "Je test is succesvol gekoppeld aan je smartphone. Vanaf nu kan je je testresultaat ontvangen in Coronalert.";
 "BEMobileTestIdActivator_linkTestToPhoneTitle" = "Koppel je smartphone";
 "ExposureSubmissionResult_testPositiveAutomaticDeletionDesc" = "Dit testresultaat wordt na 48 uur van uw smartphone verwijderd.";
+"BEAppResetAfterTEKUpload_title" = "App Reset";
+"BEAppResetAfterTEKUpload_description" = "Bedankt voor het delen van je gegevens en het helpen van anderen. De app wordt nu gereset en alle gegevens worden verwijderd. We raden je sterk aan om de app uit te schakelen tijdens je isolatieperiode door het stoppen van de blootstellingsregistratie. Na je isolatieperiode kan je de app weer gebruiken.";

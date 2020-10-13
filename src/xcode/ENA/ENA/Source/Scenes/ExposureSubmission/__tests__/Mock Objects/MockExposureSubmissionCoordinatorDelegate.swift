@@ -30,5 +30,9 @@ class MockExposureSubmissionCoordinatorDelegate: ExposureSubmissionCoordinatorDe
 	func exposureSubmissionCoordinatorWillDisappear(_ coordinator: ExposureSubmissionCoordinating) {
 		onExposureSubmissionCoordinatorWillDisappear?(coordinator)
 	}
+	
+	func exposureSubmissionCoordinatorRequestsAppReset() {
+		
+	}
 
 }
