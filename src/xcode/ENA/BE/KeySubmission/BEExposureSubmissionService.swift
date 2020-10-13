@@ -30,7 +30,13 @@ protocol BEExposureSubmissionService : ExposureSubmissionService {
 	func submitExposure(keys:[ENTemporaryExposureKey],countries:[BECountry], completionHandler: @escaping ExposureSubmissionHandler)
 	func submitFakeExposure(completionHandler: @escaping ExposureSubmissionHandler)
 	
-	func deleteTestIfOutdated() -> Bool
+	func deleteMobileTestIdIfOutdated() -> Bool
+	
+	// remove the test result X time after it has been shown (default = 48h)
+	func deleteTestResultIfOutdated()
+	
+	// stores the fact that the test result was shown
+	func setTestResultShownOnScreen()
 	
 	func getFakeTestResult(completion: @escaping(() -> Void))
 }
@@ -58,7 +64,7 @@ class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposure
 		}
 	}
 	
-	func generateMobileTestId(_ symptomsDate: Date?) -> BEMobileTestId {
+	@discardableResult func generateMobileTestId(_ symptomsDate: Date?) -> BEMobileTestId {
 		let id = BEMobileTestId.generate(symptomsDate)
 		self.mobileTestId = id
 		
@@ -92,6 +98,19 @@ class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposure
 				if testResult.result != .pending {
 					self.store.testResultReceivedTimeStamp = Int64(Date().timeIntervalSince1970)
 					self.store.testResult = testResult
+					
+					
+					// upload fake TEKs after negative so someone watching network traffic can't tell if it's a positive or negative test result
+					if testResult.result == .negative {
+						// introduce a random delay between 5 and 15 seconds
+						let delay = Double(5 + Int(arc4random_uniform(10)))
+						
+						DispatchQueue.global().asyncAfter(deadline: .now() + delay) {
+							self.submitFakeExposure { _ in
+								log(message:"Fake key upload after negative test result done")
+							}
+						}
+					}
 				}
 				completeWith(.success(testResult))
 			}
@@ -104,7 +123,7 @@ class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposure
 		}
 	}
 
-	func deleteTestIfOutdated() -> Bool {
+	func deleteMobileTestIdIfOutdated() -> Bool {
 		guard let mobileTestId = store.mobileTestId else {
 			fatalError("No mobile test id present")
 		}
@@ -118,6 +137,48 @@ class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposure
 		}
 		
 		return false
+	}
+	
+	func deleteTestResultIfOutdated() {
+		guard let _ = store.testResult,
+		let timestamp = store.testResultReceivedTimeStamp else {
+			return
+		}
+
+		// if this is set we know the user has opened the test result screen
+		// so we can delete after 48h
+		if let deletionDate = store.deleteTestResultAfterDate {
+			if deletionDate < Date() {
+				deleteTest()
+				log(message:"Deleted test result after having shown it to the user")
+				return
+			}
+		} else {
+			// if the user didn't open the test result screen for a long time (default = 7 days after receiving the test result) we will also delete the test result
+			let endDate = Date(timeIntervalSince1970: TimeInterval(timestamp)).addingTimeInterval(store.deleteTestResultAfterTimeInterval)
+
+			if endDate < Date() {
+				deleteTest()
+				log(message: "Deleted test result because it is too old")
+				return
+			}
+		}
+	}
+	
+	func setTestResultShownOnScreen() {
+		guard let testResult = store.testResult else {
+			return
+		}
+		
+		// we don't care about pending
+		if testResult.result == .pending {
+			return
+		}
+	
+		// delete 48 hours after being shown for the first time
+		if store.deleteTestResultAfterDate == nil {
+			store.deleteTestResultAfterDate = Date().addingTimeInterval(48 * 60 * 60)
+		}
 	}
 	
 	func retrieveDiagnosisKeys(completionHandler: @escaping BEExposureSubmissionGetKeysHandler) {

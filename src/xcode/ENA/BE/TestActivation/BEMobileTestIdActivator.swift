@@ -127,12 +127,12 @@ class BEMobileTestIdActivator {
 			return nil
 		}
 		
-		let onlyNumbers = activationCodeValue.reduce(true) { (onlyNumbers, character) -> Bool in
-			return onlyNumbers && character.isNumber
+		let onlyAlphaNumeric = activationCodeValue.reduce(true) { (onlyAlphaNumeric, character) -> Bool in
+			return onlyAlphaNumeric && (character.isLetter || character.isNumber)
 		}
 		
-		if onlyNumbers == false {
-			logError(message: "Activation code should only contain digits")
+		if onlyAlphaNumeric == false {
+			logError(message: "Activation code should only contain alphanumeric characters")
 			return nil
 		}
 

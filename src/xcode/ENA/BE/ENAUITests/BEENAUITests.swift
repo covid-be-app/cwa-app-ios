@@ -108,17 +108,30 @@ class BEENAUITests: XCTestCase {
 
 		XCTAssertTrue(app.buttons["BEAppStrings.BEWarnOthers.next"].waitForExistence(timeout: 5.0))
 		snapshot("ScreenShot_\(#function)_003")
+		app.swipeUp()
+		sleep(1)
+		snapshot("ScreenShot_\(#function)_004")
 		app.buttons["BEAppStrings.BEWarnOthers.next"].tap()
 
 		XCTAssertTrue(app.buttons["BEAppStrings.BESelectKeyCountries.shareIds"].waitForExistence(timeout: 5.0))
-		snapshot("ScreenShot_\(#function)_004")
+		snapshot("ScreenShot_\(#function)_005")
 
 		app.tables.cells.element(boundBy: 0).tap()
 		sleep(1)
-		snapshot("ScreenShot_\(#function)_005")
+		snapshot("ScreenShot_\(#function)_006")
 		app.tables.cells.element(boundBy: 0).tap()
 		sleep(1)
-		snapshot("ScreenShot_\(#function)_006")
+		snapshot("ScreenShot_\(#function)_007")
+		app.buttons["BEAppStrings.BESelectKeyCountries.shareIds"].tap()
+		XCTAssertTrue(app.buttons["BEAppStrings.BEExposureSubmissionSuccess.button"].waitForExistence(timeout: 5.0))
+
+		snapshot("ScreenShot_\(#function)_008")
+		app.swipeUp()
+		sleep(1)
+		snapshot("ScreenShot_\(#function)_009")
+		app.buttons["BEAppStrings.BEExposureSubmissionSuccess.button"].tap()
+		sleep(1)
+		snapshot("ScreenShot_\(#function)_010")
 	}
 	
 	func testIncreasedRisk() throws {

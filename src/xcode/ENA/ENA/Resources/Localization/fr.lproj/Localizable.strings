@@ -170,7 +170,7 @@
 "ExposureSubmissionResult_testPending" = "Résultat pas encore disponible.";
 "ExposureSubmissionResult_testPendingDesc" = "Le résultat de votre test n'est pas encore disponible.";
 "ExposureSubmissionResult_testRemove" = "Supprimer le test";
-"ExposureSubmissionResult_testRemoveDesc" = "Veuillez supprimer le test de l'application Coronalert, afin de pouvoir enregistrer un nouveau code de test ici si nécessaire.";
+"ExposureSubmissionResult_testRemoveDesc" = "Veuillez supprimer le test de l'application Coronalert, afin de pouvoir enregistrer un nouveau code de test ici si nécessaire.\nLe résultat de ce test sera supprimé de votre smartphone après 48 heures.";
 "ExposureSubmissionResult_continueButton" = "Suivant";
 "ExposureSubmissionResult_deleteButton" = "Supprimer le test";
 "ExposureSubmissionResult_refreshButton" = "Mise à jour";
@@ -416,3 +416,6 @@
 "BEMobileTestIdActivator_testActivatedTitle" = "Test lié avec succès";
 "BEMobileTestIdActivator_testActivatedMessage" = "Votre test a été lié avec succès à votre smartphone. Désormais, vous pourrez recevoir votre résultat de test dans Coronalert.";
 "BEMobileTestIdActivator_linkTestToPhoneTitle" = "Liez votre smartphone";
+"ExposureSubmissionResult_testPositiveAutomaticDeletionDesc" = "Le résultat de ce test sera supprimé de votre smartphone après 48 heures.";
+"BEAppResetAfterTEKUpload_title" = "Réinitialisation de l'app";
+"BEAppResetAfterTEKUpload_description" = "Merci de partager vos données et d'aider les autres. L'application va maintenant être réinitialisée et toutes les données seront supprimées. Nous vous recommandons vivement de désactiver l'application pendant votre période d'isolement en arrêtant l'enregistrement de l'exposition. Après votre période d'isolement, vous pourrez à nouveau utiliser l'application.";

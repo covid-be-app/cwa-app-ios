@@ -42,7 +42,7 @@ class ExposureSubmissionCoordinatorTests: XCTestCase {
 
 	private func createCoordinator(
 		parentNavigationController: UINavigationController,
-		exposureSubmissionService: ExposureSubmissionService,
+		exposureSubmissionService: BEExposureSubmissionService,
 		delegate: ExposureSubmissionCoordinatorDelegate) -> ExposureSubmissionCoordinating {
 
 		return ExposureSubmissionCoordinator(

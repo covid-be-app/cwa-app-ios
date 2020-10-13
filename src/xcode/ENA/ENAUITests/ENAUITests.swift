@@ -60,12 +60,18 @@ class ENAUITests: XCTestCase {
 		try? navigateThroughOnboarding()
 		XCTAssertTrue(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
 		if snapshotsActive { snapshot("AppStore_0002") }
+		app.swipeUp()
+		sleep(1)
+		if snapshotsActive { snapshot("AppStore_0002b") }
 
 		//// ScreenShot_0003: Risk view (low risk)
 		XCTAssertTrue(app.buttons["RiskLevelCollectionViewCell.topContainer"].waitForExistence(timeout: 5.0))
 		app.buttons["RiskLevelCollectionViewCell.topContainer"].tap()
 		XCTAssertTrue(app.navigationBars.buttons.element(boundBy: 0).waitForExistence(timeout: 5.0))
 		if snapshotsActive { snapshot("AppStore_0003") }
+		app.swipeUp()
+		sleep(1)
+		if snapshotsActive { snapshot("AppStore_0003b") }
 
 		//// ScreenShot_0004: Settings > Risk exposure
 		app.navigationBars.buttons.element(boundBy: 0).tap()

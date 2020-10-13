@@ -170,7 +170,7 @@
 "ExposureSubmissionResult_testPending" = "Result not yet available";
 "ExposureSubmissionResult_testPendingDesc" = "Your test result is not yet available.";
 "ExposureSubmissionResult_testRemove" = "Delete test";
-"ExposureSubmissionResult_testRemoveDesc" = "Please delete the test from Coronalert, so that you can save a new test code here if necessary.";
+"ExposureSubmissionResult_testRemoveDesc" = "Please delete the test from Coronalert, so that you can save a new test code here if necessary.\nThis test result will be removed from your smartphone after 48 hours.";
 "ExposureSubmissionResult_continueButton" = "Next";
 "ExposureSubmissionResult_deleteButton" = "Delete test";
 "ExposureSubmissionResult_refreshButton" = "Update";
@@ -416,3 +416,6 @@
 "BEMobileTestIdActivator_testActivatedTitle" = "Test linked successfully";
 "BEMobileTestIdActivator_testActivatedMessage" = "Your test has been successfully linked to your smartphone. From now on you will be able to receive your test result in Coronalert.";
 "BEMobileTestIdActivator_linkTestToPhoneTitle" = "Link your smartphone";
+"ExposureSubmissionResult_testPositiveAutomaticDeletionDesc" = "This test result will be removed from your smartphone after 48 hours.";
+"BEAppResetAfterTEKUpload_title" = "App Reset";
+"BEAppResetAfterTEKUpload_description" = "Thank you for sharing your data and helping others. The app will now be reset and all data will be deleted. We strongly recommend that you disable the app during your isolation period by stopping exposure logging. After your isolation period, you may use the app again.";
