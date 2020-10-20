@@ -391,7 +391,7 @@ extension ExposureDetectionViewController {
 						AppStrings.ExposureDetection.guideHotline2,
 						AppStrings.ExposureDetection.guideHotline3
 					]),
-					.guide(image: UIImage(named: "Icons - Hotline"), text: [
+					.guide(image: UIImage(named: "Icons -Warning"), text: [
 						AppStrings.ExposureDetection.guideHotline4,
 						AppStrings.ExposureDetection.guideHotline5
 					])
