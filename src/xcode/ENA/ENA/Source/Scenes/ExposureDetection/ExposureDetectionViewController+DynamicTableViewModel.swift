@@ -385,7 +385,7 @@ extension ExposureDetectionViewController {
 					.header(title: AppStrings.ExposureDetection.behaviorTitle, subtitle: AppStrings.ExposureDetection.behaviorSubtitle),
 					.guide(text: AppStrings.ExposureDetection.guideHome, image: UIImage(named: "Icons - Home")),
 					.guide(text: AppStrings.ExposureDetection.guideDistance, image: UIImage(named: "Icons - Abstand")),
-					.guide(text: AppStrings.ExposureDetection.getTested, image: UIImage(named: "Icons -Warning")),
+//					.guide(text: AppStrings.ExposureDetection.getTested, image: UIImage(named: "Icons -Warning")),
 					.guide(image: UIImage(named: "Icons - Hotline"), text: [
 						AppStrings.ExposureDetection.guideHotline1,
 						AppStrings.ExposureDetection.guideHotline2,
