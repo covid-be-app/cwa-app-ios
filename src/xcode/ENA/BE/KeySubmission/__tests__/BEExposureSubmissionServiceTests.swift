@@ -89,7 +89,7 @@ class BEExposureSubmissionServiceTests: XCTestCase {
 	func testOutdatedTestRequestDeletion() throws {
 		let keyRetrieval = MockDiagnosisKeysRetrieval(diagnosisKeysResult: (keys, nil))
 		let client = ClientMock()
-		let store = SecureStore(at: URL(staticString: ":memory:"), key: "123456")
+		let store = try SecureStore(at: URL(staticString: ":memory:"), key: "123456")
 		let service = BEExposureSubmissionServiceImpl(diagnosiskeyRetrieval: keyRetrieval, client: client, store: store)
 		let mobileTestId = BEMobileTestId(datePatientInfectious: "2020-08-11")
 		store.mobileTestId = mobileTestId
@@ -107,7 +107,7 @@ class BEExposureSubmissionServiceTests: XCTestCase {
 	
 	func testUploadKeysAfterNegativeTest() throws {
 		let keyRetrieval = MockDiagnosisKeysRetrieval(diagnosisKeysResult: (keys, nil))
-		let store = SecureStore(at: URL(staticString: ":memory:"), key: "123456")
+		let store = try SecureStore(at: URL(staticString: ":memory:"), key: "123456")
 		let mockURLSession = try makeMockSessionForFakeKeyUpload(testResult:TestResult.negative)
 
 		let networkStack = MockNetworkStack(
@@ -133,7 +133,7 @@ class BEExposureSubmissionServiceTests: XCTestCase {
 	
 	func testDoNotUploadKeysAfterPositiveTest() throws {
 		let keyRetrieval = MockDiagnosisKeysRetrieval(diagnosisKeysResult: (keys, nil))
-		let store = SecureStore(at: URL(staticString: ":memory:"), key: "123456")
+		let store = try SecureStore(at: URL(staticString: ":memory:"), key: "123456")
 		let mockURLSession = try makeMockSessionForFakeKeyUpload(testResult:TestResult.positive)
 
 		let networkStack = MockNetworkStack(
