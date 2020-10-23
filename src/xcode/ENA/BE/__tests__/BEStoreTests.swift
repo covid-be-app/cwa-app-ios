@@ -23,8 +23,8 @@ import XCTest
 class BEStoreTests: XCTestCase {
 	private var store: SecureStore!
 
-	override func setUp() {
-		store = SecureStore(at: URL(staticString: ":memory:"), key: "123456")
+	override func setUpWithError() throws {
+		store = try SecureStore(at: URL(staticString: ":memory:"), key: "123456")
 	}
 
     func testStoreMobileTestId() throws {
