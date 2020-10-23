@@ -80,7 +80,6 @@ extension AppDelegate: ExposureSummaryProvider {
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-	//TODO: Handle it
 	var store: Store = SecureStore(subDirectory: "database")
 	
 	private let consumer = RiskConsumer()
