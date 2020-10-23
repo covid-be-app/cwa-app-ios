@@ -1,0 +1,97 @@
+{
+    "lowRisk": {
+        "preventiveMeasures": [
+            {
+                "icon": "dt_washHands",
+                "text": "Wash your hands regularly and thoroughly with soap and water."
+            },
+            {
+                "icon": "dt_distance",
+                "text": "Keep at least 1.5m away from people who are not close to you."
+            },
+            {
+                "icon": "dt_mouthMask",
+                "text": "Wear a nose and mouth mask when you come into contact with other people and where required."
+            },
+            {
+                "icon": "dt_sneeze",
+                "text": "Sneeze or cough into your elbow or into a tissue that you throw away immediately afterwards."
+            }
+        ]
+    },
+    "highRisk": {
+        "preventiveMeasures": [
+            {
+                "icon": "dt_home",
+                "text": "If possible, please go home and stay at home."
+            },
+            {
+                "icon": "dt_distance",
+                "text": "Keep at least 1.5m away from people who are not close to you."
+            },
+            {
+                "icon": "dt_phone",
+                "text": "Do you have any symptoms indicating Covid-19, such as fatigue, fever, dry cough, headache, loss of taste or smell? Please contact one of the following persons:",
+                "paragraphs": [
+                    "Your general practitioner",
+                    "Medical out-of-hours service at 1733"
+                ]
+            },
+            {
+                "icon": "dt_exclamation",
+                "text": "Do you have no symptoms?",
+                "paragraphs": [
+                    "Observe a 10-day quarantine."
+                ]
+            }
+        ]
+    },
+    "positiveTestResult": {
+        "explanation": [
+            {
+                "icon": "dt_exclamation",
+                "title": "Positive Diagnosis",
+                "text": "Your test result is positive. This means that you are infected.",
+                "paragraphs": [
+                    "You are infected and therefore you must stay at home in isolation for at least 7 days. Don't leave your home until the symptoms have passed.",
+                    "You can warn other people with whom you came into contact.",
+                    "This test result will be removed from your smartphone after 48 hours."
+                ]
+            }
+        ]
+    },
+    "negativeTestResult": {
+        "explanation": [
+            {
+                "icon": "dt_exclamatio",
+                "title": "Negative Diagnosis",
+                "text": "The laboratory result indicates no verification that you have coronavirus SARS-CoV-2."
+            },
+            {
+                "icon": "dt_delete",
+                "title": "Delete Test",
+                "text": "Please delete the test from Coronalert, so that you can save a new test code here if necessary.\nThis test result will be removed from your smartphone after 48 hours."
+            }
+        ]
+    },
+    "thankYou": {
+        "pleaseNote": [
+            {
+                "icon": "dt_phone",
+                "text": "The public health authority will contact you within the next few days by telephone or by letter."
+            },
+            {
+                "icon": "dt_home",
+                "text": "You are infectious. Isolate yourself from other people."
+            }
+        ],
+        "otherInformation": {
+            "paragraphs": [
+                "Your quarantine period is usually 7 days. Please observe your symptoms and monitor how they develop.",
+                "You will be asked by your public health authority to create a list of people you have had contact with. This should include all people with whom you have had close contact with (less than 2 meters, face-to-face conversation) for over 15 minutes in the two days before you developed symptoms.",
+                "Please particularly consider people who will not be notified directly by the app since they don't own a smartphone, or haven't installed the app.",
+                "Even when you no longer have any symptoms and you feel well again, you could still be infectious."
+            ]
+        }
+    }
+}

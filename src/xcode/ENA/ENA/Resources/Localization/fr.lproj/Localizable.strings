@@ -419,3 +419,4 @@
 "ExposureSubmissionResult_testPositiveAutomaticDeletionDesc" = "Le résultat de ce test sera supprimé de votre smartphone après 48 heures.";
 "BEAppResetAfterTEKUpload_title" = "Réinitialisation de l'app";
 "BEAppResetAfterTEKUpload_description" = "Merci de partager vos données et d'aider les autres. L'application va maintenant être réinitialisée et toutes les données seront supprimées. Nous vous recommandons vivement de désactiver l'application pendant votre période d'isolement en arrêtant l'enregistrement de l'exposition. Après votre période d'isolement, vous pourrez à nouveau utiliser l'application.";
+"language" = "fr";

@@ -419,3 +419,4 @@
 "ExposureSubmissionResult_testPositiveAutomaticDeletionDesc" = "This test result will be removed from your smartphone after 48 hours.";
 "BEAppResetAfterTEKUpload_title" = "App Reset";
 "BEAppResetAfterTEKUpload_description" = "Thank you for sharing your data and helping others. The app will now be reset and all data will be deleted. We strongly recommend that you disable the app during your isolation period by stopping exposure logging. After your isolation period, you may use the app again.";
+"language" = "en";

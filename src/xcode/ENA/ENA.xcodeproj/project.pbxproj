@@ -252,6 +252,12 @@
 		A92076E624ED407A00AE8748 /* BEFakeRequestsExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076E524ED407A00AE8748 /* BEFakeRequestsExecutor.swift */; };
 		A92076E924ED41F400AE8748 /* BEFakeRequestsExecutorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076E824ED41F400AE8748 /* BEFakeRequestsExecutorTests.swift */; };
 		A92076EC24ED542900AE8748 /* BEMockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076EB24ED542900AE8748 /* BEMockURLSession.swift */; };
+		A9221A312542C1F200853CEF /* BEDynamicTextService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A302542C1F200853CEF /* BEDynamicTextService.swift */; };
+		A9221A332542C2C200853CEF /* dynamicTexts.json in Resources */ = {isa = PBXBuildFile; fileRef = A9221A322542C2C200853CEF /* dynamicTexts.json */; };
+		A9221A362542F02900853CEF /* BEDynamicTextScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A352542F02900853CEF /* BEDynamicTextScreen.swift */; };
+		A9221A382542F06E00853CEF /* BEDynamicTextScreenSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A372542F06E00853CEF /* BEDynamicTextScreenSection.swift */; };
+		A9221A3A2542F10300853CEF /* BEDynamicTextScreenName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A392542F10300853CEF /* BEDynamicTextScreenName.swift */; };
+		A9221A3C2542F1AB00853CEF /* BEDynamicTextScreenSectionName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A3B2542F1AB00853CEF /* BEDynamicTextScreenSectionName.swift */; };
 		A929A71724DC3EE50039B997 /* BEHTTPClientSubmitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A929A71624DC3EE50039B997 /* BEHTTPClientSubmitTests.swift */; };
 		A92B66AD251CBF9B00F9B8DD /* BEUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B66AC251CBF9B00F9B8DD /* BEUILabel.swift */; };
 		A935EE5624E0060400B33B66 /* BEENAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A935EE5524E0060400B33B66 /* BEENAUITests.swift */; };
@@ -732,6 +738,12 @@
 		A92076E524ED407A00AE8748 /* BEFakeRequestsExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEFakeRequestsExecutor.swift; sourceTree = "<group>"; };
 		A92076E824ED41F400AE8748 /* BEFakeRequestsExecutorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEFakeRequestsExecutorTests.swift; sourceTree = "<group>"; };
 		A92076EB24ED542900AE8748 /* BEMockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEMockURLSession.swift; sourceTree = "<group>"; };
+		A9221A302542C1F200853CEF /* BEDynamicTextService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicTextService.swift; sourceTree = "<group>"; };
+		A9221A322542C2C200853CEF /* dynamicTexts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dynamicTexts.json; sourceTree = "<group>"; };
+		A9221A352542F02900853CEF /* BEDynamicTextScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicTextScreen.swift; sourceTree = "<group>"; };
+		A9221A372542F06E00853CEF /* BEDynamicTextScreenSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicTextScreenSection.swift; sourceTree = "<group>"; };
+		A9221A392542F10300853CEF /* BEDynamicTextScreenName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicTextScreenName.swift; sourceTree = "<group>"; };
+		A9221A3B2542F1AB00853CEF /* BEDynamicTextScreenSectionName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicTextScreenSectionName.swift; sourceTree = "<group>"; };
 		A929A71624DC3EE50039B997 /* BEHTTPClientSubmitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEHTTPClientSubmitTests.swift; sourceTree = "<group>"; };
 		A92B66AC251CBF9B00F9B8DD /* BEUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEUILabel.swift; sourceTree = "<group>"; };
 		A935EE5524E0060400B33B66 /* BEENAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEENAUITests.swift; sourceTree = "<group>"; };
@@ -1540,6 +1552,7 @@
 				85D75976245706BD008175F0 /* Assets */,
 				85D75975245706B0008175F0 /* Storyboards */,
 				A189E460248C35BF001D0996 /* PublicKeys.plist */,
+				A9221A322542C2C200853CEF /* dynamicTexts.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1740,6 +1753,26 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		A9221A2F2542C1DD00853CEF /* DynamicText */ = {
+			isa = PBXGroup;
+			children = (
+				A9221A342542F00C00853CEF /* Model */,
+				A9221A302542C1F200853CEF /* BEDynamicTextService.swift */,
+			);
+			path = DynamicText;
+			sourceTree = "<group>";
+		};
+		A9221A342542F00C00853CEF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A9221A352542F02900853CEF /* BEDynamicTextScreen.swift */,
+				A9221A372542F06E00853CEF /* BEDynamicTextScreenSection.swift */,
+				A9221A392542F10300853CEF /* BEDynamicTextScreenName.swift */,
+				A9221A3B2542F1AB00853CEF /* BEDynamicTextScreenSectionName.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A929A71324DC3C470039B997 /* __tests__ */ = {
 			isa = PBXGroup;
 			children = (
@@ -1844,6 +1877,7 @@
 		A9DD2CE224CEEEF40035081A /* BE */ = {
 			isa = PBXGroup;
 			children = (
+				A9221A2F2542C1DD00853CEF /* DynamicText */,
 				A9FC52802522329600660812 /* TestActivation */,
 				A95EE81224FCE0CF00AFECBD /* Statistics */,
 				A9D0BF8A24FBA19C00DEBD99 /* InfectionSummary */,
@@ -2642,6 +2676,7 @@
 				51CE1B85246078B6002CF42A /* ActivateCollectionViewCell.xib in Resources */,
 				51C779142486E5AB004582F8 /* RiskFindingPositiveCollectionViewCell.xib in Resources */,
 				51D420CE245869C800AD70CA /* Home.storyboard in Resources */,
+				A9221A332542C2C200853CEF /* dynamicTexts.json in Resources */,
 				8539874F2467094E00D28B62 /* AppIcon.xcassets in Resources */,
 				514C0A0B247AF9F700F235F6 /* RiskTextItemView.xib in Resources */,
 				51B5B414246DF07300DC5D3E /* RiskImageItemView.xib in Resources */,
@@ -2730,6 +2765,7 @@
 				7187A5582481231C00FCC755 /* DynamicTableViewAction.swift in Sources */,
 				A128F059248B459F00EC7F6C /* PublicKeyStore.swift in Sources */,
 				71C0BEDD2498DD07009A17A0 /* ENANavigationFooterView.swift in Sources */,
+				A9221A382542F06E00853CEF /* BEDynamicTextScreenSection.swift in Sources */,
 				A3FF84EC247BFAF00053E947 /* Hasher.swift in Sources */,
 				51895EDC245E16CD0085DA38 /* ENAColor.swift in Sources */,
 				A372DA3B24BDA075003248BB /* ExposureSubmissionCoordinating.swift in Sources */,
@@ -2752,6 +2788,7 @@
 				CD8638532477EBD400A5A07C /* SettingsViewModel.swift in Sources */,
 				A9DD2CF624CF379F0035081A /* BEUIImage.swift in Sources */,
 				51CE1BB52460AC83002CF42A /* UICollectionView+Dequeue.swift in Sources */,
+				A9221A312542C1F200853CEF /* BEDynamicTextService.swift in Sources */,
 				B17F2D48248CEB4C00CAA38F /* DetectionMode.swift in Sources */,
 				137846492488027600A50AB8 /* OnboardingInfoViewController+Extension.swift in Sources */,
 				85E33444247EB357006E74EC /* CircularProgressView.swift in Sources */,
@@ -2782,6 +2819,7 @@
 				51486DA22485101500FCE216 /* RiskInactiveCollectionViewCell.swift in Sources */,
 				710021DC248E44A6001F0B63 /* ENAFont.swift in Sources */,
 				A92076E624ED407A00AE8748 /* BEFakeRequestsExecutor.swift in Sources */,
+				A9221A3C2542F1AB00853CEF /* BEDynamicTextScreenSectionName.swift in Sources */,
 				A9DD2D0124D01F980035081A /* BESecureStore.swift in Sources */,
 				B1FE13FF2489708200D012E5 /* CachedAppConfiguration.swift in Sources */,
 				EE22DB8B247FB43A001B0A71 /* ActionDetailTableViewCell.swift in Sources */,
@@ -2882,6 +2920,7 @@
 				B10FD5ED246EAADC00E9D7F2 /* AppInformationDetailViewController.swift in Sources */,
 				A951618524DAEB3A00631519 /* BEDecimal.swift in Sources */,
 				CDCE11D9247D64C600F30825 /* NotificationSettingsOnTableViewCell.swift in Sources */,
+				A9221A3A2542F10300853CEF /* BEDynamicTextScreenName.swift in Sources */,
 				0DF6BB97248AD616007E8B0C /* AppUpdateCheckHelper.swift in Sources */,
 				0DD260FF248D549B007C3B2C /* KeychainHelper.swift in Sources */,
 				2FF1D63024880FCF00381FFB /* DynamicTableViewRoundedCell.swift in Sources */,
@@ -2980,6 +3019,7 @@
 				A92076D124E426D600AE8748 /* BEMockExposureSubmissionService.swift in Sources */,
 				A92B66AD251CBF9B00F9B8DD /* BEUILabel.swift in Sources */,
 				B1221BE02492ECE800E6C4E4 /* CFDictionary+KeychainQuery.swift in Sources */,
+				A9221A362542F02900853CEF /* BEDynamicTextScreen.swift in Sources */,
 				FEDCE77AED78E9C25999BB35 /* SceneDelegate+State.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
