@@ -22,14 +22,6 @@ import ExposureNotification
 
 class BEExposureSubmissionWarnOthersViewController: ExposureSubmissionWarnOthersViewController {
 	
-	lazy var beExposureSubmissionService: BEExposureSubmissionService = {
-		guard let beService = exposureSubmissionService as? BEExposureSubmissionService else {
-			fatalError("Wrong exposure submission service subclass")
-		}
-		
-		return beService
-	}()
-
 	lazy var beCoordinator: BEExposureSubmissionCoordinator  = {
 		guard let beCoordinator = coordinator as? BEExposureSubmissionCoordinator else {
 			fatalError("Wrong coordinator subclass")
@@ -38,17 +30,17 @@ class BEExposureSubmissionWarnOthersViewController: ExposureSubmissionWarnOthers
 		return beCoordinator
 	}()
 
-	override init?(coder: NSCoder, coordinator: ExposureSubmissionCoordinating, exposureSubmissionService: ExposureSubmissionService) {
+	override init?(coder: NSCoder, coordinator: ExposureSubmissionCoordinating, exposureSubmissionService: BEExposureSubmissionService) {
 		super.init(coder: coder, coordinator: coordinator, exposureSubmissionService: exposureSubmissionService)
 	}
 	
 	override func startSubmitProcess() {
-		beExposureSubmissionService.retrieveDiagnosisKeys { result in
+		exposureSubmissionService?.retrieveDiagnosisKeys { result in
 			switch result {
 			case .failure(let error):
 				switch error {
 				case .noKeys:
-					self.beExposureSubmissionService.finalizeSubmissionWithoutKeys()
+					self.exposureSubmissionService?.finalizeSubmissionWithoutKeys()
 					self.coordinator!.showThankYouScreen()
 					// Custom error handling for EN framework related errors.
 				case .internal, .unsupported, .rateLimited:

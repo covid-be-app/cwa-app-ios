@@ -103,7 +103,9 @@ final class HomeViewController: UIViewController, RequiresAppDependencies {
 		setStateOfChildViewControllers()
 		
 		// :BE: show env label if not production
-		showEnvironmentLabel()
+		#if !UITESTING
+			showEnvironmentLabel()
+		#endif
 	}
 
 	override func viewWillAppear(_ animated: Bool) {

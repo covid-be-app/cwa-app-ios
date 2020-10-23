@@ -39,6 +39,7 @@ protocol ExposureSubmissionCoordinating: class {
 	/// For more information on the usage and configuration of the initial screen, check the concrete implementation of the method.
 	func start(with result: TestResult?)
 	func dismiss()
+	func resetApp()
 
 	func showOverviewScreen()
 	func showTestResultScreen(with result: TestResult)
@@ -51,6 +52,7 @@ protocol ExposureSubmissionCoordinating: class {
 /// This delegate allows a class to be notified for life-cycle events of the coordinator.
 protocol ExposureSubmissionCoordinatorDelegate: class {
 	func exposureSubmissionCoordinatorWillDisappear(_ coordinator: ExposureSubmissionCoordinating)
+	func exposureSubmissionCoordinatorRequestsAppReset()
 }
 
 /// Concrete implementation of the ExposureSubmissionCoordinator protocol.
@@ -67,13 +69,13 @@ class ExposureSubmissionCoordinator: ExposureSubmissionCoordinating {
 	weak var navigationController: UINavigationController?
 
 	/// - NOTE: We need a strong (aka non-weak) reference here.
-	let exposureSubmissionService: ExposureSubmissionService
+	let exposureSubmissionService: BEExposureSubmissionService
 
 	// MARK: - Initializers.
 
 	init(
 		parentNavigationController: UINavigationController,
-		exposureSubmissionService: ExposureSubmissionService,
+		exposureSubmissionService: BEExposureSubmissionService,
 		delegate: ExposureSubmissionCoordinatorDelegate? = nil
 	) {
 		self.parentNavigationController = parentNavigationController
@@ -136,6 +138,10 @@ extension ExposureSubmissionCoordinator {
 
 	func dismiss() {
 		navigationController?.dismiss(animated: true)
+	}
+	
+	func resetApp() {
+		fatalError("Overridden in subclass")
 	}
 
 	func showOverviewScreen() {

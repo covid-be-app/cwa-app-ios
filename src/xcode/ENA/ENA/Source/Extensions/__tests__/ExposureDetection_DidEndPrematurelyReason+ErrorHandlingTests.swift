@@ -88,4 +88,11 @@ final class ExposureDetection_DidEndPrematurelyReason_ErrorHandlingTests: XCTest
 		XCTAssertEqual(alert, nil)
 	}
 
+	func testError_ENError_BadParameter() {
+		let root = UIViewController()
+		let alert = Reason.noSummary(ENError(.badParameter)).errorAlertController(rootController: root)
+
+		XCTAssertEqual(alert, nil)
+	}
+
 }

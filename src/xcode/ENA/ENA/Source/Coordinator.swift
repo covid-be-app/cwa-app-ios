@@ -269,6 +269,10 @@ extension Coordinator: ExposureDetectionViewControllerDelegate {
 }
 
 extension Coordinator: ExposureSubmissionCoordinatorDelegate {
+	func exposureSubmissionCoordinatorRequestsAppReset() {
+		delegate?.coordinatorUserDidRequestReset()
+	}
+	
 	func exposureSubmissionCoordinatorWillDisappear(_ coordinator: ExposureSubmissionCoordinating) {
 		homeController?.updateTestResultState()
 	}

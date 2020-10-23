@@ -79,4 +79,9 @@ enum BEAppStrings {
 		static let testActivatedTitle = NSLocalizedString("BEMobileTestIdActivator_testActivatedTitle", comment: "")
 		static let testActivatedMessage = NSLocalizedString("BEMobileTestIdActivator_testActivatedMessage", comment: "")
 	}
+	
+	enum BEAppResetAfterTEKUpload {
+		static let title = NSLocalizedString("BEAppResetAfterTEKUpload_title", comment: "")
+		static let description = NSLocalizedString("BEAppResetAfterTEKUpload_description", comment: "")
+	}
 }

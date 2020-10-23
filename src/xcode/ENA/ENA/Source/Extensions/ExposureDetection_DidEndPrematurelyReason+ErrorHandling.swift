@@ -35,6 +35,10 @@ extension ExposureDetection.DidEndPrematurelyReason {
 				return nil
 			}
 			
+			if unwrappedError.code == .badParameter {
+				return nil
+			}
+			
 			return rootController.setupErrorAlert(
 				message: localizedDescription
 			)

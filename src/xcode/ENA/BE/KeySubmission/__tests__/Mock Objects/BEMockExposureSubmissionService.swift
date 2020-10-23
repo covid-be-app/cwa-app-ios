@@ -59,7 +59,7 @@ class BEMockExposureSubmissionService : BEExposureSubmissionService {
 	}
 	
 	func submitExposure(keys: [ENTemporaryExposureKey], countries: [BECountry], completionHandler: @escaping ExposureSubmissionHandler) {
-		submitExposureCallback?(completionHandler)
+		completionHandler(nil)
 	}
 	
 	func submitExposure(completionHandler: @escaping ExposureSubmissionHandler) {
@@ -81,6 +81,10 @@ class BEMockExposureSubmissionService : BEExposureSubmissionService {
 	func deleteTest() {
 		
 	}
+
+	func setTestResultShownOnScreen() {
+
+	}
 	
 	var devicePairingSuccessfulTimestamp: Int64?
 	
@@ -88,8 +92,11 @@ class BEMockExposureSubmissionService : BEExposureSubmissionService {
 		return ExposureManagerState(authorized: false, enabled: false, status: .unknown)
 	}
 	
-	func deleteTestIfOutdated() -> Bool {
+	func deleteMobileTestIdIfOutdated() -> Bool {
 		return false
+	}
+	
+	func deleteTestResultIfOutdated() {
 	}
 	
 	func getFakeTestResult(_ completeWith: @escaping TestResultHandler) {

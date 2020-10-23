@@ -25,12 +25,12 @@ class ExposureSubmissionWarnOthersViewController: DynamicTableViewController, EN
 	
 	// MARK: - Attributes.
 
-	private(set) weak var exposureSubmissionService: ExposureSubmissionService?
+	private(set) weak var exposureSubmissionService: BEExposureSubmissionService?
 	private(set) weak var coordinator: ExposureSubmissionCoordinating?
 
 	// MARK: - Initializers.
 
-	init?(coder: NSCoder, coordinator: ExposureSubmissionCoordinating, exposureSubmissionService: ExposureSubmissionService) {
+	init?(coder: NSCoder, coordinator: ExposureSubmissionCoordinating, exposureSubmissionService: BEExposureSubmissionService) {
 		self.coordinator = coordinator
 		self.exposureSubmissionService = exposureSubmissionService
 		super.init(coder: coder)

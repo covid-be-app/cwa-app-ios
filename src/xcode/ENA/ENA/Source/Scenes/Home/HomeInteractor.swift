@@ -23,8 +23,6 @@ import Foundation
 import UIKit
 import Combine
 
-// swiftlint:disable file_length
-
 final class HomeInteractor: RequiresAppDependencies {
 	typealias SectionDefinition = (section: HomeViewController.Section, cellConfigurators: [CollectionViewCellConfiguratorAny])
 	typealias SectionConfiguration = [SectionDefinition]
@@ -206,7 +204,6 @@ extension HomeInteractor {
 	private var risk: Risk? { state.risk }
 	private var riskDetails: Risk.Details? { risk?.details }
 
-	// swiftlint:disable:next function_body_length
 	func setupRiskConfigurator() -> CollectionViewCellConfiguratorAny? {
 
 		let detectionIsAutomatic = detectionMode == .automatic
@@ -320,6 +317,8 @@ extension HomeInteractor {
 			// This is shown when we submitted keys! (Positive test result + actually decided to submit keys.)
 			// Once this state is reached, it cannot be left anymore.
 
+			// App version 1.1, we should never get to this state. If it is the case it's an old app that was updated.
+			
 			let thankYou = HomeThankYouRiskCellConfigurator()
 			actionsConfigurators.append(thankYou)
 			log(message: "Reached end of life state.", file: #file, line: #line, function: #function)

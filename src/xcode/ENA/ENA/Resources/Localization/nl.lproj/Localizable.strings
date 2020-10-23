@@ -44,7 +44,7 @@
 "ExposureDetection_Guide_Hotline1" = "Heb je symptomen die kunnen wijzen op Covid-19, zoals vermoeidheid, koorts, droge hoest, hoofdpijn, verlies van smaak of reuk? Contacteer dan één van volgende personen:";
 "ExposureDetection_Guide_Hotline2" = "Je huisarts";
 "ExposureDetection_Guide_Hotline3" = "De medische wachtdienst op het nummer 1733";
-"ExposureDetection_Guide_Hotline4" = "Heb je geen symptomen? Neem dan contact op met:";
+"ExposureDetection_Guide_Hotline4" = "Heb je geen symptomen?";
 "ExposureDetection_Explanation_Title" = "Risico op besmetting";
 "ExposureDetection_Explanation_Subtitle_Inactive" = "Zo wordt je risico berekend";
 "ExposureDetection_Button_Enable" = "Blootstellingscontrole activeren";
@@ -170,7 +170,7 @@
 "ExposureSubmissionResult_testPending" = "Resultaat nog niet beschikbaar";
 "ExposureSubmissionResult_testPendingDesc" = "Je testresultaat is nog niet beschikbaar.";
 "ExposureSubmissionResult_testRemove" = "Test verwijderen";
-"ExposureSubmissionResult_testRemoveDesc" = "Verwijder de test uit Coronalert, zodat je hier indien nodig een nieuwe testcode kunt opslaan.";
+"ExposureSubmissionResult_testRemoveDesc" = "Verwijder de test uit Coronalert, zodat je hier indien nodig een nieuwe testcode kunt opslaan.\nDit testresultaat wordt na 48 uur van uw smartphone verwijderd.";
 "ExposureSubmissionResult_continueButton" = "Volgende";
 "ExposureSubmissionResult_deleteButton" = "Test verwijderen";
 "ExposureSubmissionResult_refreshButton" = "Vernieuwen";
@@ -407,7 +407,7 @@
 "Common_Deadman_AlertBody" = "Open Coronalert regelmatig zodat uw blootstellingsrisico kan worden bijgewerkt.";
 "BERiskLegend_infectionSummaryTitle" = "Statistieken";
 "BERiskLegend_infectionSummaryText" = "Bevat het zevendaagse gemiddelde van het aantal nieuwe infecties, ziekenhuisopnames en sterfgevallen.";
-"ExposureDetection_Guide_Hotline5" = "Het contactcenter op het nummer 02 214.19.19";
+"ExposureDetection_Guide_Hotline5" = "Respecteer 10 dagen quarantaine.";
 "ExposureDetection_Guide_GetTested" = "Laat je zo snel mogelijk testen.";
 "BEInfectionSummary_forWeek" = "Voor week";
 "ExposureSubmissionResult_testPositiveIsolationDesc" = "Je bent besmet en daarom moet je minstens 7 dagen thuis in isolatie blijven. Verlaat je huis niet tot de symptomen voorbij zijn.";
@@ -416,3 +416,6 @@
 "BEMobileTestIdActivator_testActivatedTitle" = "Test succesvol gekoppeld";
 "BEMobileTestIdActivator_testActivatedMessage" = "Je test is succesvol gekoppeld aan je smartphone. Vanaf nu kan je je testresultaat ontvangen in Coronalert.";
 "BEMobileTestIdActivator_linkTestToPhoneTitle" = "Koppel je smartphone";
+"ExposureSubmissionResult_testPositiveAutomaticDeletionDesc" = "Dit testresultaat wordt na 48 uur van uw smartphone verwijderd.";
+"BEAppResetAfterTEKUpload_title" = "App Reset";
+"BEAppResetAfterTEKUpload_description" = "Bedankt voor het delen van je gegevens en het helpen van anderen. De app wordt nu gereset en alle gegevens worden verwijderd. We raden je sterk aan om de app uit te schakelen tijdens je isolatieperiode door het stoppen van de blootstellingsregistratie. Na je isolatieperiode kan je de app weer gebruiken.";

@@ -30,6 +30,8 @@ class MockExposureSubmissionCoordinator: ExposureSubmissionCoordinating {
 	func start(with: TestResult? = nil) { }
 
 	func dismiss() { }
+	
+	func resetApp() { }
 
 	func showOverviewScreen() { }
 

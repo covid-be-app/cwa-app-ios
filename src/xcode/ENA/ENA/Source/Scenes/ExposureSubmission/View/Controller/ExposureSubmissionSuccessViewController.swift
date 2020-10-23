@@ -45,6 +45,12 @@ final class ExposureSubmissionSuccessViewController: DynamicTableViewController,
 
 		navigationFooterItem?.primaryButtonTitle = AppStrings.ExposureSubmissionSuccess.button
 	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		footerView?.primaryButton.accessibilityIdentifier = BEAccessibilityIdentifiers.BEExposureSubmissionSuccess.button
+	}
 
 	private func setUpView() {
 		navigationItem.hidesBackButton = true
@@ -61,8 +67,13 @@ final class ExposureSubmissionSuccessViewController: DynamicTableViewController,
 
 extension ExposureSubmissionSuccessViewController {
 	func navigationController(_ navigationController: ENANavigationControllerWithFooter, didTapPrimaryButton button: UIButton) {
-		coordinator?.dismiss()
+		let alertController = self.setupErrorAlert(title: BEAppStrings.BEAppResetAfterTEKUpload.title, message: BEAppStrings.BEAppResetAfterTEKUpload.description, okTitle: nil, secondaryActionTitle: nil, completion: {
+			self.coordinator?.resetApp()
+		}, secondaryActionCompletion: nil)
+		
+		present(alertController, animated: true)
 	}
+	
 }
 
 private extension DynamicTableViewModel {
