@@ -278,8 +278,12 @@ extension SceneDelegate: CoordinatorDelegate {
 extension SceneDelegate {
 		
 	func resetApplication() {
-		let newKey = KeychainHelper.generateDatabaseKey()
-		store.clearAll(key: newKey)
+		do {
+			let newKey = try KeychainHelper().generateDatabaseKey()
+			store.clearAll(key: newKey)
+		} catch {
+			fatalError("Creating new database key failed")
+		}
 		UIApplication.coronaWarnDelegate().downloadedPackagesStore.reset()
 		UIApplication.coronaWarnDelegate().downloadedPackagesStore.open()
 		exposureManager.reset {

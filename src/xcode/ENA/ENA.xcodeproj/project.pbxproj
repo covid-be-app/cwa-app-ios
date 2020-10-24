@@ -258,6 +258,7 @@
 		A9221A382542F06E00853CEF /* BEDynamicTextScreenSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A372542F06E00853CEF /* BEDynamicTextScreenSection.swift */; };
 		A9221A3A2542F10300853CEF /* BEDynamicTextScreenName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A392542F10300853CEF /* BEDynamicTextScreenName.swift */; };
 		A9221A3C2542F1AB00853CEF /* BEDynamicTextScreenSectionName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A3B2542F1AB00853CEF /* BEDynamicTextScreenSectionName.swift */; };
+		A9221A3E2543524900853CEF /* KeychainHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A3D2543524900853CEF /* KeychainHelperTests.swift */; };
 		A929A71724DC3EE50039B997 /* BEHTTPClientSubmitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A929A71624DC3EE50039B997 /* BEHTTPClientSubmitTests.swift */; };
 		A92B66AD251CBF9B00F9B8DD /* BEUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B66AC251CBF9B00F9B8DD /* BEUILabel.swift */; };
 		A935EE5624E0060400B33B66 /* BEENAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A935EE5524E0060400B33B66 /* BEENAUITests.swift */; };
@@ -744,6 +745,7 @@
 		A9221A372542F06E00853CEF /* BEDynamicTextScreenSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicTextScreenSection.swift; sourceTree = "<group>"; };
 		A9221A392542F10300853CEF /* BEDynamicTextScreenName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicTextScreenName.swift; sourceTree = "<group>"; };
 		A9221A3B2542F1AB00853CEF /* BEDynamicTextScreenSectionName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicTextScreenSectionName.swift; sourceTree = "<group>"; };
+		A9221A3D2543524900853CEF /* KeychainHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelperTests.swift; sourceTree = "<group>"; };
 		A929A71624DC3EE50039B997 /* BEHTTPClientSubmitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEHTTPClientSubmitTests.swift; sourceTree = "<group>"; };
 		A92B66AC251CBF9B00F9B8DD /* BEUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEUILabel.swift; sourceTree = "<group>"; };
 		A935EE5524E0060400B33B66 /* BEENAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEENAUITests.swift; sourceTree = "<group>"; };
@@ -2111,6 +2113,7 @@
 			isa = PBXGroup;
 			children = (
 				B1221BE12492ED0F00E6C4E4 /* CFDictionary+KeychainQueryTests.swift */,
+				A9221A3D2543524900853CEF /* KeychainHelperTests.swift */,
 			);
 			path = __tests__;
 			sourceTree = "<group>";
@@ -3079,6 +3082,7 @@
 				B1A76E9F24714AC700EA5208 /* HTTPClient+Configuration.swift in Sources */,
 				516E430024B777B20008CC30 /* HomeHighRiskCellConfiguratorTests.swift in Sources */,
 				A9DD2CF824CFF9720035081A /* BEStringTests.swift in Sources */,
+				A9221A3E2543524900853CEF /* KeychainHelperTests.swift in Sources */,
 				F2DC809224898B1800EDC40A /* DynamicTableViewControllerHeaderTests.swift in Sources */,
 				B15382FE248424F00010F007 /* ExposureDetectionTests.swift in Sources */,
 				A372DA3F24BEF773003248BB /* ExposureSubmissionCoordinatorTests.swift in Sources */,
@@ -3293,7 +3297,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "${PROJECT}/Resources/ENACommunity.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 80;
+				CURRENT_PROJECT_VERSION = 84;
 				DEVELOPMENT_TEAM = UK48F668XR;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -3307,7 +3311,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.1;
 				OTHER_CFLAGS = (
 					"-DSQLITE_HAS_CODEC",
 					"-DSQLITE_TEMP_STORE=3",
@@ -3453,7 +3457,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "${PROJECT}/Resources/ENACommunity.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 80;
+				CURRENT_PROJECT_VERSION = 84;
 				DEVELOPMENT_TEAM = UK48F668XR;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -3466,7 +3470,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.1;
 				OTHER_CFLAGS = (
 					"-DSQLITE_HAS_CODEC",
 					"-DSQLITE_TEMP_STORE=3",
@@ -3669,7 +3673,7 @@
 				CODE_SIGN_ENTITLEMENTS = "${PROJECT}/Resources/ENATest.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 80;
+				CURRENT_PROJECT_VERSION = 84;
 				DEVELOPMENT_TEAM = UK48F668XR;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -3682,7 +3686,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.1;
 				OTHER_CFLAGS = (
 					"-DSQLITE_HAS_CODEC",
 					"-DSQLITE_TEMP_STORE=3",
@@ -3709,7 +3713,7 @@
 				CODE_SIGN_ENTITLEMENTS = "${PROJECT}/Resources/ENA.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 80;
+				CURRENT_PROJECT_VERSION = 84;
 				DEVELOPMENT_TEAM = UK48F668XR;
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PREPROCESSOR_DEFINITIONS = "SQLITE_HAS_CODEC=1";
@@ -3719,7 +3723,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.1;
 				OTHER_CFLAGS = (
 					"-DSQLITE_HAS_CODEC",
 					"-DSQLITE_TEMP_STORE=3",
