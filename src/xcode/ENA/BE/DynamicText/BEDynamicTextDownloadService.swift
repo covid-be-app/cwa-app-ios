@@ -30,7 +30,7 @@ class BEDynamicTextDownloadService {
 	private var textService: BEDynamicTextService
 	private let outdatedTimeInterval: TimeInterval
 	
-	init(client: Client, textService: BEDynamicTextService, textOutdatedTimeInterval:TimeInterval = TimeInterval(24 * 60 * 60)) {
+	init(client: Client, textService: BEDynamicTextService, textOutdatedTimeInterval:TimeInterval = .textOutdatedTimeInterval) {
 		self.client = client
 		self.textService = textService
 		self.outdatedTimeInterval = textOutdatedTimeInterval
@@ -79,6 +79,17 @@ class BEDynamicTextDownloadService {
 			}
 		}
 	}
-	
+}
 
+extension TimeInterval {
+	static var textOutdatedTimeInterval: TimeInterval {
+		switch BEEnvironment.current {
+		case .production:
+			return TimeInterval(24 * 60 * 60)
+		case .staging:
+			return TimeInterval(60)
+		case .test:
+			return TimeInterval(60)
+		}
+	}
 }
