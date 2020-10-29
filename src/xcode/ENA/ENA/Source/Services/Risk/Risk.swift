@@ -75,5 +75,21 @@ extension Risk {
 			exposureDetectionDate: Date()),
 		riskLevelHasChanged: true
 	)
+	static let mockedUknown = Risk(
+		level: .unknownInitial,
+		details: Risk.Details(
+			numberOfExposures: 0,
+			activeTracing: .init(interval: 336 * 3600),  // two weeks
+			exposureDetectionDate: Date()),
+		riskLevelHasChanged: true
+	)
+	static let mockedInactive = Risk(
+		level: .inactive,
+		details: Risk.Details(
+			numberOfExposures: 0,
+			activeTracing: .init(interval: 336 * 3600),  // two weeks
+			exposureDetectionDate: Date()),
+		riskLevelHasChanged: true
+	)
 }
 #endif

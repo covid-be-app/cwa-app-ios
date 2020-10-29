@@ -58,7 +58,7 @@ private extension DynamicHeader {
 
 // MARK: - Supported Cell Types
 
-private extension DynamicCell {
+extension DynamicCell {
 	private enum ReusableCellIdentifer: String, TableViewCellReuseIdentifiers {
 		case risk = "riskCell"
 		case riskText = "riskTextCell"
@@ -250,15 +250,29 @@ extension ExposureDetectionViewController {
 	}
 
 	private var standardGuideSection: DynamicSection {
-		.section(
+		let dynamicTextService = BEDynamicTextService()
+		let dynamicSections = dynamicTextService.sections(.standard, section: .preventiveMeasures)
+		var cells: [DynamicCell] = [.header(title: AppStrings.ExposureDetection.behaviorTitle, subtitle: AppStrings.ExposureDetection.behaviorSubtitle)]
+		
+		cells.append(contentsOf: dynamicSections.map { $0.buildRiskLevelDynamicCell() })
+			
+		return .section(
 			header: .backgroundSpace(height: 16),
-			cells: [
-				.header(title: AppStrings.ExposureDetection.behaviorTitle, subtitle: AppStrings.ExposureDetection.behaviorSubtitle),
-				.guide(text: AppStrings.ExposureDetection.guideHands, image: UIImage(named: "Icons - Hands")),
-				.guide(text: AppStrings.ExposureDetection.guideDistance, image: UIImage(named: "Icons - Abstand")),
-				.guide(text: AppStrings.ExposureDetection.guideMask, image: UIImage(named: "Icons - Mundschutz")),
-				.guide(text: AppStrings.ExposureDetection.guideSneeze, image: UIImage(named: "Icons - Niesen"))
-			]
+			cells: cells
+		)
+	}
+	
+	private var highRiskGuideSection: DynamicSection {
+		let dynamicTextService = BEDynamicTextService()
+		let dynamicSections = dynamicTextService.sections(.highRisk, section: .preventiveMeasures)
+
+		var cells: [DynamicCell] = [.header(title: AppStrings.ExposureDetection.behaviorTitle, subtitle: AppStrings.ExposureDetection.behaviorSubtitle)]
+		
+		cells.append(contentsOf: dynamicSections.map { $0.buildRiskLevelDynamicCell() })
+			
+		return .section(
+			header: .backgroundSpace(height: 16),
+			cells: cells
 		)
 	}
 
@@ -379,24 +393,7 @@ extension ExposureDetectionViewController {
 				.riskRefreshed(text: AppStrings.ExposureDetection.refreshed, image: UIImage(named: "Icons_Aktualisiert"))
 			]),
 			riskLoadingSection,
-			.section(
-				header: .backgroundSpace(height: 16),
-				cells: [
-					.header(title: AppStrings.ExposureDetection.behaviorTitle, subtitle: AppStrings.ExposureDetection.behaviorSubtitle),
-					.guide(text: AppStrings.ExposureDetection.guideHome, image: UIImage(named: "Icons - Home")),
-					.guide(text: AppStrings.ExposureDetection.guideDistance, image: UIImage(named: "Icons - Abstand")),
-//					.guide(text: AppStrings.ExposureDetection.getTested, image: UIImage(named: "Icons -Warning")),
-					.guide(image: UIImage(named: "Icons - Hotline"), text: [
-						AppStrings.ExposureDetection.guideHotline1,
-						AppStrings.ExposureDetection.guideHotline2,
-						AppStrings.ExposureDetection.guideHotline3
-					]),
-					.guide(image: UIImage(named: "Icons -Warning"), text: [
-						AppStrings.ExposureDetection.guideHotline4,
-						AppStrings.ExposureDetection.guideHotline5
-					])
-				]
-			),
+			highRiskGuideSection,
 			activeTracingSection(
 				accessibilityIdentifier: AccessibilityIdentifiers.ExposureDetection.activeTracingSectionText
 			)

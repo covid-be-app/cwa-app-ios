@@ -19,7 +19,7 @@
 
 import Foundation
 
-enum BEEnvironment: String {
+enum BEEnvironment: String, CaseIterable {
 	case production = "production"
 	case staging = "staging"
 	case test = "test"
@@ -38,7 +38,7 @@ enum BEEnvironment: String {
 	static var current: BEEnvironment {
 		if let value = Bundle.main.infoDictionary?["BEEnvironment"] as? String {
 			guard let environment = BEEnvironment(rawValue: value) else {
-				fatalError()
+				fatalError("Should never happen")
 			}
 			
 			return environment

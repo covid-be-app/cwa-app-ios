@@ -280,7 +280,17 @@ private extension ExposureSubmissionTestResultViewController {
 	}
 
 	private func positiveTestResultSection() -> DynamicSection {
-		.section(
+		let dynamicTextService = BEDynamicTextService()
+		let textSections = dynamicTextService.sections(.positiveTestResult, section: .explanation)
+		let tintColor = UIColor.enaColor(for: .riskHigh)
+		let stepCells = Array(textSections.map({ $0.buildTestResultStepCells(iconTint: tintColor) }).joined())
+
+		var cells: [DynamicCell] = [.title2(text: AppStrings.ExposureSubmissionResult.procedure,
+					accessibilityIdentifier: AccessibilityIdentifiers.ExposureSubmissionResult.procedure)]
+
+		cells.append(contentsOf: stepCells)
+
+		return .section(
 			header: .identifier(
 				ExposureSubmissionTestResultViewController.HeaderReuseIdentifier.testResult,
 				configure: { view, _ in
@@ -288,42 +298,31 @@ private extension ExposureSubmissionTestResultViewController {
 				}
 			),
 			separators: false,
-			cells: [
-				.title2(text: AppStrings.ExposureSubmissionResult.procedure,
-						accessibilityIdentifier: AccessibilityIdentifiers.ExposureSubmissionResult.procedure),
-
-				ExposureSubmissionDynamicCell.stepCell(
-					title: AppStrings.ExposureSubmissionResult.testAdded,
-					description: AppStrings.ExposureSubmissionResult.testAddedDesc,
-					icon: UIImage(named: "Icons_Grey_Check"),
-					hairline: .iconAttached
-				),
-
-				ExposureSubmissionDynamicCell.stepCell(
-					title: AppStrings.ExposureSubmissionResult.testPositive,
-					description: AppStrings.ExposureSubmissionResult.testPositiveDesc,
-					icon: UIImage(named: "Icons -Warning"),
-					hairline: .topAttached
-				),
-				
-				ExposureSubmissionDynamicCell.stepCell(
-					bulletPoint: AppStrings.ExposureSubmissionResult.testPositiveIsolationDesc,
-					hairline: .topAttached
-				),
-				ExposureSubmissionDynamicCell.stepCell(
-					bulletPoint: AppStrings.ExposureSubmissionResult.testPositiveWarnOthersDesc,
-					hairline: .topAttached
-				),
-				ExposureSubmissionDynamicCell.stepCell(
-					bulletPoint: AppStrings.ExposureSubmissionResult.testPositiveAutomaticDeletionDesc,
-					hairline: .topAttached
-				)
-			]
+			cells:cells
 		)
 	}
 
 	private func negativeTestResultSection() -> DynamicSection {
-		.section(
+		let dynamicTextService = BEDynamicTextService()
+		let textSections = dynamicTextService.sections(.negativeTestResult, section: .explanation)
+		let tintColor = UIColor.enaColor(for: .riskLow)
+		let stepCells = Array(textSections.map({ $0.buildTestResultStepCells(iconTint: tintColor) }).joined())
+
+		var cells: [DynamicCell] = [.title2(text: AppStrings.ExposureSubmissionResult.procedure,
+					accessibilityIdentifier: AccessibilityIdentifiers.ExposureSubmissionResult.procedure)]
+		
+		cells.append(contentsOf: stepCells)
+
+		cells.append(contentsOf: [
+			.title2(text: AppStrings.ExposureSubmissionResult.furtherInfos_Title,
+					accessibilityIdentifier: AccessibilityIdentifiers.ExposureSubmissionResult.furtherInfos_Title),
+			ExposureSubmissionDynamicCell.stepCell(bulletPoint: AppStrings.ExposureSubmissionResult.furtherInfos_ListItem1),
+			ExposureSubmissionDynamicCell.stepCell(bulletPoint: AppStrings.ExposureSubmissionResult.furtherInfos_ListItem2),
+			ExposureSubmissionDynamicCell.stepCell(bulletPoint: AppStrings.ExposureSubmissionResult.furtherInfos_ListItem3),
+			ExposureSubmissionDynamicCell.stepCell(bulletPoint: AppStrings.ExposureSubmissionResult.furtherInfos_TestAgain)
+		])
+		
+		return .section(
 			header: .identifier(
 				ExposureSubmissionTestResultViewController.HeaderReuseIdentifier.testResult,
 				configure: { view, _ in
@@ -331,40 +330,7 @@ private extension ExposureSubmissionTestResultViewController {
 				}
 			),
 			separators: false,
-			cells: [
-				.title2(text: AppStrings.ExposureSubmissionResult.procedure,
-						accessibilityIdentifier: AccessibilityIdentifiers.ExposureSubmissionResult.procedure),
-
-
-				ExposureSubmissionDynamicCell.stepCell(
-					title: AppStrings.ExposureSubmissionResult.testAdded,
-					description: AppStrings.ExposureSubmissionResult.testAddedDesc,
-					icon: UIImage(named: "Icons_Grey_Check"),
-					hairline: .iconAttached
-				),
-
-				ExposureSubmissionDynamicCell.stepCell(
-					title: AppStrings.ExposureSubmissionResult.testNegative,
-					description: AppStrings.ExposureSubmissionResult.testNegativeDesc,
-					icon: UIImage(named: "Icons_Grey_Error"),
-					hairline: .topAttached
-				),
-
-				ExposureSubmissionDynamicCell.stepCell(
-					title: AppStrings.ExposureSubmissionResult.testRemove,
-					description: AppStrings.ExposureSubmissionResult.testRemoveDesc,
-					icon: UIImage(named: "Icons_Grey_Entfernen"),
-					hairline: .none
-				),
-
-				.title2(text: AppStrings.ExposureSubmissionResult.furtherInfos_Title,
-						accessibilityIdentifier: AccessibilityIdentifiers.ExposureSubmissionResult.furtherInfos_Title),
-
-				ExposureSubmissionDynamicCell.stepCell(bulletPoint: AppStrings.ExposureSubmissionResult.furtherInfos_ListItem1),
-				ExposureSubmissionDynamicCell.stepCell(bulletPoint: AppStrings.ExposureSubmissionResult.furtherInfos_ListItem2),
-				ExposureSubmissionDynamicCell.stepCell(bulletPoint: AppStrings.ExposureSubmissionResult.furtherInfos_ListItem3),
-				ExposureSubmissionDynamicCell.stepCell(bulletPoint: AppStrings.ExposureSubmissionResult.furtherInfos_TestAgain)
-			]
+			cells: cells
 		)
 	}
 

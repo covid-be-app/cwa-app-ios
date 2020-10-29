@@ -98,3 +98,5 @@ src/xcode/screenshots
 /src/xcode/.idea
 /src/xcode/vendor
 /src/xcode/.bundle
+src/xcode/screenshots_dark
+src/xcode/screenshots_light

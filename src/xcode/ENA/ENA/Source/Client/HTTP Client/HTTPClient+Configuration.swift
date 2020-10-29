@@ -31,6 +31,7 @@ extension HTTPClient {
 		static let submissionBaseURL = URL(string: "https://c19-submission-\(BEEnvironment.current.urlSuffix()).ixor.be")!
 		static let verificationBaseURL = URL(string: "https://c19-verification-\(BEEnvironment.current.urlSuffix()).ixor.be")!
 		static let statisticsBaseURL = URL(string: "https://c19statcdn-\(BEEnvironment.current.urlSuffix()).ixor.be")!
+		static let dynamicTextsURL = URL(string: "https://coronalert-\(BEEnvironment.current.urlSuffix()).ixor.be")!
 		// swiftlint:enable force_unwrapping
 		
 		// MARK: Default Instances
@@ -57,6 +58,10 @@ extension HTTPClient {
 				// :BE: add statistics
 				statistics: .init(
 					baseURL: statisticsBaseURL,
+					requiresTrailingSlash: false
+				),
+				dynamicTexts: .init(
+					baseURL: dynamicTextsURL,
 					requiresTrailingSlash: false
 				)
 			)
@@ -219,6 +224,15 @@ extension HTTPClient {
 					"statistics.json"
 				)
 		}
+		
+		var dynamicTextsURL: URL {
+			endpoints
+				.dynamicTexts
+				.appending(
+					"dynamictext",
+					"dynamicTexts.json"
+			)
+		}
 	}
 }
 
@@ -264,5 +278,6 @@ extension HTTPClient.Configuration {
 		
 		// :BE: add statistics
 		let statistics: Endpoint
+		let dynamicTexts: Endpoint
 	}
 }

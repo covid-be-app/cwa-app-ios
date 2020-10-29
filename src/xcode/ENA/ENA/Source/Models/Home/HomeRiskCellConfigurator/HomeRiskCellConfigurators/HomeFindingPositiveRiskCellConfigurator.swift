@@ -26,7 +26,8 @@ final class HomeFindingPositiveRiskCellConfigurator: HomeRiskCellConfigurator {
 	// MARK: Configuration
 
 	func configure(cell: RiskFindingPositiveCollectionViewCell) {
-
+		let dynamicTextService = BEDynamicTextService()
+		let screenSections = dynamicTextService.sections(.positiveTestResultCard, section: .explanation)
 		cell.delegate = self
 
 		let title = AppStrings.Home.findingPositiveCardTitle
@@ -40,21 +41,22 @@ final class HomeFindingPositiveRiskCellConfigurator: HomeRiskCellConfigurator {
 
 		let noteTitle = AppStrings.Home.findingPositiveCardNoteTitle
 		cell.configureNoteLabel(title: noteTitle)
-
 		let iconColor: UIColor = .enaColor(for: .riskHigh)
-		let phoneTitle = AppStrings.Home.findingPositivePhoneItemTitle
-		let phoneItem = HomeRiskImageItemViewConfigurator(title: phoneTitle, titleColor: titleColor, iconImageName: "Icons - Hotline", iconTintColor: iconColor, color: .clear, separatorColor: .clear)
-		phoneItem.containerInsets = .init(top: 10.0, left: 0.0, bottom: 10.0, right: 0)
 
-		let homeTitle = AppStrings.Home.findingPositiveHomeItemTitle
-		let homeItem = HomeRiskImageItemViewConfigurator(title: homeTitle, titleColor: titleColor, iconImageName: "Icons - Home", iconTintColor: iconColor, color: .clear, separatorColor: .clear)
-		homeItem.containerInsets = .init(top: 10.0, left: 0.0, bottom: 10.0, right: 0)
+		let configurators: [HomeRiskImageItemViewConfigurator] = screenSections.map { section in
+			guard
+				let icon = section.icon,
+				let text = section.text else {
+				fatalError("Not suppored")
+			}
+			
+			let item = HomeRiskImageItemViewConfigurator(title: text, titleColor: titleColor, iconImage: icon, iconTintColor: iconColor, color: .clear, separatorColor: .clear)
+			item.containerInsets = .init(top: 10.0, left: 0.0, bottom: 10.0, right: 0)
 
-		let shareTitle = AppStrings.Home.findingPositiveShareItemTitle
-		let shareItem = HomeRiskImageItemViewConfigurator(title: shareTitle, titleColor: titleColor, iconImageName: "Icons - Warnen", iconTintColor: iconColor, color: .clear, separatorColor: .clear)
-		shareItem.containerInsets = .init(top: 10.0, left: 0.0, bottom: 10.0, right: 0)
+			return item
+		}
 
-		cell.configureNotesRiskViews(cellConfigurators: [phoneItem, homeItem, shareItem])
+		cell.configureNotesRiskViews(cellConfigurators: configurators)
 
 		let buttonTitle = AppStrings.Home.findingPositiveCardButton
 
@@ -77,6 +79,7 @@ final class HomeFindingPositiveRiskCellConfigurator: HomeRiskCellConfigurator {
 		let topContainerText = cell.titleLabel.text ?? ""
 		cell.topContainer.accessibilityLabel = topContainerText
 		cell.topContainer.accessibilityTraits = [.button, .header]
+		cell.nextButton.accessibilityIdentifier = AccessibilityIdentifiers.Home.resultCardShowResultButton
 	}
 
 	// MARK: Hashable
