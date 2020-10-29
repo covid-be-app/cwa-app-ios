@@ -488,6 +488,27 @@ final class HTTPClient: Client {
 			}
 		}
 	}
+	
+	func getDynamicTexts(completion: @escaping DynamicTextsHandler) {
+		let url = configuration.dynamicTextsURL
+		self.session.GET(url) { result in
+			switch result {
+			case let .success(response):
+				guard response.hasAcceptableStatusCode else {
+					completion(.failure(.serverError(response.statusCode)))
+					return
+				}
+				
+				guard let responseData = response.body else {
+					completion(.failure(.invalidResponse))
+					return
+				}
+				completion(.success(responseData))
+			case let .failure(error):
+				completion(.failure(error))
+			}
+		}
+	}
 }
 
 // MARK: Extensions

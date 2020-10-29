@@ -23,6 +23,10 @@ import CoreImage
 
 extension UIImage {
 	
+	convenience init(forceNamed: String) {
+		self.init(named: forceNamed)!
+	}
+	
 	static func generateQRCode(_ contents:String,size:CGFloat) -> UIImage {
 		let context = CIContext()
 		let filter = CIFilter(name: "CIQRCodeGenerator")!

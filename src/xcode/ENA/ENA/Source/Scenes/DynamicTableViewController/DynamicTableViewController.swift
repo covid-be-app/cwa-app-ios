@@ -90,7 +90,6 @@ extension DynamicTableViewController {
 		}
 	}
 
-	// swiftlint:disable:next cyclomatic_complexity
 	private func tableView(_ tableView: UITableView, viewForHeaderFooter headerFooter: DynamicHeader, inSection section: Int) -> UIView? {
 		switch headerFooter {
 		case let .space(_, color):

@@ -71,7 +71,6 @@ public extension UIColor {
 	}
 
 	#if TARGET_INTERFACE_BUILDER
-	// swiftlint:disable:next cyclomatic_complexity
 	static func enaColor(for style: ENAColor, interface: UIUserInterfaceStyle = .unspecified) -> UIColor {
 		switch style {
 		case .background: return UIColor(rgb: 0xFFFFFF, alpha: 1.0)

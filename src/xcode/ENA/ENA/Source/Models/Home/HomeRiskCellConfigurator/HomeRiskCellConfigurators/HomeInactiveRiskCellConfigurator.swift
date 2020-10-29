@@ -104,7 +104,7 @@ final class HomeInactiveRiskCellConfigurator: HomeRiskCellConfigurator {
 			HomeRiskImageItemViewConfigurator(
 				title: activateItemTitle,
 				titleColor: .enaColor(for: .textPrimary1),
-				iconImageName: "Icons_LetzteErmittlung-Light",
+				iconImage: UIImage(forceNamed: "Icons_LetzteErmittlung-Light"),
 				iconTintColor: .enaColor(for: .riskNeutral),
 				color: .enaColor(for: .background),
 				separatorColor: .enaColor(for: .hairline)
@@ -114,7 +114,7 @@ final class HomeInactiveRiskCellConfigurator: HomeRiskCellConfigurator {
 			HomeRiskImageItemViewConfigurator(
 				title: dateTitle,
 				titleColor: .enaColor(for: .textPrimary1),
-				iconImageName: "Icons_Aktualisiert",
+				iconImage: UIImage(forceNamed: "Icons_Aktualisiert"),
 				iconTintColor: .enaColor(for: .riskNeutral),
 				color: .enaColor(for: .background),
 				separatorColor: .enaColor(for: .hairline)
@@ -137,6 +137,9 @@ final class HomeInactiveRiskCellConfigurator: HomeRiskCellConfigurator {
 		let topContainerText = cell.titleLabel.text ?? ""
 		cell.topContainer.accessibilityLabel = topContainerText
 		cell.topContainer.accessibilityTraits = [.button, .header]
+
+		cell.topContainer.accessibilityIdentifier = AccessibilityIdentifiers.RiskCollectionViewCell.topContainer
+		cell.bodyLabel.accessibilityIdentifier = AccessibilityIdentifiers.RiskCollectionViewCell.bodyLabel
 	}
 
 	// MARK: - Configuration.

@@ -100,14 +100,7 @@ enum AppStrings {
 		static let procedure = NSLocalizedString("ExposureSubmissionResult_Procedure", comment: "")
 		static let testAdded = NSLocalizedString("ExposureSubmissionResult_testAdded", comment: "")
 		static let warnOthers = NSLocalizedString("ExposureSubmissionResult_warnOthers", comment: "")
-		static let testPositive = NSLocalizedString("ExposureSubmissionResult_testPositive", comment: "")
 		static let testAddedDesc = NSLocalizedString("ExposureSubmissionResult_testAddedDesc", comment: "")
-		static let testPositiveDesc = NSLocalizedString("ExposureSubmissionResult_testPositiveDesc", comment: "")
-		static let testPositiveIsolationDesc = NSLocalizedString("ExposureSubmissionResult_testPositiveIsolationDesc", comment: "")
-		static let testPositiveWarnOthersDesc = NSLocalizedString("ExposureSubmissionResult_testPositiveWarnOthersDesc", comment: "")
-		static let testPositiveAutomaticDeletionDesc = NSLocalizedString("ExposureSubmissionResult_testPositiveAutomaticDeletionDesc", comment: "")
-		static let testNegative = NSLocalizedString("ExposureSubmissionResult_testNegative", comment: "")
-		static let testNegativeDesc = NSLocalizedString("ExposureSubmissionResult_testNegativeDesc", comment: "")
 		static let testInvalid = NSLocalizedString("ExposureSubmissionResult_testInvalid", comment: "")
 		static let testInvalidDesc = NSLocalizedString("ExposureSubmissionResult_testInvalidDesc", comment: "")
 		static let testPending = NSLocalizedString("ExposureSubmissionResult_testPending", comment: "")
@@ -186,13 +179,7 @@ enum AppStrings {
 		static let button = NSLocalizedString("ExposureSubmissionSuccess_Button", comment: "")
 		static let description = NSLocalizedString("ExposureSubmissionSuccess_Description", comment: "")
 		static let listTitle = NSLocalizedString("ExposureSubmissionSuccess_listTitle", comment: "")
-		static let listItem1 = NSLocalizedString("ExposureSubmissionSuccess_listItem1", comment: "")
-		static let listItem2 = NSLocalizedString("ExposureSubmissionSuccess_listItem2", comment: "")
 		static let subTitle = NSLocalizedString("ExposureSubmissionSuccess_subTitle", comment: "")
-		static let listItem2_1 = NSLocalizedString("ExposureSubmissionSuccess_listItem2_1", comment: "")
-		static let listItem2_2 = NSLocalizedString("ExposureSubmissionSuccess_listItem2_2", comment: "")
-		static let listItem2_3 = NSLocalizedString("ExposureSubmissionSuccess_listItem2_3", comment: "")
-		static let listItem2_4 = NSLocalizedString("ExposureSubmissionSuccess_listItem2_4", comment: "")
 	}
 
 	enum ExposureSubmissionError {
@@ -238,18 +225,6 @@ enum AppStrings {
 
 		static let behaviorTitle = NSLocalizedString("ExposureDetection_Behavior_Title", comment: "")
 		static let behaviorSubtitle = NSLocalizedString("ExposureDetection_Behavior_Subtitle", comment: "")
-
-		static let guideHands = NSLocalizedString("ExposureDetection_Guide_Hands", comment: "")
-		static let guideMask = NSLocalizedString("ExposureDetection_Guide_Mask", comment: "")
-		static let guideDistance = NSLocalizedString("ExposureDetection_Guide_Distance", comment: "")
-		static let guideSneeze = NSLocalizedString("ExposureDetection_Guide_Sneeze", comment: "")
-		static let getTested = NSLocalizedString("ExposureDetection_Guide_GetTested", comment: "")
-		static let guideHome = NSLocalizedString("ExposureDetection_Guide_Home", comment: "")
-		static let guideHotline1 = NSLocalizedString("ExposureDetection_Guide_Hotline1", comment: "")
-		static let guideHotline2 = NSLocalizedString("ExposureDetection_Guide_Hotline2", comment: "")
-		static let guideHotline3 = NSLocalizedString("ExposureDetection_Guide_Hotline3", comment: "")
-		static let guideHotline4 = NSLocalizedString("ExposureDetection_Guide_Hotline4", comment: "")
-		static let guideHotline5 = NSLocalizedString("ExposureDetection_Guide_Hotline5", comment: "")
 
 		static let explanationTitle = NSLocalizedString("ExposureDetection_Explanation_Title", comment: "")
 		static let explanationSubtitleActive = NSLocalizedString("ExposureDetection_Explanation_Subtitle_Active", comment: "")
@@ -452,26 +427,11 @@ enum AppStrings {
 		static let riskCardStatusCheckTitle = NSLocalizedString("Home_Risk_Status_Check_Title", comment: "")
 		static let riskCardStatusCheckBody = NSLocalizedString("Home_Risk_Status_Check_Body", comment: "")
 
-		// Thank you card
-		static let thankYouCardTitle = NSLocalizedString("Home_Thank_You_Card_Title", comment: "")
-		static let thankYouCardBody = NSLocalizedString("Home_Thank_You_Card_Body", comment: "")
-		static let thankYouCardNoteTitle = NSLocalizedString("Home_Thank_You_Card_Note_Title", comment: "")
-		static let thankYouCardPhoneItemTitle = NSLocalizedString("Home_Thank_You_Card_Phone_Item_Title", comment: "")
-		static let thankYouCardHomeItemTitle = NSLocalizedString("Home_Thank_You_Card_Home_Item_Title", comment: "")
-		static let thankYouCardFurtherInfoItemTitle = NSLocalizedString("Home_Thank_You_Card_Further_Info_Item_Title", comment: "")
-		static let thankYouCard14DaysItemTitle = NSLocalizedString("Home_Thank_You_Card_14Days_Item_Title", comment: "")
-		static let thankYouCardContactsItemTitle = NSLocalizedString("Home_Thank_You_Card_Contacts_Item_Title", comment: "")
-		static let thankYouCardAppItemTitle = NSLocalizedString("Home_Thank_You_Card_App_Item_Title", comment: "")
-		static let thankYouCardNoSymptomsItemTitle = NSLocalizedString("Home_Thank_You_Card_NoSymptoms_Item_Title", comment: "")
-
 		// Finding positive card
 		static let findingPositiveCardTitle = NSLocalizedString("Home_Finding_Positive_Card_Title", comment: "")
 		static let findingPositiveCardStatusTitle = NSLocalizedString("Home_Finding_Positive_Card_Status_Title", comment: "")
 		static let findingPositiveCardStatusSubtitle = NSLocalizedString("Home_Finding_Positive_Card_Status_Subtitle", comment: "")
 		static let findingPositiveCardNoteTitle = NSLocalizedString("Home_Finding_Positive_Card_Note_Title", comment: "")
-		static let findingPositivePhoneItemTitle = NSLocalizedString("Home_Finding_Positive_Card_Phone_Item_Title", comment: "")
-		static let findingPositiveHomeItemTitle = NSLocalizedString("Home_Finding_Positive_Card_Home_Item_Title", comment: "")
-		static let findingPositiveShareItemTitle = NSLocalizedString("Home_Finding_Positive_Card_Share_Item_Title", comment: "")
 		static let findingPositiveCardButton = NSLocalizedString("Home_Finding_Positive_Card_Button", comment: "")
 
 		// Submit Card

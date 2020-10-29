@@ -106,10 +106,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		)
 		
 		#if UITESTING
-			// :BE: add positive risk
-			if let isAtRisk = UserDefaults.standard.value(forKey: "isAtRisk") as? String {
-				if isAtRisk != "NO" {
+			if let isAtRisk = UserDefaults.standard.value(forKey: "riskLevel") as? String {
+				
+				switch isAtRisk {
+				case "HIGH":
 					provider.setHighRiskForTesting()
+				case "LOW":
+					provider.setLowRiskForTesting()
+				case "UNKNOWN":
+					provider.setUnknownRiskForTesting()
+				case "INACTIVE":
+					provider.setInactiveRiskForTesting()
+				default:
+					fatalError("Should never happen")
 				}
 			}
 		#endif
@@ -194,7 +203,10 @@ extension AppDelegate: ENATaskExecutionDelegate {
 				log(message: "Fetch test results done")
 				self.executeExposureDetectionRequest {
 					log(message: "Exposure detection done")
-					completion(true)
+					self.updateDynamicTexts {
+						log(message: "Dynamic text updates done")
+						completion(true)
+					}
 				}
 			}
 		}
@@ -257,6 +269,16 @@ extension AppDelegate: ENATaskExecutionDelegate {
 					identifier: ENATaskIdentifier.exposureNotification.backgroundTaskSchedulerIdentifier + ".risk-detection"
 				)
 			}
+			completion()
+		}
+	}
+	
+	private func updateDynamicTexts(completion: @escaping (() -> Void)) {
+		log(message: "Start dynamic text updates...")
+		let dynamicTextService = BEDynamicTextService()
+		let dynamicTextDownloadService = BEDynamicTextDownloadService(client: client, textService: dynamicTextService)
+		
+		dynamicTextDownloadService.downloadTextsIfNeeded {
 			completion()
 		}
 	}
