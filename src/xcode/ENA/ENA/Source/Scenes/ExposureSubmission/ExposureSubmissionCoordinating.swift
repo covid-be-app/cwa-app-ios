@@ -99,24 +99,8 @@ extension ExposureSubmissionCoordinator {
 	}
 
 	/// This method selects the correct initial view controller among the following options:
-	/// Option 1: (only for UITESTING) if the `-negativeResult` flag was passed, return ExposureSubmissionTestResultViewController
-	/// Option 2: if a test result was passed, the method checks further preconditions (e.g. the exposure submission service has a registration token)
-	/// and returns an ExposureSubmissionTestResultViewController.
-	/// Option 3: (default) return the ExposureSubmissionIntroViewController.
+	/// :BE: REMOVED
 	private func getInitialViewController(with result: TestResult? = nil) -> UIViewController {
-		#if UITESTING
-		if ProcessInfo.processInfo.arguments.contains("-negativeResult") {
-			return createTestResultViewController(with: .negative)
-		}
-
-		#else
-		// We got a test result and can jump straight into the test result view controller.
-		if let result = result, exposureSubmissionService.hasRegistrationToken() {
-			return createTestResultViewController(with: result)
-		}
-		#endif
-
-		// By default, we show the intro view.
 		return createIntroViewController()
 	}
 

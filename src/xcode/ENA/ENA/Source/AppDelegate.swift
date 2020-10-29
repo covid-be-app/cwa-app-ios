@@ -106,10 +106,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		)
 		
 		#if UITESTING
-			// :BE: add positive risk
-			if let isAtRisk = UserDefaults.standard.value(forKey: "isAtRisk") as? String {
-				if isAtRisk != "NO" {
+			if let isAtRisk = UserDefaults.standard.value(forKey: "riskLevel") as? String {
+				
+				switch isAtRisk {
+				case "HIGH":
 					provider.setHighRiskForTesting()
+				case "LOW":
+					provider.setLowRiskForTesting()
+				case "UNKNOWN":
+					provider.setUnknownRiskForTesting()
+				case "INACTIVE":
+					provider.setInactiveRiskForTesting()
+				default:
+					fatalError()
 				}
 			}
 		#endif

@@ -41,9 +41,20 @@ struct ExposureManagerState {
 		status: ENStatus = .unknown
 	) {
 		#if UITESTING
-		self.authorized = true
-		self.enabled = true
-		self.status = .active
+			self.authorized = true
+			self.enabled = true
+		
+		
+			if let isExposureStopped = UserDefaults.standard.value(forKey: "isExposureStopped") as? String {
+				if isExposureStopped != "NO" {
+					self.status = .disabled
+				} else {
+					self.status = .active
+				}
+			} else {
+				self.status = .active
+			}
+
 		#else
 		self.authorized = authorized
 		self.enabled = enabled

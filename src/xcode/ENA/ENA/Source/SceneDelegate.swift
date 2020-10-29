@@ -74,7 +74,26 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate, RequiresAppDepend
 			store.isOnboarded = (isOnboarded != "NO")
 		}
 		store.userNeedsToBeInformedAboutHowRiskDetectionWorks = false
+		
+		if let argIndex = ProcessInfo.processInfo.arguments.firstIndex(of: "-testResult") {
+			let mobileTestId = BEMobileTestId.generate()
+			store.mobileTestId = mobileTestId
+			store.registrationToken = mobileTestId.registrationToken
 
+			let resultType = ProcessInfo.processInfo.arguments[argIndex + 1]
+			switch resultType {
+			case "POSITIVE":
+				store.testResult = TestResult.positive
+			case "NEGATIVE":
+				store.testResult = TestResult.negative
+			case "PENDING":
+				store.testResult = TestResult.pending
+			default:
+				fatalError("Should never happen")
+			}
+			
+		}
+		
 		// Test opening the app from the webform url
 		if let argIndex = ProcessInfo.processInfo.arguments.firstIndex(of: "-openWebForm") {
 			let urlString = ProcessInfo.processInfo.arguments[argIndex + 1]
