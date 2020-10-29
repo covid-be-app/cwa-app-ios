@@ -55,7 +55,7 @@ final class ExposureSubmissionSuccessViewController: DynamicTableViewController,
 	private func setUpView() {
 		navigationItem.hidesBackButton = true
 		tableView.register(UINib(nibName: String(describing: ExposureSubmissionStepCell.self), bundle: nil), forCellReuseIdentifier: CustomCellReuseIdentifiers.stepCell.rawValue)
-		dynamicTableViewModel = .data
+		dynamicTableViewModel = .thankYouData
 	}
 
 	private func setupTitle() {
@@ -77,47 +77,43 @@ extension ExposureSubmissionSuccessViewController {
 }
 
 private extension DynamicTableViewModel {
-	static let data = DynamicTableViewModel([
-		DynamicSection.section(
-			header: .image(
-				UIImage(named: "Illu_Submission_VielenDank"),
-				accessibilityLabel: AppStrings.ExposureSubmissionSuccess.accImageDescription,
-				accessibilityIdentifier: AccessibilityIdentifiers.ExposureSubmissionSuccess.accImageDescription
-			),
-			separators: false,
-			cells: [
-				.body(text: AppStrings.ExposureSubmissionSuccess.description,
-					  accessibilityIdentifier: AccessibilityIdentifiers.ExposureSubmissionSuccess.description),
-				.title2(text: AppStrings.ExposureSubmissionSuccess.listTitle,
-						accessibilityIdentifier: AccessibilityIdentifiers.ExposureSubmissionSuccess.listTitle),
+	static var thankYouData: DynamicTableViewModel {
+		let dynamicTextService = BEDynamicTextService()
+		let pleaseNoteSections = dynamicTextService.sections(.thankYou, section: .pleaseNote)
+		let otherInformationSections = dynamicTextService.sections(.thankYou, section: .otherInformation)
 
-				ExposureSubmissionDynamicCell.stepCell(
-					style: .body,
-					title: AppStrings.ExposureSubmissionSuccess.listItem1,
-					icon: UIImage(named: "Icons - Hotline"),
-					iconTint: .enaColor(for: .riskHigh),
-					hairline: .none,
-					bottomSpacing: .normal
-				),
-				ExposureSubmissionDynamicCell.stepCell(
-					style: .body,
-					title: AppStrings.ExposureSubmissionSuccess.listItem2,
-					icon: UIImage(named: "Icons - Home"),
-					iconTint: .enaColor(for: .riskHigh),
-					hairline: .none,
-					bottomSpacing: .large
-				),
+		let pleaseNoteCells = Array(pleaseNoteSections.map({$0.buildSuccessViewControllerStepCells(iconTint: .enaColor(for: .riskHigh))}).joined())
+		let otherInformationCells = Array(otherInformationSections.map({$0.buildSuccessViewControllerStepCells(iconTint: .enaColor(for: .riskHigh))}).joined())
 
-				.title2(text: AppStrings.ExposureSubmissionSuccess.subTitle,
-						accessibilityIdentifier: AccessibilityIdentifiers.ExposureSubmissionSuccess.subTitle),
-
-				ExposureSubmissionDynamicCell.stepCell(bulletPoint: AppStrings.ExposureSubmissionSuccess.listItem2_1),
-				ExposureSubmissionDynamicCell.stepCell(bulletPoint: AppStrings.ExposureSubmissionSuccess.listItem2_2),
-				ExposureSubmissionDynamicCell.stepCell(bulletPoint: AppStrings.ExposureSubmissionSuccess.listItem2_3),
-				ExposureSubmissionDynamicCell.stepCell(bulletPoint: AppStrings.ExposureSubmissionSuccess.listItem2_4)
-			]
+		var cells: [DynamicCell] = [
+			.body(text: AppStrings.ExposureSubmissionSuccess.description,
+				  accessibilityIdentifier: AccessibilityIdentifiers.ExposureSubmissionSuccess.description),
+			.title2(text: AppStrings.ExposureSubmissionSuccess.listTitle,
+					accessibilityIdentifier: AccessibilityIdentifiers.ExposureSubmissionSuccess.listTitle),
+		]
+		
+		cells.append(contentsOf: pleaseNoteCells)
+		cells.append(
+			.title2(text: AppStrings.ExposureSubmissionSuccess.subTitle,
+					accessibilityIdentifier: AccessibilityIdentifiers.ExposureSubmissionSuccess.subTitle)
 		)
-	])
+		cells.append(contentsOf: otherInformationCells)
+
+		
+		return DynamicTableViewModel([
+			DynamicSection.section(
+				header: .image(
+					UIImage(named: "Illu_Submission_VielenDank"),
+					accessibilityLabel: AppStrings.ExposureSubmissionSuccess.accImageDescription,
+					accessibilityIdentifier: AccessibilityIdentifiers.ExposureSubmissionSuccess.accImageDescription
+				),
+				separators: false,
+				cells:cells
+
+			)
+		])
+	}
+
 }
 
 // MARK: - Cell reuse identifiers.

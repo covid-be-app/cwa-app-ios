@@ -63,11 +63,11 @@ final class HomeHighRiskCellConfigurator: HomeRiskLevelCellConfigurator {
 		} else {
 			let numberOfDaysSinceLastExposure = daysSinceLastExposure ?? 0
 			let numberContactsTitle = String(format: AppStrings.Home.riskCardNumberContactsItemTitle, numberRiskContacts)
-			let item1 = HomeRiskImageItemViewConfigurator(title: numberContactsTitle, titleColor: titleColor, iconImageName: "Icons_RisikoBegegnung", iconTintColor: titleColor, color: color, separatorColor: separatorColor)
+			let item1 = HomeRiskImageItemViewConfigurator(title: numberContactsTitle, titleColor: titleColor, iconImage: UIImage(forceNamed: "Icons_RisikoBegegnung"), iconTintColor: titleColor, color: color, separatorColor: separatorColor)
 			let lastContactTitle = String(format: AppStrings.Home.riskCardLastContactItemTitle, numberOfDaysSinceLastExposure)
-			let item2 = HomeRiskImageItemViewConfigurator(title: lastContactTitle, titleColor: titleColor, iconImageName: "Icons_Calendar", iconTintColor: titleColor, color: color, separatorColor: separatorColor)
+			let item2 = HomeRiskImageItemViewConfigurator(title: lastContactTitle, titleColor: titleColor, iconImage: UIImage(forceNamed: "Icons_Calendar"), iconTintColor: titleColor, color: color, separatorColor: separatorColor)
 			let dateTitle = String(format: AppStrings.Home.riskCardDateItemTitle, lastUpdateDateString)
-			let item3 = HomeRiskImageItemViewConfigurator(title: dateTitle, titleColor: titleColor, iconImageName: "Icons_Aktualisiert", iconTintColor: titleColor, color: color, separatorColor: separatorColor)
+			let item3 = HomeRiskImageItemViewConfigurator(title: dateTitle, titleColor: titleColor, iconImage: UIImage(forceNamed: "Icons_Aktualisiert"), iconTintColor: titleColor, color: color, separatorColor: separatorColor)
 			itemCellConfigurators.append(contentsOf: [item1, item2, item3])
 		}
 		cell.configureRiskViews(cellConfigurators: itemCellConfigurators)

@@ -203,7 +203,10 @@ extension AppDelegate: ENATaskExecutionDelegate {
 				log(message: "Fetch test results done")
 				self.executeExposureDetectionRequest {
 					log(message: "Exposure detection done")
-					completion(true)
+					self.updateDynamicTexts {
+						log(message: "Dynamic text updates done")
+						completion(true)
+					}
 				}
 			}
 		}
@@ -266,6 +269,16 @@ extension AppDelegate: ENATaskExecutionDelegate {
 					identifier: ENATaskIdentifier.exposureNotification.backgroundTaskSchedulerIdentifier + ".risk-detection"
 				)
 			}
+			completion()
+		}
+	}
+	
+	private func updateDynamicTexts(completion: @escaping (() -> Void)) {
+		log(message: "Start dynamic text updates...")
+		let dynamicTextService = BEDynamicTextService()
+		let dynamicTextDownloadService = BEDynamicTextDownloadService(client: client, textService: dynamicTextService)
+		
+		dynamicTextDownloadService.downloadTextsIfNeeded {
 			completion()
 		}
 	}

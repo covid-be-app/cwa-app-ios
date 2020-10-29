@@ -55,6 +55,7 @@ final class ClientMock {
 
 	var onAppConfiguration: (AppConfigurationCompletion) -> Void = { $0(nil) }
 	var onGetTestResult: ((String, TestResultHandler) -> Void)?
+	var dynamicTextsDownloadData:Data?
 }
 
 extension ClientMock: Client {
@@ -131,5 +132,13 @@ extension ClientMock: Client {
 	
 	func getInfectionSummary(completion: @escaping InfectionSummaryHandler) {
 		completion(.failure(.noResponse))
+	}
+	
+	func getDynamicTexts(completion: @escaping DynamicTextsHandler) {
+		if let data = dynamicTextsDownloadData {
+			completion(.success(data))
+		} else {
+			completion(.failure(.noResponse))
+		}
 	}
 }

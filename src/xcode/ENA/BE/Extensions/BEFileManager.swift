@@ -19,13 +19,15 @@
 
 import Foundation
 
-/// Make sure these stay in sync with the JSON
-enum BEDynamicTextScreenName: String, Decodable, CaseIterable {
-	case standard = "standard"
-	case highRisk = "highRisk"
-	case positiveTestResultCard = "positiveTestResultCard"
-	case positiveTestResult = "positiveTestResult"
-	case negativeTestResult = "negativeTestResult"
-	case thankYou = "thankYou"
+extension FileManager {
+	func applicationSupportURL(_ file: String? = nil) -> URL {
+		let urls = self.urls(for: .applicationSupportDirectory, in: .userDomainMask)
+		let applicationSupportURL = urls[0]
+		
+		if let filePath = file {
+			return applicationSupportURL.appendingPathComponent(filePath)
+		}
+		
+		return applicationSupportURL
+	}
 }
-

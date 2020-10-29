@@ -252,13 +252,23 @@
 		A92076E624ED407A00AE8748 /* BEFakeRequestsExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076E524ED407A00AE8748 /* BEFakeRequestsExecutor.swift */; };
 		A92076E924ED41F400AE8748 /* BEFakeRequestsExecutorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076E824ED41F400AE8748 /* BEFakeRequestsExecutorTests.swift */; };
 		A92076EC24ED542900AE8748 /* BEMockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076EB24ED542900AE8748 /* BEMockURLSession.swift */; };
-		A9221A312542C1F200853CEF /* BEDynamicTextService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A302542C1F200853CEF /* BEDynamicTextService.swift */; };
+		A9221A312542C1F200853CEF /* BEDynamicTextDownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A302542C1F200853CEF /* BEDynamicTextDownloadService.swift */; };
 		A9221A332542C2C200853CEF /* dynamicTexts.json in Resources */ = {isa = PBXBuildFile; fileRef = A9221A322542C2C200853CEF /* dynamicTexts.json */; };
-		A9221A362542F02900853CEF /* BEDynamicTextScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A352542F02900853CEF /* BEDynamicTextScreen.swift */; };
 		A9221A382542F06E00853CEF /* BEDynamicTextScreenSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A372542F06E00853CEF /* BEDynamicTextScreenSection.swift */; };
 		A9221A3A2542F10300853CEF /* BEDynamicTextScreenName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A392542F10300853CEF /* BEDynamicTextScreenName.swift */; };
 		A9221A3C2542F1AB00853CEF /* BEDynamicTextScreenSectionName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A3B2542F1AB00853CEF /* BEDynamicTextScreenSectionName.swift */; };
 		A9221A3E2543524900853CEF /* KeychainHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A3D2543524900853CEF /* KeychainHelperTests.swift */; };
+		A9221A402544606800853CEF /* BEDynamicText.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A3F2544606800853CEF /* BEDynamicText.swift */; };
+		A9221A422546C39700853CEF /* BEFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A412546C39700853CEF /* BEFileManager.swift */; };
+		A9221A452546F3BF00853CEF /* BEDynamicTextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A442546F3BF00853CEF /* BEDynamicTextTests.swift */; };
+		A9221A472546F62900853CEF /* BEDynamicTextService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A462546F62900853CEF /* BEDynamicTextService.swift */; };
+		A9221A492546FB1A00853CEF /* BEDynamicTextLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A482546FB1A00853CEF /* BEDynamicTextLanguage.swift */; };
+		A9221A4C25470F7700853CEF /* missingLanguageDynamicTexts.json in Resources */ = {isa = PBXBuildFile; fileRef = A9221A4A25470F7700853CEF /* missingLanguageDynamicTexts.json */; };
+		A9221A4D25470F7700853CEF /* missingScreensDynamicTexts.json in Resources */ = {isa = PBXBuildFile; fileRef = A9221A4B25470F7700853CEF /* missingScreensDynamicTexts.json */; };
+		A9221A502547222E00853CEF /* testDynamicTexts.json in Resources */ = {isa = PBXBuildFile; fileRef = A9221A4E2547216300853CEF /* testDynamicTexts.json */; };
+		A9221A5225472CB300853CEF /* testDownloadedTexts.json in Resources */ = {isa = PBXBuildFile; fileRef = A9221A5125472CB200853CEF /* testDownloadedTexts.json */; };
+		A9221A572549692D00853CEF /* BEDynamicTextScreenSection+Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A562549692D00853CEF /* BEDynamicTextScreenSection+Cells.swift */; };
+		A9221A592549B92600853CEF /* wrongStructureDynamicTexts.json in Resources */ = {isa = PBXBuildFile; fileRef = A9221A582549B92600853CEF /* wrongStructureDynamicTexts.json */; };
 		A929A71724DC3EE50039B997 /* BEHTTPClientSubmitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A929A71624DC3EE50039B997 /* BEHTTPClientSubmitTests.swift */; };
 		A92B66AD251CBF9B00F9B8DD /* BEUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B66AC251CBF9B00F9B8DD /* BEUILabel.swift */; };
 		A935EE5624E0060400B33B66 /* BEENAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A935EE5524E0060400B33B66 /* BEENAUITests.swift */; };
@@ -739,13 +749,23 @@
 		A92076E524ED407A00AE8748 /* BEFakeRequestsExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEFakeRequestsExecutor.swift; sourceTree = "<group>"; };
 		A92076E824ED41F400AE8748 /* BEFakeRequestsExecutorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEFakeRequestsExecutorTests.swift; sourceTree = "<group>"; };
 		A92076EB24ED542900AE8748 /* BEMockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEMockURLSession.swift; sourceTree = "<group>"; };
-		A9221A302542C1F200853CEF /* BEDynamicTextService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicTextService.swift; sourceTree = "<group>"; };
+		A9221A302542C1F200853CEF /* BEDynamicTextDownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicTextDownloadService.swift; sourceTree = "<group>"; };
 		A9221A322542C2C200853CEF /* dynamicTexts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dynamicTexts.json; sourceTree = "<group>"; };
-		A9221A352542F02900853CEF /* BEDynamicTextScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicTextScreen.swift; sourceTree = "<group>"; };
 		A9221A372542F06E00853CEF /* BEDynamicTextScreenSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicTextScreenSection.swift; sourceTree = "<group>"; };
 		A9221A392542F10300853CEF /* BEDynamicTextScreenName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicTextScreenName.swift; sourceTree = "<group>"; };
 		A9221A3B2542F1AB00853CEF /* BEDynamicTextScreenSectionName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicTextScreenSectionName.swift; sourceTree = "<group>"; };
 		A9221A3D2543524900853CEF /* KeychainHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelperTests.swift; sourceTree = "<group>"; };
+		A9221A3F2544606800853CEF /* BEDynamicText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicText.swift; sourceTree = "<group>"; };
+		A9221A412546C39700853CEF /* BEFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEFileManager.swift; sourceTree = "<group>"; };
+		A9221A442546F3BF00853CEF /* BEDynamicTextTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicTextTests.swift; sourceTree = "<group>"; };
+		A9221A462546F62900853CEF /* BEDynamicTextService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicTextService.swift; sourceTree = "<group>"; };
+		A9221A482546FB1A00853CEF /* BEDynamicTextLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicTextLanguage.swift; sourceTree = "<group>"; };
+		A9221A4A25470F7700853CEF /* missingLanguageDynamicTexts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = missingLanguageDynamicTexts.json; sourceTree = "<group>"; };
+		A9221A4B25470F7700853CEF /* missingScreensDynamicTexts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = missingScreensDynamicTexts.json; sourceTree = "<group>"; };
+		A9221A4E2547216300853CEF /* testDynamicTexts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testDynamicTexts.json; sourceTree = "<group>"; };
+		A9221A5125472CB200853CEF /* testDownloadedTexts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testDownloadedTexts.json; sourceTree = "<group>"; };
+		A9221A562549692D00853CEF /* BEDynamicTextScreenSection+Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BEDynamicTextScreenSection+Cells.swift"; sourceTree = "<group>"; };
+		A9221A582549B92600853CEF /* wrongStructureDynamicTexts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wrongStructureDynamicTexts.json; sourceTree = "<group>"; };
 		A929A71624DC3EE50039B997 /* BEHTTPClientSubmitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEHTTPClientSubmitTests.swift; sourceTree = "<group>"; };
 		A92B66AC251CBF9B00F9B8DD /* BEUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEUILabel.swift; sourceTree = "<group>"; };
 		A935EE5524E0060400B33B66 /* BEENAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEENAUITests.swift; sourceTree = "<group>"; };
@@ -1758,8 +1778,11 @@
 		A9221A2F2542C1DD00853CEF /* DynamicText */ = {
 			isa = PBXGroup;
 			children = (
+				A9221A532548494500853CEF /* View */,
+				A9221A432546F3A900853CEF /* __tests__ */,
 				A9221A342542F00C00853CEF /* Model */,
-				A9221A302542C1F200853CEF /* BEDynamicTextService.swift */,
+				A9221A302542C1F200853CEF /* BEDynamicTextDownloadService.swift */,
+				A9221A462546F62900853CEF /* BEDynamicTextService.swift */,
 			);
 			path = DynamicText;
 			sourceTree = "<group>";
@@ -1767,12 +1790,34 @@
 		A9221A342542F00C00853CEF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A9221A352542F02900853CEF /* BEDynamicTextScreen.swift */,
 				A9221A372542F06E00853CEF /* BEDynamicTextScreenSection.swift */,
 				A9221A392542F10300853CEF /* BEDynamicTextScreenName.swift */,
 				A9221A3B2542F1AB00853CEF /* BEDynamicTextScreenSectionName.swift */,
+				A9221A3F2544606800853CEF /* BEDynamicText.swift */,
+				A9221A482546FB1A00853CEF /* BEDynamicTextLanguage.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A9221A432546F3A900853CEF /* __tests__ */ = {
+			isa = PBXGroup;
+			children = (
+				A9221A582549B92600853CEF /* wrongStructureDynamicTexts.json */,
+				A9221A4A25470F7700853CEF /* missingLanguageDynamicTexts.json */,
+				A9221A4B25470F7700853CEF /* missingScreensDynamicTexts.json */,
+				A9221A4E2547216300853CEF /* testDynamicTexts.json */,
+				A9221A5125472CB200853CEF /* testDownloadedTexts.json */,
+				A9221A442546F3BF00853CEF /* BEDynamicTextTests.swift */,
+			);
+			path = __tests__;
+			sourceTree = "<group>";
+		};
+		A9221A532548494500853CEF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A9221A562549692D00853CEF /* BEDynamicTextScreenSection+Cells.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		A929A71324DC3C470039B997 /* __tests__ */ = {
@@ -1938,6 +1983,7 @@
 				A95EE81B24FD0A6A00AFECBD /* BEUIStackView.swift */,
 				A94BF68825012C5B009404D2 /* BEENTemporaryExposureKey.swift */,
 				A92B66AC251CBF9B00F9B8DD /* BEUILabel.swift */,
+				A9221A412546C39700853CEF /* BEFileManager.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -2704,10 +2750,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9221A4C25470F7700853CEF /* missingLanguageDynamicTexts.json in Resources */,
+				A9221A5225472CB300853CEF /* testDownloadedTexts.json in Resources */,
+				A9221A4D25470F7700853CEF /* missingScreensDynamicTexts.json in Resources */,
+				A9221A502547222E00853CEF /* testDynamicTexts.json in Resources */,
 				B1F8AE482479B4C30093A588 /* api-response-day-2020-05-16 in Resources */,
 				01678E9C249A5F08003B048B /* testStore.sqlite in Resources */,
 				A189E45F248C325E001D0996 /* de-config in Resources */,
 				A9D9D1AB24D54A9F009BEDD9 /* countries.json in Resources */,
+				A9221A592549B92600853CEF /* wrongStructureDynamicTexts.json in Resources */,
 				F252472F2483955B00C5556B /* DynamicTableViewControllerFake.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2766,6 +2817,7 @@
 				B11E619B246EE4B0004A056A /* DynamicTypeLabel.swift in Sources */,
 				B1D7D69224766D2100E4DA5D /* apple_export.pb.swift in Sources */,
 				7187A5582481231C00FCC755 /* DynamicTableViewAction.swift in Sources */,
+				A9221A572549692D00853CEF /* BEDynamicTextScreenSection+Cells.swift in Sources */,
 				A128F059248B459F00EC7F6C /* PublicKeyStore.swift in Sources */,
 				71C0BEDD2498DD07009A17A0 /* ENANavigationFooterView.swift in Sources */,
 				A9221A382542F06E00853CEF /* BEDynamicTextScreenSection.swift in Sources */,
@@ -2781,6 +2833,7 @@
 				CD99A3A9245C272400BF12AF /* ExposureSubmissionService.swift in Sources */,
 				A9D0BF8224F585A200DEBD99 /* BECountdownTimer.swift in Sources */,
 				71F54191248BF677006DB793 /* HtmlTextView.swift in Sources */,
+				A9221A472546F62900853CEF /* BEDynamicTextService.swift in Sources */,
 				51B5B41C246EC8B800DC5D3E /* HomeCardCollectionViewCell.swift in Sources */,
 				B1EDFD8D248E74D000E7EAFF /* URL+StaticString.swift in Sources */,
 				A9DD2D0724D02DFC0035081A /* BEExposureSubmissionService.swift in Sources */,
@@ -2791,7 +2844,8 @@
 				CD8638532477EBD400A5A07C /* SettingsViewModel.swift in Sources */,
 				A9DD2CF624CF379F0035081A /* BEUIImage.swift in Sources */,
 				51CE1BB52460AC83002CF42A /* UICollectionView+Dequeue.swift in Sources */,
-				A9221A312542C1F200853CEF /* BEDynamicTextService.swift in Sources */,
+				A9221A312542C1F200853CEF /* BEDynamicTextDownloadService.swift in Sources */,
+				A9221A402544606800853CEF /* BEDynamicText.swift in Sources */,
 				B17F2D48248CEB4C00CAA38F /* DetectionMode.swift in Sources */,
 				137846492488027600A50AB8 /* OnboardingInfoViewController+Extension.swift in Sources */,
 				85E33444247EB357006E74EC /* CircularProgressView.swift in Sources */,
@@ -2921,6 +2975,7 @@
 				514EE999246D4C2E00DE4884 /* UITableViewCell+Identifier.swift in Sources */,
 				13722044247AEEAD00152764 /* UNNotificationCenter+Extension.swift in Sources */,
 				B10FD5ED246EAADC00E9D7F2 /* AppInformationDetailViewController.swift in Sources */,
+				A9221A422546C39700853CEF /* BEFileManager.swift in Sources */,
 				A951618524DAEB3A00631519 /* BEDecimal.swift in Sources */,
 				CDCE11D9247D64C600F30825 /* NotificationSettingsOnTableViewCell.swift in Sources */,
 				A9221A3A2542F10300853CEF /* BEDynamicTextScreenName.swift in Sources */,
@@ -2948,6 +3003,7 @@
 				713EA25B247818B000AB7EE8 /* DynamicTypeButton.swift in Sources */,
 				CDA262F824AB808800612E15 /* Coordinator.swift in Sources */,
 				51C77910248684F5004582F8 /* HomeRiskListItemViewConfigurator.swift in Sources */,
+				A9221A492546FB1A00853CEF /* BEDynamicTextLanguage.swift in Sources */,
 				B1D6B004247DA4920079DDD3 /* UIApplication+CoronaWarn.swift in Sources */,
 				51CE1BC32460B28D002CF42A /* HomeInfoCellConfigurator.swift in Sources */,
 				138910C5247A909000D739F6 /* ENATaskScheduler.swift in Sources */,
@@ -3022,7 +3078,6 @@
 				A92076D124E426D600AE8748 /* BEMockExposureSubmissionService.swift in Sources */,
 				A92B66AD251CBF9B00F9B8DD /* BEUILabel.swift in Sources */,
 				B1221BE02492ECE800E6C4E4 /* CFDictionary+KeychainQuery.swift in Sources */,
-				A9221A362542F02900853CEF /* BEDynamicTextScreen.swift in Sources */,
 				FEDCE77AED78E9C25999BB35 /* SceneDelegate+State.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3078,6 +3133,7 @@
 				516E430224B89AED0008CC30 /* CoordinatorTests.swift in Sources */,
 				B117521A248ACFFC00C3325C /* SAP_RiskScoreClass+LowAndHighTests.swift in Sources */,
 				B11655932491437600316087 /* RiskProvidingConfigurationTests.swift in Sources */,
+				A9221A452546F3BF00853CEF /* BEDynamicTextTests.swift in Sources */,
 				A9D0BF8424F5864000DEBD99 /* BECountdownTimerTests.swift in Sources */,
 				B1A76E9F24714AC700EA5208 /* HTTPClient+Configuration.swift in Sources */,
 				516E430024B777B20008CC30 /* HomeHighRiskCellConfiguratorTests.swift in Sources */,

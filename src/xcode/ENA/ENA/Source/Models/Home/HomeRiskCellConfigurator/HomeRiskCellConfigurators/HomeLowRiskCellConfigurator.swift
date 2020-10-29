@@ -73,18 +73,18 @@ final class HomeLowRiskCellConfigurator: HomeRiskLevelCellConfigurator {
 				HomeRiskImageItemViewConfigurator(
 					title: numberContactsTitle,
 					titleColor: titleColor,
-					iconImageName: "Icons_KeineRisikoBegegnung",
+					iconImage: UIImage(forceNamed: "Icons_KeineRisikoBegegnung"),
 					iconTintColor: titleColor,
 					color: color,
 					separatorColor: separatorColor
 				)
 			)
-			let progressImage: String = numberDays >= totalDays ? "Icons_TracingCircleFull - Dark" : "Icons_TracingCircle-Dark_Step \(activeTracing.inDays)"
+			let progressImage: UIImage = numberDays >= totalDays ? UIImage(forceNamed: "Icons_TracingCircleFull - Dark") : UIImage(forceNamed: "Icons_TracingCircle-Dark_Step \(activeTracing.inDays)")
 			itemCellConfigurators.append(
 				HomeRiskImageItemViewConfigurator(
 					title: activeTracing.localizedDuration,
 					titleColor: titleColor,
-					iconImageName: progressImage,
+					iconImage: progressImage,
 					iconTintColor: titleColor,
 					color: color,
 					separatorColor: separatorColor
@@ -96,7 +96,7 @@ final class HomeLowRiskCellConfigurator: HomeRiskLevelCellConfigurator {
 				HomeRiskImageItemViewConfigurator(
 					title: dateTitle,
 					titleColor: titleColor,
-					iconImageName: "Icons_Aktualisiert",
+					iconImage: UIImage(forceNamed: "Icons_Aktualisiert"),
 					iconTintColor: titleColor,
 					color: color,
 					separatorColor: separatorColor

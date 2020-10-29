@@ -22,9 +22,9 @@ import UIKit
 
 struct BEDynamicTextScreenSection : Decodable {
 	let icon:UIImage?
-	let title:String?
-	let text:String?
-	let paragraphs:[String]?
+	var title:String?
+	var text:String?
+	var paragraphs:[String]?
 	
     enum CodingKeys: String, CodingKey {
         case icon
@@ -36,9 +36,9 @@ struct BEDynamicTextScreenSection : Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-		title = try container.decode(String.self, forKey: .title)
-        text = try container.decode(String.self, forKey: .text)
-        paragraphs = try container.decode([String].self, forKey: .paragraphs)
+		title = try? container.decode(String.self, forKey: .title)
+        text = try? container.decode(String.self, forKey: .text)
+        paragraphs = try? container.decode([String].self, forKey: .paragraphs)
 		
 		if let iconTitle = try? container.decode(String.self, forKey: .icon) {
 			icon = UIImage(named: iconTitle)
@@ -46,4 +46,22 @@ struct BEDynamicTextScreenSection : Decodable {
 			icon = nil
 		}
     }
+	
+	func translate(_ translationDict: [String:String]) -> BEDynamicTextScreenSection {
+		var result = self
+		
+		if let title = self.title {
+			result.title = translationDict[title] ?? title
+		}
+		
+		if let text = self.text {
+			result.text = translationDict[text] ?? text
+		}
+		
+		if let paragraphs = self.paragraphs {
+			result.paragraphs = paragraphs.map{ translationDict[$0] ?? $0 }
+		}
+		
+		return result
+	}
 }

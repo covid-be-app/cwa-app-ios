@@ -139,6 +139,13 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate, RequiresAppDepend
 		// :BE: get stats, ignore errors and result
 		statisticsService.getInfectionSummary { _ in }
 		
+		
+		// Update dynamic texts
+		let dynamicTextService = BEDynamicTextService()
+		let dynamicTextDownloadService = BEDynamicTextDownloadService(client: client, textService: dynamicTextService)
+		
+		dynamicTextDownloadService.downloadTextsIfNeeded {}
+		
 		let exposureSubmissionService = BEExposureSubmissionServiceImpl(diagnosiskeyRetrieval: self.exposureManager, client: self.client, store: self.store)
 
 		// remove test result if it is too old

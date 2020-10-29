@@ -20,7 +20,7 @@
 import Foundation
 
 /// Make sure these stay in sync with the JSON
-enum BEDynamicTextScreenSectionName: String, Decodable {
+enum BEDynamicTextScreenSectionName: String, Decodable, CodingKey {
 	case explanation = "explanation"
 	case pleaseNote = "pleaseNote"
 	case otherInformation = "otherInformation"

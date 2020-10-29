@@ -19,6 +19,23 @@
 
 import Foundation
 
-struct BEDynamicTextScreen : Decodable {
-	let sections:[BEDynamicTextScreenSectionName:[BEDynamicTextScreenSection]]
+/// Make sure these stay in sync with the JSON
+enum BEDynamicTextLanguage: String, Decodable, CaseIterable {
+	case english = "en"
+	case french = "fr"
+	case dutch = "nl"
+	case german = "de"
+}
+
+extension BEDynamicTextLanguage {
+	static var current: BEDynamicTextLanguage {
+		let translatedLanguage = NSLocalizedString("language", comment:"")
+		
+		guard let result = BEDynamicTextLanguage(rawValue: translatedLanguage) else {
+			logError(message: "Wrong language \(translatedLanguage), reverting to default")
+			return .english
+		}
+		
+		return result
+	}
 }
