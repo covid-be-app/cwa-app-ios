@@ -33,10 +33,14 @@ class BEDynamicTextTests: XCTestCase {
 		let testBundle = Bundle(for: type(of: self))
 		let url = testBundle.url(forResource: filename, withExtension: "json")!
 		let decoder = JSONDecoder()
-		let data = try! Data(contentsOf: url)
-		let result = try! decoder.decode(BEDynamicText.self, from: data)
+		do {
+			let data = try Data(contentsOf: url)
+			let result = try decoder.decode(BEDynamicText.self, from: data)
+			return result
+		} catch {
+			fatalError("Something went wrong \(error.localizedDescription)")
+		}
 		
-		return result
 	}
 	
 	private func getFirstScreenSectionEntry(service:BEDynamicTextService, name: BEDynamicTextScreenName, section: BEDynamicTextScreenSectionName, language:BEDynamicTextLanguage = .current) -> BEDynamicTextScreenSection {

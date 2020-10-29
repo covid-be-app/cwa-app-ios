@@ -36,20 +36,20 @@ class BEMobileTestIdActivator {
 	private static let paths = ["corona-alert-form","coronalert-formulier","coronalert-formular","formulaire-coronalert"]
 
 	private let exposureSubmissionService: BEExposureSubmissionService
-	private let url:URL
+	private let url: URL
 	
 	/// the viewcontroller that will contain all the generated view controllers for this flow
-	private weak var parentViewController:UINavigationController!
+	private weak var parentViewController: UINavigationController!
 
 	/// the container viewcontroller for the form
-	private var activateMobileTestIdNavigationController:UINavigationController?
+	private var activateMobileTestIdNavigationController: UINavigationController?
 	
 	private var mobileTestIdGenerator: BEMobileTestIdGenerator?
-	private var generatedNewMobileTestId:Bool = false
+	private var generatedNewMobileTestId: Bool = false
 	
 	private weak var delegate: BEMobileTestIdActivatorDelegate?
 
-	init?(_ exposureSubmissionService: BEExposureSubmissionService, parentViewController: UINavigationController, url:URL, delegate:BEMobileTestIdActivatorDelegate?) {
+	init?(_ exposureSubmissionService: BEExposureSubmissionService, parentViewController: UINavigationController, url:URL, delegate: BEMobileTestIdActivatorDelegate?) {
 		
 		if !Self.validateURL(url) {
 			return nil
@@ -76,7 +76,7 @@ class BEMobileTestIdActivator {
 
 	// MARK: - URL validation
 	
-	static private func validateURL(_ url:URL) -> Bool {
+	static private func validateURL(_ url: URL) -> Bool {
 		guard let components = URLComponents(url: url, resolvingAgainstBaseURL: false) else {
 			logError(message: "URL problem \(url)")
 			return false
@@ -97,7 +97,7 @@ class BEMobileTestIdActivator {
 		return true
 	}
 	
-	static private func getActivationCodeFromURL(_ components:URLComponents) -> String? {
+	static private func getActivationCodeFromURL(_ components: URLComponents) -> String? {
 		let activationCodeParameterName = "pcr"
 
 		guard let queryItems = components.queryItems else {
