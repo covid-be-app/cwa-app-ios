@@ -99,8 +99,13 @@ extension ExposureSubmissionCoordinator {
 	}
 
 	/// This method selects the correct initial view controller among the following options:
-	/// :BE: REMOVED
 	private func getInitialViewController(with result: TestResult? = nil) -> UIViewController {
+
+		// We got a test result and can jump straight into the test result view controller.
+		if let result = result, exposureSubmissionService.hasRegistrationToken() {
+			return createTestResultViewController(with: result)
+		}
+		
 		return createIntroViewController()
 	}
 
