@@ -31,7 +31,7 @@ extension HTTPClient {
 		static let submissionBaseURL = URL(string: "https://c19-submission-\(BEEnvironment.current.urlSuffix()).ixor.be")!
 		static let verificationBaseURL = URL(string: "https://c19-verification-\(BEEnvironment.current.urlSuffix()).ixor.be")!
 		static let statisticsBaseURL = URL(string: "https://c19statcdn-\(BEEnvironment.current.urlSuffix()).ixor.be")!
-		static let dynamicTextsURL = URL(string: "https://localhost:8888")!
+		static let dynamicTextsURL = URL(string: "https://coronalert-\(BEEnvironment.current.urlSuffix()).ixor.be")!
 		// swiftlint:enable force_unwrapping
 		
 		// MARK: Default Instances
@@ -228,7 +228,10 @@ extension HTTPClient {
 		var dynamicTextsURL: URL {
 			endpoints
 				.dynamicTexts
-				.appending("dynamicTexts.json")
+				.appending(
+					"dynamictext",
+					"dynamicTexts.json"
+			)
 		}
 	}
 }
