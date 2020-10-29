@@ -82,14 +82,14 @@ private extension DynamicTableViewModel {
 		let pleaseNoteSections = dynamicTextService.sections(.thankYou, section: .pleaseNote)
 		let otherInformationSections = dynamicTextService.sections(.thankYou, section: .otherInformation)
 
-		let pleaseNoteCells = Array(pleaseNoteSections.map({$0.buildSuccessViewControllerStepCells(iconTint: .enaColor(for: .riskHigh))}).joined())
-		let otherInformationCells = Array(otherInformationSections.map({$0.buildSuccessViewControllerStepCells(iconTint: .enaColor(for: .riskHigh))}).joined())
+		let pleaseNoteCells = Array(pleaseNoteSections.map({ $0.buildSuccessViewControllerStepCells(iconTint: .enaColor(for: .riskHigh)) }).joined())
+		let otherInformationCells = Array(otherInformationSections.map({ $0.buildSuccessViewControllerStepCells(iconTint: .enaColor(for: .riskHigh)) }).joined())
 
 		var cells: [DynamicCell] = [
 			.body(text: AppStrings.ExposureSubmissionSuccess.description,
 				  accessibilityIdentifier: AccessibilityIdentifiers.ExposureSubmissionSuccess.description),
 			.title2(text: AppStrings.ExposureSubmissionSuccess.listTitle,
-					accessibilityIdentifier: AccessibilityIdentifiers.ExposureSubmissionSuccess.listTitle),
+					accessibilityIdentifier: AccessibilityIdentifiers.ExposureSubmissionSuccess.listTitle)
 		]
 		
 		cells.append(contentsOf: pleaseNoteCells)
@@ -108,7 +108,7 @@ private extension DynamicTableViewModel {
 					accessibilityIdentifier: AccessibilityIdentifiers.ExposureSubmissionSuccess.accImageDescription
 				),
 				separators: false,
-				cells:cells
+				cells: cells
 
 			)
 		])

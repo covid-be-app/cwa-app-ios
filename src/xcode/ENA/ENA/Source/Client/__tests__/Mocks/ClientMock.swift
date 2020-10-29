@@ -55,7 +55,7 @@ final class ClientMock {
 
 	var onAppConfiguration: (AppConfigurationCompletion) -> Void = { $0(nil) }
 	var onGetTestResult: ((String, TestResultHandler) -> Void)?
-	var dynamicTextsDownloadData:Data?
+	var dynamicTextsDownloadData: Data?
 }
 
 extension ClientMock: Client {

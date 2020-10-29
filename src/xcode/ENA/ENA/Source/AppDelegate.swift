@@ -118,7 +118,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 				case "INACTIVE":
 					provider.setInactiveRiskForTesting()
 				default:
-					fatalError()
+					fatalError("Should never happen")
 				}
 			}
 		#endif
