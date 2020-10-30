@@ -121,21 +121,5 @@ class ENAUITests: XCTestCase {
 
 	}
 
-	func test_0001_Generate_Screenshots_For_AppStore_Submission() throws {
-
-		let snapshotsActive = true
-
-		app.setPreferredContentSizeCategory(accessibililty: .normal, size: .M)
-
-		app.launchArguments.append(contentsOf: ["-negativeResult", "YES"])
-		app.launch()
-
-		/// ScreenShot_0006: Negative result
-		try? navigateThroughOnboarding()
-		XCTAssertTrue(app.buttons["AppStrings.Home.submitCardButton"].waitForExistence(timeout: 5.0))
-		app.buttons["AppStrings.Home.submitCardButton"].tap()
-
-		if snapshotsActive { snapshot("AppStore_0006") }
-	}
 
 }

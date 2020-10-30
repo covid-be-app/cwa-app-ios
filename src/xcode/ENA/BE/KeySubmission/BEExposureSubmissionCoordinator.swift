@@ -180,22 +180,10 @@ class BEExposureSubmissionCoordinator : NSObject, ExposureSubmissionCoordinating
 	}
 	
 	private func getInitialViewController(with result: TestResult? = nil) -> UIViewController {
-		#if UITESTING
-		if ProcessInfo.processInfo.arguments.contains("-negativeResult") {
-			return createTestResultViewController(with: .negative)
-		}
-
-		// :BE: add positive result
-		if ProcessInfo.processInfo.arguments.contains("-positiveResult") {
-			return createTestResultViewController(with: .positive)
-		}
-
-		#else
 		// We got a test result and can jump straight into the test result view controller.
 		if let result = result, exposureSubmissionService.hasRegistrationToken() {
 			return createTestResultViewController(with: result)
 		}
-		#endif
 
 		// By default, we show the intro view.
 		return createIntroViewController()

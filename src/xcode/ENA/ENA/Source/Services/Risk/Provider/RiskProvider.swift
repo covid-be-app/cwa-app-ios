@@ -176,8 +176,20 @@ extension RiskProvider: RiskProviding {
 
 	#if UITESTING
 
+	func setUnknownRiskForTesting() {
+		riskLevelForTesting = Risk.mockedUknown
+	}
+
+	func setLowRiskForTesting() {
+		riskLevelForTesting = Risk.mockedLow
+	}
+
 	func setHighRiskForTesting() {
 		riskLevelForTesting = Risk.mockedIncreased
+	}
+
+	func setInactiveRiskForTesting() {
+		riskLevelForTesting = Risk.mockedInactive
 	}
 
 	private func _requestRiskLevel(userInitiated: Bool, completion: Completion? = nil) {

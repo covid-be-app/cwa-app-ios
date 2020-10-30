@@ -98,7 +98,7 @@ final class HomeUnknown48hRiskCellConfigurator: HomeRiskLevelCellConfigurator {
 				HomeRiskImageItemViewConfigurator(
 					title: activateItemTitle,
 					titleColor: .enaColor(for: .textContrast),
-					iconImageName: "Icons_LetzteErmittlung-Light",
+					iconImage: UIImage(forceNamed: "Icons_LetzteErmittlung-Light"),
 					iconTintColor: .enaColor(for: .textContrast),
 					color: .enaColor(for: .riskNeutral),
 					separatorColor: .enaColor(for: .hairlineContrast)),
@@ -107,7 +107,7 @@ final class HomeUnknown48hRiskCellConfigurator: HomeRiskLevelCellConfigurator {
 				HomeRiskImageItemViewConfigurator(
 					title: dateTitle,
 					titleColor: .enaColor(for: .textContrast),
-					iconImageName: "Icons_Aktualisiert",
+					iconImage: UIImage(forceNamed: "Icons_Aktualisiert"),
 					iconTintColor: .enaColor(for: .textContrast),
 					color: .enaColor(for: .riskNeutral),
 					separatorColor: .enaColor(for: .hairlineContrast)

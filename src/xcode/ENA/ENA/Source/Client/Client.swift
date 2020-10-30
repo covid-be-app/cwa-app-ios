@@ -105,9 +105,14 @@ protocol Client {
 	
 	// :BE:
 	typealias InfectionSummaryHandler = (Result<BEInfectionSummary, Failure>) -> Void
+	typealias DynamicTextsHandler = (Result<Data, Failure>) -> Void
 
 	/// Stats
 	func getInfectionSummary(completion: @escaping InfectionSummaryHandler)
+	
+	/// dynamic texts
+	func getDynamicTexts(completion: @escaping DynamicTextsHandler)
+	
 
 	/// Acknowledge we downloaded a test result
 	func ackTestDownload(forDevice registrationToken: String, completionBlock: @escaping(() -> Void))

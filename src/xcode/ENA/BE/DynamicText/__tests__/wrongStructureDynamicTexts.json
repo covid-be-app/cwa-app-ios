@@ -1,0 +1,229 @@
+{
+    "structure": {
+        "standard": {
+            "preventiveMeasures": [
+                {
+                    "icon": "dt_washHands",
+                    "text": "standard.preventiveMeasures.1.text",
+					"title":"WASH YOUR HANDS"
+                },
+                {
+                    "icon": "dt_distance",
+                    "text": "standard.preventiveMeasures.2.text"
+                },
+                {
+                    "icon": "dt_mouthMask",
+                    "text": "standard.preventiveMeasures.3.text"
+                },
+                {
+                    "icon": "dt_sneeze",
+                    "text": "standard.preventiveMeasures.4.text"
+                }
+            ]
+        },
+        "highRisk": {
+            "preventiveMeasures": [
+                {
+                    "icon": "dt_home",
+                    "text": "highRisk.preventiveMeasures.1.text"
+                },
+                {
+                    "icon": "dt_distance",
+                    "text": "highRisk.preventiveMeasures.2.text"
+                },
+                {
+                    "icon": "dt_phone",
+                    "text": "highRisk.preventiveMeasures.3.text",
+                    "paragraphs": [
+                        "highRisk.preventiveMeasures.3.paragraphs.1",
+                        "highRisk.preventiveMeasures.3.paragraphs.2"
+                    ]
+                },
+                {
+                    "icon": "dt_exclamation",
+                    "text": "highRisk.preventiveMeasures.4.text",
+                    "paragraphs": [
+                        "highRisk.preventiveMeasures.4.paragraphs.1"
+                    ]
+                }
+            ]
+        },
+        "positiveTestResultCard": {
+            "explanation": [
+                {
+                    "icon": "dt_phone",
+                    "text": "positiveTestResultCard.explanation.1.text"
+                },
+                {
+                    "icon": "dt_home",
+                    "text": "positiveTestResultCard.explanation.2.text"
+                },
+                {
+                    "icon": "dt_exclamation",
+                    "text": "positiveTestResultCard.explanation.3.text"
+                }
+            ]
+        },
+        "positiveTestResult": {
+            "explanation": [
+                {
+                    "icon": "dt_exclamation",
+                    "title": "positiveTestResult.explanation.1.title",
+                    "text": "positiveTestResult.explanation.1.text",
+                    "paragraphs": [
+                        "positiveTestResult.explanation.1.paragraphs.1",
+                        "positiveTestResult.explanation.1.paragraphs.2",
+                        "positiveTestResult.explanation.1.paragraphs.3"
+                    ]
+                }
+            ]
+        },
+        "negativeTestResult": {
+            "explanation": [
+                {
+                    "icon": "dt_exclamation",
+                    "title": "negativeTestResult.explanation.1.title",
+                    "text": "negativeTestResult.explanation.1.text"
+                },
+                {
+                    "icon": "dt_delete",
+                    "title": "negativeTestResult.explanation.2.title",
+                    "text": "negativeTestResult.explanation.2.text"
+                }
+            ]
+        },
+        "thankYou": {
+            "pleaseNote": [
+                {
+                    "icon": "dt_phone",
+                    "text": "thankYou.pleaseNote.1.text"
+                },
+                {
+                    "icon": "dt_home",
+                    "text": "thankYou.pleaseNote.2.text"
+                }
+            ],
+            "otherInformation": [{
+                "paragraphs": [
+                    "otherInformation.paragraphs.1",
+                    "otherInformation.paragraphs.2",
+                    "otherInformation.paragraphs.3",
+                    "otherInformation.paragraphs.4"
+                    ]}]
+        }
+    },
+    "texts": {
+        "en": {
+            "standard.preventiveMeasures.1.text": "Wash your hands regularly and thoroughly with soap and water.",
+            "standard.preventiveMeasures.2.text": "Keep at least 1.5m away from people who are not close to you.",
+            "standard.preventiveMeasures.3.text": "Wear a nose and mouth mask when you come into contact with other people and where required.",
+            "standard.preventiveMeasures.4.text": "Sneeze or cough into your elbow or into a tissue that you throw away immediately afterwards.",
+            "highRisk.preventiveMeasures.1.text": "If possible, please go home and stay at home.",
+            "highRisk.preventiveMeasures.2.text": "Keep at least 1.5m away from people who are not close to you.",
+            "highRisk.preventiveMeasures.3.text": "Do you have any symptoms indicating Covid-19, such as fatigue, fever, dry cough, headache, loss of taste or smell? Please contact one of the following persons:",
+            "highRisk.preventiveMeasures.3.paragraphs.1": "Your general practitioner",
+            "highRisk.preventiveMeasures.3.paragraphs.2": "Medical out-of-hours service at 1733",
+            "highRisk.preventiveMeasures.4.text": "Do you have no symptoms?",
+            "highRisk.preventiveMeasures.4.paragraphs.1": "Observe a 10-day quarantine.",
+            "positiveTestResult.explanation.1.title": "Positive Diagnosis",
+            "positiveTestResult.explanation.1.text": "Your test result is positive. This means that you are infected.",
+            "positiveTestResult.explanation.1.paragraphs.1": "You are infected and therefore you must stay at home in isolation for at least 7 days. Don't leave your home until the symptoms have passed.",
+            "positiveTestResult.explanation.1.paragraphs.2": "You can warn other people with whom you came into contact.",
+            "positiveTestResult.explanation.1.paragraphs.3": "This test result will be removed from your smartphone after 48 hours.",
+            "negativeTestResult.explanation.1.title": "Negative Diagnosis",
+            "negativeTestResult.explanation.1.text": "The laboratory result indicates no verification that you have coronavirus SARS-CoV-2.",
+            "negativeTestResult.explanation.2.title": "Delete Test",
+            "negativeTestResult.explanation.2.text": "Please delete the test from Coronalert, so that you can save a new test code here if necessary.\nThis test result will be removed from your smartphone after 48 hours.",
+            "thankYou.pleaseNote.1.text": "The public health authority will contact you within the next few days by telephone or by letter.",
+            "thankYou.pleaseNote.2.text": "You are infectious. Isolate yourself from other people.",
+            "otherInformation.paragraphs.1": "Your quarantine period is usually 7 days. Please observe your symptoms and monitor how they develop.",
+            "otherInformation.paragraphs.2": "You will be asked by your public health authority to create a list of people you have had contact with. This should include all people with whom you have had close contact with (less than 2 meters, face-to-face conversation) for over 15 minutes in the two days before you developed symptoms.",
+            "otherInformation.paragraphs.3": "Please particularly consider people who will not be notified directly by the app since they don't own a smartphone, or haven't installed the app.",
+            "otherInformation.paragraphs.4": "Even when you no longer have any symptoms and you feel well again, you could still be infectious."
+        },
+        "fr": {
+            "standard.preventiveMeasures.1.text": "Wash your hands regularly and thoroughly with soap and water.",
+            "standard.preventiveMeasures.2.text": "Keep at least 1.5m away from people who are not close to you.",
+            "standard.preventiveMeasures.3.text": "Wear a nose and mouth mask when you come into contact with other people and where required.",
+            "standard.preventiveMeasures.4.text": "Sneeze or cough into your elbow or into a tissue that you throw away immediately afterwards.",
+            "highRisk.preventiveMeasures.1.text": "If possible, please go home and stay at home.",
+            "highRisk.preventiveMeasures.2.text": "Keep at least 1.5m away from people who are not close to you.",
+            "highRisk.preventiveMeasures.3.text": "Do you have any symptoms indicating Covid-19, such as fatigue, fever, dry cough, headache, loss of taste or smell? Please contact one of the following persons:",
+            "highRisk.preventiveMeasures.3.paragraphs.1": "Your general practitioner",
+            "highRisk.preventiveMeasures.3.paragraphs.2": "Medical out-of-hours service at 1733",
+            "highRisk.preventiveMeasures.4.text": "Do you have no symptoms?",
+            "highRisk.preventiveMeasures.4.paragraphs.1": "Observe a 10-day quarantine.",
+            "positiveTestResult.explanation.1.title": "Positive Diagnosis",
+            "positiveTestResult.explanation.1.text": "Your test result is positive. This means that you are infected.",
+            "positiveTestResult.explanation.1.paragraphs.1": "You are infected and therefore you must stay at home in isolation for at least 7 days. Don't leave your home until the symptoms have passed.",
+            "positiveTestResult.explanation.1.paragraphs.2": "You can warn other people with whom you came into contact.",
+            "positiveTestResult.explanation.1.paragraphs.3": "This test result will be removed from your smartphone after 48 hours.",
+            "negativeTestResult.explanation.1.title": "Negative Diagnosis",
+            "negativeTestResult.explanation.1.text": "The laboratory result indicates no verification that you have coronavirus SARS-CoV-2.",
+            "negativeTestResult.explanation.2.title": "Delete Test",
+            "negativeTestResult.explanation.2.text": "Please delete the test from Coronalert, so that you can save a new test code here if necessary.\nThis test result will be removed from your smartphone after 48 hours.",
+            "thankYou.pleaseNote.1.text": "The public health authority will contact you within the next few days by telephone or by letter.",
+            "thankYou.pleaseNote.2.text": "You are infectious. Isolate yourself from other people.",
+            "otherInformation.paragraphs.1": "Your quarantine period is usually 7 days. Please observe your symptoms and monitor how they develop.",
+            "otherInformation.paragraphs.2": "You will be asked by your public health authority to create a list of people you have had contact with. This should include all people with whom you have had close contact with (less than 2 meters, face-to-face conversation) for over 15 minutes in the two days before you developed symptoms.",
+            "otherInformation.paragraphs.3": "Please particularly consider people who will not be notified directly by the app since they don't own a smartphone, or haven't installed the app.",
+            "otherInformation.paragraphs.4": "Even when you no longer have any symptoms and you feel well again, you could still be infectious."
+        },
+        "de": {
+            "standard.preventiveMeasures.1.text": "Wash your hands regularly and thoroughly with soap and water.",
+            "standard.preventiveMeasures.2.text": "Keep at least 1.5m away from people who are not close to you.",
+            "standard.preventiveMeasures.3.text": "Wear a nose and mouth mask when you come into contact with other people and where required.",
+            "standard.preventiveMeasures.4.text": "Sneeze or cough into your elbow or into a tissue that you throw away immediately afterwards.",
+            "highRisk.preventiveMeasures.1.text": "If possible, please go home and stay at home.",
+            "highRisk.preventiveMeasures.2.text": "Keep at least 1.5m away from people who are not close to you.",
+            "highRisk.preventiveMeasures.3.text": "Do you have any symptoms indicating Covid-19, such as fatigue, fever, dry cough, headache, loss of taste or smell? Please contact one of the following persons:",
+            "highRisk.preventiveMeasures.3.paragraphs.1": "Your general practitioner",
+            "highRisk.preventiveMeasures.3.paragraphs.2": "Medical out-of-hours service at 1733",
+            "highRisk.preventiveMeasures.4.text": "Do you have no symptoms?",
+            "highRisk.preventiveMeasures.4.paragraphs.1": "Observe a 10-day quarantine.",
+            "positiveTestResult.explanation.1.title": "Positive Diagnosis",
+            "positiveTestResult.explanation.1.text": "Your test result is positive. This means that you are infected.",
+            "positiveTestResult.explanation.1.paragraphs.1": "You are infected and therefore you must stay at home in isolation for at least 7 days. Don't leave your home until the symptoms have passed.",
+            "positiveTestResult.explanation.1.paragraphs.2": "You can warn other people with whom you came into contact.",
+            "positiveTestResult.explanation.1.paragraphs.3": "This test result will be removed from your smartphone after 48 hours.",
+            "negativeTestResult.explanation.1.title": "Negative Diagnosis",
+            "negativeTestResult.explanation.1.text": "The laboratory result indicates no verification that you have coronavirus SARS-CoV-2.",
+            "negativeTestResult.explanation.2.title": "Delete Test",
+            "negativeTestResult.explanation.2.text": "Please delete the test from Coronalert, so that you can save a new test code here if necessary.\nThis test result will be removed from your smartphone after 48 hours.",
+            "thankYou.pleaseNote.1.text": "The public health authority will contact you within the next few days by telephone or by letter.",
+            "thankYou.pleaseNote.2.text": "You are infectious. Isolate yourself from other people.",
+            "otherInformation.paragraphs.1": "Your quarantine period is usually 7 days. Please observe your symptoms and monitor how they develop.",
+            "otherInformation.paragraphs.2": "You will be asked by your public health authority to create a list of people you have had contact with. This should include all people with whom you have had close contact with (less than 2 meters, face-to-face conversation) for over 15 minutes in the two days before you developed symptoms.",
+            "otherInformation.paragraphs.3": "Please particularly consider people who will not be notified directly by the app since they don't own a smartphone, or haven't installed the app.",
+            "otherInformation.paragraphs.4": "Even when you no longer have any symptoms and you feel well again, you could still be infectious."
+        },
+        "nl": {
+            "standard.preventiveMeasures.1.text": "Wash your hands regularly and thoroughly with soap and water.",
+            "standard.preventiveMeasures.2.text": "Keep at least 1.5m away from people who are not close to you.",
+            "standard.preventiveMeasures.3.text": "Wear a nose and mouth mask when you come into contact with other people and where required.",
+            "standard.preventiveMeasures.4.text": "Sneeze or cough into your elbow or into a tissue that you throw away immediately afterwards.",
+            "highRisk.preventiveMeasures.1.text": "If possible, please go home and stay at home.",
+            "highRisk.preventiveMeasures.2.text": "Keep at least 1.5m away from people who are not close to you.",
+            "highRisk.preventiveMeasures.3.text": "Do you have any symptoms indicating Covid-19, such as fatigue, fever, dry cough, headache, loss of taste or smell? Please contact one of the following persons:",
+            "highRisk.preventiveMeasures.3.paragraphs.1": "Your general practitioner",
+            "highRisk.preventiveMeasures.3.paragraphs.2": "Medical out-of-hours service at 1733",
+            "highRisk.preventiveMeasures.4.text": "Do you have no symptoms?",
+            "highRisk.preventiveMeasures.4.paragraphs.1": "Observe a 10-day quarantine.",
+            "positiveTestResult.explanation.1.title": "Positive Diagnosis",
+            "positiveTestResult.explanation.1.text": "Your test result is positive. This means that you are infected.",
+            "positiveTestResult.explanation.1.paragraphs.1": "You are infected and therefore you must stay at home in isolation for at least 7 days. Don't leave your home until the symptoms have passed.",
+            "positiveTestResult.explanation.1.paragraphs.2": "You can warn other people with whom you came into contact.",
+            "positiveTestResult.explanation.1.paragraphs.3": "This test result will be removed from your smartphone after 48 hours.",
+            "negativeTestResult.explanation.1.title": "Negative Diagnosis",
+            "negativeTestResult.explanation.1.text": "The laboratory result indicates no verification that you have coronavirus SARS-CoV-2.",
+            "negativeTestResult.explanation.2.title": "Delete Test",
+            "negativeTestResult.explanation.2.text": "Please delete the test from Coronalert, so that you can save a new test code here if necessary.\nThis test result will be removed from your smartphone after 48 hours.",
+            "thankYou.pleaseNote.1.text": "The public health authority will contact you within the next few days by telephone or by letter.",
+            "thankYou.pleaseNote.2.text": "You are infectious. Isolate yourself from other people.",
+            "otherInformation.paragraphs.1": "Your quarantine period is usually 7 days. Please observe your symptoms and monitor how they develop.",
+            "otherInformation.paragraphs.2": "You will be asked by your public health authority to create a list of people you have had contact with. This should include all people with whom you have had close contact with (less than 2 meters, face-to-face conversation) for over 15 minutes in the two days before you developed symptoms.",
+            "otherInformation.paragraphs.3": "Please particularly consider people who will not be notified directly by the app since they don't own a smartphone, or haven't installed the app.",
+            "otherInformation.paragraphs.4": "Even when you no longer have any symptoms and you feel well again, you could still be infectious."
+        }
+    }
+}

@@ -93,14 +93,14 @@ class BEENAUITests: XCTestCase {
 	}
 	
 	func testSelectCountry() throws {
-		app.launchArguments.append(contentsOf: ["-positiveResult", "YES"])
+		app.launchArguments.append(contentsOf: ["-testResult", "POSITIVE"])
 		app.launchArguments.append(contentsOf:[UITestingParameters.ExposureSubmission.useMock.rawValue])
 		app.launch()
 
-		XCTAssertTrue(app.buttons["AppStrings.Home.submitCardButton"].waitForExistence(timeout: 5.0))
+		XCTAssertTrue(app.buttons["AppStrings.Home.resultCardShowResultButton"].waitForExistence(timeout: 5.0))
 		snapshot("ScreenShot_\(#function)_001")
 		app.swipeUp()
-		app.buttons["AppStrings.Home.submitCardButton"].tap()
+		app.buttons["AppStrings.Home.resultCardShowResultButton"].tap()
 
 		XCTAssertTrue(app.buttons["BEAppStrings.BETestResult.next"].waitForExistence(timeout: 5.0))
 		snapshot("ScreenShot_\(#function)_002")
@@ -135,7 +135,7 @@ class BEENAUITests: XCTestCase {
 	}
 	
 	func testIncreasedRisk() throws {
-		app.launchArguments.append(contentsOf: ["-isAtRisk", "YES"])
+		app.launchArguments.append(contentsOf: ["-riskLevel", "HIGH"])
 		app.launch()
 
 		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
@@ -147,10 +147,33 @@ class BEENAUITests: XCTestCase {
 		app.swipeUp()
 		snapshot("ScreenShot_\(#function)_003")
 	}
-	
-	// :TODO: activate these tests once the form is ready in production
-	
-	/*
+
+	func testUnknownRisk() throws {
+		app.launchArguments.append(contentsOf: ["-riskLevel", "UNKNOWN"])
+		app.launch()
+
+		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
+		XCTAssertTrue(app.buttons["RiskLevelCollectionViewCell.topContainer"].waitForExistence(timeout: 5.0))
+		app.buttons["RiskLevelCollectionViewCell.topContainer"].tap()
+		XCTAssertTrue(app.navigationBars.buttons.element(boundBy: 0).waitForExistence(timeout: 5.0))
+		snapshot("ScreenShot_\(#function)_001")
+		app.swipeUp()
+		snapshot("ScreenShot_\(#function)_002")
+	}
+
+	func testExposureStopped() throws {
+		app.launchArguments.append(contentsOf: ["-riskLevel", "INACTIVE"])
+		app.launch()
+
+		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
+		XCTAssertTrue(app.buttons["RiskLevelCollectionViewCell.topContainer"].waitForExistence(timeout: 5.0))
+		app.buttons["RiskLevelCollectionViewCell.topContainer"].tap()
+		XCTAssertTrue(app.navigationBars.buttons.element(boundBy: 0).waitForExistence(timeout: 5.0))
+		snapshot("ScreenShot_\(#function)_001")
+		app.swipeUp()
+		snapshot("ScreenShot_\(#function)_002")
+	}
+
 	func testWebFormWithoutSymptoms() throws {
 		app.launchArguments.append(contentsOf: ["-openWebForm", "https://coronalert.be/en/corona-alert-form/?pcr=0000000000000000"])
 		app.launch()
@@ -172,6 +195,65 @@ class BEENAUITests: XCTestCase {
 
 		XCTAssertTrue(app.navigationBars.buttons.element(boundBy: 0).waitForExistence(timeout: 5.0))
 	}
-*/
+	
+	func testNegativeTestResult() throws {
+		app.launchArguments.append(contentsOf: ["-testResult", "NEGATIVE"])
+		app.launch()
 
+		XCTAssertTrue(app.buttons["AppStrings.Home.resultCardShowResultButton"].waitForExistence(timeout: 5.0))
+		snapshot("ScreenShot_\(#function)_001")
+		app.swipeUp()
+		snapshot("ScreenShot_\(#function)_002")
+		app.buttons["AppStrings.Home.resultCardShowResultButton"].tap()
+		sleep(1)
+		snapshot("ScreenShot_\(#function)_003")
+	}
+	
+	func testPendingTestResult() throws {
+		app.launchArguments.append(contentsOf: ["-testResult", "PENDING"])
+		app.launch()
+
+		XCTAssertTrue(app.buttons["AppStrings.Home.resultCardShowResultButton"].waitForExistence(timeout: 5.0))
+		snapshot("ScreenShot_\(#function)_001")
+		app.swipeUp()
+		snapshot("ScreenShot_\(#function)_002")
+		app.buttons["AppStrings.Home.resultCardShowResultButton"].tap()
+		sleep(1)
+		snapshot("ScreenShot_\(#function)_003")
+	}
+
+	func testPositiveTestResult() throws {
+		app.launchArguments.append(contentsOf: ["-testResult", "POSITIVE"])
+		app.launchArguments.append(contentsOf:[UITestingParameters.ExposureSubmission.useMock.rawValue])
+		app.launch()
+
+		XCTAssertTrue(app.buttons["AppStrings.Home.resultCardShowResultButton"].waitForExistence(timeout: 5.0))
+		snapshot("ScreenShot_\(#function)_001")
+		app.swipeUp()
+		snapshot("ScreenShot_\(#function)_002")
+		app.buttons["AppStrings.Home.resultCardShowResultButton"].tap()
+		sleep(1)
+		snapshot("ScreenShot_\(#function)_003")
+
+		XCTAssertTrue(app.buttons["BEAppStrings.BETestResult.next"].waitForExistence(timeout: 5.0))
+	}
+	
+	func testSendKeys() throws {
+		app.launchArguments.append(contentsOf: ["-testResult", "POSITIVE"])
+		app.launchArguments.append(contentsOf:[UITestingParameters.ExposureSubmission.useMock.rawValue])
+		app.launch()
+
+		XCTAssertTrue(app.buttons["AppStrings.Home.resultCardShowResultButton"].waitForExistence(timeout: 5.0))
+		app.buttons["AppStrings.Home.resultCardShowResultButton"].tap()
+
+		XCTAssertTrue(app.buttons["BEAppStrings.BETestResult.next"].waitForExistence(timeout: 5.0))
+		app.buttons["BEAppStrings.BETestResult.next"].tap()
+
+		XCTAssertTrue(app.buttons["BEAppStrings.BEWarnOthers.next"].waitForExistence(timeout: 5.0))
+		app.buttons["BEAppStrings.BEWarnOthers.next"].tap()
+		XCTAssertTrue(app.buttons["BEAppStrings.BESelectKeyCountries.shareIds"].waitForExistence(timeout: 5.0))
+		app.buttons["BEAppStrings.BESelectKeyCountries.shareIds"].tap()
+		XCTAssertTrue(app.buttons["BEAppStrings.BEExposureSubmissionSuccess.button"].waitForExistence(timeout: 5.0))
+		app.swipeUp()
+	}
 }
