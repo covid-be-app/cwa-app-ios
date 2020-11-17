@@ -60,6 +60,9 @@ class BEExposureSubmissionServiceTests: XCTestCase {
 		// infectious 8 days ago
 		let datePatientInfectious = Calendar.current.date(byAdding: .day, value: -8, to: dateTestCommunicated)!
 		
+		// onset of symptoms 6 days ago
+		let symptomsStartDate = Calendar.current.date(byAdding: .day, value: -6, to: dateTestCommunicated)!
+
 		// did test 4 days ago
 		let dateTestCollected = Calendar.current.date(byAdding: .day, value: -4, to: dateTestCommunicated)!
 		
@@ -67,7 +70,7 @@ class BEExposureSubmissionServiceTests: XCTestCase {
 		let testCollectedDateString = dateFormatter.string(from:dateTestCollected)
 		let testCommunicatedDateString = dateFormatter.string(from:dateTestCommunicated)
 		
-		store.mobileTestId = BEMobileTestId(datePatientInfectious: patientInfectiousDateString)
+		store.mobileTestId = BEMobileTestId(symptomsStartDate: symptomsStartDate)
 		store.testResult = TestResult(result: .positive, channel: .lab, dateCollected: testCollectedDateString, dateTestCommunicated: testCommunicatedDateString)
 
 		service.retrieveDiagnosisKeys{ result in
@@ -91,7 +94,7 @@ class BEExposureSubmissionServiceTests: XCTestCase {
 		let client = ClientMock()
 		let store = try SecureStore(at: URL(staticString: ":memory:"), key: "123456")
 		let service = BEExposureSubmissionServiceImpl(diagnosiskeyRetrieval: keyRetrieval, client: client, store: store)
-		let mobileTestId = BEMobileTestId(datePatientInfectious: "2020-08-11")
+		let mobileTestId = BEMobileTestId()
 		store.mobileTestId = mobileTestId
 		sleep(4)
 		store.deleteMobileTestIdAfterTimeInterval = 2

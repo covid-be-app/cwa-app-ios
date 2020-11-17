@@ -75,7 +75,7 @@ class MockExposureSubmissionService: BEExposureSubmissionService {
 	}
 	
 	func generateMobileTestId(_ symptomsDate: Date?) -> BEMobileTestId {
-		let generatedTestId = BEMobileTestId.generate(symptomsDate)
+		let generatedTestId = BEMobileTestId(symptomsStartDate: symptomsDate)
 		
 		mobileTestId = generatedTestId
 		

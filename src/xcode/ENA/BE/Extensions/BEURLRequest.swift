@@ -47,6 +47,13 @@ extension URLRequest {
 			mobileTestId.datePatientInfectious,
 			forHTTPHeaderField: "Date-Patient-Infectious"
 		)
+		
+		if let symptomsDate = mobileTestId.symptomsStartDate {
+			request.setValue(
+				symptomsDate,
+				forHTTPHeaderField: "Date-Onset-Of-Symptoms"
+			)
+		}
 
 		request.setValue(
 			testResult.dateTestCommunicated,

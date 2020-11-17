@@ -76,7 +76,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate, RequiresAppDepend
 		store.userNeedsToBeInformedAboutHowRiskDetectionWorks = false
 		
 		if let argIndex = ProcessInfo.processInfo.arguments.firstIndex(of: "-testResult") {
-			let mobileTestId = BEMobileTestId.generate()
+			let mobileTestId = BEMobileTestId()
 			store.mobileTestId = mobileTestId
 			store.registrationToken = mobileTestId.registrationToken
 
