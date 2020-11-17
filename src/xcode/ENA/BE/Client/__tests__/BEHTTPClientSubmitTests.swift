@@ -38,8 +38,7 @@ final class BEHTTPClientSubmitTests: XCTestCase {
 		return [country]
 	}
 	
-	private var mobileTestId = BEMobileTestId(datePatientInfectious: "2020-07-22")
-	private var dateTestCommunicated = "2020-07-25"
+	private var mobileTestId = BEMobileTestId(symptomsStartDate: Date())
 	
 	func testSubmit_Success() {
 		// Arrange
