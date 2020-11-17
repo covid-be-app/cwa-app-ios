@@ -26,7 +26,7 @@ class BEMobileTestIdTests: XCTestCase {
 		let twoDaysAgo = Calendar.current.date(byAdding: .day, value: -2, to: Date())!
 		let twoDaysAgoComponents = Calendar.current.dateComponents([.day,.year,.month], from: twoDaysAgo)
 
-		let mobileTestId = BEMobileTestId.generate()
+		let mobileTestId = BEMobileTestId()
 		guard let dateInfectiousNoSymptoms = mobileTestId.datePatientInfectious.dateWithoutTime else {
 			XCTFail("Wrong date")
 			return
@@ -43,7 +43,7 @@ class BEMobileTestIdTests: XCTestCase {
 		let twoDaysAgo = Calendar.current.date(byAdding: .day, value: -2, to: symptomsDate)!
 		let twoDaysAgoComponents = Calendar.current.dateComponents([.day,.year,.month], from: twoDaysAgo)
 
-		let mobileTestId = BEMobileTestId.generate(symptomsDate)
+		let mobileTestId = BEMobileTestId(symptomsStartDate: symptomsDate)
 		guard let dateInfectiousNoSymptoms = mobileTestId.datePatientInfectious.dateWithoutTime else {
 			XCTFail("Wrong date")
 			return
@@ -56,7 +56,7 @@ class BEMobileTestIdTests: XCTestCase {
 	}
 
     func testGenerateId() throws {
-		let testId = BEMobileTestId(datePatientInfectious: "2020-07-10")
+		let testId = BEMobileTestId()
 		
 		XCTAssertEqual(testId.id.count, 15)
 		XCTAssertEqual(testId.checksum.count,2)
@@ -84,7 +84,7 @@ class BEMobileTestIdTests: XCTestCase {
    }
 	
 	func testFakeRegistrationToken() throws {
-		let testId = BEMobileTestId(datePatientInfectious: "2020-07-10")
+		let testId = BEMobileTestId()
 		let registrationToken = testId.registrationToken
 		let fakeToken = BEMobileTestId.fakeRegistrationToken
 		

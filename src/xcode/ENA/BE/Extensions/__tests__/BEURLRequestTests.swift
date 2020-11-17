@@ -63,4 +63,69 @@ class BEURLRequestTests: XCTestCase {
 			XCTAssertEqual(emptyBody.count, keyBody.count)
 		}
 	}
+	
+	func testHeaders() throws {
+		var keys:[ENTemporaryExposureKey] = []
+		var countries:[BECountry] = []
+		let dayCount = 14
+		let startDate = Calendar.current.date(byAdding: .day, value: -dayCount, to: Date(), wrappingComponents: true)!
+		let country = BECountry(code3: "BEL", name: ["nl":"België","fr":"Belgique","en":"Belgium","de":"Belgien"])
+		let headerKeys = ["Secret-Key","Random-String","Date-Patient-Infectious","Date-Test-Communicated","Result-Channel","Content-Type"]
+		let onsetOfSymptomsKey = "Date-Onset-Of-Symptoms"
+
+		for x in 0..<dayCount+1 {
+			let date = Calendar.current.date(byAdding: .day, value: x, to: startDate, wrappingComponents: true)!
+			let key = ENTemporaryExposureKey.random(date)
+
+			keys.append(key)
+			countries.append(country)
+		}
+
+		let keyRequest = try URLRequest.submitKeysRequest(
+			configuration: HTTPClient.Configuration.fake,
+			mobileTestId: BEMobileTestId(),
+			testResult: TestResult.positive,
+			keys: keys,
+			countries: countries
+		)
+		
+		var headerFields = keyRequest.allHTTPHeaderFields!
+		var allHeaderKeys = headerKeys
+		
+		headerFields.keys.forEach{ key in
+			XCTAssertNotEqual(key, onsetOfSymptomsKey)
+			
+			guard let index = allHeaderKeys.firstIndex(of: key) else {
+				XCTAssert(false)
+				return
+			}
+			
+			allHeaderKeys.remove(at: index)
+		}
+		
+		XCTAssertEqual(allHeaderKeys.count, 0)
+
+		let keyRequest2 = try URLRequest.submitKeysRequest(
+			configuration: HTTPClient.Configuration.fake,
+			mobileTestId: BEMobileTestId(symptomsStartDate: Date()),
+			testResult: TestResult.positive,
+			keys: keys,
+			countries: countries
+		)
+		
+		headerFields = keyRequest2.allHTTPHeaderFields!
+		allHeaderKeys = headerKeys
+		allHeaderKeys.append(onsetOfSymptomsKey)
+		
+		headerFields.keys.forEach{ key in
+			guard let index = allHeaderKeys.firstIndex(of: key) else {
+				XCTAssert(false)
+				return
+			}
+			
+			allHeaderKeys.remove(at: index)
+		}
+		
+		XCTAssertEqual(allHeaderKeys.count, 0)
+	}
 }
