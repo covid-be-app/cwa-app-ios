@@ -1,6 +1,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -41,6 +44,7 @@ final class SettingsViewController: UITableViewController {
 
 	let tracingSegue = "showTracing"
 	let notificationsSegue = "showNotifications"
+	let mobileDataUsageSegue = "showMobileDataUsage"
 	let resetSegue = "showReset"
 
 	let settingsViewModel = SettingsViewModel()
@@ -76,6 +80,7 @@ final class SettingsViewController: UITableViewController {
 
 		checkTracingStatus()
 		notificationSettings()
+		mobileDataUsageSettings()
 	}
 
 	override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
@@ -101,17 +106,24 @@ final class SettingsViewController: UITableViewController {
 		NotificationSettingsViewController(coder: coder, store: store)
 	}
 
+	@IBSegueAction
+	func createMobileDataUsageSettingsViewController(coder: NSCoder) -> MobileDataUsageSettingsViewController? {
+		MobileDataUsageSettingsViewController(coder: coder, store: store)
+	}
+
 	@objc
 	private func willEnterForeground() {
 		checkTracingStatus()
 		notificationSettings()
+		mobileDataUsageSettings()
 	}
 
 	private func setupView() {
 
 		checkTracingStatus()
 		notificationSettings()
-
+		mobileDataUsageSettings()
+		
 		NotificationCenter.default.addObserver(
 			self,
 			selector: #selector(willEnterForeground),
@@ -150,6 +162,10 @@ final class SettingsViewController: UITableViewController {
 			}
 		}
 	}
+	
+	private func mobileDataUsageSettings() {
+		self.settingsViewModel.mobileDataUsage.setState(state: self.store.useMobileDataForTEKDownload)
+	}
 
 	private func setExposureManagerEnabled(_ enabled: Bool, then: @escaping SettingsViewControllerDelegate.Completion) {
 		delegate?.settingsViewController(self, setExposureManagerEnabled: enabled, then: then)
@@ -185,6 +201,8 @@ extension SettingsViewController {
 			return AppStrings.Settings.notificationDescription
 		case .reset:
 			return AppStrings.Settings.resetDescription
+		case .mobileDataUsage:
+			return BEAppStrings.BESettings.mobileDataDescription
 		}
 	}
 
@@ -196,7 +214,7 @@ extension SettingsViewController {
 		switch section {
 		case .reset:
 			footerView.textLabel?.textAlignment = .center
-		case .tracing, .notifications:
+		case .tracing, .notifications, .mobileDataUsage:
 			footerView.textLabel?.textAlignment = .left
 		}
 	}
@@ -213,6 +231,9 @@ extension SettingsViewController {
 		case .notifications:
 			cell = configureMainCell(indexPath: indexPath, model: settingsViewModel.notifications)
 			cell.accessibilityIdentifier = AccessibilityIdentifiers.Settings.notificationLabel
+		case .mobileDataUsage:
+			cell = configureMainCell(indexPath: indexPath, model: settingsViewModel.mobileDataUsage)
+			cell.accessibilityIdentifier = BEAccessibilityIdentifiers.BESettings.mobileDataLabel
 		case .reset:
 			guard let labelCell = tableView.dequeueReusableCell(withIdentifier: ReuseIdentifier.reset.rawValue, for: indexPath) as? LabelTableViewCell else {
 				fatalError("No cell for reuse identifier.")
@@ -250,6 +271,8 @@ extension SettingsViewController {
 			performSegue(withIdentifier: notificationsSegue, sender: nil)
 		case .reset:
 			performSegue(withIdentifier: resetSegue, sender: nil)
+		case .mobileDataUsage:
+			performSegue(withIdentifier: mobileDataUsageSegue, sender: nil)
 		}
 
 		tableView.deselectRow(at: indexPath, animated: false)
@@ -260,6 +283,7 @@ private extension SettingsViewController {
 	enum Sections: CaseIterable {
 		case tracing
 		case notifications
+		case mobileDataUsage
 		case reset
 	}
 

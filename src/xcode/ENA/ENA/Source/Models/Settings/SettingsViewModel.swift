@@ -21,16 +21,19 @@ final class SettingsViewModel {
 	// MARK: Properties
 	var tracing: Main
 	var notifications: Main
+	var mobileDataUsage: Main
 	var reset: String
 
 	// MARK: Creating a Settings View Model
 	init(
 		tracing: Main = .tracing,
 		notifications: Main = .notifications,
+		mobileDataUsage: Main = .mobileDataUsage,
 		reset: String = AppStrings.Settings.resetLabel
 	) {
 		self.tracing = tracing
 		self.notifications = notifications
+		self.mobileDataUsage = mobileDataUsage
 		self.reset = reset
 	}
 }
@@ -61,6 +64,14 @@ extension SettingsViewModel.Main {
 		stateActive: AppStrings.Settings.notificationStatusActive,
 		stateInactive: AppStrings.Settings.notificationStatusInactive,
 		accessibilityIdentifier: AccessibilityIdentifiers.Settings.notificationLabel
+	)
+
+	static let mobileDataUsage = SettingsViewModel.Main(
+		icon: "Icons_Settings_MobileData",
+		description: BEAppStrings.BESettings.mobileDataLabel,
+		stateActive: BEAppStrings.BESettings.mobileDataActive,
+		stateInactive: BEAppStrings.BESettings.mobileDataInactive,
+		accessibilityIdentifier: BEAccessibilityIdentifiers.BESettings.mobileDataLabel
 	)
 
 	mutating func setState(state newState: Bool) {

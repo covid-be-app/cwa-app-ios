@@ -383,3 +383,11 @@
 "BEAppResetAfterTEKUpload_title" = "Réinitialisation de l'app";
 "BEAppResetAfterTEKUpload_description" = "Merci de partager vos données et d'aider les autres. L'application va maintenant être réinitialisée et toutes les données seront supprimées. Nous vous recommandons vivement de désactiver l'application pendant votre période d'isolement en arrêtant l'enregistrement de l'exposition. Après votre période d'isolement, vous pourrez à nouveau utiliser l'application.";
 "language" = "fr";
+"BEMobileDataUsageSettings_navTitle" = "Téléchargements";
+"BEMobileDataUsageSettings_title" = "Utiliser des réseaux mobiles pour le téléchargement d'identifiants aléatoires.";
+"BEMobileDataUsageSettings_description" = "Téléchargez des identifiants aléatoires par le biais de réseaux mobiles. Si cette option est désactivée, les identifiants ne seront téléchargés qu'en Wifi.";
+"BEMobileDataUsageSettings_toggleDescription" = "Utilisez réseaux mobiles";
+"BEMobileDataSettings_label" = "Téléchargements";
+"BEMobileDataSettings_description" = "Utilisez les réseaux mobiles pour télécharger des identifiants aléatoires.";
+"BEMobileDataSettings_active" = "Wifi et Mobile";
+"BEMobileDataSettings_inactive" = "Wifi Uniquement";
