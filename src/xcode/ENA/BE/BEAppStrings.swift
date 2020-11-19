@@ -84,4 +84,18 @@ enum BEAppStrings {
 		static let title = NSLocalizedString("BEAppResetAfterTEKUpload_title", comment: "")
 		static let description = NSLocalizedString("BEAppResetAfterTEKUpload_description", comment: "")
 	}
+	
+	enum BESettings {
+		static let mobileDataLabel = NSLocalizedString("BEMobileDataSettings_label", comment: "")
+		static let mobileDataActive = NSLocalizedString("BEMobileDataSettings_active", comment: "")
+		static let mobileDataInactive = NSLocalizedString("BEMobileDataSettings_inactive", comment: "")
+		static let mobileDataDescription = NSLocalizedString("BEMobileDataSettings_description", comment: "")
+	}
+	
+	enum BEMobileDataUsageSettings {
+		static let description = NSLocalizedString("BEMobileDataUsageSettings_description", comment: "")
+		static let navigationBarTitle = NSLocalizedString("BEMobileDataUsageSettings_navTitle", comment: "")
+		static let title = NSLocalizedString("BEMobileDataUsageSettings_title", comment: "")
+		static let toggleDescription = NSLocalizedString("BEMobileDataUsageSettings_toggleDescription", comment: "")
+	}
 }

@@ -383,3 +383,11 @@
 "BEAppResetAfterTEKUpload_title" = "App Reset";
 "BEAppResetAfterTEKUpload_description" = "Bedankt voor het delen van je gegevens en het helpen van anderen. De app wordt nu gereset en alle gegevens worden verwijderd. We raden je sterk aan om de app uit te schakelen tijdens je isolatieperiode door het stoppen van de blootstellingsregistratie. Na je isolatieperiode kan je de app weer gebruiken.";
 "language" = "nl";
+"BEMobileDataUsageSettings_navTitle" = "Downloads";
+"BEMobileDataUsageSettings_title" = "Gebruik mobiele netwerken voor willekeurige ID-downloads.";
+"BEMobileDataUsageSettings_description" = "Download willekeurige ID's over mobiele netwerken. Als deze optie is uitgeschakeld, worden de ID's alleen via Wifi gedownload. ";
+"BEMobileDataUsageSettings_toggleDescription" = "Gebruik mobiele netwerken";
+"BEMobileDataSettings_label" = "Downloads";
+"BEMobileDataSettings_description" = "Gebruik mobiele netwerken om willekeurige ID's te downloaden.";
+"BEMobileDataSettings_active" = "Wifi en Mobiele Data";
+"BEMobileDataSettings_inactive" = "Enkel Wifi";

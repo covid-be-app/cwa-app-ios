@@ -383,3 +383,11 @@
 "BEAppResetAfterTEKUpload_title" = "App Reset";
 "BEAppResetAfterTEKUpload_description" = "Thank you for sharing your data and helping others. The app will now be reset and all data will be deleted. We strongly recommend that you disable the app during your isolation period by stopping exposure logging. After your isolation period, you may use the app again.";
 "language" = "en";
+"BEMobileDataUsageSettings_navTitle" = "Downloads";
+"BEMobileDataUsageSettings_title" = "Use mobile data for random ID downloads.";
+"BEMobileDataUsageSettings_description" = "Download random ID's over mobile data. If this option is disabled the ID's will only be downloaded over Wifi. ";
+"BEMobileDataUsageSettings_toggleDescription" = "Use mobile data";
+"BEMobileDataSettings_label" = "Downloads";
+"BEMobileDataSettings_description" = "Use mobile data to download random IDs.";
+"BEMobileDataSettings_active" = "Wifi and Mobile Data";
+"BEMobileDataSettings_inactive" = "Wifi Only";

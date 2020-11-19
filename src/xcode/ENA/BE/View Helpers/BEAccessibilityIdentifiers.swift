@@ -51,4 +51,12 @@ enum BEAccessibilityIdentifiers {
 		static let button = "BEAppStrings.BEExposureSubmissionSuccess.button"
 	}
 		
+	enum BESettings {
+		static let mobileDataLabel = "BEAppStrings.BESettings.mobileDataLabel"
+	}
+	
+	enum BEMobileDataUsageSettings {
+		static let identifier = "BEAppStrings.BESettings.BEMobileDataUsageSettings.identifier"
+		static let image = "BEAppStrings.BESettings.BEMobileDataUsageSettings.image"
+	}
 }

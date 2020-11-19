@@ -129,4 +129,6 @@ protocol Store: AnyObject {
 	var infectionSummaryUpdatedAt: Date? { get set }
 	
 	var latestRisk: Risk? { get set }
+	
+	var useMobileDataForTEKDownload: Bool { get set }
 }
