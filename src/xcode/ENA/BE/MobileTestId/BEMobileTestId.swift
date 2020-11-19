@@ -24,7 +24,7 @@ struct BEMobileTestId {
 	
 	static let fakeId = "000000000000000"
 	static let fakeDatePatientInfectious = "2020-01-01"
-	
+
 	static var fakeRegistrationToken:String {
 		get {
 			return "\(fakeId)|\(fakeDatePatientInfectious)"
@@ -33,7 +33,7 @@ struct BEMobileTestId {
 	
 	static var random:BEMobileTestId {
 		get {
-			return BEMobileTestId(datePatientInfectious: String.fromDateWithoutTime(date: Date()))
+			return BEMobileTestId(symptomsStartDate: Date())
 		}
 	}
 	
@@ -47,7 +47,8 @@ struct BEMobileTestId {
 	// Components used to calculate mobile test id
 	let randomString:String				// R0
 	let secretKey:SymmetricKey			// K
-	let datePatientInfectious:BEDateString    // t0
+	let datePatientInfectious:BEDateString    
+	let symptomsStartDate:BEDateString?
 	
 	let creationDate:Date
 
@@ -78,16 +79,15 @@ struct BEMobileTestId {
 			}
 		}
 	}
-
-	// this is the t0 date, in YYYY-MM-DD format
-	init(datePatientInfectious:BEDateString) {
-		#if DEBUG
-			if datePatientInfectious.dateWithoutTime == nil {
-				preconditionFailure("Wrong format")
-			}
-		#endif
+	
+	public init(symptomsStartDate: Date? = nil) {
+		if let date = symptomsStartDate {
+			self.symptomsStartDate = String.fromDateWithoutTime(date: date)
+		} else {
+			self.symptomsStartDate = nil
+		}
 		
-		self.datePatientInfectious = datePatientInfectious
+		self.datePatientInfectious = BEMobileTestId.calculateDatePatientInfectious(symptomsStartDate: symptomsStartDate)
 		
 		var R1:String?
 		var localSecretKey:SymmetricKey!
@@ -164,17 +164,13 @@ extension BEMobileTestId : Codable {
 }
 
 extension BEMobileTestId {
-	static func generate(_ symptomsStartDate: Date? = nil) -> BEMobileTestId {
-		let datePatientInfectious = calculateDatePatientInfectious(symptomsStartDate: symptomsStartDate)
-		return BEMobileTestId(datePatientInfectious: String.fromDateWithoutTime(date:datePatientInfectious))
-	}
-
-	static private func calculateDatePatientInfectious(symptomsStartDate:Date?) -> Date {
+	static private func calculateDatePatientInfectious(symptomsStartDate: Date?) -> BEDateString {
 		
 		if let startDate = symptomsStartDate {
-			return Calendar.current.date(byAdding: .day, value: -2, to: startDate)!
+			let result = Calendar.current.date(byAdding: .day, value: -2, to: startDate)!
+			return String.fromDateWithoutTime(date: result)
 		}
 
-		return Calendar.current.date(byAdding: .day, value: -2, to: Date())!
+		return String.fromDateWithoutTime(date: Calendar.current.date(byAdding: .day, value: -2, to: Date())!)
 	}
 }

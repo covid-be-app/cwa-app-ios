@@ -28,7 +28,7 @@ class BEStoreTests: XCTestCase {
 	}
 
     func testStoreMobileTestId() throws {
-		let testId = BEMobileTestId(datePatientInfectious: "2020-07-22")
+		let testId = BEMobileTestId()
 		store.mobileTestId = testId
 		
 		let loadedId = store.mobileTestId!

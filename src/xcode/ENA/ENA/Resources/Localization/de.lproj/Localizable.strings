@@ -383,3 +383,11 @@
 "BEAppResetAfterTEKUpload_title" = "Zurücksetzen der App";
 "BEAppResetAfterTEKUpload_description" = "Vielen Dank, dass Sie Ihre Daten zur Verfügung gestellt und anderen geholfen haben. Die App wird nun zurückgesetzt und alle Daten werden gelöscht. Wir empfehlen Ihnen dringend, die Anwendung während Ihrer Isolationsperiode zu deaktivieren, indem Sie das Kontaktlogbuch stoppen. Nach Ihrer Isolationsperiode können Sie die Anwendung wieder verwenden.";
 "language" = "de";
+"BEMobileDataUsageSettings_navTitle" = "Herunterladen";
+"BEMobileDataUsageSettings_title" = "Verwenden Sie mobile Daten für Zufallscode-Downloads.";
+"BEMobileDataUsageSettings_description" = "Zufallscodes über mobile Daten herunterladen. Wenn diese Option deaktiviert ist, werden die Zufallscodes nur über Wifi heruntergeladen. ";
+"BEMobileDataUsageSettings_toggleDescription" = "Mobile Daten verwenden";
+"BEMobileDataSettings_label" = "Herunterladen";
+"BEMobileDataSettings_description" = "Verwenden Sie mobile Daten zum Herunterladen von Zufallscodes.";
+"BEMobileDataSettings_active" = "Wifi und mobile Daten";
+"BEMobileDataSettings_inactive" = "Nur Wifi";

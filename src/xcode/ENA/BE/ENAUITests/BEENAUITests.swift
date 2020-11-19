@@ -256,4 +256,17 @@ class BEENAUITests: XCTestCase {
 		XCTAssertTrue(app.buttons["BEAppStrings.BEExposureSubmissionSuccess.button"].waitForExistence(timeout: 5.0))
 		app.swipeUp()
 	}
+	
+	func testMobileDataSettings() {
+		app.launch()
+
+		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
+		app.swipeUp()
+		XCTAssertTrue(app.cells["AppStrings.Home.settingsCardTitle"].waitForExistence(timeout: 5.0))
+		app.cells["AppStrings.Home.settingsCardTitle"].tap()
+		XCTAssertTrue(app.cells["BEAppStrings.BESettings.mobileDataLabel"].waitForExistence(timeout: 5.0))
+		app.cells["BEAppStrings.BESettings.mobileDataLabel"].tap()
+		XCTAssertTrue(app.images["BEAppStrings.BESettings.BEMobileDataUsageSettings.image"].waitForExistence(timeout: 5.0))
+		snapshot("ScreenShot_\(#function)_001")
+	}
 }
