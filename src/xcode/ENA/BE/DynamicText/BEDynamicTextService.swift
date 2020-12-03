@@ -113,7 +113,8 @@ class BEDynamicTextService {
 			let positiveTestResultCard = dynamicText.structure[.positiveTestResultCard],
 			let positiveTestResult = dynamicText.structure[.positiveTestResult],
 			let negativeTestResult = dynamicText.structure[.negativeTestResult],
-			let thankYou = dynamicText.structure[.thankYou] else {
+			let thankYou = dynamicText.structure[.thankYou],
+			let participatingCountries = dynamicText.structure[.participatingCountries] else {
 				throw BEDynamicTextServiceError.missingScreen
 		}
 		
@@ -123,6 +124,7 @@ class BEDynamicTextService {
 		try validateTestResult(positiveTestResult)
 		try validateTestResult(negativeTestResult)
 		try validateThankYou(thankYou)
+		try validateParticipatingCountries(participatingCountries)
 	}
 	
 	private func copyBundleToCacheIfMoreRecent() throws {
@@ -261,6 +263,27 @@ class BEDynamicTextService {
 				throw BEDynamicTextServiceError.wrongSectionFields
 			}
 			if entry.paragraphs == nil {
+				throw BEDynamicTextServiceError.wrongSectionFields
+			}
+		}
+	}
+	
+	static private func validateParticipatingCountries(_ screen:[BEDynamicTextScreenSectionName:[BEDynamicTextScreenSection]]) throws {
+		guard let list = screen[.list] else {
+			throw BEDynamicTextServiceError.missingScreenSection
+		}
+		
+		try list.forEach{ entry in
+			if entry.icon == nil {
+				throw BEDynamicTextServiceError.wrongSectionFields
+			}
+			if entry.text == nil {
+				throw BEDynamicTextServiceError.wrongSectionFields
+			}
+			if entry.title != nil {
+				throw BEDynamicTextServiceError.wrongSectionFields
+			}
+			if entry.paragraphs != nil {
 				throw BEDynamicTextServiceError.wrongSectionFields
 			}
 		}
