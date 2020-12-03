@@ -28,8 +28,8 @@ enum BEDynamicTextServiceError: Error {
 }
 
 class BEDynamicTextService {
-	static let cacheURL = FileManager.default.applicationSupportURL("dynamicTexts.json")
-	static let defaultBundleURL = Bundle.main.url(forResource: "dynamicTexts", withExtension: "json")!
+	static let cacheURL = FileManager.default.applicationSupportURL("dynamicTextsV2.json")
+	static let defaultBundleURL = Bundle.main.url(forResource: "dynamicTextsV2", withExtension: "json")!
 
 	var dynamicText:BEDynamicText!
 	var bundleURL: URL!

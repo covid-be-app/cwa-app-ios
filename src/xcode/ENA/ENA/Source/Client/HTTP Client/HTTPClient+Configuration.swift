@@ -230,7 +230,7 @@ extension HTTPClient {
 				.dynamicTexts
 				.appending(
 					"dynamictext",
-					"dynamicTexts.json"
+					"dynamicTextsV2.json"
 			)
 		}
 	}

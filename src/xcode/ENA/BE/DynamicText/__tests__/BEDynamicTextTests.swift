@@ -57,7 +57,7 @@ class BEDynamicTextTests: XCTestCase {
 	
 	/// test the texts in the bundle
 	func testLoadTexts() throws {
-		let url = Bundle.main.url(forResource: "dynamicTexts", withExtension: "json")!
+		let url = Bundle.main.url(forResource: "dynamicTextsV2", withExtension: "json")!
 		let data = try Data(contentsOf: url)
 	
 		let decoder = JSONDecoder()
