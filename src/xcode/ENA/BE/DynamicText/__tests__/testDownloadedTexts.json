@@ -109,7 +109,15 @@
                     "otherInformation.paragraphs.3",
                     "otherInformation.paragraphs.4"
                     ]}]
-        }
+        },
+		"participatingCountries":{
+			"list":[
+				{
+					"icon": "flag.be",
+					"text": "participatingCountries.list.1.text"
+				}
+				]
+			}
     },
     "texts": {
         "en": {
@@ -138,7 +146,8 @@
             "otherInformation.paragraphs.1": "Your quarantine period is usually 7 days. Please observe your symptoms and monitor how they develop.",
             "otherInformation.paragraphs.2": "You will be asked by your public health authority to create a list of people you have had contact with. This should include all people with whom you have had close contact with (less than 2 meters, face-to-face conversation) for over 15 minutes in the two days before you developed symptoms.",
             "otherInformation.paragraphs.3": "Please particularly consider people who will not be notified directly by the app since they don't own a smartphone, or haven't installed the app.",
-            "otherInformation.paragraphs.4": "Even when you no longer have any symptoms and you feel well again, you could still be infectious."
+            "otherInformation.paragraphs.4": "Even when you no longer have any symptoms and you feel well again, you could still be infectious.",
+			"participatingCountries.list.1.text":"Belgium"
         },
         "fr": {
             "standard.preventiveMeasures.1.text": "Wash your hands regularly and thoroughly with soap and water.",
@@ -166,7 +175,8 @@
             "otherInformation.paragraphs.1": "Your quarantine period is usually 7 days. Please observe your symptoms and monitor how they develop.",
             "otherInformation.paragraphs.2": "You will be asked by your public health authority to create a list of people you have had contact with. This should include all people with whom you have had close contact with (less than 2 meters, face-to-face conversation) for over 15 minutes in the two days before you developed symptoms.",
             "otherInformation.paragraphs.3": "Please particularly consider people who will not be notified directly by the app since they don't own a smartphone, or haven't installed the app.",
-            "otherInformation.paragraphs.4": "Even when you no longer have any symptoms and you feel well again, you could still be infectious."
+            "otherInformation.paragraphs.4": "Even when you no longer have any symptoms and you feel well again, you could still be infectious.",
+			"participatingCountries.list.1.text":"Belgium"
         },
         "de": {
             "standard.preventiveMeasures.1.text": "Wash your hands regularly and thoroughly with soap and water.",
@@ -194,7 +204,8 @@
             "otherInformation.paragraphs.1": "Your quarantine period is usually 7 days. Please observe your symptoms and monitor how they develop.",
             "otherInformation.paragraphs.2": "You will be asked by your public health authority to create a list of people you have had contact with. This should include all people with whom you have had close contact with (less than 2 meters, face-to-face conversation) for over 15 minutes in the two days before you developed symptoms.",
             "otherInformation.paragraphs.3": "Please particularly consider people who will not be notified directly by the app since they don't own a smartphone, or haven't installed the app.",
-            "otherInformation.paragraphs.4": "Even when you no longer have any symptoms and you feel well again, you could still be infectious."
+            "otherInformation.paragraphs.4": "Even when you no longer have any symptoms and you feel well again, you could still be infectious.",
+			"participatingCountries.list.1.text":"Belgium"
         },
         "nl": {
             "standard.preventiveMeasures.1.text": "Wash your hands regularly and thoroughly with soap and water.",
@@ -222,7 +233,8 @@
             "otherInformation.paragraphs.1": "Your quarantine period is usually 7 days. Please observe your symptoms and monitor how they develop.",
             "otherInformation.paragraphs.2": "You will be asked by your public health authority to create a list of people you have had contact with. This should include all people with whom you have had close contact with (less than 2 meters, face-to-face conversation) for over 15 minutes in the two days before you developed symptoms.",
             "otherInformation.paragraphs.3": "Please particularly consider people who will not be notified directly by the app since they don't own a smartphone, or haven't installed the app.",
-            "otherInformation.paragraphs.4": "Even when you no longer have any symptoms and you feel well again, you could still be infectious."
+            "otherInformation.paragraphs.4": "Even when you no longer have any symptoms and you feel well again, you could still be infectious.",
+			"participatingCountries.list.1.text":"Belgium"
         }
     }
 }

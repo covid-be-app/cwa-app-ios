@@ -28,8 +28,8 @@ enum BEDynamicTextServiceError: Error {
 }
 
 class BEDynamicTextService {
-	static let cacheURL = FileManager.default.applicationSupportURL("dynamicTexts.json")
-	static let defaultBundleURL = Bundle.main.url(forResource: "dynamicTexts", withExtension: "json")!
+	static let cacheURL = FileManager.default.applicationSupportURL("dynamicTextsV2.json")
+	static let defaultBundleURL = Bundle.main.url(forResource: "dynamicTextsV2", withExtension: "json")!
 
 	var dynamicText:BEDynamicText!
 	var bundleURL: URL!
@@ -113,7 +113,8 @@ class BEDynamicTextService {
 			let positiveTestResultCard = dynamicText.structure[.positiveTestResultCard],
 			let positiveTestResult = dynamicText.structure[.positiveTestResult],
 			let negativeTestResult = dynamicText.structure[.negativeTestResult],
-			let thankYou = dynamicText.structure[.thankYou] else {
+			let thankYou = dynamicText.structure[.thankYou],
+			let participatingCountries = dynamicText.structure[.participatingCountries] else {
 				throw BEDynamicTextServiceError.missingScreen
 		}
 		
@@ -123,6 +124,7 @@ class BEDynamicTextService {
 		try validateTestResult(positiveTestResult)
 		try validateTestResult(negativeTestResult)
 		try validateThankYou(thankYou)
+		try validateParticipatingCountries(participatingCountries)
 	}
 	
 	private func copyBundleToCacheIfMoreRecent() throws {
@@ -261,6 +263,27 @@ class BEDynamicTextService {
 				throw BEDynamicTextServiceError.wrongSectionFields
 			}
 			if entry.paragraphs == nil {
+				throw BEDynamicTextServiceError.wrongSectionFields
+			}
+		}
+	}
+	
+	static private func validateParticipatingCountries(_ screen:[BEDynamicTextScreenSectionName:[BEDynamicTextScreenSection]]) throws {
+		guard let list = screen[.list] else {
+			throw BEDynamicTextServiceError.missingScreenSection
+		}
+		
+		try list.forEach{ entry in
+			if entry.icon == nil {
+				throw BEDynamicTextServiceError.wrongSectionFields
+			}
+			if entry.text == nil {
+				throw BEDynamicTextServiceError.wrongSectionFields
+			}
+			if entry.title != nil {
+				throw BEDynamicTextServiceError.wrongSectionFields
+			}
+			if entry.paragraphs != nil {
 				throw BEDynamicTextServiceError.wrongSectionFields
 			}
 		}

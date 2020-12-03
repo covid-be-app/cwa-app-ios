@@ -253,7 +253,7 @@
 		A92076E924ED41F400AE8748 /* BEFakeRequestsExecutorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076E824ED41F400AE8748 /* BEFakeRequestsExecutorTests.swift */; };
 		A92076EC24ED542900AE8748 /* BEMockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076EB24ED542900AE8748 /* BEMockURLSession.swift */; };
 		A9221A312542C1F200853CEF /* BEDynamicTextDownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A302542C1F200853CEF /* BEDynamicTextDownloadService.swift */; };
-		A9221A332542C2C200853CEF /* dynamicTexts.json in Resources */ = {isa = PBXBuildFile; fileRef = A9221A322542C2C200853CEF /* dynamicTexts.json */; };
+		A9221A332542C2C200853CEF /* dynamicTextsV2.json in Resources */ = {isa = PBXBuildFile; fileRef = A9221A322542C2C200853CEF /* dynamicTextsV2.json */; };
 		A9221A382542F06E00853CEF /* BEDynamicTextScreenSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A372542F06E00853CEF /* BEDynamicTextScreenSection.swift */; };
 		A9221A3A2542F10300853CEF /* BEDynamicTextScreenName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A392542F10300853CEF /* BEDynamicTextScreenName.swift */; };
 		A9221A3C2542F1AB00853CEF /* BEDynamicTextScreenSectionName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A3B2542F1AB00853CEF /* BEDynamicTextScreenSectionName.swift */; };
@@ -283,6 +283,9 @@
 		A95EE81824FCF67000AFECBD /* BEInfectionSummaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95EE81724FCF66F00AFECBD /* BEInfectionSummaryCollectionViewCell.swift */; };
 		A95EE81A24FCF6C700AFECBD /* BEInfectionSummaryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A95EE81924FCF6C700AFECBD /* BEInfectionSummaryCollectionViewCell.xib */; };
 		A95EE81C24FD0A6A00AFECBD /* BEUIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95EE81B24FD0A6A00AFECBD /* BEUIStackView.swift */; };
+		A97E1592257668E300E1DB28 /* BEEUSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E1591257668E300E1DB28 /* BEEUSettingsViewController.swift */; };
+		A97E159625766BBB00E1DB28 /* EuTracingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E159525766BBB00E1DB28 /* EuTracingTableViewCell.swift */; };
+		A97E159A25766BEF00E1DB28 /* ENSettingEuTracingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E159925766BEF00E1DB28 /* ENSettingEuTracingViewModel.swift */; };
 		A980D59D24D822F400A5BB8E /* BEIntervalNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980D59C24D822F400A5BB8E /* BEIntervalNumber.swift */; };
 		A980D5A124D84E2D00A5BB8E /* BESelectCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980D5A024D84E2D00A5BB8E /* BESelectCountryViewController.swift */; };
 		A980D5A324D84FA900A5BB8E /* BESelectCountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980D5A224D84FA900A5BB8E /* BESelectCountryCell.swift */; };
@@ -755,7 +758,7 @@
 		A92076E824ED41F400AE8748 /* BEFakeRequestsExecutorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEFakeRequestsExecutorTests.swift; sourceTree = "<group>"; };
 		A92076EB24ED542900AE8748 /* BEMockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEMockURLSession.swift; sourceTree = "<group>"; };
 		A9221A302542C1F200853CEF /* BEDynamicTextDownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicTextDownloadService.swift; sourceTree = "<group>"; };
-		A9221A322542C2C200853CEF /* dynamicTexts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dynamicTexts.json; sourceTree = "<group>"; };
+		A9221A322542C2C200853CEF /* dynamicTextsV2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dynamicTextsV2.json; sourceTree = "<group>"; };
 		A9221A372542F06E00853CEF /* BEDynamicTextScreenSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicTextScreenSection.swift; sourceTree = "<group>"; };
 		A9221A392542F10300853CEF /* BEDynamicTextScreenName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicTextScreenName.swift; sourceTree = "<group>"; };
 		A9221A3B2542F1AB00853CEF /* BEDynamicTextScreenSectionName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicTextScreenSectionName.swift; sourceTree = "<group>"; };
@@ -795,6 +798,9 @@
 		A96E9FC924CD71B300F845DB /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A96E9FCA24CD71B300F845DB /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = nl; path = nl.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		A96E9FCB24CD71B300F845DB /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A97E1591257668E300E1DB28 /* BEEUSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEEUSettingsViewController.swift; sourceTree = "<group>"; };
+		A97E159525766BBB00E1DB28 /* EuTracingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EuTracingTableViewCell.swift; sourceTree = "<group>"; };
+		A97E159925766BEF00E1DB28 /* ENSettingEuTracingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ENSettingEuTracingViewModel.swift; sourceTree = "<group>"; };
 		A980D59C24D822F400A5BB8E /* BEIntervalNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEIntervalNumber.swift; sourceTree = "<group>"; };
 		A980D5A024D84E2D00A5BB8E /* BESelectCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BESelectCountryViewController.swift; sourceTree = "<group>"; };
 		A980D5A224D84FA900A5BB8E /* BESelectCountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BESelectCountryCell.swift; sourceTree = "<group>"; };
@@ -1080,6 +1086,7 @@
 				CD678F6A246C43E200B6A0F8 /* MockExposureManager.swift */,
 				518A69FA24687D5800444E66 /* RiskLevel.swift */,
 				A16714BA248D18D20031B111 /* SummaryMetadata.swift */,
+				A97E159925766BEF00E1DB28 /* ENSettingEuTracingViewModel.swift */,
 			);
 			path = Exposure;
 			sourceTree = "<group>";
@@ -1468,6 +1475,7 @@
 				EE22DB80247FB409001B0A71 /* ENSettingModel.swift */,
 				EE22DB7F247FB409001B0A71 /* ENStateHandler.swift */,
 				853D98842469DC8100490DBA /* ExposureNotificationSettingViewController.swift */,
+				A97E159525766BBB00E1DB28 /* EuTracingTableViewCell.swift */,
 			);
 			path = ENSetting;
 			sourceTree = "<group>";
@@ -1586,7 +1594,7 @@
 				85D75976245706BD008175F0 /* Assets */,
 				85D75975245706B0008175F0 /* Storyboards */,
 				A189E460248C35BF001D0996 /* PublicKeys.plist */,
-				A9221A322542C2C200853CEF /* dynamicTexts.json */,
+				A9221A322542C2C200853CEF /* dynamicTextsV2.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1867,6 +1875,22 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		A97E158F257668AC00E1DB28 /* EU */ = {
+			isa = PBXGroup;
+			children = (
+				A97E1590257668B600E1DB28 /* ViewControllers */,
+			);
+			path = EU;
+			sourceTree = "<group>";
+		};
+		A97E1590257668B600E1DB28 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A97E1591257668E300E1DB28 /* BEEUSettingsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		A980D59E24D84DE900A5BB8E /* Country */ = {
 			isa = PBXGroup;
 			children = (
@@ -1937,6 +1961,7 @@
 		A9DD2CE224CEEEF40035081A /* BE */ = {
 			isa = PBXGroup;
 			children = (
+				A97E158F257668AC00E1DB28 /* EU */,
 				A9221A2F2542C1DD00853CEF /* DynamicText */,
 				A9FC52802522329600660812 /* TestActivation */,
 				A95EE81224FCE0CF00AFECBD /* Statistics */,
@@ -2740,7 +2765,7 @@
 				51CE1B85246078B6002CF42A /* ActivateCollectionViewCell.xib in Resources */,
 				51C779142486E5AB004582F8 /* RiskFindingPositiveCollectionViewCell.xib in Resources */,
 				51D420CE245869C800AD70CA /* Home.storyboard in Resources */,
-				A9221A332542C2C200853CEF /* dynamicTexts.json in Resources */,
+				A9221A332542C2C200853CEF /* dynamicTextsV2.json in Resources */,
 				8539874F2467094E00D28B62 /* AppIcon.xcassets in Resources */,
 				514C0A0B247AF9F700F235F6 /* RiskTextItemView.xib in Resources */,
 				51B5B414246DF07300DC5D3E /* RiskImageItemView.xib in Resources */,
@@ -2831,6 +2856,7 @@
 				B161782E2480658F006E435A /* DeltaCalculationResult.swift in Sources */,
 				B11E619B246EE4B0004A056A /* DynamicTypeLabel.swift in Sources */,
 				B1D7D69224766D2100E4DA5D /* apple_export.pb.swift in Sources */,
+				A97E1592257668E300E1DB28 /* BEEUSettingsViewController.swift in Sources */,
 				7187A5582481231C00FCC755 /* DynamicTableViewAction.swift in Sources */,
 				A9221A572549692D00853CEF /* BEDynamicTextScreenSection+Cells.swift in Sources */,
 				A128F059248B459F00EC7F6C /* PublicKeyStore.swift in Sources */,
@@ -2866,6 +2892,7 @@
 				85E33444247EB357006E74EC /* CircularProgressView.swift in Sources */,
 				71FD8862246EB27F00E804D0 /* ExposureDetectionViewController.swift in Sources */,
 				51F1255D24BDD75300126C86 /* HomeUnknown48hRiskCellConfigurator.swift in Sources */,
+				A97E159A25766BEF00E1DB28 /* ENSettingEuTracingViewModel.swift in Sources */,
 				514EE99D246D4CFB00DE4884 /* TableViewCellConfigurator.swift in Sources */,
 				0DF6BBB7248C04CF007E8B0C /* app_config.pb.swift in Sources */,
 				B1DDDABE24713BAD00A07175 /* SAPDownloadedPackage.swift in Sources */,
@@ -3015,6 +3042,7 @@
 				EE22DB89247FB43A001B0A71 /* TracingHistoryTableViewCell.swift in Sources */,
 				A3EE6E61249BC57F00C64B61 /* MockExposureSubmissionService.swift in Sources */,
 				71B804472484CC0800D53506 /* ENALabel.swift in Sources */,
+				A97E159625766BBB00E1DB28 /* EuTracingTableViewCell.swift in Sources */,
 				71FE1C7F247AC2B500851FEB /* ExposureSubmissionTestResultViewController.swift in Sources */,
 				B1D6B002247DA0320079DDD3 /* ExposureDetectionViewControllerDelegate.swift in Sources */,
 				713EA25B247818B000AB7EE8 /* DynamicTypeButton.swift in Sources */,
