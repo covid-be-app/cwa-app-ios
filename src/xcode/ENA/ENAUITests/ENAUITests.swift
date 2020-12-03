@@ -84,9 +84,21 @@ class ENAUITests: XCTestCase {
 		XCTAssertTrue(app.images["AppStrings.ExposureNotificationSetting.accLabelEnabled"].waitForExistence(timeout: 5.0))
 		if snapshotsActive { snapshot("AppStore_0004") }
 
+		
+		
 		//// ScreenShot_0005: Test Options
 		// todo: need accessibility for Settings (navigation bar back button)
 		XCTAssertTrue(app.navigationBars.buttons.element(boundBy: 0).waitForExistence(timeout: 5.0))
+
+		//// EU interop screen
+		app.cells["BEAppStrings.BEExposureNotification.euInteroperability.euInteroperabilityCell"].tap()
+		XCTAssertTrue(app.navigationBars.buttons.element(boundBy: 0).waitForExistence(timeout: 5.0))
+		if snapshotsActive { snapshot("AppStore_0005") }
+		app.swipeUp()
+		if snapshotsActive { snapshot("AppStore_0006") }
+		app.navigationBars.buttons.element(boundBy: 0).tap()
+		XCTAssertTrue(app.navigationBars.buttons.element(boundBy: 0).waitForExistence(timeout: 5.0))
+
 		app.navigationBars.buttons.element(boundBy: 0).tap()
 		XCTAssertTrue(app.navigationBars.buttons.element(boundBy: 0).waitForExistence(timeout: 5.0))
 		app.navigationBars.buttons.element(boundBy: 0).tap()
@@ -101,11 +113,11 @@ class ENAUITests: XCTestCase {
 		XCTAssertTrue(app.alerts.firstMatch.exists)
 		app.alerts.buttons.firstMatch.tap()
 		XCTAssertTrue(app.buttons["BEAppStrings.BESelectSymptomsDate.next"].waitForExistence(timeout: 5.0))
-		if snapshotsActive { snapshot("AppStore_0005") }
+		if snapshotsActive { snapshot("AppStore_0007") }
 
 		app.buttons["BEAppStrings.BESelectSymptomsDate.next"].tap()
 		XCTAssertTrue(app.buttons["BEAppStrings.BEMobileTestId.save"].waitForExistence(timeout: 5.0))
-		if snapshotsActive { snapshot("AppStore_0006") }
+		if snapshotsActive { snapshot("AppStore_0008") }
 		
 		//// ScreenShot_0007: Share screen
 		// todo: need accessibility for Back (navigation bar back button)
@@ -114,7 +126,7 @@ class ENAUITests: XCTestCase {
 		app.swipeUp()
 		XCTAssertTrue(app.cells["AppStrings.Home.infoCardShareTitle"].waitForExistence(timeout: 5.0))
 		app.cells["AppStrings.Home.infoCardShareTitle"].tap()
-		if snapshotsActive { snapshot("AppStore_0007") }
+		if snapshotsActive { snapshot("AppStore_0009") }
 
 		print("Snapshot.screenshotsDirectory")
 		print(Snapshot.screenshotsDirectory?.path ?? "unknown output directory")

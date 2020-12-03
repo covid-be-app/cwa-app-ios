@@ -391,3 +391,10 @@
 "BEMobileDataSettings_description" = "Utilisez les réseaux mobiles pour télécharger des identifiants aléatoires.";
 "BEMobileDataSettings_active" = "Wifi et Mobile";
 "BEMobileDataSettings_inactive" = "Wifi Uniquement";
+"ExposureNotificationSetting_euTracingRiskDeterminationTitle" = "Transnational Exposure Logging";
+"ExposureNotificationSetting_euTracingAllCountriesTitle" = "Participating Countries";
+"ExposureNotificationSetting_EU_Title" = "Transnational Exposure Logging";
+"ExposureNotificationSetting_EU_Desc_1" = "Several countries are working together to enable transnational alerts via a joint exchange server. For example, contacts with users of an official coronavirus app from other participating countries can also be taken into account for exposure logging.";
+"ExposureNotificationSetting_EU_Desc_2" = "To do this, the app downloads a list, which is updated daily, of the random IDs of all users who have shared their random IDs via their own app. This list is then compared with the random IDs recorded by your smartphone. The daily download of the list with the random IDs is usually free of charge for you – you will not be charged for the data used by the app in this context, will roaming charges apply for this in other EU countries.";
+"ExposureNotificationSetting_EU_Desc_3" = "The following countries currently participate in transnational exposure logging:";
+"ExposureNotificationSetting_EU_Desc_4" = "The app’s privacy notice (including information about the data processing carried out for the transnational exposure logging feature) can be found in the menu under “App Information” > “Data Privacy”.";
