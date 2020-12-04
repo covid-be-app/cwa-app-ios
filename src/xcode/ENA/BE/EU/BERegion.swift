@@ -21,5 +21,5 @@ import Foundation
 
 enum BERegion: String, CaseIterable {
 	case belgium = "BE"
-	case europeanUnion = "EU"
+	case europeanUnion = "EUR"
 }
