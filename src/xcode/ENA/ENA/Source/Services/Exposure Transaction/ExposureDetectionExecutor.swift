@@ -7,6 +7,7 @@
 
 import Foundation
 import ExposureNotification
+import Combine
 
 final class ExposureDetectionExecutor: ExposureDetectionDelegate {
 	private let client: Client
@@ -27,36 +28,39 @@ final class ExposureDetectionExecutor: ExposureDetectionDelegate {
 		self.exposureDetector = exposureDetector
 	}
 
-	func exposureDetection(
+	func exposureDetectionDetermineAvailableData(
 		_ detection: ExposureDetection,
-		determineAvailableData completion: @escaping (DaysAndHours?) -> Void
-	) {
-		client.availableDays { result in
-			switch result {
-			case let .success(days):
-				self.client.availableHours(day: .formattedToday()) { result in
-					switch result {
-					case let .success(hours):
-						completion((days: days, hours: hours))
-					case .failure:
-						completion(nil)
+		region: BERegion
+	) -> Future<DaysAndHours?, Error> {
+		
+		return Future { promise in
+			self.client.availableDays(region: region) { result in
+				switch result {
+				case let .success(days):
+					self.client.availableHours(day: .formattedToday(), region: region) { result in
+						switch result {
+						case let .success(hours):
+							promise(.success((days: days, hours: hours)))
+						case .failure:
+							promise(.success(nil))
+						}
 					}
+				case .failure:
+					promise(.success(nil))
 				}
-			case .failure:
-				completion(nil)
 			}
 		}
 	}
 
-	func exposureDetection(_ detection: ExposureDetection, downloadDeltaFor remote: DaysAndHours) -> DaysAndHours {
+	func exposureDetection(_ detection: ExposureDetection, downloadDeltaFor remote: DaysAndHours, region: BERegion) -> DaysAndHours {
 		// prune the store
 		try? downloadedPackagesStore.deleteOutdatedDays(now: .formattedToday())
 		
 		let delta = DeltaCalculationResult(
 			remoteDays: Set(remote.days),
 			remoteHours: Set(remote.hours),
-			localDays: Set(downloadedPackagesStore.allDays()),
-			localHours: Set(downloadedPackagesStore.hours(for: .formattedToday()))
+			localDays: Set(downloadedPackagesStore.allDays(region: region)),
+			localHours: Set(downloadedPackagesStore.hours(for: .formattedToday(), region: region))
 		)
 		return (
 			days: Array(delta.missingDays),
@@ -64,15 +68,16 @@ final class ExposureDetectionExecutor: ExposureDetectionDelegate {
 		)
 	}
 
-	func exposureDetection(_ detection: ExposureDetection, downloadAndStore delta: DaysAndHours, completion: @escaping (Error?) -> Void) {
+	func exposureDetection(_ detection: ExposureDetection, downloadAndStore delta: DaysAndHours, region: BERegion, completion: @escaping (Error?) -> Void) {
 		func storeDaysAndHours(_ fetchedDaysAndHours: FetchedDaysAndHours) {
-			downloadedPackagesStore.addFetchedDaysAndHours(fetchedDaysAndHours)
+			downloadedPackagesStore.addFetchedDaysAndHours(fetchedDaysAndHours, region: region)
 			completion(nil)
 		}
 		client.fetchDays(
 				delta.days,
 				hours: delta.hours,
 				of: .formattedToday(),
+				region: region,
 				completion: storeDaysAndHours
 		)
 	}
@@ -81,14 +86,14 @@ final class ExposureDetectionExecutor: ExposureDetectionDelegate {
 		client.exposureConfiguration(completion: completion)
 	}
 
-	func exposureDetectionWriteDownloadedPackages(_ detection: ExposureDetection) -> WrittenPackages? {
+	func exposureDetectionWriteDownloadedPackages(_ detection: ExposureDetection, region: BERegion) -> WrittenPackages? {
 		let fileManager = FileManager()
 		let rootDir = fileManager.temporaryDirectory.appendingPathComponent(UUID().uuidString, isDirectory: true)
 		do {
 			try fileManager.createDirectory(at: rootDir, withIntermediateDirectories: true, attributes: nil)
 			
 			// :BE: remove unused parameters
-			let packages = downloadedPackagesStore.allPackages()
+			let packages = downloadedPackagesStore.allPackages(region: region)
 			let writer = AppleFilesWriter(rootDir: rootDir, keyPackages: packages)
 			return writer.writeAllPackages()
 		} catch {
@@ -126,28 +131,28 @@ final class ExposureDetectionExecutor: ExposureDetectionDelegate {
 }
 
 extension DownloadedPackagesStore {
-	func addFetchedDaysAndHours(_ daysAndHours: FetchedDaysAndHours) {
+	func addFetchedDaysAndHours(_ daysAndHours: FetchedDaysAndHours, region: BERegion) {
 		let days = daysAndHours.days
 		days.bucketsByDay.forEach { day, bucket in
-			self.set(day: day, package: bucket)
+			self.set(region: region, day: day, package: bucket)
 		}
 
 		let hours = daysAndHours.hours
 		hours.bucketsByHour.forEach { hour, bucket in
-			self.set(hour: hour, day: hours.day, package: bucket)
+			self.set(region: region, hour: hour, day: hours.day, package: bucket)
 		}
 	}
 }
 
 private extension DownloadedPackagesStore {
-	func allPackages() -> [SAPDownloadedPackage] {
+	func allPackages(region: BERegion) -> [SAPDownloadedPackage] {
 		var packages = [SAPDownloadedPackage]()
-		let fullDays = allDays()
+		let fullDays = allDays(region: region)
 		packages.append(
-			contentsOf: fullDays.map { package(for: $0) }.compactMap { $0 }
+			contentsOf: fullDays.map { package(for: $0, region: region) }.compactMap { $0 }
 		)
 
-		let allHoursForToday = hourlyPackages(for: .formattedToday())
+		let allHoursForToday = hourlyPackages(for: .formattedToday(), region: region)
 		packages.append(contentsOf: allHoursForToday)
 
 		return packages

@@ -66,10 +66,10 @@ final class DMSubmissionStateViewController: UITableViewController {
 		var allPackages = [SAPDownloadedPackage]()
 
 		group.enter()
-		client.availableDays { result in
+		client.availableDays(region: .belgium) { result in
 			switch result {
 			case let .success(days):
-				self.client.fetchDays(days) { daysResult in
+				self.client.fetchDays(days, region: .belgium) { daysResult in
 					allPackages.append(contentsOf: Array(daysResult.bucketsByDay.values))
 					group.leave()
 				}

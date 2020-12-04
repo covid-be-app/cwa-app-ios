@@ -43,11 +43,12 @@ protocol Client {
 	func appConfiguration(completion: @escaping AppConfigurationCompletion)
 
 	/// Determines days that can be downloaded.
-	func availableDays(completion: @escaping AvailableDaysCompletionHandler)
+	func availableDays(region: BERegion, completion: @escaping AvailableDaysCompletionHandler)
 
 	/// Determines hours that can be downloaded for a given day.
 	func availableHours(
 		day: String,
+		region: BERegion,
 		completion: @escaping AvailableHoursCompletionHandler
 	)
 
@@ -72,6 +73,7 @@ protocol Client {
 	/// Fetches the keys for a given `day`.
 	func fetchDay(
 		_ day: String,
+		region: BERegion,
 		completion: @escaping DayCompletionHandler
 	)
 
@@ -79,6 +81,7 @@ protocol Client {
 	func fetchHour(
 		_ hour: Int,
 		day: String,
+		region: BERegion,
 		completion: @escaping HourCompletionHandler
 	)
 
@@ -180,6 +183,7 @@ extension Client {
 
 	func fetchDays(
 		_ days: [String],
+		region: BERegion,
 		completion completeWith: @escaping (DaysResult) -> Void
 	) {
 		var errors = [Client.Failure]()
@@ -189,7 +193,7 @@ extension Client {
 
 		for day in days {
 			group.enter()
-			fetchDay(day) { result in
+			fetchDay(day, region: region) { result in
 				switch result {
 				case let .success(bucket):
 					buckets[day] = bucket
@@ -213,6 +217,7 @@ extension Client {
 	func fetchHours(
 		_ hours: [Int],
 		day: String,
+		region: BERegion,
 		completion completeWith: @escaping FetchHoursCompletionHandler
 	) {
 		var errors = [Client.Failure]()
@@ -221,7 +226,7 @@ extension Client {
 
 		hours.forEach { hour in
 			group.enter()
-			self.fetchHour(hour, day: day) { result in
+			self.fetchHour(hour, day: day, region: region) { result in
 				switch result {
 				case let .success(hourBucket):
 					buckets[hour] = hourBucket
@@ -245,6 +250,7 @@ extension Client {
 		_ days: [String],
 		hours: [Int],
 		of day: String,
+		region: BERegion,
 		completion completeWith: @escaping DaysAndHoursCompletionHandler
 	) {
 		let group = DispatchGroup()
@@ -252,13 +258,13 @@ extension Client {
 		var daysResult = DaysResult(errors: [], bucketsByDay: [:])
 
 		group.enter()
-		fetchDays(days) { result in
+		fetchDays(days, region: region) { result in
 			daysResult = result
 			group.leave()
 		}
 
 		group.enter()
-		fetchHours(hours, day: day) { result in
+		fetchHours(hours, day: day, region: region) { result in
 			hoursResult = result
 			group.leave()
 		}

@@ -1,6 +1,7 @@
-// Corona-Warn-App
 //
-// SAP SE and all other contributors
+// Coronalert
+//
+// Devside and all other contributors
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -14,19 +15,11 @@
 // KIND, either express or implied.  See the License for the
 // specific language governing permissions and limitations
 // under the License.
+//
 
 import Foundation
-import FMDB
 
-protocol DownloadedPackagesStore: AnyObject {
-	func open()
-	func close()
-	func set(day: String, package: SAPDownloadedPackage)
-	func set(hour: Int, day: String, package: SAPDownloadedPackage)
-	func package(for day: String) -> SAPDownloadedPackage?
-	func hourlyPackages(for day: String) -> [SAPDownloadedPackage]
-	func allDays() -> [String] // 2020-05-30
-	func hours(for day: String) -> [Int]
-	func reset()
-	func deleteOutdatedDays(now: String) throws
+enum BERegion: String, CaseIterable {
+	case belgium = "BE"
+	case europeanUnion = "EU"
 }
