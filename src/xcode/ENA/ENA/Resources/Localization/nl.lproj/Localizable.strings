@@ -391,10 +391,10 @@
 "BEMobileDataSettings_description" = "Gebruik mobiele netwerken om willekeurige ID's te downloaden.";
 "BEMobileDataSettings_active" = "Wifi en Mobiele Data";
 "BEMobileDataSettings_inactive" = "Enkel Wifi";
-"ExposureNotificationSetting_euTracingRiskDeterminationTitle" = "Transnational Exposure Logging";
-"ExposureNotificationSetting_euTracingAllCountriesTitle" = "Participating Countries";
-"ExposureNotificationSetting_EU_Title" = "Transnational Exposure Logging";
-"ExposureNotificationSetting_EU_Desc_1" = "Several countries are working together to enable transnational alerts via a joint exchange server. For example, contacts with users of an official coronavirus app from other participating countries can also be taken into account for exposure logging.";
-"ExposureNotificationSetting_EU_Desc_2" = "To do this, the app downloads a list, which is updated daily, of the random IDs of all users who have shared their random IDs via their own app. This list is then compared with the random IDs recorded by your smartphone. The daily download of the list with the random IDs is usually free of charge for you – you will not be charged for the data used by the app in this context, will roaming charges apply for this in other EU countries.";
-"ExposureNotificationSetting_EU_Desc_3" = "The following countries currently participate in transnational exposure logging:";
-"ExposureNotificationSetting_EU_Desc_4" = "The app’s privacy notice (including information about the data processing carried out for the transnational exposure logging feature) can be found in the menu under “App Information” > “Data Privacy”.";
+"ExposureNotificationSetting_euTracingRiskDeterminationTitle" = "Transnationale blootstellingsregistratie";
+"ExposureNotificationSetting_euTracingAllCountriesTitle" = "Deelnemende landen";
+"ExposureNotificationSetting_EU_Title" = "Transnationale blootstellingsregistratie";
+"ExposureNotificationSetting_EU_Desc_1" = "Verschillende landen werken samen om transnationale alerts mogelijk te maken via een gezamenlijke uitwisselingsserver. Zo kunnen ook contacten met gebruikers van een officiële coronavirus-app uit andere deelnemende landen in aanmerking worden genomen voor exposure logging.";
+"ExposureNotificationSetting_EU_Desc_2" = "Voor dit doel downloadt de app elke dag een lijst met willekeurige ID's van alle gebruikers die een positieve test hebben ondergaan en die hebben besloten andere gebruikers te informeren door hun willekeurige ID's te delen. Deze lijst wordt vervolgens vergeleken met de willekeurige ID's die door uw smartphone zijn geregistreerd. U kunt ervoor kiezen om deze lijst via wifi te downloaden; anders wordt een deel van uw mobiele gegevensbudget verbruikt. Houd er rekening mee dat dit kan leiden tot roamingkosten als u de EU verlaat.";
+"ExposureNotificationSetting_EU_Desc_3" = "De volgende landen nemen momenteel deel aan transnationale blootstellingsregistratie:";
+"ExposureNotificationSetting_EU_Desc_4" = "De privacyverklaring van de app (inclusief informatie over de gegevensverwerking die wordt uitgevoerd voor de transnationale blootstellingsregistratiefunctie) is te vinden in het menu onder 'Informatie app'> 'Privacyverklaring'.";
