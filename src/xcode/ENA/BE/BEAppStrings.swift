@@ -84,4 +84,29 @@ enum BEAppStrings {
 		static let title = NSLocalizedString("BEAppResetAfterTEKUpload_title", comment: "")
 		static let description = NSLocalizedString("BEAppResetAfterTEKUpload_description", comment: "")
 	}
+	
+	enum BESettings {
+		static let mobileDataLabel = NSLocalizedString("BEMobileDataSettings_label", comment: "")
+		static let mobileDataActive = NSLocalizedString("BEMobileDataSettings_active", comment: "")
+		static let mobileDataInactive = NSLocalizedString("BEMobileDataSettings_inactive", comment: "")
+		static let mobileDataDescription = NSLocalizedString("BEMobileDataSettings_description", comment: "")
+	}
+	
+	enum BEMobileDataUsageSettings {
+		static let description = NSLocalizedString("BEMobileDataUsageSettings_description", comment: "")
+		static let navigationBarTitle = NSLocalizedString("BEMobileDataUsageSettings_navTitle", comment: "")
+		static let title = NSLocalizedString("BEMobileDataUsageSettings_title", comment: "")
+		static let toggleDescription = NSLocalizedString("BEMobileDataUsageSettings_toggleDescription", comment: "")
+	}
+	
+	enum BEExposureNotificationSettings {
+		static let euTracingRiskDeterminationTitle = NSLocalizedString("ExposureNotificationSetting_euTracingRiskDeterminationTitle", comment: "")
+		static let euTracingAllCountriesTitle = NSLocalizedString("ExposureNotificationSetting_euTracingAllCountriesTitle", comment: "")
+
+		static let euTitle = NSLocalizedString("ExposureNotificationSetting_EU_Title", comment: "")
+		static let euDescription1 = NSLocalizedString("ExposureNotificationSetting_EU_Desc_1", comment: "")
+		static let euDescription2 = NSLocalizedString("ExposureNotificationSetting_EU_Desc_2", comment: "")
+		static let euDescription3 = NSLocalizedString("ExposureNotificationSetting_EU_Desc_3", comment: "")
+		static let euDescription4 = NSLocalizedString("ExposureNotificationSetting_EU_Desc_4", comment: "")
+	}
 }

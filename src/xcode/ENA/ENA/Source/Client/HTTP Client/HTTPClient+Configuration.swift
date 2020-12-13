@@ -39,8 +39,6 @@ extension HTTPClient {
 		static let backendBaseURLs = Configuration(
 			apiVersion: "v1",
 			
-			// :BE: use BE
-			country: "BE",
 			endpoints: Configuration.Endpoints(
 				distribution: .init(
 					baseURL: distributionBaseURL,
@@ -70,10 +68,9 @@ extension HTTPClient {
 		// MARK: Properties
 
 		let apiVersion: String
-		let country: String
 		let endpoints: Endpoints
 
-		var diagnosisKeysURL: URL {
+		func diagnosisKeysURL(region: BERegion) -> URL {
 			endpoints
 				.distribution
 				.appending(
@@ -81,11 +78,11 @@ extension HTTPClient {
 					apiVersion,
 					"diagnosis-keys",
 					"country",
-					country
+					region.rawValue
 				)
 		}
 
-		var availableDaysURL: URL {
+		func availableDaysURL(region: BERegion) -> URL {
 			endpoints
 				.distribution
 				.appending(
@@ -93,12 +90,12 @@ extension HTTPClient {
 					apiVersion,
 					"diagnosis-keys",
 					"country",
-					country,
+					region.rawValue,
 					"date"
 				)
 		}
 
-		func availableHoursURL(day: String) -> URL {
+		func availableHoursURL(day: String, region: BERegion) -> URL {
 			endpoints
 				.distribution
 				.appending(
@@ -106,14 +103,14 @@ extension HTTPClient {
 					apiVersion,
 					"diagnosis-keys",
 					"country",
-					country,
+					region.rawValue,
 					"date",
 					day,
 					"hour"
 				)
 		}
 
-		func diagnosisKeysURL(day: String, hour: Int) -> URL {
+		func diagnosisKeysURL(day: String, hour: Int, region: BERegion) -> URL {
 			endpoints
 				.distribution
 				.appending(
@@ -121,7 +118,7 @@ extension HTTPClient {
 					apiVersion,
 					"diagnosis-keys",
 					"country",
-					country,
+					region.rawValue,
 					"date",
 					day,
 					"hour",
@@ -129,7 +126,7 @@ extension HTTPClient {
 				)
 		}
 
-		func diagnosisKeysURL(day: String) -> URL {
+		func diagnosisKeysURL(day: String, region: BERegion) -> URL {
 			endpoints
 				.distribution
 				.appending(
@@ -137,7 +134,7 @@ extension HTTPClient {
 					apiVersion,
 					"diagnosis-keys",
 					"country",
-					country,
+					region.rawValue,
 					"date",
 					day
 				)
@@ -151,7 +148,7 @@ extension HTTPClient {
 					apiVersion,
 					"configuration",
 					"country",
-					country,
+					"BE",
 					"app_config"
 				)
 		}
@@ -230,7 +227,7 @@ extension HTTPClient {
 				.dynamicTexts
 				.appending(
 					"dynamictext",
-					"dynamicTexts.json"
+					"dynamicTextsV2.json"
 			)
 		}
 	}

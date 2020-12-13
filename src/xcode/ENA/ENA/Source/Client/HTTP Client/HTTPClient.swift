@@ -92,9 +92,10 @@ final class HTTPClient: Client {
 	}
 
 	func availableDays(
+		region: BERegion,
 		completion completeWith: @escaping AvailableDaysCompletionHandler
 	) {
-		let url = configuration.availableDaysURL
+		let url = configuration.availableDaysURL(region: region)
 
 		session.GET(url) { result in
 			switch result {
@@ -127,9 +128,10 @@ final class HTTPClient: Client {
 
 	func availableHours(
 		day: String,
+		region: BERegion,
 		completion completeWith: @escaping AvailableHoursCompletionHandler
 	) {
-		let url = configuration.availableHoursURL(day: day)
+		let url = configuration.availableHoursURL(day: day, region: region)
 
 		session.GET(url) { result in
 			switch result {
@@ -276,9 +278,10 @@ final class HTTPClient: Client {
 
 	func fetchDay(
 		_ day: String,
+		region: BERegion,
 		completion completeWith: @escaping DayCompletionHandler
 	) {
-		let url = configuration.diagnosisKeysURL(day: day)
+		let url = configuration.diagnosisKeysURL(day: day, region: region)
 
 		session.GET(url) { result in
 			switch result {
@@ -304,9 +307,10 @@ final class HTTPClient: Client {
 	func fetchHour(
 		_ hour: Int,
 		day: String,
+		region: BERegion,
 		completion completeWith: @escaping HourCompletionHandler
 	) {
-		let url = configuration.diagnosisKeysURL(day: day, hour: hour)
+		let url = configuration.diagnosisKeysURL(day: day, hour: hour, region: region)
 		session.GET(url) { result in
 			switch result {
 			case let .success(response):

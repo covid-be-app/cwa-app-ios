@@ -27,5 +27,6 @@ enum BEDynamicTextScreenName: String, Decodable, CaseIterable {
 	case positiveTestResult = "positiveTestResult"
 	case negativeTestResult = "negativeTestResult"
 	case thankYou = "thankYou"
+	case participatingCountries = "participatingCountries"
 }
 

@@ -66,6 +66,8 @@ final class RiskProvider {
 	var configuration: RiskProvidingConfiguration
 	private(set) var isLoading: Bool = false
 	
+	private let networkChecker = BENetwork()
+	
 	#if UITESTING
 		private var riskLevelForTesting = Risk.mockedLow
 	#endif
@@ -96,8 +98,23 @@ extension RiskProvider: RiskProviding {
 
 	/// Called by consumers to request the risk level. This method triggers the risk level process.
 	func requestRisk(userInitiated: Bool, completion: Completion? = nil) {
-		queue.async {
-			self._requestRiskLevel(userInitiated: userInitiated, completion: completion)
+		
+		if !store.useMobileDataForTEKDownload {
+			networkChecker.isConnectedToWifi { connected in
+				if connected {
+					self.queue.async {
+						self._requestRiskLevel(userInitiated: userInitiated, completion: completion)
+					}
+				} else {
+					self.queue.async {
+						completion?(nil)
+					}
+				}
+			}
+		} else {
+			queue.async {
+				self._requestRiskLevel(userInitiated: userInitiated, completion: completion)
+			}
 		}
 	}
 

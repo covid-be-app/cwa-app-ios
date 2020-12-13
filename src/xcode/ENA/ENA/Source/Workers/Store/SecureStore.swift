@@ -200,6 +200,11 @@ final class SecureStore: Store {
 		get { kvStore["latestRisk"] as Risk? }
 		set { kvStore["latestRisk"] = newValue }
 	}
+
+	var useMobileDataForTEKDownload: Bool {
+		get { kvStore["useMobileDataForTEKDownload"] as Bool? ?? true }
+		set { kvStore["useMobileDataForTEKDownload"] = newValue }
+	}
 }
 
 

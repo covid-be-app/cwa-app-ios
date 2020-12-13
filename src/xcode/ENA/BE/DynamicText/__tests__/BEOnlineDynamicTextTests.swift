@@ -22,7 +22,7 @@ import XCTest
 class BEOnlineDynamicTextTests: XCTestCase {
 	private func dynamicTextsURL(_ environment: BEEnvironment) -> URL {
 		let dynamicTextsURL = URL(string: "https://coronalert-\(environment.urlSuffix()).ixor.be")!
-		return dynamicTextsURL.appendingPathComponent("dynamictext/dynamicTexts.json")
+		return dynamicTextsURL.appendingPathComponent("dynamictext/dynamicTextsV2.json")
 	}
 	
 	func testURL() throws {

@@ -18,7 +18,7 @@
 import FMDB
 import Foundation
 
-final class DownloadedPackagesSQLLiteStore {
+final class DownloadedPackagesSQLLiteStoreV0 {
 	struct StoreError: Error {
 		init(_ message: String) {
 			self.message = message
@@ -44,9 +44,9 @@ final class DownloadedPackagesSQLLiteStore {
 	private let database: FMDatabase
 }
 
-extension DownloadedPackagesSQLLiteStore: DownloadedPackagesStore {
+extension DownloadedPackagesSQLLiteStoreV0: DownloadedPackagesStoreV0 {
 	func open() {
-		_ = queue.sync {
+		queue.sync {
 			self.database.open()
 			self.database.executeStatements(
 			"""
@@ -303,7 +303,7 @@ private extension FMResultSet {
 	}
 }
 
-extension DownloadedPackagesSQLLiteStore {
+extension DownloadedPackagesSQLLiteStoreV0 {
 	convenience init(fileName: String) {
 
 		let fileManager = FileManager()
