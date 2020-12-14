@@ -77,7 +77,7 @@ final class HTTPClient: Client {
 	func exposureConfiguration(
 		completion: @escaping ExposureConfigurationCompletionHandler
 	) {
-		log(message: "Fetching exposureConfiguation from: \(configuration.configurationURL)")
+		log(message: "Fetching exposureConfiguration from: \(configuration.configurationURL)")
 		appConfiguration { config in
 			guard let config = config else {
 				completion(nil)
@@ -96,6 +96,8 @@ final class HTTPClient: Client {
 		completion completeWith: @escaping AvailableDaysCompletionHandler
 	) {
 		let url = configuration.availableDaysURL(region: region)
+		log(message: "Check available days for \(region.rawValue)")
+		log(message: "\(url)")
 
 		session.GET(url) { result in
 			switch result {
@@ -115,6 +117,7 @@ final class HTTPClient: Client {
 							[String].self,
 							from: data
 						)
+					log(message: "days \(days)")
 					completeWith(.success(days))
 				} catch {
 					completeWith(.failure(.invalidResponse))
@@ -132,7 +135,7 @@ final class HTTPClient: Client {
 		completion completeWith: @escaping AvailableHoursCompletionHandler
 	) {
 		let url = configuration.availableHoursURL(day: day, region: region)
-
+		log(message: "Check available hours for \(day) in \(region.rawValue)")
 		session.GET(url) { result in
 			switch result {
 			case let .success(response):
@@ -152,6 +155,7 @@ final class HTTPClient: Client {
 				do {
 					let decoder = JSONDecoder()
 					let hours = try decoder.decode([Int].self, from: data)
+					log(message: "hours \(hours)")
 					completeWith(.success(hours))
 				} catch {
 					completeWith(.failure(.invalidResponse))
@@ -282,6 +286,8 @@ final class HTTPClient: Client {
 		completion completeWith: @escaping DayCompletionHandler
 	) {
 		let url = configuration.diagnosisKeysURL(day: day, region: region)
+		log(message: "Fetch day \(day) for \(region.rawValue)")
+		log(message: "\(url)")
 
 		session.GET(url) { result in
 			switch result {
@@ -296,6 +302,7 @@ final class HTTPClient: Client {
 					completeWith(.failure(.invalidResponse))
 					return
 				}
+				log(message: "Fetch day \(day) for \(region.rawValue) DONE: \(dayData.count)")
 				completeWith(.success(package))
 			case let .failure(error):
 				completeWith(.failure(error))
@@ -311,6 +318,9 @@ final class HTTPClient: Client {
 		completion completeWith: @escaping HourCompletionHandler
 	) {
 		let url = configuration.diagnosisKeysURL(day: day, hour: hour, region: region)
+		log(message: "Fetch hour \(hour) for \(region.rawValue)")
+		log(message: "\(url)")
+
 		session.GET(url) { result in
 			switch result {
 			case let .success(response):
@@ -318,12 +328,14 @@ final class HTTPClient: Client {
 					completeWith(.failure(.invalidResponse))
 					return
 				}
-				log(message: "got hour: \(hourData.count)")
+
 				guard let package = SAPDownloadedPackage(compressedData: hourData) else {
 					logError(message: "Failed to create signed package.")
 					completeWith(.failure(.invalidResponse))
 					return
 				}
+
+				log(message: "Fetch hour \(hour) for \(region.rawValue) DONE: \(hourData.count)")
 				completeWith(.success(package))
 			case let .failure(error):
 				completeWith(.failure(error))

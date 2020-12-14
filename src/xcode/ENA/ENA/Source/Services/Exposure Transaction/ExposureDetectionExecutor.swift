@@ -124,6 +124,9 @@ final class ExposureDetectionExecutor: ExposureDetectionDelegate {
 				configuration: configuration,
 				diagnosisKeyURLs: writtenPackages.urls
 		) { summary, error in
+			if let summ = summary {
+				log(message: "Summary \(summ)")
+			}
 			completion(withResultFrom(summary: summary, error: error))
 		}
 	}

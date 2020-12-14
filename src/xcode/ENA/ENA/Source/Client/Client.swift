@@ -191,6 +191,8 @@ extension Client {
 
 		let group = DispatchGroup()
 
+		log(message:"Fetch days for \(region.rawValue)")
+		
 		for day in days {
 			group.enter()
 			fetchDay(day, region: region) { result in
@@ -253,6 +255,8 @@ extension Client {
 		region: BERegion,
 		completion completeWith: @escaping DaysAndHoursCompletionHandler
 	) {
+		log(message:"Fetch days and hours for \(region.rawValue)")
+		
 		let group = DispatchGroup()
 		var hoursResult = HoursResult(errors: [], bucketsByHour: [:], day: day)
 		var daysResult = DaysResult(errors: [], bucketsByDay: [:])
@@ -269,6 +273,7 @@ extension Client {
 			group.leave()
 		}
 		group.notify(queue: .main) {
+			log(message: "Finished downloading days and hours")
 			completeWith(FetchedDaysAndHours(hours: hoursResult, days: daysResult))
 		}
 	}
