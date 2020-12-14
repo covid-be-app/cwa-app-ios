@@ -143,7 +143,7 @@ final class ENAExposureManager: NSObject, ExposureManager {
 		self.manager = manager
 		super.init()
 	}
-
+	
 	func resume(observer: ENAExposureManagerObserver) {
 		// previsously we had a precondion here. Removed for now to track down a bug.
 		guard exposureManagerObserver == nil else {
@@ -298,6 +298,10 @@ final class ENAExposureManager: NSObject, ExposureManager {
 	// MARK: Memory
 
 	deinit {
+		if let observation = statusObservation {
+			observation.invalidate()
+		}
+
 		manager.invalidate()
 	}
 
