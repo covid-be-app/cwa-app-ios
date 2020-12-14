@@ -226,7 +226,7 @@ class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposure
 	}
 	
 	func submitFakeExposure(completionHandler: @escaping ExposureSubmissionHandler) {
-		let country = BECountry(code3: "BEL", name: ["nl":"België","fr":"Belgique","en":"Belgium","de":"Belgien"])
+		let country = BECountry(code3: "BEL", code2: "BE", name: ["nl":"België","fr":"Belgique","en":"Belgium","de":"Belgien"])
 
 		client.submit(
 			keys: [ENTemporaryExposureKey.random(Date())],
