@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>BEEnvironment</key>
-	<string>test</string>
+	<string>development</string>
 	<key>BGTaskSchedulerPermittedIdentifiers</key>
 	<array>
 		<string>$(PRODUCT_BUNDLE_IDENTIFIER).exposure-notification</string>
