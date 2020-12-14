@@ -33,7 +33,7 @@ final class BEHTTPClientSubmitTests: XCTestCase {
 	}
 	
 	private var countries:[BECountry] {
-		let country = BECountry(code3: "BEL", name: ["nl":"België","fr":"Belgique","en":"Belgium","de":"Belgien"])
+		let country = BECountry(code3: "BEL", code2: "BE", name: ["nl":"België","fr":"Belgique","en":"Belgium","de":"Belgien"])
 		
 		return [country]
 	}
