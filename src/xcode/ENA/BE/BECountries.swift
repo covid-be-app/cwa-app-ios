@@ -21,6 +21,7 @@ import Foundation
 
 struct BECountry : Decodable, Equatable {
 	let code3:String
+	let code2:String
 	let name:[String:String]
 	var localizedName:String! {
 		get {

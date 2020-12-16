@@ -35,15 +35,21 @@ final class ExposureDetection {
 	private func downloadDeltaUsingAvailableRemoteData(_ remote: DaysAndHours?, region: BERegion) -> Future<Void, Error> {
 		
 		let future = Future<Void, Error> { promise in
+			log(message: "Download delta for \(region.rawValue)")
+			
 			guard let remote = remote else {
+				log(message: "No days and hours")
 				promise(.failure(DidEndPrematurelyReason.noDaysAndHours))
 				return
 			}
 			guard let delta = self.delegate?.exposureDetection(self, downloadDeltaFor: remote, region: region) else {
+				log(message: "No days and hours 2")
 				promise(.failure(DidEndPrematurelyReason.noDaysAndHours))
 				return
 			}
-			
+
+			log(message: "delta \(delta)")
+
 			self.delegate?.exposureDetection(self, downloadAndStore: delta, region: region) { error in
 				if error != nil {
 					promise(.failure(DidEndPrematurelyReason.noDaysAndHours))
@@ -67,6 +73,7 @@ final class ExposureDetection {
 				}.eraseToAnyPublisher()
 			}
 			
+			log(message: "Download package for \(region.rawValue)")
 			return delegate.exposureDetectionDetermineAvailableData(self, region: region)
 				.flatMap { daysAndHours in
 					self.downloadDeltaUsingAvailableRemoteData(daysAndHours, region: region)
@@ -96,6 +103,8 @@ final class ExposureDetection {
 			
 			urls += writtenPackages.urls
 		}
+		log(message: "url count \(urls.count)")
+		log(message: "urls \(urls)")
 		
 		let writtenPackages = WrittenPackages(urls: urls)
 		

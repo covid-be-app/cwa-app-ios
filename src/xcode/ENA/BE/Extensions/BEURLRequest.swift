@@ -102,9 +102,11 @@ extension URLRequest {
 			}
 			
 			let payload = SAP_SubmissionPayload.with {
-				$0.padding = paddingData
+				$0.requestPadding = paddingData
 				$0.keys = keys.map { $0.sapKey }
-				$0.countries = countries.map { $0.code3 }
+				$0.visitedCountries = countries.map { $0.code2 }
+				$0.origin = "BE"
+				$0.consentToFederation = true
 			}
 			
 			payloadData = try payload.serializedData()
