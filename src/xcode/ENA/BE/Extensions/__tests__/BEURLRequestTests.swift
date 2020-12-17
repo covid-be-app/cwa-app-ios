@@ -29,7 +29,7 @@ class BEURLRequestTests: XCTestCase {
 		var countries:[BECountry] = []
 		let dayCount = 14
 		let startDate = Calendar.current.date(byAdding: .day, value: -dayCount, to: Date(), wrappingComponents: true)!
-		let country = BECountry(code3: "BEL", name: ["nl":"België","fr":"Belgique","en":"Belgium","de":"Belgien"])
+		let country = BECountry(code3: "BEL", code2: "BE", name: ["nl":"België","fr":"Belgique","en":"Belgium","de":"Belgien"])
 
 		for x in 0..<dayCount+1 {
 			let date = Calendar.current.date(byAdding: .day, value: x, to: startDate, wrappingComponents: true)!
@@ -69,7 +69,7 @@ class BEURLRequestTests: XCTestCase {
 		var countries:[BECountry] = []
 		let dayCount = 14
 		let startDate = Calendar.current.date(byAdding: .day, value: -dayCount, to: Date(), wrappingComponents: true)!
-		let country = BECountry(code3: "BEL", name: ["nl":"België","fr":"Belgique","en":"Belgium","de":"Belgien"])
+		let country = BECountry(code3: "BEL", code2: "BE", name: ["nl":"België","fr":"Belgique","en":"Belgium","de":"Belgien"])
 		let headerKeys = ["Secret-Key","Random-String","Date-Patient-Infectious","Date-Test-Communicated","Result-Channel","Content-Type"]
 		let onsetOfSymptomsKey = "Date-Onset-Of-Symptoms"
 

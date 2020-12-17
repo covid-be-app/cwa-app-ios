@@ -50,6 +50,14 @@ final class ExposureSubmissionSuccessViewController: DynamicTableViewController,
 		super.viewWillAppear(animated)
 		
 		footerView?.primaryButton.accessibilityIdentifier = BEAccessibilityIdentifiers.BEExposureSubmissionSuccess.button
+
+		if let navController = self.navigationController {
+			navController.navigationItem.rightBarButtonItem = nil
+		}
+	}
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(true)
 	}
 
 	private func setUpView() {

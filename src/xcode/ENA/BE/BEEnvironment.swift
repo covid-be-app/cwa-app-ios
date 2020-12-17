@@ -23,9 +23,12 @@ enum BEEnvironment: String, CaseIterable {
 	case production = "production"
 	case staging = "staging"
 	case test = "test"
+	case development = "development"
 
 	func urlSuffix() -> String {
 		switch self {
+		case .development:
+			return "dev"
 		case .production:
 			return "prd"
 		case .staging:
