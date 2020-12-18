@@ -26,17 +26,14 @@ class BEURLRequestTests: XCTestCase {
 	func testPayloadSize() throws {
 		
 		var keys:[ENTemporaryExposureKey] = []
-		var countries:[BECountry] = []
 		let dayCount = 14
 		let startDate = Calendar.current.date(byAdding: .day, value: -dayCount, to: Date(), wrappingComponents: true)!
-		let country = BECountry(code3: "BEL", code2: "BE", name: ["nl":"België","fr":"Belgique","en":"Belgium","de":"Belgien"])
 
 		for x in 0..<dayCount+1 {
 			let date = Calendar.current.date(byAdding: .day, value: x, to: startDate, wrappingComponents: true)!
 			let key = ENTemporaryExposureKey.random(date)
 
 			keys.append(key)
-			countries.append(country)
 		}
 
 		
@@ -44,8 +41,7 @@ class BEURLRequestTests: XCTestCase {
 			configuration: HTTPClient.Configuration.fake,
 			mobileTestId: BEMobileTestId.random,
 			testResult: TestResult.positive,
-			keys: [],
-			countries: [])
+			keys: [])
 
 		let emptyBody = emptyRequest.httpBody!
 
@@ -54,8 +50,7 @@ class BEURLRequestTests: XCTestCase {
 				configuration: HTTPClient.Configuration.fake,
 				mobileTestId: BEMobileTestId.random,
 				testResult: TestResult.positive,
-				keys: Array(keys.prefix(upTo: x)),
-				countries: Array(countries.prefix(upTo: x))
+				keys: Array(keys.prefix(upTo: x))
 			)
 			
 			let keyBody = keyRequest.httpBody!
@@ -66,10 +61,8 @@ class BEURLRequestTests: XCTestCase {
 	
 	func testHeaders() throws {
 		var keys:[ENTemporaryExposureKey] = []
-		var countries:[BECountry] = []
 		let dayCount = 14
 		let startDate = Calendar.current.date(byAdding: .day, value: -dayCount, to: Date(), wrappingComponents: true)!
-		let country = BECountry(code3: "BEL", code2: "BE", name: ["nl":"België","fr":"Belgique","en":"Belgium","de":"Belgien"])
 		let headerKeys = ["Secret-Key","Random-String","Date-Patient-Infectious","Date-Test-Communicated","Result-Channel","Content-Type"]
 		let onsetOfSymptomsKey = "Date-Onset-Of-Symptoms"
 
@@ -78,15 +71,13 @@ class BEURLRequestTests: XCTestCase {
 			let key = ENTemporaryExposureKey.random(date)
 
 			keys.append(key)
-			countries.append(country)
 		}
 
 		let keyRequest = try URLRequest.submitKeysRequest(
 			configuration: HTTPClient.Configuration.fake,
 			mobileTestId: BEMobileTestId(),
 			testResult: TestResult.positive,
-			keys: keys,
-			countries: countries
+			keys: keys
 		)
 		
 		var headerFields = keyRequest.allHTTPHeaderFields!
@@ -109,8 +100,7 @@ class BEURLRequestTests: XCTestCase {
 			configuration: HTTPClient.Configuration.fake,
 			mobileTestId: BEMobileTestId(symptomsStartDate: Date()),
 			testResult: TestResult.positive,
-			keys: keys,
-			countries: countries
+			keys: keys
 		)
 		
 		headerFields = keyRequest2.allHTTPHeaderFields!

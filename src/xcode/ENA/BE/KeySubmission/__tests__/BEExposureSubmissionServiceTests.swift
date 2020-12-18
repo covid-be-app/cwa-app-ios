@@ -66,7 +66,6 @@ class BEExposureSubmissionServiceTests: XCTestCase {
 		// did test 4 days ago
 		let dateTestCollected = Calendar.current.date(byAdding: .day, value: -4, to: dateTestCommunicated)!
 		
-		let patientInfectiousDateString = dateFormatter.string(from:datePatientInfectious)
 		let testCollectedDateString = dateFormatter.string(from:dateTestCollected)
 		let testCommunicatedDateString = dateFormatter.string(from:dateTestCommunicated)
 		

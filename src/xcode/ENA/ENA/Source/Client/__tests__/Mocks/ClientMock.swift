@@ -126,7 +126,7 @@ extension ClientMock: Client {
 		completionBlock()
 	}
 	
-	func submit(keys: [ENTemporaryExposureKey], countries: [BECountry], mobileTestId: BEMobileTestId?, testResult: TestResult?, isFake: Bool, completion: @escaping SubmitKeysCompletionHandler) {
+	func submit(keys: [ENTemporaryExposureKey], mobileTestId: BEMobileTestId?, testResult: TestResult?, isFake: Bool, completion: @escaping SubmitKeysCompletionHandler) {
 		completion(nil)
 	}
 	

@@ -92,7 +92,7 @@ class BEENAUITests: XCTestCase {
 		XCTAssert(app.labelContains(text: text))		
 	}
 	
-	func testSelectCountry() throws {
+	func testPositiveSendKeys() throws {
 		app.launchArguments.append(contentsOf: ["-testResult", "POSITIVE"])
 		app.launchArguments.append(contentsOf:[UITestingParameters.ExposureSubmission.useMock.rawValue])
 		app.launch()
@@ -113,16 +113,6 @@ class BEENAUITests: XCTestCase {
 		snapshot("ScreenShot_\(#function)_004")
 		app.buttons["BEAppStrings.BEWarnOthers.next"].tap()
 
-		XCTAssertTrue(app.buttons["BEAppStrings.BESelectKeyCountries.shareIds"].waitForExistence(timeout: 5.0))
-		snapshot("ScreenShot_\(#function)_005")
-
-		app.tables.cells.element(boundBy: 0).tap()
-		sleep(1)
-		snapshot("ScreenShot_\(#function)_006")
-		app.tables.cells.element(boundBy: 0).tap()
-		sleep(1)
-		snapshot("ScreenShot_\(#function)_007")
-		app.buttons["BEAppStrings.BESelectKeyCountries.shareIds"].tap()
 		XCTAssertTrue(app.buttons["BEAppStrings.BEExposureSubmissionSuccess.button"].waitForExistence(timeout: 5.0))
 
 		snapshot("ScreenShot_\(#function)_008")
@@ -251,8 +241,6 @@ class BEENAUITests: XCTestCase {
 
 		XCTAssertTrue(app.buttons["BEAppStrings.BEWarnOthers.next"].waitForExistence(timeout: 5.0))
 		app.buttons["BEAppStrings.BEWarnOthers.next"].tap()
-		XCTAssertTrue(app.buttons["BEAppStrings.BESelectKeyCountries.shareIds"].waitForExistence(timeout: 5.0))
-		app.buttons["BEAppStrings.BESelectKeyCountries.shareIds"].tap()
 		XCTAssertTrue(app.buttons["BEAppStrings.BEExposureSubmissionSuccess.button"].waitForExistence(timeout: 5.0))
 		app.swipeUp()
 	}

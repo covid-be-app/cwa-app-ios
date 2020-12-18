@@ -26,7 +26,7 @@ class ExposureSubmissionCoordinatorTests: XCTestCase {
 	// MARK: - Attributes.
 
 	private var parentNavigationController: UINavigationController!
-	private var exposureSubmissionService: MockExposureSubmissionService!
+	private var exposureSubmissionService: BEMockExposureSubmissionService!
 	// swiftlint:disable:next weak_delegate
 	private var delegate: MockExposureSubmissionCoordinatorDelegate!
 
@@ -34,7 +34,7 @@ class ExposureSubmissionCoordinatorTests: XCTestCase {
 
 	override func setUp() {
 		parentNavigationController = UINavigationController()
-		exposureSubmissionService = MockExposureSubmissionService()
+		exposureSubmissionService = BEMockExposureSubmissionService()
 		delegate = MockExposureSubmissionCoordinatorDelegate()
 	}
 
@@ -45,7 +45,7 @@ class ExposureSubmissionCoordinatorTests: XCTestCase {
 		exposureSubmissionService: BEExposureSubmissionService,
 		delegate: ExposureSubmissionCoordinatorDelegate) -> ExposureSubmissionCoordinating {
 
-		return ExposureSubmissionCoordinator(
+		return BEExposureSubmissionCoordinator(
 			parentNavigationController: parentNavigationController,
 			exposureSubmissionService: exposureSubmissionService,
 			delegate: delegate
@@ -53,7 +53,7 @@ class ExposureSubmissionCoordinatorTests: XCTestCase {
 	}
 
 	private func getNavigationController(from coordinator: ExposureSubmissionCoordinating) -> UINavigationController? {
-		guard let navigationController = (coordinator as? ExposureSubmissionCoordinator)?.navigationController else {
+		guard let navigationController = (coordinator as? BEExposureSubmissionCoordinator)?.navigationController else {
 			XCTFail("Could not load navigation controller from coordinator.")
 			return nil
 		}
@@ -88,7 +88,6 @@ class ExposureSubmissionCoordinatorTests: XCTestCase {
 
 	func testStart_withResult() {
 		let result = TestResult.negative
-		exposureSubmissionService.hasRegistrationTokenCallback = { true }
 		let coordinator = createCoordinator(
 			parentNavigationController: parentNavigationController,
 			exposureSubmissionService: exposureSubmissionService,
@@ -135,42 +134,16 @@ class ExposureSubmissionCoordinatorTests: XCTestCase {
 		waitForExpectations(timeout: 1.0)
 	}
 
-	func testShowOverview() {
-		let coordinator = createCoordinator(
-			parentNavigationController: parentNavigationController,
-			exposureSubmissionService: exposureSubmissionService,
-			delegate: delegate
-		)
-
-		coordinator.start(with: nil)
-		coordinator.showOverviewScreen()
-
-		// Get navigation controller and make sure to load view.
-		let navigationController = getNavigationController(from: coordinator)
-		// _ = navigationController?.view
-		sleep(3)
-
-		XCTAssertNotNil(navigationController)
-		XCTAssertNotNil(navigationController?.topViewController)
-		guard let vc = navigationController?.topViewController as? ExposureSubmissionOverviewViewController else {
-			XCTFail("Could not load presented view controller.")
-			return
-		}
-
-		XCTAssertNotNil(vc.coordinator)
-		XCTAssertNotNil(vc.service)
-	}
-
 	func testShowTestResultScreen() {
 		let result = TestResult.negative
+
 		let coordinator = createCoordinator(
 			parentNavigationController: parentNavigationController,
 			exposureSubmissionService: exposureSubmissionService,
 			delegate: delegate
 		)
 
-		coordinator.start(with: nil)
-		coordinator.showTestResultScreen(with: result)
+		coordinator.start(with: result)
 
 		// Get navigation controller and make sure to load view.
 		let navigationController = getNavigationController(from: coordinator)
@@ -186,55 +159,6 @@ class ExposureSubmissionCoordinatorTests: XCTestCase {
 		XCTAssertNotNil(vc.coordinator)
 		XCTAssertNotNil(vc.exposureSubmissionService)
 		XCTAssertEqual(vc.testResult, result)
-	}
-
-	func testShowHotlineScreen() {
-		let coordinator = createCoordinator(
-			parentNavigationController: parentNavigationController,
-			exposureSubmissionService: exposureSubmissionService,
-			delegate: delegate
-		)
-
-		coordinator.start(with: nil)
-		coordinator.showHotlineScreen()
-
-		// Get navigation controller and make sure to load view.
-		let navigationController = getNavigationController(from: coordinator)
-		_ = navigationController?.view
-
-		XCTAssertNotNil(navigationController)
-		XCTAssertNotNil(navigationController?.topViewController)
-		guard let vc = navigationController?.topViewController as? ExposureSubmissionHotlineViewController else {
-			XCTFail("Could not load presented view controller.")
-			return
-		}
-
-		XCTAssertNotNil(vc.coordinator)
-	}
-
-	func testShowTanScreen() {
-		let coordinator = createCoordinator(
-			parentNavigationController: parentNavigationController,
-			exposureSubmissionService: exposureSubmissionService,
-			delegate: delegate
-		)
-
-		coordinator.start(with: nil)
-		coordinator.showTanScreen()
-
-		// Get navigation controller and make sure to load view.
-		let navigationController = getNavigationController(from: coordinator)
-		_ = navigationController?.view
-
-		XCTAssertNotNil(navigationController)
-		XCTAssertNotNil(navigationController?.topViewController)
-		guard let vc = navigationController?.topViewController as? ExposureSubmissionTanInputViewController else {
-			XCTFail("Could not load presented view controller.")
-			return
-		}
-
-		XCTAssertNotNil(vc.coordinator)
-		XCTAssertNotNil(vc.exposureSubmissionService)
 	}
 
 	func showWarnOthersScreen() {
