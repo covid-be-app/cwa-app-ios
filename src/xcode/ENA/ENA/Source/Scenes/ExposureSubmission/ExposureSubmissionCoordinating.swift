@@ -19,6 +19,7 @@
 
 import Foundation
 import UIKit
+import ExposureNotification
 
 /// Coordinator for the exposure submission flow.
 /// This protocol hides the creation of view controllers and their transitions behind a slim interface.
@@ -47,177 +48,11 @@ protocol ExposureSubmissionCoordinating: class {
 	func showTanScreen()
 	func showWarnOthersScreen()
 	func showThankYouScreen()
+	func submitExposureKeys(_ exposureKeys: [ENTemporaryExposureKey])
 }
 
 /// This delegate allows a class to be notified for life-cycle events of the coordinator.
 protocol ExposureSubmissionCoordinatorDelegate: class {
 	func exposureSubmissionCoordinatorWillDisappear(_ coordinator: ExposureSubmissionCoordinating)
 	func exposureSubmissionCoordinatorRequestsAppReset()
-}
-
-/// Concrete implementation of the ExposureSubmissionCoordinator protocol.
-class ExposureSubmissionCoordinator: ExposureSubmissionCoordinating {
-
-	// MARK: - Attributes.
-
-	/// - NOTE: The delegate is called by the `viewWillDisappear(_:)` method of the `navigationController`.
-	weak var delegate: ExposureSubmissionCoordinatorDelegate?
-	weak var parentNavigationController: UINavigationController?
-
-	/// - NOTE: We keep a weak reference here to avoid a reference cycle.
-	///  (the navigationController holds a strong reference to the coordinator).
-	weak var navigationController: UINavigationController?
-
-	/// - NOTE: We need a strong (aka non-weak) reference here.
-	let exposureSubmissionService: BEExposureSubmissionService
-
-	// MARK: - Initializers.
-
-	init(
-		parentNavigationController: UINavigationController,
-		exposureSubmissionService: BEExposureSubmissionService,
-		delegate: ExposureSubmissionCoordinatorDelegate? = nil
-	) {
-		self.parentNavigationController = parentNavigationController
-		self.exposureSubmissionService = exposureSubmissionService
-		self.delegate = delegate
-	}
-}
-
-// MARK: - Navigation.
-
-extension ExposureSubmissionCoordinator {
-	
-	// MARK: - Helpers.
-
-	private func push(_ vc: UIViewController) {
-		self.navigationController?.pushViewController(vc, animated: true)
-	}
-
-	private func present(_ vc: UIViewController) {
-		self.navigationController?.present(vc, animated: true)
-	}
-
-	/// This method selects the correct initial view controller among the following options:
-	private func getInitialViewController(with result: TestResult? = nil) -> UIViewController {
-
-		// We got a test result and can jump straight into the test result view controller.
-		if let result = result, exposureSubmissionService.hasRegistrationToken() {
-			return createTestResultViewController(with: result)
-		}
-		
-		return createIntroViewController()
-	}
-
-	// MARK: - Public API.
-
-	func start(with result: TestResult? = nil) {
-		let initialVC = getInitialViewController(with: result)
-		guard let parentNavigationController = parentNavigationController else {
-			log(message: "Parent navigation controller not set.", level: .error, file: #file, line: #line, function: #function)
-			return
-		}
-
-		/// The navigation controller keeps a strong reference to the coordinator. The coordinator only reaches reference count 0
-		/// when UIKit dismisses the navigationController.
-		let navigationController = createNavigationController(rootViewController: initialVC)
-		parentNavigationController.present(navigationController, animated: true)
-		self.navigationController = navigationController
-	}
-
-	func dismiss() {
-		navigationController?.dismiss(animated: true)
-	}
-	
-	func resetApp() {
-		fatalError("Overridden in subclass")
-	}
-
-	func showOverviewScreen() {
-		let vc = createOverviewViewController()
-		push(vc)
-	}
-
-	func showTestResultScreen(with result: TestResult) {
-		let vc = createTestResultViewController(with: result)
-		push(vc)
-	}
-
-	func showHotlineScreen() {
-		let vc = createHotlineViewController()
-		push(vc)
-	}
-	func showTanScreen() {
-		let vc = createTanInputViewController()
-		push(vc)
-	}
-
-	func showWarnOthersScreen() {
-		let vc = createWarnOthersViewController()
-		push(vc)
-	}
-
-	func showThankYouScreen() {
-		let vc = createSuccessViewController()
-		push(vc)
-	}
-}
-
-// MARK: - Creation.
-
-extension ExposureSubmissionCoordinator {
-
-	private func createNavigationController(rootViewController vc: UIViewController) -> ExposureSubmissionNavigationController {
-		return AppStoryboard.exposureSubmission.initiateInitial { coder in
-			ExposureSubmissionNavigationController(coder: coder, coordinator: self, rootViewController: vc)
-		}
-	}
-
-	private func createIntroViewController() -> ExposureSubmissionIntroViewController {
-		AppStoryboard.exposureSubmission.initiate(viewControllerType: ExposureSubmissionIntroViewController.self) { coder -> UIViewController? in
-			ExposureSubmissionIntroViewController(coder: coder, coordinator: self)
-		}
-	}
-
-	private func createOverviewViewController() -> ExposureSubmissionOverviewViewController {
-		AppStoryboard.exposureSubmission.initiate(viewControllerType: ExposureSubmissionOverviewViewController.self) { coder in
-			ExposureSubmissionOverviewViewController(coder: coder, coordinator: self, exposureSubmissionService: self.exposureSubmissionService)
-		}
-
-	}
-
-	private func createTanInputViewController() -> ExposureSubmissionTanInputViewController {
-		AppStoryboard.exposureSubmission.initiate(viewControllerType: ExposureSubmissionTanInputViewController.self) { coder -> UIViewController? in
-			ExposureSubmissionTanInputViewController(coder: coder, coordinator: self, exposureSubmissionService: self.exposureSubmissionService)
-		}
-	}
-
-	private func createHotlineViewController() -> ExposureSubmissionHotlineViewController {
-		AppStoryboard.exposureSubmission.initiate(viewControllerType: ExposureSubmissionHotlineViewController.self) { coder -> UIViewController? in
-			ExposureSubmissionHotlineViewController(coder: coder, coordinator: self)
-		}
-	}
-
-	private func createTestResultViewController(with result: TestResult) -> ExposureSubmissionTestResultViewController {
-		AppStoryboard.exposureSubmission.initiate(viewControllerType: ExposureSubmissionTestResultViewController.self) { coder -> UIViewController? in
-			ExposureSubmissionTestResultViewController(
-				coder: coder,
-				coordinator: self,
-				exposureSubmissionService: self.exposureSubmissionService,
-				testResult: result
-			)
-		}
-	}
-
-	private func createWarnOthersViewController() -> ExposureSubmissionWarnOthersViewController {
-		AppStoryboard.exposureSubmission.initiate(viewControllerType: ExposureSubmissionWarnOthersViewController.self) { coder -> UIViewController? in
-			ExposureSubmissionWarnOthersViewController(coder: coder, coordinator: self, exposureSubmissionService: self.exposureSubmissionService)
-		}
-	}
-
-	private func createSuccessViewController() -> ExposureSubmissionSuccessViewController {
-		AppStoryboard.exposureSubmission.initiate(viewControllerType: ExposureSubmissionSuccessViewController.self) { coder -> UIViewController? in
-			ExposureSubmissionSuccessViewController(coder: coder, coordinator: self)
-		}
-	}
 }

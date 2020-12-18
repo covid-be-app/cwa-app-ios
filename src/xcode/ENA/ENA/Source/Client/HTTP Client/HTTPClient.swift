@@ -434,7 +434,6 @@ final class HTTPClient: Client {
 	
 	func submit(
 		keys: [ENTemporaryExposureKey],
-		countries: [BECountry],
 		mobileTestId: BEMobileTestId?,
 		testResult: TestResult?,
 		isFake: Bool,
@@ -453,8 +452,7 @@ final class HTTPClient: Client {
 			configuration: configuration,
 			mobileTestId: mobileTestIdToUse,
 			testResult: testResultToUse,
-			keys: keys,
-			countries: countries
+			keys: keys
 		) else {
 			completion(.requestCouldNotBeBuilt)
 			return

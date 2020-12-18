@@ -25,7 +25,7 @@ class ExposureSubmissionWarnOthersViewController: DynamicTableViewController, EN
 	
 	// MARK: - Attributes.
 
-	private(set) weak var exposureSubmissionService: BEExposureSubmissionService?
+ 	private(set) weak var exposureSubmissionService: BEExposureSubmissionService?
 	private(set) weak var coordinator: ExposureSubmissionCoordinating?
 
 	// MARK: - Initializers.
@@ -78,31 +78,7 @@ class ExposureSubmissionWarnOthersViewController: DynamicTableViewController, EN
 	// MARK: - ExposureSubmissionService Helpers.
 
 	internal func startSubmitProcess() {
-		navigationFooterItem?.isPrimaryButtonLoading = true
-		navigationFooterItem?.isPrimaryButtonEnabled = false
-		exposureSubmissionService?.submitExposure { error in
-			switch error {
-			// We continue the regular flow even if there are no keys collected.
-			case .none, .noKeys:
-				self.coordinator?.showThankYouScreen()
-
-			// Custom error handling for EN framework related errors.
-			case .internal, .unsupported, .rateLimited:
-				guard let error = error else {
-					logError(message: "error while parsing EN error.")
-					return
-				}
-				self.showENErrorAlert(error)
-
-			case .some(let error):
-				logError(message: "error: \(error.localizedDescription)", level: .error)
-				let alert = self.setupErrorAlert(message: error.localizedDescription)
-				self.present(alert, animated: true, completion: {
-					self.navigationFooterItem?.isPrimaryButtonLoading = false
-					self.navigationFooterItem?.isPrimaryButtonEnabled = true
-				})
-			}
-		}
+		fatalError("Overridden")
 	}
 
 	// MARK: - UI-related helpers.
@@ -123,7 +99,7 @@ class ExposureSubmissionWarnOthersViewController: DynamicTableViewController, EN
 
 	/// Creates an error alert for the EN errors.
 	func createENAlert(_ error: ExposureSubmissionError) -> UIAlertController {
-		return self.setupErrorAlert(
+		return Self.setupErrorAlert(
 			message: error.localizedDescription
 		)
 	}

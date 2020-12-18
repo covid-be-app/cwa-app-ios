@@ -19,9 +19,12 @@
 
 @testable import ENA
 
+import ExposureNotification
+
 class MockExposureSubmissionCoordinator: ExposureSubmissionCoordinating {
 
 	// MARK: - Attributes.
+	var submitExposureCallback: (() -> Void)?
 
 	weak var delegate: ExposureSubmissionCoordinatorDelegate?
 
@@ -44,4 +47,8 @@ class MockExposureSubmissionCoordinator: ExposureSubmissionCoordinating {
 	func showWarnOthersScreen() { }
 
 	func showThankYouScreen() { }
+	
+	func submitExposureKeys(_ exposureKeys: [ENTemporaryExposureKey]) {
+		submitExposureCallback?()
+	}
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="W8E-ea-7hM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="W8E-ea-7hM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -150,45 +150,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J9o-td-y9f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2480" y="461"/>
-        </scene>
-        <!--Test Registrieren-->
-        <scene sceneID="aO0-Xg-smX">
-            <objects>
-                <tableViewController storyboardIdentifier="ExposureSubmissionOverviewViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yc4-yu-NbP" customClass="ExposureSubmissionOverviewViewController" customModule="ENA" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="I2D-eU-Ob2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" name="ENA Background Color"/>
-                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        <connections>
-                            <outlet property="dataSource" destination="yc4-yu-NbP" id="P1d-vH-Sus"/>
-                            <outlet property="delegate" destination="yc4-yu-NbP" id="KNh-bz-KJM"/>
-                        </connections>
-                    </tableView>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Test Registrieren" id="M8d-ii-EG4" customClass="ENANavigationFooterItem" customModule="ENA" customModuleProvider="target"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="cellBackgroundColor">
-                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <segue destination="aFo-WD-gEN" kind="show" identifier="tanInputSegue" id="zPx-Mo-iVD"/>
-                        <segue destination="BYY-Kq-aHb" kind="show" identifier="qrScannerSegue" id="57u-UG-VMo"/>
-                        <segue destination="efh-V6-b47" kind="show" identifier="labResultSegue" id="4QH-h7-ntj"/>
-                        <segue destination="JDx-c2-PAb" kind="show" identifier="hotlineSegue" id="hxl-5U-J6A"/>
-                    </connections>
-                </tableViewController>
-                <barButtonItem style="plain" id="GIX-lF-ozK">
-                    <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="FaA-yn-Xch" customClass="ENAButton" customModule="ENA" customModuleProvider="target">
-                        <rect key="frame" x="20" y="5" width="374" height="44"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Button"/>
-                    </button>
-                </barButtonItem>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="G8O-g9-RSX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="934.78260869565224" y="460.71428571428567"/>
         </scene>
         <!--Exposure SubmissionQR Scanner Navigation Controller-->
         <scene sceneID="HrB-NV-jDk">
@@ -377,7 +338,6 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <segue destination="yc4-yu-NbP" kind="show" identifier="overviewSegue" id="lCb-cl-Yp4"/>
                         <segue destination="efh-V6-b47" kind="show" identifier="labResultSegue" id="F8Z-7e-umN"/>
                     </connections>
                 </viewController>
@@ -390,7 +350,7 @@
             <objects>
                 <viewController restorationIdentifier="ExposureSubmissionHotlineViewController " storyboardIdentifier="ExposureSubmissionHotlineViewController" id="JDx-c2-PAb" customClass="ExposureSubmissionHotlineViewController" customModule="ENA" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" id="Bij-4W-Ok4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" name="ENA Background Color"/>
                     </tableView>
@@ -424,7 +384,6 @@
         <segue reference="5YR-5A-F8h"/>
         <segue reference="aeq-iH-Hkk"/>
         <segue reference="F8Z-7e-umN"/>
-        <segue reference="zPx-Mo-iVD"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="bolt" catalog="system" width="101" height="128"/>

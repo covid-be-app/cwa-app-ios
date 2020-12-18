@@ -24,8 +24,7 @@ class UIViewController_AlertTest: XCTestCase {
 
 
 	func testAlertSimple() throws {
-		let vc = UIViewController()
-		let alert = vc.setupErrorAlert(message: "Error Message")
+		let alert = UIViewController.setupErrorAlert(message: "Error Message")
 
 		XCTAssert(alert.title == AppStrings.ExposureSubmission.generalErrorTitle)
 		XCTAssert(alert.message == "Error Message")
@@ -33,8 +32,7 @@ class UIViewController_AlertTest: XCTestCase {
 	}
 
 	func testAlertSingleAction() throws {
-		let vc = UIViewController()
-		let alert = vc.setupErrorAlert(message: "Error Message")
+		let alert = UIViewController.setupErrorAlert(message: "Error Message")
 
 		XCTAssert(alert.title == AppStrings.ExposureSubmission.generalErrorTitle)
 		XCTAssert(alert.message == "Error Message")
@@ -42,8 +40,7 @@ class UIViewController_AlertTest: XCTestCase {
 	}
 
 	func testAlertDoubleAction() throws {
-		let vc = UIViewController()
-		let alert = vc.setupErrorAlert(
+		let alert = UIViewController.setupErrorAlert(
 			message: "Error Message",
 			secondaryActionTitle: "Retry Title"
 		)
@@ -60,8 +57,7 @@ class UIViewController_AlertTest: XCTestCase {
 	/// - not in low power mode
 	/// - has not seen the alert before
 	func testNoBackgroundFetchingAlertShown() {
-		let vc = UIViewController()
-		let alert = vc.createBackgroundFetchAlert(
+		let alert = UIViewController.createBackgroundFetchAlert(
 			status: .available,
 			inLowPowerMode: false,
 			hasSeenAlertBefore: false,
@@ -77,8 +73,7 @@ class UIViewController_AlertTest: XCTestCase {
 	/// - not in low power mode
 	/// - has not seen the alert before
 	func testBackgroundFetchingAlertShown() {
-		let vc = UIViewController()
-		let alert = vc.createBackgroundFetchAlert(
+		let alert = UIViewController.createBackgroundFetchAlert(
 			status: .denied,
 			inLowPowerMode: false,
 			hasSeenAlertBefore: false,
@@ -94,9 +89,7 @@ class UIViewController_AlertTest: XCTestCase {
 	/// - not in low power mode
 	/// - has not seen the alert before
 	func testBackgroundFetchingAlertShownWhenRestricted() {
-		let vc = UIViewController()
-
-		let alert = vc.createBackgroundFetchAlert(
+		let alert = UIViewController.createBackgroundFetchAlert(
 			status: .restricted,
 			inLowPowerMode: false,
 			hasSeenAlertBefore: false,
@@ -112,9 +105,7 @@ class UIViewController_AlertTest: XCTestCase {
 	/// - is in low power mode
 	/// - has not seen the alert before
 	func testNoBackgroundFetchingAlertShownWhenInLowPower() {
-		let vc = UIViewController()
-
-		let alert = vc.createBackgroundFetchAlert(
+		let alert = UIViewController.createBackgroundFetchAlert(
 			status: .denied,
 			inLowPowerMode: true,
 			hasSeenAlertBefore: false,
@@ -130,9 +121,7 @@ class UIViewController_AlertTest: XCTestCase {
 	/// - is not in low power mode
 	/// - has seen the alert before
 	func testNoBackgroundFetchingAlertShownWhenSeenOnce() {
-		let vc = UIViewController()
-
-		let alert = vc.createBackgroundFetchAlert(
+		let alert = UIViewController.createBackgroundFetchAlert(
 			status: .denied,
 			inLowPowerMode: false,
 			hasSeenAlertBefore: true,

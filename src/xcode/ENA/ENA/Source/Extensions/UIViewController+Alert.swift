@@ -39,7 +39,7 @@ extension UIViewController {
 	///   - secondaryActionCompletion: The completion handler for the secondary action.
 	/// - Returns: An alert with either one or two actions, with the specified completion handlers
 	/// and texts.
-	func setupErrorAlert(
+	static func setupErrorAlert(
 		title: String? = nil,
 		message: String,
 		okTitle: String? = nil,
@@ -83,7 +83,7 @@ extension UIViewController {
 	/// - if the background refresh is disabled
 	/// - if the user is __not__ in power saving mode, because in this case the background
 	///   refresh is disabled automatically. Therefore we have to explicitly check this.
-	func createBackgroundFetchAlert(
+	static func createBackgroundFetchAlert(
 		status: UIBackgroundRefreshStatus,
 		inLowPowerMode: Bool,
 		hasSeenAlertBefore: Bool,
@@ -97,7 +97,7 @@ extension UIViewController {
 			}
 		}
 
-		return setupErrorAlert(
+		return Self.setupErrorAlert(
 			title: AppStrings.Common.backgroundFetch_AlertTitle,
 			message: AppStrings.Common.backgroundFetch_AlertMessage,
 			okTitle: AppStrings.Common.backgroundFetch_OKTitle,

@@ -21,7 +21,6 @@ import Foundation
 import ExposureNotification
 
 class BEMockExposureSubmissionService : BEExposureSubmissionService {
-	var submitExposureCallback: ((@escaping ExposureSubmissionHandler) -> Void)?
 	private (set) var mobileTestId: BEMobileTestId?
 	
 	private var keys:[ENTemporaryExposureKey]
@@ -58,8 +57,10 @@ class BEMockExposureSubmissionService : BEExposureSubmissionService {
 		
 	}
 	
-	func submitExposure(keys: [ENTemporaryExposureKey], countries: [BECountry], completionHandler: @escaping ExposureSubmissionHandler) {
-		completionHandler(nil)
+	func submitExposure(keys: [ENTemporaryExposureKey], completionHandler: @escaping ExposureSubmissionHandler) {
+		DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+			completionHandler(nil)
+		}
 	}
 	
 	func submitExposure(completionHandler: @escaping ExposureSubmissionHandler) {

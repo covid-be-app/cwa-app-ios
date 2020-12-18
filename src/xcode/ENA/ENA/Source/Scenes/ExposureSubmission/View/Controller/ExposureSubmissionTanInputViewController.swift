@@ -103,7 +103,7 @@ extension ExposureSubmissionTanInputViewController {
 			switch result {
 			case let .failure(error):
 
-				let alert = self.setupErrorAlert(
+				let alert = Self.setupErrorAlert(
 					message: error.localizedDescription,
 					completion: {
 						self.navigationFooterItem?.isPrimaryButtonLoading = false

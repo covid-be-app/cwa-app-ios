@@ -46,7 +46,6 @@
 		2F80CFDB247EDDB3000F06AF /* ExposureSubmissionHotlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F80CFDA247EDDB3000F06AF /* ExposureSubmissionHotlineViewController.swift */; };
 		2F96739B24AB70FA008E3147 /* ExposureSubmissionParsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F96739A24AB70FA008E3147 /* ExposureSubmissionParsable.swift */; };
 		2FC0356F24B342FA00E234AC /* UIViewcontroller+AlertTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC0356E24B342FA00E234AC /* UIViewcontroller+AlertTest.swift */; };
-		2FD881CC2490F65C00BEC8FC /* ExposureSubmissionHotlineViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD881CB2490F65C00BEC8FC /* ExposureSubmissionHotlineViewControllerTest.swift */; };
 		2FD881CE249115E700BEC8FC /* ExposureSubmissionNavigationControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD881CD249115E700BEC8FC /* ExposureSubmissionNavigationControllerTest.swift */; };
 		2FE15A3C249B8C0B0077BD8D /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE15A3B249B8C0B0077BD8D /* AccessibilityIdentifiers.swift */; };
 		2FF1D62E2487850200381FFB /* NSMutableAttributedString+Generation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1D62D2487850200381FFB /* NSMutableAttributedString+Generation.swift */; };
@@ -165,7 +164,6 @@
 		71FE1C69247A8FE100851FEB /* DynamicTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FE1C68247A8FE100851FEB /* DynamicTableViewHeaderFooterView.swift */; };
 		71FE1C71247AA7B700851FEB /* DynamicTableViewHeaderImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FE1C70247AA7B700851FEB /* DynamicTableViewHeaderImageView.swift */; };
 		71FE1C7A247AC2B500851FEB /* ExposureSubmissionSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FE1C73247AC2B500851FEB /* ExposureSubmissionSuccessViewController.swift */; };
-		71FE1C7C247AC2B500851FEB /* ExposureSubmissionOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FE1C75247AC2B500851FEB /* ExposureSubmissionOverviewViewController.swift */; };
 		71FE1C7D247AC2B500851FEB /* ExposureSubmissionTanInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FE1C76247AC2B500851FEB /* ExposureSubmissionTanInputViewController.swift */; };
 		71FE1C7F247AC2B500851FEB /* ExposureSubmissionTestResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FE1C78247AC2B500851FEB /* ExposureSubmissionTestResultViewController.swift */; };
 		71FE1C80247AC2B500851FEB /* ExposureSubmissionNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FE1C79247AC2B500851FEB /* ExposureSubmissionNavigationController.swift */; };
@@ -218,7 +216,6 @@
 		A328424E248B91E0006B1F09 /* HomeTestResultLoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A328424C248B91E0006B1F09 /* HomeTestResultLoadingCell.swift */; };
 		A3284250248B9269006B1F09 /* HomeTestResultLoadingCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A328424F248B9269006B1F09 /* HomeTestResultLoadingCellConfigurator.swift */; };
 		A328425D248E82BC006B1F09 /* ExposureSubmissionTestResultViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A328425B248E82B5006B1F09 /* ExposureSubmissionTestResultViewControllerTests.swift */; };
-		A328425F248E943D006B1F09 /* ExposureSubmissionTanInputViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A328425E248E943D006B1F09 /* ExposureSubmissionTanInputViewControllerTests.swift */; };
 		A32842612490E2AC006B1F09 /* ExposureSubmissionWarnOthersViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32842602490E2AC006B1F09 /* ExposureSubmissionWarnOthersViewControllerTests.swift */; };
 		A328426324910552006B1F09 /* ExposureSubmissionSuccessViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A328426224910552006B1F09 /* ExposureSubmissionSuccessViewControllerTests.swift */; };
 		A32842652491136E006B1F09 /* ExposureSubmissionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32842642491136E006B1F09 /* ExposureSubmissionUITests.swift */; };
@@ -238,7 +235,6 @@
 		A3EE6E5A249BB7AF00C64B61 /* ExposureSubmissionServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE6E59249BB7AF00C64B61 /* ExposureSubmissionServiceFactory.swift */; };
 		A3EE6E5C249BB97500C64B61 /* UITestingParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE6E5B249BB97500C64B61 /* UITestingParameters.swift */; };
 		A3EE6E5D249BB9B900C64B61 /* UITestingParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE6E5B249BB97500C64B61 /* UITestingParameters.swift */; };
-		A3EE6E61249BC57F00C64B61 /* MockExposureSubmissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3284256248E7431006B1F09 /* MockExposureSubmissionService.swift */; };
 		A3FF84EC247BFAF00053E947 /* Hasher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FF84EB247BFAF00053E947 /* Hasher.swift */; };
 		A92076C824E3DDEE00AE8748 /* BEDiagnosisKeyRetrieval.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076C724E3DDEE00AE8748 /* BEDiagnosisKeyRetrieval.swift */; };
 		A92076CC24E3F56400AE8748 /* BEExposureSubmissionServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076CB24E3F56400AE8748 /* BEExposureSubmissionServiceTests.swift */; };
@@ -298,8 +294,6 @@
 		A97E1604257A4B9F00E1DB28 /* SerialMigratorFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E1603257A4B9F00E1DB28 /* SerialMigratorFake.swift */; };
 		A97E1608257A51DC00E1DB28 /* BEFuture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E1607257A51DC00E1DB28 /* BEFuture.swift */; };
 		A980D59D24D822F400A5BB8E /* BEIntervalNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980D59C24D822F400A5BB8E /* BEIntervalNumber.swift */; };
-		A980D5A124D84E2D00A5BB8E /* BESelectCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980D5A024D84E2D00A5BB8E /* BESelectCountryViewController.swift */; };
-		A980D5A324D84FA900A5BB8E /* BESelectCountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980D5A224D84FA900A5BB8E /* BESelectCountryCell.swift */; };
 		A986053024D33231003D0865 /* BEAccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A986052F24D33231003D0865 /* BEAccessibilityIdentifiers.swift */; };
 		A9A5F21B24D1C757004B01FC /* BETestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A5F21A24D1C757004B01FC /* BETestResult.swift */; };
 		A9C47CA32565425000C7A86B /* MobileDataUsageSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C47CA22565425000C7A86B /* MobileDataUsageSettingsViewController.swift */; };
@@ -309,13 +303,6 @@
 		A9D0BF8224F585A200DEBD99 /* BECountdownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D0BF8124F585A200DEBD99 /* BECountdownTimer.swift */; };
 		A9D0BF8424F5864000DEBD99 /* BECountdownTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D0BF8324F5864000DEBD99 /* BECountdownTimerTests.swift */; };
 		A9D0BF8E24FBA20E00DEBD99 /* BEInfectionSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D0BF8D24FBA20E00DEBD99 /* BEInfectionSummary.swift */; };
-		A9D9D1A124D459C1009BEDD9 /* BESelectKeyCountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D9D19F24D459C1009BEDD9 /* BESelectKeyCountriesViewController.swift */; };
-		A9D9D1A224D459C1009BEDD9 /* BESelectKeyCountriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9D9D1A024D459C1009BEDD9 /* BESelectKeyCountriesViewController.xib */; };
-		A9D9D1A424D45D6B009BEDD9 /* BESelectKeyCountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D9D1A324D45D6B009BEDD9 /* BESelectKeyCountryCell.swift */; };
-		A9D9D1A724D54613009BEDD9 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = A9D9D1A624D54613009BEDD9 /* countries.json */; };
-		A9D9D1A924D5465F009BEDD9 /* BECountries.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D9D1A824D5465F009BEDD9 /* BECountries.swift */; };
-		A9D9D1AB24D54A9F009BEDD9 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = A9D9D1A624D54613009BEDD9 /* countries.json */; };
-		A9D9D1AD24D54AAF009BEDD9 /* BECountriesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D9D1AC24D54AAF009BEDD9 /* BECountriesTest.swift */; };
 		A9D9D1AF24D6B1FB009BEDD9 /* BEExposureSubmissionWarnOthersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D9D1AE24D6B1FB009BEDD9 /* BEExposureSubmissionWarnOthersViewController.swift */; };
 		A9DD2CE724CEF0680035081A /* BEMobileTestIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2CE524CEF0680035081A /* BEMobileTestIdViewController.swift */; };
 		A9DD2CEB24CEF3C70035081A /* BEExposureSubmissionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2CEA24CEF3C70035081A /* BEExposureSubmissionCoordinator.swift */; };
@@ -539,7 +526,6 @@
 		2F80CFDA247EDDB3000F06AF /* ExposureSubmissionHotlineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureSubmissionHotlineViewController.swift; sourceTree = "<group>"; };
 		2F96739A24AB70FA008E3147 /* ExposureSubmissionParsable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureSubmissionParsable.swift; sourceTree = "<group>"; };
 		2FC0356E24B342FA00E234AC /* UIViewcontroller+AlertTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewcontroller+AlertTest.swift"; sourceTree = "<group>"; };
-		2FD881CB2490F65C00BEC8FC /* ExposureSubmissionHotlineViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureSubmissionHotlineViewControllerTest.swift; sourceTree = "<group>"; };
 		2FD881CD249115E700BEC8FC /* ExposureSubmissionNavigationControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureSubmissionNavigationControllerTest.swift; sourceTree = "<group>"; };
 		2FE15A3B249B8C0B0077BD8D /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
 		2FF1D62D2487850200381FFB /* NSMutableAttributedString+Generation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Generation.swift"; sourceTree = "<group>"; };
@@ -673,7 +659,6 @@
 		71FE1C68247A8FE100851FEB /* DynamicTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		71FE1C70247AA7B700851FEB /* DynamicTableViewHeaderImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTableViewHeaderImageView.swift; sourceTree = "<group>"; };
 		71FE1C73247AC2B500851FEB /* ExposureSubmissionSuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExposureSubmissionSuccessViewController.swift; sourceTree = "<group>"; };
-		71FE1C75247AC2B500851FEB /* ExposureSubmissionOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExposureSubmissionOverviewViewController.swift; sourceTree = "<group>"; };
 		71FE1C76247AC2B500851FEB /* ExposureSubmissionTanInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExposureSubmissionTanInputViewController.swift; sourceTree = "<group>"; };
 		71FE1C78247AC2B500851FEB /* ExposureSubmissionTestResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExposureSubmissionTestResultViewController.swift; sourceTree = "<group>"; };
 		71FE1C79247AC2B500851FEB /* ExposureSubmissionNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExposureSubmissionNavigationController.swift; sourceTree = "<group>"; };
@@ -733,9 +718,7 @@
 		A328424B248B91E0006B1F09 /* HomeTestResultLoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTestResultLoadingCell.xib; sourceTree = "<group>"; };
 		A328424C248B91E0006B1F09 /* HomeTestResultLoadingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTestResultLoadingCell.swift; sourceTree = "<group>"; };
 		A328424F248B9269006B1F09 /* HomeTestResultLoadingCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTestResultLoadingCellConfigurator.swift; sourceTree = "<group>"; };
-		A3284256248E7431006B1F09 /* MockExposureSubmissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockExposureSubmissionService.swift; sourceTree = "<group>"; };
 		A328425B248E82B5006B1F09 /* ExposureSubmissionTestResultViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureSubmissionTestResultViewControllerTests.swift; sourceTree = "<group>"; };
-		A328425E248E943D006B1F09 /* ExposureSubmissionTanInputViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureSubmissionTanInputViewControllerTests.swift; sourceTree = "<group>"; };
 		A32842602490E2AC006B1F09 /* ExposureSubmissionWarnOthersViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureSubmissionWarnOthersViewControllerTests.swift; sourceTree = "<group>"; };
 		A328426224910552006B1F09 /* ExposureSubmissionSuccessViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureSubmissionSuccessViewControllerTests.swift; sourceTree = "<group>"; };
 		A32842642491136E006B1F09 /* ExposureSubmissionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureSubmissionUITests.swift; sourceTree = "<group>"; };
@@ -823,8 +806,6 @@
 		A97E1603257A4B9F00E1DB28 /* SerialMigratorFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialMigratorFake.swift; sourceTree = "<group>"; };
 		A97E1607257A51DC00E1DB28 /* BEFuture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEFuture.swift; sourceTree = "<group>"; };
 		A980D59C24D822F400A5BB8E /* BEIntervalNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEIntervalNumber.swift; sourceTree = "<group>"; };
-		A980D5A024D84E2D00A5BB8E /* BESelectCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BESelectCountryViewController.swift; sourceTree = "<group>"; };
-		A980D5A224D84FA900A5BB8E /* BESelectCountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BESelectCountryCell.swift; sourceTree = "<group>"; };
 		A986052F24D33231003D0865 /* BEAccessibilityIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEAccessibilityIdentifiers.swift; sourceTree = "<group>"; };
 		A9A5F21A24D1C757004B01FC /* BETestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BETestResult.swift; sourceTree = "<group>"; };
 		A9C47CA22565425000C7A86B /* MobileDataUsageSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileDataUsageSettingsViewController.swift; sourceTree = "<group>"; };
@@ -834,12 +815,6 @@
 		A9D0BF8124F585A200DEBD99 /* BECountdownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BECountdownTimer.swift; sourceTree = "<group>"; };
 		A9D0BF8324F5864000DEBD99 /* BECountdownTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BECountdownTimerTests.swift; sourceTree = "<group>"; };
 		A9D0BF8D24FBA20E00DEBD99 /* BEInfectionSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEInfectionSummary.swift; sourceTree = "<group>"; };
-		A9D9D19F24D459C1009BEDD9 /* BESelectKeyCountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BESelectKeyCountriesViewController.swift; sourceTree = "<group>"; };
-		A9D9D1A024D459C1009BEDD9 /* BESelectKeyCountriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BESelectKeyCountriesViewController.xib; sourceTree = "<group>"; };
-		A9D9D1A324D45D6B009BEDD9 /* BESelectKeyCountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BESelectKeyCountryCell.swift; sourceTree = "<group>"; };
-		A9D9D1A624D54613009BEDD9 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
-		A9D9D1A824D5465F009BEDD9 /* BECountries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BECountries.swift; path = ../BECountries.swift; sourceTree = "<group>"; };
-		A9D9D1AC24D54AAF009BEDD9 /* BECountriesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BECountriesTest.swift; sourceTree = "<group>"; };
 		A9D9D1AE24D6B1FB009BEDD9 /* BEExposureSubmissionWarnOthersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEExposureSubmissionWarnOthersViewController.swift; sourceTree = "<group>"; };
 		A9DD2CE524CEF0680035081A /* BEMobileTestIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEMobileTestIdViewController.swift; sourceTree = "<group>"; };
 		A9DD2CEA24CEF3C70035081A /* BEExposureSubmissionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEExposureSubmissionCoordinator.swift; sourceTree = "<group>"; };
@@ -1690,8 +1665,6 @@
 			children = (
 				A328425A248E8290006B1F09 /* Mock Objects */,
 				A328425B248E82B5006B1F09 /* ExposureSubmissionTestResultViewControllerTests.swift */,
-				A328425E248E943D006B1F09 /* ExposureSubmissionTanInputViewControllerTests.swift */,
-				2FD881CB2490F65C00BEC8FC /* ExposureSubmissionHotlineViewControllerTest.swift */,
 				2FD881CD249115E700BEC8FC /* ExposureSubmissionNavigationControllerTest.swift */,
 				A32842602490E2AC006B1F09 /* ExposureSubmissionWarnOthersViewControllerTests.swift */,
 				A328426224910552006B1F09 /* ExposureSubmissionSuccessViewControllerTests.swift */,
@@ -1704,7 +1677,6 @@
 		A328425A248E8290006B1F09 /* Mock Objects */ = {
 			isa = PBXGroup;
 			children = (
-				A3284256248E7431006B1F09 /* MockExposureSubmissionService.swift */,
 				A32842662492359E006B1F09 /* MockExposureSubmissionNavigationControllerChild.swift */,
 				A372DA3C24BE01D9003248BB /* MockExposureSubmissionCoordinator.swift */,
 				A372DA4024BF33F9003248BB /* MockExposureSubmissionCoordinatorDelegate.swift */,
@@ -1747,7 +1719,6 @@
 			isa = PBXGroup;
 			children = (
 				2F80CFD8247ED988000F06AF /* ExposureSubmissionIntroViewController.swift */,
-				71FE1C75247AC2B500851FEB /* ExposureSubmissionOverviewViewController.swift */,
 				71FE1C76247AC2B500851FEB /* ExposureSubmissionTanInputViewController.swift */,
 				71FE1C78247AC2B500851FEB /* ExposureSubmissionTestResultViewController.swift */,
 				71FE1C73247AC2B500851FEB /* ExposureSubmissionSuccessViewController.swift */,
@@ -1966,25 +1937,6 @@
 			path = Migration;
 			sourceTree = "<group>";
 		};
-		A980D59E24D84DE900A5BB8E /* Country */ = {
-			isa = PBXGroup;
-			children = (
-				A980D59F24D84DF500A5BB8E /* __tests__ */,
-				A9D9D1A824D5465F009BEDD9 /* BECountries.swift */,
-				A980D5A024D84E2D00A5BB8E /* BESelectCountryViewController.swift */,
-				A980D5A224D84FA900A5BB8E /* BESelectCountryCell.swift */,
-			);
-			path = Country;
-			sourceTree = "<group>";
-		};
-		A980D59F24D84DF500A5BB8E /* __tests__ */ = {
-			isa = PBXGroup;
-			children = (
-				A9D9D1AC24D54AAF009BEDD9 /* BECountriesTest.swift */,
-			);
-			path = __tests__;
-			sourceTree = "<group>";
-		};
 		A986052E24D33231003D0865 /* View Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -2007,7 +1959,6 @@
 			children = (
 				A92076CA24E3E7E800AE8748 /* __tests__ */,
 				A9DD2CEA24CEF3C70035081A /* BEExposureSubmissionCoordinator.swift */,
-				A9D9D1B024D6B2F6009BEDD9 /* Countries */,
 				A9DD2D0624D02DFC0035081A /* BEExposureSubmissionService.swift */,
 				A9D9D1AE24D6B1FB009BEDD9 /* BEExposureSubmissionWarnOthersViewController.swift */,
 				A92076C724E3DDEE00AE8748 /* BEDiagnosisKeyRetrieval.swift */,
@@ -2018,19 +1969,8 @@
 		A9D9D1A524D54613009BEDD9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A9D9D1A624D54613009BEDD9 /* countries.json */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		A9D9D1B024D6B2F6009BEDD9 /* Countries */ = {
-			isa = PBXGroup;
-			children = (
-				A9D9D19F24D459C1009BEDD9 /* BESelectKeyCountriesViewController.swift */,
-				A9D9D1A024D459C1009BEDD9 /* BESelectKeyCountriesViewController.xib */,
-				A9D9D1A324D45D6B009BEDD9 /* BESelectKeyCountryCell.swift */,
-			);
-			path = Countries;
 			sourceTree = "<group>";
 		};
 		A9DD2CE224CEEEF40035081A /* BE */ = {
@@ -2045,7 +1985,6 @@
 				A92076E424ED406500AE8748 /* FakeRequests */,
 				A935EE5424E005A200B33B66 /* ENAUITests */,
 				A9DD2D0224D020F80035081A /* __tests__ */,
-				A980D59E24D84DE900A5BB8E /* Country */,
 				A9D9D1A524D54613009BEDD9 /* Resources */,
 				A9D9D19E24D45995009BEDD9 /* KeySubmission */,
 				A9DD2D0B24D059C00035081A /* Client */,
@@ -2845,10 +2784,8 @@
 				710021DE248EAF16001F0B63 /* ExposureSubmissionImageCardCell.xib in Resources */,
 				51D420D024586AB300AD70CA /* Settings.storyboard in Resources */,
 				71F5418E248BEE08006DB793 /* privacy-policy.html in Resources */,
-				A9D9D1A224D459C1009BEDD9 /* BESelectKeyCountriesViewController.xib in Resources */,
 				01DC23252462DFD0001B727C /* ExposureSubmission.storyboard in Resources */,
 				51CE1B8A246078B6002CF42A /* InfoCollectionViewCell.xib in Resources */,
-				A9D9D1A724D54613009BEDD9 /* countries.json in Resources */,
 				51FE277D247535C400BB8144 /* RiskLoadingItemView.xib in Resources */,
 				853D98832469DC5000490DBA /* ExposureNotificationSetting.storyboard in Resources */,
 				A95EE81A24FCF6C700AFECBD /* BEInfectionSummaryCollectionViewCell.xib in Resources */,
@@ -2867,7 +2804,6 @@
 				B1F8AE482479B4C30093A588 /* api-response-day-2020-05-16 in Resources */,
 				01678E9C249A5F08003B048B /* testStore.sqlite in Resources */,
 				A189E45F248C325E001D0996 /* de-config in Resources */,
-				A9D9D1AB24D54A9F009BEDD9 /* countries.json in Resources */,
 				A9221A592549B92600853CEF /* wrongStructureDynamicTexts.json in Resources */,
 				F252472F2483955B00C5556B /* DynamicTableViewControllerFake.storyboard in Resources */,
 			);
@@ -2918,7 +2854,6 @@
 				B1C7EE4424938E9E00F1F284 /* ExposureDetection_DidEndPrematurelyReason+ErrorHandling.swift in Sources */,
 				B1A89F3A24819CD300DA1CEC /* HomeRiskImageItemViewConfigurator.swift in Sources */,
 				B1A89F3924819CC200DA1CEC /* ExposureStateUpdating.swift in Sources */,
-				A9D9D1A124D459C1009BEDD9 /* BESelectKeyCountriesViewController.swift in Sources */,
 				B1C6ECFF247F089E0066138F /* RiskImageItemView.swift in Sources */,
 				51486DA62485237200FCE216 /* RiskThankYouCollectionViewCell.swift in Sources */,
 				71330E43248109FD00EB10F6 /* DynamicTableViewCell.swift in Sources */,
@@ -2965,7 +2900,6 @@
 				514EE99D246D4CFB00DE4884 /* TableViewCellConfigurator.swift in Sources */,
 				0DF6BBB7248C04CF007E8B0C /* app_config.pb.swift in Sources */,
 				B1DDDABE24713BAD00A07175 /* SAPDownloadedPackage.swift in Sources */,
-				71FE1C7C247AC2B500851FEB /* ExposureSubmissionOverviewViewController.swift in Sources */,
 				B1FE13EC24891CFE00D012E5 /* RiskProviding.swift in Sources */,
 				011E4B032483A92A002E6412 /* MockExposureManager.swift in Sources */,
 				A9D0BF8E24FBA20E00DEBD99 /* BEInfectionSummary.swift in Sources */,
@@ -3104,7 +3038,6 @@
 				B153096C24706F2400A4A1BD /* URLSessionConfiguration+Default.swift in Sources */,
 				B1BD9E7E24898A2300BD3930 /* ExposureDetectionViewController+DynamicTableViewModel.swift in Sources */,
 				0159E6C1247829BA00894A89 /* temporary_exposure_key_export.pb.swift in Sources */,
-				A9D9D1A924D5465F009BEDD9 /* BECountries.swift in Sources */,
 				71FE1C80247AC2B500851FEB /* ExposureSubmissionNavigationController.swift in Sources */,
 				CD99A3C7246155C300BF12AF /* Logger.swift in Sources */,
 				2F96739B24AB70FA008E3147 /* ExposureSubmissionParsable.swift in Sources */,
@@ -3114,7 +3047,6 @@
 				A9DD2CF324CF2AE20035081A /* BEString.swift in Sources */,
 				A9C47CA52565447600C7A86B /* MobileDataUsageTableViewCell.swift in Sources */,
 				EE22DB89247FB43A001B0A71 /* TracingHistoryTableViewCell.swift in Sources */,
-				A3EE6E61249BC57F00C64B61 /* MockExposureSubmissionService.swift in Sources */,
 				71B804472484CC0800D53506 /* ENALabel.swift in Sources */,
 				A97E159625766BBB00E1DB28 /* EuTracingTableViewCell.swift in Sources */,
 				71FE1C7F247AC2B500851FEB /* ExposureSubmissionTestResultViewController.swift in Sources */,
@@ -3130,7 +3062,6 @@
 				A9C47CA7256546C300C7A86B /* MobileDataUsageViewModel.swift in Sources */,
 				514EE99B246D4C4C00DE4884 /* UITableView+Dequeue.swift in Sources */,
 				713EA25F24798A9100AB7EE8 /* ExposureDetectionRiskCell.swift in Sources */,
-				A980D5A324D84FA900A5BB8E /* BESelectCountryCell.swift in Sources */,
 				01F5F7222487B9C000229720 /* AppInformationViewController.swift in Sources */,
 				B10FD5F1246EAB1000E9D7F2 /* AppInformationViewController+DynamicTableViewModel.swift in Sources */,
 				A97E15C72579283A00E1DB28 /* DownloadedPackagesSQLLiteStoreV1.swift in Sources */,
@@ -3176,10 +3107,8 @@
 				71EF33DB2497F419007B7E1B /* ENANavigationFooterItem.swift in Sources */,
 				A95EE81424FCE11100AFECBD /* BEStatisticsService.swift in Sources */,
 				A9FC52842522330900660812 /* BEActivateMobileTestIdViewController.swift in Sources */,
-				A980D5A124D84E2D00A5BB8E /* BESelectCountryViewController.swift in Sources */,
 				710ABB1F2475115500948792 /* UITableViewController+Enum.swift in Sources */,
 				51CE1B8B246078B6002CF42A /* InfoCollectionViewCell.swift in Sources */,
-				A9D9D1A424D45D6B009BEDD9 /* BESelectKeyCountryCell.swift in Sources */,
 				B14D0CDB246E968C00D5BEBC /* String+Today.swift in Sources */,
 				85142501245DA0B3009D2791 /* UIViewController+Alert.swift in Sources */,
 				CD99A3CA2461A47C00BF12AF /* AppStrings.swift in Sources */,
@@ -3222,11 +3151,9 @@
 				A92076E924ED41F400AE8748 /* BEFakeRequestsExecutorTests.swift in Sources */,
 				A1E419552495A8060016E52A /* HTTPClient+GetTestResultTests.swift in Sources */,
 				A9DD2CFF24D01A940035081A /* BESymmetricKeyTests.swift in Sources */,
-				A328425F248E943D006B1F09 /* ExposureSubmissionTanInputViewControllerTests.swift in Sources */,
 				A9DD2D0424D0213B0035081A /* BEStoreTests.swift in Sources */,
 				A9DD2CFB24D001AB0035081A /* BEMobileTestIdTests.swift in Sources */,
 				A14BDEC024A1AD660063E4EC /* MockExposureDetector.swift in Sources */,
-				A9D9D1AD24D54AAF009BEDD9 /* BECountriesTest.swift in Sources */,
 				A3483B0B24C5EFA40037855F /* MockExposureDetectionViewControllerDelegate.swift in Sources */,
 				B1C7EE482493D97000F1F284 /* RiskProvidingConfigurationManualTriggerTests.swift in Sources */,
 				B1221BE22492ED0F00E6C4E4 /* CFDictionary+KeychainQueryTests.swift in Sources */,
@@ -3251,7 +3178,6 @@
 				516E42FB24B7739F0008CC30 /* HomeUnknownRiskCellConfiguratorTests.swift in Sources */,
 				F25247312484456800C5556B /* DynamicTableViewModelTests.swift in Sources */,
 				B15382E7248290BB0010F007 /* AppleFilesWriterTests.swift in Sources */,
-				2FD881CC2490F65C00BEC8FC /* ExposureSubmissionHotlineViewControllerTest.swift in Sources */,
 				A32CA72F24B6F2E300B1A994 /* HomeRiskCellConfiguratorTests.swift in Sources */,
 				B120C7C924AFE7B800F68FF1 /* ActiveTracingTests.swift in Sources */,
 				516E430224B89AED0008CC30 /* CoordinatorTests.swift in Sources */,
