@@ -75,7 +75,7 @@ class BEActivateMobileTestIdViewController: UIViewController, SpinnerInjectable 
 	
 	fileprivate func showError() {
 		stopSpinner()
-		let alert = setupErrorAlert(title: nil, message: BEAppStrings.BEMobileTestIdActivator.pageLoadErrorMessage, okTitle: AppStrings.Common.alertActionRetry, secondaryActionTitle: AppStrings.Common.alertActionCancel, completion: {
+		let alert = Self.setupErrorAlert(title: nil, message: BEAppStrings.BEMobileTestIdActivator.pageLoadErrorMessage, okTitle: AppStrings.Common.alertActionRetry, secondaryActionTitle: AppStrings.Common.alertActionCancel, completion: {
 			self.loadWebPage()
 		}) {
 			self.delegate?.activateMobileTestIdViewControllerCancelled(self)

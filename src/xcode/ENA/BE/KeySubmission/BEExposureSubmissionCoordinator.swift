@@ -35,9 +35,6 @@ class BEExposureSubmissionCoordinator : NSObject, ExposureSubmissionCoordinating
 	/// - NOTE: We need a strong (aka non-weak) reference here.
 	let exposureSubmissionService: BEExposureSubmissionService
 
-	
-	private weak var selectCountryDelegate: BESelectCountryViewControllerDelegate?
-	
 	private var mobileTestIdGenerator: BEMobileTestIdGenerator?
 	// MARK: - Initializers.
 
@@ -110,29 +107,17 @@ class BEExposureSubmissionCoordinator : NSObject, ExposureSubmissionCoordinating
 		push(vc)
 	}
 	
-	func showSelectCountries(_ exposureKeys:[ENTemporaryExposureKey]) {
-		let vc = BESelectKeyCountriesViewController(service:exposureSubmissionService,coordinator:self,exposureKeys:exposureKeys)
-
-		push(vc)
+	func submitExposureKeys(_ exposureKeys:[ENTemporaryExposureKey]) {
+		exposureSubmissionService.submitExposure(keys: exposureKeys) { error in
+			if let error = error {
+				logError(message: "error: \(error.localizedDescription)", level: .error)
+				let alert = UIViewController.setupErrorAlert(message: error.localizedDescription)
+				self.navigationController?.present(alert, animated: true)
+			} else {
+				self.showThankYouScreen()
+			}
+		}
 	}
-	
-	func showSelectCountryForKey(countries:[BECountry],selectedCountry:BECountry,keyDate:Date,delegate:BESelectCountryViewControllerDelegate) {
-		let vc = BESelectCountryViewController(
-			countries:countries,
-			selectedCountry:selectedCountry,
-			delegate:self)
-		
-		selectCountryDelegate = delegate
-		
-		let dateFormatter = DateFormatter()
-		dateFormatter.timeStyle = .none
-		dateFormatter.dateStyle = .medium
-		let dateString = dateFormatter.string(from:keyDate)
-
-		vc.title = dateString
-		push(vc)
-	}
-
 
 	// MARK: - Methods no longer used
 
@@ -229,14 +214,6 @@ extension BEExposureSubmissionCoordinator : BEMobileTestIdViewControllerDelegate
 	
 	func mobileTestIdViewControllerFinished(_ vc: BEMobileTestIdViewController) {
 		self.navigationController?.dismiss(animated: true)
-	}
-}
-
-extension BEExposureSubmissionCoordinator : BESelectCountryViewControllerDelegate {
-	func selectCountryViewController(_ vc: BESelectCountryViewController, selectedCountry country: BECountry) {
-		selectCountryDelegate?.selectCountryViewController(vc, selectedCountry: country)
-		self.navigationController?.popViewController(animated: true)
-		selectCountryDelegate = nil
 	}
 }
 

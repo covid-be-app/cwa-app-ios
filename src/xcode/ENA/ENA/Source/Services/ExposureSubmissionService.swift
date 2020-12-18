@@ -35,7 +35,6 @@ protocol ExposureSubmissionService: class {
 	typealias TestResultHandler = (Result<TestResult, ExposureSubmissionError>) -> Void
 	typealias TANHandler = (Result<String, ExposureSubmissionError>) -> Void
 
-	func submitExposure(completionHandler: @escaping ExposureSubmissionHandler)
 	func getRegistrationToken(
 		forKey deviceRegistrationKey: DeviceRegistrationKey,
 		completion completeWith: @escaping RegistrationHandler
@@ -146,54 +145,6 @@ class ENAExposureSubmissionService: ExposureSubmissionService {
 			// teleTAN should NOT be hashed, is for short time
 			// usage only.
 			return (teleTan, "TELETAN")
-		}
-	}
-
-	/// This method submits the exposure keys. Additionally, after successful completion,
-	/// the timestamp of the key submission is updated.
-	func submitExposure(completionHandler: @escaping ExposureSubmissionHandler) {
-		log(message: "Started exposure submission...")
-
-		diagnosiskeyRetrieval.accessDiagnosisKeys { keys, error in
-			if let error = error {
-				logError(message: "Error while retrieving diagnosis keys: \(error.localizedDescription)")
-				completionHandler(self.parseError(error))
-				return
-			}
-
-			guard var keys = keys, !keys.isEmpty else {
-				completionHandler(.noKeys)
-				// We perform a cleanup in order to set the correct
-				// timestamps, despite not having communicated with the backend,
-				// in order to show the correct screens.
-				self.submitExposureCleanup()
-				return
-			}
-			keys.processedForSubmission()
-
-			self.getTANForExposureSubmit(hasConsent: true, completion: { result in
-				switch result {
-				case let .failure(error):
-					completionHandler(error)
-				case let .success(tan):
-					self.submit(keys, with: tan, completion: completionHandler)
-				}
-			})
-		}
-	}
-
-	/// Helper method that is used to submit keys after a TAN was retrieved.
-	private func submit(_ keys: [ENTemporaryExposureKey], with tan: String, completion: @escaping ExposureSubmissionHandler) {
-		self.client.submit(keys: keys, tan: tan) { error in
-			if let error = error {
-				logError(message: "Error while submiting diagnosis keys: \(error.localizedDescription)")
-				completion(self.parseError(error))
-				return
-			}
-
-			self.submitExposureCleanup()
-			log(message: "Successfully completed exposure sumbission.")
-			completion(nil)
 		}
 	}
 

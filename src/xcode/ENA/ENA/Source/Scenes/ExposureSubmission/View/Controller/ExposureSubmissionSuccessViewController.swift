@@ -75,7 +75,7 @@ final class ExposureSubmissionSuccessViewController: DynamicTableViewController,
 
 extension ExposureSubmissionSuccessViewController {
 	func navigationController(_ navigationController: ENANavigationControllerWithFooter, didTapPrimaryButton button: UIButton) {
-		let alertController = self.setupErrorAlert(title: BEAppStrings.BEAppResetAfterTEKUpload.title, message: BEAppStrings.BEAppResetAfterTEKUpload.description, okTitle: nil, secondaryActionTitle: nil, completion: {
+		let alertController = Self.setupErrorAlert(title: BEAppStrings.BEAppResetAfterTEKUpload.title, message: BEAppStrings.BEAppResetAfterTEKUpload.description, okTitle: nil, secondaryActionTitle: nil, completion: {
 			self.coordinator?.resetApp()
 		}, secondaryActionCompletion: nil)
 		

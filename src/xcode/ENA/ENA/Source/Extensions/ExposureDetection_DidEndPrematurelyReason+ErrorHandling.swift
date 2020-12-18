@@ -39,11 +39,11 @@ extension ExposureDetection.DidEndPrematurelyReason {
 				return nil
 			}
 			
-			return rootController.setupErrorAlert(
+			return UIViewController.setupErrorAlert(
 				message: localizedDescription
 			)
 		default:
-			return rootController.setupErrorAlert(
+			return UIViewController.setupErrorAlert(
 				message: localizedDescription
 			)
 		}

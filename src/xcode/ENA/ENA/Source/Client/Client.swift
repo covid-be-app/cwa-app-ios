@@ -96,16 +96,6 @@ protocol Client {
 		completion: @escaping ExposureConfigurationCompletionHandler
 	)
 
-	/// Submits exposure keys to the backend. This makes the local information available to the world so that the risk of others can be calculated on their local devices.
-	/// Parameters:
-	/// - keys: An array of `ENTemporaryExposureKey`s  to submit to the backend.
-	/// - tan: A transaction number
-	func submit(
-		keys: [ENTemporaryExposureKey],
-		tan: String,
-		completion: @escaping SubmitKeysCompletionHandler
-	)
-	
 	// :BE:
 	typealias InfectionSummaryHandler = (Result<BEInfectionSummary, Failure>) -> Void
 	typealias DynamicTextsHandler = (Result<Data, Failure>) -> Void
@@ -120,10 +110,9 @@ protocol Client {
 	/// Acknowledge we downloaded a test result
 	func ackTestDownload(forDevice registrationToken: String, completionBlock: @escaping(() -> Void))
 	
-	/// Send keys to backend including countries
+	/// Send keys to backend
 	func submit(
 		keys: [ENTemporaryExposureKey],
-		countries: [BECountry],
 		mobileTestId: BEMobileTestId?,
 		testResult: TestResult?,
 		isFake: Bool,
