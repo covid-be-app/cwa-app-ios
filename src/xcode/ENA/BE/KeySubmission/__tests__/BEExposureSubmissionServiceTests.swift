@@ -40,7 +40,7 @@ class BEExposureSubmissionServiceTests: XCTestCase {
 		}
 
 		dateFormatter = DateFormatter()
-		dateFormatter.dateFormat = "YYYY-MM-dd"
+		dateFormatter.dateFormat = "yyyy-MM-dd"
 	}
 
 	// We want to test that the correct range of keys is returned.
@@ -48,6 +48,9 @@ class BEExposureSubmissionServiceTests: XCTestCase {
 	// whereby t0 is the date the user is infectious
 	// and t3 is the date on which the test result was communicated to the user
     func testGetKeys() throws {
+		dateFormatter = DateFormatter()
+		dateFormatter.dateFormat = "yyyy-MM-dd"
+
 		let finishedExpectation = self.expectation(description: "finished getting keys")
 		let keyRetrieval = MockDiagnosisKeysRetrieval(diagnosisKeysResult: (keys, nil))
 		let client = ClientMock()
