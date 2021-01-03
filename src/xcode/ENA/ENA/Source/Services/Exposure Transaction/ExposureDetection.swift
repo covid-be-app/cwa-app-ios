@@ -17,6 +17,7 @@
 
 import ExposureNotification
 import Foundation
+import Combine
 
 /// Every time the user wants to know the own risk the app creates an `ExposureDetection`.
 final class ExposureDetection {
@@ -31,22 +32,58 @@ final class ExposureDetection {
 
 	// MARK: Starting the Transaction
 	// Called right after the transaction knows which data is available remotly.
-	private func downloadDeltaUsingAvailableRemoteData(_ remote: DaysAndHours?) {
-		guard let remote = remote else {
-			endPrematurely(reason: .noDaysAndHours)
-			return
-		}
-		guard let delta = delegate?.exposureDetection(self, downloadDeltaFor: remote) else {
-			endPrematurely(reason: .noDaysAndHours)
-			return
-		}
-		delegate?.exposureDetection(self, downloadAndStore: delta) { [weak self] error in
-			guard let self = self else { return }
-			if error != nil {
-				self.endPrematurely(reason: .noDaysAndHours)
+	private func downloadDeltaUsingAvailableRemoteData(_ remote: DaysAndHours?, region: BERegion) -> Future<Void, Error> {
+		
+		let future = Future<Void, Error> { promise in
+			log(message: "Download delta for \(region.rawValue)")
+			
+			guard let remote = remote else {
+				log(message: "No days and hours")
+				promise(.failure(DidEndPrematurelyReason.noDaysAndHours))
 				return
 			}
-			self.delegate?.exposureDetection(self, downloadConfiguration: self.useConfiguration)
+			guard let delta = self.delegate?.exposureDetection(self, downloadDeltaFor: remote, region: region) else {
+				log(message: "No days and hours 2")
+				promise(.failure(DidEndPrematurelyReason.noDaysAndHours))
+				return
+			}
+
+			log(message: "delta \(delta)")
+
+			self.delegate?.exposureDetection(self, downloadAndStore: delta, region: region) { error in
+				if error != nil {
+					promise(.failure(DidEndPrematurelyReason.noDaysAndHours))
+					return
+				}
+				
+				promise(.success(()))
+			}
+		}
+
+		return future
+	}
+	
+	
+	private func downloadPackagesForRegions( regions: ArraySlice<BERegion>) -> AnyPublisher<Void, Error> {
+		var remaining = regions
+		if let region = remaining.popFirst() {
+			guard let delegate = delegate else {
+				return Future<Void, Error> { promise in
+					promise(.success(()))
+				}.eraseToAnyPublisher()
+			}
+			
+			log(message: "Download package for \(region.rawValue)")
+			return delegate.exposureDetectionDetermineAvailableData(self, region: region)
+				.flatMap { daysAndHours in
+					self.downloadDeltaUsingAvailableRemoteData(daysAndHours, region: region)
+				}.flatMap { _ in
+					self.downloadPackagesForRegions(regions: remaining)
+				}.eraseToAnyPublisher()
+		} else {
+			return Future<Void, Error> { promise in
+				promise(.success(()))
+			}.eraseToAnyPublisher()
 		}
 	}
 
@@ -55,10 +92,22 @@ final class ExposureDetection {
 			endPrematurely(reason: .noExposureConfiguration)
 			return
 		}
-		guard let writtenPackages = delegate?.exposureDetectionWriteDownloadedPackages(self) else {
-			endPrematurely(reason: .unableToWriteDiagnosisKeys)
-			return
+		
+		var urls: [URL] = []
+		
+		BERegion.allCases.forEach { region in
+			guard let writtenPackages = delegate?.exposureDetectionWriteDownloadedPackages(self, region: region) else {
+				endPrematurely(reason: .unableToWriteDiagnosisKeys)
+				return
+			}
+			
+			urls += writtenPackages.urls
 		}
+		log(message: "url count \(urls.count)")
+		log(message: "urls \(urls)")
+		
+		let writtenPackages = WrittenPackages(urls: urls)
+		
 		delegate?.exposureDetection(
 			self,
 			detectSummaryWithConfiguration: configuration,
@@ -78,10 +127,32 @@ final class ExposureDetection {
 		}
 	}
 
+	private var exposureSubscription: AnyCancellable?
+	
 	typealias Completion = (Result<ENExposureDetectionSummary, DidEndPrematurelyReason>) -> Void
-	func start(completion: @escaping Completion) {
-		self.completion = completion
-		delegate?.exposureDetection(self, determineAvailableData: downloadDeltaUsingAvailableRemoteData)
+	func start(completionBlock: @escaping Completion) {
+		self.completion = completionBlock
+		
+		guard let delegate = delegate else {
+			completionBlock(.failure(.generic))
+			return
+		}
+
+		exposureSubscription = downloadPackagesForRegions(regions: ArraySlice(BERegion.allCases))
+			.sink(receiveCompletion: { completion in
+				switch completion {
+				case .finished:
+					break
+				case .failure(let error):
+					if let reason = error as? DidEndPrematurelyReason {
+						completionBlock(.failure(reason))
+					} else {
+						completionBlock(.failure(.generic))
+					}
+				}
+		}, receiveValue: { _ in
+			delegate.exposureDetection(self, downloadConfiguration: self.useConfiguration)
+		})
 	}
 
 	// MARK: Working with the Completion Handler

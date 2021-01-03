@@ -22,14 +22,6 @@ import ExposureNotification
 
 class BEExposureSubmissionWarnOthersViewController: ExposureSubmissionWarnOthersViewController {
 	
-	lazy var beCoordinator: BEExposureSubmissionCoordinator  = {
-		guard let beCoordinator = coordinator as? BEExposureSubmissionCoordinator else {
-			fatalError("Wrong coordinator subclass")
-		}
-		
-		return beCoordinator
-	}()
-
 	override init?(coder: NSCoder, coordinator: ExposureSubmissionCoordinating, exposureSubmissionService: BEExposureSubmissionService) {
 		super.init(coder: coder, coordinator: coordinator, exposureSubmissionService: exposureSubmissionService)
 	}
@@ -47,12 +39,12 @@ class BEExposureSubmissionWarnOthersViewController: ExposureSubmissionWarnOthers
 					self.showENErrorAlert(error)
 				default:
 					logError(message: "error: \(error.localizedDescription)", level: .error)
-					let alert = self.setupErrorAlert(message: error.localizedDescription)
+					let alert = Self.setupErrorAlert(message: error.localizedDescription)
 					self.present(alert, animated: true)
 				}
 				
 			case .success(let keys):
-				self.beCoordinator.showSelectCountries(keys)
+				self.coordinator!.submitExposureKeys(keys)
 			}
 		}
 	}

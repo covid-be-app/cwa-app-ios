@@ -319,8 +319,6 @@ extension HomeInteractor {
 
 			// App version 1.1, we should never get to this state. If it is the case it's an old app that was updated.
 			
-			let thankYou = HomeThankYouRiskCellConfigurator()
-			actionsConfigurators.append(thankYou)
 			log(message: "Reached end of life state.", file: #file, line: #line, function: #function)
 
 		} else if store.registrationToken != nil {

@@ -24,7 +24,7 @@ class DynamicTableViewIconCell: UITableViewCell {
 		imageView?.tintColor = tintColor
 	}
 
-	func configure(image: UIImage?, text: String, tintColor: UIColor?, style: ENAFont = .body) {
+	func configure(image: UIImage?, text: String, tintColor: UIColor?, style: ENAFont = .body, iconWidth: CGFloat) {
 		if let tintColor = tintColor {
 			imageView?.tintColor = tintColor
 			imageView?.image = image?.withRenderingMode(.alwaysTemplate)
@@ -34,5 +34,9 @@ class DynamicTableViewIconCell: UITableViewCell {
 
 		(textLabel as? ENALabel)?.style = style.labelStyle
 		textLabel?.text = text
+		
+		imageViewWidthConstraint.constant = iconWidth
 	}
+	
+	@IBOutlet private weak var imageViewWidthConstraint: NSLayoutConstraint!
 }

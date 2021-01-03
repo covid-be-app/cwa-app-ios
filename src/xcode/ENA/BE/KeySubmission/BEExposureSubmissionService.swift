@@ -27,7 +27,7 @@ protocol BEExposureSubmissionService : ExposureSubmissionService {
 	
 	func retrieveDiagnosisKeys(completionHandler: @escaping BEExposureSubmissionGetKeysHandler)
 	func finalizeSubmissionWithoutKeys()
-	func submitExposure(keys:[ENTemporaryExposureKey],countries:[BECountry], completionHandler: @escaping ExposureSubmissionHandler)
+	func submitExposure(keys:[ENTemporaryExposureKey], completionHandler: @escaping ExposureSubmissionHandler)
 	func submitFakeExposure(completionHandler: @escaping ExposureSubmissionHandler)
 	
 	func deleteMobileTestIdIfOutdated() -> Bool
@@ -217,20 +217,17 @@ class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposure
 	
 	/// This method submits the exposure keys. Additionally, after successful completion,
 	/// the timestamp of the key submission is updated.
-	func submitExposure(keys:[ENTemporaryExposureKey],countries:[BECountry], completionHandler: @escaping ExposureSubmissionHandler) {
+	func submitExposure(keys:[ENTemporaryExposureKey], completionHandler: @escaping ExposureSubmissionHandler) {
 		log(message: "Started exposure submission...")
+		log(message: "Submitting \(keys.count) keys")
 		self.submit(
 			keys:keys,
-			countries:countries,
 			completion: completionHandler)
 	}
 	
 	func submitFakeExposure(completionHandler: @escaping ExposureSubmissionHandler) {
-		let country = BECountry(code3: "BEL", name: ["nl":"België","fr":"Belgique","en":"Belgium","de":"Belgien"])
-
 		client.submit(
 			keys: [ENTemporaryExposureKey.random(Date())],
-			countries: [country],
 			mobileTestId: nil,
 			testResult: nil,
 			isFake: true
@@ -244,12 +241,7 @@ class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposure
 		}
 	}
 
-	// no longer used
-	override func submitExposure( completionHandler: @escaping ExposureSubmissionHandler) {
-		fatalError("Deprecated")
-	}
-
-	private func submit(keys: [ENTemporaryExposureKey], countries:[BECountry], completion: @escaping ExposureSubmissionHandler) {
+	private func submit(keys: [ENTemporaryExposureKey], completion: @escaping ExposureSubmissionHandler) {
 		guard
 			let testResult = store.testResult,
 			let mobileTestId = store.mobileTestId
@@ -260,7 +252,6 @@ class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposure
 		
 		client.submit(
 			keys: keys,
-			countries:countries,
 			mobileTestId: mobileTestId,
 			testResult: testResult,
 			isFake: false) { error in

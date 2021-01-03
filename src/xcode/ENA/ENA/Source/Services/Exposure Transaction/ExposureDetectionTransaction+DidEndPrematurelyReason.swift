@@ -31,6 +31,8 @@ extension ExposureDetection {
 		case noExposureConfiguration
 		/// Unable to write diagnosis keys
 		case unableToWriteDiagnosisKeys
+		/// Generic error
+		case generic
 	}
 }
 
@@ -59,6 +61,8 @@ extension ExposureDetection.DidEndPrematurelyReason: LocalizedError {
 			return AppStrings.ExposureDetectionError.errorAlertMessage + " Code: NoDaysAndHours"
 		case .noExposureConfiguration:
 			return AppStrings.ExposureDetectionError.errorAlertMessage + " Code: NoExposureConfiguration"
+		case .generic:
+			return "Generic error"
 		}
 	}
 }

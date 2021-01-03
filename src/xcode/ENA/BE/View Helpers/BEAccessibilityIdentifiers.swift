@@ -59,4 +59,8 @@ enum BEAccessibilityIdentifiers {
 		static let identifier = "BEAppStrings.BESettings.BEMobileDataUsageSettings.identifier"
 		static let image = "BEAppStrings.BESettings.BEMobileDataUsageSettings.image"
 	}
+	
+	enum BEExposureNotification {
+		static let euInteroperabilityCell = "BEAppStrings.BEExposureNotification.euInteroperability.euInteroperabilityCell"
+	}
 }

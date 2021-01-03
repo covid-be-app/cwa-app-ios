@@ -23,16 +23,18 @@ import XCTest
 
 class ExposureSubmissionWarnOthersViewControllerTests: XCTestCase {
 
-	var service: MockExposureSubmissionService!
+	var service: BEMockExposureSubmissionService!
+	var coordinator: MockExposureSubmissionCoordinator!
 
 	override func setUp() {
 		super.setUp()
-		service = MockExposureSubmissionService()
+		service = BEMockExposureSubmissionService()
+		coordinator = MockExposureSubmissionCoordinator()
 	}
 
 	private func createVC() -> ExposureSubmissionWarnOthersViewController {
 		AppStoryboard.exposureSubmission.initiate(viewControllerType: ExposureSubmissionWarnOthersViewController.self) { coder -> UIViewController? in
-			ExposureSubmissionWarnOthersViewController(coder: coder, coordinator: MockExposureSubmissionCoordinator(), exposureSubmissionService: self.service)
+			BEExposureSubmissionWarnOthersViewController(coder: coder, coordinator: self.coordinator, exposureSubmissionService: self.service)
 		}
 	}
 
@@ -41,11 +43,7 @@ class ExposureSubmissionWarnOthersViewControllerTests: XCTestCase {
 		_ = vc.view
 
 		let expectSubmitExposure = self.expectation(description: "Call submitExposure")
-		service.submitExposureCallback = {  completion in
-
-			expectSubmitExposure.fulfill()
-			completion(nil)
-		}
+		coordinator.submitExposureCallback = { expectSubmitExposure.fulfill() }
 
 		// Trigger submission process.
 		vc.startSubmitProcess()

@@ -26,6 +26,12 @@ struct TestResult : Codable, Hashable {
 	static let invalid = TestResult(result:.invalid, channel:.lab, dateCollected: "2020-01-01", dateTestCommunicated: "2020-01-01")
 	static let pending = TestResult(result:.pending, channel:.lab, dateCollected: "2020-01-01", dateTestCommunicated: "2020-01-01")
 
+	static func positiveWithDate(_ date: Date = Date()) -> TestResult {
+		let dateString = BEDateString.fromDateWithoutTime(date: date)
+		
+		return TestResult(result:.positive, channel:.lab, dateCollected: dateString, dateTestCommunicated: dateString)
+	}
+	
 	enum Result: Int, Codable {
 		case pending = 0
 		case negative = 1

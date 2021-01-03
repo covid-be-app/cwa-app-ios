@@ -162,7 +162,7 @@ extension BEMobileTestIdActivator: BEActivateMobileTestIdViewControllerDelegate 
 	}
 	
 	func activateMobileTestIdViewControllerFinished(_ viewController: BEActivateMobileTestIdViewController) {
-		let alert = viewController.setupErrorAlert(title: BEAppStrings.BEMobileTestIdActivator.testActivatedTitle, message: BEAppStrings.BEMobileTestIdActivator.testActivatedMessage)
+		let alert = UIViewController.setupErrorAlert(title: BEAppStrings.BEMobileTestIdActivator.testActivatedTitle, message: BEAppStrings.BEMobileTestIdActivator.testActivatedMessage)
 		
 		activateMobileTestIdNavigationController?.dismiss(animated: true) {
 			self.parentViewController.present(alert, animated: true)

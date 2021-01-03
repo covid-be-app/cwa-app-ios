@@ -30,16 +30,24 @@ class ExposureSubmissionServiceTests: XCTestCase {
 		let keyRetrieval = MockDiagnosisKeysRetrieval(diagnosisKeysResult: (keys, nil))
 		let client = ClientMock()
 		let store = MockTestStore()
-		store.registrationToken = "dummyRegistrationToken"
-
-		let service = ENAExposureSubmissionService(diagnosiskeyRetrieval: keyRetrieval, client: client, store: store)
+		store.mobileTestId = BEMobileTestId.random
+		store.testResult = TestResult.positiveWithDate(store.mobileTestId!.creationDate)
+	
+		let service = BEExposureSubmissionServiceImpl(diagnosiskeyRetrieval: keyRetrieval, client: client, store: store)
 		let expectation = self.expectation(description: "Success")
 		var error: ExposureSubmissionError?
 
-		// Act
-		service.submitExposure {
-			error = $0
-			expectation.fulfill()
+		service.retrieveDiagnosisKeys { result in
+			// Act
+			switch result {
+			case .success(let keys):
+				service.submitExposure(keys: keys) {
+					error = $0
+					expectation.fulfill()
+				}
+			case .failure(let keyError):
+				error = keyError
+			}
 		}
 
 		waitForExpectations(timeout: expectationsTimeout)
@@ -53,20 +61,23 @@ class ExposureSubmissionServiceTests: XCTestCase {
 		let keyRetrieval = MockDiagnosisKeysRetrieval(diagnosisKeysResult: (nil, nil))
 		let client = ClientMock()
 		let store = MockTestStore()
+		store.mobileTestId = BEMobileTestId.random
+		store.testResult = TestResult.positiveWithDate(store.mobileTestId!.creationDate)
 
-		let service = ENAExposureSubmissionService(diagnosiskeyRetrieval: keyRetrieval, client: client, store: store)
+		let service = BEExposureSubmissionServiceImpl(diagnosiskeyRetrieval: keyRetrieval, client: client, store: store)
 		let expectation = self.expectation(description: "NoKeys")
 
-		// Act
-		service.submitExposure { error in
-			defer { expectation.fulfill() }
-			guard let error = error else {
+		service.retrieveDiagnosisKeys { result in
+			// Act
+			switch result {
+			case .success:
 				XCTFail("error expected")
-				return
-			}
-			guard case ExposureSubmissionError.noKeys = error else {
-				XCTFail("We expect error to be of type expectationsTimeout")
-				return
+			case .failure(let error):
+				guard case ExposureSubmissionError.noKeys = error else {
+					XCTFail("We expect error to be of type expectationsTimeout")
+					return
+				}
+				expectation.fulfill()
 			}
 		}
 
@@ -78,68 +89,47 @@ class ExposureSubmissionServiceTests: XCTestCase {
 		let keyRetrieval = MockDiagnosisKeysRetrieval(diagnosisKeysResult: (nil, nil))
 		let client = ClientMock()
 		let store = MockTestStore()
+		store.mobileTestId = BEMobileTestId.random
+		store.testResult = TestResult.positiveWithDate(store.mobileTestId!.creationDate)
 
-		let service = ENAExposureSubmissionService(diagnosiskeyRetrieval: keyRetrieval, client: client, store: store)
+		let service = BEExposureSubmissionServiceImpl(diagnosiskeyRetrieval: keyRetrieval, client: client, store: store)
 		let expectation = self.expectation(description: "EmptyKeys")
 
-		// Act
-		service.submitExposure { error in
+		service.retrieveDiagnosisKeys { result in
 			defer { expectation.fulfill() }
-			guard let error = error else {
+			switch result {
+			case .success:
 				XCTFail("error expected")
-				return
-			}
-			guard case ExposureSubmissionError.noKeys = error else {
-				XCTFail("We expect error to be of type noKeys")
-				return
+			case .failure(let error):
+				guard case ExposureSubmissionError.noKeys = error else {
+					XCTFail("We expect error to be of type noKeys")
+					return
+				}
 			}
 		}
 
 		waitForExpectations(timeout: expectationsTimeout)
 	}
 
-	func testSubmitExpousure_InvalidTan() {
-		// Arrange
-		let keyRetrieval = MockDiagnosisKeysRetrieval(diagnosisKeysResult: (keys, nil))
-		let client = ClientMock(submissionError: .invalidPayloadOrHeaders)
-		let store = MockTestStore()
-		store.registrationToken = "dummyRegistrationToken"
-
-		let service = ENAExposureSubmissionService(diagnosiskeyRetrieval: keyRetrieval, client: client, store: store)
-		let expectation = self.expectation(description: "OtherError")
-
-		// Act
-		service.submitExposure { error in
-			defer { expectation.fulfill() }
-			guard let error = error else {
-				XCTFail("error expected")
-				return
-			}
-			guard case ExposureSubmissionError.other = error else {
-				XCTFail("We expect error to be of type other")
-				return
-			}
-		}
-
-		waitForExpectations(timeout: expectationsTimeout)
-	}
-
-	func testSubmitExpousure_NoRegToken() {
+	func testSubmitExpousure_NoTestResult() {
 		// Arrange
 
 		let keyRetrieval = MockDiagnosisKeysRetrieval(diagnosisKeysResult: (keys, nil))
 		let client = ClientMock()
 		let store = MockTestStore()
+		store.mobileTestId = BEMobileTestId.random
 
-		let service = ENAExposureSubmissionService(diagnosiskeyRetrieval: keyRetrieval, client: client, store: store)
-		let expectation = self.expectation(description: "InvalidRegToken")
+		let service = BEExposureSubmissionServiceImpl(diagnosiskeyRetrieval: keyRetrieval, client: client, store: store)
+		let expectation = self.expectation(description: "NoTestResult")
 
-		// Act
-		service.submitExposure {error in
-			defer {
+		service.retrieveDiagnosisKeys { result in
+			switch result {
+			case .success:
+				XCTFail("error expected")
+			case .failure(let error):
+				XCTAssert(error == .internal)
 				expectation.fulfill()
 			}
-			XCTAssert(error == .noRegistrationToken)
 		}
 
 		waitForExpectations(timeout: expectationsTimeout)

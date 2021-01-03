@@ -63,7 +63,7 @@ extension ClientMock: Client {
 		onAppConfiguration(completion)
 	}
 
-	func availableDays(completion: @escaping AvailableDaysCompletionHandler) {
+	func availableDays(region: BERegion, completion: @escaping AvailableDaysCompletionHandler) {
 		if let failure = urlRequestFailure {
 			completion(.failure(failure))
 			return
@@ -71,7 +71,7 @@ extension ClientMock: Client {
 		completion(.success(availableDaysAndHours.days))
 	}
 
-	func availableHours(day: String, completion: @escaping AvailableHoursCompletionHandler) {
+	func availableHours(day: String, region: BERegion, completion: @escaping AvailableHoursCompletionHandler) {
 		if let failure = urlRequestFailure {
 			completion(.failure(failure))
 			return
@@ -79,7 +79,7 @@ extension ClientMock: Client {
 		completion(.success(availableDaysAndHours.hours))
 	}
 
-	func fetchDay(_: String, completion: @escaping DayCompletionHandler) {
+	func fetchDay(_: String, region: BERegion, completion: @escaping DayCompletionHandler) {
 		if let failure = urlRequestFailure {
 			completion(.failure(failure))
 			return
@@ -87,7 +87,7 @@ extension ClientMock: Client {
 		completion(.success(downloadedPackage ?? SAPDownloadedPackage(keysBin: Data(), signature: Data())))
 	}
 
-	func fetchHour(_: Int, day: String, completion: @escaping HourCompletionHandler) {
+	func fetchHour(_: Int, day: String, region: BERegion, completion: @escaping HourCompletionHandler) {
 		if let failure = urlRequestFailure {
 			completion(.failure(failure))
 			return
@@ -126,7 +126,7 @@ extension ClientMock: Client {
 		completionBlock()
 	}
 	
-	func submit(keys: [ENTemporaryExposureKey], countries: [BECountry], mobileTestId: BEMobileTestId?, testResult: TestResult?, isFake: Bool, completion: @escaping SubmitKeysCompletionHandler) {
+	func submit(keys: [ENTemporaryExposureKey], mobileTestId: BEMobileTestId?, testResult: TestResult?, isFake: Bool, completion: @escaping SubmitKeysCompletionHandler) {
 		completion(nil)
 	}
 	

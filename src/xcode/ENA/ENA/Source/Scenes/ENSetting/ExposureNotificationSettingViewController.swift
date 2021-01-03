@@ -33,7 +33,7 @@ final class ExposureNotificationSettingViewController: UITableViewController {
 
 	private var lastActionCell: ActionCell?
 
-	let model = ENSettingModel(content: [.banner, .actionCell, .actionDetailCell])
+	let model = ENSettingModel(content: [.banner, .actionCell, .euTracingCell, .actionDetailCell])
 	let store: Store
 	var enState: ENStateHandler.State
 
@@ -169,6 +169,16 @@ extension ExposureNotificationSettingViewController {
 		1
 	}
 
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let section = indexPath.section
+		let content = model.content[section]
+
+		guard content.cellType == .euTracingCell else { return }
+
+		let vc = BEEUSettingsViewController()
+		navigationController?.pushViewController(vc, animated: true)
+	}
+
 	override func tableView(
 		_ tableView: UITableView,
 		cellForRowAt indexPath: IndexPath
@@ -187,6 +197,9 @@ extension ExposureNotificationSettingViewController {
 					cell.configure(for: enState, delegate: self)
 					lastActionCell = cell
 				}
+			case .euTracingCell:
+				return euTracingCell(for: indexPath, in: tableView)
+
 			case .tracingCell, .actionDetailCell:
 				switch enState {
 				case .enabled, .disabled:
@@ -227,6 +240,16 @@ extension ExposureNotificationSettingViewController {
 			return UITableViewCell()
 		}
 	}
+	
+	private func euTracingCell(for indexPath: IndexPath, in tableView: UITableView) -> UITableViewCell {
+		let dequeuedEUTracingCell = tableView.dequeueReusableCell(withIdentifier: ENSettingModel.Content.euTracingCell.cellType.rawValue, for: indexPath)
+		guard let euTracingCell = dequeuedEUTracingCell as? EuTracingTableViewCell else {
+			return UITableViewCell()
+		}
+
+		euTracingCell.configure()
+		return euTracingCell
+	}
 }
 
 extension ExposureNotificationSettingViewController: ActionTableViewCellDelegate {
@@ -246,6 +269,7 @@ extension ExposureNotificationSettingViewController {
 	fileprivate enum ReusableCellIdentifier: String {
 		case banner
 		case actionCell
+		case euTracingCell
 		case tracingCell
 		case actionDetailCell
 		case descriptionCell
@@ -259,6 +283,8 @@ private extension ENSettingModel.Content {
 			return .banner
 		case .actionCell:
 			return .actionCell
+		case .euTracingCell:
+			return .euTracingCell
 		case .tracingCell:
 			return .tracingCell
 		case .actionDetailCell:

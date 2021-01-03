@@ -25,11 +25,10 @@ extension URLRequest {
 		configuration: HTTPClient.Configuration,
 		mobileTestId: BEMobileTestId,
 		testResult:TestResult,
-		keys: [ENTemporaryExposureKey],
-		countries: [BECountry]
+		keys: [ENTemporaryExposureKey]
 	) throws -> URLRequest {
 		
-		let payloadData = try getPaddedPayloadData(keys: keys, countries: countries)
+		let payloadData = try getPaddedPayloadData(keys: keys)
 		let url = configuration.submissionURL
 		var request = URLRequest(url: url)
 
@@ -89,7 +88,7 @@ extension URLRequest {
 	/// Worst case this means the below loop runs `wantedByteCount` amount of times, but since this call is only used
 	/// when uploading keys and therefore not happens very often we don't really care about its performance. Even
 	/// 700 iterations will not slow down the app in a noticeable way
-	private static func getPaddedPayloadData(keys: [ENTemporaryExposureKey], countries: [BECountry]) throws -> Data {
+	private static func getPaddedPayloadData(keys: [ENTemporaryExposureKey]) throws -> Data {
 		// padd all to 700 bytes
 		let wantedByteCount = 700
 		var currentByteCount = 0
@@ -102,9 +101,10 @@ extension URLRequest {
 			}
 			
 			let payload = SAP_SubmissionPayload.with {
-				$0.padding = paddingData
+				$0.requestPadding = paddingData
 				$0.keys = keys.map { $0.sapKey }
-				$0.countries = countries.map { $0.code3 }
+				$0.origin = "BE"
+				$0.consentToFederation = true
 			}
 			
 			payloadData = try payload.serializedData()

@@ -90,6 +90,8 @@ extension TimeInterval {
 			return TimeInterval(60)
 		case .test:
 			return TimeInterval(60)
+		case .development:
+			return TimeInterval(60)
 		}
 	}
 }

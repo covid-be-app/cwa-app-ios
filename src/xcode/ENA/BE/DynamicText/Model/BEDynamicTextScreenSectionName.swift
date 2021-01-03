@@ -25,4 +25,5 @@ enum BEDynamicTextScreenSectionName: String, Decodable, CodingKey {
 	case pleaseNote = "pleaseNote"
 	case otherInformation = "otherInformation"
 	case preventiveMeasures = "preventiveMeasures"
+	case list = "list"
 }

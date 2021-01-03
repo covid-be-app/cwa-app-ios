@@ -32,12 +32,6 @@ final class BEHTTPClientSubmitTests: XCTestCase {
 		return [key]
 	}
 	
-	private var countries:[BECountry] {
-		let country = BECountry(code3: "BEL", name: ["nl":"België","fr":"Belgique","en":"Belgium","de":"Belgien"])
-		
-		return [country]
-	}
-	
 	private var mobileTestId = BEMobileTestId(symptomsStartDate: Date())
 	
 	func testSubmit_Success() {
@@ -53,7 +47,6 @@ final class BEHTTPClientSubmitTests: XCTestCase {
 		// Act
 		HTTPClient.makeWith(mock: stack).submit(
 			keys: keys,
-			countries: countries,
 			mobileTestId: mobileTestId,
 			testResult: result,
 			isFake: false) { error in
@@ -80,7 +73,6 @@ final class BEHTTPClientSubmitTests: XCTestCase {
 		// Act
 		HTTPClient.makeWith(mock: stack).submit(
 			keys: keys,
-			countries: countries,
 			mobileTestId: mobileTestId,
 			testResult: testResult,
 			isFake: false) {
@@ -109,7 +101,6 @@ final class BEHTTPClientSubmitTests: XCTestCase {
 		// Act
 		HTTPClient.makeWith(mock: stack).submit(
 			keys: keys,
-			countries: countries,
 			mobileTestId: mobileTestId,
 			testResult: testResult,
 			isFake: false) { error in
@@ -143,7 +134,6 @@ final class BEHTTPClientSubmitTests: XCTestCase {
 		// Act
 		HTTPClient.makeWith(mock: stack).submit(
 			keys: keys,
-			countries: countries,
 			mobileTestId: mobileTestId,
 			testResult: testResult,
 			isFake: false) { error in
@@ -175,7 +165,6 @@ final class BEHTTPClientSubmitTests: XCTestCase {
 		// Act
 		HTTPClient.makeWith(mock: stack).submit(
 			keys: keys,
-			countries: countries,
 			mobileTestId: mobileTestId,
 			testResult: testResult,
 			isFake: false) { error in
@@ -205,7 +194,6 @@ final class BEHTTPClientSubmitTests: XCTestCase {
 		// Act
 		HTTPClient.makeWith(mock: stack).submit(
 			keys: keys,
-			countries: countries,
 			mobileTestId: mobileTestId,
 			testResult: testResult,
 			isFake: false) { error in

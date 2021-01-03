@@ -28,7 +28,7 @@ class ExposureSubmissionViewControllerTests: XCTestCase {
 			ExposureSubmissionTestResultViewController(
 				coder: coder,
 				coordinator: MockExposureSubmissionCoordinator(),
-				exposureSubmissionService: MockExposureSubmissionService(),
+				exposureSubmissionService: BEMockExposureSubmissionService(),
 				testResult: nil
 			)
 		}

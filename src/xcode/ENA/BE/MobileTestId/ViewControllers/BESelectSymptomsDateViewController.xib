@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,10 +30,11 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="body"/>
                     </userDefinedRuntimeAttributes>
                 </label>
-                <datePicker contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="anc-AV-t7T">
+                <datePicker contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="anc-AV-t7T">
                     <rect key="frame" x="0.0" y="340" width="414" height="216"/>
                 </datePicker>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="NSG-3W-oWH"/>
             <color key="backgroundColor" name="ENA Background Color"/>
             <constraints>
                 <constraint firstItem="anc-AV-t7T" firstAttribute="centerY" secondItem="gPl-Gn-GXe" secondAttribute="centerY" id="0zM-TD-ZEy"/>
@@ -42,10 +44,14 @@
                 <constraint firstItem="anc-AV-t7T" firstAttribute="leading" secondItem="NSG-3W-oWH" secondAttribute="leading" id="gJv-J4-ozw"/>
                 <constraint firstItem="dkj-rL-CgO" firstAttribute="top" secondItem="gPl-Gn-GXe" secondAttribute="topMargin" id="wTt-x1-zzW"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="NSG-3W-oWH"/>
             <point key="canvasLocation" x="-22" y="-71"/>
         </view>
     </objects>
+    <designables>
+        <designable name="dkj-rL-CgO">
+            <size key="intrinsicContentSize" width="373.5" height="20.5"/>
+        </designable>
+    </designables>
     <resources>
         <namedColor name="ENA Background Color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

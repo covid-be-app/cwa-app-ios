@@ -391,3 +391,10 @@
 "BEMobileDataSettings_description" = "Utilisez les réseaux mobiles pour télécharger des identifiants aléatoires.";
 "BEMobileDataSettings_active" = "Wifi et Mobile";
 "BEMobileDataSettings_inactive" = "Wifi Uniquement";
+"ExposureNotificationSetting_euTracingRiskDeterminationTitle" = "Journalisation des expositions transnationales";
+"ExposureNotificationSetting_euTracingAllCountriesTitle" = "Pays participants";
+"ExposureNotificationSetting_EU_Title" = "Journalisation des expositions transnationales";
+"ExposureNotificationSetting_EU_Desc_1" = "Plusieurs pays travaillent ensemble pour permettre des alertes transnationales via un serveur d'échange commun. Par exemple, les contacts avec les utilisateurs d'une application officielle de coronavirus d'autres pays participants peuvent également être pris en compte pour l'enregistrement de l'exposition.";
+"ExposureNotificationSetting_EU_Desc_2" = "À cette fin, l'application télécharge chaque jour une liste d'identifiants aléatoires de tous les utilisateurs qui ont eu un test positif et qui ont décidé d'informer les autres utilisateurs en partageant leurs identifiants aléatoires. Cette liste est ensuite comparée aux identifiants aléatoires enregistrés par votre smartphone. Vous pouvez choisir de télécharger cette liste via WiFi; sinon une partie de votre budget de données mobiles sera consommée. Sachez que cela peut entraîner des frais d'itinérance si vous quittez l'UE.";
+"ExposureNotificationSetting_EU_Desc_3" = "Les pays suivants participent actuellement à l'enregistrement des expositions transnationales:";
+"ExposureNotificationSetting_EU_Desc_4" = "L'avis de confidentialité de l'application (y compris les informations sur le traitement des données effectué pour la fonction d'enregistrement des expositions transnationales) se trouve dans le menu sous «Informations sur l'application»> «Confidentialité des données».";

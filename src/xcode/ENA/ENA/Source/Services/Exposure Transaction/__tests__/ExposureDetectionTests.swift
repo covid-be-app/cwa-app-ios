@@ -23,26 +23,51 @@
 import XCTest
 @testable import ENA
 import ExposureNotification
+import Combine
+
 final class ExposureDetectionTransactionTests: XCTestCase {
 
 	func testGivenThatEveryNeedIsSatisfiedTheDetectionFinishes() throws {
 		let delegate = ExposureDetectionDelegateMock()
+		var availableDataExpectations: [BERegion: XCTestExpectation] = [:]
+		var downloadDeltaExpectations: [BERegion: XCTestExpectation] = [:]
+		var downloadAndStoreExpectations: [BERegion: XCTestExpectation] = [:]
+		var writtenPackagesExpectations: [BERegion: XCTestExpectation] = [:]
 
-		let availableDataToBeCalled = expectation(description: "availableData called")
-		delegate.availableData = {
-			availableDataToBeCalled.fulfill()
+		var allExpectations: [XCTestExpectation] = []
+		var writtenPackagesExpectationsArray: [XCTestExpectation] = []
+
+		BERegion.allCases.forEach { region in
+			let availableDataToBeCalled = expectation(description: "availableData called for \(region.rawValue)")
+			let downloadDeltaToBeCalled = expectation(description: "downloadDelta called for \(region.rawValue)")
+			let downloadAndStoreToBeCalled = expectation(description: "downloadAndStore called for \(region.rawValue)")
+			let writtenPackagesBeCalled = expectation(description: "writtenPackages called for \(region.rawValue)")
+
+			availableDataExpectations[region] = availableDataToBeCalled
+			downloadDeltaExpectations[region] = downloadDeltaToBeCalled
+			downloadAndStoreExpectations[region] = downloadAndStoreToBeCalled
+			writtenPackagesExpectations[region] = writtenPackagesBeCalled
+			
+			allExpectations.append(availableDataToBeCalled)
+			allExpectations.append(downloadDeltaToBeCalled)
+			allExpectations.append(downloadAndStoreToBeCalled)
+		}
+		
+		BERegion.allCases.forEach { region in
+			writtenPackagesExpectationsArray.append(writtenPackagesExpectations[region]!)
+		}
+		delegate.availableData = { region -> DaysAndHours? in
+			availableDataExpectations[region]!.fulfill()
 			return (days: ["2020-05-01"], hours: [])
 		}
 
-		let downloadDeltaToBeCalled = expectation(description: "downloadDelta called")
-		delegate.downloadDelta = { _ in
-			downloadDeltaToBeCalled.fulfill()
+		delegate.downloadDelta = { available, region in
+			downloadDeltaExpectations[region]!.fulfill()
 			return (days: ["2020-05-01"], hours: [])
 		}
 
-		let downloadAndStoreToBeCalled = expectation(description: "downloadAndStore called")
-		delegate.downloadAndStore = { _ in
-			downloadAndStoreToBeCalled.fulfill()
+		delegate.downloadAndStore = { delta, region in
+			downloadAndStoreExpectations[region]!.fulfill()
 			return nil
 		}
 
@@ -61,9 +86,8 @@ final class ExposureDetectionTransactionTests: XCTestCase {
 
 		let writtenPackages = WrittenPackages(urls: [url0, url1])
 
-		let writtenPackagesBeCalled = expectation(description: "writtenPackages called")
-		delegate.writtenPackages = {
-			writtenPackagesBeCalled.fulfill()
+		delegate.writtenPackages = { region in
+			writtenPackagesExpectations[region]!.fulfill()
 			return writtenPackages
 		}
 
@@ -75,18 +99,12 @@ final class ExposureDetectionTransactionTests: XCTestCase {
 
 		let startCompletionCalled = expectation(description: "start completion called")
 		let detection = ExposureDetection(delegate: delegate)
-		detection.start { _ in startCompletionCalled.fulfill() }
+		detection.start { _ in
+			startCompletionCalled.fulfill()
+		}
 
 		wait(
-			for: [
-				availableDataToBeCalled,
-				downloadDeltaToBeCalled,
-				downloadAndStoreToBeCalled,
-				configurationToBeCalled,
-				writtenPackagesBeCalled,
-				summaryResultBeCalled,
-				startCompletionCalled
-			],
+			for: allExpectations + [configurationToBeCalled] + writtenPackagesExpectationsArray + [summaryResultBeCalled, startCompletionCalled],
 			timeout: 1.0,
 			enforceOrder: true
 		)
@@ -125,24 +143,24 @@ final class MutableENExposureDetectionSummary: ENExposureDetectionSummary {
 private final class ExposureDetectionDelegateMock {
 	// MARK: Types
 	struct SummaryError: Error { }
-	typealias DownloadAndStoreHandler = (_ delta: DaysAndHours) -> Error?
+	typealias DownloadAndStoreHandler = (_ delta: DaysAndHours, _ region: BERegion) -> Error?
 
 	// MARK: Properties
-	var availableData: () -> DaysAndHours? = {
+	var availableData: (_ region: BERegion) -> DaysAndHours? = { region in
 		nil
 	}
 
-	var downloadDelta: (_ available: DaysAndHours) -> DaysAndHours = { _ in
+	var downloadDelta: (_ available: DaysAndHours, _ region: BERegion) -> DaysAndHours = { _, _ in
 		DaysAndHours(days: [], hours: [])
 	}
 
-	var downloadAndStore: DownloadAndStoreHandler = { _ in nil }
+	var downloadAndStore: DownloadAndStoreHandler = { _, _ in nil }
 
 	var configuration: () -> ENExposureConfiguration? = {
 		nil
 	}
 
-	var writtenPackages: () -> WrittenPackages? = {
+	var writtenPackages: (_ region: BERegion) -> WrittenPackages? = { _ in
 		nil
 	}
 
@@ -155,16 +173,16 @@ private final class ExposureDetectionDelegateMock {
 }
 
 extension ExposureDetectionDelegateMock: ExposureDetectionDelegate {
-	func exposureDetection(_ detection: ExposureDetection, determineAvailableData completion: @escaping (DaysAndHours?) -> Void) {
-		completion(availableData())
+	func exposureDetectionDetermineAvailableData(_ detection: ExposureDetection, region: BERegion) -> Future<DaysAndHours?, Error> {
+		return Future<DaysAndHours?, Error>.withResult(availableData(region))
 	}
-
-	func exposureDetection(_ detection: ExposureDetection, downloadDeltaFor remote: DaysAndHours) -> DaysAndHours {
-		downloadDelta(remote)
+	
+	func exposureDetection(_ detection: ExposureDetection, downloadDeltaFor remote: DaysAndHours, region: BERegion) -> DaysAndHours {
+		downloadDelta(remote, region)
 	}
-
-	func exposureDetection(_ detection: ExposureDetection, downloadAndStore delta: DaysAndHours, completion: @escaping (Error?) -> Void) {
-		completion(downloadAndStore(delta))
+	
+	func exposureDetection(_ detection: ExposureDetection, downloadAndStore delta: DaysAndHours, region: BERegion, completion: @escaping (Error?) -> Void) {
+		completion(downloadAndStore(delta, region))
 
 	}
 
@@ -172,8 +190,8 @@ extension ExposureDetectionDelegateMock: ExposureDetectionDelegate {
 		completion(configuration())
 	}
 
-	func exposureDetectionWriteDownloadedPackages(_ detection: ExposureDetection) -> WrittenPackages? {
-		writtenPackages()
+	func exposureDetectionWriteDownloadedPackages(_ detection: ExposureDetection, region: BERegion) -> WrittenPackages? {
+		writtenPackages(region)
 	}
 
 	func exposureDetection(_ detection: ExposureDetection, detectSummaryWithConfiguration configuration: ENExposureConfiguration, writtenPackages: WrittenPackages, completion: @escaping (Result<ENExposureDetectionSummary, Error>) -> Void) {

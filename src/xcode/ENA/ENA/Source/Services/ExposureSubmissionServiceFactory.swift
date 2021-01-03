@@ -46,7 +46,7 @@ extension ExposureSubmissionServiceFactory {
 #if UITESTING
 
 /// This extension will return a mock service if and only if the .useMock parameter is passed to the application.
-/// If the parameter is _not_ provided, the factory will instantiate a regular ENAExposureSubmissionService.
+/// If the parameter is _not_ provided, the factory will instantiate a regular BEExposureSubmissionService.
 /// - NOTE: This is condtionally compiled so no test code spills into the release build.
 extension ExposureSubmissionServiceFactory {
 	static func create(diagnosiskeyRetrieval: DiagnosisKeysRetrieval, client: Client, store: Store) -> ExposureSubmissionService {
@@ -63,14 +63,6 @@ extension ExposureSubmissionServiceFactory {
 		let service = BEMockExposureSubmissionService()
 
 		// :BE: registration token fetching does not exist on our side
-
-		if isEnabled(.submitExposureSuccess) {
-			service.submitExposureCallback = { completeWith in
-				DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-					completeWith(nil)
-				}
-			}
-		}
 
 		return service
 	}

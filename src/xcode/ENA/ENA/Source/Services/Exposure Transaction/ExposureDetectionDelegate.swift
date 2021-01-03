@@ -17,6 +17,7 @@
 
 import ExposureNotification
 import Foundation
+import Combine
 
 typealias DaysAndHours = (days: [String], hours: [Int])
 
@@ -26,19 +27,21 @@ protocol ExposureDetectionDelegate: AnyObject {
 	typealias Completion = (DaysAndHours?) -> Void
 	typealias DetectionHandler = (Result<ENExposureDetectionSummary, Error>) -> Void
 
-	func exposureDetection(
+	func exposureDetectionDetermineAvailableData(
 		_ detection: ExposureDetection,
-		determineAvailableData completion: @escaping (DaysAndHours?) -> Void
-	)
+		region: BERegion
+	) -> Future<DaysAndHours?, Error>
 
 	func exposureDetection(
 		_ detection: ExposureDetection,
-		downloadDeltaFor remote: DaysAndHours
+		downloadDeltaFor remote: DaysAndHours,
+		region: BERegion
 	) -> DaysAndHours
 
 	func exposureDetection(
 		_ detection: ExposureDetection,
 		downloadAndStore delta: DaysAndHours,
+		region: BERegion,
 		completion: @escaping (Error?) -> Void
 	)
 
@@ -47,7 +50,7 @@ protocol ExposureDetectionDelegate: AnyObject {
 		downloadConfiguration completion: @escaping (ENExposureConfiguration?) -> Void
 	)
 
-	func exposureDetectionWriteDownloadedPackages(_ detection: ExposureDetection) -> WrittenPackages?
+	func exposureDetectionWriteDownloadedPackages(_ detection: ExposureDetection, region: BERegion) -> WrittenPackages?
 
 	func exposureDetection(
 		_ detection: ExposureDetection,

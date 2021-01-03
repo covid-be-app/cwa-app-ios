@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="W8E-ea-7hM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="W8E-ea-7hM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -38,7 +40,7 @@
                                                         <rect key="frame" x="0.0" y="36.5" width="382" height="617.5"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" verticalCompressionResistancePriority="1000" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fFa-H0-7iG" customClass="ENATanInput" customModule="ENA" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="285.5" width="382" height="46.5"/>
+                                                                <rect key="frame" x="0.0" y="284" width="382" height="50"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" priority="250" constant="50" placeholder="YES" id="GoX-aD-BHg"/>
                                                                 </constraints>
@@ -94,6 +96,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="9Ma-84-jrP"/>
                         <color key="backgroundColor" name="ENA Background Color"/>
                         <constraints>
                             <constraint firstItem="8dd-c4-eqD" firstAttribute="height" secondItem="9Ma-84-jrP" secondAttribute="height" priority="750" id="1MX-BT-sha"/>
@@ -102,7 +105,6 @@
                             <constraint firstItem="qBb-LO-eZK" firstAttribute="top" secondItem="9jY-Vi-dC9" secondAttribute="top" id="iVl-35-kt4"/>
                             <constraint firstAttribute="trailing" secondItem="qBb-LO-eZK" secondAttribute="trailing" id="rg6-Mu-abO"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="9Ma-84-jrP"/>
                     </view>
                     <navigationItem key="navigationItem" title="Tan Input" id="V3g-Ep-y0w" customClass="ENANavigationFooterItem" customModule="ENA" customModuleProvider="target"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -149,45 +151,6 @@
             </objects>
             <point key="canvasLocation" x="2480" y="461"/>
         </scene>
-        <!--Test Registrieren-->
-        <scene sceneID="aO0-Xg-smX">
-            <objects>
-                <tableViewController storyboardIdentifier="ExposureSubmissionOverviewViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yc4-yu-NbP" customClass="ExposureSubmissionOverviewViewController" customModule="ENA" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="I2D-eU-Ob2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" name="ENA Background Color"/>
-                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        <connections>
-                            <outlet property="dataSource" destination="yc4-yu-NbP" id="P1d-vH-Sus"/>
-                            <outlet property="delegate" destination="yc4-yu-NbP" id="KNh-bz-KJM"/>
-                        </connections>
-                    </tableView>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Test Registrieren" id="M8d-ii-EG4" customClass="ENANavigationFooterItem" customModule="ENA" customModuleProvider="target"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="cellBackgroundColor">
-                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <segue destination="aFo-WD-gEN" kind="show" identifier="tanInputSegue" id="zPx-Mo-iVD"/>
-                        <segue destination="BYY-Kq-aHb" kind="show" identifier="qrScannerSegue" id="57u-UG-VMo"/>
-                        <segue destination="efh-V6-b47" kind="show" identifier="labResultSegue" id="4QH-h7-ntj"/>
-                        <segue destination="JDx-c2-PAb" kind="show" identifier="hotlineSegue" id="hxl-5U-J6A"/>
-                    </connections>
-                </tableViewController>
-                <barButtonItem style="plain" id="GIX-lF-ozK">
-                    <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FaA-yn-Xch" customClass="ENAButton" customModule="ENA" customModuleProvider="target">
-                        <rect key="frame" x="20" y="5" width="374" height="44"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Button"/>
-                    </button>
-                </barButtonItem>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="G8O-g9-RSX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="934.78260869565224" y="460.71428571428567"/>
-        </scene>
         <!--Exposure SubmissionQR Scanner Navigation Controller-->
         <scene sceneID="HrB-NV-jDk">
             <objects>
@@ -230,7 +193,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="999" text="Positionieren Sie den Rahmen über dem QR Code Ihres Dokuments" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTI-P6-3Zh" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
-                                <rect key="frame" x="52" y="151" width="310.5" height="41"/>
+                                <rect key="frame" x="52" y="149.5" width="310.5" height="42.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" name="ENA Text Contrast Color"/>
                                 <nil key="highlightedColor"/>
@@ -239,7 +202,8 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="SS3-oV-R9m"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="R79-KI-RLB" secondAttribute="bottom" id="2GO-5C-F0I"/>
                             <constraint firstItem="aTI-P6-3Zh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="SS3-oV-R9m" secondAttribute="top" constant="32" id="9nw-Pu-4mr"/>
@@ -254,7 +218,6 @@
                             <constraint firstItem="aTI-P6-3Zh" firstAttribute="centerX" secondItem="1rF-Kc-jE8" secondAttribute="centerX" id="whd-Ii-ypq"/>
                         </constraints>
                         <edgeInsets key="layoutMargins" top="32" left="16" bottom="32" right="16"/>
-                        <viewLayoutGuide key="safeArea" id="SS3-oV-R9m"/>
                     </view>
                     <navigationItem key="navigationItem" title="QR-Code Scan" largeTitleDisplayMode="never" id="Mky-1g-CYO">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="YEe-QI-wZs">
@@ -375,7 +338,6 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <segue destination="yc4-yu-NbP" kind="show" identifier="overviewSegue" id="lCb-cl-Yp4"/>
                         <segue destination="efh-V6-b47" kind="show" identifier="labResultSegue" id="F8Z-7e-umN"/>
                     </connections>
                 </viewController>
@@ -388,7 +350,7 @@
             <objects>
                 <viewController restorationIdentifier="ExposureSubmissionHotlineViewController " storyboardIdentifier="ExposureSubmissionHotlineViewController" id="JDx-c2-PAb" customClass="ExposureSubmissionHotlineViewController" customModule="ENA" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" id="Bij-4W-Ok4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" name="ENA Background Color"/>
                     </tableView>
@@ -407,11 +369,21 @@
             <point key="canvasLocation" x="935" y="1308"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="DuS-ZV-gMr">
+            <size key="intrinsicContentSize" width="67" height="20.5"/>
+        </designable>
+        <designable name="I0N-4y-Zcm">
+            <size key="intrinsicContentSize" width="67" height="20.5"/>
+        </designable>
+        <designable name="aTI-P6-3Zh">
+            <size key="intrinsicContentSize" width="509" height="20.5"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="5YR-5A-F8h"/>
         <segue reference="aeq-iH-Hkk"/>
         <segue reference="F8Z-7e-umN"/>
-        <segue reference="zPx-Mo-iVD"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="bolt" catalog="system" width="101" height="128"/>
@@ -428,5 +400,8 @@
         <namedColor name="ENA Text Semantic Red Color">
             <color red="0.9882352941176471" green="0.13333333333333333" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

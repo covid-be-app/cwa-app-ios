@@ -43,11 +43,12 @@ protocol Client {
 	func appConfiguration(completion: @escaping AppConfigurationCompletion)
 
 	/// Determines days that can be downloaded.
-	func availableDays(completion: @escaping AvailableDaysCompletionHandler)
+	func availableDays(region: BERegion, completion: @escaping AvailableDaysCompletionHandler)
 
 	/// Determines hours that can be downloaded for a given day.
 	func availableHours(
 		day: String,
+		region: BERegion,
 		completion: @escaping AvailableHoursCompletionHandler
 	)
 
@@ -72,6 +73,7 @@ protocol Client {
 	/// Fetches the keys for a given `day`.
 	func fetchDay(
 		_ day: String,
+		region: BERegion,
 		completion: @escaping DayCompletionHandler
 	)
 
@@ -79,6 +81,7 @@ protocol Client {
 	func fetchHour(
 		_ hour: Int,
 		day: String,
+		region: BERegion,
 		completion: @escaping HourCompletionHandler
 	)
 
@@ -93,16 +96,6 @@ protocol Client {
 		completion: @escaping ExposureConfigurationCompletionHandler
 	)
 
-	/// Submits exposure keys to the backend. This makes the local information available to the world so that the risk of others can be calculated on their local devices.
-	/// Parameters:
-	/// - keys: An array of `ENTemporaryExposureKey`s  to submit to the backend.
-	/// - tan: A transaction number
-	func submit(
-		keys: [ENTemporaryExposureKey],
-		tan: String,
-		completion: @escaping SubmitKeysCompletionHandler
-	)
-	
 	// :BE:
 	typealias InfectionSummaryHandler = (Result<BEInfectionSummary, Failure>) -> Void
 	typealias DynamicTextsHandler = (Result<Data, Failure>) -> Void
@@ -117,10 +110,9 @@ protocol Client {
 	/// Acknowledge we downloaded a test result
 	func ackTestDownload(forDevice registrationToken: String, completionBlock: @escaping(() -> Void))
 	
-	/// Send keys to backend including countries
+	/// Send keys to backend
 	func submit(
 		keys: [ENTemporaryExposureKey],
-		countries: [BECountry],
 		mobileTestId: BEMobileTestId?,
 		testResult: TestResult?,
 		isFake: Bool,
@@ -180,6 +172,7 @@ extension Client {
 
 	func fetchDays(
 		_ days: [String],
+		region: BERegion,
 		completion completeWith: @escaping (DaysResult) -> Void
 	) {
 		var errors = [Client.Failure]()
@@ -187,9 +180,11 @@ extension Client {
 
 		let group = DispatchGroup()
 
+		log(message:"Fetch days for \(region.rawValue)")
+		
 		for day in days {
 			group.enter()
-			fetchDay(day) { result in
+			fetchDay(day, region: region) { result in
 				switch result {
 				case let .success(bucket):
 					buckets[day] = bucket
@@ -213,6 +208,7 @@ extension Client {
 	func fetchHours(
 		_ hours: [Int],
 		day: String,
+		region: BERegion,
 		completion completeWith: @escaping FetchHoursCompletionHandler
 	) {
 		var errors = [Client.Failure]()
@@ -221,7 +217,7 @@ extension Client {
 
 		hours.forEach { hour in
 			group.enter()
-			self.fetchHour(hour, day: day) { result in
+			self.fetchHour(hour, day: day, region: region) { result in
 				switch result {
 				case let .success(hourBucket):
 					buckets[hour] = hourBucket
@@ -245,24 +241,28 @@ extension Client {
 		_ days: [String],
 		hours: [Int],
 		of day: String,
+		region: BERegion,
 		completion completeWith: @escaping DaysAndHoursCompletionHandler
 	) {
+		log(message:"Fetch days and hours for \(region.rawValue)")
+		
 		let group = DispatchGroup()
 		var hoursResult = HoursResult(errors: [], bucketsByHour: [:], day: day)
 		var daysResult = DaysResult(errors: [], bucketsByDay: [:])
 
 		group.enter()
-		fetchDays(days) { result in
+		fetchDays(days, region: region) { result in
 			daysResult = result
 			group.leave()
 		}
 
 		group.enter()
-		fetchHours(hours, day: day) { result in
+		fetchHours(hours, day: day, region: region) { result in
 			hoursResult = result
 			group.leave()
 		}
 		group.notify(queue: .main) {
+			log(message: "Finished downloading days and hours")
 			completeWith(FetchedDaysAndHours(hours: hoursResult, days: daysResult))
 		}
 	}
