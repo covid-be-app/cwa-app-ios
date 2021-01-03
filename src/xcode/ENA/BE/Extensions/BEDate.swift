@@ -28,14 +28,14 @@ typealias BEDateString = String
 extension BEDateString {
 	static func fromDateWithoutTime(date:Date) -> BEDateString {
 		let formatter = DateFormatter()
-		formatter.dateFormat = "YYYY-MM-dd"
+		formatter.dateFormat = "yyyy-MM-dd"
 		
 		return formatter.string(from: date)
 	}
 	
 	var dateWithoutTime:Date? {
 		let formatter = DateFormatter()
-		formatter.dateFormat = "YYYY-MM-dd"
+		formatter.dateFormat = "yyyy-MM-dd"
 		
 		return formatter.date(from: self)
 	}
