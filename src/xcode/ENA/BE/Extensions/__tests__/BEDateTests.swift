@@ -52,7 +52,7 @@ class BEDateTests: XCTestCase {
 		let string = String("2020-05-10")
 		let date = string.dateWithoutTime!
 		let yearFormatter = DateFormatter()
-		yearFormatter.dateFormat = "YYYY"
+		yearFormatter.dateFormat = "yyyy"
 		let monthFormatter = DateFormatter()
 		monthFormatter.dateFormat = "MM"
 		let dayFormatter = DateFormatter()
