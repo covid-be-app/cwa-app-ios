@@ -23,7 +23,7 @@ import ExposureNotification
 extension ENTemporaryExposureKey {
 	static func random(_ date:Date) -> ENTemporaryExposureKey {
 		let key = ENTemporaryExposureKey()
-		key.transmissionRiskLevel = .min
+		key.transmissionRiskLevel = 2
 		key.rollingPeriod = 144
 		key.rollingStartNumber = ENIntervalNumber.fromDateInt(BEDateInt.fromDate(date))
 		key.keyData = Data(count: 16)
