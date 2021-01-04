@@ -32,18 +32,7 @@ class BEIntervalNumberTests: XCTestCase {
 		
 		XCTAssertEqual(Int(intervalNumber * 600), comparisonValue)
     }
-
-	func testGMT() throws {
-		let dateInt:BEDateInt = 20200805
-		var calendar = Calendar(identifier: .gregorian)
-		calendar.timeZone = TimeZone(secondsFromGMT: 0)!
-		let date = calendar.date(from: DateComponents(year:2020,month:08,day:05))!
-		let intervalNumber = ENIntervalNumber.fromDateInt(dateInt)
-		let comparisonValue = (Int(date.timeIntervalSince1970) / 600) * 600
-		
-		XCTAssertEqual(Int(intervalNumber * 600), comparisonValue)
-	}
-
+	
 	func testToDate() throws {
 		let date = Date()
 		let comparisonValue = TimeInterval((Int(date.timeIntervalSince1970) / 600) * 600)
