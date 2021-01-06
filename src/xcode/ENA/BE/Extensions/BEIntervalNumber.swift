@@ -41,8 +41,10 @@ extension ENIntervalNumber {
 		let year = Int(string[0...4])
 		let month = Int(string[4...6])
 		let day = Int(string[6...8])
+		var calendar = Calendar(identifier: .gregorian)
+		calendar.timeZone = TimeZone(secondsFromGMT: 0)!
 
-		let date = Calendar.current.date(from: DateComponents(year:year,month:month,day:day))!
+		let date = calendar.date(from: DateComponents(year:year,month:month,day:day))!
 		
 		return ENIntervalNumber(Int(date.timeIntervalSince1970) / 600)
 	}
