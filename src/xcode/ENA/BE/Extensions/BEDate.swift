@@ -26,7 +26,7 @@ typealias BEDateInt = Int
 typealias BEDateString = String
 
 extension BEDateString {
-	static func fromDateWithoutTime(date:Date) -> BEDateString {
+	static func fromDateWithoutTime(date: Date) -> BEDateString {
 		let formatter = DateFormatter()
 		formatter.dateFormat = "yyyy-MM-dd"
 		
@@ -66,5 +66,18 @@ extension BEDateString {
 extension BEDateInt {
 	static func fromDate(_ date:Date) -> BEDateInt {
 		return BEDateString.fromDateWithoutTime(date: date).dateInt
+	}
+	
+	static var today: BEDateInt {
+		let components = Calendar.current.dateComponents([.day,.month,.year], from: Date())
+		
+		guard
+			let day = components.day,
+			let month = components.month,
+			let year = components.year else {
+			fatalError("")
+		}
+		
+		return Int(String(format: "%04d%02d%02d", year, month, day))!
 	}
 }
