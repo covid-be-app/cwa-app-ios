@@ -17,7 +17,7 @@
 
 import ExposureNotification
 import Foundation
-import Combine
+import OpenCombine
 
 /// Every time the user wants to know the own risk the app creates an `ExposureDetection`.
 final class ExposureDetection {

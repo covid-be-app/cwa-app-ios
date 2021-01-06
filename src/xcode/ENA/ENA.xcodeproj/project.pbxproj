@@ -278,6 +278,9 @@
 		A95EE81824FCF67000AFECBD /* BEInfectionSummaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95EE81724FCF66F00AFECBD /* BEInfectionSummaryCollectionViewCell.swift */; };
 		A95EE81A24FCF6C700AFECBD /* BEInfectionSummaryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A95EE81924FCF6C700AFECBD /* BEInfectionSummaryCollectionViewCell.xib */; };
 		A95EE81C24FD0A6A00AFECBD /* BEUIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95EE81B24FD0A6A00AFECBD /* BEUIStackView.swift */; };
+		A97D447525A5FF0F00E7D698 /* OpenCombineDispatch in Frameworks */ = {isa = PBXBuildFile; productRef = A97D447425A5FF0F00E7D698 /* OpenCombineDispatch */; };
+		A97D447725A5FF0F00E7D698 /* OpenCombineFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = A97D447625A5FF0F00E7D698 /* OpenCombineFoundation */; };
+		A97D447925A5FF0F00E7D698 /* OpenCombine in Frameworks */ = {isa = PBXBuildFile; productRef = A97D447825A5FF0F00E7D698 /* OpenCombine */; };
 		A97E1592257668E300E1DB28 /* BEEUSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E1591257668E300E1DB28 /* BEEUSettingsViewController.swift */; };
 		A97E159625766BBB00E1DB28 /* EuTracingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E159525766BBB00E1DB28 /* EuTracingTableViewCell.swift */; };
 		A97E159A25766BEF00E1DB28 /* ENSettingEuTracingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E159925766BEF00E1DB28 /* ENSettingEuTracingViewModel.swift */; };
@@ -967,8 +970,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1B5A76024924B3D0029D5D7 /* FMDB in Frameworks */,
+				A97D447725A5FF0F00E7D698 /* OpenCombineFoundation in Frameworks */,
 				858F6F6E245A103C009FFD33 /* ExposureNotification.framework in Frameworks */,
+				A97D447525A5FF0F00E7D698 /* OpenCombineDispatch in Frameworks */,
 				B1EDFD88248E741B00E7EAFF /* SwiftProtobuf in Frameworks */,
+				A97D447925A5FF0F00E7D698 /* OpenCombine in Frameworks */,
 				B1EDFD89248E741B00E7EAFF /* ZIPFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2645,6 +2651,9 @@
 				B10FB02F246036F3004CA11E /* SwiftProtobuf */,
 				B1E8C9A4247AB869006DC678 /* ZIPFoundation */,
 				B1B5A75F24924B3D0029D5D7 /* FMDB */,
+				A97D447425A5FF0F00E7D698 /* OpenCombineDispatch */,
+				A97D447625A5FF0F00E7D698 /* OpenCombineFoundation */,
+				A97D447825A5FF0F00E7D698 /* OpenCombine */,
 			);
 			productName = ENA;
 			productReference = 85D7593B2457048F008175F0 /* ENA.app */;
@@ -2727,6 +2736,7 @@
 				B10FB02E246036F3004CA11E /* XCRemoteSwiftPackageReference "swift-protobuf" */,
 				B1E8C9A3247AB869006DC678 /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
 				B1B5A75E24924B3D0029D5D7 /* XCRemoteSwiftPackageReference "fmdb" */,
+				A97D447325A5FF0F00E7D698 /* XCRemoteSwiftPackageReference "OpenCombine" */,
 			);
 			productRefGroup = 85D7593C2457048F008175F0 /* Products */;
 			projectDirPath = "";
@@ -3408,7 +3418,7 @@
 					"DISABLE_CERTIFICATE_PINNING=1",
 				);
 				INFOPLIST_FILE = ENA/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3567,7 +3577,7 @@
 					"SQLITE_HAS_CODEC=1",
 				);
 				INFOPLIST_FILE = ENA/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3783,7 +3793,7 @@
 					"SQLITE_HAS_CODEC=1",
 				);
 				INFOPLIST_FILE = ENA/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3820,7 +3830,7 @@
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PREPROCESSOR_DEFINITIONS = "SQLITE_HAS_CODEC=1";
 				INFOPLIST_FILE = ENA/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4007,6 +4017,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A97D447325A5FF0F00E7D698 /* XCRemoteSwiftPackageReference "OpenCombine" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OpenCombine/OpenCombine";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.11.0;
+			};
+		};
 		B10FB02E246036F3004CA11E /* XCRemoteSwiftPackageReference "swift-protobuf" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-protobuf.git";
@@ -4034,6 +4052,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A97D447425A5FF0F00E7D698 /* OpenCombineDispatch */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A97D447325A5FF0F00E7D698 /* XCRemoteSwiftPackageReference "OpenCombine" */;
+			productName = OpenCombineDispatch;
+		};
+		A97D447625A5FF0F00E7D698 /* OpenCombineFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A97D447325A5FF0F00E7D698 /* XCRemoteSwiftPackageReference "OpenCombine" */;
+			productName = OpenCombineFoundation;
+		};
+		A97D447825A5FF0F00E7D698 /* OpenCombine */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A97D447325A5FF0F00E7D698 /* XCRemoteSwiftPackageReference "OpenCombine" */;
+			productName = OpenCombine;
+		};
 		B10FB02F246036F3004CA11E /* SwiftProtobuf */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B10FB02E246036F3004CA11E /* XCRemoteSwiftPackageReference "swift-protobuf" */;
