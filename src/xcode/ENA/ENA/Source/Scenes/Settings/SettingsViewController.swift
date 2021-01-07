@@ -105,11 +105,6 @@ final class SettingsViewController: UITableViewController {
 		NotificationSettingsViewController(store: store)
 	}
 
-	@IBSegueAction
-	func createMobileDataUsageSettingsViewController(coder: NSCoder) -> MobileDataUsageSettingsViewController? {
-		MobileDataUsageSettingsViewController(coder: coder, store: store)
-	}
-
 	@objc
 	private func willEnterForeground() {
 		checkTracingStatus()
@@ -281,7 +276,8 @@ extension SettingsViewController {
 			vc.delegate = self
 			navigationController?.pushViewController(vc, animated: true)
 		case .mobileDataUsage:
-			performSegue(withIdentifier: mobileDataUsageSegue, sender: nil)
+			let vc = MobileDataUsageSettingsViewController(store: store)
+			navigationController?.pushViewController(vc, animated: true)
 		}
 
 		tableView.deselectRow(at: indexPath, animated: false)
