@@ -36,6 +36,7 @@ final class FriendsInviteController: UIViewController {
 		super.viewDidLoad()
 
 		navigationController?.navigationBar.prefersLargeTitles = true
+		navigationItem.largeTitleDisplayMode = .always
 		navigationItem.title = AppStrings.InviteFriends.navigationBarTitle
 
 		subtitleLabel.text = nil

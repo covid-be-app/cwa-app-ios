@@ -211,13 +211,6 @@ final class HomeViewController: UICollectionViewController, RequiresAppDependenc
 		)
 	}
 
-	func showInviteFriends() {
-		navigationController?.pushViewController(
-			FriendsInviteController.initiate(for: .inviteFriends),
-			animated: true
-		)
-	}
-
 	func showExposureNotificationSetting() {
 		delegate?.showExposureNotificationSetting(enState: self.homeInteractor.state.enState)
 	}

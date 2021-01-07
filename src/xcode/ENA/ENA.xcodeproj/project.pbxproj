@@ -283,6 +283,7 @@
 		A97D44AC25A72E4100E7D698 /* EuTracingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97D44AB25A72E4100E7D698 /* EuTracingTableViewCell.xib */; };
 		A97D44B025A72E5A00E7D698 /* ActionDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97D44AF25A72E5A00E7D698 /* ActionDetailTableViewCell.xib */; };
 		A97D44B425A72E7A00E7D698 /* TracingHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97D44B325A72E7A00E7D698 /* TracingHistoryTableViewCell.xib */; };
+		A97D44BA25A7354400E7D698 /* FriendsInviteController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97D44B925A7354400E7D698 /* FriendsInviteController.xib */; };
 		A97E1592257668E300E1DB28 /* BEEUSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E1591257668E300E1DB28 /* BEEUSettingsViewController.swift */; };
 		A97E159625766BBB00E1DB28 /* EuTracingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E159525766BBB00E1DB28 /* EuTracingTableViewCell.swift */; };
 		A97E159A25766BEF00E1DB28 /* ENSettingEuTracingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E159925766BEF00E1DB28 /* ENSettingEuTracingViewModel.swift */; };
@@ -438,7 +439,6 @@
 		EE22DB8D247FB43A001B0A71 /* ActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE22DB88247FB43A001B0A71 /* ActionTableViewCell.swift */; };
 		EE22DB91247FB479001B0A71 /* MockStateHandlerObserverDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE22DB90247FB479001B0A71 /* MockStateHandlerObserverDelegate.swift */; };
 		EE269508248FCB0300BAE234 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE26950A248FCB0300BAE234 /* InfoPlist.strings */; };
-		EE278B2D245F2BBB008B06F9 /* InviteFriends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE278B2C245F2BBB008B06F9 /* InviteFriends.storyboard */; };
 		EE278B30245F2C8A008B06F9 /* FriendsInviteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE278B2F245F2C8A008B06F9 /* FriendsInviteController.swift */; };
 		EE70C23D245B09EA00AC9B2F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE70C23A245B09E900AC9B2F /* Localizable.strings */; };
 		EE92A33E245D96DA006B97B0 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = EE92A340245D96DA006B97B0 /* Localizable.stringsdict */; };
@@ -797,6 +797,7 @@
 		A97D44AB25A72E4100E7D698 /* EuTracingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EuTracingTableViewCell.xib; sourceTree = "<group>"; };
 		A97D44AF25A72E5A00E7D698 /* ActionDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionDetailTableViewCell.xib; sourceTree = "<group>"; };
 		A97D44B325A72E7A00E7D698 /* TracingHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TracingHistoryTableViewCell.xib; sourceTree = "<group>"; };
+		A97D44B925A7354400E7D698 /* FriendsInviteController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsInviteController.xib; sourceTree = "<group>"; };
 		A97E1591257668E300E1DB28 /* BEEUSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEEUSettingsViewController.swift; sourceTree = "<group>"; };
 		A97E159525766BBB00E1DB28 /* EuTracingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EuTracingTableViewCell.swift; sourceTree = "<group>"; };
 		A97E159925766BEF00E1DB28 /* ENSettingEuTracingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ENSettingEuTracingViewModel.swift; sourceTree = "<group>"; };
@@ -944,7 +945,6 @@
 		EE22DB90247FB479001B0A71 /* MockStateHandlerObserverDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockStateHandlerObserverDelegate.swift; sourceTree = "<group>"; };
 		EE269509248FCB0300BAE234 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EE26950B248FCB1600BAE234 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		EE278B2C245F2BBB008B06F9 /* InviteFriends.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InviteFriends.storyboard; sourceTree = "<group>"; };
 		EE278B2F245F2C8A008B06F9 /* FriendsInviteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsInviteController.swift; sourceTree = "<group>"; };
 		EE70C23B245B09E900AC9B2F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EE70C23C245B09E900AC9B2F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -1612,7 +1612,6 @@
 				85D7594C24570491008175F0 /* LaunchScreen.storyboard */,
 				514E812F24618E3D00636861 /* ExposureDetection.storyboard */,
 				51D420CF24586AB300AD70CA /* Settings.storyboard */,
-				EE278B2C245F2BBB008B06F9 /* InviteFriends.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -2564,6 +2563,7 @@
 			isa = PBXGroup;
 			children = (
 				EE278B2F245F2C8A008B06F9 /* FriendsInviteController.swift */,
+				A97D44B925A7354400E7D698 /* FriendsInviteController.xib */,
 			);
 			path = FriendsInvite;
 			sourceTree = "<group>";
@@ -2772,13 +2772,13 @@
 				710224EE2490E2FD000C5DEF /* ExposureSubmissionStepCell.xib in Resources */,
 				71FE1C8D247AC79D00851FEB /* DynamicTableViewIconCell.xib in Resources */,
 				A189E461248C35BF001D0996 /* PublicKeys.plist in Resources */,
+				A97D44BA25A7354400E7D698 /* FriendsInviteController.xib in Resources */,
 				71F2E57B2487AEFC00694F1A /* ena-colors.xcassets in Resources */,
 				51C7790C24867F16004582F8 /* RiskListItemView.xib in Resources */,
 				EE92A33E245D96DA006B97B0 /* Localizable.stringsdict in Resources */,
 				A97D44B425A72E7A00E7D698 /* TracingHistoryTableViewCell.xib in Resources */,
 				A328424D248B91E0006B1F09 /* HomeTestResultLoadingCell.xib in Resources */,
 				A97D44A825A72E2600E7D698 /* ActionTableViewCell.xib in Resources */,
-				EE278B2D245F2BBB008B06F9 /* InviteFriends.storyboard in Resources */,
 				EE70C23D245B09EA00AC9B2F /* Localizable.strings in Resources */,
 				51CE1B85246078B6002CF42A /* ActivateCollectionViewCell.xib in Resources */,
 				A97D448725A708D300E7D698 /* OnboardingInfoViewController.xib in Resources */,
