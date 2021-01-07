@@ -34,10 +34,9 @@ protocol HomeViewControllerDelegate: AnyObject {
 	func addToEnStateUpdateList(_ anyObject: AnyObject?)
 }
 
-final class HomeViewController: UIViewController, RequiresAppDependencies {
+final class HomeViewController: UICollectionViewController, RequiresAppDependencies {
 	// MARK: Creating a Home View Controller
-	init?(
-		coder: NSCoder,
+	init(
 		delegate: HomeViewControllerDelegate,
 		detectionMode: DetectionMode,
 		exposureManagerState: ExposureManagerState,
@@ -49,7 +48,9 @@ final class HomeViewController: UIViewController, RequiresAppDependencies {
 	) {
 		self.delegate = delegate
 		//self.enState = initialEnState
-		super.init(coder: coder)
+
+		super.init(collectionViewLayout: .init())
+
 		self.homeInteractor = HomeInteractor(
 			homeViewController: self,
 			state: .init(
@@ -74,7 +75,6 @@ final class HomeViewController: UIViewController, RequiresAppDependencies {
 
 	private var sections: HomeInteractor.SectionConfiguration = []
 	private var dataSource: UICollectionViewDiffableDataSource<Section, AnyHashable>?
-	private var collectionView: UICollectionView! { view as? UICollectionView }
 	private var homeInteractor: HomeInteractor!
 
 	private weak var delegate: HomeViewControllerDelegate?
@@ -92,6 +92,7 @@ final class HomeViewController: UIViewController, RequiresAppDependencies {
 
 		// :BE: disable background fetch alert as tests have shown it has no influence on the covid exposure checks
 		
+		setupBarButtonItems()
 		configureCollectionView()
 		configureDataSource()
 		setupAccessibility()
@@ -135,6 +136,14 @@ final class HomeViewController: UIViewController, RequiresAppDependencies {
 	override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
 		super.traitCollectionDidChange(previousTraitCollection)
 		updateBackgroundColor()
+	}
+
+	private func setupBarButtonItems() {
+		navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Corona-Warn-App"), style: .plain, target: nil, action: nil)
+
+		let infoButton = UIButton(type: .infoLight)
+		infoButton.addTarget(self, action: #selector(infoButtonTapped), for: .touchUpInside)
+		navigationItem.rightBarButtonItem = UIBarButtonItem(customView: infoButton)
 	}
 
 	/// This method sets up a background fetch alert, and presents it, if needed.
@@ -293,6 +302,9 @@ final class HomeViewController: UIViewController, RequiresAppDependencies {
 
 		collectionView.contentInset = UIEdgeInsets(top: UICollectionViewLayout.topInset, left: 0, bottom: -UICollectionViewLayout.bottomBackgroundOverflowHeight, right: 0)
 
+		collectionView.showsHorizontalScrollIndicator = false
+		collectionView.isDirectionalLockEnabled = true
+
 		collectionView.isAccessibilityElement = false
 		collectionView.shouldGroupAccessibilityChildren = true
 
@@ -368,8 +380,8 @@ extension HomeViewController: HomeLayoutDelegate {
 	}
 }
 
-extension HomeViewController: UICollectionViewDelegate {
-	func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
+extension HomeViewController {
+	override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
 		let cell = collectionView.cellForItem(at: indexPath)
 		switch cell {
 		case is RiskThankYouCollectionViewCell: return false
@@ -377,15 +389,15 @@ extension HomeViewController: UICollectionViewDelegate {
 		}
 	}
 
-	func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+	override func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
 		collectionView.cellForItem(at: indexPath)?.highlight()
 	}
 
-	func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+	override func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
 		collectionView.cellForItem(at: indexPath)?.unhighlight()
 	}
 
-	func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+	override func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		showScreen(at: indexPath)
 	}
 }

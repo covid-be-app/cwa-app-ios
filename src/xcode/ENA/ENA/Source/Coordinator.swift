@@ -68,9 +68,8 @@ class Coordinator: RequiresAppDependencies {
 
 	// :BE: add stats
 	func showHome(enStateHandler: ENStateHandler, state: SceneDelegate.State, statisticsService: BEStatisticsService) {
-		let homeController = AppStoryboard.home.initiate(viewControllerType: HomeViewController.self) { [unowned self] coder in
+		let homeController =
 			HomeViewController(
-				coder: coder,
 				delegate: self,
 				detectionMode: state.detectionMode,
 				exposureManagerState: state.exposureManager,
@@ -79,8 +78,7 @@ class Coordinator: RequiresAppDependencies {
 				exposureSubmissionService: self.exposureSubmissionService,
 				statisticsService: statisticsService
 			)
-		}
-
+		
 		self.homeController = homeController
 
 		UIView.transition(with: rootViewController.view, duration: CATransaction.animationDuration(), options: [.transitionCrossDissolve], animations: {
