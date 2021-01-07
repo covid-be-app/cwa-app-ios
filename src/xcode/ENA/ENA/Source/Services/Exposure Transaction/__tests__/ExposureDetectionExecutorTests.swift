@@ -24,7 +24,7 @@
 import ExposureNotification
 import Foundation
 import XCTest
-import Combine
+import OpenCombine
 
 final class ExposureDetectionExecutorTests: XCTestCase {
 

@@ -7,7 +7,7 @@
 
 import Foundation
 import ExposureNotification
-import Combine
+import OpenCombine
 
 final class ExposureDetectionExecutor: ExposureDetectionDelegate {
 	private let client: Client

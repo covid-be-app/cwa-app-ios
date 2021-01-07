@@ -21,7 +21,7 @@
 import ExposureNotification
 import Foundation
 import UIKit
-import Combine
+import OpenCombine
 
 final class HomeInteractor: RequiresAppDependencies {
 	typealias SectionDefinition = (section: HomeViewController.Section, cellConfigurators: [CollectionViewCellConfiguratorAny])

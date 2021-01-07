@@ -17,7 +17,7 @@
 
 import ExposureNotification
 import Foundation
-import Combine
+import OpenCombine
 
 typealias DaysAndHours = (days: [String], hours: [Int])
 
