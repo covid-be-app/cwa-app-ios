@@ -287,6 +287,7 @@
 		A97D44C025A7478200E7D698 /* NotificationSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97D44BF25A7478200E7D698 /* NotificationSettingsViewController.xib */; };
 		A97D44C425A749C300E7D698 /* NotificationSettingsOnTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97D44C325A749C300E7D698 /* NotificationSettingsOnTableViewCell.xib */; };
 		A97D44C825A749EC00E7D698 /* NotificationSettingsOffTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97D44C725A749EC00E7D698 /* NotificationSettingsOffTableViewCell.xib */; };
+		A97D44CC25A75C9F00E7D698 /* ResetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97D44CB25A75C9F00E7D698 /* ResetViewController.xib */; };
 		A97E1592257668E300E1DB28 /* BEEUSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E1591257668E300E1DB28 /* BEEUSettingsViewController.swift */; };
 		A97E159625766BBB00E1DB28 /* EuTracingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E159525766BBB00E1DB28 /* EuTracingTableViewCell.swift */; };
 		A97E159A25766BEF00E1DB28 /* ENSettingEuTracingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E159925766BEF00E1DB28 /* ENSettingEuTracingViewModel.swift */; };
@@ -804,6 +805,7 @@
 		A97D44BF25A7478200E7D698 /* NotificationSettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationSettingsViewController.xib; sourceTree = "<group>"; };
 		A97D44C325A749C300E7D698 /* NotificationSettingsOnTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationSettingsOnTableViewCell.xib; sourceTree = "<group>"; };
 		A97D44C725A749EC00E7D698 /* NotificationSettingsOffTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationSettingsOffTableViewCell.xib; sourceTree = "<group>"; };
+		A97D44CB25A75C9F00E7D698 /* ResetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResetViewController.xib; sourceTree = "<group>"; };
 		A97E1591257668E300E1DB28 /* BEEUSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEEUSettingsViewController.swift; sourceTree = "<group>"; };
 		A97E159525766BBB00E1DB28 /* EuTracingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EuTracingTableViewCell.swift; sourceTree = "<group>"; };
 		A97E159925766BEF00E1DB28 /* ENSettingEuTracingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ENSettingEuTracingViewModel.swift; sourceTree = "<group>"; };
@@ -1334,6 +1336,7 @@
 				A9C47CA22565425000C7A86B /* MobileDataUsageSettingsViewController.swift */,
 				A9C47CA42565447600C7A86B /* MobileDataUsageTableViewCell.swift */,
 				A97D44BF25A7478200E7D698 /* NotificationSettingsViewController.xib */,
+				A97D44CB25A75C9F00E7D698 /* ResetViewController.xib */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -2772,6 +2775,7 @@
 				A97D44B025A72E5A00E7D698 /* ActionDetailTableViewCell.xib in Resources */,
 				13156CFD248C19D000AFC472 /* usage.html in Resources */,
 				A97D448F25A71D5F00E7D698 /* RiskLegendDotBodyCell.xib in Resources */,
+				A97D44CC25A75C9F00E7D698 /* ResetViewController.xib in Resources */,
 				51486DA72485237200FCE216 /* RiskThankYouCollectionViewCell.xib in Resources */,
 				2F785752248506BD00323A9C /* HomeTestResultCollectionViewCell.xib in Resources */,
 				A9FC52852522330900660812 /* BEActivateMobileTestIdViewController.xib in Resources */,

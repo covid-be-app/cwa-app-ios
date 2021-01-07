@@ -277,7 +277,9 @@ extension SettingsViewController {
 				)
 			navigationController?.pushViewController(vc, animated: true)
 		case .reset:
-			performSegue(withIdentifier: resetSegue, sender: nil)
+			let vc = ResetViewController()
+			vc.delegate = self
+			navigationController?.pushViewController(vc, animated: true)
 		case .mobileDataUsage:
 			performSegue(withIdentifier: mobileDataUsageSegue, sender: nil)
 		}
