@@ -17,7 +17,6 @@
 // under the License.
 //
 
-import Foundation
 import UIKit
 
 class RiskLegendDotBodyCell: UITableViewCell {
