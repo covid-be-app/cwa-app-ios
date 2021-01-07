@@ -221,15 +221,12 @@ extension Coordinator: HomeViewControllerDelegate {
 	}
 
 	func showSettings(enState: ENStateHandler.State) {
-		let storyboard = AppStoryboard.settings.instance
-		let vc = storyboard.instantiateViewController(identifier: "SettingsViewController") { coder in
-			SettingsViewController(
-				coder: coder,
+		let vc = SettingsViewController(
 				store: self.store,
 				initialEnState: enState,
 				delegate: self
 			)
-		}
+		
 		addToEnStateUpdateList(vc)
 		settingsController = vc
 		rootViewController.pushViewController(vc, animated: true)

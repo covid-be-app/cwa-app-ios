@@ -42,20 +42,15 @@ final class SettingsViewController: UITableViewController {
 
 	let store: Store
 
-	let tracingSegue = "showTracing"
-	let notificationsSegue = "showNotifications"
-	let mobileDataUsageSegue = "showMobileDataUsage"
-	let resetSegue = "showReset"
-
 	let settingsViewModel = SettingsViewModel()
 	var enState: ENStateHandler.State
 
 
-	init?(coder: NSCoder, store: Store, initialEnState: ENStateHandler.State, delegate: SettingsViewControllerDelegate) {
+	init(store: Store, initialEnState: ENStateHandler.State, delegate: SettingsViewControllerDelegate) {
 		self.store = store
 		self.delegate = delegate
 		self.enState = initialEnState
-		super.init(coder: coder)
+		super.init(style: .grouped)
 	}
 
 	@available(*, unavailable)
@@ -71,6 +66,9 @@ final class SettingsViewController: UITableViewController {
 		tableView.separatorColor = .enaColor(for: .hairline)
 		tableView.backgroundColor = .enaColor(for: .background)
 
+		tableView.register(UINib(nibName: String(describing: MainSettingsTableViewCell.self), bundle: nil), forCellReuseIdentifier: ReuseIdentifier.main.rawValue)
+		tableView.register(UINib(nibName: String(describing: LabelTableViewCell.self), bundle: nil), forCellReuseIdentifier: ReuseIdentifier.reset.rawValue)
+
 		navigationItem.title = AppStrings.Settings.navigationBarTitle
 
 		setupView()
@@ -82,27 +80,6 @@ final class SettingsViewController: UITableViewController {
 		checkTracingStatus()
 		notificationSettings()
 		mobileDataUsageSettings()
-	}
-
-	override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
-		if segue.identifier == resetSegue, let nc = segue.destination as? UINavigationController, let vc = nc.topViewController as? ResetViewController {
-			vc.delegate = self
-		}
-	}
-
-	@IBSegueAction
-	func createExposureNotificationSettingViewController(coder: NSCoder) -> ExposureNotificationSettingViewController? {
-		let vc = ExposureNotificationSettingViewController(
-				initialEnState: enState,
-				store: store,
-				delegate: self
-		)
-		notificationSettingsController = vc
-		return vc
-	}
-
-	func createNotificationSettingsViewController() -> NotificationSettingsViewController? {
-		NotificationSettingsViewController(store: store)
 	}
 
 	@objc
