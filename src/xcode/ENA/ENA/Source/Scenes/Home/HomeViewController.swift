@@ -276,9 +276,10 @@ final class HomeViewController: UICollectionViewController, RequiresAppDependenc
 			label.textColor = .red
 			label.font = .systemFont(ofSize: 16)
 			label.text = "ENVIRONMENT: \(BEEnvironment.current.rawValue)"
-			self.view.addSubview(label)
-			view.topAnchor.constraint(equalTo: label.topAnchor, constant: 16).isActive = true
-			view.centerXAnchor.constraint(equalTo: label.centerXAnchor).isActive = true
+			collectionView.addSubview(label)
+			collectionView.topAnchor.constraint(equalTo: label.topAnchor, constant: 16).isActive = true
+			collectionView.centerXAnchor.constraint(equalTo: label.centerXAnchor).isActive = true
+			self.collectionView.bringSubviewToFront(label)
 		}
 	}
 

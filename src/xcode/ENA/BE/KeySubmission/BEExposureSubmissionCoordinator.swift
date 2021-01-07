@@ -159,9 +159,7 @@ class BEExposureSubmissionCoordinator : NSObject, ExposureSubmissionCoordinating
 	}
 	
 	private func createNavigationController(rootViewController vc:UIViewController)  -> ExposureSubmissionNavigationController {
-		return AppStoryboard.exposureSubmission.initiateInitial { coder in
-			return ExposureSubmissionNavigationController(coder: coder, coordinator: self, rootViewController: vc)
-		}
+		return ExposureSubmissionNavigationController(coordinator: self, rootViewController: vc)
 	}
 	
 	private func getInitialViewController(with result: TestResult? = nil) -> UIViewController {
@@ -175,32 +173,23 @@ class BEExposureSubmissionCoordinator : NSObject, ExposureSubmissionCoordinating
 	}
 
 	private func createTestResultViewController(with result: TestResult) -> ExposureSubmissionTestResultViewController {
-		AppStoryboard.exposureSubmission.initiate(viewControllerType: ExposureSubmissionTestResultViewController.self) { coder -> UIViewController? in
-			ExposureSubmissionTestResultViewController(
-				coder: coder,
-				coordinator: self,
-				exposureSubmissionService: self.exposureSubmissionService,
-				testResult: result
-			)
-		}
+		return ExposureSubmissionTestResultViewController(
+			coordinator: self,
+			exposureSubmissionService: self.exposureSubmissionService,
+			testResult: result
+		)
 	}
 	
 	private func createIntroViewController() -> ExposureSubmissionIntroViewController {
-		AppStoryboard.exposureSubmission.initiate(viewControllerType: ExposureSubmissionIntroViewController.self) { coder -> UIViewController? in
-			ExposureSubmissionIntroViewController(coder: coder, coordinator: self)
-		}
+		return ExposureSubmissionIntroViewController(coordinator: self)
 	}
 	
 	private func createWarnOthersViewController() -> ExposureSubmissionWarnOthersViewController {
-		AppStoryboard.exposureSubmission.initiate(viewControllerType: ExposureSubmissionWarnOthersViewController.self) { coder -> UIViewController? in
-			BEExposureSubmissionWarnOthersViewController(coder: coder, coordinator: self, exposureSubmissionService: self.exposureSubmissionService)
-		}
+		return BEExposureSubmissionWarnOthersViewController(coordinator: self, exposureSubmissionService: self.exposureSubmissionService)
 	}
 
 	private func createSuccessViewController() -> ExposureSubmissionSuccessViewController {
-		AppStoryboard.exposureSubmission.initiate(viewControllerType: ExposureSubmissionSuccessViewController.self) { coder -> UIViewController? in
-			ExposureSubmissionSuccessViewController(coder: coder, coordinator: self)
-		}
+		return ExposureSubmissionSuccessViewController(coordinator: self)
 	}
 }
 

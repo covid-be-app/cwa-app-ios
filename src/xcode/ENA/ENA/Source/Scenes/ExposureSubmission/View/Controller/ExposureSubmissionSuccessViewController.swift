@@ -24,11 +24,17 @@ final class ExposureSubmissionSuccessViewController: DynamicTableViewController,
 
 	private(set) weak var coordinator: ExposureSubmissionCoordinating?
 
+	private var footerItem = ENANavigationFooterItem()
+	
+	override var navigationItem: UINavigationItem {
+		footerItem
+	}
+
 	// MARK: - Initializers.
 
-	init?(coder: NSCoder, coordinator: ExposureSubmissionCoordinating) {
+	init(coordinator: ExposureSubmissionCoordinating) {
 		self.coordinator = coordinator
-		super.init(coder: coder)
+		super.init(nibName: nil, bundle: nil)
 	}
 
 	@available(*, unavailable)
@@ -61,13 +67,21 @@ final class ExposureSubmissionSuccessViewController: DynamicTableViewController,
 	}
 
 	private func setUpView() {
+		view.backgroundColor = .enaColor(for: .background)
+		navigationItem.largeTitleDisplayMode = .always
 		navigationItem.hidesBackButton = true
 		tableView.register(UINib(nibName: String(describing: ExposureSubmissionStepCell.self), bundle: nil), forCellReuseIdentifier: CustomCellReuseIdentifiers.stepCell.rawValue)
 		dynamicTableViewModel = .thankYouData
+		tableView.separatorStyle = .none
+		navigationFooterItem?.isPrimaryButtonEnabled = true
+		navigationFooterItem?.isPrimaryButtonHidden = false
+		navigationFooterItem?.isSecondaryButtonHidden = true
+		footerView?.isHidden = false
 	}
 
 	private func setupTitle() {
 		title = AppStrings.ExposureSubmissionSuccess.title
+		navigationItem.title = AppStrings.ExposureSubmissionSuccess.title
 		navigationItem.largeTitleDisplayMode = .always
 		navigationController?.navigationBar.prefersLargeTitles = true
 	}

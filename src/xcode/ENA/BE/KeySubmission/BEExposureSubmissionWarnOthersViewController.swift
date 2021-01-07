@@ -22,8 +22,8 @@ import ExposureNotification
 
 class BEExposureSubmissionWarnOthersViewController: ExposureSubmissionWarnOthersViewController {
 	
-	override init?(coder: NSCoder, coordinator: ExposureSubmissionCoordinating, exposureSubmissionService: BEExposureSubmissionService) {
-		super.init(coder: coder, coordinator: coordinator, exposureSubmissionService: exposureSubmissionService)
+	override init(coordinator: ExposureSubmissionCoordinating, exposureSubmissionService: BEExposureSubmissionService) {
+		super.init(coordinator: coordinator, exposureSubmissionService: exposureSubmissionService)
 	}
 	
 	override func startSubmitProcess() {
