@@ -92,7 +92,6 @@ final class SettingsViewController: UITableViewController {
 	@IBSegueAction
 	func createExposureNotificationSettingViewController(coder: NSCoder) -> ExposureNotificationSettingViewController? {
 		let vc = ExposureNotificationSettingViewController(
-				coder: coder,
 				initialEnState: enState,
 				store: store,
 				delegate: self
@@ -266,7 +265,12 @@ extension SettingsViewController {
 
 		switch section {
 		case .tracing:
-			performSegue(withIdentifier: tracingSegue, sender: nil)
+			let vc = ExposureNotificationSettingViewController(
+						initialEnState: enState,
+						store: self.store,
+						delegate: self
+				)
+			navigationController?.pushViewController(vc, animated: true)
 		case .notifications:
 			performSegue(withIdentifier: notificationsSegue, sender: nil)
 		case .reset:

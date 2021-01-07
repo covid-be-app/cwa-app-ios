@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -164,7 +165,7 @@
                                                         <action selector="resetData:" destination="uYn-mg-qmD" eventType="touchUpInside" id="vy7-q8-NeM"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nx1-Do-hf7" customClass="ENAButton" customModule="ENA" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nx1-Do-hf7" customClass="ENAButton" customModule="ENA" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="58" width="382" height="50"/>
                                                     <state key="normal" title="Abbrechen"/>
                                                     <userDefinedRuntimeAttributes>
@@ -188,6 +189,7 @@
                                 <blurEffect style="regular"/>
                             </visualEffectView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="DEG-xR-O81"/>
                         <color key="backgroundColor" name="ENA Background Color"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="VZq-Fq-6XF" secondAttribute="trailing" id="7pt-BR-QNv"/>
@@ -198,7 +200,6 @@
                             <constraint firstItem="te1-Qd-nmE" firstAttribute="leading" secondItem="jQp-ED-SYd" secondAttribute="leading" id="w9W-nf-kkh"/>
                             <constraint firstAttribute="trailing" secondItem="te1-Qd-nmE" secondAttribute="trailing" id="zlb-Eh-Csh"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="DEG-xR-O81"/>
                     </view>
                     <navigationItem key="navigationItem" title="# Anwendung zurücksetzen" largeTitleDisplayMode="always" id="mPv-pG-gEC">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="ywT-lT-8u8">
@@ -385,7 +386,6 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <segue destination="hSS-aR-TLD" kind="presentation" identifier="showReset" id="gr4-8T-345"/>
-                        <segue destination="oOS-9d-7VC" kind="show" identifier="showTracing" destinationCreationSelector="createExposureNotificationSettingViewControllerWithCoder:" id="Sc5-0q-M2l"/>
                         <segue destination="nwm-kE-hsV" kind="show" identifier="showNotifications" destinationCreationSelector="createNotificationSettingsViewControllerWithCoder:" id="FbI-FW-eTi"/>
                         <segue destination="mum-qD-9Jq" kind="show" identifier="showMobileDataUsage" destinationCreationSelector="createMobileDataUsageSettingsViewControllerWithCoder:" id="LI9-pz-HZp"/>
                     </connections>
@@ -590,7 +590,7 @@
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="body"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9Z-mZ-b3B" userLabel="Open Settings Button" customClass="ENAButton" customModule="ENA" customModuleProvider="target">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9Z-mZ-b3B" userLabel="Open Settings Button" customClass="ENAButton" customModule="ENA" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="110.5" width="350" height="50"/>
                                                                         <state key="normal" title="# App-Einstellungen öffnen"/>
                                                                         <connections>
@@ -639,6 +639,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="dw0-ar-NUF"/>
                         <color key="backgroundColor" name="ENA Background Color"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="0GH-Ib-DgS" secondAttribute="bottom" id="ewT-FJ-SBc"/>
@@ -646,7 +647,6 @@
                             <constraint firstItem="0GH-Ib-DgS" firstAttribute="top" secondItem="VFf-c4-ccH" secondAttribute="top" id="pcO-I0-XV9"/>
                             <constraint firstItem="0GH-Ib-DgS" firstAttribute="leading" secondItem="VFf-c4-ccH" secondAttribute="leading" id="sOB-xE-k5H"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="dw0-ar-NUF"/>
                     </view>
                     <navigationItem key="navigationItem" title="# Mitteilungen" largeTitleDisplayMode="always" id="bPb-ql-o6n"/>
                     <connections>
@@ -811,6 +811,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="8rX-sc-QAe"/>
                         <color key="backgroundColor" name="ENA Background Color"/>
                         <constraints>
                             <constraint firstItem="7uX-hG-Apm" firstAttribute="top" secondItem="ikW-Ez-IiW" secondAttribute="top" id="X2G-fO-KKo"/>
@@ -818,7 +819,6 @@
                             <constraint firstAttribute="bottom" secondItem="7uX-hG-Apm" secondAttribute="bottom" id="dAu-nN-XU1"/>
                             <constraint firstItem="7uX-hG-Apm" firstAttribute="leading" secondItem="ikW-Ez-IiW" secondAttribute="leading" id="gwG-ge-l9m"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="8rX-sc-QAe"/>
                     </view>
                     <navigationItem key="navigationItem" title="# Mobile Data" largeTitleDisplayMode="always" id="6bE-JU-bu7"/>
                     <connections>
@@ -834,6 +834,74 @@
             <point key="canvasLocation" x="246" y="-645"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="0EF-mF-HiW">
+            <size key="intrinsicContentSize" width="64" height="26.5"/>
+        </designable>
+        <designable name="5Uv-Gy-0BR">
+            <size key="intrinsicContentSize" width="94.5" height="20.5"/>
+        </designable>
+        <designable name="6MS-HZ-mD7">
+            <size key="intrinsicContentSize" width="49" height="31"/>
+        </designable>
+        <designable name="7Wr-pB-O0V">
+            <size key="intrinsicContentSize" width="142" height="20.5"/>
+        </designable>
+        <designable name="GYA-b2-Uxq">
+            <size key="intrinsicContentSize" width="79.5" height="20.5"/>
+        </designable>
+        <designable name="Kt0-9j-kBQ">
+            <size key="intrinsicContentSize" width="192" height="18"/>
+        </designable>
+        <designable name="Nbj-X3-Z5h">
+            <size key="intrinsicContentSize" width="64" height="26.5"/>
+        </designable>
+        <designable name="Nib-IE-sNc">
+            <size key="intrinsicContentSize" width="137" height="26.5"/>
+        </designable>
+        <designable name="Nx1-Do-hf7">
+            <size key="intrinsicContentSize" width="104" height="50"/>
+        </designable>
+        <designable name="QX1-ds-eaG">
+            <size key="intrinsicContentSize" width="262.5" height="20.5"/>
+        </designable>
+        <designable name="QgA-Zf-xZr">
+            <size key="intrinsicContentSize" width="79.5" height="20.5"/>
+        </designable>
+        <designable name="WfM-8I-MCB">
+            <size key="intrinsicContentSize" width="35.5" height="20.5"/>
+        </designable>
+        <designable name="XDb-RN-MMz">
+            <size key="intrinsicContentSize" width="494" height="20.5"/>
+        </designable>
+        <designable name="Z9Z-mZ-b3B">
+            <size key="intrinsicContentSize" width="235" height="50"/>
+        </designable>
+        <designable name="ZAD-sw-a8D">
+            <size key="intrinsicContentSize" width="244" height="20.5"/>
+        </designable>
+        <designable name="aDQ-2p-x9f">
+            <size key="intrinsicContentSize" width="152" height="20.5"/>
+        </designable>
+        <designable name="aqD-35-9Nl">
+            <size key="intrinsicContentSize" width="139.5" height="20.5"/>
+        </designable>
+        <designable name="fZN-uX-w1I">
+            <size key="intrinsicContentSize" width="1528" height="20.5"/>
+        </designable>
+        <designable name="hbc-3u-J8u">
+            <size key="intrinsicContentSize" width="49" height="31"/>
+        </designable>
+        <designable name="jns-eD-7In">
+            <size key="intrinsicContentSize" width="43.5" height="20.5"/>
+        </designable>
+        <designable name="mu7-yY-lH2">
+            <size key="intrinsicContentSize" width="262.5" height="20.5"/>
+        </designable>
+        <designable name="wkA-Dj-yfV">
+            <size key="intrinsicContentSize" width="175" height="50"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Icons - Close" width="30" height="30"/>
         <image name="Icons - Close - Tap" width="30" height="30"/>

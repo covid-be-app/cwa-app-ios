@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="banner" rowHeight="237" id="xat-cJ-1Ep" customClass="ImageTableViewCell" customModule="ENA" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="237"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xat-cJ-1Ep" id="g88-XG-zvF">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="237"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fll-9a-nCs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="237"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Fll-9a-nCs" secondAttribute="trailing" id="OPO-Rp-kcj"/>
+                    <constraint firstAttribute="bottom" secondItem="Fll-9a-nCs" secondAttribute="bottom" id="bNB-HN-e5l"/>
+                    <constraint firstItem="Fll-9a-nCs" firstAttribute="leading" secondItem="g88-XG-zvF" secondAttribute="leading" id="jHK-TK-fsc"/>
+                    <constraint firstItem="Fll-9a-nCs" firstAttribute="top" secondItem="g88-XG-zvF" secondAttribute="top" id="uDs-Jg-VWp"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="imageContainerView" destination="Fll-9a-nCs" id="iDd-rj-hUJ"/>
+            </connections>
+            <point key="canvasLocation" x="-317" y="85"/>
+        </tableViewCell>
+    </objects>
+</document>
