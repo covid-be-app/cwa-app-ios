@@ -102,14 +102,11 @@ class Coordinator: RequiresAppDependencies {
 		rootViewController.navigationBar.prefersLargeTitles = false
 		rootViewController.setViewControllers(
 			[
-				AppStoryboard.onboarding.initiateInitial { [unowned self] coder in
-					OnboardingInfoViewController(
-						coder: coder,
-						pageType: .togetherAgainstCoronaPage,
-						exposureManager: self.exposureManager,
-						store: self.store
-					)
-				}
+				OnboardingInfoViewController(
+					pageType: .togetherAgainstCoronaPage,
+					exposureManager: self.exposureManager,
+					store: self.store
+				)
 			],
 			animated: false
 		)

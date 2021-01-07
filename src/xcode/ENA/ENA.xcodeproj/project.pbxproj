@@ -103,7 +103,6 @@
 		51CE1BBD2460B1CB002CF42A /* CollectionViewCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CE1BBC2460B1CB002CF42A /* CollectionViewCellConfigurator.swift */; };
 		51CE1BBF2460B222002CF42A /* HomeRiskCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CE1BBE2460B222002CF42A /* HomeRiskCellConfigurator.swift */; };
 		51CE1BC32460B28D002CF42A /* HomeInfoCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CE1BC22460B28D002CF42A /* HomeInfoCellConfigurator.swift */; };
-		51D420B12458397300AD70CA /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51D420B02458397300AD70CA /* Onboarding.storyboard */; };
 		51D420B424583ABB00AD70CA /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D420B324583ABB00AD70CA /* AppStoryboard.swift */; };
 		51D420B724583B7200AD70CA /* NSObject+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D420B624583B7200AD70CA /* NSObject+Identifier.swift */; };
 		51D420B924583B8300AD70CA /* UIViewController+AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D420B824583B8300AD70CA /* UIViewController+AppStoryboard.swift */; };
@@ -281,6 +280,7 @@
 		A97D447525A5FF0F00E7D698 /* OpenCombineDispatch in Frameworks */ = {isa = PBXBuildFile; productRef = A97D447425A5FF0F00E7D698 /* OpenCombineDispatch */; };
 		A97D447725A5FF0F00E7D698 /* OpenCombineFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = A97D447625A5FF0F00E7D698 /* OpenCombineFoundation */; };
 		A97D447925A5FF0F00E7D698 /* OpenCombine in Frameworks */ = {isa = PBXBuildFile; productRef = A97D447825A5FF0F00E7D698 /* OpenCombine */; };
+		A97D448725A708D300E7D698 /* OnboardingInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97D448625A708D300E7D698 /* OnboardingInfoViewController.xib */; };
 		A97E1592257668E300E1DB28 /* BEEUSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E1591257668E300E1DB28 /* BEEUSettingsViewController.swift */; };
 		A97E159625766BBB00E1DB28 /* EuTracingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E159525766BBB00E1DB28 /* EuTracingTableViewCell.swift */; };
 		A97E159A25766BEF00E1DB28 /* ENSettingEuTracingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E159925766BEF00E1DB28 /* ENSettingEuTracingViewModel.swift */; };
@@ -592,7 +592,6 @@
 		51CE1BBC2460B1CB002CF42A /* CollectionViewCellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCellConfigurator.swift; sourceTree = "<group>"; };
 		51CE1BBE2460B222002CF42A /* HomeRiskCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRiskCellConfigurator.swift; sourceTree = "<group>"; };
 		51CE1BC22460B28D002CF42A /* HomeInfoCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoCellConfigurator.swift; sourceTree = "<group>"; };
-		51D420B02458397300AD70CA /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		51D420B324583ABB00AD70CA /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
 		51D420B624583B7200AD70CA /* NSObject+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Identifier.swift"; sourceTree = "<group>"; };
 		51D420B824583B8300AD70CA /* UIViewController+AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AppStoryboard.swift"; sourceTree = "<group>"; };
@@ -793,6 +792,7 @@
 		A96E9FC924CD71B300F845DB /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A96E9FCA24CD71B300F845DB /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = nl; path = nl.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		A96E9FCB24CD71B300F845DB /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A97D448625A708D300E7D698 /* OnboardingInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingInfoViewController.xib; sourceTree = "<group>"; };
 		A97E1591257668E300E1DB28 /* BEEUSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEEUSettingsViewController.swift; sourceTree = "<group>"; };
 		A97E159525766BBB00E1DB28 /* EuTracingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EuTracingTableViewCell.swift; sourceTree = "<group>"; };
 		A97E159925766BEF00E1DB28 /* ENSettingEuTracingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ENSettingEuTracingViewModel.swift; sourceTree = "<group>"; };
@@ -1248,6 +1248,7 @@
 				51C737BC245B349700286105 /* OnboardingInfoViewController.swift */,
 				A17366542484978A006BE209 /* OnboardingInfoViewControllerUtils.swift */,
 				137846482488027500A50AB8 /* OnboardingInfoViewController+Extension.swift */,
+				A97D448625A708D300E7D698 /* OnboardingInfoViewController.xib */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -1605,7 +1606,6 @@
 			children = (
 				CD99A39C245B22EE00BF12AF /* ExposureSubmission.storyboard */,
 				85D7594C24570491008175F0 /* LaunchScreen.storyboard */,
-				51D420B02458397300AD70CA /* Onboarding.storyboard */,
 				51D420CD245869C800AD70CA /* Home.storyboard */,
 				514E812F24618E3D00636861 /* ExposureDetection.storyboard */,
 				51D420CF24586AB300AD70CA /* Settings.storyboard */,
@@ -2774,6 +2774,7 @@
 				EE278B2D245F2BBB008B06F9 /* InviteFriends.storyboard in Resources */,
 				EE70C23D245B09EA00AC9B2F /* Localizable.strings in Resources */,
 				51CE1B85246078B6002CF42A /* ActivateCollectionViewCell.xib in Resources */,
+				A97D448725A708D300E7D698 /* OnboardingInfoViewController.xib in Resources */,
 				51C779142486E5AB004582F8 /* RiskFindingPositiveCollectionViewCell.xib in Resources */,
 				51D420CE245869C800AD70CA /* Home.storyboard in Resources */,
 				A9221A332542C2C200853CEF /* dynamicTextsV2.json in Resources */,
@@ -2791,7 +2792,6 @@
 				51FE277D247535C400BB8144 /* RiskLoadingItemView.xib in Resources */,
 				853D98832469DC5000490DBA /* ExposureNotificationSetting.storyboard in Resources */,
 				A95EE81A24FCF6C700AFECBD /* BEInfectionSummaryCollectionViewCell.xib in Resources */,
-				51D420B12458397300AD70CA /* Onboarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
