@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="notificationsOn" id="EGZ-ga-c0v" customClass="NotificationSettingsOnTableViewCell" customModule="ENA" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="44.5"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EGZ-ga-c0v" id="xgm-uX-SWo">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="44.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffh-dE-YbK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="# Änderung Ihres Infektionsrisikos " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T26-9Y-121" userLabel="Description Label" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
+                                <rect key="frame" x="16" y="0.0" width="323" height="44.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="ENA Text Primary 1 Color"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="body"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E2j-MK-gN7" userLabel="Toggle Switch" customClass="ENASwitch" customModule="ENA" customModuleProvider="target">
+                                <rect key="frame" x="349" y="7" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchToggled:" destination="EGZ-ga-c0v" eventType="valueChanged" id="Raa-dC-bV2"/>
+                                </connections>
+                            </switch>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="E2j-MK-gN7" secondAttribute="trailing" constant="16" id="4Dd-ts-yMk"/>
+                            <constraint firstAttribute="bottom" secondItem="T26-9Y-121" secondAttribute="bottom" id="CU9-5d-vyA"/>
+                            <constraint firstItem="T26-9Y-121" firstAttribute="leading" secondItem="ffh-dE-YbK" secondAttribute="leading" constant="16" id="qAb-98-Y9I"/>
+                            <constraint firstItem="E2j-MK-gN7" firstAttribute="leading" secondItem="T26-9Y-121" secondAttribute="trailing" constant="10" id="uDi-P1-NBg"/>
+                            <constraint firstItem="T26-9Y-121" firstAttribute="top" secondItem="ffh-dE-YbK" secondAttribute="top" id="vJn-9h-YCO"/>
+                            <constraint firstItem="E2j-MK-gN7" firstAttribute="centerY" secondItem="ffh-dE-YbK" secondAttribute="centerY" id="ym7-cG-7wg"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="zee-wY-fy7"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="ffh-dE-YbK" secondAttribute="bottom" id="23m-lR-TS7"/>
+                    <constraint firstItem="ffh-dE-YbK" firstAttribute="top" secondItem="xgm-uX-SWo" secondAttribute="top" id="6bU-zk-LPH"/>
+                    <constraint firstItem="ffh-dE-YbK" firstAttribute="leading" secondItem="xgm-uX-SWo" secondAttribute="leading" id="aa0-go-iQW"/>
+                    <constraint firstAttribute="trailing" secondItem="ffh-dE-YbK" secondAttribute="trailing" id="c2L-6Y-LmH"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="T26-9Y-121" id="kUT-JU-VGd"/>
+                <outlet property="toggleSwitch" destination="E2j-MK-gN7" id="Nfc-Xm-wAe"/>
+            </connections>
+            <point key="canvasLocation" x="45" y="112"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="E2j-MK-gN7">
+            <size key="intrinsicContentSize" width="49" height="31"/>
+        </designable>
+        <designable name="T26-9Y-121">
+            <size key="intrinsicContentSize" width="262.5" height="20.5"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="ENA Text Primary 1 Color">
+            <color red="0.090196078431372548" green="0.098039215686274508" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

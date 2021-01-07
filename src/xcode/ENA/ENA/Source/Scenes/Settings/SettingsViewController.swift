@@ -69,6 +69,7 @@ final class SettingsViewController: UITableViewController {
 		super.viewDidLoad()
 
 		tableView.separatorColor = .enaColor(for: .hairline)
+		tableView.backgroundColor = .enaColor(for: .background)
 
 		navigationItem.title = AppStrings.Settings.navigationBarTitle
 
@@ -100,9 +101,8 @@ final class SettingsViewController: UITableViewController {
 		return vc
 	}
 
-	@IBSegueAction
-	func createNotificationSettingsViewController(coder: NSCoder) -> NotificationSettingsViewController? {
-		NotificationSettingsViewController(coder: coder, store: store)
+	func createNotificationSettingsViewController() -> NotificationSettingsViewController? {
+		NotificationSettingsViewController(store: store)
 	}
 
 	@IBSegueAction
@@ -272,7 +272,10 @@ extension SettingsViewController {
 				)
 			navigationController?.pushViewController(vc, animated: true)
 		case .notifications:
-			performSegue(withIdentifier: notificationsSegue, sender: nil)
+			let vc = NotificationSettingsViewController(
+						store: self.store
+				)
+			navigationController?.pushViewController(vc, animated: true)
 		case .reset:
 			performSegue(withIdentifier: resetSegue, sender: nil)
 		case .mobileDataUsage:

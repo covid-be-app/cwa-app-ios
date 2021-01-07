@@ -284,6 +284,9 @@
 		A97D44B025A72E5A00E7D698 /* ActionDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97D44AF25A72E5A00E7D698 /* ActionDetailTableViewCell.xib */; };
 		A97D44B425A72E7A00E7D698 /* TracingHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97D44B325A72E7A00E7D698 /* TracingHistoryTableViewCell.xib */; };
 		A97D44BA25A7354400E7D698 /* FriendsInviteController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97D44B925A7354400E7D698 /* FriendsInviteController.xib */; };
+		A97D44C025A7478200E7D698 /* NotificationSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97D44BF25A7478200E7D698 /* NotificationSettingsViewController.xib */; };
+		A97D44C425A749C300E7D698 /* NotificationSettingsOnTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97D44C325A749C300E7D698 /* NotificationSettingsOnTableViewCell.xib */; };
+		A97D44C825A749EC00E7D698 /* NotificationSettingsOffTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97D44C725A749EC00E7D698 /* NotificationSettingsOffTableViewCell.xib */; };
 		A97E1592257668E300E1DB28 /* BEEUSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E1591257668E300E1DB28 /* BEEUSettingsViewController.swift */; };
 		A97E159625766BBB00E1DB28 /* EuTracingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E159525766BBB00E1DB28 /* EuTracingTableViewCell.swift */; };
 		A97E159A25766BEF00E1DB28 /* ENSettingEuTracingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E159925766BEF00E1DB28 /* ENSettingEuTracingViewModel.swift */; };
@@ -798,6 +801,9 @@
 		A97D44AF25A72E5A00E7D698 /* ActionDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionDetailTableViewCell.xib; sourceTree = "<group>"; };
 		A97D44B325A72E7A00E7D698 /* TracingHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TracingHistoryTableViewCell.xib; sourceTree = "<group>"; };
 		A97D44B925A7354400E7D698 /* FriendsInviteController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsInviteController.xib; sourceTree = "<group>"; };
+		A97D44BF25A7478200E7D698 /* NotificationSettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationSettingsViewController.xib; sourceTree = "<group>"; };
+		A97D44C325A749C300E7D698 /* NotificationSettingsOnTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationSettingsOnTableViewCell.xib; sourceTree = "<group>"; };
+		A97D44C725A749EC00E7D698 /* NotificationSettingsOffTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationSettingsOffTableViewCell.xib; sourceTree = "<group>"; };
 		A97E1591257668E300E1DB28 /* BEEUSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEEUSettingsViewController.swift; sourceTree = "<group>"; };
 		A97E159525766BBB00E1DB28 /* EuTracingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EuTracingTableViewCell.swift; sourceTree = "<group>"; };
 		A97E159925766BEF00E1DB28 /* ENSettingEuTracingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ENSettingEuTracingViewModel.swift; sourceTree = "<group>"; };
@@ -1327,6 +1333,7 @@
 				CD2EC328247D82EE00C6B3F9 /* NotificationSettingsViewController.swift */,
 				A9C47CA22565425000C7A86B /* MobileDataUsageSettingsViewController.swift */,
 				A9C47CA42565447600C7A86B /* MobileDataUsageTableViewCell.swift */,
+				A97D44BF25A7478200E7D698 /* NotificationSettingsViewController.xib */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -2520,6 +2527,8 @@
 			children = (
 				CDCE11D8247D64C600F30825 /* NotificationSettingsOnTableViewCell.swift */,
 				CDCE11DA247D64D600F30825 /* NotificationSettingsOffTableViewCell.swift */,
+				A97D44C325A749C300E7D698 /* NotificationSettingsOnTableViewCell.xib */,
+				A97D44C725A749EC00E7D698 /* NotificationSettingsOffTableViewCell.xib */,
 			);
 			path = Notifications;
 			sourceTree = "<group>";
@@ -2757,6 +2766,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A97D44C425A749C300E7D698 /* NotificationSettingsOnTableViewCell.xib in Resources */,
 				514E813024618E3D00636861 /* ExposureDetection.storyboard in Resources */,
 				51486DA32485101500FCE216 /* RiskInactiveCollectionViewCell.xib in Resources */,
 				A97D44B025A72E5A00E7D698 /* ActionDetailTableViewCell.xib in Resources */,
@@ -2770,6 +2780,7 @@
 				85D7594E24570491008175F0 /* LaunchScreen.storyboard in Resources */,
 				A97D44AC25A72E4100E7D698 /* EuTracingTableViewCell.xib in Resources */,
 				710224EE2490E2FD000C5DEF /* ExposureSubmissionStepCell.xib in Resources */,
+				A97D44C025A7478200E7D698 /* NotificationSettingsViewController.xib in Resources */,
 				71FE1C8D247AC79D00851FEB /* DynamicTableViewIconCell.xib in Resources */,
 				A189E461248C35BF001D0996 /* PublicKeys.plist in Resources */,
 				A97D44BA25A7354400E7D698 /* FriendsInviteController.xib in Resources */,
@@ -2787,6 +2798,7 @@
 				A9221A332542C2C200853CEF /* dynamicTextsV2.json in Resources */,
 				8539874F2467094E00D28B62 /* AppIcon.xcassets in Resources */,
 				514C0A0B247AF9F700F235F6 /* RiskTextItemView.xib in Resources */,
+				A97D44C825A749EC00E7D698 /* NotificationSettingsOffTableViewCell.xib in Resources */,
 				51B5B414246DF07300DC5D3E /* RiskImageItemView.xib in Resources */,
 				85D7594B24570491008175F0 /* Assets.xcassets in Resources */,
 				711EFCC924935C79005FEF21 /* ExposureSubmissionTestResultHeaderView.xib in Resources */,
