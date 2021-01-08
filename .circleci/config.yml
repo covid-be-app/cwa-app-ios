@@ -10,7 +10,7 @@ jobs:
       - checkout
       - run:
           name: Set Ruby Version
-          command: chruby ruby-2.7
+          command: echo 'chruby ruby-2.7' >> ~/.bash_profile
       - run:
           name: Install bundler
           command: sudo gem install rake bundler:2.2.2
@@ -29,7 +29,7 @@ jobs:
       - checkout
       - run:
           name: Set Ruby Version
-          command: chruby ruby-2.7
+          command: echo 'chruby ruby-2.7' >> ~/.bash_profile
       - run:
           name: Log Ruby Version
           command: ruby -v
