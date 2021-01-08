@@ -100,9 +100,7 @@
 		51CE1BBD2460B1CB002CF42A /* CollectionViewCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CE1BBC2460B1CB002CF42A /* CollectionViewCellConfigurator.swift */; };
 		51CE1BBF2460B222002CF42A /* HomeRiskCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CE1BBE2460B222002CF42A /* HomeRiskCellConfigurator.swift */; };
 		51CE1BC32460B28D002CF42A /* HomeInfoCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CE1BC22460B28D002CF42A /* HomeInfoCellConfigurator.swift */; };
-		51D420B424583ABB00AD70CA /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D420B324583ABB00AD70CA /* AppStoryboard.swift */; };
 		51D420B724583B7200AD70CA /* NSObject+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D420B624583B7200AD70CA /* NSObject+Identifier.swift */; };
-		51D420B924583B8300AD70CA /* UIViewController+AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D420B824583B8300AD70CA /* UIViewController+AppStoryboard.swift */; };
 		51D420C424583E3300AD70CA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D420C324583E3300AD70CA /* SettingsViewController.swift */; };
 		51F1255D24BDD75300126C86 /* HomeUnknown48hRiskCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F1255C24BDD75300126C86 /* HomeUnknown48hRiskCellConfigurator.swift */; };
 		51F1256024BEFB8F00126C86 /* HomeUnknown48hRiskCellConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F1255E24BEFB7A00126C86 /* HomeUnknown48hRiskCellConfiguratorTests.swift */; };
@@ -605,9 +603,7 @@
 		51CE1BBC2460B1CB002CF42A /* CollectionViewCellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCellConfigurator.swift; sourceTree = "<group>"; };
 		51CE1BBE2460B222002CF42A /* HomeRiskCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRiskCellConfigurator.swift; sourceTree = "<group>"; };
 		51CE1BC22460B28D002CF42A /* HomeInfoCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoCellConfigurator.swift; sourceTree = "<group>"; };
-		51D420B324583ABB00AD70CA /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
 		51D420B624583B7200AD70CA /* NSObject+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Identifier.swift"; sourceTree = "<group>"; };
-		51D420B824583B8300AD70CA /* UIViewController+AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AppStoryboard.swift"; sourceTree = "<group>"; };
 		51D420C324583E3300AD70CA /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		51D420D324586DCA00AD70CA /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		51F1255C24BDD75300126C86 /* HomeUnknown48hRiskCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUnknown48hRiskCellConfigurator.swift; sourceTree = "<group>"; };
@@ -1317,7 +1313,6 @@
 				710021DB248E44A6001F0B63 /* ENAFont.swift */,
 				13722043247AEEAD00152764 /* UNNotificationCenter+Extension.swift */,
 				51D420B624583B7200AD70CA /* NSObject+Identifier.swift */,
-				51D420B824583B8300AD70CA /* UIViewController+AppStoryboard.swift */,
 				B1EDFD8C248E74D000E7EAFF /* URL+StaticString.swift */,
 				51D420D324586DCA00AD70CA /* NotificationName.swift */,
 				85142500245DA0B3009D2791 /* UIViewController+Alert.swift */,
@@ -2540,7 +2535,6 @@
 			isa = PBXGroup;
 			children = (
 				A3E851B324ADDA9E00402485 /* __tests__ */,
-				51D420B324583ABB00AD70CA /* AppStoryboard.swift */,
 				CD99A3C92461A47C00BF12AF /* AppStrings.swift */,
 				71CAB9D1248AACAD00F516A5 /* PixelPerfectLayoutConstraint.swift */,
 				2FE15A3B249B8C0B0077BD8D /* AccessibilityIdentifiers.swift */,
@@ -3032,7 +3026,6 @@
 				B1FE13EB24891CFA00D012E5 /* RiskProvider.swift in Sources */,
 				B143DBDF2477F292000A29E8 /* ExposureNotificationSettingViewController.swift in Sources */,
 				016146912487A43E00660992 /* LinkHelper.swift in Sources */,
-				51D420B924583B8300AD70CA /* UIViewController+AppStoryboard.swift in Sources */,
 				71B804542485273C00D53506 /* RiskLegendDotBodyCell.swift in Sources */,
 				EE22DB8A247FB43A001B0A71 /* ImageTableViewCell.swift in Sources */,
 				A92076DB24EA770F00AE8748 /* BEDate.swift in Sources */,
@@ -3063,7 +3056,6 @@
 				B1B381432472EF8B0056BEEE /* HTTPClient+Configuration.swift in Sources */,
 				A9D9D1AF24D6B1FB009BEDD9 /* BEExposureSubmissionWarnOthersViewController.swift in Sources */,
 				A328424E248B91E0006B1F09 /* HomeTestResultLoadingCell.swift in Sources */,
-				51D420B424583ABB00AD70CA /* AppStoryboard.swift in Sources */,
 				4026C2DC24852B7600926FB4 /* AppInformationViewController+LegalModel.swift in Sources */,
 				EE278B30245F2C8A008B06F9 /* FriendsInviteController.swift in Sources */,
 				710ABB27247533FA00948792 /* DynamicTableViewController.swift in Sources */,

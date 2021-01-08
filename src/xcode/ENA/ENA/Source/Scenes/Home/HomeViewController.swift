@@ -203,14 +203,6 @@ final class HomeViewController: UICollectionViewController, RequiresAppDependenc
 		delegate?.showExposureSubmission(with: result)
 	}
 
-	func showDeveloperMenu() {
-		present(
-			AppStoryboard.developerMenu.initiateInitial(),
-			animated: true,
-			completion: nil
-		)
-	}
-
 	func showExposureNotificationSetting() {
 		delegate?.showExposureNotificationSetting(enState: self.homeInteractor.state.enState)
 	}
