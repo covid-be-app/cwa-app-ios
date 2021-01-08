@@ -164,17 +164,14 @@ extension Coordinator: HomeViewControllerDelegate {
 			isLoading: isRequestRiskRunning,
 			risk: state.risk
 		)
-		let vc = AppStoryboard.exposureDetection.initiateInitial { coder in
+		exposureDetectionController =
 			ExposureDetectionViewController(
-				coder: coder,
 				state: state,
 				delegate: self
 			)
-		}
-		exposureDetectionController = vc as? ExposureDetectionViewController
 		
 		// :BE: pushed on stack instead of modal
-		rootViewController.pushViewController(vc, animated: true)
+		rootViewController.pushViewController(exposureDetectionController!, animated: true)
 	}
 
 	func setExposureDetectionState(state: HomeInteractor.State, isRequestRiskRunning: Bool) {
