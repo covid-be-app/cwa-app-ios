@@ -1,4 +1,3 @@
-#!zsh
 set -euo pipefail
 
 function convert_file {
