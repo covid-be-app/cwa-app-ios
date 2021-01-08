@@ -9,8 +9,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Update byndler
-          command: bundle update --bundler
+          name: Update bundler
+          command: cd src/xcode && bundle update --bundler
       - run:
           name: Install dependencies
           command: cd src/xcode && bundle install
@@ -25,8 +25,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Update byndler
-          command: bundle update --bundler
+          name: Update bundler
+          command: cd src/xcode && bundle update --bundler
       - run:
           name: Install dependencies
           command: brew install swiftlint && cd src/xcode && bundle install
