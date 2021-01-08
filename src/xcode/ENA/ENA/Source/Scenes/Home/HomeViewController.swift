@@ -73,8 +73,7 @@ final class HomeViewController: UICollectionViewController, RequiresAppDependenc
 
 	// MARK: Properties
 
-	private var sections: HomeInteractor.SectionConfiguration = []
-	private var dataSource: UICollectionViewDiffableDataSource<Section, AnyHashable>?
+	var sections: HomeInteractor.SectionConfiguration = []
 	private var homeInteractor: HomeInteractor!
 
 	private weak var delegate: HomeViewControllerDelegate?
@@ -94,7 +93,6 @@ final class HomeViewController: UICollectionViewController, RequiresAppDependenc
 		
 		setupBarButtonItems()
 		configureCollectionView()
-		configureDataSource()
 		setupAccessibility()
 
 		homeInteractor.buildSections()
@@ -276,15 +274,16 @@ final class HomeViewController: UICollectionViewController, RequiresAppDependenc
 	}
 
 	func reloadCell(at indexPath: IndexPath) {
-		guard let snapshot = dataSource?.snapshot() else { return }
 		guard let cell = collectionView.cellForItem(at: indexPath) else { return }
 		sections[indexPath.section].cellConfigurators[indexPath.item].configureAny(cell: cell)
-		dataSource?.apply(snapshot, animatingDifferences: true)
+		
+		collectionView.reloadItems(at: [indexPath])
 	}
 
 	private func configureCollectionView() {
 		collectionView.collectionViewLayout = .homeLayout(delegate: self)
 		collectionView.delegate = self
+		collectionView.dataSource = self
 
 		collectionView.contentInset = UIEdgeInsets(top: UICollectionViewLayout.topInset, left: 0, bottom: -UICollectionViewLayout.bottomBackgroundOverflowHeight, right: 0)
 
@@ -311,23 +310,8 @@ final class HomeViewController: UICollectionViewController, RequiresAppDependenc
 		collectionView.register(cellTypes: cellTypes)
 	}
 
-	private func configureDataSource() {
-		dataSource = UICollectionViewDiffableDataSource<Section, AnyHashable>(collectionView: collectionView) { [unowned self] collectionView, indexPath, _ in
-			let configurator = self.sections[indexPath.section].cellConfigurators[indexPath.row]
-			let cell = collectionView.dequeueReusableCell(cellType: configurator.viewAnyType, for: indexPath)
-			cell.unhighlight()
-			configurator.configureAny(cell: cell)
-			return cell
-		}
-	}
-
 	func applySnapshotFromSections(animatingDifferences: Bool = false) {
-		var snapshot = NSDiffableDataSourceSnapshot<Section, AnyHashable>()
-		for section in sections {
-			snapshot.appendSections([section.section])
-			snapshot.appendItems( section.cellConfigurators.map { $0.hashValue })
-		}
-		dataSource?.apply(snapshot, animatingDifferences: animatingDifferences)
+		self.collectionView.reloadData()
 	}
 
 	func updateSections() {
@@ -425,5 +409,25 @@ private extension UICollectionViewCell {
 
 	func unhighlight() {
 		subviews.filter(({ $0.tag == 100_000 })).forEach({ $0.removeFromSuperview() })
+	}
+}
+
+extension HomeViewController {
+	
+	override func numberOfSections(in collectionView: UICollectionView) -> Int {
+		return sections.count
+	}
+	
+	override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		return sections[section].cellConfigurators.count
+	}
+	
+	override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		let configurator = sections[indexPath.section].cellConfigurators[indexPath.row]
+		let cell = collectionView.dequeueReusableCell(cellType: configurator.viewAnyType, for: indexPath)
+		cell.unhighlight()
+		configurator.configureAny(cell: cell)
+		
+		return cell
 	}
 }
