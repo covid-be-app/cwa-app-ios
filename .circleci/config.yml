@@ -4,8 +4,6 @@ jobs:
   build:
     macos:
       xcode: 12.3.0
-    shell: zsh
-
     steps:
       - checkout
       - run:
@@ -24,7 +22,6 @@ jobs:
     resource_class: large
     macos:
       xcode: 12.3.0
-    shell: zsh
     steps:
       - checkout
       - run:
