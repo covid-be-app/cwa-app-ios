@@ -31,10 +31,10 @@ class MobileDataUsageSettingsViewController: UIViewController {
 
 	let store: Store
 
-	init?(coder: NSCoder, store: Store) {
+	init(store: Store) {
 		self.store = store
 
-		super.init(coder: coder)
+		super.init(nibName: nil, bundle: nil)
 	}
 
 	@available(*, unavailable)
@@ -48,7 +48,8 @@ class MobileDataUsageSettingsViewController: UIViewController {
 		tableView.delegate = self
 		tableView.dataSource = self
 		tableView.separatorColor = .enaColor(for: .hairline)
-
+		tableView.register(UINib(nibName: String(describing: MobileDataUsageTableViewCell.self), bundle: nil), forCellReuseIdentifier: "mobileDataUsage")
+		self.view.backgroundColor = .enaColor(for: .background)
 		navigationItem.title = BEAppStrings.BEMobileDataUsageSettings.navigationBarTitle
 		navigationController?.navigationBar.prefersLargeTitles = true
 

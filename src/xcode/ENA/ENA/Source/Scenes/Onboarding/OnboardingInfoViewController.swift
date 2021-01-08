@@ -45,8 +45,7 @@ extension OnboardingInfoViewController: RequiresAppDependencies {
 final class OnboardingInfoViewController: UIViewController {
 	// MARK: Creating a Onboarding View Controller
 
-	init?(
-		coder: NSCoder,
+	init(
 		pageType: OnboardingPageType,
 		exposureManager: ExposureManager,
 		store: Store
@@ -54,7 +53,7 @@ final class OnboardingInfoViewController: UIViewController {
 		self.pageType = pageType
 		self.exposureManager = exposureManager
 		self.store = store
-		super.init(coder: coder)
+		super.init(nibName: nil, bundle: nil)
 	}
 
 	@available(*, unavailable)
@@ -357,17 +356,13 @@ final class OnboardingInfoViewController: UIViewController {
 			return
 		}
 
-		let storyboard = AppStoryboard.onboarding.instance
-		let next = storyboard.instantiateInitialViewController { [unowned self] coder in
-			OnboardingInfoViewController(
-				coder: coder,
+		let next = OnboardingInfoViewController(
 				pageType: nextPageType,
 				exposureManager: self.exposureManager,
 				store: self.store
 			)
-		}
-		// swiftlint:disable:next force_unwrapping
-		navigationController?.pushViewController(next!, animated: true)
+
+		navigationController?.pushViewController(next, animated: true)
 	}
 
 

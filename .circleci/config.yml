@@ -3,27 +3,42 @@ version: 2.1
 jobs:
   build:
     macos:
-      xcode: 11.6.0
+      xcode: 12.3.0
     shell: zsh
 
     steps:
       - checkout
       - run:
+          name: Set Ruby Version
+          command: echo 'chruby ruby-2.7' >> ~/.bash_profile
+      - run:
+          name: Install bundler
+          command: sudo gem install rake bundler:2.2.2
+      - run:
           name: Install dependencies
-          command: cd src/xcode && bundle install
+          command: cd src/xcode && bundle install --path=vendor --jobs=8
       - run:
           name: Build
           command: cd src/xcode && bundle exec fastlane build
   test:
     resource_class: large
     macos:
-      xcode: 11.6.0
+      xcode: 12.3.0
     shell: zsh
     steps:
       - checkout
       - run:
+          name: Set Ruby Version
+          command: echo 'chruby ruby-2.7' >> ~/.bash_profile
+      - run:
+          name: Log Ruby Version
+          command: ruby -v
+      - run:
+          name: Install bundler
+          command: sudo gem install rake bundler:2.2.2
+      - run:
           name: Install dependencies
-          command: brew install swiftlint && cd src/xcode && bundle install
+          command: brew install swiftlint && cd src/xcode && bundle install --path=vendor --jobs=8
       - run:
           name: Tests
           command: cd src/xcode && bundle exec fastlane test
@@ -67,7 +82,7 @@ jobs:
 
   testflight-release:
     macos:
-      xcode: 11.6.0
+      xcode: 12.3.0
     shell: zsh
     steps:
       - checkout
@@ -85,7 +100,7 @@ jobs:
           
   production-release:
     macos:
-      xcode: 11.6.0
+      xcode: 12.3.0
     shell: zsh
     steps:
       - checkout

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="notificationsOff" id="qms-Yx-VAl" customClass="NotificationSettingsOffTableViewCell" customModule="ENA" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="44.5"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qms-Yx-VAl" id="o5s-av-f9v">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="44.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P73-6s-4ji">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mitteilungen" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Khi-S3-R1x" userLabel="DescriptionLabel" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
+                                <rect key="frame" x="16" y="0.0" width="328.5" height="44.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="ENA Text Primary 1 Color"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="body"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="759" text="# Aus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gB-uP-Eft" userLabel="State Label" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
+                                <rect key="frame" x="354.5" y="12" width="43.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="ENA Text Primary 2 Color"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="body"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="9gB-uP-Eft" firstAttribute="centerY" secondItem="P73-6s-4ji" secondAttribute="centerY" id="CEj-P9-dMA"/>
+                            <constraint firstItem="Khi-S3-R1x" firstAttribute="top" secondItem="P73-6s-4ji" secondAttribute="top" id="CcU-LC-jbm"/>
+                            <constraint firstAttribute="bottom" secondItem="Khi-S3-R1x" secondAttribute="bottom" id="I4U-ft-LSR"/>
+                            <constraint firstAttribute="trailing" secondItem="9gB-uP-Eft" secondAttribute="trailing" constant="16" id="fXb-LA-DBy"/>
+                            <constraint firstItem="Khi-S3-R1x" firstAttribute="leading" secondItem="P73-6s-4ji" secondAttribute="leading" constant="16" id="uTD-Wo-CzP"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="xLo-Uq-7OG"/>
+                            <constraint firstItem="9gB-uP-Eft" firstAttribute="leading" secondItem="Khi-S3-R1x" secondAttribute="trailing" constant="10" id="yES-Lo-t7i"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="P73-6s-4ji" firstAttribute="top" secondItem="o5s-av-f9v" secondAttribute="top" id="BO4-IZ-jVB"/>
+                    <constraint firstAttribute="trailing" secondItem="P73-6s-4ji" secondAttribute="trailing" id="dPu-QE-co1"/>
+                    <constraint firstItem="P73-6s-4ji" firstAttribute="leading" secondItem="o5s-av-f9v" secondAttribute="leading" id="i5c-Z9-Kfj"/>
+                    <constraint firstAttribute="bottom" secondItem="P73-6s-4ji" secondAttribute="bottom" id="q9b-JM-cXC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="Khi-S3-R1x" id="xhL-LG-iZd"/>
+                <outlet property="stateLabel" destination="9gB-uP-Eft" id="7po-Bl-7Iy"/>
+            </connections>
+            <point key="canvasLocation" x="45" y="112"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="9gB-uP-Eft">
+            <size key="intrinsicContentSize" width="43.5" height="20.5"/>
+        </designable>
+        <designable name="Khi-S3-R1x">
+            <size key="intrinsicContentSize" width="94.5" height="20.5"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="ENA Text Primary 1 Color">
+            <color red="0.090196078431372548" green="0.098039215686274508" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ENA Text Primary 2 Color">
+            <color red="0.090196078431372548" green="0.098039215686274508" blue="0.10196078431372549" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

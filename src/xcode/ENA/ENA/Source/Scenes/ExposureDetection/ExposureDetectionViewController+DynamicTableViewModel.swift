@@ -59,6 +59,7 @@ private extension DynamicHeader {
 // MARK: - Supported Cell Types
 
 extension DynamicCell {
+	/*
 	private enum ReusableCellIdentifer: String, TableViewCellReuseIdentifiers {
 		case risk = "riskCell"
 		case riskText = "riskTextCell"
@@ -69,7 +70,7 @@ extension DynamicCell {
 		case link = "linkCell"
 		case hotline = "hotlineCell"
 	}
-
+*/
 	private static let relativeDateTimeFormatter: DateFormatter = {
 		let formatter = DateFormatter()
 		formatter.doesRelativeDateFormatting = true
@@ -83,7 +84,7 @@ extension DynamicCell {
 	}
 
 	static func risk(hasSeparator: Bool = true, configure: @escaping GenericCellConfigurator<ExposureDetectionViewController>) -> DynamicCell {
-		.exposureDetectionCell(ReusableCellIdentifer.risk) { viewController, cell, indexPath in
+		.exposureDetectionCell(ExposureDetectionViewController.ReusableCellIdentifier.risk) { viewController, cell, indexPath in
 			let state = viewController.state
 			cell.backgroundColor = state.riskTintColor
 
@@ -159,7 +160,7 @@ extension DynamicCell {
 	}
 
 	static func riskText(text: String) -> DynamicCell {
-		.exposureDetectionCell(ReusableCellIdentifer.riskText) { viewController, cell, _ in
+		.exposureDetectionCell(ExposureDetectionViewController.ReusableCellIdentifier.riskText) { viewController, cell, _ in
 			let state = viewController.state
 			cell.backgroundColor = state.riskTintColor
 			cell.textLabel?.textColor = state.riskContrastColor
@@ -168,7 +169,7 @@ extension DynamicCell {
 	}
 
 	static func riskLoading(text: String) -> DynamicCell {
-		.exposureDetectionCell(ReusableCellIdentifer.riskLoading) { viewController, cell, _ in
+		.exposureDetectionCell(ExposureDetectionViewController.ReusableCellIdentifier.riskLoading) { viewController, cell, _ in
 			let state = viewController.state
 			cell.backgroundColor = state.riskTintColor
 			cell.textLabel?.text = text
@@ -176,7 +177,7 @@ extension DynamicCell {
 	}
 
 	static func header(title: String, subtitle: String) -> DynamicCell {
-		.exposureDetectionCell(ReusableCellIdentifer.header) { _, cell, _ in
+		.exposureDetectionCell(ExposureDetectionViewController.ReusableCellIdentifier.header) { _, cell, _ in
 			let cell = cell as? ExposureDetectionHeaderCell
 			cell?.titleLabel?.text = title
 			cell?.subtitleLabel?.text = subtitle
@@ -185,7 +186,7 @@ extension DynamicCell {
 	}
 
 	static func guide(text: String, image: UIImage?) -> DynamicCell {
-		.exposureDetectionCell(ReusableCellIdentifer.guide) { viewController, cell, _ in
+		.exposureDetectionCell(ExposureDetectionViewController.ReusableCellIdentifier.guide) { viewController, cell, _ in
 			let state = viewController.state
 			var tintColor = state.isTracingEnabled ? state.riskTintColor : .enaColor(for: .riskNeutral)
 			if state.riskLevel == .unknownOutdated { tintColor = .enaColor(for: .riskNeutral) }
@@ -197,7 +198,7 @@ extension DynamicCell {
 	}
 
 	static func guide(image: UIImage?, text: [String]) -> DynamicCell {
-		.exposureDetectionCell(ReusableCellIdentifer.longGuide) { viewController, cell, _ in
+		.exposureDetectionCell(ExposureDetectionViewController.ReusableCellIdentifier.longGuide) { viewController, cell, _ in
 			let state = viewController.state
 			cell.tintColor = state.isTracingEnabled ? state.riskTintColor : .enaColor(for: .riskNeutral)
 			(cell as? ExposureDetectionLongGuideCell)?.configure(image: image, text: text)
@@ -205,13 +206,13 @@ extension DynamicCell {
 	}
 
 	static func link(text: String, url: URL?) -> DynamicCell {
-		.exposureDetectionCell(ReusableCellIdentifer.link, action: .open(url: url)) { _, cell, _ in
+		.exposureDetectionCell(ExposureDetectionViewController.ReusableCellIdentifier.link, action: .open(url: url)) { _, cell, _ in
 			cell.textLabel?.text = text
 		}
 	}
 
 	static func hotline(number: String) -> DynamicCell {
-		.exposureDetectionCell(ReusableCellIdentifer.hotline) { _, cell, _ in
+		.exposureDetectionCell(ExposureDetectionViewController.ReusableCellIdentifier.hotline) { _, cell, _ in
 			(cell as? InsetTableViewCell)?.insetContentView.primaryAction = {
 				if let url = URL(string: "tel://\(number)") { UIApplication.shared.open(url) }
 			}

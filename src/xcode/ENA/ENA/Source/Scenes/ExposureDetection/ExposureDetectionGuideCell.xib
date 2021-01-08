@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="guideCell" id="Do8-ok-Xzd">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="52.5"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Do8-ok-Xzd" id="8sP-xv-YkZ">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="52.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons - Home" translatesAutoresizingMaskIntoConstraints="NO" id="XfA-92-b2c">
+                        <rect key="frame" x="20" y="10.5" width="32" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="32" id="2H5-de-VIR"/>
+                            <constraint firstAttribute="height" constant="32" id="ZS5-h4-64R"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guide with simple icon" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0p-5l-j4h" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
+                        <rect key="frame" x="68" y="16" width="326" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" name="ENA Text Primary 1 Color"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="body"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="u0p-5l-j4h" firstAttribute="leading" secondItem="XfA-92-b2c" secondAttribute="trailing" constant="16" id="MYx-eG-7oS"/>
+                    <constraint firstItem="u0p-5l-j4h" firstAttribute="top" secondItem="8sP-xv-YkZ" secondAttribute="topMargin" id="PLZ-zP-Lck"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="u0p-5l-j4h" secondAttribute="trailing" id="dDE-eC-Vzx"/>
+                    <constraint firstItem="XfA-92-b2c" firstAttribute="centerY" secondItem="8sP-xv-YkZ" secondAttribute="centerY" id="eOG-c9-4aO"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="u0p-5l-j4h" secondAttribute="bottom" id="oGB-NO-1WO"/>
+                    <constraint firstItem="XfA-92-b2c" firstAttribute="leading" secondItem="8sP-xv-YkZ" secondAttribute="leadingMargin" id="zGW-qw-JVC"/>
+                </constraints>
+                <edgeInsets key="layoutMargins" top="16" left="16" bottom="16" right="16"/>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="imageView" destination="XfA-92-b2c" id="VyT-fH-9NG"/>
+                <outlet property="textLabel" destination="u0p-5l-j4h" id="sq3-h6-IrU"/>
+            </connections>
+            <point key="canvasLocation" x="45" y="112"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="u0p-5l-j4h">
+            <size key="intrinsicContentSize" width="171.5" height="20.5"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="Icons - Home" width="32" height="32"/>
+        <namedColor name="ENA Text Primary 1 Color">
+            <color red="0.090196078431372548" green="0.098039215686274508" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

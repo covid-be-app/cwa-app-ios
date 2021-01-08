@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="actionCell" id="rOW-Br-wOL" userLabel="actionCell" customClass="ActionTableViewCell" customModule="ENA" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="123"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rOW-Br-wOL" id="4Uf-aI-jRs">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="123"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OdW-Is-RPn" userLabel="Separatorview">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
+                        <color key="backgroundColor" name="ENA Hairline Color"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="HNR-sX-5YM"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p2e-x3-0JG">
+                        <rect key="frame" x="0.0" y="1" width="414" height="121"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="myn-pQ-n45">
+                                <rect key="frame" x="16" y="10" width="382" height="101"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZy-hP-7Oc" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="101"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="ENA Text Primary 1 Color"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="body"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3e-3N-BkV" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
+                                        <rect key="frame" x="329" y="0.0" width="0.0" height="101"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="ENA Text Primary 2 Color"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="body"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mww-GK-2Ij">
+                                        <rect key="frame" x="333" y="0.0" width="49" height="101"/>
+                                        <subviews>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M3B-ga-jvQ" customClass="ENASwitch" customModule="ENA" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="35" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="switchValueDidChange:" destination="rOW-Br-wOL" eventType="valueChanged" id="vOK-ij-tmZ"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="M3B-ga-jvQ" firstAttribute="leading" secondItem="mww-GK-2Ij" secondAttribute="leading" id="oaR-js-S28"/>
+                                            <constraint firstAttribute="trailing" secondItem="M3B-ga-jvQ" secondAttribute="trailing" id="wyp-qM-ahc"/>
+                                            <constraint firstItem="M3B-ga-jvQ" firstAttribute="centerY" secondItem="mww-GK-2Ij" secondAttribute="centerY" id="zUd-kX-jkk"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="mww-GK-2Ij" firstAttribute="centerY" secondItem="myn-pQ-n45" secondAttribute="centerY" id="e5Z-1K-MRN"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="myn-pQ-n45" firstAttribute="top" secondItem="p2e-x3-0JG" secondAttribute="top" constant="10" id="13P-fO-7Ik"/>
+                            <constraint firstItem="myn-pQ-n45" firstAttribute="leading" secondItem="p2e-x3-0JG" secondAttribute="leading" constant="16" id="IGI-9D-kwU"/>
+                            <constraint firstAttribute="bottom" secondItem="myn-pQ-n45" secondAttribute="bottom" constant="10" id="SjO-Iz-5hZ"/>
+                            <constraint firstAttribute="trailing" secondItem="myn-pQ-n45" secondAttribute="trailing" constant="16" id="sNy-dI-Sks"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UeN-CF-LCm" userLabel="Separatorview">
+                        <rect key="frame" x="0.0" y="122" width="414" height="1"/>
+                        <color key="backgroundColor" name="ENA Hairline Color"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="AFV-y3-j58"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="p2e-x3-0JG" firstAttribute="top" secondItem="OdW-Is-RPn" secondAttribute="bottom" id="1pj-kd-opq"/>
+                    <constraint firstItem="OdW-Is-RPn" firstAttribute="leading" secondItem="4Uf-aI-jRs" secondAttribute="leading" id="2ZT-EP-Htc"/>
+                    <constraint firstItem="p2e-x3-0JG" firstAttribute="leading" secondItem="4Uf-aI-jRs" secondAttribute="leading" id="J5d-US-gYi"/>
+                    <constraint firstItem="UeN-CF-LCm" firstAttribute="top" secondItem="p2e-x3-0JG" secondAttribute="bottom" id="KWE-fa-auN"/>
+                    <constraint firstAttribute="trailing" secondItem="UeN-CF-LCm" secondAttribute="trailing" id="Nan-1U-M66"/>
+                    <constraint firstAttribute="trailing" secondItem="p2e-x3-0JG" secondAttribute="trailing" id="RsL-Zd-nT6"/>
+                    <constraint firstItem="OdW-Is-RPn" firstAttribute="top" secondItem="4Uf-aI-jRs" secondAttribute="top" id="hze-jW-klg"/>
+                    <constraint firstAttribute="trailing" secondItem="OdW-Is-RPn" secondAttribute="trailing" id="mUC-uL-2ok"/>
+                    <constraint firstItem="UeN-CF-LCm" firstAttribute="leading" secondItem="4Uf-aI-jRs" secondAttribute="leading" id="tv3-36-pGf"/>
+                    <constraint firstAttribute="bottom" secondItem="UeN-CF-LCm" secondAttribute="bottom" id="zY8-8U-cDc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="actionSwitch" destination="M3B-ga-jvQ" id="6LN-T2-rNZ"/>
+                <outlet property="actionTitleLabel" destination="pZy-hP-7Oc" id="Hme-uh-D0e"/>
+                <outlet property="detailLabel" destination="W3e-3N-BkV" id="7JA-45-m2N"/>
+                <outlet property="switchContainerView" destination="mww-GK-2Ij" id="b23-SM-mPY"/>
+            </connections>
+            <point key="canvasLocation" x="45" y="112"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="M3B-ga-jvQ">
+            <size key="intrinsicContentSize" width="49" height="31"/>
+        </designable>
+        <designable name="W3e-3N-BkV">
+            <size key="intrinsicContentSize" width="41.5" height="20.5"/>
+        </designable>
+        <designable name="pZy-hP-7Oc">
+            <size key="intrinsicContentSize" width="41.5" height="20.5"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="ENA Hairline Color">
+            <color red="0.090196078431372548" green="0.098039215686274508" blue="0.10196078431372549" alpha="0.10000000149011612" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ENA Text Primary 1 Color">
+            <color red="0.090196078431372548" green="0.098039215686274508" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ENA Text Primary 2 Color">
+            <color red="0.090196078431372548" green="0.098039215686274508" blue="0.10196078431372549" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

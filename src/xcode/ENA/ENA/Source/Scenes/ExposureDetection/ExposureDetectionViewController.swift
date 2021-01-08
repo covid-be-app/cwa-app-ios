@@ -25,6 +25,18 @@ import UIKit
 // :BE: lots of modifications to make it work in a navigationcontroller stack
 
 final class ExposureDetectionViewController: DynamicTableViewController, RequiresAppDependencies {
+	
+	enum ReusableCellIdentifier: String, TableViewCellReuseIdentifiers {
+		case risk = "riskCell"
+		case riskText = "riskTextCell"
+		case riskLoading = "riskLoadingCell"
+		case header = "headerCell"
+		case guide = "guideCell"
+		case longGuide = "longGuideCell"
+		case link = "linkCell"
+		case hotline = "hotlineCell"
+	}
+
 	// MARK: - Properties.
 
 	private var countdown: CountdownTimer?
@@ -45,14 +57,13 @@ final class ExposureDetectionViewController: DynamicTableViewController, Require
 
 	// MARK: - Creating an Exposure Detection View Controller.
 
-	init?(
-		coder: NSCoder,
+	init(
 		state: State,
 		delegate: ExposureDetectionViewControllerDelegate
 	) {
 		self.delegate = delegate
 		self.state = state
-		super.init(coder: coder)
+		super.init(nibName: "ExposureDetectionViewController", bundle: .main)
 	}
 
 	@available(*, unavailable)
@@ -63,12 +74,10 @@ final class ExposureDetectionViewController: DynamicTableViewController, Require
 	deinit {
 		riskProvider.removeRisk(consumer)
 	}
-}
-
-extension ExposureDetectionViewController {
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
+		registerCells()
 		consumer.didCalculateRisk = { [weak self] risk in
 			self?.state.risk = risk
 			self?.updateUI()
@@ -113,6 +122,44 @@ extension ExposureDetectionViewController {
 		}
 
 		return cell
+	}
+
+	
+	private func registerCells() {
+		tableView.register(
+			UINib(nibName: String(describing: ExposureDetectionHeaderCell.self), bundle: nil),
+			forCellReuseIdentifier: ReusableCellIdentifier.header.rawValue
+		)
+
+		tableView.register(
+			UINib(nibName: String(describing: ExposureDetectionLoadingCell.self), bundle: nil),
+			forCellReuseIdentifier: ReusableCellIdentifier.riskLoading.rawValue
+		)
+
+		tableView.register(
+			UINib(nibName: String(describing: ExposureDetectionLongGuideCell.self), bundle: nil),
+			forCellReuseIdentifier: ReusableCellIdentifier.longGuide.rawValue
+		)
+
+		tableView.register(
+			UINib(nibName: String(describing: ExposureDetectionRiskCell.self), bundle: nil),
+			forCellReuseIdentifier: ReusableCellIdentifier.risk.rawValue
+		)
+
+		tableView.register(
+			UINib(nibName: "ExposureDetectionGuideCell", bundle: nil),
+			forCellReuseIdentifier: ReusableCellIdentifier.guide.rawValue
+		)
+
+		tableView.register(
+			UINib(nibName: "ExposureDetectionLinkCell", bundle: nil),
+			forCellReuseIdentifier: ReusableCellIdentifier.link.rawValue
+		)
+
+		tableView.register(
+			UINib(nibName: "ExposureDetectionRiskTextCell", bundle: nil),
+			forCellReuseIdentifier: ReusableCellIdentifier.riskText.rawValue
+		)
 	}
 }
 

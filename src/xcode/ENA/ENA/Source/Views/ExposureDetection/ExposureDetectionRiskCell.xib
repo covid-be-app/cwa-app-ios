@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="riskCell" id="XsU-dP-5cu" customClass="ExposureDetectionRiskCell" customModule="ENA" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XsU-dP-5cu" id="akp-Wd-hdl">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="IQm-oQ-2Jq">
+                        <rect key="frame" x="20" y="16" width="374" height="32"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Icons_RisikoBegegnung" translatesAutoresizingMaskIntoConstraints="NO" id="FMZ-1j-PGh">
+                                <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="SFU-yJ-qL3"/>
+                                    <constraint firstAttribute="width" constant="32" id="WFr-z1-O17"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Risk label with icon" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ocg-HR-gi8" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
+                                <rect key="frame" x="48" y="6" width="326" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="ENA Text Contrast Color"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="body"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oh0-EO-Vgz">
+                        <rect key="frame" x="68" y="0.0" width="326" height="1"/>
+                        <color key="backgroundColor" name="ENA Hairline Contrast Color"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="Ddj-Aj-yZ2"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Oh0-EO-Vgz" firstAttribute="leading" secondItem="akp-Wd-hdl" secondAttribute="leadingMargin" constant="48" id="4he-Ca-ol9"/>
+                    <constraint firstItem="IQm-oQ-2Jq" firstAttribute="top" secondItem="akp-Wd-hdl" secondAttribute="topMargin" id="8wu-sc-pgs"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="IQm-oQ-2Jq" secondAttribute="bottom" id="OKY-cv-ahI"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="IQm-oQ-2Jq" secondAttribute="trailing" id="T6U-Iq-grq"/>
+                    <constraint firstItem="Oh0-EO-Vgz" firstAttribute="top" secondItem="akp-Wd-hdl" secondAttribute="top" id="bAU-3h-K2C"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Oh0-EO-Vgz" secondAttribute="trailing" id="jjz-ll-paf"/>
+                    <constraint firstItem="IQm-oQ-2Jq" firstAttribute="leading" secondItem="akp-Wd-hdl" secondAttribute="leadingMargin" id="lop-rr-Wtr"/>
+                </constraints>
+                <edgeInsets key="layoutMargins" top="16" left="16" bottom="16" right="16"/>
+            </tableViewCellContentView>
+            <color key="backgroundColor" name="ENA Risk High Color"/>
+            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="imageView" destination="FMZ-1j-PGh" id="51C-R7-vBh"/>
+                <outlet property="separatorView" destination="Oh0-EO-Vgz" id="DIw-FT-bcx"/>
+                <outlet property="textLabel" destination="Ocg-HR-gi8" id="0jc-lT-Qjf"/>
+            </connections>
+            <point key="canvasLocation" x="45" y="102"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="Ocg-HR-gi8">
+            <size key="intrinsicContentSize" width="144.5" height="20.5"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="Icons_RisikoBegegnung" width="32" height="32"/>
+        <namedColor name="ENA Hairline Contrast Color">
+            <color red="1" green="1" blue="1" alpha="0.20000000298023224" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ENA Risk High Color">
+            <color red="0.9882352941176471" green="0.13333333333333333" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ENA Text Contrast Color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
