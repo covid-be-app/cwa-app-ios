@@ -9,8 +9,11 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install bundler
+          command: cd src/xcode && sudo gem install bundler 
+      - run:
           name: Update bundler
-          command: cd src/xcode && sudo gem install bundler && bundle update --bundler
+          command: cd src/xcode && sudo bundle update --bundler 
       - run:
           name: Install dependencies
           command: cd src/xcode && bundle install
@@ -25,8 +28,11 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install bundler
+          command: cd src/xcode && sudo gem install bundler 
+      - run:
           name: Update bundler
-          command: cd src/xcode && sudo gem install bundler && bundle update --bundler
+          command: cd src/xcode && sudo bundle update --bundler 
       - run:
           name: Install dependencies
           command: brew install swiftlint && cd src/xcode && bundle install
