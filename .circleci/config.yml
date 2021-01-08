@@ -9,6 +9,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Set Ruby Version
+          command:  echo "ruby-2.7.2" > ~/.ruby-version
+      - run:
           name: Install bundler
           command: sudo gem install rake bundler:2.1.4
       - run:
@@ -24,6 +27,9 @@ jobs:
     shell: zsh
     steps:
       - checkout
+      - run:
+          name: Set Ruby Version
+          command:  echo "ruby-2.7.2" > ~/.ruby-version
       - run:
           name: Install bundler
           command: sudo gem install rake bundler:2.1.4
