@@ -18,7 +18,34 @@
 //
 
 import Foundation
-import CryptoKit
+
+enum SymmetricKeySize: Int {
+	case bits128 = 16
+}
+
+struct SymmetricKey {
+
+	let data: Data
+	
+	init(data: Data) {
+		self.data = data
+	}
+	
+	init(size: SymmetricKeySize) {
+		var bytes = [UInt8](repeating: 0, count: size.rawValue)
+		let result = SecRandomCopyBytes(kSecRandomDefault, bytes.count, &bytes)
+		guard result == errSecSuccess else {
+			fatalError("Error creating random bytes.")
+		}
+
+		data = Data(bytes)
+	}
+	
+	func withUnsafeBytes<R>(_ body: (UnsafeRawBufferPointer) throws -> R) rethrows -> R {
+		return try data.withUnsafeBytes(body)
+	}
+
+}
 
 extension SymmetricKey : Codable {
 	enum CodingKeys: CodingKey {

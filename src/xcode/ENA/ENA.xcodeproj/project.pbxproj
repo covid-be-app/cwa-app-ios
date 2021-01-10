@@ -296,6 +296,7 @@
 		A97D44FC25A8462C00E7D698 /* ExposureDetectionRiskTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97D44FB25A8462C00E7D698 /* ExposureDetectionRiskTextCell.xib */; };
 		A97D450025A8464A00E7D698 /* ExposureDetectionGuideCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97D44FF25A8464A00E7D698 /* ExposureDetectionGuideCell.xib */; };
 		A97D450425A8466200E7D698 /* ExposureDetectionLinkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97D450325A8466200E7D698 /* ExposureDetectionLinkCell.xib */; };
+		A97D451B25AAFD7E00E7D698 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D451A25AAFD7E00E7D698 /* Crypto.swift */; };
 		A97E1592257668E300E1DB28 /* BEEUSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E1591257668E300E1DB28 /* BEEUSettingsViewController.swift */; };
 		A97E159625766BBB00E1DB28 /* EuTracingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E159525766BBB00E1DB28 /* EuTracingTableViewCell.swift */; };
 		A97E159A25766BEF00E1DB28 /* ENSettingEuTracingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E159925766BEF00E1DB28 /* ENSettingEuTracingViewModel.swift */; };
@@ -822,6 +823,7 @@
 		A97D44FB25A8462C00E7D698 /* ExposureDetectionRiskTextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExposureDetectionRiskTextCell.xib; sourceTree = "<group>"; };
 		A97D44FF25A8464A00E7D698 /* ExposureDetectionGuideCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExposureDetectionGuideCell.xib; sourceTree = "<group>"; };
 		A97D450325A8466200E7D698 /* ExposureDetectionLinkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExposureDetectionLinkCell.xib; sourceTree = "<group>"; };
+		A97D451A25AAFD7E00E7D698 /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
 		A97E1591257668E300E1DB28 /* BEEUSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEEUSettingsViewController.swift; sourceTree = "<group>"; };
 		A97E159525766BBB00E1DB28 /* EuTracingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EuTracingTableViewCell.swift; sourceTree = "<group>"; };
 		A97E159925766BEF00E1DB28 /* ENSettingEuTracingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ENSettingEuTracingViewModel.swift; sourceTree = "<group>"; };
@@ -1329,6 +1331,7 @@
 				B1C7EE4324938E9E00F1F284 /* ExposureDetection_DidEndPrematurelyReason+ErrorHandling.swift */,
 				A1BABD0A24A57BA0000ED515 /* ENTemporaryExposureKey+Processing.swift */,
 				2F96739A24AB70FA008E3147 /* ExposureSubmissionParsable.swift */,
+				A97D451A25AAFD7E00E7D698 /* Crypto.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -2986,6 +2989,7 @@
 				A97E1608257A51DC00E1DB28 /* BEFuture.swift in Sources */,
 				B1FE13FF2489708200D012E5 /* CachedAppConfiguration.swift in Sources */,
 				EE22DB8B247FB43A001B0A71 /* ActionDetailTableViewCell.swift in Sources */,
+				A97D451B25AAFD7E00E7D698 /* Crypto.swift in Sources */,
 				71FE1C71247AA7B700851FEB /* DynamicTableViewHeaderImageView.swift in Sources */,
 				0159E6C2247829BA00894A89 /* temporary_exposure_key_signature_list.pb.swift in Sources */,
 				B1CD333C24865A7D00B06E9B /* TracingStatusHistory.swift in Sources */,

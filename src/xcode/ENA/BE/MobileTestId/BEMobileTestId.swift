@@ -18,7 +18,7 @@
 //
 
 import Foundation
-import CryptoKit
+import CommonCrypto
 
 struct BEMobileTestId {
 	
@@ -126,7 +126,14 @@ extension BEMobileTestId {
 	}
 
 	private static func calculateR1(info:String,K:SymmetricKey) -> String? {
-		let authentication = HMAC<SHA256>.authenticationCode(for: info.data(using: .utf8)!, using: K)
+		let keyData = K.data
+		var authentication = Data(count: Int(CC_SHA256_DIGEST_LENGTH))
+
+		keyData.withUnsafeBytes{ keyBytes in
+			authentication.withUnsafeMutableBytes {mutableBytes in
+				CCHmac(CCHmacAlgorithm(kCCHmacAlgSHA256), keyBytes.baseAddress, keyBytes.count, info, info.utf8.count, mutableBytes.baseAddress)
+			}
+		}
 
 		var byteBuffer: [UInt8] = []
 

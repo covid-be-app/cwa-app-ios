@@ -17,7 +17,6 @@
 
 import Foundation
 import ZIPFoundation
-import CryptoKit
 
 struct SAPDownloadedPackage {
 	// MARK: Creating a Key Package
@@ -65,13 +64,13 @@ struct SAPDownloadedPackage {
 				let signatureData: Data = signatureEntry.signature
 				guard
 					let publicKey = try? keyProvider(bundleId),
-					let signature = try? P256.Signing.ECDSASignature(derRepresentation: signatureData)
+					let signature = try? ECDSASignature(derRepresentation: signatureData)
 				else {
 					logError(message: "Could not validate signature of downloaded package", level: .warning)
 					continue
 				}
 
-				if publicKey.isValidSignature(signature, for: package.bin) {
+				if publicKey.isValid(signature: signature, for: package.bin) {
 					return true
 				}
 			}
