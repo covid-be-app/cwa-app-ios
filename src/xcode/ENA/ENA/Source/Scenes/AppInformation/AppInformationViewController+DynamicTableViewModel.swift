@@ -19,33 +19,6 @@ import Foundation
 import UIKit
 
 private extension DynamicCell {
-	static func phone(text: String, number: String, accessibilityIdentifier: String?) -> Self {
-		var cell: DynamicCell = .icon(UIImage(named: "phone"), text: text, tintColor: .enaColor(for: .textPrimary1), action: .call(number: number)) { _, cell, _ in
-			cell.textLabel?.textColor = .enaColor(for: .textTint)
-			(cell.textLabel as? ENALabel)?.style = .title2
-
-			cell.isAccessibilityElement = true
-			cell.accessibilityIdentifier = accessibilityIdentifier
-			cell.accessibilityLabel = "\(AppStrings.AccessibilityLabel.phoneNumber):\n\n\(text)"
-			cell.accessibilityTraits = .button
-
-			cell.accessibilityCustomActions?.removeAll()
-
-			let actionName = "\(AppStrings.ExposureSubmissionHotline.callButtonTitle) \(AppStrings.AccessibilityLabel.phoneNumber)"
-			cell.accessibilityCustomActions = [
-				UIAccessibilityCustomAction(name: actionName, actionHandler: {  _ -> Bool in
-					if let url = URL(string: "telprompt:\(AppStrings.ExposureSubmission.hotlineNumber)"),
-						UIApplication.shared.canOpenURL(url) {
-						UIApplication.shared.open(url, options: [:], completionHandler: nil)
-					}
-					return true
-				})
-			]
-
-		}
-		cell.tag = "phone"
-		return cell
-	}
 
 	static func headlineWithoutBottomInset(text: String, accessibilityIdentifier: String?) -> Self {
 		.headline(text: text, accessibilityIdentifier: accessibilityIdentifier) { _, cell, _ in
@@ -141,29 +114,6 @@ extension AppInformationViewController {
 						  accessibilityIdentifier: AccessibilityIdentifiers.AppInformation.aboutDescription),
 				.subheadline(text: AppStrings.AppInformation.aboutText,
 							 accessibilityIdentifier: AccessibilityIdentifiers.AppInformation.aboutText)
-			]
-		)
-	])
-
-	private static let contactModel = DynamicTableViewModel([
-		.section(
-			header: .image(UIImage(named: "Illu_Appinfo_Kontakt"),
-						   accessibilityLabel: AppStrings.AppInformation.contactImageDescription,
-						   accessibilityIdentifier: AccessibilityIdentifiers.AppInformation.contactImageDescription,
-						   height: 230),
-			cells: [
-				.title2(text: AppStrings.AppInformation.contactTitle,
-						accessibilityIdentifier: AccessibilityIdentifiers.AppInformation.contactTitle),
-				.body(text: AppStrings.AppInformation.contactDescription,
-					  accessibilityIdentifier: AccessibilityIdentifiers.AppInformation.contactDescription),
-				.headline(text: AppStrings.AppInformation.contactHotlineTitle,
-						  accessibilityIdentifier: AccessibilityIdentifiers.AppInformation.contactHotlineTitle),
-				.phone(text: AppStrings.AppInformation.contactHotlineText, number: AppStrings.AppInformation.contactHotlineNumber,
-					   accessibilityIdentifier: AccessibilityIdentifiers.AppInformation.contactHotlineText),
-				.footnote(text: AppStrings.AppInformation.contactHotlineDescription,
-						  accessibilityIdentifier: AccessibilityIdentifiers.AppInformation.contactHotlineDescription),
-				.footnote(text: AppStrings.AppInformation.contactHotlineTerms,
-						  accessibilityIdentifier: AccessibilityIdentifiers.AppInformation.contactHotlineTerms)
 			]
 		)
 	])
