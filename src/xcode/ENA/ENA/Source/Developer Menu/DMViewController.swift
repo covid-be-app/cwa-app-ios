@@ -69,7 +69,7 @@ final class DMViewController: UITableViewController, RequiresAppDependencies, Sp
 				action: #selector(refreshKeys)
 			),
 			UIBarButtonItem(
-				image: UIImage(systemName: "gear"),
+				image: UIImage(named: "gear"),
 				style: .plain,
 				target: self,
 				action: #selector(showConfiguration)
@@ -77,7 +77,7 @@ final class DMViewController: UITableViewController, RequiresAppDependencies, Sp
 			
 			// :BE: manual risk detection
 			UIBarButtonItem(
-				image: UIImage(systemName: "tray.and.arrow.down"),
+				image: UIImage(named: "tray-arrow"),
 				style: .plain,
 				target: self,
 				action: #selector(checkExposureRisk)
