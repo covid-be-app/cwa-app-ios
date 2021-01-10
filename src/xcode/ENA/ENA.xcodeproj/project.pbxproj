@@ -3474,7 +3474,7 @@
 					"DISABLE_CERTIFICATE_PINNING=1",
 				);
 				INFOPLIST_FILE = ENA/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3633,7 +3633,7 @@
 					"SQLITE_HAS_CODEC=1",
 				);
 				INFOPLIST_FILE = ENA/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3849,7 +3849,7 @@
 					"SQLITE_HAS_CODEC=1",
 				);
 				INFOPLIST_FILE = ENA/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3886,7 +3886,7 @@
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PREPROCESSOR_DEFINITIONS = "SQLITE_HAS_CODEC=1";
 				INFOPLIST_FILE = ENA/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
