@@ -136,8 +136,8 @@ extension ExposureNotificationSettingViewController {
 			alertError(message: errorMessage, title: AppStrings.ExposureNotificationError.generalErrorTitle)
 		}
 		logError(message: error.localizedDescription + " with message: " + errorMessage, level: .error)
-		if let mySceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate {
-			mySceneDelegate.requestUpdatedExposureState()
+		if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+			appDelegate.requestUpdatedExposureState()
 		}
 		tableView.reloadData()
 	}

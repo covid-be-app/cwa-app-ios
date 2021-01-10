@@ -67,7 +67,7 @@ class Coordinator: RequiresAppDependencies {
 	}
 
 	// :BE: add stats
-	func showHome(enStateHandler: ENStateHandler, state: SceneDelegate.State, statisticsService: BEStatisticsService) {
+	func showHome(enStateHandler: ENStateHandler, state: AppDelegate.State, statisticsService: BEStatisticsService) {
 		let homeController =
 			HomeViewController(
 				delegate: self,
