@@ -37,46 +37,6 @@ extension AppDelegate: CoronaWarnAppDelegate {
 	// required - otherwise app will crash because cast will fails
 }
 
-extension AppDelegate: ExposureSummaryProvider {
-	func detectExposure(completion: @escaping (ENExposureDetectionSummary?) -> Void) {
-		exposureDetection = ExposureDetection(delegate: exposureDetectionExecutor)
-		exposureDetection?.start { result in
-			switch result {
-			case .success(let summary):
-				completion(summary)
-			case .failure(let error):
-				self.showError(exposure: error)
-				completion(nil)
-			}
-		}
-	}
-
-	private func showError(exposure didEndPrematurely: ExposureDetection.DidEndPrematurelyReason) {
-
-		guard
-			let scene = UIApplication.shared.connectedScenes.first,
-			let delegate = scene.delegate as? SceneDelegate,
-			let rootController = delegate.window?.rootViewController,
-			let alert = didEndPrematurely.errorAlertController(rootController: rootController)
-		else {
-			return
-		}
-
-		func _showError() {
-			rootController.present(alert, animated: true, completion: nil)
-		}
-
-		if rootController.presentedViewController != nil {
-			rootController.dismiss(
-				animated: true,
-				completion: _showError
-			)
-		} else {
-			rootController.present(alert, animated: true, completion: nil)
-		}
-	}
-}
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -84,6 +44,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	
 	private let consumer = RiskConsumer()
 	let taskScheduler: ENATaskScheduler = ENATaskScheduler.shared
+	var window: UIWindow?
+
+	private lazy var navigationController: UINavigationController = AppNavigationController()
+	private lazy var coordinator = Coordinator(self, navigationController)
+
+	var state: State = State(exposureManager: .init(), detectionMode: currentDetectionMode, risk: nil) {
+		didSet {
+			coordinator.updateState(
+				detectionMode: state.detectionMode,
+				exposureManagerState: state.exposureManager,
+				risk: state.risk)
+		}
+	}
+
+	private lazy var appUpdateChecker = AppUpdateCheckHelper(client: self.client, store: self.store)
+
+	private var enStateHandler: ENStateHandler?
+
+	// :BE: stats
+	private lazy var statisticsService: BEStatisticsService = {
+		return BEStatisticsService(client: self.client, store: self.store)
+	}()
+
+	// :BE: test activator
+	var mobileTestIdActivator: BEMobileTestIdActivator?
+	
+	// MARK: UISceneDelegate
+
+	private let riskConsumer = RiskConsumer()
 
 	lazy var riskProvider: RiskProvider = {
 		
@@ -141,12 +130,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		let exposureManager: ExposureManager = ENAExposureManager()
 	#endif
 
-	private var exposureDetection: ExposureDetection?
-	// :BE: use BE protocol as variable type
-	private var exposureSubmissionService: BEExposureSubmissionService?
-	
-	// :BE: Add fake requests executor
-	private lazy var fakeRequestsExecutor: BEFakeRequestsExecutor = {
+	var exposureDetection: ExposureDetection?
+	var exposureSubmissionService: BEExposureSubmissionService?
+	lazy var fakeRequestsExecutor: BEFakeRequestsExecutor = {
 		BEFakeRequestsExecutor(store: self.store, exposureManager: self.exposureManager, client: self.client)
 	}()
 
@@ -157,7 +143,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	// TODO: REMOVE ME
 	var lastRiskCalculation: String = ""
 
-	private lazy var exposureDetectionExecutor: ExposureDetectionExecutor = {
+	lazy var exposureDetectionExecutor: ExposureDetectionExecutor = {
 		ExposureDetectionExecutor(
 			client: self.client,
 			downloadedPackagesStore: self.downloadedPackagesStore,
@@ -168,118 +154,348 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(
 		_: UIApplication,
-		didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]? = nil
+		didFinishLaunchingWithOptions options: [UIApplication.LaunchOptionsKey: Any]? = nil
 	) -> Bool {
+		
+		/// this is migration code
+		/// we don't want the app stuck forever in the "thank you" state
+		/// if it was the case, simply reset the app
+		if store.lastSuccessfulSubmitDiagnosisKeyTimestamp != nil {
+			resetApplication()
+		}
+
+		#if UITESTING
+		// :BE: restart from scratch at every startup
+		resetApplication()
+		
+		if let isOnboarded = UserDefaults.standard.value(forKey: "isOnboarded") as? String {
+			store.isOnboarded = (isOnboarded != "NO")
+		}
+		
+		store.userNeedsToBeInformedAboutHowRiskDetectionWorks = false
+		
+		if let argIndex = ProcessInfo.processInfo.arguments.firstIndex(of: "-testResult") {
+			let mobileTestId = BEMobileTestId()
+			store.mobileTestId = mobileTestId
+			store.registrationToken = mobileTestId.registrationToken
+
+			let resultType = ProcessInfo.processInfo.arguments[argIndex + 1]
+			switch resultType {
+			case "POSITIVE":
+				store.testResult = TestResult.positive
+			case "NEGATIVE":
+				store.testResult = TestResult.negative
+			case "PENDING":
+				store.testResult = TestResult.pending
+			default:
+				fatalError("Should never happen")
+			}
+			
+		}
+		
+		// Test opening the app from the webform url
+		if let argIndex = ProcessInfo.processInfo.arguments.firstIndex(of: "-openWebForm") {
+			let urlString = ProcessInfo.processInfo.arguments[argIndex + 1]
+			
+			if let url = URL(string: urlString) {
+				DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+					self.processURLActivity(url)
+				}
+			}
+		}
+		
+		#endif
+
+		setupUI()
+
 		UIDevice.current.isBatteryMonitoringEnabled = true
 
 		taskScheduler.delegate = self
 
 		riskProvider.observeRisk(consumer)
 
+		exposureManager.resume(observer: self)
+
+		riskConsumer.didCalculateRisk = { [weak self] risk in
+			self?.state.risk = risk
+		}
+		riskProvider.observeRisk(riskConsumer)
+
+		UNUserNotificationCenter.current().delegate = self
+
+		NotificationCenter.default.addObserver(self, selector: #selector(isOnboardedDidChange(_:)), name: .isOnboardedDidChange, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(backgroundRefreshStatusDidChange), name: UIApplication.backgroundRefreshStatusDidChangeNotification, object: nil)
+		
+		if let launchOptions = options,
+		   let url = launchOptions[UIApplication.LaunchOptionsKey.url] as? URL {
+			DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+				self.processURLActivity(url)
+			}
+		}
+		
 		return true
 	}
 
-	// MARK: UISceneSession Lifecycle
+	private func setupUI() {
+		setupNavigationBarAppearance()
 
-	func application(
-		_: UIApplication,
-		configurationForConnecting connectingSceneSession: UISceneSession,
-		options _: UIScene.ConnectionOptions
-	) -> UISceneConfiguration {
-		UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+		if !store.isOnboarded {
+			showOnboarding()
+		} else {
+			showHome()
+		}
+		UIImageView.appearance().accessibilityIgnoresInvertColors = true
+
+		window = UIWindow(frame: UIScreen.main.bounds)
+		window?.rootViewController = navigationController
+		window?.makeKeyAndVisible()
+
 	}
 
-	func application(_: UIApplication, didDiscardSceneSessions _: Set<UISceneSession>) {}
-}
+	private func setupNavigationBarAppearance() {
+		let appearance = UINavigationBar.appearance()
 
-extension AppDelegate: ENATaskExecutionDelegate {
+		appearance.tintColor = .enaColor(for: .tint)
 
-	/// This method executes the background tasks needed for: a) fetching test results and b) performing exposure detection requests
-	// :BE: Add fake requests and refactor
-	func executeENABackgroundTask(completion: @escaping ((Bool) -> Void)) {
-		self.fakeRequestsExecutor.execute {
-			log(message: "Fake requests done")
-			self.executeFetchTestResults {
-				log(message: "Fetch test results done")
-				self.executeExposureDetectionRequest {
-					log(message: "Exposure detection done")
-					self.updateDynamicTexts {
-						log(message: "Dynamic text updates done")
-						completion(true)
-					}
+		appearance.titleTextAttributes = [
+			NSAttributedString.Key.foregroundColor: UIColor.enaColor(for: .textPrimary1)
+		]
+
+		appearance.largeTitleTextAttributes = [
+			NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .largeTitle).scaledFont(size: 28, weight: .bold),
+			NSAttributedString.Key.foregroundColor: UIColor.enaColor(for: .textPrimary1)
+		]
+	}
+
+	private func showHome(animated _: Bool = false) {
+		if exposureManager.preconditions().status == .unknown {
+			exposureManager.activate { [weak self] error in
+				if let error = error {
+					logError(message: "Cannot activate the  ENManager. The reason is \(error)")
+					return
 				}
+				self?.presentHomeVC()
 			}
+		} else {
+			presentHomeVC()
 		}
 	}
 
-	/// This method executes a  test result fetch, and if it is successful, and the test result is different from the one that was previously
-	/// part of the app, a local notification is shown.
-	private func executeFetchTestResults(completion: @escaping (() -> Void)) {
-		log(message: "Start fetch test results...")
-		// :BE: replace ENAExposureSubmissionService with BEExposureSubmissionService
-		let service = BEExposureSubmissionServiceImpl(diagnosiskeyRetrieval: exposureManager, client: client, store: store)
-		exposureSubmissionService = service
+	private func presentHomeVC() {
+		enStateHandler = ENStateHandler(
+			initialExposureManagerState: exposureManager.preconditions(),
+			delegate: self
+		)
 
-		// after showing the test result to the user, remove it after a certain time
-		service.deleteTestResultIfOutdated()
-		
-		if store.registrationToken != nil && store.testResultReceivedTimeStamp == nil {
-			// :BE: see if we passed the validity time for this test result
-			if !service.deleteMobileTestIdIfOutdated() {
-				self.exposureSubmissionService?.getTestResult { result in
-					switch result {
-					case .failure(let error):
-						logError(message: error.localizedDescription)
-					case .success(let testResult):
-						
-						// :BE: testresult enum to struct
-						if testResult.result != .pending {
-							UNUserNotificationCenter.current().presentNotification(
-								title: AppStrings.LocalNotifications.testResultsTitle,
-								body: AppStrings.LocalNotifications.testResultsBody,
-								identifier: ENATaskIdentifier.exposureNotification.backgroundTaskSchedulerIdentifier + ".test-result"
-
-							)
-						}
-					}
-					completion()
-				}
-				return
-			}
+		guard let enStateHandler = self.enStateHandler else {
+			fatalError("It should not happen.")
 		}
-		
-		completion()
+
+		coordinator.showHome(enStateHandler: enStateHandler, state: state, statisticsService: self.statisticsService)
 	}
 
-	/// This method performs a check for the current exposure detection state. Only if the risk level has changed compared to the
-	/// previous state, a local notification is shown.
-	private func executeExposureDetectionRequest(completion: @escaping (() -> Void)) {
-		log(message: "Start exposure detection...")
+	private func showOnboarding() {
+		coordinator.showOnboarding()
+	}
 
-		// At this point we are already in background so it is safe to assume background mode is available.
-		riskProvider.configuration.detectionMode = .fromBackgroundStatus(.available)
-
-		riskProvider.requestRisk(userInitiated: false) { risk in
-			// present a notification if the risk score has increased.
-			if let risk = risk,
-				risk.riskLevelHasChanged {
-				UNUserNotificationCenter.current().presentNotification(
-					title: AppStrings.LocalNotifications.detectExposureTitle,
-					body: AppStrings.LocalNotifications.detectExposureBody,
-					identifier: ENATaskIdentifier.exposureNotification.backgroundTaskSchedulerIdentifier + ".risk-detection"
-				)
-			}
-			completion()
-		}
+	@objc
+	func isOnboardedDidChange(_: NSNotification) {
+		store.isOnboarded ? showHome() : showOnboarding()
+		
+		// :BE: enable fake requests
+		store.isAllowedToPerformBackgroundFakeRequests = store.isOnboarded
 	}
 	
-	private func updateDynamicTexts(completion: @escaping (() -> Void)) {
-		log(message: "Start dynamic text updates...")
+	func applicationWillEnterForeground(_ application: UIApplication) {
+		let detectionMode = DetectionMode.fromBackgroundStatus()
+		riskProvider.configuration.detectionMode = detectionMode
+
+		riskProvider.requestRisk(userInitiated: false)
+
+		let state = exposureManager.preconditions()
+		updateExposureState(state)
+		appUpdateChecker.checkAppVersionDialog(for: window?.rootViewController)
+		
+		// :BE: get stats, ignore errors and result
+		statisticsService.getInfectionSummary { _ in }
+		
+		
+		// Update dynamic texts
 		let dynamicTextService = BEDynamicTextService()
 		let dynamicTextDownloadService = BEDynamicTextDownloadService(client: client, textService: dynamicTextService)
 		
-		dynamicTextDownloadService.downloadTextsIfNeeded {
-			completion()
+		dynamicTextDownloadService.downloadTextsIfNeeded {}
+		
+		let exposureSubmissionService = BEExposureSubmissionServiceImpl(diagnosiskeyRetrieval: self.exposureManager, client: self.client, store: self.store)
+
+		// remove test result if it is too old
+		exposureSubmissionService.deleteTestResultIfOutdated()
+	}
+
+	func applicationDidEnterBackground(_ application: UIApplication) {
+		taskScheduler.scheduleTask()
+	}
+
+	func applicationDidBecomeActive(_ application: UIApplication) {
+		UIApplication.shared.applicationIconBadgeNumber = 0
+	}
+	
+	func requestUpdatedExposureState() {
+		let state = exposureManager.preconditions()
+		updateExposureState(state)
+	}
+}
+
+extension AppDelegate: ENAExposureManagerObserver {
+	func exposureManager(
+		_: ENAExposureManager,
+		didChangeState newState: ExposureManagerState
+	) {
+		// Add the new state to the history
+		store.tracingStatusHistory = store.tracingStatusHistory.consumingState(newState)
+		riskProvider.exposureManagerState = newState
+
+		let message = """
+		New status of EN framework:
+		Authorized: \(newState.authorized)
+		enabled: \(newState.enabled)
+		status: \(newState.status)
+		authorizationStatus: \(ENManager.authorizationStatus)
+		"""
+		log(message: message)
+
+		state.exposureManager = newState
+		updateExposureState(newState)
+	}
+}
+
+extension AppDelegate: CoordinatorDelegate {
+	/// Resets all stores and notifies the Onboarding.
+	func coordinatorUserDidRequestReset() {
+		resetApplication()
+	}
+}
+
+// app reset
+extension AppDelegate {
+		
+	func resetApplication() {
+		do {
+			let newKey = try KeychainHelper().generateDatabaseKey()
+			store.clearAll(key: newKey)
+		} catch {
+			fatalError("Creating new database key failed")
 		}
+		UIApplication.coronaWarnDelegate().downloadedPackagesStore.reset()
+		UIApplication.coronaWarnDelegate().downloadedPackagesStore.open()
+		exposureManager.reset {
+			self.exposureManager.resume(observer: self)
+			NotificationCenter.default.post(name: .isOnboardedDidChange, object: nil)
+		}
+	}
+}
+
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+	func userNotificationCenter(_: UNUserNotificationCenter, willPresent _: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+		completionHandler([.alert, .badge, .sound])
+	}
+
+	func userNotificationCenter(_: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+		switch response.actionIdentifier {
+		case UserNotificationAction.openExposureDetectionResults.rawValue,
+			 UserNotificationAction.openTestResults.rawValue:
+			showHome(animated: true)
+		case UserNotificationAction.ignore.rawValue,
+			 UNNotificationDefaultActionIdentifier,
+			 UNNotificationDismissActionIdentifier:
+			break
+		default: break
+		}
+
+		completionHandler()
+	}
+}
+
+private extension Array where Element == URLQueryItem {
+	func valueFor(queryItem named: String) -> String? {
+		first(where: { $0.name == named })?.value
+	}
+}
+
+
+extension AppDelegate: ExposureStateUpdating {
+	func updateExposureState(_ state: ExposureManagerState) {
+		riskProvider.exposureManagerState = state
+		riskProvider.requestRisk(userInitiated: false)
+		coordinator.updateExposureState(state)
+		enStateHandler?.updateExposureState(state)
+	}
+}
+
+extension AppDelegate: ENStateHandlerUpdating {
+	func updateEnState(_ state: ENStateHandler.State) {
+		log(message: "SceneDelegate got EnState update: \(state)")
+		coordinator.updateEnState(state)
+	}
+}
+
+// MARK: Background Task
+extension AppDelegate {
+	@objc
+	func backgroundRefreshStatusDidChange() {
+		let detectionMode: DetectionMode = currentDetectionMode
+		state.detectionMode = detectionMode
+	}
+}
+
+private var currentDetectionMode: DetectionMode {
+	DetectionMode.fromBackgroundStatus()
+}
+
+// MARK: url handling
+
+extension AppDelegate {
+	
+	func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+		if userActivity.activityType != NSUserActivityTypeBrowsingWeb {
+			return false
+		}
+		
+		if let url = userActivity.webpageURL {
+			/// we add a small delay to make sure the GUI is completely up and running before manipulating it
+			/// this is necessary when the app was not running in the background
+			DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+				self.processURLActivity(url)
+			}
+			
+			return true
+		}
+
+		return false
+	}
+	
+	private func processURLActivity(_ url: URL) {
+		let exposureSubmissionService = BEExposureSubmissionServiceImpl(diagnosiskeyRetrieval: self.exposureManager, client: self.client, store: self.store)
+
+		if let activator = BEMobileTestIdActivator(exposureSubmissionService, parentViewController: navigationController, url: url, delegate: self) {
+			mobileTestIdActivator = activator
+			activator.run()
+		}
+	}
+}
+
+extension AppDelegate: BEMobileTestIdActivatorDelegate {
+	func mobileTestIdActivatorFinished(_: BEMobileTestIdActivator) {
+		mobileTestIdActivator = nil
+		coordinator.refreshTestResults()
+	}
+}
+
+extension AppDelegate {
+	struct State {
+		var exposureManager: ExposureManagerState
+		var detectionMode: DetectionMode
+		var risk: Risk?
 	}
 }
