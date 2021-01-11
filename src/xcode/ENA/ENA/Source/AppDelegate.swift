@@ -157,15 +157,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		didFinishLaunchingWithOptions options: [UIApplication.LaunchOptionsKey: Any]? = nil
 	) -> Bool {
 		
-		setupUI()
-
-		UIDevice.current.isBatteryMonitoringEnabled = true
-
-		taskScheduler.delegate = self
-
-		riskProvider.observeRisk(consumer)
-
-
 		/// this is migration code
 		/// we don't want the app stuck forever in the "thank you" state
 		/// if it was the case, simply reset the app
@@ -176,9 +167,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		#if UITESTING
 		// :BE: restart from scratch at every startup
 		resetApplication()
+		
 		if let isOnboarded = UserDefaults.standard.value(forKey: "isOnboarded") as? String {
 			store.isOnboarded = (isOnboarded != "NO")
 		}
+		
 		store.userNeedsToBeInformedAboutHowRiskDetectionWorks = false
 		
 		if let argIndex = ProcessInfo.processInfo.arguments.firstIndex(of: "-testResult") {
@@ -212,6 +205,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		}
 		
 		#endif
+
+		setupUI()
+
+		UIDevice.current.isBatteryMonitoringEnabled = true
+
+		taskScheduler.delegate = self
+
+		riskProvider.observeRisk(consumer)
 
 		exposureManager.resume(observer: self)
 
