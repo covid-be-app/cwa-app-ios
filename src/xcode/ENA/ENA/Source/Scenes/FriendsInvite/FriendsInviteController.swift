@@ -87,6 +87,7 @@ extension FriendsInviteController: UIActivityItemSource {
 		return shareTitle
 	}
 
+	@available(iOS 13.0, *)
 	func activityViewControllerLinkMetadata(_: UIActivityViewController) -> LPLinkMetadata? {
 		let metadata = LPLinkMetadata()
 

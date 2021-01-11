@@ -164,7 +164,7 @@
 		85142501245DA0B3009D2791 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85142500245DA0B3009D2791 /* UIViewController+Alert.swift */; };
 		8539874F2467094E00D28B62 /* AppIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8539874E2467094E00D28B62 /* AppIcon.xcassets */; };
 		853D987A24694A8700490DBA /* ENAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D987924694A8700490DBA /* ENAButton.swift */; };
-		858F6F6E245A103C009FFD33 /* ExposureNotification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 858F6F6D245A103C009FFD33 /* ExposureNotification.framework */; };
+		858F6F6E245A103C009FFD33 /* ExposureNotification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 858F6F6D245A103C009FFD33 /* ExposureNotification.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		8595BF5F246032D90056EA27 /* ENASwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8595BF5E246032D90056EA27 /* ENASwitch.swift */; };
 		859DD512248549790073D59F /* MockDiagnosisKeysRetrieval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859DD511248549790073D59F /* MockDiagnosisKeysRetrieval.swift */; };
 		85D7593F2457048F008175F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D7593E2457048F008175F0 /* AppDelegate.swift */; };
@@ -298,6 +298,7 @@
 		A97D452525AB7CAA00E7D698 /* ColorCompatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D452425AB7CAA00E7D698 /* ColorCompatibility.swift */; };
 		A97D454525ABB84D00E7D698 /* AppDelegate+ENATaskExecutionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D454425ABB84D00E7D698 /* AppDelegate+ENATaskExecutionDelegate.swift */; };
 		A97D454925ABB88000E7D698 /* AppDelegate+ExposureSummaryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D454825ABB88000E7D698 /* AppDelegate+ExposureSummaryProvider.swift */; };
+		A97D455F25AC82A700E7D698 /* ENActivityHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D455E25AC82A700E7D698 /* ENActivityHandling.swift */; };
 		A97E1592257668E300E1DB28 /* BEEUSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E1591257668E300E1DB28 /* BEEUSettingsViewController.swift */; };
 		A97E159625766BBB00E1DB28 /* EuTracingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E159525766BBB00E1DB28 /* EuTracingTableViewCell.swift */; };
 		A97E159A25766BEF00E1DB28 /* ENSettingEuTracingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E159925766BEF00E1DB28 /* ENSettingEuTracingViewModel.swift */; };
@@ -825,6 +826,7 @@
 		A97D452425AB7CAA00E7D698 /* ColorCompatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCompatibility.swift; sourceTree = "<group>"; };
 		A97D454425ABB84D00E7D698 /* AppDelegate+ENATaskExecutionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+ENATaskExecutionDelegate.swift"; sourceTree = "<group>"; };
 		A97D454825ABB88000E7D698 /* AppDelegate+ExposureSummaryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+ExposureSummaryProvider.swift"; sourceTree = "<group>"; };
+		A97D455E25AC82A700E7D698 /* ENActivityHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ENActivityHandling.swift; sourceTree = "<group>"; };
 		A97E1591257668E300E1DB28 /* BEEUSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEEUSettingsViewController.swift; sourceTree = "<group>"; };
 		A97E159525766BBB00E1DB28 /* EuTracingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EuTracingTableViewCell.swift; sourceTree = "<group>"; };
 		A97E159925766BEF00E1DB28 /* ENSettingEuTracingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ENSettingEuTracingViewModel.swift; sourceTree = "<group>"; };
@@ -1119,6 +1121,7 @@
 				518A69FA24687D5800444E66 /* RiskLevel.swift */,
 				A16714BA248D18D20031B111 /* SummaryMetadata.swift */,
 				A97E159925766BEF00E1DB28 /* ENSettingEuTracingViewModel.swift */,
+				A97D455E25AC82A700E7D698 /* ENActivityHandling.swift */,
 			);
 			path = Exposure;
 			sourceTree = "<group>";
@@ -2951,6 +2954,7 @@
 				51CE1BB52460AC83002CF42A /* UICollectionView+Dequeue.swift in Sources */,
 				A9221A312542C1F200853CEF /* BEDynamicTextDownloadService.swift in Sources */,
 				A9221A402544606800853CEF /* BEDynamicText.swift in Sources */,
+				A97D455F25AC82A700E7D698 /* ENActivityHandling.swift in Sources */,
 				B17F2D48248CEB4C00CAA38F /* DetectionMode.swift in Sources */,
 				137846492488027600A50AB8 /* OnboardingInfoViewController+Extension.swift in Sources */,
 				85E33444247EB357006E74EC /* CircularProgressView.swift in Sources */,

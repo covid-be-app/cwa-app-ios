@@ -142,6 +142,26 @@ final class ENAExposureManager: NSObject, ExposureManager {
 	) {
 		self.manager = manager
 		super.init()
+		if #available(iOS 13.5, *) {
+			// Do nothing since we can use BGTask in this case.
+		} else if NSClassFromString("ENManager") != nil {	// Make sure that ENManager is available.
+			guard let enManager = manager as? ENManager else {
+				logError(message: "Manager is not of Type ENManager, this should not happen!")
+				return
+			}
+			enManager.setLaunchActivityHandler { activityFlags in
+				if activityFlags.contains(.periodicRun) {
+					guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+						logError(message: "AppDelegate is not of Type AppDelegate, this should not happen!")
+						return
+					}
+					log(message: "Starting backgroundTask via Bluetooth")
+					appDelegate.executeENABackgroundTask(completion: { success in
+						log(message: "Background task was: \(success)")
+					})
+				}
+			}
+		}
 	}
 	
 	func resume(observer: ENAExposureManagerObserver) {
