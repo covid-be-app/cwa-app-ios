@@ -333,7 +333,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	}
 
 	func applicationDidEnterBackground(_ application: UIApplication) {
-		taskScheduler.scheduleTask()
+		if #available(iOS 13.0, *) {
+			taskScheduler.scheduleTask()
+		}
 	}
 
 	func applicationDidBecomeActive(_ application: UIApplication) {
