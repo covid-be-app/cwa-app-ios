@@ -86,10 +86,6 @@ class BEENAUITests: XCTestCase {
 
 		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
 		app.swipeUp()
-
-		let text = app.localized(AppStrings.Home.resultCardPendingDesc)
-		
-		XCTAssert(app.labelContains(text: text))		
 	}
 	
 	func testPositiveSendKeys() throws {
