@@ -102,7 +102,7 @@ class ENAUITests: XCTestCase {
 		app.navigationBars.buttons.element(boundBy: 0).tap()
 		XCTAssertTrue(app.navigationBars.buttons.element(boundBy: 0).waitForExistence(timeout: 5.0))
 		app.navigationBars.buttons.element(boundBy: 0).tap()
-		app.swipeDown()
+
 		// todo: need accessibility for Notify and Help
 		XCTAssertTrue(app.buttons["AppStrings.Home.submitCardButton"].waitForExistence(timeout: 5.0))
 		app.buttons["AppStrings.Home.submitCardButton"].tap()

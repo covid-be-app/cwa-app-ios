@@ -3,9 +3,6 @@ ThirdPartyNotices
 corona-warn-app/cwa-app-ios uses third-party software or other resources that
 may be distributed under licenses different from corona-warn-app/cwa-app-ios
 software.
-In the event that we overlooked to list a required notice, please bring this
-to our attention by contacting us via this email:
-corona-warn-app.opensource@sap.com
 
 
 Components:
@@ -34,6 +31,16 @@ Component: swift-protobuf
 Licensor:  Apple Inc.
 Website:   https://github.com/apple/swift-protobuf
 License:   Apache 2.0 License
+
+Component: OpenCombine
+Licensor:  Sergej Jaskiewicz
+Website:   https://github.com/OpenCombine/OpenCombine
+License:   MIT License
+
+Component: IBPCollectionViewCompositionalLayout
+Licensor:  Kishikawa Katsumi
+Website:   https://github.com/kishikawakatsumi/IBPCollectionViewCompositionalLayout
+License:   MIT License
 
 --------------------------------------------------------------------------------
 MIT License

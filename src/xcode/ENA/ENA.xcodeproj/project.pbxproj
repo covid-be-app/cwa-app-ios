@@ -266,9 +266,6 @@
 		A95EE81824FCF67000AFECBD /* BEInfectionSummaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95EE81724FCF66F00AFECBD /* BEInfectionSummaryCollectionViewCell.swift */; };
 		A95EE81A24FCF6C700AFECBD /* BEInfectionSummaryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A95EE81924FCF6C700AFECBD /* BEInfectionSummaryCollectionViewCell.xib */; };
 		A95EE81C24FD0A6A00AFECBD /* BEUIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95EE81B24FD0A6A00AFECBD /* BEUIStackView.swift */; };
-		A97D447525A5FF0F00E7D698 /* OpenCombineDispatch in Frameworks */ = {isa = PBXBuildFile; productRef = A97D447425A5FF0F00E7D698 /* OpenCombineDispatch */; };
-		A97D447725A5FF0F00E7D698 /* OpenCombineFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = A97D447625A5FF0F00E7D698 /* OpenCombineFoundation */; };
-		A97D447925A5FF0F00E7D698 /* OpenCombine in Frameworks */ = {isa = PBXBuildFile; productRef = A97D447825A5FF0F00E7D698 /* OpenCombine */; };
 		A97D448725A708D300E7D698 /* OnboardingInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97D448625A708D300E7D698 /* OnboardingInfoViewController.xib */; };
 		A97D448F25A71D5F00E7D698 /* RiskLegendDotBodyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97D448E25A71D5F00E7D698 /* RiskLegendDotBodyCell.xib */; };
 		A97D449625A71E8900E7D698 /* CloseBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D449525A71E8900E7D698 /* CloseBarButtonItem.swift */; };
@@ -299,6 +296,11 @@
 		A97D454525ABB84D00E7D698 /* AppDelegate+ENATaskExecutionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D454425ABB84D00E7D698 /* AppDelegate+ENATaskExecutionDelegate.swift */; };
 		A97D454925ABB88000E7D698 /* AppDelegate+ExposureSummaryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D454825ABB88000E7D698 /* AppDelegate+ExposureSummaryProvider.swift */; };
 		A97D455F25AC82A700E7D698 /* ENActivityHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D455E25AC82A700E7D698 /* ENActivityHandling.swift */; };
+		A97D456E25AC8E9D00E7D698 /* IBPCollectionViewCompositionalLayoutInteroperability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D456D25AC8E9D00E7D698 /* IBPCollectionViewCompositionalLayoutInteroperability.swift */; };
+		A97D457925ADA0D000E7D698 /* IBPCollectionViewCompositionalLayout in Frameworks */ = {isa = PBXBuildFile; productRef = A97D457825ADA0D000E7D698 /* IBPCollectionViewCompositionalLayout */; };
+		A97D458025ADA11B00E7D698 /* OpenCombineFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = A97D457F25ADA11B00E7D698 /* OpenCombineFoundation */; };
+		A97D458225ADA11B00E7D698 /* OpenCombineDispatch in Frameworks */ = {isa = PBXBuildFile; productRef = A97D458125ADA11B00E7D698 /* OpenCombineDispatch */; };
+		A97D458425ADA11B00E7D698 /* OpenCombine in Frameworks */ = {isa = PBXBuildFile; productRef = A97D458325ADA11B00E7D698 /* OpenCombine */; };
 		A97E1592257668E300E1DB28 /* BEEUSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E1591257668E300E1DB28 /* BEEUSettingsViewController.swift */; };
 		A97E159625766BBB00E1DB28 /* EuTracingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E159525766BBB00E1DB28 /* EuTracingTableViewCell.swift */; };
 		A97E159A25766BEF00E1DB28 /* ENSettingEuTracingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E159925766BEF00E1DB28 /* ENSettingEuTracingViewModel.swift */; };
@@ -827,6 +829,7 @@
 		A97D454425ABB84D00E7D698 /* AppDelegate+ENATaskExecutionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+ENATaskExecutionDelegate.swift"; sourceTree = "<group>"; };
 		A97D454825ABB88000E7D698 /* AppDelegate+ExposureSummaryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+ExposureSummaryProvider.swift"; sourceTree = "<group>"; };
 		A97D455E25AC82A700E7D698 /* ENActivityHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ENActivityHandling.swift; sourceTree = "<group>"; };
+		A97D456D25AC8E9D00E7D698 /* IBPCollectionViewCompositionalLayoutInteroperability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IBPCollectionViewCompositionalLayoutInteroperability.swift; path = ENA/Source/IBPCollectionViewCompositionalLayoutInteroperability.swift; sourceTree = SOURCE_ROOT; };
 		A97E1591257668E300E1DB28 /* BEEUSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEEUSettingsViewController.swift; sourceTree = "<group>"; };
 		A97E159525766BBB00E1DB28 /* EuTracingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EuTracingTableViewCell.swift; sourceTree = "<group>"; };
 		A97E159925766BEF00E1DB28 /* ENSettingEuTracingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ENSettingEuTracingViewModel.swift; sourceTree = "<group>"; };
@@ -1000,11 +1003,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1B5A76024924B3D0029D5D7 /* FMDB in Frameworks */,
-				A97D447725A5FF0F00E7D698 /* OpenCombineFoundation in Frameworks */,
+				A97D458025ADA11B00E7D698 /* OpenCombineFoundation in Frameworks */,
+				A97D458425ADA11B00E7D698 /* OpenCombine in Frameworks */,
 				858F6F6E245A103C009FFD33 /* ExposureNotification.framework in Frameworks */,
-				A97D447525A5FF0F00E7D698 /* OpenCombineDispatch in Frameworks */,
 				B1EDFD88248E741B00E7EAFF /* SwiftProtobuf in Frameworks */,
-				A97D447925A5FF0F00E7D698 /* OpenCombine in Frameworks */,
+				A97D458225ADA11B00E7D698 /* OpenCombineDispatch in Frameworks */,
+				A97D457925ADA0D000E7D698 /* IBPCollectionViewCompositionalLayout in Frameworks */,
 				B1EDFD89248E741B00E7EAFF /* ZIPFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2546,6 +2550,7 @@
 				2FE15A3B249B8C0B0077BD8D /* AccessibilityIdentifiers.swift */,
 				A3E851B124ADD09900402485 /* CountdownTimer.swift */,
 				A97D452425AB7CAA00E7D698 /* ColorCompatibility.swift */,
+				A97D456D25AC8E9D00E7D698 /* IBPCollectionViewCompositionalLayoutInteroperability.swift */,
 			);
 			path = "View Helpers";
 			sourceTree = "<group>";
@@ -2696,9 +2701,10 @@
 				B10FB02F246036F3004CA11E /* SwiftProtobuf */,
 				B1E8C9A4247AB869006DC678 /* ZIPFoundation */,
 				B1B5A75F24924B3D0029D5D7 /* FMDB */,
-				A97D447425A5FF0F00E7D698 /* OpenCombineDispatch */,
-				A97D447625A5FF0F00E7D698 /* OpenCombineFoundation */,
-				A97D447825A5FF0F00E7D698 /* OpenCombine */,
+				A97D457825ADA0D000E7D698 /* IBPCollectionViewCompositionalLayout */,
+				A97D457F25ADA11B00E7D698 /* OpenCombineFoundation */,
+				A97D458125ADA11B00E7D698 /* OpenCombineDispatch */,
+				A97D458325ADA11B00E7D698 /* OpenCombine */,
 			);
 			productName = ENA;
 			productReference = 85D7593B2457048F008175F0 /* ENA.app */;
@@ -2781,7 +2787,8 @@
 				B10FB02E246036F3004CA11E /* XCRemoteSwiftPackageReference "swift-protobuf" */,
 				B1E8C9A3247AB869006DC678 /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
 				B1B5A75E24924B3D0029D5D7 /* XCRemoteSwiftPackageReference "fmdb" */,
-				A97D447325A5FF0F00E7D698 /* XCRemoteSwiftPackageReference "OpenCombine" */,
+				A97D457725ADA0D000E7D698 /* XCRemoteSwiftPackageReference "IBPCollectionViewCompositionalLayout" */,
+				A97D457E25ADA11B00E7D698 /* XCRemoteSwiftPackageReference "OpenCombine" */,
 			);
 			productRefGroup = 85D7593C2457048F008175F0 /* Products */;
 			projectDirPath = "";
@@ -2965,6 +2972,7 @@
 				0DF6BBB7248C04CF007E8B0C /* app_config.pb.swift in Sources */,
 				B1DDDABE24713BAD00A07175 /* SAPDownloadedPackage.swift in Sources */,
 				B1FE13EC24891CFE00D012E5 /* RiskProviding.swift in Sources */,
+				A97D456E25AC8E9D00E7D698 /* IBPCollectionViewCompositionalLayoutInteroperability.swift in Sources */,
 				011E4B032483A92A002E6412 /* MockExposureManager.swift in Sources */,
 				A9D0BF8E24FBA20E00DEBD99 /* BEInfectionSummary.swift in Sources */,
 				2FE15A3C249B8C0B0077BD8D /* AccessibilityIdentifiers.swift in Sources */,
@@ -3452,7 +3460,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -3612,7 +3620,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -3771,7 +3779,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -3826,7 +3834,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -4077,12 +4085,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		A97D447325A5FF0F00E7D698 /* XCRemoteSwiftPackageReference "OpenCombine" */ = {
+		A97D457725ADA0D000E7D698 /* XCRemoteSwiftPackageReference "IBPCollectionViewCompositionalLayout" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/OpenCombine/OpenCombine";
+			repositoryURL = "https://github.com/covid-be-app/IBPCollectionViewCompositionalLayout";
 			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 0.11.0;
+				kind = exactVersion;
+				version = 0.6.8;
+			};
+		};
+		A97D457E25ADA11B00E7D698 /* XCRemoteSwiftPackageReference "OpenCombine" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/covid-be-app/OpenCombine";
+			requirement = {
+				kind = exactVersion;
+				version = 0.11.0;
 			};
 		};
 		B10FB02E246036F3004CA11E /* XCRemoteSwiftPackageReference "swift-protobuf" */ = {
@@ -4112,19 +4128,24 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A97D447425A5FF0F00E7D698 /* OpenCombineDispatch */ = {
+		A97D457825ADA0D000E7D698 /* IBPCollectionViewCompositionalLayout */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A97D447325A5FF0F00E7D698 /* XCRemoteSwiftPackageReference "OpenCombine" */;
-			productName = OpenCombineDispatch;
+			package = A97D457725ADA0D000E7D698 /* XCRemoteSwiftPackageReference "IBPCollectionViewCompositionalLayout" */;
+			productName = IBPCollectionViewCompositionalLayout;
 		};
-		A97D447625A5FF0F00E7D698 /* OpenCombineFoundation */ = {
+		A97D457F25ADA11B00E7D698 /* OpenCombineFoundation */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A97D447325A5FF0F00E7D698 /* XCRemoteSwiftPackageReference "OpenCombine" */;
+			package = A97D457E25ADA11B00E7D698 /* XCRemoteSwiftPackageReference "OpenCombine" */;
 			productName = OpenCombineFoundation;
 		};
-		A97D447825A5FF0F00E7D698 /* OpenCombine */ = {
+		A97D458125ADA11B00E7D698 /* OpenCombineDispatch */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A97D447325A5FF0F00E7D698 /* XCRemoteSwiftPackageReference "OpenCombine" */;
+			package = A97D457E25ADA11B00E7D698 /* XCRemoteSwiftPackageReference "OpenCombine" */;
+			productName = OpenCombineDispatch;
+		};
+		A97D458325ADA11B00E7D698 /* OpenCombine */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A97D457E25ADA11B00E7D698 /* XCRemoteSwiftPackageReference "OpenCombine" */;
 			productName = OpenCombine;
 		};
 		B10FB02F246036F3004CA11E /* SwiftProtobuf */ = {

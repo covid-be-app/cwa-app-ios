@@ -16,6 +16,7 @@
 // under the License.
 
 import UIKit
+import IBPCollectionViewCompositionalLayout
 
 protocol HomeLayoutDelegate: AnyObject {
 	func homeLayoutSection(for sectionIndex: Int) -> HomeViewController.Section?
@@ -26,7 +27,7 @@ extension UICollectionViewLayout {
 	static let bottomBackgroundOverflowHeight: CGFloat = UIScreen.main.bounds.height
 
 	class func homeLayout(delegate: HomeLayoutDelegate) -> UICollectionViewLayout {
-		let sectionProvider: UICollectionViewCompositionalLayoutSectionProvider = { sectionIndex, layoutEnvironment -> NSCollectionLayoutSection? in
+		let sectionProvider: IBPUICollectionViewCompositionalLayoutSectionProvider = { sectionIndex, layoutEnvironment -> IBPNSCollectionLayoutSection? in
 			guard let homeSection = delegate.homeLayoutSection(for: sectionIndex) else { return nil }
 			let section = layoutSection(for: homeSection, layoutEnvironment: layoutEnvironment)
 			return section
@@ -34,13 +35,13 @@ extension UICollectionViewLayout {
 
 		let config = UICollectionViewCompositionalLayoutConfiguration()
 
-		let layout = UICollectionViewCompositionalLayout(sectionProvider: sectionProvider, configuration: config)
+		let layout = IBPUICollectionViewCompositionalLayout(sectionProvider: sectionProvider, configuration: config)
 		layout.register(SectionSystemBackgroundDecorationView.self, forDecorationViewOfKind: SectionSystemBackgroundDecorationView.reusableViewIdentifier)
 
 		return layout
 	}
 	
-	private static func layoutSection(for section: HomeViewController.Section, layoutEnvironment _: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
+	private static func layoutSection(for section: HomeViewController.Section, layoutEnvironment _: NSCollectionLayoutEnvironment) -> IBPNSCollectionLayoutSection {
 		switch section {
 		case .actions:
 			return mainSection()
