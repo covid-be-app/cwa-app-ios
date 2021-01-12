@@ -15,8 +15,8 @@
 
 # A list of supported languages
 
-ENV["LC_ALL"] = "nl_BE"
-ENV["LANG"] = "nl_BE"
+ENV["LC_ALL"] = "en_US"
+ENV["LANG"] = "en_US"
 
 default_platform(:ios)
 
