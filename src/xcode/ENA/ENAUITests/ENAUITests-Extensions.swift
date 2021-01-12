@@ -74,8 +74,13 @@ extension XCUIApplication {
 		}
 		
 		// :BE: fix bug
+		let start: String.Index
+		if str.starts(with: "\"") {
+			start = str.index(str.startIndex, offsetBy: 1)
+		} else {
+			start = str.index(str.startIndex, offsetBy: 0)
+		}
 		
-		let start = str.index(str.startIndex, offsetBy: 1)
 		let end = str.index(start, offsetBy: 2)
 		let range = start..<end
 
