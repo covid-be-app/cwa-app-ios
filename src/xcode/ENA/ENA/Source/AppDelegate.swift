@@ -118,7 +118,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	#if targetEnvironment(simulator) || COMMUNITY
 	// Enable third party contributors that do not have the required
 	// entitlements to also use the app
-	let exposureManager: ExposureManager = {
+	lazy var exposureManager: ExposureManager = {
+		
 		let tempKey = ENTemporaryExposureKey.random(Date())
 		
 		let keys = [tempKey]
@@ -157,6 +158,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		didFinishLaunchingWithOptions options: [UIApplication.LaunchOptionsKey: Any]? = nil
 	) -> Bool {
 		
+		if AppDelegate.isAppDisabled() {
+			// Show Disabled UI
+			setupAppDisabledUI()
+			
+			return true
+		}
+
 		/// this is migration code
 		/// we don't want the app stuck forever in the "thank you" state
 		/// if it was the case, simply reset the app
@@ -499,5 +507,25 @@ extension AppDelegate {
 		var exposureManager: ExposureManagerState
 		var detectionMode: DetectionMode
 		var risk: Risk?
+	}
+}
+
+extension AppDelegate {
+	private static func isAppDisabled() -> Bool {
+		if #available(iOS 13.7, *) {
+			return false
+		} else if #available(iOS 13.5, *) {
+			return true
+		} else if NSClassFromString("ENManager") != nil {
+			return false
+		} else {
+			return true
+		}
+	}
+	
+	private func setupAppDisabledUI() {
+		window = UIWindow(frame: UIScreen.main.bounds)
+		window?.rootViewController = AppDisabledViewController()
+		window?.makeKeyAndVisible()
 	}
 }

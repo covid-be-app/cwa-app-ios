@@ -109,4 +109,8 @@ enum BEAppStrings {
 		static let euDescription3 = NSLocalizedString("ExposureNotificationSetting_EU_Desc_3", comment: "")
 		static let euDescription4 = NSLocalizedString("ExposureNotificationSetting_EU_Desc_4", comment: "")
 	}
+	
+	enum BEAppDisabled {
+		static let text = NSLocalizedString("App_Disabled_Text", comment: "")
+	}
 }
