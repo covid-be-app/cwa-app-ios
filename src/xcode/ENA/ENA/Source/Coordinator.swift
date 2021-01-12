@@ -82,6 +82,10 @@ class Coordinator: RequiresAppDependencies {
 		self.homeController = homeController
 
 		UIView.transition(with: rootViewController.view, duration: CATransaction.animationDuration(), options: [.transitionCrossDissolve], animations: {
+			if #available(iOS 13.5, *) {
+			} else {
+				self.rootViewController.isNavigationBarHidden = false
+			}
 			self.rootViewController.setViewControllers([homeController], animated: false)
 		})
 
@@ -97,6 +101,10 @@ class Coordinator: RequiresAppDependencies {
 	}
 
 	func showOnboarding() {
+		if #available(iOS 13.5, *) {
+		} else {
+			rootViewController.isNavigationBarHidden = true
+		}
 		rootViewController.navigationBar.prefersLargeTitles = false
 		rootViewController.setViewControllers(
 			[
