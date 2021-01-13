@@ -1234,7 +1234,6 @@
 				51486DA52485237200FCE216 /* RiskThankYouCollectionViewCell.xib */,
 				51C779152486E5BA004582F8 /* RiskFindingPositiveCollectionViewCell.swift */,
 				51C779132486E5AB004582F8 /* RiskFindingPositiveCollectionViewCell.xib */,
-				514EE991246D4A1600DE4884 /* Risk Items */,
 			);
 			path = Risk;
 			sourceTree = "<group>";
@@ -1849,6 +1848,7 @@
 		A90267D125AEEE1100C14169 /* Risk */ = {
 			isa = PBXGroup;
 			children = (
+				514EE991246D4A1600DE4884 /* Risk Items */,
 				A90267E025AEEE8D00C14169 /* HomeRiskLevelTableViewCell.swift */,
 				A90267E125AEEE8D00C14169 /* HomeRiskLevelTableViewCell.xib */,
 				A90267E625AEFE1800C14169 /* HomeRiskInactiveTableViewCell.swift */,
