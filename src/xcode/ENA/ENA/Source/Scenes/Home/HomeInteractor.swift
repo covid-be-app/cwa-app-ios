@@ -24,13 +24,13 @@ import UIKit
 import OpenCombine
 
 final class HomeInteractor: RequiresAppDependencies {
-	typealias SectionDefinition = (section: HomeViewController.Section, cellConfigurators: [CollectionViewCellConfiguratorAny])
+	typealias SectionDefinition = (section: HomeTableViewController.Section, cellConfigurators: [TableViewCellConfiguratorAny])
 	typealias SectionConfiguration = [SectionDefinition]
 
 	// MARK: Creating
 
 	init(
-		homeViewController: HomeViewController,
+		homeViewController: HomeTableViewController,
 		state: State,
 		exposureSubmissionService: ExposureSubmissionService,
 		// :BE: add stats
@@ -64,7 +64,7 @@ final class HomeInteractor: RequiresAppDependencies {
 		}
 	}
 
-	private unowned var homeViewController: HomeViewController
+	private unowned var homeViewController: HomeTableViewController
 	private let exposureSubmissionService: ExposureSubmissionService
 	var enStateHandler: ENStateHandler?
 
@@ -169,13 +169,13 @@ final class HomeInteractor: RequiresAppDependencies {
 			accessibilityIdentifier: AccessibilityIdentifiers.Home.settingsCardTitle
 		)
 
-		let infosConfigurators: [CollectionViewCellConfiguratorAny] = [info1Configurator, info2Configurator, appInformationConfigurator, settingsConfigurator]
+		let infosConfigurators: [TableViewCellConfiguratorAny] = [info1Configurator, info2Configurator, appInformationConfigurator, settingsConfigurator]
 
 		let actionsSection: SectionDefinition = setupActionSectionDefinition()
 		let infoSection: SectionDefinition = (.infos, infosConfigurators)
 		
-		var sections: [(section: HomeViewController.Section, cellConfigurators: [CollectionViewCellConfiguratorAny])] = []
-		sections.append(contentsOf: [actionsSection, infoSection/*, settingsSection*/])
+		var sections: [(section: HomeTableViewController.Section, cellConfigurators: [TableViewCellConfiguratorAny])] = []
+		sections.append(contentsOf: [actionsSection, infoSection])
 
 		return sections
 	}
@@ -194,7 +194,7 @@ extension HomeInteractor {
 
 	func reloadActionSection() {
 		sections[0] = setupActionSectionDefinition()
-		homeViewController.reloadData(animatingDifferences: false)
+		homeViewController.reloadData()
 	}
 }
 
@@ -204,7 +204,7 @@ extension HomeInteractor {
 	private var risk: Risk? { state.risk }
 	private var riskDetails: Risk.Details? { risk?.details }
 
-	func setupRiskConfigurator() -> CollectionViewCellConfiguratorAny? {
+	func setupRiskConfigurator() -> TableViewCellConfiguratorAny? {
 
 		let detectionIsAutomatic = detectionMode == .automatic
 		let dateLastExposureDetection = riskDetails?.exposureDetectionDate
@@ -295,8 +295,8 @@ extension HomeInteractor {
 		return HomeActivateCellConfigurator(state: state.enState)
 	}
 
-	func setupActionConfigurators() -> [CollectionViewCellConfiguratorAny] {
-		var actionsConfigurators: [CollectionViewCellConfiguratorAny] = []
+	func setupActionConfigurators() -> [TableViewCellConfiguratorAny] {
+		var actionsConfigurators: [TableViewCellConfiguratorAny] = []
 
 		// MARK: - Add cards that are always shown.
 
@@ -482,7 +482,7 @@ extension HomeInteractor {
 		self.reloadActionSection()
 	}
 	
-	func setupInfectionSummaryConfigurator() -> CollectionViewCellConfiguratorAny? {
+	func setupInfectionSummaryConfigurator() -> TableViewCellConfiguratorAny? {
 		let infectionSummaryConfigurator = BEHomeInfectionSummaryCellConfigurator()
 		
 		infectionSummaryConfigurator.infectionSummary = statisticsService.infectionSummary

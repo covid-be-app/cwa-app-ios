@@ -94,7 +94,7 @@ class HomeRiskLevelCellConfigurator: HomeRiskCellConfigurator {
 
 	// MARK: Configuration
 
-	func configure(cell _: RiskLevelCollectionViewCell) {
+	func configure(cell _: RiskLevelCell) {
 		fatalError("implement this method in children")
 	}
 

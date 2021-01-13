@@ -49,7 +49,7 @@ extension BEInfectionSummary {
 	}
 }
 
-class BEHomeInfectionSummaryCellConfigurator: CollectionViewCellConfigurator {
+class BEHomeInfectionSummaryCellConfigurator: TableViewCellConfigurator {
 	var infectionSummary: BEInfectionSummary?
 	var infectionSummaryUpdatedAt: Date?
 	
@@ -66,7 +66,7 @@ class BEHomeInfectionSummaryCellConfigurator: CollectionViewCellConfigurator {
 		dateRangeFormatter.setLocalizedDateFormatFromTemplate("dd MMM")
 	}
 	
-	func configure(cell: BEInfectionSummaryCollectionViewCell) {
+	func configure(cell: BEInfectionSummaryTableViewCell) {
 		cell.titleLabel.text = BEAppStrings.BEInfectionSummary.title
 
 		guard

@@ -20,20 +20,7 @@
 
 import ExposureNotification
 import UIKit
-
-protocol HomeViewControllerDelegate: AnyObject {
-	func showRiskLegend()
-	func showExposureNotificationSetting(enState: ENStateHandler.State)
-	func showExposureDetection(state: HomeInteractor.State, isRequestRiskRunning: Bool)
-	func setExposureDetectionState(state: HomeInteractor.State, isRequestRiskRunning: Bool)
-	func showExposureSubmission(with result: TestResult?)
-	func showInviteFriends()
-	func showWebPage(from viewController: UIViewController, urlString: String)
-	func showAppInformation()
-	func showSettings(enState: ENStateHandler.State)
-	func addToEnStateUpdateList(_ anyObject: AnyObject?)
-}
-
+/*
 final class HomeViewController: UICollectionViewController, RequiresAppDependencies {
 	// MARK: Creating a Home View Controller
 	init(
@@ -431,3 +418,4 @@ extension HomeViewController {
 		return cell
 	}
 }
+*/

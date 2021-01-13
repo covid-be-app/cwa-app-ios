@@ -17,9 +17,9 @@
 
 import UIKit
 import IBPCollectionViewCompositionalLayout
-
+/*
 protocol HomeLayoutDelegate: AnyObject {
-	func homeLayoutSection(for sectionIndex: Int) -> HomeViewController.Section?
+	func homeLayoutSection(for sectionIndex: Int) -> HomeTableViewController.Section?
 }
 
 extension UICollectionViewLayout {
@@ -81,3 +81,4 @@ extension UICollectionViewLayout {
 		return section
 	}
 }
+*/

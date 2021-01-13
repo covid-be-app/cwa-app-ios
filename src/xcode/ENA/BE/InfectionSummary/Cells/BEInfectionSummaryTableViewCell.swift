@@ -1,6 +1,7 @@
-// Corona-Warn-App
 //
-// SAP SE and all other contributors
+// Coronalert
+//
+// Devside and all other contributors
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -14,7 +15,17 @@
 // KIND, either express or implied.  See the License for the
 // specific language governing permissions and limitations
 // under the License.
+//
 
 import UIKit
 
-protocol HomeRiskCellConfigurator: TableViewCellConfigurator { }
+class BEInfectionSummaryTableViewCell: HomeTableViewCell {
+	@IBOutlet weak var titleLabel:UILabel!
+	@IBOutlet weak var dateRangeLabel:UILabel!
+	@IBOutlet weak var averagesView:UIStackView!
+	@IBOutlet weak var averageInfectedLabel:UILabel!
+	@IBOutlet weak var averageHospitalisedLabel:UILabel!
+	@IBOutlet weak var averageDeceasedLabel:UILabel!
+	@IBOutlet weak var lastUpdatedLabel:UILabel!
+
+}
