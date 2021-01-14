@@ -37,10 +37,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfb-rh-xzV">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="636.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="626"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="LSM-kx-g0z">
-                                    <rect key="frame" x="16" y="16" width="382" height="604.5"/>
+                                    <rect key="frame" x="16" y="16" width="382" height="594"/>
                                     <subviews>
                                         <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tnj-lj-I3P">
                                             <rect key="frame" x="0.0" y="0.0" width="382" height="229"/>
@@ -121,7 +121,7 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="800" verticalCompressionResistancePriority="50" text="Title 1" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTu-rc-UzQ" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="476.5" width="382" height="33.5"/>
+                                            <rect key="frame" x="0.0" y="476.5" width="382" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" name="ENA Text Primary 1 Color"/>
                                             <nil key="highlightedColor"/>
@@ -130,7 +130,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Wjz-Rd-X1m">
-                                            <rect key="frame" x="0.0" y="542" width="382" height="62.5"/>
+                                            <rect key="frame" x="0.0" y="529" width="382" height="65"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Headline" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ame-pQ-NpS" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
@@ -142,7 +142,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subheadline" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fai-5n-Xcg" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="44.5" width="382" height="18"/>
+                                                    <rect key="frame" x="0.0" y="44.5" width="382" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" name="ENA Text Primary 1 Color"/>
                                                     <nil key="highlightedColor"/>
@@ -241,28 +241,28 @@
     </objects>
     <designables>
         <designable name="Fai-5n-Xcg">
-            <size key="intrinsicContentSize" width="85" height="18"/>
+            <size key="intrinsicContentSize" width="94.5" height="20.5"/>
         </designable>
         <designable name="RTu-rc-UzQ">
-            <size key="intrinsicContentSize" width="77" height="33.5"/>
+            <size key="intrinsicContentSize" width="45" height="20.5"/>
         </designable>
         <designable name="SGn-db-HV7">
             <size key="intrinsicContentSize" width="41.5" height="20.5"/>
         </designable>
         <designable name="VOz-Ud-Ixq">
-            <size key="intrinsicContentSize" width="54" height="50"/>
+            <size key="intrinsicContentSize" width="38" height="34"/>
         </designable>
         <designable name="WFg-ji-MHe">
-            <size key="intrinsicContentSize" width="67" height="50"/>
+            <size key="intrinsicContentSize" width="51" height="34"/>
         </designable>
         <designable name="XhY-sM-IJZ">
             <size key="intrinsicContentSize" width="41.5" height="20.5"/>
         </designable>
         <designable name="ame-pQ-NpS">
-            <size key="intrinsicContentSize" width="70.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="67" height="20.5"/>
         </designable>
         <designable name="nvI-fK-T3h">
-            <size key="intrinsicContentSize" width="33" height="16"/>
+            <size key="intrinsicContentSize" width="41.5" height="20.5"/>
         </designable>
     </designables>
     <resources>

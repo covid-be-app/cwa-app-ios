@@ -25,7 +25,7 @@ final class HomeFindingPositiveRiskCellConfigurator: HomeRiskCellConfigurator {
 
 	// MARK: Configuration
 
-	func configure(cell: RiskFindingPositiveCollectionViewCell) {
+	func configure(cell: HomeRiskFindingPositiveTableViewCell) {
 		let dynamicTextService = BEDynamicTextService()
 		let screenSections = dynamicTextService.sections(.positiveTestResultCard, section: .explanation)
 		cell.delegate = self
@@ -68,7 +68,7 @@ final class HomeFindingPositiveRiskCellConfigurator: HomeRiskCellConfigurator {
 		setupAccessibility(cell)
 	}
 
-	func setupAccessibility(_ cell: RiskFindingPositiveCollectionViewCell) {
+	func setupAccessibility(_ cell: HomeRiskFindingPositiveTableViewCell) {
 		cell.titleLabel.isAccessibilityElement = false
 		cell.chevronImageView.isAccessibilityElement = false
 		cell.viewContainer.isAccessibilityElement = false
@@ -94,8 +94,8 @@ final class HomeFindingPositiveRiskCellConfigurator: HomeRiskCellConfigurator {
 	}
 }
 
-extension HomeFindingPositiveRiskCellConfigurator: RiskFindingPositiveCollectionViewCellDelegate {
-	func nextButtonTapped(cell: RiskFindingPositiveCollectionViewCell) {
+extension HomeFindingPositiveRiskCellConfigurator: HomeRiskFindingPositiveTableViewCellDelegate {
+	func nextButtonTapped(cell: HomeRiskFindingPositiveTableViewCell) {
 		nextAction?()
 	}
 }

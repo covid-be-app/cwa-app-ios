@@ -278,18 +278,23 @@ final class ENAExposureManager: NSObject, ExposureManager {
 			switch error.code {
 			case .notAuthorized:
 				completion(ExposureNotificationError.exposureNotificationAuthorization)
+				return
 			case .notEnabled:
 				completion(ExposureNotificationError.exposureNotificationRequired)
+				return
 			case .restricted:
 				completion(ExposureNotificationError.exposureNotificationUnavailable)
+				return
 			case .apiMisuse:
 				completion(ExposureNotificationError.apiMisuse)
+				return
 			default:
-				let errorMsg = "[ExposureManager] Not implemented \(error.localizedDescription)"
-				logError(message: errorMsg)
-				completion(ExposureNotificationError.unknown(error.localizedDescription))
+				break
 			}
 		}
+		let errorMsg = "[ExposureManager] Not implemented \(error.localizedDescription)"
+		logError(message: errorMsg)
+		completion(ExposureNotificationError.unknown(error.localizedDescription))
 	}
 
 	// MARK: Invalidate

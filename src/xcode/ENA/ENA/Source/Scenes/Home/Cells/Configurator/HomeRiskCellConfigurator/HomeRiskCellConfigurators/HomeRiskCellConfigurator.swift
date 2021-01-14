@@ -17,4 +17,4 @@
 
 import UIKit
 
-protocol HomeRiskCellConfigurator: CollectionViewCellConfigurator { }
+protocol HomeRiskCellConfigurator: TableViewCellConfigurator { }

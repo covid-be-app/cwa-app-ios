@@ -17,7 +17,7 @@
 
 import UIKit
 
-class HomeInfoCellConfigurator: CollectionViewCellConfigurator {
+class HomeInfoCellConfigurator: TableViewCellConfigurator {
 	
 	var title: String
 	var description: String?
@@ -31,7 +31,7 @@ class HomeInfoCellConfigurator: CollectionViewCellConfigurator {
 		self.accessibilityIdentifier = accessibilityIdentifier
 	}
 
-	func configure(cell: InfoCollectionViewCell) {
+	func configure(cell: HomeInfoCell) {
 		cell.backgroundColor = .enaColor(for: .background)
 		cell.configure(title: title, description: description, accessibilityIdentifier: accessibilityIdentifier)
 
@@ -41,7 +41,7 @@ class HomeInfoCellConfigurator: CollectionViewCellConfigurator {
 		configureBorders(in: cell)
 	}
 
-	func configureBorders(in cell: InfoCollectionViewCell) {
+	func configureBorders(in cell: HomeInfoCell) {
 		switch position {
 		case .first:
 			cell.topDividerView.isHidden = false

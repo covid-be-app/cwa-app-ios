@@ -24,13 +24,13 @@ import UIKit
 import OpenCombine
 
 final class HomeInteractor: RequiresAppDependencies {
-	typealias SectionDefinition = (section: HomeViewController.Section, cellConfigurators: [CollectionViewCellConfiguratorAny])
+	typealias SectionDefinition = (section: HomeTableViewController.Section, cellConfigurators: [TableViewCellConfiguratorAny])
 	typealias SectionConfiguration = [SectionDefinition]
 
 	// MARK: Creating
 
 	init(
-		homeViewController: HomeViewController,
+		homeViewController: HomeTableViewController,
 		state: State,
 		exposureSubmissionService: ExposureSubmissionService,
 		// :BE: add stats
@@ -58,18 +58,22 @@ final class HomeInteractor: RequiresAppDependencies {
 	// MARK: Properties
 	var state: State {
 		didSet {
-			homeViewController.setStateOfChildViewControllers()
+			homeViewController?.setStateOfChildViewControllers()
 			scheduleCountdownTimer()
 			buildSections()
 		}
 	}
 
-	private unowned var homeViewController: HomeViewController
+	private weak var homeViewController: HomeTableViewController?
 	private let exposureSubmissionService: ExposureSubmissionService
 	var enStateHandler: ENStateHandler?
 
 	private var detectionMode: DetectionMode { state.detectionMode }
-	private(set) var sections: SectionConfiguration = []
+	private(set) var sections: SectionConfiguration = [] {
+		didSet {
+			homeViewController?.updateSections()
+		}
+	}
 
 	private var activeConfigurator: HomeActivateCellConfigurator!
 	private var testResultConfigurator = HomeTestResultCellConfigurator()
@@ -95,8 +99,8 @@ final class HomeInteractor: RequiresAppDependencies {
 
 	private func updateActiveCell() {
 		guard let indexPath = indexPathForActiveCell() else { return }
-		homeViewController.updateSections()
-		homeViewController.reloadCell(at: indexPath)
+		homeViewController?.updateSections()
+		homeViewController?.reloadCell(at: indexPath)
 	}
 
 	private func updateRiskLoading() {
@@ -113,8 +117,8 @@ final class HomeInteractor: RequiresAppDependencies {
 
 	private func reloadRiskCell() {
 		guard let indexPath = indexPathForRiskCell() else { return }
-		homeViewController.updateSections()
-		homeViewController.reloadCell(at: indexPath)
+		homeViewController?.updateSections()
+		homeViewController?.reloadCell(at: indexPath)
 	}
 
 	private func observeRisk() {
@@ -139,7 +143,6 @@ final class HomeInteractor: RequiresAppDependencies {
 		sections = initialCellConfigurators()
 	}
 
-	// :BE: merge sections
 	private func initialCellConfigurators() -> SectionConfiguration {
 		let info1Configurator = HomeInfoCellConfigurator(
 			title: AppStrings.Home.infoCardShareTitle,
@@ -169,13 +172,13 @@ final class HomeInteractor: RequiresAppDependencies {
 			accessibilityIdentifier: AccessibilityIdentifiers.Home.settingsCardTitle
 		)
 
-		let infosConfigurators: [CollectionViewCellConfiguratorAny] = [info1Configurator, info2Configurator, appInformationConfigurator, settingsConfigurator]
+		let infosConfigurators: [TableViewCellConfiguratorAny] = [info1Configurator, info2Configurator, appInformationConfigurator, settingsConfigurator]
 
 		let actionsSection: SectionDefinition = setupActionSectionDefinition()
 		let infoSection: SectionDefinition = (.infos, infosConfigurators)
 		
-		var sections: [(section: HomeViewController.Section, cellConfigurators: [CollectionViewCellConfiguratorAny])] = []
-		sections.append(contentsOf: [actionsSection, infoSection/*, settingsSection*/])
+		var sections: [(section: HomeTableViewController.Section, cellConfigurators: [TableViewCellConfiguratorAny])] = []
+		sections.append(contentsOf: [actionsSection, infoSection])
 
 		return sections
 	}
@@ -189,12 +192,12 @@ extension HomeInteractor {
 		testResultConfigurator.testResult = result
 		reloadActionSection()
 		guard let indexPath = indexPathForTestResultCell() else { return }
-		homeViewController.reloadCell(at: indexPath)
+		homeViewController?.reloadCell(at: indexPath)
 	}
 
 	func reloadActionSection() {
 		sections[0] = setupActionSectionDefinition()
-		homeViewController.reloadData(animatingDifferences: false)
+		homeViewController?.reloadData()
 	}
 }
 
@@ -204,7 +207,7 @@ extension HomeInteractor {
 	private var risk: Risk? { state.risk }
 	private var riskDetails: Risk.Details? { risk?.details }
 
-	func setupRiskConfigurator() -> CollectionViewCellConfiguratorAny? {
+	func setupRiskConfigurator() -> TableViewCellConfiguratorAny? {
 
 		let detectionIsAutomatic = detectionMode == .automatic
 		let dateLastExposureDetection = riskDetails?.exposureDetectionDate
@@ -273,20 +276,20 @@ extension HomeInteractor {
 	}
 
 	private func setupTestResultConfigurator() -> HomeTestResultCellConfigurator {
-		testResultConfigurator.primaryAction = homeViewController.showTestResultScreen
+		testResultConfigurator.primaryAction = homeViewController?.showTestResultScreen
 		return testResultConfigurator
 	}
 
 	func setupSubmitConfigurator() -> HomeTestResultCellConfigurator {
 		let submitConfigurator = HomeTestResultCellConfigurator()
-		submitConfigurator.primaryAction = homeViewController.showExposureSubmissionWithoutResult
+		submitConfigurator.primaryAction = homeViewController?.showExposureSubmissionWithoutResult
 		return submitConfigurator
 	}
 
 	func setupFindingPositiveRiskCellConfigurator() -> HomeFindingPositiveRiskCellConfigurator {
 		let configurator = HomeFindingPositiveRiskCellConfigurator()
 		configurator.nextAction = {
-			self.homeViewController.showExposureSubmission(with: self.testResult)
+			self.homeViewController?.showExposureSubmission(with: self.testResult)
 		}
 		return configurator
 	}
@@ -295,8 +298,8 @@ extension HomeInteractor {
 		return HomeActivateCellConfigurator(state: state.enState)
 	}
 
-	func setupActionConfigurators() -> [CollectionViewCellConfiguratorAny] {
-		var actionsConfigurators: [CollectionViewCellConfiguratorAny] = []
+	func setupActionConfigurators() -> [TableViewCellConfiguratorAny] {
+		var actionsConfigurators: [TableViewCellConfiguratorAny] = []
 
 		// MARK: - Add cards that are always shown.
 
@@ -380,7 +383,7 @@ extension HomeInteractor {
 				cellConfigurator === self.riskLevelConfigurator
 			}
 			guard let item = index else { return nil }
-			let indexPath = IndexPath(item: item, section: HomeViewController.Section.actions.rawValue)
+			let indexPath = IndexPath(item: item, section: HomeTableViewController.Section.actions.rawValue)
 			return indexPath
 		}
 		return nil
@@ -392,7 +395,7 @@ extension HomeInteractor {
 				cellConfigurator === self.activeConfigurator
 			}
 			guard let item = index else { return nil }
-			let indexPath = IndexPath(item: item, section: HomeViewController.Section.actions.rawValue)
+			let indexPath = IndexPath(item: item, section: HomeTableViewController.Section.actions.rawValue)
 			return indexPath
 		}
 		return nil
@@ -404,7 +407,7 @@ extension HomeInteractor {
 			cellConfigurator === self.testResultConfigurator
 		}
 		guard let item = index else { return nil }
-		let indexPath = IndexPath(item: item, section: HomeViewController.Section.actions.rawValue)
+		let indexPath = IndexPath(item: item, section: HomeTableViewController.Section.actions.rawValue)
 		return indexPath
 	}
 }
@@ -437,7 +440,7 @@ extension HomeInteractor {
 			switch result {
 			case .failure(let error):
 				// When we fail here, trigger an alert and set the state to pending.
-				self?.homeViewController.alertError(
+				self?.homeViewController?.alertError(
 					message: error.localizedDescription,
 					title: AppStrings.Home.resultCardLoadingErrorTitle,
 					completion: {
@@ -482,7 +485,7 @@ extension HomeInteractor {
 		self.reloadActionSection()
 	}
 	
-	func setupInfectionSummaryConfigurator() -> CollectionViewCellConfiguratorAny? {
+	func setupInfectionSummaryConfigurator() -> TableViewCellConfiguratorAny? {
 		let infectionSummaryConfigurator = BEHomeInfectionSummaryCellConfigurator()
 		
 		infectionSummaryConfigurator.infectionSummary = statisticsService.infectionSummary
@@ -503,7 +506,7 @@ extension HomeInteractor: ENStateHandlerUpdating {
 
 extension HomeInteractor {
 	private func inActiveCellActionHandler() {
-		homeViewController.showExposureNotificationSetting()
+		homeViewController?.showExposureNotificationSetting()
 	}
 }
 
@@ -539,7 +542,7 @@ extension HomeInteractor: CountdownTimerDelegate {
 
 	func countdownTimer(_ timer: CountdownTimer, didUpdate time: String) {
 		guard let indexPath = self.indexPathForRiskCell() else { return }
-		guard let cell = homeViewController.cellForItem(at: indexPath) as? RiskLevelCollectionViewCell else { return }
+		guard let cell = homeViewController?.cellForRow(at: indexPath) as? HomeRiskLevelTableViewCell else { return }
 
 		// We pass the time and let the configurator decide whether the button can be activated or not.
 		

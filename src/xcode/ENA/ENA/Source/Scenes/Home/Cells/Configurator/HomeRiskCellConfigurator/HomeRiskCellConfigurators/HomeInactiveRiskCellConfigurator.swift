@@ -87,7 +87,7 @@ final class HomeInactiveRiskCellConfigurator: HomeRiskCellConfigurator {
 	// MARK: - UI Helpers
 
 	/// Adjusts the UI for the given cell, including setting text and adjusting colors.
-	private func configureUI(for cell: RiskInactiveCollectionViewCell) {
+	private func configureUI(for cell: HomeRiskInactiveTableViewCell) {
 		cell.configureTitle(title: title, titleColor: .enaColor(for: .textPrimary1))
 		cell.configureBody(text: body, bodyColor: .enaColor(for: .textPrimary1))
 		cell.configureBackgroundColor(color: .enaColor(for: .background))
@@ -95,7 +95,7 @@ final class HomeInactiveRiskCellConfigurator: HomeRiskCellConfigurator {
 	}
 
 	/// Adjusts the UI for the risk views of a given cell.
-	private func configureRiskViewsUI(for cell: RiskInactiveCollectionViewCell) {
+	private func configureRiskViewsUI(for cell: HomeRiskInactiveTableViewCell) {
 		let activateItemTitle = String(format: AppStrings.Home.riskCardLastActiveItemTitle, previousRiskTitle)
 		let dateTitle = String(format: AppStrings.Home.riskCardDateItemTitle, lastUpdateDateString)
 
@@ -125,7 +125,7 @@ final class HomeInactiveRiskCellConfigurator: HomeRiskCellConfigurator {
 		cell.configureRiskViews(cellConfigurators: itemCellConfigurators)
 	}
 
-	func setupAccessibility(_ cell: RiskInactiveCollectionViewCell) {
+	func setupAccessibility(_ cell: HomeRiskInactiveTableViewCell) {
 		cell.titleLabel.isAccessibilityElement = false
 		cell.chevronImageView.isAccessibilityElement = false
 		cell.viewContainer.isAccessibilityElement = false
@@ -144,7 +144,7 @@ final class HomeInactiveRiskCellConfigurator: HomeRiskCellConfigurator {
 
 	// MARK: - Configuration.
 
-	func configure(cell: RiskInactiveCollectionViewCell) {
+	func configure(cell: HomeRiskInactiveTableViewCell) {
 
 		cell.delegate = self
 
@@ -173,8 +173,8 @@ final class HomeInactiveRiskCellConfigurator: HomeRiskCellConfigurator {
 	
 }
 
-extension HomeInactiveRiskCellConfigurator: RiskInactiveCollectionViewCellDelegate {
-	func activeButtonTapped(cell: RiskInactiveCollectionViewCell) {
+extension HomeInactiveRiskCellConfigurator: HomeRiskInactiveTableViewCellDelegate {
+	func activeButtonTapped(cell: HomeRiskInactiveTableViewCell) {
 		activeAction?()
 	}
 }

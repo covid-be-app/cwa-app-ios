@@ -17,13 +17,15 @@
 
 import UIKit
 
-protocol TableViewCellConfiguratorAny {
+protocol TableViewCellConfiguratorAny: AnyObject {
 	var viewAnyType: UITableViewCell.Type { get }
 
 	func configureAny(cell: UITableViewCell)
+	
+	var hashValue: AnyHashable { get }
 }
 
-protocol TableViewCellConfigurator: TableViewCellConfiguratorAny {
+protocol TableViewCellConfigurator: TableViewCellConfiguratorAny, Hashable {
 	associatedtype CellType: UITableViewCell
 	func configure(cell: CellType)
 }
@@ -42,4 +44,9 @@ extension TableViewCellConfigurator {
 			fatalError(error)
 		}
 	}
+	
+	var hashValue: AnyHashable {
+		self
+	}
+
 }

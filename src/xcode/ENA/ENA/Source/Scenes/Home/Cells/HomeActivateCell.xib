@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="HomeActivateCell" customModule="ENA" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="356" height="66"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="356" height="66"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mHa-od-M2H">
+                        <rect key="frame" x="20" y="11" width="316" height="66"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dHq-FZ-5U7">
+                                <rect key="frame" x="8" y="8" width="274.5" height="50"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8I-Ui-O6H">
+                                        <rect key="frame" x="0.0" y="0.0" width="34" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="2aY-fh-yDd"/>
+                                            <constraint firstAttribute="width" constant="34" id="m5l-Ad-PW0"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="1000" text="Headline" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="os7-5B-ds1" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
+                                        <rect key="frame" x="42" y="15" width="232.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="ENA Text Primary 1 Color"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="headline"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" insetsLayoutMarginsFromSafeArea="NO" image="Icons_Chevron_plain" translatesAutoresizingMaskIntoConstraints="NO" id="2Cb-Bg-07B">
+                                <rect key="frame" x="290.5" y="27" width="7" height="12"/>
+                                <color key="tintColor" name="ENA Chevron Color"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" name="ENA Background Color"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="2Cb-Bg-07B" secondAttribute="centerX" constant="14" id="Ikr-js-tXb"/>
+                            <constraint firstItem="dHq-FZ-5U7" firstAttribute="leading" secondItem="mHa-od-M2H" secondAttribute="leadingMargin" id="SWk-H2-r7D"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="dHq-FZ-5U7" secondAttribute="bottom" id="Tc3-wo-Ik6"/>
+                            <constraint firstItem="2Cb-Bg-07B" firstAttribute="centerY" secondItem="dHq-FZ-5U7" secondAttribute="centerY" id="cZv-Mf-uX3"/>
+                            <constraint firstItem="2Cb-Bg-07B" firstAttribute="leading" secondItem="dHq-FZ-5U7" secondAttribute="trailing" constant="8" id="d8g-6f-mw4"/>
+                            <constraint firstItem="dHq-FZ-5U7" firstAttribute="top" secondItem="mHa-od-M2H" secondAttribute="topMargin" id="hj9-e3-P5A"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="mHa-od-M2H" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="CSU-pP-viz"/>
+                    <constraint firstItem="mHa-od-M2H" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="NQw-VU-HYe"/>
+                    <constraint firstItem="mHa-od-M2H" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="fUB-s3-Qwr"/>
+                    <constraint firstItem="mHa-od-M2H" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="tdV-JT-VPQ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="iconImageView" destination="E8I-Ui-O6H" id="jTY-MM-ym1"/>
+                <outlet property="titleLabel" destination="os7-5B-ds1" id="DcG-rL-pMw"/>
+                <outlet property="viewContainer" destination="mHa-od-M2H" id="szY-jb-iyl"/>
+            </connections>
+            <point key="canvasLocation" x="-214" y="-136"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="os7-5B-ds1">
+            <size key="intrinsicContentSize" width="67" height="20.5"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="Icons_Chevron_plain" width="7" height="12"/>
+        <namedColor name="ENA Background Color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ENA Chevron Color">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.30000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ENA Text Primary 1 Color">
+            <color red="0.090196078431372548" green="0.098039215686274508" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -17,7 +17,7 @@
 
 import UIKit
 
-final class HomeActivateCellConfigurator: CollectionViewCellConfigurator {
+final class HomeActivateCellConfigurator: TableViewCellConfigurator {
 
 	private var state: ENStateHandler.State
 
@@ -27,7 +27,7 @@ final class HomeActivateCellConfigurator: CollectionViewCellConfigurator {
 
 	// MARK: Configuring a Cell
 
-	func configure(cell: ActivateCollectionViewCell) {
+	func configure(cell: HomeActivateCell) {
 		switch state {
 		case .enabled:
 			cell.configure(

@@ -43,7 +43,7 @@ class Coordinator: RequiresAppDependencies {
 
 	private let rootViewController: UINavigationController
 
-	private var homeController: HomeViewController?
+	private var homeController: HomeTableViewController?
 	private var settingsController: SettingsViewController?
 	private var exposureDetectionController: ExposureDetectionViewController?
 
@@ -69,7 +69,7 @@ class Coordinator: RequiresAppDependencies {
 	// :BE: add stats
 	func showHome(enStateHandler: ENStateHandler, state: AppDelegate.State, statisticsService: BEStatisticsService) {
 		let homeController =
-			HomeViewController(
+			HomeTableViewController(
 				delegate: self,
 				detectionMode: state.detectionMode,
 				exposureManagerState: state.exposureManager,

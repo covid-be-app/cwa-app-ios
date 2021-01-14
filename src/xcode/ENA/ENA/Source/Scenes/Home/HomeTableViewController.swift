@@ -1,9 +1,7 @@
-// Corona-Warn-App
 //
-// SAP SE and all other contributors
+// Coronalert
 //
-// Modified by Devside SRL
-//
+// Devside and all other contributors
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -17,8 +15,8 @@
 // KIND, either express or implied.  See the License for the
 // specific language governing permissions and limitations
 // under the License.
+//
 
-import ExposureNotification
 import UIKit
 
 protocol HomeViewControllerDelegate: AnyObject {
@@ -34,8 +32,31 @@ protocol HomeViewControllerDelegate: AnyObject {
 	func addToEnStateUpdateList(_ anyObject: AnyObject?)
 }
 
-final class HomeViewController: UICollectionViewController, RequiresAppDependencies {
-	// MARK: Creating a Home View Controller
+class HomeTableViewController: UIViewController, RequiresAppDependencies {
+
+	enum CellType: String {
+		case activate = "activate"
+		case infectionSummary = "infectionSummary"
+		case riskLevel = "riskLevel"
+		case info = "info"
+		case testResult = "testResult"
+		case riskInactive = "riskInactive"
+		case riskFindingPositive = "riskFindingPositive"
+		case testResultLoading = "testResultLoading"
+	}
+	
+	var sections: HomeInteractor.SectionConfiguration = []
+
+	
+	private var homeInteractor: HomeInteractor!
+	private var tableView = UITableView()
+	private weak var delegate: HomeViewControllerDelegate?
+
+	enum Section: Int {
+		case actions
+		case infos
+	}
+
 	init(
 		delegate: HomeViewControllerDelegate,
 		detectionMode: DetectionMode,
@@ -43,13 +64,10 @@ final class HomeViewController: UICollectionViewController, RequiresAppDependenc
 		initialEnState: ENStateHandler.State,
 		risk: Risk?,
 		exposureSubmissionService: ExposureSubmissionService,
-		// :BE: add stats
 		statisticsService: BEStatisticsService
 	) {
 		self.delegate = delegate
-		//self.enState = initialEnState
-
-		super.init(collectionViewLayout: .init())
+		super.init(nibName: nil, bundle: nil)
 
 		self.homeInteractor = HomeInteractor(
 			homeViewController: self,
@@ -65,39 +83,28 @@ final class HomeViewController: UICollectionViewController, RequiresAppDependenc
 		navigationItem.largeTitleDisplayMode = .never
 		delegate.addToEnStateUpdateList(homeInteractor)
 	}
-
-	@available(*, unavailable)
-	required init?(coder _: NSCoder) {
-		fatalError("init(coder:) has intentionally not been implemented")
+	
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
 	}
-
-	// MARK: Properties
-
-	var sections: HomeInteractor.SectionConfiguration = []
-	private var homeInteractor: HomeInteractor!
-
-	private weak var delegate: HomeViewControllerDelegate?
-
-	// :BE: remove settings
-	enum Section: Int {
-		case actions
-		case infos
-	}
-
-	// MARK: UIViewController
-
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		self.view.addSubview(tableView)
+		tableView.translatesAutoresizingMaskIntoConstraints = false
+		view.leftAnchor.constraint(equalTo: tableView.leftAnchor).isActive = true
+		view.rightAnchor.constraint(equalTo: tableView.rightAnchor).isActive = true
+		view.topAnchor.constraint(equalTo: tableView.topAnchor).isActive = true
+		view.bottomAnchor.constraint(equalTo: tableView.bottomAnchor).isActive = true
 
-		// :BE: disable background fetch alert as tests have shown it has no influence on the covid exposure checks
+		configureTableView()
 		
 		setupBarButtonItems()
-		configureCollectionView()
 		setupAccessibility()
 
 		homeInteractor.buildSections()
 		updateSections()
-		applySnapshotFromSections()
+		tableView.reloadData()
 
 		setStateOfChildViewControllers()
 		
@@ -106,15 +113,22 @@ final class HomeViewController: UICollectionViewController, RequiresAppDependenc
 			showEnvironmentLabel()
 		#endif
 	}
-
+	
+	func reloadData() {
+		tableView.reloadData()
+	}
+	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		homeInteractor.updateTestResults()
 		homeInteractor.requestRisk(userInitiated: false)
-		
-		// :BE:
 		homeInteractor.requestInfectionSummary()
 		updateBackgroundColor()
+	}
+	
+	func updateSections() {
+		sections = homeInteractor.sections
+		tableView.reloadData()
 	}
 
 	override func viewDidAppear(_ animated: Bool) {
@@ -171,16 +185,11 @@ final class HomeViewController: UICollectionViewController, RequiresAppDependenc
 		navigationItem.rightBarButtonItem?.accessibilityLabel = AppStrings.Home.rightBarButtonDescription
 		navigationItem.rightBarButtonItem?.accessibilityIdentifier = AccessibilityIdentifiers.Home.rightBarButtonDescription
 	}
-
-	// MARK: Actions
-
+	
 	@IBAction private func infoButtonTapped() {
 		delegate?.showRiskLegend()
 	}
 
-	// MARK: Misc
-
-	// Called by HomeInteractor
 	func setStateOfChildViewControllers() {
 		delegate?.setExposureDetectionState(state: homeInteractor.state, isRequestRiskRunning: homeInteractor.riskProvider.isLoading)
 	}
@@ -190,7 +199,7 @@ final class HomeViewController: UICollectionViewController, RequiresAppDependenc
 		homeInteractor.state.exposureManagerState = exposureManagerState
 		homeInteractor.state.risk = risk
 
-		reloadData(animatingDifferences: false)
+		tableView.reloadData()
 	}
 
 	func showExposureSubmissionWithoutResult() {
@@ -208,22 +217,65 @@ final class HomeViewController: UICollectionViewController, RequiresAppDependenc
 	func showExposureDetection() {
 		delegate?.showExposureDetection(state: homeInteractor.state, isRequestRiskRunning: homeInteractor.riskProvider.isLoading)
 	}
+	
+	func cellForRow(at indexPath: IndexPath) -> UITableViewCell? {
+		return tableView.cellForRow(at: indexPath)
+	}
+
+	private func showEnvironmentLabel() {
+		if BEEnvironment.current != .production {
+			let label = UILabel(frame: .zero)
+			label.translatesAutoresizingMaskIntoConstraints = false
+			label.textColor = .red
+			label.font = .systemFont(ofSize: 16)
+			label.text = "ENVIRONMENT: \(BEEnvironment.current.rawValue)"
+			self.view.addSubview(label)
+			self.view.topAnchor.constraint(equalTo: label.topAnchor, constant: 16).isActive = true
+			self.view.centerXAnchor.constraint(equalTo: label.centerXAnchor).isActive = true
+			self.view.bringSubviewToFront(label)
+		}
+	}
+	
+	private func updateBackgroundColor() {
+		tableView.backgroundColor = .enaColor(for: .separator)
+	}
+
+	private func configureTableView() {
+		tableView.separatorStyle = .none
+		tableView.delegate = self
+		tableView.dataSource = self
+		
+		tableView.register(UINib(nibName: HomeActivateCell.stringName(), bundle: nil), forCellReuseIdentifier: HomeActivateCell.stringName())
+		tableView.register(UINib(nibName: HomeRiskLevelTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: HomeRiskLevelTableViewCell.stringName())
+		tableView.register(UINib(nibName: HomeInfoCell.stringName(), bundle: nil), forCellReuseIdentifier: HomeInfoCell.stringName())
+		tableView.register(UINib(nibName: HomeTestResultTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: HomeTestResultTableViewCell.stringName())
+		tableView.register(UINib(nibName: HomeRiskInactiveTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: HomeRiskInactiveTableViewCell.stringName())
+		tableView.register(UINib(nibName: HomeRiskFindingPositiveTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: HomeRiskFindingPositiveTableViewCell.stringName())
+		tableView.register(UINib(nibName: HomeTestResultLoadingTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: HomeTestResultLoadingTableViewCell.stringName())
+		tableView.register(UINib(nibName: BEInfectionSummaryTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: BEInfectionSummaryTableViewCell.stringName())
+	}
+	
+	func reloadCell(at indexPath: IndexPath) {
+		guard let cell = tableView.cellForRow(at: indexPath) else { return }
+		
+		sections[indexPath.section].cellConfigurators[indexPath.item].configureAny(cell: cell)
+		
+		tableView.reloadRows(at: [indexPath], with: .automatic)
+	}
 
 	private func showScreenForActionSectionForCell(at indexPath: IndexPath) {
-		let cell = collectionView.cellForItem(at: indexPath)
+		let cell = tableView.cellForRow(at: indexPath)
 		switch cell {
-		case is ActivateCollectionViewCell:
+		case is HomeActivateCell:
 			showExposureNotificationSetting()
-		case is RiskLevelCollectionViewCell:
-		 	showExposureDetection()
-		case is RiskFindingPositiveCollectionViewCell:
-			showExposureSubmission(with: homeInteractor.testResult)
-		case is HomeTestResultCollectionViewCell:
-			showExposureSubmission(with: homeInteractor.testResult)
-		case is RiskInactiveCollectionViewCell:
+		case is HomeRiskLevelTableViewCell:
 			showExposureDetection()
-		case is RiskThankYouCollectionViewCell:
-			return
+		case is HomeRiskFindingPositiveTableViewCell:
+			showExposureSubmission(with: homeInteractor.testResult)
+		case is HomeTestResultTableViewCell:
+			showExposureSubmission(with: homeInteractor.testResult)
+		case is HomeRiskInactiveTableViewCell:
+			showExposureDetection()
 		default:
 			log(message: "Unknown cell type tapped.", file: #file, line: #line, function: #function)
 			return
@@ -250,90 +302,56 @@ final class HomeViewController: UICollectionViewController, RequiresAppDependenc
 				fatalError("Unknown entry")
 			}
 		}
+	}}
+
+extension HomeTableViewController: UITableViewDelegate {
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		showScreen(at: indexPath)
+	}
+
+	
+	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+		if section == 0 {
+			return 0
+		}
+		
+		return 80
 	}
 	
-	private func showEnvironmentLabel() {
-		if BEEnvironment.current != .production {
-			let label = UILabel(frame: .zero)
-			label.translatesAutoresizingMaskIntoConstraints = false
-			label.textColor = .red
-			label.font = .systemFont(ofSize: 16)
-			label.text = "ENVIRONMENT: \(BEEnvironment.current.rawValue)"
-			collectionView.addSubview(label)
-			collectionView.topAnchor.constraint(equalTo: label.topAnchor, constant: 16).isActive = true
-			collectionView.centerXAnchor.constraint(equalTo: label.centerXAnchor).isActive = true
-			self.collectionView.bringSubviewToFront(label)
-		}
-	}
-
-	// MARK: Configuration
-
-	func reloadData(animatingDifferences: Bool) {
-		updateSections()
-		applySnapshotFromSections(animatingDifferences: animatingDifferences)
-	}
-
-	func reloadCell(at indexPath: IndexPath) {
-		guard let cell = collectionView.cellForItem(at: indexPath) else { return }
-		sections[indexPath.section].cellConfigurators[indexPath.item].configureAny(cell: cell)
+	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+		let view = UIView()
+		view.backgroundColor = .clear
 		
-		collectionView.reloadItems(at: [indexPath])
+		return view
 	}
+}
 
-	private func configureCollectionView() {
-		collectionView.collectionViewLayout = .homeLayout(delegate: self)
-		collectionView.delegate = self
-		collectionView.dataSource = self
+extension HomeTableViewController: UITableViewDataSource {
+	
+    func numberOfSections(in tableView: UITableView) -> Int {
+		return sections.count
+    }
 
-		collectionView.contentInset = UIEdgeInsets(top: UICollectionViewLayout.topInset, left: 0, bottom: -UICollectionViewLayout.bottomBackgroundOverflowHeight, right: 0)
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		let section = sections[section]
 
-		collectionView.showsHorizontalScrollIndicator = false
-		collectionView.isDirectionalLockEnabled = true
+		return section.cellConfigurators.count
+    }
 
-		collectionView.isAccessibilityElement = false
-		collectionView.shouldGroupAccessibilityChildren = true
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cellConfigurator = sections[indexPath.section].cellConfigurators[indexPath.item]
+		let cell = tableView.dequeueReusableCell(withIdentifier: cellConfigurator.viewAnyType.stringName(), for: indexPath)
 
-		let cellTypes: [UICollectionViewCell.Type] = [
-			ActivateCollectionViewCell.self,
-			// :BE: add summary
-			BEInfectionSummaryCollectionViewCell.self,
-			RiskLevelCollectionViewCell.self,
-			InfoCollectionViewCell.self,
-			HomeTestResultCollectionViewCell.self,
-			RiskInactiveCollectionViewCell.self,
-			RiskFindingPositiveCollectionViewCell.self,
-			RiskThankYouCollectionViewCell.self,
-			InfoCollectionViewCell.self,
-			HomeTestResultLoadingCell.self
-		]
+		cellConfigurator.configureAny(cell: cell)
 
-		collectionView.register(cellTypes: cellTypes)
-	}
-
-	func applySnapshotFromSections(animatingDifferences: Bool = false) {
-		self.collectionView.reloadData()
-	}
-
-	func updateSections() {
-		sections = homeInteractor.sections
-	}
-
-	private func updateBackgroundColor() {
-		if traitCollection.userInterfaceStyle == .light {
-			collectionView.backgroundColor = .enaColor(for: .background)
-		} else {
-			collectionView.backgroundColor = .enaColor(for: .separator)
-		}
-	}
-
-	func cellForItem(at indexPath: IndexPath) -> UICollectionViewCell? {
-		return self.collectionView.cellForItem(at: indexPath)
-	}
+        return cell
+    }
 }
 
 // MARK: - Update test state.
 
-extension HomeViewController {
+extension HomeTableViewController {
 	func showTestResultScreen() {
 		showExposureSubmission(with: homeInteractor.testResult)
 	}
@@ -344,90 +362,23 @@ extension HomeViewController {
 	}
 }
 
-extension HomeViewController: HomeLayoutDelegate {
-	func homeLayoutSection(for sectionIndex: Int) -> Section? {
-		Section(rawValue: sectionIndex)
-	}
-}
-
-extension HomeViewController {
-	override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-		let cell = collectionView.cellForItem(at: indexPath)
-		switch cell {
-		case is RiskThankYouCollectionViewCell: return false
-		default: return true
-		}
-	}
-
-	override func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-		collectionView.cellForItem(at: indexPath)?.highlight()
-	}
-
-	override func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-		collectionView.cellForItem(at: indexPath)?.unhighlight()
-	}
-
-	override func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		showScreen(at: indexPath)
-	}
-}
-
-extension HomeViewController: ExposureStateUpdating {
+extension HomeTableViewController: ExposureStateUpdating {
 	func updateExposureState(_ state: ExposureManagerState) {
 		homeInteractor.state.exposureManagerState = state
-		reloadData(animatingDifferences: false)
+		tableView.reloadData()
 	}
 }
 
-extension HomeViewController: ENStateHandlerUpdating {
+extension HomeTableViewController: ENStateHandlerUpdating {
 	func updateEnState(_ state: ENStateHandler.State) {
 		homeInteractor.state.enState = state
-		reloadData(animatingDifferences: false)
+		tableView.reloadData()
 	}
 }
 
-extension HomeViewController: NavigationBarOpacityDelegate {
+extension HomeTableViewController: NavigationBarOpacityDelegate {
 	var preferredNavigationBarOpacity: CGFloat {
-		let alpha = (collectionView.adjustedContentInset.top + collectionView.contentOffset.y) / collectionView.contentInset.top
+		let alpha = (tableView.adjustedContentInset.top + tableView.contentOffset.y) / tableView.contentInset.top
 		return max(0, min(alpha, 1))
-	}
-}
-
-private extension UICollectionViewCell {
-	func highlight() {
-		let highlightView = UIView(frame: bounds)
-		highlightView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-		highlightView.backgroundColor = .enaColor(for: .listHighlight)
-		highlightView.tag = 100_000
-		highlightView.clipsToBounds = true
-
-		if let homeCollectionViewCell = self as? HomeCardCollectionViewCell {
-			highlightView.layer.cornerRadius = homeCollectionViewCell.contentView.layer.cornerRadius
-		}
-		addSubview(highlightView)
-	}
-
-	func unhighlight() {
-		subviews.filter(({ $0.tag == 100_000 })).forEach({ $0.removeFromSuperview() })
-	}
-}
-
-extension HomeViewController {
-	
-	override func numberOfSections(in collectionView: UICollectionView) -> Int {
-		return sections.count
-	}
-	
-	override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return sections[section].cellConfigurators.count
-	}
-	
-	override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let configurator = sections[indexPath.section].cellConfigurators[indexPath.row]
-		let cell = collectionView.dequeueReusableCell(cellType: configurator.viewAnyType, for: indexPath)
-		cell.unhighlight()
-		configurator.configureAny(cell: cell)
-		
-		return cell
 	}
 }

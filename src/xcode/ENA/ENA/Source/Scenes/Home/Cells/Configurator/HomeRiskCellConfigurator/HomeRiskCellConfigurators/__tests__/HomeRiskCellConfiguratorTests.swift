@@ -37,8 +37,8 @@ class HomeRiskCellConfiguratorTests: XCTestCase {
 			activeTracing: ActiveTracing(interval: .init(hours: 42))
 		)
 
-		guard let cell = loadCell(ofType: RiskLevelCollectionViewCell.self) else {
-			return XCTFail("Could not load RiskLevelCollectionViewCell.")
+		guard let cell = loadCell(ofType: HomeRiskLevelTableViewCell.self) else {
+			return XCTFail("Could not load HomeRiskLevelTableViewCell.")
 		}
 
 		configurator.configure(cell: cell)
@@ -86,8 +86,8 @@ class HomeRiskCellConfiguratorTests: XCTestCase {
 			detectionInterval: detectionInterval
 		)
 
-		guard let cell = loadCell(ofType: RiskLevelCollectionViewCell.self) else {
-			return XCTFail("Could not load RiskLevelCollectionViewCell.")
+		guard let cell = loadCell(ofType: HomeRiskLevelTableViewCell.self) else {
+			return XCTFail("Could not load HomeRiskLevelTableViewCell.")
 		}
 
 		configurator.configure(cell: cell)
@@ -123,7 +123,7 @@ class HomeRiskCellConfiguratorTests: XCTestCase {
 }
 
 private extension HomeRiskCellConfiguratorTests {
-	func loadCell<Cell: UICollectionViewCell>(ofType: Cell.Type) -> Cell? {
+	func loadCell<Cell: UITableViewCell>(ofType: Cell.Type) -> Cell? {
 		guard let cell = Bundle(for: Cell.self).loadNibNamed("\(Cell.self)", owner: nil)?.first as? Cell else {
 			return nil
 		}

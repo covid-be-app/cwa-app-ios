@@ -19,9 +19,9 @@
 
 import Foundation
 
-class HomeTestResultLoadingCellConfigurator: CollectionViewCellConfigurator {
+class HomeTestResultLoadingCellConfigurator: TableViewCellConfigurator {
 
-	func configure(cell: HomeTestResultLoadingCell) {
+	func configure(cell: HomeTestResultLoadingTableViewCell) {
 		cell.setupCell()
 		cell.title.text = AppStrings.Home.resultCardLoadingTitle
 		cell.body.text = AppStrings.Home.resultCardLoadingBody

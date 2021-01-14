@@ -245,16 +245,21 @@ final class SQLiteKeyValueStore {
 			guard let data = try? getData(for: key) else {
 				return nil
 			}
+			let array = try? JSONDecoder().decode(Array<Model>.self, from: data)
+			if	let arr = array,
+				let value = arr.first {
+				return value
+			}
+			
 			do {
-				let array = try JSONDecoder().decode(Array<Model>.self, from: data)
-				if let value = array.first {
-					return value
-				}
-
+				let value = try JSONDecoder().decode(Model.self, from: data) // Fallback for old installations
+				
+				return value
 			} catch {
 				logError(message: "Error when decoding value for \(key) from K/V SQLite store: \(error.localizedDescription)")
+				
+				return nil
 			}
-			return try? JSONDecoder().decode(Model.self, from: data) // Fallback for old installations
 		}
 		set {
 			do {

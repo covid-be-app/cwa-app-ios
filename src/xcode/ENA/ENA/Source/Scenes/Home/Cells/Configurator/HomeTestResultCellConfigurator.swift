@@ -23,19 +23,19 @@
 import Foundation
 import UIKit
 
-class HomeTestResultCellConfigurator: CollectionViewCellConfigurator {
+class HomeTestResultCellConfigurator: TableViewCellConfigurator {
 
 	var testResult: TestResult?
 
 	var primaryAction: (() -> Void)?
 
-	func configure(cell: HomeTestResultCollectionViewCell) {
+	func configure(cell: HomeTestResultTableViewCell) {
 		cell.delegate = self
 		configure(cell: cell, for: testResult)
 	}
 
 	// :BE: change test result from enum to struct
-	private func configure(cell: HomeTestResultCollectionViewCell, for testResult: TestResult?) {
+	private func configure(cell: HomeTestResultTableViewCell, for testResult: TestResult?) {
 		switch testResult?.result {
 		case .none: configureSubmit(cell: cell)
 		case .invalid: configureTestResultInvalid(cell: cell)
@@ -46,7 +46,7 @@ class HomeTestResultCellConfigurator: CollectionViewCellConfigurator {
 		}
 	}
 
-	func configureSubmit(cell: HomeTestResultCollectionViewCell) {
+	func configureSubmit(cell: HomeTestResultTableViewCell) {
 		cell.configure(
 			title: AppStrings.Home.submitCardTitle,
 			description: AppStrings.Home.submitCardBody,
@@ -56,7 +56,7 @@ class HomeTestResultCellConfigurator: CollectionViewCellConfigurator {
 		)
 	}
 
-	private func configureTestResultNegative(cell: HomeTestResultCollectionViewCell) {
+	private func configureTestResultNegative(cell: HomeTestResultTableViewCell) {
 		cell.configure(
 			title: AppStrings.Home.resultCardResultAvailableTitle,
 			subtitle: AppStrings.Home.resultCardNegativeTitle,
@@ -68,7 +68,7 @@ class HomeTestResultCellConfigurator: CollectionViewCellConfigurator {
 		)
 	}
 
-	private func configureTestResultInvalid(cell: HomeTestResultCollectionViewCell) {
+	private func configureTestResultInvalid(cell: HomeTestResultTableViewCell) {
 		cell.configure(
 			title: AppStrings.Home.resultCardResultAvailableTitle,
 			subtitle: AppStrings.Home.resultCardInvalidTitle,
@@ -80,7 +80,7 @@ class HomeTestResultCellConfigurator: CollectionViewCellConfigurator {
 		)
 	}
 
-	private func configureTestResultPending(cell: HomeTestResultCollectionViewCell) {
+	private func configureTestResultPending(cell: HomeTestResultTableViewCell) {
 		cell.configure(
 			title: AppStrings.Home.resultCardResultUnvailableTitle,
 			description: AppStrings.Home.resultCardPendingDesc,
@@ -102,8 +102,8 @@ class HomeTestResultCellConfigurator: CollectionViewCellConfigurator {
 	}
 }
 
-extension HomeTestResultCellConfigurator: HomeTestResultCollectionViewCellDelegate {
-	func testResultCollectionViewCellPrimaryActionTriggered(_ collectionViewCell: HomeTestResultCollectionViewCell) {
+extension HomeTestResultCellConfigurator: HomeTestResultTableViewCellDelegate {
+	func testResultCollectionViewCellPrimaryActionTriggered(_ collectionViewCell: HomeTestResultTableViewCell) {
 		primaryAction?()
 	}
 }

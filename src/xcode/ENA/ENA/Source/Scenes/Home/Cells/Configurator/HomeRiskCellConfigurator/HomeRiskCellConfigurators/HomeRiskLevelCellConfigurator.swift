@@ -94,11 +94,11 @@ class HomeRiskLevelCellConfigurator: HomeRiskCellConfigurator {
 
 	// MARK: Configuration
 
-	func configure(cell _: RiskLevelCollectionViewCell) {
+	func configure(cell _: HomeRiskLevelTableViewCell) {
 		fatalError("implement this method in children")
 	}
 
-	func setupAccessibility(_ cell: RiskLevelCollectionViewCell) {
+	func setupAccessibility(_ cell: HomeRiskLevelTableViewCell) {
 		cell.titleLabel.isAccessibilityElement = false
 		cell.chevronImageView.isAccessibilityElement = false
 		cell.viewContainer.isAccessibilityElement = false
@@ -121,7 +121,7 @@ class HomeRiskLevelCellConfigurator: HomeRiskCellConfigurator {
 
 	/// Convenience method that can be overwritten to configure the button without running the full configure(_:) method.
 	/// This is handy when very frequent updates such as the update countdown are applied to the button.
-	func configureButton(for cell: RiskLevelCollectionViewCell) {
+	func configureButton(for cell: HomeRiskLevelTableViewCell) {
 		cell.configureUpdateButton(
 			title: buttonTitle,
 			isEnabled: isButtonEnabled,
@@ -151,8 +151,8 @@ class HomeRiskLevelCellConfigurator: HomeRiskCellConfigurator {
 	}
 }
 
-extension HomeRiskLevelCellConfigurator: RiskLevelCollectionViewCellDelegate {
-	func updateButtonTapped(cell _: RiskLevelCollectionViewCell) {
+extension HomeRiskLevelCellConfigurator: HomeRiskLevelTableViewCellDelegate {
+	func updateButtonTapped(cell _: HomeRiskLevelTableViewCell) {
 		buttonAction?()
 	}
 }

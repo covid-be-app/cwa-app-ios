@@ -53,7 +53,7 @@ final class HomeLowRiskCellConfigurator: HomeRiskLevelCellConfigurator {
 
 	// MARK: Configuration
 
-	override func configure(cell: RiskLevelCollectionViewCell) {
+	override func configure(cell: HomeRiskLevelTableViewCell) {
 		cell.delegate = self
 
 		let title = isLoading ? AppStrings.Home.riskCardStatusCheckTitle : AppStrings.Home.riskCardLowTitle

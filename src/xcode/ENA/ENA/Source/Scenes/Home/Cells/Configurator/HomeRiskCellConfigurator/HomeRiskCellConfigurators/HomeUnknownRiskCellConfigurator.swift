@@ -1,6 +1,9 @@
 // Corona-Warn-App
 //
 // SAP SE and all other contributors
+//
+// Modified by Devside SRL
+//
 // copyright owners license this file to you under the Apache
 // License, Version 2.0 (the "License"); you may not use this
 // file except in compliance with the License.
@@ -17,60 +20,47 @@
 
 import UIKit
 
-final class HomeHighRiskCellConfigurator: HomeRiskLevelCellConfigurator {
-	private var numberRiskContacts: Int
-	private var daysSinceLastExposure: Int?
+final class HomeUnknownRiskCellConfigurator: HomeRiskLevelCellConfigurator {
+	// MARK: Configuration
 
-	// MARK: Creating a Home Risk Cell Configurator
-
+	// MARK: Creating a unknown Risk cell
 	init(
 		isLoading: Bool,
-		numberRiskContacts: Int,
-		daysSinceLastExposure: Int?,
 		lastUpdateDate: Date?,
-		manualExposureDetectionState: ManualExposureDetectionState?,
+		detectionInterval: Int,
 		detectionMode: DetectionMode,
-		detectionInterval: Int
+		manualExposureDetectionState: ManualExposureDetectionState?
 	) {
-		self.numberRiskContacts = numberRiskContacts
-		self.daysSinceLastExposure = daysSinceLastExposure
 		super.init(
 			isLoading: isLoading,
 			isButtonEnabled: manualExposureDetectionState == .possible,
 			isButtonHidden: detectionMode == .automatic,
-			detectionIntervalLabelHidden: detectionMode != .automatic,
+			detectionIntervalLabelHidden: true,  // :BE: remove label
 			lastUpdateDate: lastUpdateDate,
 			detectionInterval: detectionInterval
 		)
 	}
 
-	// MARK: Configuration
-
-	override func configure(cell: RiskLevelCollectionViewCell) {
+	override func configure(cell: HomeRiskLevelTableViewCell) {
 		cell.delegate = self
-
-		let title: String = isLoading ? AppStrings.Home.riskCardStatusCheckTitle : AppStrings.Home.riskCardHighTitle
+		let title: String = isLoading ? AppStrings.Home.riskCardStatusCheckTitle : AppStrings.Home.riskCardUnknownTitle
+		
 		let titleColor: UIColor = .enaColor(for: .textContrast)
 		cell.configureTitle(title: title, titleColor: titleColor)
 		cell.configureBody(text: "", bodyColor: titleColor, isHidden: true)
 
-		let color: UIColor = .enaColor(for: .riskHigh)
+		let color: UIColor = .enaColor(for: .riskNeutral)
 		let separatorColor: UIColor = .enaColor(for: .hairlineContrast)
 		var itemCellConfigurators: [HomeRiskViewConfiguratorAny] = []
 		if isLoading {
 			let isLoadingItem = HomeRiskLoadingItemViewConfigurator(title: AppStrings.Home.riskCardStatusCheckBody, titleColor: titleColor, isLoading: true, color: color, separatorColor: separatorColor)
 			itemCellConfigurators.append(isLoadingItem)
 		} else {
-			let numberOfDaysSinceLastExposure = daysSinceLastExposure ?? 0
-			let numberContactsTitle = String(format: AppStrings.Home.riskCardNumberContactsItemTitle, numberRiskContacts)
-			let item1 = HomeRiskImageItemViewConfigurator(title: numberContactsTitle, titleColor: titleColor, iconImage: UIImage(forceNamed: "Icons_RisikoBegegnung"), iconTintColor: titleColor, color: color, separatorColor: separatorColor)
-			let lastContactTitle = String(format: AppStrings.Home.riskCardLastContactItemTitle, numberOfDaysSinceLastExposure)
-			let item2 = HomeRiskImageItemViewConfigurator(title: lastContactTitle, titleColor: titleColor, iconImage: UIImage(forceNamed: "Icons_Calendar"), iconTintColor: titleColor, color: color, separatorColor: separatorColor)
-			let dateTitle = String(format: AppStrings.Home.riskCardDateItemTitle, lastUpdateDateString)
-			let item3 = HomeRiskImageItemViewConfigurator(title: dateTitle, titleColor: titleColor, iconImage: UIImage(forceNamed: "Icons_Aktualisiert"), iconTintColor: titleColor, color: color, separatorColor: separatorColor)
-			itemCellConfigurators.append(contentsOf: [item1, item2, item3])
+			let item = HomeRiskTextItemViewConfigurator(title: AppStrings.Home.riskCardUnknownItemTitle, titleColor: titleColor, color: color, separatorColor: separatorColor)
+			itemCellConfigurators.append(item)
 		}
 		cell.configureRiskViews(cellConfigurators: itemCellConfigurators)
+
 		cell.configureBackgroundColor(color: color)
 
 		let intervalTitle = String(format: AppStrings.Home.riskCardIntervalUpdateTitle, "\(detectionInterval)")
@@ -78,7 +68,6 @@ final class HomeHighRiskCellConfigurator: HomeRiskLevelCellConfigurator {
 			text: intervalTitle,
 			isHidden: detectionIntervalLabelHidden
 		)
-
 
 		configureButton(for: cell)
 		setupAccessibility(cell)
@@ -88,18 +77,14 @@ final class HomeHighRiskCellConfigurator: HomeRiskLevelCellConfigurator {
 
 	override func hash(into hasher: inout Swift.Hasher) {
 		super.hash(into: &hasher)
-		hasher.combine(numberRiskContacts)
-		hasher.combine(daysSinceLastExposure)
 	}
 
-	static func == (lhs: HomeHighRiskCellConfigurator, rhs: HomeHighRiskCellConfigurator) -> Bool {
+	static func == (lhs: HomeUnknownRiskCellConfigurator, rhs: HomeUnknownRiskCellConfigurator) -> Bool {
 		lhs.isLoading == rhs.isLoading &&
 		lhs.isButtonEnabled == rhs.isButtonEnabled &&
 		lhs.isButtonHidden == rhs.isButtonHidden &&
 		lhs.detectionIntervalLabelHidden == rhs.detectionIntervalLabelHidden &&
 		lhs.lastUpdateDate == rhs.lastUpdateDate &&
-		lhs.numberRiskContacts == rhs.numberRiskContacts &&
-		lhs.daysSinceLastExposure == rhs.daysSinceLastExposure &&
 		lhs.detectionInterval == rhs.detectionInterval
 	}
 }

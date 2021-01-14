@@ -63,7 +63,7 @@ final class HomeUnknown48hRiskCellConfigurator: HomeRiskLevelCellConfigurator {
 	// MARK: - UI Helper methods.
 
 	/// Adjusts the UI for the given cell, including setting text and adjusting colors.
-	private func configureUI(for cell: RiskLevelCollectionViewCell) {
+	private func configureUI(for cell: HomeRiskLevelTableViewCell) {
 		cell.configureBackgroundColor(color: .enaColor(for: .riskNeutral))
 		cell.configureTitle(title: title, titleColor: .enaColor(for: .textContrast))
 		cell.configureBody(text: AppStrings.Home.riskCardUnknown48hBody, bodyColor: .enaColor(for: .textContrast), isHidden: isLoading)
@@ -73,7 +73,7 @@ final class HomeUnknown48hRiskCellConfigurator: HomeRiskLevelCellConfigurator {
 	}
 
 	/// Adjusts the UI for the risk views of a given cell.
-	private func configureRiskViewsUI(for cell: RiskLevelCollectionViewCell) {
+	private func configureRiskViewsUI(for cell: HomeRiskLevelTableViewCell) {
 		let itemCellConfigurators = setupItemCellConfigurators()
 		cell.configureRiskViews(cellConfigurators: itemCellConfigurators)
 	}
@@ -118,7 +118,7 @@ final class HomeUnknown48hRiskCellConfigurator: HomeRiskLevelCellConfigurator {
 
 	// MARK: - Configuration.
 
-	override func configure(cell: RiskLevelCollectionViewCell) {
+	override func configure(cell: HomeRiskLevelTableViewCell) {
 		cell.delegate = self
 
 		// Configure the UI.

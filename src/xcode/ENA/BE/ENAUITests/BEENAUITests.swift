@@ -185,6 +185,7 @@ class BEENAUITests: XCTestCase {
 	func testNegativeTestResult() throws {
 		app.launchArguments.append(contentsOf: ["-testResult", "NEGATIVE"])
 		app.launch()
+		app.swipeUp()
 
 		XCTAssertTrue(app.buttons["AppStrings.Home.resultCardShowResultButton"].waitForExistence(timeout: 5.0))
 		snapshot("ScreenShot_\(#function)_001")
