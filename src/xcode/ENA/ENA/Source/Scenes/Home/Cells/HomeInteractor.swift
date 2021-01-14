@@ -58,20 +58,20 @@ final class HomeInteractor: RequiresAppDependencies {
 	// MARK: Properties
 	var state: State {
 		didSet {
-			homeViewController.setStateOfChildViewControllers()
+			homeViewController?.setStateOfChildViewControllers()
 			scheduleCountdownTimer()
 			buildSections()
 		}
 	}
 
-	private unowned var homeViewController: HomeTableViewController
+	private weak var homeViewController: HomeTableViewController?
 	private let exposureSubmissionService: ExposureSubmissionService
 	var enStateHandler: ENStateHandler?
 
 	private var detectionMode: DetectionMode { state.detectionMode }
 	private(set) var sections: SectionConfiguration = [] {
 		didSet {
-			homeViewController.updateSections()
+			homeViewController?.updateSections()
 		}
 	}
 
@@ -99,8 +99,8 @@ final class HomeInteractor: RequiresAppDependencies {
 
 	private func updateActiveCell() {
 		guard let indexPath = indexPathForActiveCell() else { return }
-		homeViewController.updateSections()
-		homeViewController.reloadCell(at: indexPath)
+		homeViewController?.updateSections()
+		homeViewController?.reloadCell(at: indexPath)
 	}
 
 	private func updateRiskLoading() {
@@ -117,8 +117,8 @@ final class HomeInteractor: RequiresAppDependencies {
 
 	private func reloadRiskCell() {
 		guard let indexPath = indexPathForRiskCell() else { return }
-		homeViewController.updateSections()
-		homeViewController.reloadCell(at: indexPath)
+		homeViewController?.updateSections()
+		homeViewController?.reloadCell(at: indexPath)
 	}
 
 	private func observeRisk() {
@@ -192,12 +192,12 @@ extension HomeInteractor {
 		testResultConfigurator.testResult = result
 		reloadActionSection()
 		guard let indexPath = indexPathForTestResultCell() else { return }
-		homeViewController.reloadCell(at: indexPath)
+		homeViewController?.reloadCell(at: indexPath)
 	}
 
 	func reloadActionSection() {
 		sections[0] = setupActionSectionDefinition()
-		homeViewController.reloadData()
+		homeViewController?.reloadData()
 	}
 }
 
@@ -276,20 +276,20 @@ extension HomeInteractor {
 	}
 
 	private func setupTestResultConfigurator() -> HomeTestResultCellConfigurator {
-		testResultConfigurator.primaryAction = homeViewController.showTestResultScreen
+		testResultConfigurator.primaryAction = homeViewController?.showTestResultScreen
 		return testResultConfigurator
 	}
 
 	func setupSubmitConfigurator() -> HomeTestResultCellConfigurator {
 		let submitConfigurator = HomeTestResultCellConfigurator()
-		submitConfigurator.primaryAction = homeViewController.showExposureSubmissionWithoutResult
+		submitConfigurator.primaryAction = homeViewController?.showExposureSubmissionWithoutResult
 		return submitConfigurator
 	}
 
 	func setupFindingPositiveRiskCellConfigurator() -> HomeFindingPositiveRiskCellConfigurator {
 		let configurator = HomeFindingPositiveRiskCellConfigurator()
 		configurator.nextAction = {
-			self.homeViewController.showExposureSubmission(with: self.testResult)
+			self.homeViewController?.showExposureSubmission(with: self.testResult)
 		}
 		return configurator
 	}
@@ -440,7 +440,7 @@ extension HomeInteractor {
 			switch result {
 			case .failure(let error):
 				// When we fail here, trigger an alert and set the state to pending.
-				self?.homeViewController.alertError(
+				self?.homeViewController?.alertError(
 					message: error.localizedDescription,
 					title: AppStrings.Home.resultCardLoadingErrorTitle,
 					completion: {
@@ -506,7 +506,7 @@ extension HomeInteractor: ENStateHandlerUpdating {
 
 extension HomeInteractor {
 	private func inActiveCellActionHandler() {
-		homeViewController.showExposureNotificationSetting()
+		homeViewController?.showExposureNotificationSetting()
 	}
 }
 
@@ -542,7 +542,7 @@ extension HomeInteractor: CountdownTimerDelegate {
 
 	func countdownTimer(_ timer: CountdownTimer, didUpdate time: String) {
 		guard let indexPath = self.indexPathForRiskCell() else { return }
-		guard let cell = homeViewController.cellForRow(at: indexPath) as? HomeRiskLevelTableViewCell else { return }
+		guard let cell = homeViewController?.cellForRow(at: indexPath) as? HomeRiskLevelTableViewCell else { return }
 
 		// We pass the time and let the configurator decide whether the button can be activated or not.
 		

@@ -39,10 +39,6 @@ class ENAUITests_00_Onboarding: XCTestCase {
 		app.launch()
 
 		// only run if onboarding screen is present
-		XCTAssert(app.staticTexts["AppStrings.Onboarding.onboardingInfo_togetherAgainstCoronaPage_title"].waitForExistence(timeout: 5.0))
-
-		// tap through the onboarding screens
-		//snapshot("ScreenShot_\(#function)_0000")
 		XCTAssertTrue(app.buttons["AppStrings.Onboarding.onboardingLetsGo"].waitForExistence(timeout: 5.0))
 		app.buttons["AppStrings.Onboarding.onboardingLetsGo"].tap()
 		//snapshot("ScreenShot_\(#function)_0001")
@@ -67,11 +63,10 @@ class ENAUITests_00_Onboarding: XCTestCase {
 		app.launch()
 
 		// only run if onboarding screen is present
-		XCTAssert(app.staticTexts["AppStrings.Onboarding.onboardingInfo_togetherAgainstCoronaPage_title"].waitForExistence(timeout: 5.0))
+		XCTAssertTrue(app.buttons["AppStrings.Onboarding.onboardingLetsGo"].waitForExistence(timeout: 5.0))
 
 		// tap through the onboarding screens
 		snapshot("ScreenShot_\(#function)_0000")
-		XCTAssertTrue(app.buttons["AppStrings.Onboarding.onboardingLetsGo"].waitForExistence(timeout: 5.0))
 		app.buttons["AppStrings.Onboarding.onboardingLetsGo"].tap()
 		snapshot("ScreenShot_\(#function)_0001")
 		XCTAssertTrue(app.buttons["AppStrings.Onboarding.onboardingContinue"].waitForExistence(timeout: 5.0))

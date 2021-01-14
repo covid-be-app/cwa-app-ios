@@ -115,7 +115,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		return provider
 	}()
 
-	#if targetEnvironment(simulator) || COMMUNITY
+	#if targetEnvironment(simulator) || COMMUNITY || UITESTING
 	// Enable third party contributors that do not have the required
 	// entitlements to also use the app
 	lazy var exposureManager: ExposureManager = {
