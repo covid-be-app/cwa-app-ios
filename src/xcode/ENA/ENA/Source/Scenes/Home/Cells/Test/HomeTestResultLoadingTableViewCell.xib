@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="HomeTestResultLoadingTableViewCell" customModule="ENA" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="beX-FS-UEc">
+                        <rect key="frame" x="16" y="11" width="288" height="22"/>
+                        <color key="backgroundColor" name="ENA Background Color"/>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="beX-FS-UEc" secondAttribute="bottom" id="Zue-za-RoV"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="beX-FS-UEc" secondAttribute="trailing" id="aBA-eh-rRw"/>
+                    <constraint firstItem="beX-FS-UEc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="puH-Ga-gFJ"/>
+                    <constraint firstItem="beX-FS-UEc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="q3W-YW-NE7"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="containerView" destination="beX-FS-UEc" id="T37-RI-hEK"/>
+                <outlet property="viewContainer" destination="beX-FS-UEc" id="EgM-wa-qcd"/>
+            </connections>
+            <point key="canvasLocation" x="-54" y="113"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="ENA Background Color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

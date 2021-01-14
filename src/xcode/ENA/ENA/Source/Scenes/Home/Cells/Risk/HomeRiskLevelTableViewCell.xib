@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="393" id="KGk-i7-Jjw" customClass="HomeRiskLevelTableViewCell" customModule="ENA" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="393"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="393"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SP9-en-hIt">
+                        <rect key="frame" x="16" y="11" width="288" height="371"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="TVk-BW-7zA">
+                                <rect key="frame" x="0.0" y="0.0" width="272" height="355"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8YF-t3-myA">
+                                        <rect key="frame" x="0.0" y="0.0" width="272" height="32"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title 2" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mr9-Sq-rx6" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="234" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" name="ENA Text Contrast Color"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="title2"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="999" insetsLayoutMarginsFromSafeArea="NO" image="Icons_Chevron" translatesAutoresizingMaskIntoConstraints="NO" id="7OL-Sa-cyq">
+                                                <rect key="frame" x="242" y="0.0" width="30" height="32"/>
+                                                <color key="tintColor" systemColor="systemGray2Color"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="IDa-f8-VMb"/>
+                                                    <constraint firstAttribute="width" constant="30" id="ih7-NV-xC0"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="749" insetsLayoutMarginsFromSafeArea="NO" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRY-5R-eWJ" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="48" width="272" height="183"/>
+                                        <string key="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="ENA Text Contrast Color"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="body"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xVG-aI-SiS">
+                                        <rect key="frame" x="0.0" y="247" width="272" height="42"/>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o82-2C-dfO" customClass="ENAButton" customModule="ENA" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="305" width="272" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="50" id="igx-Qm-RKn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <state key="normal" title="Button"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isInverted" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="updateButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="NoW-pB-bvh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="ENA Risk Low Color"/>
+                        <constraints>
+                            <constraint firstItem="TVk-BW-7zA" firstAttribute="top" secondItem="SP9-en-hIt" secondAttribute="topMargin" id="0VG-Ts-Vru"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TVk-BW-7zA" secondAttribute="trailing" id="H2A-NC-HmD"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="TVk-BW-7zA" secondAttribute="bottom" id="hXO-cr-c8k"/>
+                            <constraint firstItem="TVk-BW-7zA" firstAttribute="leading" secondItem="SP9-en-hIt" secondAttribute="leadingMargin" id="wJx-5E-aIN"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="SP9-en-hIt" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="870-Y5-pSa"/>
+                    <constraint firstItem="SP9-en-hIt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="dpK-ha-Vve"/>
+                    <constraint firstItem="SP9-en-hIt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="dvn-ZC-lAx"/>
+                    <constraint firstItem="SP9-en-hIt" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="gdF-au-8Ii"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="bodyLabel" destination="VRY-5R-eWJ" id="15n-QT-sEw"/>
+                <outlet property="chevronImageView" destination="7OL-Sa-cyq" id="sbn-RC-wAb"/>
+                <outlet property="riskViewStackView" destination="xVG-aI-SiS" id="zvI-JD-aOj"/>
+                <outlet property="stackView" destination="TVk-BW-7zA" id="KzB-7h-6pg"/>
+                <outlet property="titleLabel" destination="mr9-Sq-rx6" id="acW-8D-21u"/>
+                <outlet property="topContainer" destination="8YF-t3-myA" id="PwU-vw-3rv"/>
+                <outlet property="updateButton" destination="o82-2C-dfO" id="8aF-at-eUN"/>
+                <outlet property="viewContainer" destination="SP9-en-hIt" id="3D3-Pg-0ar"/>
+            </connections>
+            <point key="canvasLocation" x="19" y="0.0"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="VRY-5R-eWJ">
+            <size key="intrinsicContentSize" width="2267.5" height="20.5"/>
+        </designable>
+        <designable name="mr9-Sq-rx6">
+            <size key="intrinsicContentSize" width="47.5" height="20.5"/>
+        </designable>
+        <designable name="o82-2C-dfO">
+            <size key="intrinsicContentSize" width="54" height="33"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="Icons_Chevron" width="30" height="30"/>
+        <namedColor name="ENA Risk Low Color">
+            <color red="0.14509803921568629" green="0.72941176470588232" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ENA Text Contrast Color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

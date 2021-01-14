@@ -19,7 +19,7 @@
 
 import UIKit
 
-class BEInfectionSummaryTableViewCell: HomeTableViewCell {
+class BEInfectionSummaryTableViewCell: HomeCardTableViewCell {
 	@IBOutlet weak var titleLabel:UILabel!
 	@IBOutlet weak var dateRangeLabel:UILabel!
 	@IBOutlet weak var averagesView:UIStackView!
