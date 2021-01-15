@@ -245,10 +245,13 @@ final class SQLiteKeyValueStore {
 			guard let data = try? getData(for: key) else {
 				return nil
 			}
-			let array = try? JSONDecoder().decode(Array<Model>.self, from: data)
-			if	let arr = array,
-				let value = arr.first {
-				return value
+			let array = try? JSONDecoder().decode(Array<Model?>.self, from: data)
+			if	let arr = array {
+				if let value = arr.first {
+					return value
+				}
+				
+				return nil
 			}
 			
 			do {
