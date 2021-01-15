@@ -25,7 +25,7 @@ extension URLSession {
 		let coronaWarnURLSessionDelegate: CoronaWarnURLSessionDelegate? = nil
 		#else
 		let coronaWarnURLSessionDelegate = CoronaWarnURLSessionDelegate(
-			localPublicKey: "JSMzqOOrtyOT1kmau6zKhgT676hGgczD5VMdRMyJZFA="
+			publicKeyHash: "f512d8930ed4c694f2dff50cc4751e3b5326657498d4eadce06d5f6722522452"
 		)
 		#endif
 		return URLSession(

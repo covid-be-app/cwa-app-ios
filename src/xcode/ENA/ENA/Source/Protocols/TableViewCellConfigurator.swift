@@ -17,13 +17,15 @@
 
 import UIKit
 
-protocol TableViewCellConfiguratorAny {
+protocol TableViewCellConfiguratorAny: class {
 	var viewAnyType: UITableViewCell.Type { get }
 
 	func configureAny(cell: UITableViewCell)
+	
+	var hash: Int { get }
 }
 
-protocol TableViewCellConfigurator: TableViewCellConfiguratorAny {
+protocol TableViewCellConfigurator: TableViewCellConfiguratorAny, Hashable {
 	associatedtype CellType: UITableViewCell
 	func configure(cell: CellType)
 }
@@ -41,5 +43,11 @@ extension TableViewCellConfigurator {
 			logError(message: error)
 			fatalError(error)
 		}
+	}
+	
+	var hash: Int {
+		var hasher = Hasher()
+		hasher.combine(self)
+		return hasher.finalize()
 	}
 }

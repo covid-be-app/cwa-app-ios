@@ -18,15 +18,15 @@
 //
 
 import Foundation
-import Combine
+import OpenCombine
 
 class BEStatisticsService {
 	typealias InfectionSummaryHandler = (Result<BEInfectionSummary, Error>) -> Void
 	
 	private let client:Client
 
-	@Published private(set) var infectionSummary:BEInfectionSummary?
-	@Published private(set) var infectionSummaryUpdatedAt:Date?
+	@OpenCombine.Published private(set) var infectionSummary:BEInfectionSummary?
+	@OpenCombine.Published private(set) var infectionSummaryUpdatedAt:Date?
 	
 	private let infectionSummaryUpdateInterval:TimeInterval = 3600
 	

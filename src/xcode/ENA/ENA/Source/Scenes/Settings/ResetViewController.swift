@@ -76,7 +76,7 @@ final class ResetViewController: UIViewController {
 	}
 
 	@IBAction func discard(_: Any) {
-		dismiss(animated: true, completion: nil)
+		self.navigationController?.popViewController(animated: true)
 	}
 
 	private func setupView() {

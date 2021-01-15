@@ -1,19 +1,16 @@
-// Corona-Warn-App
 //
-// SAP SE and all other contributors
-// copyright owners license this file to you under the Apache
-// License, Version 2.0 (the "License"); you may not use this
-// file except in compliance with the License.
-// You may obtain a copy of the License at
+//  SnapshotHelper.swift
+//  Example
 //
-// http://www.apache.org/licenses/LICENSE-2.0
+//  Created by Felix Krause on 10/8/15.
 //
-// Unless required by applicable law or agreed to in writing,
-// software distributed under the License is distributed on an
-// "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-// KIND, either express or implied.  See the License for the
-// specific language governing permissions and limitations
-// under the License.
+
+// -----------------------------------------------------
+// IMPORTANT: When modifying this file, make sure to
+//            increment the version number at the very
+//            bottom of the file to notify users about
+//            the new SnapshotHelper.swift
+// -----------------------------------------------------
 
 import Foundation
 import XCTest
@@ -93,7 +90,6 @@ open class Snapshot: NSObject {
             app.launchArguments += ["-AppleLanguages", "(\(deviceLanguage))"]
         } catch {
             NSLog("Couldn't detect/set language...")
-			app.launchArguments += ["-AppleLanguages", "(de)"]
         }
     }
 
@@ -117,10 +113,8 @@ open class Snapshot: NSObject {
         }
 
         if !locale.isEmpty {
-            app.launchArguments += ["-AppleLocale", "\(locale)"]
-		} else {
-			app.launchArguments += ["-AppleLocale", "de_DE"]
-		}
+            app.launchArguments += ["-AppleLocale", "\"\(locale)\""]
+        }
     }
 
     class func setLaunchArguments(_ app: XCUIApplication) {
@@ -171,6 +165,12 @@ open class Snapshot: NSObject {
             }
 
             let screenshot = XCUIScreen.main.screenshot()
+            #if os(iOS)
+            let image = XCUIDevice.shared.orientation.isLandscape ?  fixLandscapeOrientation(image: screenshot.image) : screenshot.image
+            #else
+            let image = screenshot.image
+            #endif
+
             guard var simulator = ProcessInfo().environment["SIMULATOR_DEVICE_NAME"], let screenshotsDir = screenshotsDirectory else { return }
 
             do {
@@ -180,12 +180,29 @@ open class Snapshot: NSObject {
                 simulator = regex.stringByReplacingMatches(in: simulator, range: range, withTemplate: "")
 
                 let path = screenshotsDir.appendingPathComponent("\(simulator)-\(name).png")
-                try screenshot.pngRepresentation.write(to: path)
+                #if swift(<5.0)
+                    UIImagePNGRepresentation(image)?.write(to: path, options: .atomic)
+                #else
+                    try image.pngData()?.write(to: path, options: .atomic)
+                #endif
             } catch let error {
                 NSLog("Problem writing screenshot: \(name) to \(screenshotsDir)/\(simulator)-\(name).png")
                 NSLog(error.localizedDescription)
             }
         #endif
+    }
+
+    class func fixLandscapeOrientation(image: UIImage) -> UIImage {
+        if #available(iOS 10.0, *) {
+            let format = UIGraphicsImageRendererFormat()
+            format.scale = image.scale
+            let renderer = UIGraphicsImageRenderer(size: image.size, format: format)
+            return renderer.image { context in
+                image.draw(in: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height))
+            }
+        } else {
+            return image
+        }
     }
 
     class func waitForLoadingIndicatorToDisappear(within timeout: TimeInterval) {
@@ -285,4 +302,4 @@ private extension CGFloat {
 
 // Please don't remove the lines below
 // They are used to detect outdated configuration files
-// SnapshotHelperVersion [1.23]
+// SnapshotHelperVersion [1.24]

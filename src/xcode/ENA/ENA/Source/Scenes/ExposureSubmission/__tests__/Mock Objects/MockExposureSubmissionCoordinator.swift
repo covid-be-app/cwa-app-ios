@@ -48,7 +48,8 @@ class MockExposureSubmissionCoordinator: ExposureSubmissionCoordinating {
 
 	func showThankYouScreen() { }
 	
-	func submitExposureKeys(_ exposureKeys: [ENTemporaryExposureKey]) {
+	func submitExposureKeys(_ exposureKeys: [ENTemporaryExposureKey], completion: @escaping (() -> Void)) {
 		submitExposureCallback?()
+		completion()
 	}
 }

@@ -34,10 +34,10 @@ class NotificationSettingsViewController: UIViewController {
 	let store: Store
 	var viewModel = NotificationSettingsViewModel.notificationsOff()
 
-	init?(coder: NSCoder, store: Store) {
+	init(store: Store) {
 		self.store = store
 
-		super.init(coder: coder)
+		super.init(nibName: nil, bundle: nil)
 	}
 
 	@available(*, unavailable)
@@ -48,9 +48,20 @@ class NotificationSettingsViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
+		tableView.backgroundColor = .enaColor(for: .background)
 		tableView.delegate = self
 		tableView.dataSource = self
 		tableView.separatorColor = .enaColor(for: .hairline)
+
+		tableView.register(
+			UINib(nibName: String(describing: NotificationSettingsOnTableViewCell.self), bundle: nil),
+			forCellReuseIdentifier: NotificationSettingsViewModel.SettingsOnItem.identifier
+		)
+		
+		tableView.register(
+			UINib(nibName: String(describing: NotificationSettingsOffTableViewCell.self), bundle: nil),
+			forCellReuseIdentifier: NotificationSettingsViewModel.SettingsOffItem.identifier
+		)
 
 		navigationItem.title = AppStrings.NotificationSettings.navigationBarTitle
 		navigationController?.navigationBar.prefersLargeTitles = true
@@ -196,7 +207,7 @@ extension NotificationSettingsViewController: UITableViewDataSource, UITableView
 	private func configureCell(_ cellModel: NotificationSettingsViewModel.SettingsItems, indexPath: IndexPath) -> UITableViewCell {
 		switch cellModel {
 		case let .riskChanges(item), let .testsStatus(item):
-			guard let cell = tableView.dequeueReusableCell(withIdentifier: item.identifier, for: indexPath) as? NotificationSettingsOnTableViewCell else {
+			guard let cell = tableView.dequeueReusableCell(withIdentifier: NotificationSettingsViewModel.SettingsOnItem.identifier, for: indexPath) as? NotificationSettingsOnTableViewCell else {
 				fatalError("No cell for reuse identifier.")
 			}
 
@@ -205,7 +216,7 @@ extension NotificationSettingsViewController: UITableViewDataSource, UITableView
 
 			return cell
 		case let .enableNotifications(item):
-			guard let cell = tableView.dequeueReusableCell(withIdentifier: item.identifier, for: indexPath) as? NotificationSettingsOffTableViewCell else {
+			guard let cell = tableView.dequeueReusableCell(withIdentifier: NotificationSettingsViewModel.SettingsOffItem.identifier, for: indexPath) as? NotificationSettingsOffTableViewCell else {
 				fatalError("No cell for reuse identifier.")
 			}
 

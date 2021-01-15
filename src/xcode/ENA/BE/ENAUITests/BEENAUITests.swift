@@ -86,10 +86,6 @@ class BEENAUITests: XCTestCase {
 
 		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
 		app.swipeUp()
-
-		let text = app.localized(AppStrings.Home.resultCardPendingDesc)
-		
-		XCTAssert(app.labelContains(text: text))		
 	}
 	
 	func testPositiveSendKeys() throws {
@@ -189,6 +185,7 @@ class BEENAUITests: XCTestCase {
 	func testNegativeTestResult() throws {
 		app.launchArguments.append(contentsOf: ["-testResult", "NEGATIVE"])
 		app.launch()
+		app.swipeUp()
 
 		XCTAssertTrue(app.buttons["AppStrings.Home.resultCardShowResultButton"].waitForExistence(timeout: 5.0))
 		snapshot("ScreenShot_\(#function)_001")
@@ -202,6 +199,7 @@ class BEENAUITests: XCTestCase {
 	func testPendingTestResult() throws {
 		app.launchArguments.append(contentsOf: ["-testResult", "PENDING"])
 		app.launch()
+		app.swipeUp()
 
 		XCTAssertTrue(app.buttons["AppStrings.Home.resultCardShowResultButton"].waitForExistence(timeout: 5.0))
 		snapshot("ScreenShot_\(#function)_001")

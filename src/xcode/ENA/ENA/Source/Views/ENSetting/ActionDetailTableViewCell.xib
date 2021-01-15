@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="actionDetailCell" id="b4x-X0-ZnC" userLabel="detailedActionCell" customClass="ActionDetailTableViewCell" customModule="ENA" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="484"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b4x-X0-ZnC" id="V6O-uI-KDN">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="484"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SYN-Ut-eDG">
+                        <rect key="frame" x="16" y="0.0" width="382" height="484"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Laq-H2-FH2">
+                                <rect key="frame" x="16" y="16" width="350" height="452"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6Gx-II-9PJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="108"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Title 2" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vr8-0i-oGB" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="258" height="108"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" name="ENA Text Primary 1 Color"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="title2"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KwF-c4-Q70">
+                                                <rect key="frame" x="266" y="0.0" width="84" height="108"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VeM-rc-lJh">
+                                                        <rect key="frame" x="20" y="0.0" width="64" height="28"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Y5-zk-lYk">
+                                                                <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="28" id="GZv-7e-CB5"/>
+                                                                    <constraint firstAttribute="width" constant="28" id="vnC-c7-1wv"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="6"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </imageView>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nal-0U-j3z">
+                                                                <rect key="frame" x="36" y="0.0" width="28" height="28"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="28" id="5Qo-EO-eQp"/>
+                                                                    <constraint firstAttribute="height" constant="28" id="VE2-T2-g18"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="6"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </imageView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="VeM-rc-lJh" firstAttribute="top" secondItem="KwF-c4-Q70" secondAttribute="top" id="7dT-qP-yTk"/>
+                                                    <constraint firstAttribute="trailing" secondItem="VeM-rc-lJh" secondAttribute="trailing" id="Dzp-J7-RQz"/>
+                                                    <constraint firstItem="VeM-rc-lJh" firstAttribute="leading" secondItem="KwF-c4-Q70" secondAttribute="leading" constant="20" id="rA8-nb-9QD"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVV-R4-wqL" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="123" width="350" height="264"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="ENA Text Primary 1 Color"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="body"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PAV-qh-hb5" customClass="ENAButton" customModule="ENA" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="402" width="350" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="actionButtonTapped:" destination="b4x-X0-ZnC" eventType="touchUpInside" id="KO9-XU-sCD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="ENA Separator Color"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Laq-H2-FH2" secondAttribute="bottom" constant="16" id="F55-jX-k6y"/>
+                            <constraint firstItem="Laq-H2-FH2" firstAttribute="top" secondItem="SYN-Ut-eDG" secondAttribute="top" constant="16" id="f7Z-nv-9g6"/>
+                            <constraint firstItem="Laq-H2-FH2" firstAttribute="leading" secondItem="SYN-Ut-eDG" secondAttribute="leading" constant="16" id="j5K-5J-fX3"/>
+                            <constraint firstAttribute="trailing" secondItem="Laq-H2-FH2" secondAttribute="trailing" constant="16" id="s27-Do-3Rm"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="14"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="SYN-Ut-eDG" secondAttribute="trailing" constant="16" id="ERJ-5J-rW7"/>
+                    <constraint firstItem="SYN-Ut-eDG" firstAttribute="top" secondItem="V6O-uI-KDN" secondAttribute="top" id="OSg-To-AXI"/>
+                    <constraint firstAttribute="bottom" secondItem="SYN-Ut-eDG" secondAttribute="bottom" id="TYo-RN-e1f"/>
+                    <constraint firstItem="SYN-Ut-eDG" firstAttribute="leading" secondItem="V6O-uI-KDN" secondAttribute="leading" constant="16" id="eyR-Xb-fNw"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="actionButton" destination="PAV-qh-hb5" id="Kur-IC-pr6"/>
+                <outlet property="actionTitleLabel" destination="Vr8-0i-oGB" id="KiL-Tz-WnW"/>
+                <outlet property="descriptionLabel" destination="vVV-R4-wqL" id="NVS-d5-qa9"/>
+                <outlet property="iconImageView1" destination="0Y5-zk-lYk" id="sUA-qc-GDo"/>
+                <outlet property="iconImageView2" destination="Nal-0U-j3z" id="D6g-ud-YHK"/>
+            </connections>
+            <point key="canvasLocation" x="45" y="113"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="PAV-qh-hb5">
+            <size key="intrinsicContentSize" width="70" height="50"/>
+        </designable>
+        <designable name="Vr8-0i-oGB">
+            <size key="intrinsicContentSize" width="63.5" height="26.5"/>
+        </designable>
+        <designable name="vVV-R4-wqL">
+            <size key="intrinsicContentSize" width="3951" height="20.5"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="ENA Separator Color">
+            <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ENA Text Primary 1 Color">
+            <color red="0.090196078431372548" green="0.098039215686274508" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -17,14 +17,22 @@
 
 @testable import ENA
 import XCTest
-import CryptoKit
 import ZIPFoundation
 
 final class SAPDownloadedPackageTests: XCTestCase {
 
-	private lazy var signingKey = P256.Signing.PrivateKey()
+	private lazy var signingKey: PrivateKey = {
+		do {
+			let value = try PrivateKey()
+			
+			return value
+		} catch {
+			fatalError("error")
+		}
+	}()
+	
 	private lazy var publicKey = signingKey.publicKey
-	private let defaultBundleId = Bundle.main.bundleIdentifier ?? "de.rki.coronawarnapp"
+	private let defaultBundleId = Bundle.main.bundleIdentifier ?? "be.sciensano.coronalertbe"
 	private lazy var mockKeyProvider: PublicKeyProviding = { _ in return self.publicKey }
 	private lazy var verifier = SAPDownloadedPackage.Verifier(key: mockKeyProvider)
 

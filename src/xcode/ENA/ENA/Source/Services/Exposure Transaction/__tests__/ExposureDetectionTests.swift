@@ -23,7 +23,7 @@
 import XCTest
 @testable import ENA
 import ExposureNotification
-import Combine
+import OpenCombine
 
 final class ExposureDetectionTransactionTests: XCTestCase {
 

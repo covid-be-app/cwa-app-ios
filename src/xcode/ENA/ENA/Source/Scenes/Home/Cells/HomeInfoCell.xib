@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="139" id="wBG-Fq-X5L" customClass="HomeInfoCell" customModule="ENA" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="139"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wBG-Fq-X5L" id="BQZ-2A-dxx">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="139"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgj-QD-KwZ" userLabel="Container View">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="139"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="fM7-tm-HOb">
+                                <rect key="frame" x="16" y="16" width="367" height="107"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Headline" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zx7-qs-Mhy" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="367" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="ENA Text Primary 1 Color"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="headline"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" insetsLayoutMarginsFromSafeArea="NO" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLt-21-Dby" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="367" height="82.5"/>
+                                        <string key="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="ENA Text Primary 2 Color"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="subheadline"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" insetsLayoutMarginsFromSafeArea="NO" image="Icons_Chevron_plain" translatesAutoresizingMaskIntoConstraints="NO" id="jDX-cr-nwZ">
+                                <rect key="frame" x="391" y="20.5" width="7" height="11.5"/>
+                                <color key="tintColor" name="ENA Chevron Color"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eh4-2D-a8o">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
+                                <color key="backgroundColor" name="ENA Hairline Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="gtq-Ml-BR1" customClass="PixelPerfectLayoutConstraint" customModule="ENA" customModuleProvider="target"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3G-7Q-UTp">
+                                <rect key="frame" x="0.0" y="138" width="414" height="1"/>
+                                <color key="backgroundColor" name="ENA Hairline Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="T8g-4K-oPX" customClass="PixelPerfectLayoutConstraint" customModule="ENA" customModuleProvider="target"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" name="ENA Background Color"/>
+                        <constraints>
+                            <constraint firstItem="fM7-tm-HOb" firstAttribute="top" secondItem="kgj-QD-KwZ" secondAttribute="topMargin" id="Bcz-2l-O5e"/>
+                            <constraint firstItem="fM7-tm-HOb" firstAttribute="leading" secondItem="kgj-QD-KwZ" secondAttribute="leadingMargin" id="FCR-g0-Of9"/>
+                            <constraint firstItem="jDX-cr-nwZ" firstAttribute="centerY" secondItem="zx7-qs-Mhy" secondAttribute="centerY" id="JGD-oq-OFt"/>
+                            <constraint firstItem="eh4-2D-a8o" firstAttribute="leading" secondItem="kgj-QD-KwZ" secondAttribute="leading" id="Ldw-37-OPa"/>
+                            <constraint firstAttribute="bottom" secondItem="N3G-7Q-UTp" secondAttribute="bottom" id="Nrx-s2-pdG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jDX-cr-nwZ" secondAttribute="trailing" id="Q6H-v8-i61"/>
+                            <constraint firstItem="N3G-7Q-UTp" firstAttribute="leading" secondItem="kgj-QD-KwZ" secondAttribute="leading" id="YcY-27-8u8"/>
+                            <constraint firstItem="jDX-cr-nwZ" firstAttribute="leading" secondItem="fM7-tm-HOb" secondAttribute="trailing" constant="8" id="aL9-1J-K8X"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="fM7-tm-HOb" secondAttribute="bottom" id="gVH-wc-dQx"/>
+                            <constraint firstItem="eh4-2D-a8o" firstAttribute="top" secondItem="kgj-QD-KwZ" secondAttribute="top" id="myo-ib-Y8b"/>
+                            <constraint firstAttribute="trailing" secondItem="eh4-2D-a8o" secondAttribute="trailing" id="nYh-ze-JTB"/>
+                            <constraint firstAttribute="trailing" secondItem="N3G-7Q-UTp" secondAttribute="trailing" id="ruV-vp-b8L"/>
+                        </constraints>
+                        <edgeInsets key="layoutMargins" top="16" left="16" bottom="16" right="16"/>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="kgj-QD-KwZ" firstAttribute="leading" secondItem="BQZ-2A-dxx" secondAttribute="leading" id="22r-8C-Sih"/>
+                    <constraint firstItem="kgj-QD-KwZ" firstAttribute="top" secondItem="BQZ-2A-dxx" secondAttribute="top" id="DVu-od-q96"/>
+                    <constraint firstAttribute="bottom" secondItem="kgj-QD-KwZ" secondAttribute="bottom" id="hrx-I5-AQv"/>
+                    <constraint firstAttribute="trailing" secondItem="kgj-QD-KwZ" secondAttribute="trailing" id="ngX-Sd-qcV"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="bodyLabel" destination="dLt-21-Dby" id="zsp-7c-Q8N"/>
+                <outlet property="bottomDividerLeadingConstraint" destination="YcY-27-8u8" id="Rxb-07-Xhf"/>
+                <outlet property="bottomDividerView" destination="N3G-7Q-UTp" id="Tkc-l5-d0d"/>
+                <outlet property="chevronImageView" destination="jDX-cr-nwZ" id="DAk-oc-SgH"/>
+                <outlet property="titleLabel" destination="zx7-qs-Mhy" id="gjb-OC-RBg"/>
+                <outlet property="topDividerView" destination="eh4-2D-a8o" id="wjH-Bm-gHU"/>
+            </connections>
+            <point key="canvasLocation" x="-313.04347826086956" y="124.21875"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="dLt-21-Dby">
+            <size key="intrinsicContentSize" width="1636.5" height="20.5"/>
+        </designable>
+        <designable name="zx7-qs-Mhy">
+            <size key="intrinsicContentSize" width="67" height="20.5"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="Icons_Chevron_plain" width="7" height="12"/>
+        <namedColor name="ENA Background Color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ENA Chevron Color">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.30000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ENA Hairline Color">
+            <color red="0.090196078431372548" green="0.098039215686274508" blue="0.10196078431372549" alpha="0.10000000149011612" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ENA Text Primary 1 Color">
+            <color red="0.090196078431372548" green="0.098039215686274508" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ENA Text Primary 2 Color">
+            <color red="0.090196078431372548" green="0.098039215686274508" blue="0.10196078431372549" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
