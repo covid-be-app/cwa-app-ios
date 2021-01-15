@@ -98,9 +98,7 @@ final class HomeInteractor: RequiresAppDependencies {
 	}
 
 	private func updateActiveCell() {
-		guard let indexPath = indexPathForActiveCell() else { return }
 		homeViewController?.updateSections()
-		homeViewController?.reloadCell(at: indexPath)
 	}
 
 	private func updateRiskLoading() {
@@ -116,9 +114,7 @@ final class HomeInteractor: RequiresAppDependencies {
 	}
 
 	private func reloadRiskCell() {
-		guard let indexPath = indexPathForRiskCell() else { return }
 		homeViewController?.updateSections()
-		homeViewController?.reloadCell(at: indexPath)
 	}
 
 	private func observeRisk() {
@@ -191,8 +187,8 @@ extension HomeInteractor {
 	private func reloadTestResult(with result: TestResult) {
 		testResultConfigurator.testResult = result
 		reloadActionSection()
-		guard let indexPath = indexPathForTestResultCell() else { return }
-		homeViewController?.reloadCell(at: indexPath)
+		//guard let indexPath = indexPathForTestResultCell() else { return }
+		homeViewController?.reloadData()
 	}
 
 	func reloadActionSection() {

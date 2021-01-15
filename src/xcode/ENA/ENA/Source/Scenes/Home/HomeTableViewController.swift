@@ -45,8 +45,13 @@ class HomeTableViewController: UIViewController, RequiresAppDependencies {
 		case testResultLoading = "testResultLoading"
 	}
 	
-	var sections: HomeInteractor.SectionConfiguration = []
+	var sections: HomeInteractor.SectionConfiguration = [] {
+		didSet {
+			reloadData()
+		}
+	}
 
+	private var tableViewSectionHashes: [[Int]] = []
 	
 	private var homeInteractor: HomeInteractor!
 	private var tableView = UITableView()
@@ -104,7 +109,7 @@ class HomeTableViewController: UIViewController, RequiresAppDependencies {
 
 		homeInteractor.buildSections()
 		updateSections()
-		tableView.reloadData()
+		reloadData()
 
 		setStateOfChildViewControllers()
 		
@@ -115,9 +120,77 @@ class HomeTableViewController: UIViewController, RequiresAppDependencies {
 	}
 	
 	func reloadData() {
-		tableView.reloadData()
+		
+		if sections.count != tableViewSectionHashes.count {
+			fullReload()
+			return
+		}
+		
+		sections.enumerated().forEach { sectionIndex, section in
+			let hashes = tableViewSectionHashes[sectionIndex]
+			
+			if hashes.count != section.cellConfigurators.count {
+				reloadSection(sectionIndex)
+			} else {
+				var rowsToReload: [Int] = []
+				
+				// we need to reconfigure unchanged rows
+				// because some cell configurators apparently latch on the cell as delegate
+				// and when they are replaced here of course the delegate becomes nil
+				var rowsToReconfigure: [Int] = []
+
+				hashes.enumerated().forEach { rowIndex, hash in
+					let configurator = section.cellConfigurators[rowIndex]
+					let newHash = configurator.hash
+				
+					if newHash != hash {
+						rowsToReload.append(rowIndex)
+					} else {
+						rowsToReconfigure.append(rowIndex)
+					}
+				}
+				
+				if !rowsToReload.isEmpty {
+					reloadRows(rowsToReload, in: sectionIndex)
+				}
+				
+				if !rowsToReconfigure.isEmpty {
+					reconfigureRows(rowsToReconfigure, in: sectionIndex)
+				}
+			}
+		}
 	}
 	
+	private func fullReload() {
+		tableViewSectionHashes = sections.map { section in
+			return section.cellConfigurators.map { $0.hash }
+		}
+		
+		tableView.reloadData()
+	}
+
+	private func reloadSection(_ index: Int) {
+		tableViewSectionHashes[index] = sections[index].cellConfigurators.map { $0.hash }
+
+		tableView.reloadSections(IndexSet([index]), with: .automatic)
+	}
+	
+	private func reloadRows(_ rows: [Int], in section: Int) {
+		tableViewSectionHashes[section] = sections[section].cellConfigurators.map { $0.hash }
+		let indexPaths = rows.map { IndexPath(row: $0, section: section) }
+		tableView.reloadRows(at: indexPaths, with: .automatic)
+	}
+
+	private func reconfigureRows(_ rows: [Int], in section: Int) {
+		let configurators = sections[section].cellConfigurators
+		rows.forEach { row in
+			let configurator = configurators[row]
+			if let cell = tableView.cellForRow(at: IndexPath(row: row, section: section)) {
+				configurator.configureAny(cell: cell)
+			}
+		}
+	}
+
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		homeInteractor.updateTestResults()
@@ -128,9 +201,9 @@ class HomeTableViewController: UIViewController, RequiresAppDependencies {
 	
 	func updateSections() {
 		sections = homeInteractor.sections
-		tableView.reloadData()
+		reloadData()
 	}
-
+	
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		guard store.userNeedsToBeInformedAboutHowRiskDetectionWorks else {
@@ -199,7 +272,7 @@ class HomeTableViewController: UIViewController, RequiresAppDependencies {
 		homeInteractor.state.exposureManagerState = exposureManagerState
 		homeInteractor.state.risk = risk
 
-		tableView.reloadData()
+		reloadData()
 	}
 
 	func showExposureSubmissionWithoutResult() {
@@ -255,14 +328,6 @@ class HomeTableViewController: UIViewController, RequiresAppDependencies {
 		tableView.register(UINib(nibName: BEInfectionSummaryTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: BEInfectionSummaryTableViewCell.stringName())
 	}
 	
-	func reloadCell(at indexPath: IndexPath) {
-		guard let cell = tableView.cellForRow(at: indexPath) else { return }
-		
-		sections[indexPath.section].cellConfigurators[indexPath.item].configureAny(cell: cell)
-		
-		tableView.reloadRows(at: [indexPath], with: .automatic)
-	}
-
 	private func showScreenForActionSectionForCell(at indexPath: IndexPath) {
 		let cell = tableView.cellForRow(at: indexPath)
 		switch cell {
@@ -380,14 +445,14 @@ extension HomeTableViewController {
 extension HomeTableViewController: ExposureStateUpdating {
 	func updateExposureState(_ state: ExposureManagerState) {
 		homeInteractor.state.exposureManagerState = state
-		tableView.reloadData()
+		reloadData()
 	}
 }
 
 extension HomeTableViewController: ENStateHandlerUpdating {
 	func updateEnState(_ state: ENStateHandler.State) {
 		homeInteractor.state.enState = state
-		tableView.reloadData()
+		reloadData()
 	}
 }
 
