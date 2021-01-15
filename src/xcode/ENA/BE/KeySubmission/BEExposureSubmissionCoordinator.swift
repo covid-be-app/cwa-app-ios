@@ -107,8 +107,9 @@ class BEExposureSubmissionCoordinator : NSObject, ExposureSubmissionCoordinating
 		push(vc)
 	}
 	
-	func submitExposureKeys(_ exposureKeys:[ENTemporaryExposureKey]) {
+	func submitExposureKeys(_ exposureKeys:[ENTemporaryExposureKey], completion: @escaping (() -> Void)) {
 		exposureSubmissionService.submitExposure(keys: exposureKeys) { error in
+			completion()
 			if let error = error {
 				logError(message: "error: \(error.localizedDescription)", level: .error)
 				let alert = UIViewController.setupErrorAlert(message: error.localizedDescription)

@@ -310,8 +310,11 @@ final class ENAExposureManager: NSObject, ExposureManager {
 	/// Reset the ExposureManager
 	func reset(handler: (() -> Void)?) {
 		statusObservation?.invalidate()
+		statusObservation = nil
+		
 		disableIfNeeded { _ in
 			self.exposureManagerObserver = nil
+			
 			self.invalidate {
 				self.manager = ENManager()
 				handler?()

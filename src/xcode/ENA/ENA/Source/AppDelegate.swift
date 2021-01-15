@@ -390,17 +390,21 @@ extension AppDelegate: CoordinatorDelegate {
 extension AppDelegate {
 		
 	func resetApplication() {
+		window?.isUserInteractionEnabled = false
 		do {
 			let newKey = try KeychainHelper().generateDatabaseKey()
 			store.clearAll(key: newKey)
 		} catch {
 			fatalError("Creating new database key failed")
 		}
+		NotificationCenter.default.post(name: .isOnboardedDidChange, object: nil)
+		
 		UIApplication.coronaWarnDelegate().downloadedPackagesStore.reset()
 		UIApplication.coronaWarnDelegate().downloadedPackagesStore.open()
 		exposureManager.reset {
 			self.exposureManager.resume(observer: self)
 			NotificationCenter.default.post(name: .isOnboardedDidChange, object: nil)
+			self.window?.isUserInteractionEnabled = true
 		}
 	}
 }

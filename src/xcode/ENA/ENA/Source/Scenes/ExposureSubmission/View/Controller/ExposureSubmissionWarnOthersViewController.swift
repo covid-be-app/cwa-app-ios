@@ -123,6 +123,7 @@ class ExposureSubmissionWarnOthersViewController: DynamicTableViewController, EN
 
 extension ExposureSubmissionWarnOthersViewController {
 	func navigationController(_ navigationController: ENANavigationControllerWithFooter, didTapPrimaryButton button: UIButton) {
+		navigationFooterItem?.isPrimaryButtonEnabled = false
 		startSubmitProcess()
 	}
 }

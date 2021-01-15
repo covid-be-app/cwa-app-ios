@@ -30,6 +30,8 @@ class BEExposureSubmissionWarnOthersViewController: ExposureSubmissionWarnOthers
 		exposureSubmissionService?.retrieveDiagnosisKeys { result in
 			switch result {
 			case .failure(let error):
+				self.navigationFooterItem?.isPrimaryButtonEnabled = true
+
 				switch error {
 				case .noKeys:
 					self.exposureSubmissionService?.finalizeSubmissionWithoutKeys()
@@ -44,7 +46,9 @@ class BEExposureSubmissionWarnOthersViewController: ExposureSubmissionWarnOthers
 				}
 				
 			case .success(let keys):
-				self.coordinator!.submitExposureKeys(keys)
+				self.coordinator!.submitExposureKeys(keys) {
+					self.navigationFooterItem?.isPrimaryButtonEnabled = true
+				}
 			}
 		}
 	}
