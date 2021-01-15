@@ -1,4 +1,3 @@
-#!zsh
 set -euo pipefail
 
 if [[ -f $1 ]]; then

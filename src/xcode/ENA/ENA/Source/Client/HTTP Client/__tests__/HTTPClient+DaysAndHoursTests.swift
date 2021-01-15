@@ -18,7 +18,6 @@
 @testable import ENA
 import ExposureNotification
 import XCTest
-import CryptoKit
 
 final class HTTPClientDaysAndHoursTests: XCTestCase {
 	let binFileSize = 501

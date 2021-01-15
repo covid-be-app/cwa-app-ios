@@ -30,17 +30,13 @@ final class ExposureSubmissionNavigationControllerTest: XCTestCase {
 
 	private func createVC() -> ExposureSubmissionNavigationController {
 		// rootVC needs to be a ENANavigationControllerWithFooterChild to support buttons.
-		let rootVC = AppStoryboard.exposureSubmission.initiate(viewControllerType: ExposureSubmissionIntroViewController.self) { coder -> UIViewController? in
-			return ExposureSubmissionIntroViewController(coder: coder, coordinator: MockExposureSubmissionCoordinator())
-		}
+		let rootVC = ExposureSubmissionIntroViewController(coordinator: MockExposureSubmissionCoordinator())
+		
 
-		return AppStoryboard.exposureSubmission.initiateInitial { coder in
-			ExposureSubmissionNavigationController(
-				coder: coder,
+		return ExposureSubmissionNavigationController(
 				coordinator: MockExposureSubmissionCoordinator(),
 				rootViewController: rootVC
 			)
-		}
 	}
 
 	func testSetupSecondaryButton() {
@@ -54,6 +50,7 @@ final class ExposureSubmissionNavigationControllerTest: XCTestCase {
 
 		navItem?.secondaryButtonTitle = title
 		navItem?.isSecondaryButtonHidden = false
+		navItem?.isSecondaryButtonEnabled = true
 
 		XCTAssert(!vc.footerView.secondaryButton.isHidden)
 		XCTAssertEqual(vc.footerView.secondaryButton.currentTitle, title)

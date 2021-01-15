@@ -36,12 +36,12 @@ class BEIntervalNumberTests: XCTestCase {
 	}
 	
 	func testToDate() throws {
-		let date = Date()
-		let comparisonValue = TimeInterval((Int(date.timeIntervalSince1970) / 600) * 600)
-		let comparisonDate = Date(timeIntervalSince1970: comparisonValue)
-		let intervalNumber = ENIntervalNumber(Int(date.timeIntervalSince1970) / 600)
-		
-		XCTAssertEqual(intervalNumber.date, comparisonDate)
+		let dateInt:BEDateInt = BEDateInt.today
+		let calendar = Calendar.current
+		let date = calendar.date(from: calendar.dateComponents([.day, .month, .year], from: Date()))
+		let intervalNumber = ENIntervalNumber.fromDateInt(dateInt)
+
+		XCTAssertEqual(intervalNumber.date, date)
 	}
 	
 	func testToDateInt() throws {

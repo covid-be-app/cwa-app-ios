@@ -30,22 +30,32 @@ class ExposureSubmissionWarnOthersViewController: DynamicTableViewController, EN
 
 	// MARK: - Initializers.
 
-	init?(coder: NSCoder, coordinator: ExposureSubmissionCoordinating, exposureSubmissionService: BEExposureSubmissionService) {
+	init(coordinator: ExposureSubmissionCoordinating, exposureSubmissionService: BEExposureSubmissionService) {
 		self.coordinator = coordinator
 		self.exposureSubmissionService = exposureSubmissionService
-		super.init(coder: coder)
+		super.init(nibName: nil, bundle: nil)
 	}
 
 	@available(*, unavailable)
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
+	
+	private var footerItem = ENANavigationFooterItem()
+	
+	override var navigationItem: UINavigationItem {
+		footerItem
+	}
 
 	// MARK: - View lifecycle methods.
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		view.backgroundColor = .enaColor(for: .background)
+
+		navigationItem.largeTitleDisplayMode = .always
 		setupView()
+		tableView.separatorStyle = .none
 	}
 	
 	// :BE: add acc. identifier to next button
@@ -62,6 +72,10 @@ class ExposureSubmissionWarnOthersViewController: DynamicTableViewController, EN
 		// :BE: accessibility
 		navigationItem.accessibilityLabel = AppStrings.ExposureSubmissionWarnOthers.title
 		navigationFooterItem?.primaryButtonTitle = AppStrings.ExposureSubmissionWarnOthers.continueButton
+		navigationFooterItem?.isPrimaryButtonEnabled = true
+		navigationFooterItem?.isPrimaryButtonHidden = false
+		navigationFooterItem?.isSecondaryButtonHidden = true
+		footerView?.isHidden = false
 		setupTableView()
 	}
 
@@ -109,6 +123,7 @@ class ExposureSubmissionWarnOthersViewController: DynamicTableViewController, EN
 
 extension ExposureSubmissionWarnOthersViewController {
 	func navigationController(_ navigationController: ENANavigationControllerWithFooter, didTapPrimaryButton button: UIButton) {
+		navigationFooterItem?.isPrimaryButtonEnabled = false
 		startSubmitProcess()
 	}
 }

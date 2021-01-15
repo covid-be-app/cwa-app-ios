@@ -112,7 +112,7 @@ extension NotificationSettingsViewModel {
 	}
 
 	struct SettingsOnItem {
-		let identifier = "notificationsOn"
+		static let identifier = "notificationsOn"
 		let description: String
 		var state: Bool {
 			didSet {
@@ -126,7 +126,7 @@ extension NotificationSettingsViewModel {
 	}
 
 	struct SettingsOffItem {
-		let identifier = "notificationsOff"
+		static let identifier = "notificationsOff"
 		let description: String
 		let state: String
 	}

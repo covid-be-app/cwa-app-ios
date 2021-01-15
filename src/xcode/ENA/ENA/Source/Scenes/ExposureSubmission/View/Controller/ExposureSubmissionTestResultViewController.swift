@@ -31,13 +31,19 @@ class ExposureSubmissionTestResultViewController: DynamicTableViewController, EN
 	private(set) weak var coordinator: ExposureSubmissionCoordinating?
 	private(set) weak var exposureSubmissionService: BEExposureSubmissionService?
 
+	private var footerItem = ENANavigationFooterItem()
+	
+	override var navigationItem: UINavigationItem {
+		footerItem
+	}
+
 	// MARK: - Initializers.
 
-	init?(coder: NSCoder, coordinator: ExposureSubmissionCoordinating, exposureSubmissionService: BEExposureSubmissionService, testResult: TestResult?) {
+	init(coordinator: ExposureSubmissionCoordinating, exposureSubmissionService: BEExposureSubmissionService, testResult: TestResult?) {
 		self.coordinator = coordinator
 		self.exposureSubmissionService = exposureSubmissionService
 		self.testResult = testResult
-		super.init(coder: coder)
+		super.init(nibName: nil, bundle: nil)
 	}
 
 	@available(*, unavailable)
@@ -55,6 +61,9 @@ class ExposureSubmissionTestResultViewController: DynamicTableViewController, EN
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		cellBackgroundColor = .clear
+		view.backgroundColor = .enaColor(for: .background)
+		tableView.separatorStyle = .none
 		setupView()
 	}
 

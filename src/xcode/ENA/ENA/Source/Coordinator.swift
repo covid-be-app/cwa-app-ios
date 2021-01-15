@@ -43,7 +43,7 @@ class Coordinator: RequiresAppDependencies {
 
 	private let rootViewController: UINavigationController
 
-	private var homeController: HomeViewController?
+	private var homeController: HomeTableViewController?
 	private var settingsController: SettingsViewController?
 	private var exposureDetectionController: ExposureDetectionViewController?
 
@@ -67,10 +67,9 @@ class Coordinator: RequiresAppDependencies {
 	}
 
 	// :BE: add stats
-	func showHome(enStateHandler: ENStateHandler, state: SceneDelegate.State, statisticsService: BEStatisticsService) {
-		let homeController = AppStoryboard.home.initiate(viewControllerType: HomeViewController.self) { [unowned self] coder in
-			HomeViewController(
-				coder: coder,
+	func showHome(enStateHandler: ENStateHandler, state: AppDelegate.State, statisticsService: BEStatisticsService) {
+		let homeController =
+			HomeTableViewController(
 				delegate: self,
 				detectionMode: state.detectionMode,
 				exposureManagerState: state.exposureManager,
@@ -79,11 +78,14 @@ class Coordinator: RequiresAppDependencies {
 				exposureSubmissionService: self.exposureSubmissionService,
 				statisticsService: statisticsService
 			)
-		}
-
+		
 		self.homeController = homeController
 
 		UIView.transition(with: rootViewController.view, duration: CATransaction.animationDuration(), options: [.transitionCrossDissolve], animations: {
+			if #available(iOS 13.5, *) {
+			} else {
+				self.rootViewController.isNavigationBarHidden = false
+			}
 			self.rootViewController.setViewControllers([homeController], animated: false)
 		})
 
@@ -99,17 +101,18 @@ class Coordinator: RequiresAppDependencies {
 	}
 
 	func showOnboarding() {
+		if #available(iOS 13.5, *) {
+		} else {
+			rootViewController.isNavigationBarHidden = true
+		}
 		rootViewController.navigationBar.prefersLargeTitles = false
 		rootViewController.setViewControllers(
 			[
-				AppStoryboard.onboarding.initiateInitial { [unowned self] coder in
-					OnboardingInfoViewController(
-						coder: coder,
-						pageType: .togetherAgainstCoronaPage,
-						exposureManager: self.exposureManager,
-						store: self.store
-					)
-				}
+				OnboardingInfoViewController(
+					pageType: .togetherAgainstCoronaPage,
+					exposureManager: self.exposureManager,
+					store: self.store
+				)
 			],
 			animated: false
 		)
@@ -146,22 +149,18 @@ class Coordinator: RequiresAppDependencies {
 extension Coordinator: HomeViewControllerDelegate {
 	func showRiskLegend() {
 		rootViewController.present(
-			AppStoryboard.riskLegend.initiateInitial(),
+			UINavigationController(rootViewController: RiskLegendViewController()),
 			animated: true,
 			completion: nil
 		)
 	}
 
 	func showExposureNotificationSetting(enState: ENStateHandler.State) {
-		let storyboard = AppStoryboard.exposureNotificationSetting.instance
-		let vc = storyboard.instantiateViewController(identifier: "ExposureNotificationSettingViewController") { coder in
-			ExposureNotificationSettingViewController(
-					coder: coder,
+		let vc = ExposureNotificationSettingViewController(
 					initialEnState: enState,
 					store: self.store,
 					delegate: self
 			)
-		}
 		addToEnStateUpdateList(vc)
 		rootViewController.pushViewController(vc, animated: true)
 	}
@@ -173,17 +172,14 @@ extension Coordinator: HomeViewControllerDelegate {
 			isLoading: isRequestRiskRunning,
 			risk: state.risk
 		)
-		let vc = AppStoryboard.exposureDetection.initiateInitial { coder in
+		exposureDetectionController =
 			ExposureDetectionViewController(
-				coder: coder,
 				state: state,
 				delegate: self
 			)
-		}
-		exposureDetectionController = vc as? ExposureDetectionViewController
 		
 		// :BE: pushed on stack instead of modal
-		rootViewController.pushViewController(vc, animated: true)
+		rootViewController.pushViewController(exposureDetectionController!, animated: true)
 	}
 
 	func setExposureDetectionState(state: HomeInteractor.State, isRequestRiskRunning: Bool) {
@@ -213,7 +209,7 @@ extension Coordinator: HomeViewControllerDelegate {
 
 	func showInviteFriends() {
 		rootViewController.pushViewController(
-			FriendsInviteController.initiate(for: .inviteFriends),
+			FriendsInviteController(),
 			animated: true
 		)
 	}
@@ -230,15 +226,12 @@ extension Coordinator: HomeViewControllerDelegate {
 	}
 
 	func showSettings(enState: ENStateHandler.State) {
-		let storyboard = AppStoryboard.settings.instance
-		let vc = storyboard.instantiateViewController(identifier: "SettingsViewController") { coder in
-			SettingsViewController(
-				coder: coder,
+		let vc = SettingsViewController(
 				store: self.store,
 				initialEnState: enState,
 				delegate: self
 			)
-		}
+		
 		addToEnStateUpdateList(vc)
 		settingsController = vc
 		rootViewController.pushViewController(vc, animated: true)

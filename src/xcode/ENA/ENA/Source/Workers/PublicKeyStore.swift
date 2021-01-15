@@ -18,7 +18,7 @@
 //
 
 import Foundation
-import CryptoKit
+
 
 enum KeyError: Error {
 	/// It was not possible to create the base64 encoded data from the public key string
@@ -29,30 +29,15 @@ enum KeyError: Error {
 	case plistError
 }
 
-typealias PublicKeyProviding = (_ key: String) throws -> P256.Signing.PublicKey
-enum PublicKeyStore {
-	static func get(for keyId: String) throws -> P256.Signing.PublicKey {
-		guard
-			let path = Bundle.main.path(forResource: "PublicKeys", ofType: "plist"),
-			let xml = FileManager.default.contents(atPath: path),
-			let plistDict = try? PropertyListSerialization.propertyList(from: xml, options: .mutableContainers, format: nil) as? [String: String]
-		else {
-			logError(message: "Could not find or decode PublicKeys.plist!")
-			throw KeyError.environmentError
-		}
+typealias PublicKeyProviding = (String) throws -> PublicKeyProtocol
 
-		guard let keyString = plistDict[keyId] else {
+enum PublicKeyStore {
+	static func get(for keyId: String) throws -> PublicKeyProtocol {
+		
+		if keyId != "be.sciensano.coronalertbe" {
 			throw KeyError.environmentError
-		}
-		let keyData = Data(base64Encoded: keyString)
-		guard let data = keyData else {
-			throw KeyError.encodingError
 		}
 		
-		if let key = try? P256.Signing.PublicKey(rawRepresentation: data) {
-			return key
-		}
-
-		return try P256.Signing.PublicKey(x963Representation: data[data.count - 65..<data.count])
+		return PublicKey(with: "qG73R7F3UpqPAzGYTEJxPKC3EnxxfSIX8EbUe/XAcTWLzj4cZ4XOBFrDav7FhSC3NBXkAt1oK5ZI1eRUL8Vv8w==")
 	}
 }

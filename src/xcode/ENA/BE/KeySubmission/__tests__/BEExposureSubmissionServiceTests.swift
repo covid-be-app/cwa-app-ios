@@ -30,10 +30,10 @@ class BEExposureSubmissionServiceTests: XCTestCase {
     override func setUpWithError() throws {
 		// generate fake keys for the last 2 weeks
 		let dayCount = 14
-		let startDate = Calendar.current.date(byAdding: .day, value: -dayCount, to: Date(), wrappingComponents: true)!
+		let startDate = Calendar.current.date(byAdding: .day, value: -dayCount, to: Date())!
 		
 		for x in 0..<dayCount+1 {
-			let date = Calendar.current.date(byAdding: .day, value: x, to: startDate, wrappingComponents: true)!
+			let date = Calendar.current.date(byAdding: .day, value: x, to: startDate)!
 			let key = ENTemporaryExposureKey.random(date)
 			
 			keys.append(key)
@@ -81,8 +81,9 @@ class BEExposureSubmissionServiceTests: XCTestCase {
 				XCTAssert(false)
 			case .success(let keys):
 				keys.forEach{ key in
-					XCTAssert(datePatientInfectious <= key.rollingStartNumber.date,"Key \(key.rollingStartNumber.date) earlier than infectious date \(datePatientInfectious)")
-					XCTAssert(dateTestCommunicated >= key.rollingStartNumber.date,"Key later than test communicated date")
+					let keyDate = key.rollingStartNumber.date
+					XCTAssert(datePatientInfectious <= keyDate,"Key \(keyDate) earlier than infectious date \(datePatientInfectious)")
+					XCTAssert(dateTestCommunicated >= keyDate,"Key \(keyDate) later than test communicated date \(dateTestCommunicated)")
 				}
 				finishedExpectation.fulfill()
 			}

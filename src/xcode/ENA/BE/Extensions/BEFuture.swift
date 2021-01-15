@@ -18,7 +18,7 @@
 //
 
 import Foundation
-import Combine
+import OpenCombine
 
 extension Future{
 	static func withResult<V, ErrorType>(_ value: V) -> Future<V,ErrorType> {

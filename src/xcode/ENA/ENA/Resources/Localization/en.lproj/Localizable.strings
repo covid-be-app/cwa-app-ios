@@ -398,3 +398,4 @@
 "ExposureNotificationSetting_EU_Desc_2" = "For this purpose, the app downloads every day a list of therandom IDs of all users who had a positive test and who have decided to inform other users by sharing their random IDs. This list is then compared with the random IDs recorded by your smartphone.You can chose to download this list over WiFi; otherwise part of your mobile data budget will be consumed. Be aware that this may result inroaming charges if you would leave the EU.";
 "ExposureNotificationSetting_EU_Desc_3" = "The following countries currently participate in transnational exposure logging:";
 "ExposureNotificationSetting_EU_Desc_4" = "The app’s privacy notice (including information about the data processing carried out for the transnational exposure logging feature) can be found in the menu under “App Information” > “Data Privacy”.";
+"App_Disabled_Text" = "This app only works on iOS 12.5, or iOS 13.6 or higher.";

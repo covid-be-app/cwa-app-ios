@@ -36,6 +36,7 @@ final class FriendsInviteController: UIViewController {
 		super.viewDidLoad()
 
 		navigationController?.navigationBar.prefersLargeTitles = true
+		navigationItem.largeTitleDisplayMode = .always
 		navigationItem.title = AppStrings.InviteFriends.navigationBarTitle
 
 		subtitleLabel.text = nil
@@ -86,6 +87,7 @@ extension FriendsInviteController: UIActivityItemSource {
 		return shareTitle
 	}
 
+	@available(iOS 13.0, *)
 	func activityViewControllerLinkMetadata(_: UIActivityViewController) -> LPLinkMetadata? {
 		let metadata = LPLinkMetadata()
 

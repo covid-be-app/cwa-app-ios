@@ -56,7 +56,7 @@ extension UIViewController {
 			title: okTitle ?? AppStrings.Common.alertActionOk,
 			style: .cancel,
 			handler: { _ in
-				alert.dismiss(animated: true, completion: completion)
+				completion?()
 			}
 		)
 
@@ -66,8 +66,7 @@ extension UIViewController {
 				title: secondaryActionTitle,
 				style: .default,
 				handler: { _ in
-					alert.dismiss(animated: true, completion: secondaryActionCompletion)
-
+					secondaryActionCompletion?()
 				}
 			)
 			alert.addAction(retryAction)
