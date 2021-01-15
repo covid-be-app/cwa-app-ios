@@ -318,8 +318,23 @@ extension HomeTableViewController: UITableViewDelegate {
 		
 		return 80
 	}
-	
+
+	func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+		if section == 0 {
+			return 0
+		}
+		
+		return 80
+	}
+
 	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+		let view = UIView()
+		view.backgroundColor = .clear
+		
+		return view
+	}
+
+	func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
 		let view = UIView()
 		view.backgroundColor = .clear
 		
