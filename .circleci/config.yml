@@ -97,9 +97,9 @@ jobs:
       - run:
           name: Log Ruby Version
           command: ruby -v
-      - run:
-          name: Install bundler
-          command: sudo gem install rake bundler:2.2.2
+    #  - run:
+     #     name: Install bundler
+      #    command: sudo gem install rake bundler:2.2.2
       - run:
           name: Install dependencies
           command: brew install swiftlint && cd src/xcode && bundle install --path=vendor --jobs=8
@@ -121,9 +121,9 @@ jobs:
       - run:
           name: Log Ruby Version
           command: ruby -v
-      - run:
-          name: Install bundler
-          command: sudo gem install rake bundler:2.2.2
+    #  - run:
+     #     name: Install bundler
+      #    command: sudo gem install rake bundler:2.2.2
       - run:
           name: Install dependencies
           command: brew install swiftlint && cd src/xcode && bundle install --path=vendor --jobs=8
