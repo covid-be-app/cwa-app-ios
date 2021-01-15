@@ -243,6 +243,8 @@
 		A902680725AF3AB900C14169 /* HomeTestResultLoadingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A902680525AF3AB900C14169 /* HomeTestResultLoadingTableViewCell.xib */; };
 		A902680C25AF3AF200C14169 /* HomeTestResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A902680A25AF3AF200C14169 /* HomeTestResultTableViewCell.swift */; };
 		A902680D25AF3AF200C14169 /* HomeTestResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A902680B25AF3AF200C14169 /* HomeTestResultTableViewCell.xib */; };
+		A902682725B1759600C14169 /* BECountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A902682525B1759600C14169 /* BECountryTableViewCell.xib */; };
+		A902682825B1759600C14169 /* BECountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A902682625B1759600C14169 /* BECountryTableViewCell.swift */; };
 		A92076C824E3DDEE00AE8748 /* BEDiagnosisKeyRetrieval.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076C724E3DDEE00AE8748 /* BEDiagnosisKeyRetrieval.swift */; };
 		A92076CC24E3F56400AE8748 /* BEExposureSubmissionServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076CB24E3F56400AE8748 /* BEExposureSubmissionServiceTests.swift */; };
 		A92076CE24E40BFC00AE8748 /* BEIntervalNumberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076CD24E40BFC00AE8748 /* BEIntervalNumberTests.swift */; };
@@ -781,6 +783,8 @@
 		A902680525AF3AB900C14169 /* HomeTestResultLoadingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTestResultLoadingTableViewCell.xib; sourceTree = "<group>"; };
 		A902680A25AF3AF200C14169 /* HomeTestResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTestResultTableViewCell.swift; sourceTree = "<group>"; };
 		A902680B25AF3AF200C14169 /* HomeTestResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTestResultTableViewCell.xib; sourceTree = "<group>"; };
+		A902682525B1759600C14169 /* BECountryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BECountryTableViewCell.xib; sourceTree = "<group>"; };
+		A902682625B1759600C14169 /* BECountryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BECountryTableViewCell.swift; sourceTree = "<group>"; };
 		A92076C724E3DDEE00AE8748 /* BEDiagnosisKeyRetrieval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDiagnosisKeyRetrieval.swift; sourceTree = "<group>"; };
 		A92076CB24E3F56400AE8748 /* BEExposureSubmissionServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEExposureSubmissionServiceTests.swift; sourceTree = "<group>"; };
 		A92076CD24E40BFC00AE8748 /* BEIntervalNumberTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEIntervalNumberTests.swift; sourceTree = "<group>"; };
@@ -2004,6 +2008,8 @@
 		A97E1590257668B600E1DB28 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A902682625B1759600C14169 /* BECountryTableViewCell.swift */,
+				A902682525B1759600C14169 /* BECountryTableViewCell.xib */,
 				A97E1591257668E300E1DB28 /* BEEUSettingsViewController.swift */,
 			);
 			path = ViewControllers;
@@ -2909,6 +2915,7 @@
 				EE269508248FCB0300BAE234 /* InfoPlist.strings in Resources */,
 				85D7594E24570491008175F0 /* LaunchScreen.storyboard in Resources */,
 				A97D44AC25A72E4100E7D698 /* EuTracingTableViewCell.xib in Resources */,
+				A902682725B1759600C14169 /* BECountryTableViewCell.xib in Resources */,
 				710224EE2490E2FD000C5DEF /* ExposureSubmissionStepCell.xib in Resources */,
 				A97D44C025A7478200E7D698 /* NotificationSettingsViewController.xib in Resources */,
 				71FE1C8D247AC79D00851FEB /* DynamicTableViewIconCell.xib in Resources */,
@@ -3282,6 +3289,7 @@
 				85142501245DA0B3009D2791 /* UIViewController+Alert.swift in Sources */,
 				CD99A3CA2461A47C00BF12AF /* AppStrings.swift in Sources */,
 				514E81342461B97800636861 /* ExposureManager.swift in Sources */,
+				A902682825B1759600C14169 /* BECountryTableViewCell.swift in Sources */,
 				71176E32248957C3004B0C9F /* AppNavigationController.swift in Sources */,
 				B14D0CD9246E946E00D5BEBC /* ExposureDetection.swift in Sources */,
 				A95EE81624FCF2A600AFECBD /* BEHomeInfectionSummaryCellConfigurator.swift in Sources */,

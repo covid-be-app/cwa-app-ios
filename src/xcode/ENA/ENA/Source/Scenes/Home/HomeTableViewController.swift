@@ -229,10 +229,10 @@ class HomeTableViewController: UIViewController, RequiresAppDependencies {
 			label.textColor = .red
 			label.font = .systemFont(ofSize: 16)
 			label.text = "ENVIRONMENT: \(BEEnvironment.current.rawValue)"
-			self.view.addSubview(label)
-			self.view.topAnchor.constraint(equalTo: label.topAnchor, constant: 16).isActive = true
-			self.view.centerXAnchor.constraint(equalTo: label.centerXAnchor).isActive = true
-			self.view.bringSubviewToFront(label)
+			self.tableView.addSubview(label)
+			self.tableView.topAnchor.constraint(equalTo: label.topAnchor, constant: 0).isActive = true
+			self.tableView.centerXAnchor.constraint(equalTo: label.centerXAnchor).isActive = true
+			self.tableView.bringSubviewToFront(label)
 		}
 	}
 	

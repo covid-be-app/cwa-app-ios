@@ -251,6 +251,8 @@ extension DynamicTableViewController {
 		content.configure(cell: cell, at: indexPath, for: self)
 
 		if section.separators {
+			cell.addSeparator(.clear)
+			
 			let isFirst = indexPath.row == 0
 			let isLast = indexPath.row == section.cells.count - 1
 
@@ -264,6 +266,7 @@ extension DynamicTableViewController {
 		if let cellBackgroundColor = cellBackgroundColor {
 			cell.backgroundColor = cellBackgroundColor
 		}
+
 
 		return cell
 	}

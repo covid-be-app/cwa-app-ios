@@ -73,13 +73,8 @@ class BEEUSettingsViewController: DynamicTableViewController {
 			])
 		])
 			
-			
-			
-		tableView.register(
-			DynamicTableViewIconCell.self,
-			forCellReuseIdentifier: CustomCellReuseIdentifiers.flagCell.rawValue
-		)
-
+		tableView.register(UINib(nibName: BECountryTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: CustomCellReuseIdentifiers.countryCell.rawValue)
+		
 		tableView.register(
 			DynamicTableViewRoundedCell.self,
 			forCellReuseIdentifier: CustomCellReuseIdentifiers.roundedCell.rawValue
@@ -89,7 +84,7 @@ class BEEUSettingsViewController: DynamicTableViewController {
 
 extension BEEUSettingsViewController {
 	enum CustomCellReuseIdentifiers: String, TableViewCellReuseIdentifiers {
-		case flagCell
+		case countryCell
 		case roundedCell
 	}
 
@@ -113,15 +108,14 @@ extension DynamicCell {
 			return nil
 		}
 			  
-		return .icon(icon,
-			  text: text,
-			  tintColor: nil,
-			  style: .body,
-			  iconWidth: 32,
-			  action: .none,
-			  configure: { _, cell, _ in
-			cell.contentView.layoutMargins.left = 32
-			cell.contentView.layoutMargins.right = 32
-		})
+		return .country(icon, text: text)
+	}
+}
+
+extension DynamicCell {
+	static func country(_ image: UIImage?, text: String) -> Self {
+		.identifier(BEEUSettingsViewController.CustomCellReuseIdentifiers.countryCell, action: .none, accessoryAction: .none) { viewController, cell, indexPath in
+			(cell as? BECountryTableViewCell)?.configure(image: image, text: text)
+		}
 	}
 }
