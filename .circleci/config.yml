@@ -86,17 +86,20 @@ jobs:
   testflight-release:
     macos:
       xcode: 12.3.0
-    shell: zsh
     steps:
       - checkout
-      - restore_cache:
-          key: 1-gems-{{ checksum "src/xcode/Gemfile.lock" }}
-      - run: cd src/xcode && bundle check || bundle install --path vendor/bundle
-      - save_cache:
-          key: 1-gems-{{ checksum "src/xcode/Gemfile.lock" }}
-          paths:
-            - src/xcode/vendor/bundle     
-#      - run: ./scripts/switch_to_dev_env.sh
+      - run:
+          name: fix SwiftPM #Solves an old Xcode 11 issue that seems to got reintroduced with Xcode 12: https://stackoverflow.com/questions/58125659/github-actions-xcodebuild-fails-due-to-server-fingerprint
+          command: for ip in $(dig @8.8.8.8 github.com +short); do ssh-keyscan github.com,$ip; ssh-keyscan $ip; done 2>/dev/null >> ~/.ssh/known_hosts
+      - run:
+          name: Set Ruby Version
+          command: echo 'chruby ruby-2.7' >> ~/.bash_profile
+      - run:
+          name: Log Ruby Version
+          command: ruby -v
+      - run:
+          name: Install bundler
+          command: sudo gem install rake bundler:2.2.2
       - run:
           name: fastlane
           command: cd src/xcode && bundle exec fastlane betaRelease
@@ -104,16 +107,20 @@ jobs:
   production-release:
     macos:
       xcode: 12.3.0
-    shell: zsh
     steps:
       - checkout
-      - restore_cache:
-          key: 1-gems-{{ checksum "src/xcode/Gemfile.lock" }}
-      - run: cd src/xcode && bundle check || bundle install --path vendor/bundle
-      - save_cache:
-          key: 1-gems-{{ checksum "src/xcode/Gemfile.lock" }}
-          paths:
-            - src/xcode/vendor/bundle     
+      - run:
+          name: fix SwiftPM #Solves an old Xcode 11 issue that seems to got reintroduced with Xcode 12: https://stackoverflow.com/questions/58125659/github-actions-xcodebuild-fails-due-to-server-fingerprint
+          command: for ip in $(dig @8.8.8.8 github.com +short); do ssh-keyscan github.com,$ip; ssh-keyscan $ip; done 2>/dev/null >> ~/.ssh/known_hosts
+      - run:
+          name: Set Ruby Version
+          command: echo 'chruby ruby-2.7' >> ~/.bash_profile
+      - run:
+          name: Log Ruby Version
+          command: ruby -v
+      - run:
+          name: Install bundler
+          command: sudo gem install rake bundler:2.2.2
       - run:
           name: fastlane
           command: cd src/xcode && bundle exec fastlane productionRelease
