@@ -101,6 +101,9 @@ jobs:
           name: Install bundler
           command: sudo gem install rake bundler:2.2.2
       - run:
+          name: Install dependencies
+          command: brew install swiftlint && cd src/xcode && bundle install --path=vendor --jobs=8
+      - run:
           name: fastlane
           command: cd src/xcode && bundle exec fastlane betaRelease
           
