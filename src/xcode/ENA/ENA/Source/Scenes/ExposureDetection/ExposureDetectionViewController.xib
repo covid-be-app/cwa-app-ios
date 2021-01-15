@@ -27,13 +27,13 @@
                     <color key="backgroundColor" name="ENA Background Color"/>
                 </tableView>
                 <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UXJ-lJ-ZOW" customClass="ENAFooterView" customModule="ENA" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="780" width="414" height="116"/>
+                    <rect key="frame" x="0.0" y="776" width="414" height="120"/>
                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Ey6-hZ-vV5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="116"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZS-cj-UGn" customClass="ENAButton" customModule="ENA" customModuleProvider="target">
-                                <rect key="frame" x="16" y="16" width="382" height="50"/>
+                                <rect key="frame" x="16" y="16" width="382" height="54"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="16" maxX="0.0" maxY="16"/>
                                 <state key="normal" title="Check Now"/>
                                 <connections>

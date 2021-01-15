@@ -59,18 +59,7 @@ private extension DynamicHeader {
 // MARK: - Supported Cell Types
 
 extension DynamicCell {
-	/*
-	private enum ReusableCellIdentifer: String, TableViewCellReuseIdentifiers {
-		case risk = "riskCell"
-		case riskText = "riskTextCell"
-		case riskLoading = "riskLoadingCell"
-		case header = "headerCell"
-		case guide = "guideCell"
-		case longGuide = "longGuideCell"
-		case link = "linkCell"
-		case hotline = "hotlineCell"
-	}
-*/
+
 	private static let relativeDateTimeFormatter: DateFormatter = {
 		let formatter = DateFormatter()
 		formatter.doesRelativeDateFormatting = true
@@ -86,7 +75,7 @@ extension DynamicCell {
 	static func risk(hasSeparator: Bool = true, configure: @escaping GenericCellConfigurator<ExposureDetectionViewController>) -> DynamicCell {
 		.exposureDetectionCell(ExposureDetectionViewController.ReusableCellIdentifier.risk) { viewController, cell, indexPath in
 			let state = viewController.state
-			cell.backgroundColor = state.riskTintColor
+			cell.contentView.backgroundColor = state.riskTintColor
 
 
 			var tintColor: UIColor = state.isTracingEnabled ? .enaColor(for: .textContrast) : .enaColor(for: .riskNeutral)
