@@ -99,7 +99,7 @@ jobs:
           command: ruby -v
       - run:
           name: Install dependencies
-          command: cd src/xcode && bundle install --frozen
+          command: cd src/xcode && bundle install --path=vendor --jobs=8 --frozen
       - run:
           name: fastlane
           command: cd src/xcode && bundle exec fastlane betaRelease
@@ -118,12 +118,9 @@ jobs:
       - run:
           name: Log Ruby Version
           command: ruby -v
-    #  - run:
-     #     name: Install bundler
-      #    command: sudo gem install rake bundler:2.2.2
       - run:
           name: Install dependencies
-          command: brew install swiftlint && cd src/xcode && bundle install --path=vendor --jobs=8
+          command: brew install swiftlint && cd src/xcode && bundle install --path=vendor --jobs=8 --frozen
       - run:
           name: fastlane
           command: cd src/xcode && bundle exec fastlane productionRelease
@@ -131,17 +128,17 @@ jobs:
 workflows:
     process:
       jobs:
-#        - test
+        - test
         - testflight-release:
- #           requires        :
-  #            - test
+           requires        :
+             - test
             filters:
               branches:
                 only:
                   - staging
         - production-release:
-    #        requires:
-     #         - test
+           requires:
+             - test
             filters:
               branches:
                 only:
