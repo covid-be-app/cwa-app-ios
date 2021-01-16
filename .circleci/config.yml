@@ -130,14 +130,14 @@ workflows:
       jobs:
         - test
         - testflight-release:
-           requires:
+            requires:
              - test
             filters:
               branches:
                 only:
                   - staging
         - production-release:
-           requires:
+            requires:
              - test
             filters:
               branches:
