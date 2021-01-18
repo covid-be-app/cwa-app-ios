@@ -516,7 +516,7 @@ extension AppDelegate {
 
 extension AppDelegate {
 	private static func isAppDisabled() -> Bool {
-		if #available(iOS 13.7, *) {
+		if #available(iOS 13.6, *) {
 			return false
 		} else if #available(iOS 13.5, *) {
 			return true
