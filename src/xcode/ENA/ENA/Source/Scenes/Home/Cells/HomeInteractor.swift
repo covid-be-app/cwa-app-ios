@@ -167,8 +167,10 @@ final class HomeInteractor: RequiresAppDependencies {
 			position: .last,
 			accessibilityIdentifier: AccessibilityIdentifiers.Home.settingsCardTitle
 		)
+		
+		let spacerConfigurator = HomeSpacerCellConfigurator(120.0)
 
-		let infosConfigurators: [TableViewCellConfiguratorAny] = [info1Configurator, info2Configurator, appInformationConfigurator, settingsConfigurator]
+		let infosConfigurators: [TableViewCellConfiguratorAny] = [info1Configurator, info2Configurator, appInformationConfigurator, settingsConfigurator, spacerConfigurator]
 
 		let actionsSection: SectionDefinition = setupActionSectionDefinition()
 		let infoSection: SectionDefinition = (.infos, infosConfigurators)
