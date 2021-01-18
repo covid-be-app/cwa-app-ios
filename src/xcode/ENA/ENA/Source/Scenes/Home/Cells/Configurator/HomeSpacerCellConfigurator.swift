@@ -20,12 +20,23 @@
 import Foundation
 import UIKit
 
-class BEInfectionSummaryCollectionViewCell: HomeCardCollectionViewCell {
-	@IBOutlet weak var titleLabel:UILabel!
-	@IBOutlet weak var dateRangeLabel:UILabel!
-	@IBOutlet weak var averagesView:UIStackView!
-	@IBOutlet weak var averageInfectedLabel:UILabel!
-	@IBOutlet weak var averageHospitalisedLabel:UILabel!
-	@IBOutlet weak var averageDeceasedLabel:UILabel!
-	@IBOutlet weak var lastUpdatedLabel:UILabel!
+class HomeSpacerCellConfigurator: TableViewCellConfigurator {
+
+	let height: CGFloat
+
+	init(_ height: CGFloat) {
+		self.height = height
+	}
+	
+	func configure(cell: HomeSpacerCell) {
+		cell.height = height
+	}
+
+	func hash(into hasher: inout Swift.Hasher) {
+		hasher.combine(height)
+	}
+
+	static func == (lhs: HomeSpacerCellConfigurator, rhs: HomeSpacerCellConfigurator) -> Bool {
+		lhs.height == rhs.height
+	}
 }
