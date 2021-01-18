@@ -121,6 +121,11 @@ class HomeTableViewController: UIViewController, RequiresAppDependencies {
 	
 	func reloadData() {
 		
+		// avoid tableview update warning
+		if self.view.superview == nil {
+			return
+		}
+		
 		if sections.count != tableViewSectionHashes.count {
 			fullReload()
 			return
@@ -326,6 +331,7 @@ class HomeTableViewController: UIViewController, RequiresAppDependencies {
 		tableView.register(UINib(nibName: HomeRiskFindingPositiveTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: HomeRiskFindingPositiveTableViewCell.stringName())
 		tableView.register(UINib(nibName: HomeTestResultLoadingTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: HomeTestResultLoadingTableViewCell.stringName())
 		tableView.register(UINib(nibName: BEInfectionSummaryTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: BEInfectionSummaryTableViewCell.stringName())
+		tableView.register(UINib(nibName: HomeSpacerCell.stringName(), bundle: nil), forCellReuseIdentifier: HomeSpacerCell.stringName())
 	}
 	
 	private func showScreenForActionSectionForCell(at indexPath: IndexPath) {
@@ -342,7 +348,6 @@ class HomeTableViewController: UIViewController, RequiresAppDependencies {
 		case is HomeRiskInactiveTableViewCell:
 			showExposureDetection()
 		default:
-			log(message: "Unknown cell type tapped.", file: #file, line: #line, function: #function)
 			return
 		}
 	}
@@ -364,7 +369,7 @@ class HomeTableViewController: UIViewController, RequiresAppDependencies {
 			case 3:
 				delegate?.showSettings(enState: self.homeInteractor.state.enState)
 			default:
-				fatalError("Unknown entry")
+				return
 			}
 		}
 	}}
@@ -384,22 +389,7 @@ extension HomeTableViewController: UITableViewDelegate {
 		return 80
 	}
 
-	func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-		if section == 0 {
-			return 0
-		}
-		
-		return 80
-	}
-
 	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-		let view = UIView()
-		view.backgroundColor = .clear
-		
-		return view
-	}
-
-	func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
 		let view = UIView()
 		view.backgroundColor = .clear
 		
