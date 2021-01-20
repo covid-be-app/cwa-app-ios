@@ -45,6 +45,8 @@ protocol ExposureSubmissionService: class {
 	var devicePairingSuccessfulTimestamp: Int64? { get }
 	var mobileTestId: BEMobileTestId? { get }
 	func preconditions() -> ExposureManagerState
+	
+	var isGettingTestResult: Bool { get }
 }
 
 class ENAExposureSubmissionService: ExposureSubmissionService {
@@ -52,6 +54,7 @@ class ENAExposureSubmissionService: ExposureSubmissionService {
 	let diagnosiskeyRetrieval: DiagnosisKeysRetrieval
 	let client: Client
 	let store: Store
+	var isGettingTestResult: Bool = false
 	
 	private(set) var devicePairingSuccessfulTimestamp: Int64? {
 		get { self.store.devicePairingSuccessfulTimestamp }

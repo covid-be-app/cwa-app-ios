@@ -1719,6 +1719,7 @@
 				A90267B425AEE0C700C14169 /* Cells */,
 				A90267B025AEDEC300C14169 /* HomeTableViewController.swift */,
 				B1BFE27124BDE1D500C1181D /* HomeViewController+HowRiskDetectionWorks.swift */,
+				5111E7622460BB1500ED6498 /* HomeInteractor.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1734,7 +1735,6 @@
 				A90267B625AEE0E500C14169 /* HomeActivateCell.xib */,
 				A90267C525AEE96200C14169 /* HomeInfoCell.swift */,
 				A90267C625AEE96200C14169 /* HomeInfoCell.xib */,
-				5111E7622460BB1500ED6498 /* HomeInteractor.swift */,
 				A90E1AEF25B597A3005AC840 /* HomeSpacerCell.swift */,
 				A90E1AF025B597A3005AC840 /* HomeSpacerCell.xib */,
 			);
