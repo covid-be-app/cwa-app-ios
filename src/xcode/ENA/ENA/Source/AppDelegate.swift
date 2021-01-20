@@ -348,6 +348,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func applicationDidBecomeActive(_ application: UIApplication) {
 		UIApplication.shared.applicationIconBadgeNumber = 0
+		if store.isOnboarded {
+			coordinator.refreshTestResults()
+		}
 	}
 	
 	func requestUpdatedExposureState() {
