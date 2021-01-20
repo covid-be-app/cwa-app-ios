@@ -22,6 +22,7 @@ import ExposureNotification
 
 class BEMockExposureSubmissionService : BEExposureSubmissionService {
 	private (set) var mobileTestId: BEMobileTestId?
+	private(set) var isGettingTestResult: Bool = false
 	
 	private var keys:[ENTemporaryExposureKey]
 	

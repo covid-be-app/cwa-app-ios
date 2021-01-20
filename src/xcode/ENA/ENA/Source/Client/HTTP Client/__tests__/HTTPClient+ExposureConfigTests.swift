@@ -26,6 +26,8 @@ final class HTTPClientExposureConfigTests: XCTestCase {
 
 	private let expectationsTimeout: TimeInterval = 2
 
+	var client: HTTPClient!
+
 	func testInvalidEmptyExposureConfigurationResponseData() {
 		let stack = MockNetworkStack(
 			httpStatus: 200,
@@ -34,7 +36,9 @@ final class HTTPClientExposureConfigTests: XCTestCase {
 
 		let expectation = self.expectation(description: "HTTPClient should have failed.")
 
-		HTTPClient.makeWith(mock: stack).exposureConfiguration { config in
+		client = HTTPClient.makeWith(mock: stack)
+		
+		client.exposureConfiguration { config in
 			XCTAssertNil(config, "configuration should be nil when data is invalid")
 			expectation.fulfill()
 		}
@@ -70,7 +74,9 @@ final class HTTPClientExposureConfigTests: XCTestCase {
 
 		let expectation = self.expectation(description: "HTTPClient should have failed.")
 		// 4 Test that the exposureConfiguration fetch fails
-		HTTPClient.makeWith(mock: stack).exposureConfiguration { config in
+		client = HTTPClient.makeWith(mock: stack)
+		
+		client.exposureConfiguration { config in
 			XCTAssertNil(config, "configuration should be nil when data is invalid")
 			expectation.fulfill()
 		}
@@ -87,7 +93,9 @@ final class HTTPClientExposureConfigTests: XCTestCase {
 
 		let expectation = self.expectation(description: "HTTPClient should have succeeded.")
 
-		HTTPClient.makeWith(mock: stack).exposureConfiguration { config in
+		client = HTTPClient.makeWith(mock: stack)
+		
+		client.exposureConfiguration { config in
 			XCTAssertNotNil(config, "configuration should not be nil for valid responses")
 			expectation.fulfill()
 		}
@@ -104,7 +112,9 @@ final class HTTPClientExposureConfigTests: XCTestCase {
 
 		let expectation = self.expectation(description: "HTTPClient should have failed.")
 
-		HTTPClient.makeWith(mock: stack).exposureConfiguration { configuration in
+		client = HTTPClient.makeWith(mock: stack)
+			
+		client.exposureConfiguration { configuration in
 			XCTAssertNil(
 				configuration, "a 404 configuration response should yield an error - not a success"
 			)

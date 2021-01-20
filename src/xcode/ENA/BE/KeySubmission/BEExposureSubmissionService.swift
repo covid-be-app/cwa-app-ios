@@ -43,6 +43,7 @@ protocol BEExposureSubmissionService : ExposureSubmissionService {
 
 class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposureSubmissionService {
 	
+	
 	private(set) override var mobileTestId:BEMobileTestId? {
 		get {
 			return store.mobileTestId
@@ -89,8 +90,12 @@ class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposure
 			completeWith(.failure(.noRegistrationToken))
 			return
 		}
+		
+		isGettingTestResult = true
 
 		client.getTestResult(forDevice: registrationToken) { result in
+			self.isGettingTestResult = false
+			
 			switch result {
 			case let .failure(error):
 				completeWith(.failure(self.parseError(error)))

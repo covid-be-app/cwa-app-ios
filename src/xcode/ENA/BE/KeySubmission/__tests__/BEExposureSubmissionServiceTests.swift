@@ -136,7 +136,37 @@ class BEExposureSubmissionServiceTests: XCTestCase {
 		
 		waitForExpectations(timeout: 20)
 	}
-	
+
+	func testAvoidDoubleTestResultCalls() throws {
+		let keyRetrieval = MockDiagnosisKeysRetrieval(diagnosisKeysResult: (keys, nil))
+		let store = try SecureStore(at: URL(staticString: ":memory:"), key: "123456")
+		let mockURLSession = try makeMockSessionForFakeKeyUpload(testResult:TestResult.negative)
+
+		let networkStack = MockNetworkStack(
+			mockSession: mockURLSession
+		)
+		
+		let client = HTTPClient.makeWith(mock: networkStack)
+		store.isAllowedToPerformBackgroundFakeRequests = true
+		
+		let service = BEExposureSubmissionServiceImpl(diagnosiskeyRetrieval: keyRetrieval, client: client, store: store)
+		service.generateMobileTestId(nil)
+		service.getTestResult { result in
+			XCTAssertFalse(service.isGettingTestResult)
+			switch result {
+			case .failure:
+				XCTAssert(false)
+			case.success(let testResult):
+				XCTAssertEqual(testResult.result, TestResult.Result.negative)
+			}
+		}
+		
+		XCTAssert(service.isGettingTestResult)
+		
+		
+		waitForExpectations(timeout: 20)
+	}
+
 	func testDoNotUploadKeysAfterPositiveTest() throws {
 		let keyRetrieval = MockDiagnosisKeysRetrieval(diagnosisKeysResult: (keys, nil))
 		let store = try SecureStore(at: URL(staticString: ":memory:"), key: "123456")
