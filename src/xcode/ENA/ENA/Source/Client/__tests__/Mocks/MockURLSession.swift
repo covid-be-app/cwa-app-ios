@@ -25,7 +25,11 @@ class MockURLSessionDataTask: URLSessionDataTask {
 	}
 
 	override func resume() {
-		completion()
+		let completionBlock = completion
+		
+		DispatchQueue.global().async {
+			completionBlock()
+		}
 	}
 }
 

@@ -427,14 +427,18 @@ extension HomeInteractor {
 		
 		guard testResult == nil || testResult?.result == .pending else { return }
 		guard store.registrationToken != nil else { return }
-
+		
+		doTestResultUpdate()
+	}
+	
+	private func doTestResultUpdate() {
 		// Make sure to make the loading cell appear for at least `minRequestTime`.
 		// This avoids an ugly flickering when the cell is only shown for the fraction of a second.
 		// Make sure to only trigger this additional delay when no other test result is present already.
 		let requestStart = Date()
 		let minRequestTime: TimeInterval = 0.5
-
-		self.exposureSubmissionService.getTestResult { [weak self] result in
+		
+		let completionBlock: BEExposureSubmissionService.TestResultHandler = { [weak self] result in
 			switch result {
 			case .failure(let error):
 				// When we fail here, trigger an alert and set the state to pending.
@@ -460,6 +464,15 @@ extension HomeInteractor {
 					}
 				}
 			}
+		}
+		
+		// Avoid double calls to the backend
+		if self.exposureSubmissionService.isGettingTestResult {
+			DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+				self?.doTestResultUpdate()
+			}
+		} else {
+			self.exposureSubmissionService.getTestResult(completionBlock)
 		}
 	}
 }
