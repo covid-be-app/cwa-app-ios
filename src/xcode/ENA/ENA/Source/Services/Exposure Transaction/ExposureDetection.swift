@@ -39,12 +39,12 @@ final class ExposureDetection {
 			
 			guard let remote = remote else {
 				log(message: "No days and hours")
-				promise(.failure(DidEndPrematurelyReason.noDaysAndHours))
+				promise(.success(()))
 				return
 			}
 			guard let delta = self.delegate?.exposureDetection(self, downloadDeltaFor: remote, region: region) else {
 				log(message: "No days and hours 2")
-				promise(.failure(DidEndPrematurelyReason.noDaysAndHours))
+				promise(.success(()))
 				return
 			}
 
@@ -52,7 +52,7 @@ final class ExposureDetection {
 
 			self.delegate?.exposureDetection(self, downloadAndStore: delta, region: region) { error in
 				if error != nil {
-					promise(.failure(DidEndPrematurelyReason.noDaysAndHours))
+					promise(.success(()))
 					return
 				}
 				
