@@ -120,7 +120,7 @@ jobs:
           command: ruby -v
       - run:
           name: Install dependencies
-          command: brew install swiftlint && cd src/xcode && bundle install --path=vendor --jobs=8 --frozen
+          command: cd src/xcode && bundle install --path=vendor --jobs=8 --frozen
       - run:
           name: fastlane
           command: cd src/xcode && bundle exec fastlane productionRelease
