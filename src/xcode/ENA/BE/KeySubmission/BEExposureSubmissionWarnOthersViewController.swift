@@ -22,14 +22,16 @@ import ExposureNotification
 
 class BEExposureSubmissionWarnOthersViewController: ExposureSubmissionWarnOthersViewController {
 	
-	override init?(coder: NSCoder, coordinator: ExposureSubmissionCoordinating, exposureSubmissionService: BEExposureSubmissionService) {
-		super.init(coder: coder, coordinator: coordinator, exposureSubmissionService: exposureSubmissionService)
+	override init(coordinator: ExposureSubmissionCoordinating, exposureSubmissionService: BEExposureSubmissionService) {
+		super.init(coordinator: coordinator, exposureSubmissionService: exposureSubmissionService)
 	}
 	
 	override func startSubmitProcess() {
 		exposureSubmissionService?.retrieveDiagnosisKeys { result in
 			switch result {
 			case .failure(let error):
+				self.navigationFooterItem?.isPrimaryButtonEnabled = true
+
 				switch error {
 				case .noKeys:
 					self.exposureSubmissionService?.finalizeSubmissionWithoutKeys()
@@ -44,7 +46,9 @@ class BEExposureSubmissionWarnOthersViewController: ExposureSubmissionWarnOthers
 				}
 				
 			case .success(let keys):
-				self.coordinator!.submitExposureKeys(keys)
+				self.coordinator!.submitExposureKeys(keys) {
+					self.navigationFooterItem?.isPrimaryButtonEnabled = true
+				}
 			}
 		}
 	}

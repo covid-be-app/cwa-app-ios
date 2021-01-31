@@ -26,6 +26,8 @@ final class HTTPClientAppConfigTests: XCTestCase {
 
 	// MARK: - Signature Verification Tests
 
+	var client: HTTPClient!
+	
 	func testGetAppConfiguration_SignatureVerificationSuccess() throws {
 		// swiftlint:disable:next force_unwrapping
 		let url = Bundle(for: type(of: self)).url(forResource: "de-config", withExtension: nil)!
@@ -44,7 +46,8 @@ final class HTTPClientAppConfigTests: XCTestCase {
 			description: "Package signature validation passed!"
 		)
 
-		HTTPClient.makeWith(mock: stack).appConfiguration { result in
+		client = HTTPClient.makeWith(mock: stack)
+		client.appConfiguration { result in
 			defer { successExpectation.fulfill() }
 			if result == nil {
 				XCTFail("Signature validation should have passed!")
@@ -72,7 +75,8 @@ final class HTTPClientAppConfigTests: XCTestCase {
 			description: "Expect that package signature validation fails"
 		)
 
-		HTTPClient.makeWith(mock: stack).appConfiguration { result in
+		client = HTTPClient.makeWith(mock: stack)
+		client.appConfiguration { result in
 			defer { successExpectation.fulfill() }
 			if result != nil {
 				XCTFail("Expected signature validation to fail!")
@@ -93,7 +97,9 @@ final class HTTPClientAppConfigTests: XCTestCase {
 			description: "Expect that Data cannot be deserialized into SAP_ApplicationConfiguration!"
 		)
 
-		HTTPClient.makeWith(mock: stack).appConfiguration { result in
+		client = HTTPClient.makeWith(mock: stack)
+			
+		client.appConfiguration { result in
 			defer { successExpectation.fulfill() }
 			if result != nil {
 				XCTFail("Request succeeded although data returned by server was invalid?!")
@@ -112,7 +118,9 @@ final class HTTPClientAppConfigTests: XCTestCase {
 			description: "Expect that request fails"
 		)
 
-		HTTPClient.makeWith(mock: stack).appConfiguration { result in
+		client = HTTPClient.makeWith(mock: stack)
+		
+		client.appConfiguration { result in
 			defer { successExpectation.fulfill() }
 			if result != nil {
 				XCTFail("Server sent bad response code, but request succeeded?!")
@@ -131,7 +139,9 @@ final class HTTPClientAppConfigTests: XCTestCase {
 			description: "Expect that request fails"
 		)
 
-		HTTPClient.makeWith(mock: stack).appConfiguration { result in
+		client = HTTPClient.makeWith(mock: stack)
+		
+		client.appConfiguration { result in
 			defer { successExpectation.fulfill() }
 			if result != nil {
 				XCTFail("Server sent bad response code, but request succeeded?!")

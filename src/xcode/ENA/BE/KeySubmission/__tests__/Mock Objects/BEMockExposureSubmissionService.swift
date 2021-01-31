@@ -22,16 +22,17 @@ import ExposureNotification
 
 class BEMockExposureSubmissionService : BEExposureSubmissionService {
 	private (set) var mobileTestId: BEMobileTestId?
+	private(set) var isGettingTestResult: Bool = false
 	
 	private var keys:[ENTemporaryExposureKey]
 	
 	init() {
 		let dayCount = 14
-		let startDate = Calendar.current.date(byAdding: .day, value: -dayCount, to: Date(), wrappingComponents: true)!
+		let startDate = Calendar.current.date(byAdding: .day, value: -dayCount, to: Date())!
 		var diagnosisKeys:[ENTemporaryExposureKey] = []
 		
 		for x in 0..<dayCount+1 {
-			let date = Calendar.current.date(byAdding: .day, value: x, to: startDate, wrappingComponents: true)!
+			let date = Calendar.current.date(byAdding: .day, value: x, to: startDate)!
 			let key = ENTemporaryExposureKey.random(date)
 			
 			diagnosisKeys.append(key)

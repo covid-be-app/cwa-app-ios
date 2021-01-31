@@ -25,29 +25,41 @@ class ExposureSubmissionIntroViewController: DynamicTableViewController, ENANavi
 
 	// MARK: - Initializers.
 
-	init?(coder: NSCoder, coordinator: ExposureSubmissionCoordinating) {
-		super.init(coder: coder)
+	init(coordinator: ExposureSubmissionCoordinating) {
 		self.coordinator = coordinator
+		super.init(nibName: nil, bundle: nil)
 	}
 
 	@available(*, unavailable)
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
+	
+	private lazy var navigationFooterItem: ENANavigationFooterItem = {
+		let item = ENANavigationFooterItem()
 
-	// MARK: - View lifecycle methods.
+		item.isPrimaryButtonHidden = false
+		item.isPrimaryButtonEnabled = true
+		item.isSecondaryButtonHidden = true
+
+		item.title = AppStrings.ExposureSubmissionIntroduction.title
+		item.largeTitleDisplayMode = .automatic
+
+		item.primaryButtonTitle = AppStrings.ExposureSubmission.continueText
+
+		return item
+	}()
+	
+	override var navigationItem: UINavigationItem {
+		navigationFooterItem
+	}
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		navigationFooterItem?.primaryButtonTitle = AppStrings.ExposureSubmission.continueText
 
 		setupView()
 		setupBackButton()
-	}
-
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
 
 		footerView?.primaryButton?.accessibilityIdentifier = AccessibilityIdentifiers.ExposureSubmission.continueText
 	}
@@ -55,20 +67,12 @@ class ExposureSubmissionIntroViewController: DynamicTableViewController, ENANavi
 	// MARK: - Setup helpers.
 
 	private func setupView() {
-		setupTitle()
-		setupTableView()
-	}
+		view.backgroundColor = .enaColor(for: .background)
+		hidesBottomBarWhenPushed = true
 
-	private func setupTitle() {
-		navigationItem.largeTitleDisplayMode = .always
-		title = AppStrings.ExposureSubmissionIntroduction.title
-	}
-
-	private func setupTableView() {
-		tableView.dataSource = self
-		tableView.delegate = self
 		tableView.register(UINib(nibName: String(describing: ExposureSubmissionStepCell.self), bundle: nil), forCellReuseIdentifier: CustomCellReuseIdentifiers.stepCell.rawValue)
 		dynamicTableViewModel = .intro
+		tableView.separatorStyle = .none
 	}
 
 	// MARK: - ENANavigationControllerWithFooterChild methods.

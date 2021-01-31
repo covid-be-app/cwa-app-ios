@@ -396,7 +396,7 @@ private extension ENATanInput {
 	}
 
 	func calculateChecksum(input: String) -> Character? {
-		let hash = Hasher.sha256(input)
+		let hash = ENAHasher.sha256(input)
 		switch hash.first?.uppercased() {
 		case "0": return "G"
 		case "1": return "H"

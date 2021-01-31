@@ -30,10 +30,10 @@ class BEExposureSubmissionServiceTests: XCTestCase {
     override func setUpWithError() throws {
 		// generate fake keys for the last 2 weeks
 		let dayCount = 14
-		let startDate = Calendar.current.date(byAdding: .day, value: -dayCount, to: Date(), wrappingComponents: true)!
+		let startDate = Calendar.current.date(byAdding: .day, value: -dayCount, to: Date())!
 		
 		for x in 0..<dayCount+1 {
-			let date = Calendar.current.date(byAdding: .day, value: x, to: startDate, wrappingComponents: true)!
+			let date = Calendar.current.date(byAdding: .day, value: x, to: startDate)!
 			let key = ENTemporaryExposureKey.random(date)
 			
 			keys.append(key)
@@ -81,8 +81,9 @@ class BEExposureSubmissionServiceTests: XCTestCase {
 				XCTAssert(false)
 			case .success(let keys):
 				keys.forEach{ key in
-					XCTAssert(datePatientInfectious <= key.rollingStartNumber.date,"Key \(key.rollingStartNumber.date) earlier than infectious date \(datePatientInfectious)")
-					XCTAssert(dateTestCommunicated >= key.rollingStartNumber.date,"Key later than test communicated date")
+					let keyDate = key.rollingStartNumber.date
+					XCTAssert(datePatientInfectious <= keyDate,"Key \(keyDate) earlier than infectious date \(datePatientInfectious)")
+					XCTAssert(dateTestCommunicated >= keyDate,"Key \(keyDate) later than test communicated date \(dateTestCommunicated)")
 				}
 				finishedExpectation.fulfill()
 			}
@@ -135,7 +136,37 @@ class BEExposureSubmissionServiceTests: XCTestCase {
 		
 		waitForExpectations(timeout: 20)
 	}
-	
+
+	func testAvoidDoubleTestResultCalls() throws {
+		let keyRetrieval = MockDiagnosisKeysRetrieval(diagnosisKeysResult: (keys, nil))
+		let store = try SecureStore(at: URL(staticString: ":memory:"), key: "123456")
+		let mockURLSession = try makeMockSessionForFakeKeyUpload(testResult:TestResult.negative)
+
+		let networkStack = MockNetworkStack(
+			mockSession: mockURLSession
+		)
+		
+		let client = HTTPClient.makeWith(mock: networkStack)
+		store.isAllowedToPerformBackgroundFakeRequests = true
+		
+		let service = BEExposureSubmissionServiceImpl(diagnosiskeyRetrieval: keyRetrieval, client: client, store: store)
+		service.generateMobileTestId(nil)
+		service.getTestResult { result in
+			XCTAssertFalse(service.isGettingTestResult)
+			switch result {
+			case .failure:
+				XCTAssert(false)
+			case.success(let testResult):
+				XCTAssertEqual(testResult.result, TestResult.Result.negative)
+			}
+		}
+		
+		XCTAssert(service.isGettingTestResult)
+		
+		
+		waitForExpectations(timeout: 20)
+	}
+
 	func testDoNotUploadKeysAfterPositiveTest() throws {
 		let keyRetrieval = MockDiagnosisKeysRetrieval(diagnosisKeysResult: (keys, nil))
 		let store = try SecureStore(at: URL(staticString: ":memory:"), key: "123456")

@@ -21,10 +21,15 @@ import Foundation
 import ExposureNotification
 
 extension ENIntervalNumber {
-	var dateInt:BEDateInt {
+	var dateInt: BEDateInt {
 		get {
 			let timeInterval = TimeInterval(self) * 600
-			return String.fromDateWithoutTime(date: Date(timeIntervalSince1970: timeInterval)).dateInt
+			let timezone = TimeZone.current
+			
+			// we want to go from midnight GMT to midnight local time
+			let date = Date(timeIntervalSince1970: timeInterval - Double(timezone.secondsFromGMT()))
+			
+			return String.fromDateWithoutTime(date: date).dateInt
 		}
 	}
 	
@@ -32,7 +37,10 @@ extension ENIntervalNumber {
 	// as we can have time zone issues
 	var date:Date {
 		get {
-			return Date(timeIntervalSince1970: TimeInterval(self) * 600)
+			// we want to go from midnight GMT to midnight local time
+			let timezone = TimeZone.current
+
+			return Date(timeIntervalSince1970: TimeInterval(self) * 600 - Double(timezone.secondsFromGMT()) )
 		}
 	}
 	

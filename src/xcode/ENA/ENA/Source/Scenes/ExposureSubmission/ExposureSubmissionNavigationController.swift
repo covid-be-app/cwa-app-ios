@@ -31,10 +31,10 @@ final class ExposureSubmissionNavigationController: ENANavigationControllerWithF
 
 	// MARK: - Initializers.
 
-	init?(coder: NSCoder, coordinator: ExposureSubmissionCoordinating, rootViewController: UIViewController? = nil) {
+	init(coordinator: ExposureSubmissionCoordinating, rootViewController: UIViewController? = nil) {
 		self.coordinator = coordinator
 		self.rootViewController = rootViewController
-		super.init(coder: coder)
+		super.init(nibName: nil, bundle: nil)
 	}
 
 	@available(*, unavailable)
@@ -60,6 +60,8 @@ final class ExposureSubmissionNavigationController: ENANavigationControllerWithF
 
 		navigationItem.rightBarButtonItem = barButtonItem
 		navigationBar.accessibilityLabel = AccessibilityIdentifiers.General.exposureSubmissionNavigationControllerTitle
+		navigationItem.largeTitleDisplayMode = .always
+		navigationBar.prefersLargeTitles = true
 	}
 
 	override func viewWillAppear(_ animated: Bool) {

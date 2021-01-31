@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="mobileDataUsage" id="fWW-Pl-7G2" customClass="MobileDataUsageTableViewCell" customModule="ENA" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="44.5"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fWW-Pl-7G2" id="gzb-S0-oGW">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="44.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jHK-e0-haw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="# Änderung Ihres Infektionsrisikos " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8st-ol-kGp" userLabel="Description Label" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
+                                <rect key="frame" x="16" y="0.0" width="323" height="44.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="ENA Text Primary 1 Color"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="body"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g68-XD-QXT" userLabel="Toggle Switch" customClass="ENASwitch" customModule="ENA" customModuleProvider="target">
+                                <rect key="frame" x="349" y="7" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchToggled:" destination="fWW-Pl-7G2" eventType="valueChanged" id="X0L-e2-2xp"/>
+                                </connections>
+                            </switch>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="1zV-U6-1Pm"/>
+                            <constraint firstAttribute="bottom" secondItem="8st-ol-kGp" secondAttribute="bottom" id="Btn-Yz-2k1"/>
+                            <constraint firstItem="8st-ol-kGp" firstAttribute="top" secondItem="jHK-e0-haw" secondAttribute="top" id="FNp-7K-VLZ"/>
+                            <constraint firstItem="g68-XD-QXT" firstAttribute="leading" secondItem="8st-ol-kGp" secondAttribute="trailing" constant="10" id="NH2-sw-7ad"/>
+                            <constraint firstItem="g68-XD-QXT" firstAttribute="centerY" secondItem="jHK-e0-haw" secondAttribute="centerY" id="SPy-Yw-vVB"/>
+                            <constraint firstItem="8st-ol-kGp" firstAttribute="leading" secondItem="jHK-e0-haw" secondAttribute="leading" constant="16" id="exH-EC-Cu5"/>
+                            <constraint firstAttribute="trailing" secondItem="g68-XD-QXT" secondAttribute="trailing" constant="16" id="s05-AB-wGY"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="jHK-e0-haw" firstAttribute="leading" secondItem="gzb-S0-oGW" secondAttribute="leading" id="aG4-mK-LKg"/>
+                    <constraint firstItem="jHK-e0-haw" firstAttribute="top" secondItem="gzb-S0-oGW" secondAttribute="top" id="eXh-xM-sie"/>
+                    <constraint firstAttribute="trailing" secondItem="jHK-e0-haw" secondAttribute="trailing" id="t0I-8h-QAt"/>
+                    <constraint firstAttribute="bottom" secondItem="jHK-e0-haw" secondAttribute="bottom" id="vd3-bj-NS7"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="8st-ol-kGp" id="StA-Ra-O9V"/>
+                <outlet property="toggleSwitch" destination="g68-XD-QXT" id="wOM-NN-XlN"/>
+            </connections>
+            <point key="canvasLocation" x="45" y="112"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="8st-ol-kGp">
+            <size key="intrinsicContentSize" width="262.5" height="20.5"/>
+        </designable>
+        <designable name="g68-XD-QXT">
+            <size key="intrinsicContentSize" width="49" height="31"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="ENA Text Primary 1 Color">
+            <color red="0.090196078431372548" green="0.098039215686274508" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -24,14 +24,11 @@ import XCTest
 class ExposureSubmissionViewControllerTests: XCTestCase {
 
 	private func createVC() -> ExposureSubmissionTestResultViewController {
-		AppStoryboard.exposureSubmission.initiate(viewControllerType: ExposureSubmissionTestResultViewController.self) { coder -> UIViewController? in
-			ExposureSubmissionTestResultViewController(
-				coder: coder,
+			return ExposureSubmissionTestResultViewController(
 				coordinator: MockExposureSubmissionCoordinator(),
 				exposureSubmissionService: BEMockExposureSubmissionService(),
 				testResult: nil
 			)
-		}
 	}
 
 	func testPositiveState() {

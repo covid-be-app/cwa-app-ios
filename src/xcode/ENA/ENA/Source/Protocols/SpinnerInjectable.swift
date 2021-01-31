@@ -19,7 +19,7 @@ import Foundation
 import UIKit
 
 /// Allows to add and remove a default iOS activity indicator spinner.
-protocol SpinnerInjectable: AnyObject {
+protocol SpinnerInjectable: UIViewController {
 	var spinner: UIActivityIndicatorView? { get set }
 	var view: UIView! { get }
 	func startSpinner()
@@ -33,7 +33,13 @@ extension SpinnerInjectable {
 			return
 		}
 
-		let spinner = UIActivityIndicatorView(style: .large)
+		let spinner: UIActivityIndicatorView
+		if #available(iOS 13.0, *) {
+			spinner = UIActivityIndicatorView(style: traitCollection.preferredContentSizeCategory >= .accessibilityExtraLarge ? .large : .medium)
+		} else {
+			spinner = UIActivityIndicatorView(style: traitCollection.preferredContentSizeCategory >= .accessibilityExtraLarge ? .whiteLarge : .white)
+		}
+
 		spinner.startAnimating()
 		spinner.translatesAutoresizingMaskIntoConstraints = false
 		view.addSubview(spinner)

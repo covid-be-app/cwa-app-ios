@@ -27,7 +27,7 @@ import ZIPFoundation
 extension SAPDownloadedPackage {
 
 	/// - note: Will SHA256 hash the data
-	static func makeSignature(data: Data, key: P256.Signing.PrivateKey, bundleId: String = "de.rki.coronawarnapp") throws -> SAP_TEKSignature {
+	static func makeSignature(data: Data, key: PrivateKeyProvider, bundleId: String = "be.sciensano.coronalertbe") throws -> SAP_TEKSignature {
 		var signature = SAP_TEKSignature()
 		signature.signature = try key.signature(for: data).derRepresentation
 		signature.signatureInfo = makeSignatureInfo(bundleId: bundleId)
@@ -35,7 +35,7 @@ extension SAPDownloadedPackage {
 		return signature
 	}
 
-	static func makeSignatureInfo(bundleId: String = "de.rki.coronawarnapp") -> SAP_SignatureInfo {
+	static func makeSignatureInfo(bundleId: String = "be.sciensano.coronalertbe") -> SAP_SignatureInfo {
 		var info = SAP_SignatureInfo()
 		info.appBundleID = bundleId
 
@@ -53,7 +53,7 @@ extension SAPDownloadedPackage {
 	///
 	/// - important: Both data and key are defaulted, but make sure to pass your own key if you want to test the verification process!
 	///	Accepting the default key is only useful if you just need a package and do not care about signing validation
-	static func makePackage(bin: Data = Data(bytes: [0xA, 0xB, 0xC], count: 3), key: P256.Signing.PrivateKey = P256.Signing.PrivateKey()) throws -> SAPDownloadedPackage {
+	static func makePackage(bin: Data = Data(bytes: [0xA, 0xB, 0xC], count: 3), key: PrivateKeyProvider = CryptoProvider.createPrivateKey()) throws -> SAPDownloadedPackage {
 		let signature = try makeSignature(data: bin, key: key).asList()
 		return try makePackage(bin: bin, signature: signature)
 	}
@@ -96,5 +96,36 @@ extension Array where Element == SAP_TEKSignature {
 		signatureList.signatures = self
 
 		return signatureList
+	}
+}
+
+/// Quick and dirty factory for asymmetric keys
+enum CryptoProvider {
+	
+	/// Create a private signing key
+	/// - Returns: The key as `PrivateKeyProvider`
+	static func createPrivateKey(useFallback: Bool = false) -> PrivateKeyProvider {
+		do {
+			return try PrivateKey()
+		} catch {
+			fatalError(error.localizedDescription) // should not happen™
+		}
+	}
+
+	/// A public key
+	///
+	/// - Parameter privateKey: The private key to derive the public key from. If no key is given, the default private key will be created
+	/// - Returns:The requested public key
+	static func createPublicKey(from privateKey: PrivateKeyProvider? = nil, useFallback: Bool = false) -> PublicKeyProtocol {
+		let priv = privateKey ?? createPrivateKey(useFallback: useFallback)
+		return PublicKey(rawRepresentation: priv.publicKeyRaw)
+	}
+
+	/// Creates a new key pair
+	///
+	/// - Returns:A tuple containing a private key and it's corresponding public key
+	static func createKeyPair(useFallback: Bool = false) -> (PrivateKeyProvider, PublicKeyProtocol) {
+		let priv = createPrivateKey(useFallback: useFallback)
+		return (priv, PublicKey(rawRepresentation: priv.publicKeyRaw))
 	}
 }

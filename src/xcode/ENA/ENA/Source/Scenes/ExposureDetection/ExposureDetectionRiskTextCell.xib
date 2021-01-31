@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="riskTextCell" id="xyn-i9-5yM">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="52.5"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xyn-i9-5yM" id="aQ3-N7-40l">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="52.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unknown risk" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orU-BJ-8pk" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
+                        <rect key="frame" x="20" y="16" width="374" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" name="ENA Text Contrast Color"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="body"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="orU-BJ-8pk" firstAttribute="leading" secondItem="aQ3-N7-40l" secondAttribute="leadingMargin" id="BvZ-ea-u9e"/>
+                    <constraint firstItem="orU-BJ-8pk" firstAttribute="top" secondItem="aQ3-N7-40l" secondAttribute="topMargin" id="N4C-Tf-wfs"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="orU-BJ-8pk" secondAttribute="bottom" id="lGB-Pu-qRe"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="orU-BJ-8pk" secondAttribute="trailing" id="la2-XZ-fcd"/>
+                </constraints>
+                <edgeInsets key="layoutMargins" top="16" left="16" bottom="16" right="16"/>
+            </tableViewCellContentView>
+            <color key="backgroundColor" name="ENA Risk Neutral Color"/>
+            <connections>
+                <outlet property="textLabel" destination="orU-BJ-8pk" id="5SS-nE-fB8"/>
+            </connections>
+            <point key="canvasLocation" x="-317" y="85"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="orU-BJ-8pk">
+            <size key="intrinsicContentSize" width="103" height="20.5"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="ENA Risk Neutral Color">
+            <color red="0.41960784313725491" green="0.51372549019607838" blue="0.51764705882352946" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ENA Text Contrast Color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

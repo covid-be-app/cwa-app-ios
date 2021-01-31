@@ -21,13 +21,27 @@ import Foundation
 import UIKit
 
 class RiskLegendViewController: DynamicTableViewController {
-	@IBOutlet weak var titleLabel: UILabel!
-	@IBOutlet weak var subtitleLabel: UILabel!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
 		navigationItem.title = AppStrings.RiskLegend.title
+		navigationItem.largeTitleDisplayMode = .always
+		navigationController?.navigationBar.prefersLargeTitles = true
+
+		navigationItem.rightBarButtonItem = CloseBarButtonItem(onTap: { [weak self] in
+			self?.dismiss(animated: true)
+		})
+
+		view.backgroundColor = .enaColor(for: .background)
+
+		tableView.separatorStyle = .none
+		tableView.allowsSelection = false
+
+		tableView.register(
+			UINib(nibName: String(describing: RiskLegendDotBodyCell.self), bundle: nil),
+			forCellReuseIdentifier: CellReuseIdentifier.dotBody.rawValue
+		)
 
 		navigationItem.rightBarButtonItem?.accessibilityLabel = AppStrings.AccessibilityLabel.close
 		navigationItem.rightBarButtonItem?.accessibilityIdentifier = AccessibilityIdentifiers.AccessibilityLabel.close

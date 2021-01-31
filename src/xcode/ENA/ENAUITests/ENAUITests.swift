@@ -23,7 +23,9 @@ class ENAUITests: XCTestCase {
 	override func setUp() {
 		continueAfterFailure = false
 		app = XCUIApplication()
-		setupSnapshot(app)
+		#if targetEnvironment(simulator)
+			setupSnapshot(app)
+		#endif
 		app.setDefaults()
 		app.launchArguments.append(contentsOf: ["-isOnboarded", "NO"])
 	}
@@ -46,8 +48,11 @@ class ENAUITests: XCTestCase {
 	}
 
 	func test_0000_Generate_Screenshots_For_AppStore() throws {
-
-		let snapshotsActive = true
+		#if targetEnvironment(simulator)
+			let snapshotsActive = true
+		#else
+			let snapshotsActive = false
+		#endif
 
 		app.setPreferredContentSizeCategory(accessibililty: .normal, size: .M)
 		app.launch()
@@ -102,7 +107,7 @@ class ENAUITests: XCTestCase {
 		app.navigationBars.buttons.element(boundBy: 0).tap()
 		XCTAssertTrue(app.navigationBars.buttons.element(boundBy: 0).waitForExistence(timeout: 5.0))
 		app.navigationBars.buttons.element(boundBy: 0).tap()
-		app.swipeDown()
+
 		// todo: need accessibility for Notify and Help
 		XCTAssertTrue(app.buttons["AppStrings.Home.submitCardButton"].waitForExistence(timeout: 5.0))
 		app.buttons["AppStrings.Home.submitCardButton"].tap()

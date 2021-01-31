@@ -3,27 +3,45 @@ version: 2.1
 jobs:
   build:
     macos:
-      xcode: 11.6.0
-    shell: zsh
-
+      xcode: 12.3.0
     steps:
       - checkout
       - run:
+          name: fix SwiftPM #Solves an old Xcode 11 issue that seems to got reintroduced with Xcode 12: https://stackoverflow.com/questions/58125659/github-actions-xcodebuild-fails-due-to-server-fingerprint
+          command: for ip in $(dig @8.8.8.8 github.com +short); do ssh-keyscan github.com,$ip; ssh-keyscan $ip; done 2>/dev/null >> ~/.ssh/known_hosts
+      - run:
+          name: Set Ruby Version
+          command: echo 'chruby ruby-2.7' >> ~/.bash_profile
+      - run:
+          name: Install bundler
+          command: sudo gem install rake bundler:2.2.2
+      - run:
           name: Install dependencies
-          command: cd src/xcode && bundle install
+          command: cd src/xcode && bundle install --path=vendor --jobs=8
       - run:
           name: Build
           command: cd src/xcode && bundle exec fastlane build
   test:
     resource_class: large
     macos:
-      xcode: 11.6.0
-    shell: zsh
+      xcode: 12.3.0
     steps:
       - checkout
       - run:
+          name: fix SwiftPM #Solves an old Xcode 11 issue that seems to got reintroduced with Xcode 12: https://stackoverflow.com/questions/58125659/github-actions-xcodebuild-fails-due-to-server-fingerprint
+          command: for ip in $(dig @8.8.8.8 github.com +short); do ssh-keyscan github.com,$ip; ssh-keyscan $ip; done 2>/dev/null >> ~/.ssh/known_hosts
+      - run:
+          name: Set Ruby Version
+          command: echo 'chruby ruby-2.7' >> ~/.bash_profile
+      - run:
+          name: Log Ruby Version
+          command: ruby -v
+      - run:
+          name: Install bundler
+          command: sudo gem install rake bundler:2.2.2
+      - run:
           name: Install dependencies
-          command: brew install swiftlint && cd src/xcode && bundle install
+          command: brew install swiftlint && cd src/xcode && bundle install --path=vendor --jobs=8
       - run:
           name: Tests
           command: cd src/xcode && bundle exec fastlane test
@@ -45,7 +63,7 @@ jobs:
           path: src/xcode/swiftlint.result.json
       - run:
           name: Skip SonarCloud for external Pull Requests
-          command: '[[ -v CIRCLE_PR_REPONAME ]] && circleci-agent step halt || true'
+          command: '[[ -z "$CIRCLE_PR_REPONAME" ]] && circleci-agent step halt || true'
       - run:
           name: Install and run sonar-scanner
           command: |
@@ -67,35 +85,42 @@ jobs:
 
   testflight-release:
     macos:
-      xcode: 11.6.0
-    shell: zsh
+      xcode: 12.3.0
     steps:
       - checkout
-      - restore_cache:
-          key: 1-gems-{{ checksum "src/xcode/Gemfile.lock" }}
-      - run: cd src/xcode && bundle check || bundle install --path vendor/bundle
-      - save_cache:
-          key: 1-gems-{{ checksum "src/xcode/Gemfile.lock" }}
-          paths:
-            - src/xcode/vendor/bundle     
-#      - run: ./scripts/switch_to_dev_env.sh
+      - run:
+          name: fix SwiftPM #Solves an old Xcode 11 issue that seems to got reintroduced with Xcode 12: https://stackoverflow.com/questions/58125659/github-actions-xcodebuild-fails-due-to-server-fingerprint
+          command: for ip in $(dig @8.8.8.8 github.com +short); do ssh-keyscan github.com,$ip; ssh-keyscan $ip; done 2>/dev/null >> ~/.ssh/known_hosts
+      - run:
+          name: Set Ruby Version
+          command: echo 'chruby ruby-2.7' >> ~/.bash_profile
+      - run:
+          name: Log Ruby Version
+          command: ruby -v
+      - run:
+          name: Install dependencies
+          command: cd src/xcode && bundle install --path=vendor --jobs=8 --frozen
       - run:
           name: fastlane
           command: cd src/xcode && bundle exec fastlane betaRelease
           
   production-release:
     macos:
-      xcode: 11.6.0
-    shell: zsh
+      xcode: 12.3.0
     steps:
       - checkout
-      - restore_cache:
-          key: 1-gems-{{ checksum "src/xcode/Gemfile.lock" }}
-      - run: cd src/xcode && bundle check || bundle install --path vendor/bundle
-      - save_cache:
-          key: 1-gems-{{ checksum "src/xcode/Gemfile.lock" }}
-          paths:
-            - src/xcode/vendor/bundle     
+      - run:
+          name: fix SwiftPM #Solves an old Xcode 11 issue that seems to got reintroduced with Xcode 12: https://stackoverflow.com/questions/58125659/github-actions-xcodebuild-fails-due-to-server-fingerprint
+          command: for ip in $(dig @8.8.8.8 github.com +short); do ssh-keyscan github.com,$ip; ssh-keyscan $ip; done 2>/dev/null >> ~/.ssh/known_hosts
+      - run:
+          name: Set Ruby Version
+          command: echo 'chruby ruby-2.7' >> ~/.bash_profile
+      - run:
+          name: Log Ruby Version
+          command: ruby -v
+      - run:
+          name: Install dependencies
+          command: cd src/xcode && bundle install --path=vendor --jobs=8 --frozen
       - run:
           name: fastlane
           command: cd src/xcode && bundle exec fastlane productionRelease
@@ -106,14 +131,14 @@ workflows:
         - test
         - testflight-release:
             requires:
-              - test
+             - test
             filters:
               branches:
                 only:
                   - staging
         - production-release:
             requires:
-              - test
+             - test
             filters:
               branches:
                 only:
