@@ -206,6 +206,10 @@ extension Coordinator: HomeViewControllerDelegate {
 
 		coordinator.start(with: result)
 	}
+	
+	func showToolbox() {
+		rootViewController.pushViewController(BEToolboxViewController(), animated: true)
+	}
 
 	func showInviteFriends() {
 		rootViewController.pushViewController(

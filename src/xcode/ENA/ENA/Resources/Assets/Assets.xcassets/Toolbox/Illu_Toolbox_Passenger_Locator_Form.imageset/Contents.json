@@ -1,0 +1,22 @@
+{
+  "images" : [
+    {
+      "filename" : "Illu_Toolbox_Passenger_Locator_Form.pdf",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "Illu_Toolbox_Passenger_Locator_Form-dark.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
