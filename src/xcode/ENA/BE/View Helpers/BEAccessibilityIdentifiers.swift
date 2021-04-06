@@ -63,4 +63,17 @@ enum BEAccessibilityIdentifiers {
 	enum BEExposureNotification {
 		static let euInteroperabilityCell = "BEAppStrings.BEExposureNotification.euInteroperability.euInteroperabilityCell"
 	}
+	
+	enum BEHome {
+		static let toolbox = "BEAppStrings.BEHome.toolbox"
+	}
+	
+	enum BEToolbox {
+		static let vaccinationInformation = "BEAppStrings.BEToolbox.vaccinationInformation"
+		static let testReservation = "BEAppStrings.BEToolbox.testReservation"
+		static let quarantineCertificate = "BEAppStrings.BEToolbox.quarantineCertificate"
+		static let passengerLocatorForm = "BEAppStrings.BEToolbox.passengerLocatorForm"
+		static let declarationOfHonour = "BEAppStrings.BEToolbox.declarationOfHonour"
+
+	}
 }

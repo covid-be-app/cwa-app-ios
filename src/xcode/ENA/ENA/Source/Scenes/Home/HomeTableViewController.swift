@@ -26,6 +26,7 @@ protocol HomeViewControllerDelegate: AnyObject {
 	func setExposureDetectionState(state: HomeInteractor.State, isRequestRiskRunning: Bool)
 	func showExposureSubmission(with result: TestResult?)
 	func showInviteFriends()
+	func showToolbox()
 	func showWebPage(from viewController: UIViewController, urlString: String)
 	func showAppInformation()
 	func showSettings(enState: ENStateHandler.State)
@@ -37,6 +38,7 @@ class HomeTableViewController: UIViewController, RequiresAppDependencies {
 	enum CellType: String {
 		case activate = "activate"
 		case infectionSummary = "infectionSummary"
+		case toolbox = "toolbox"
 		case riskLevel = "riskLevel"
 		case info = "info"
 		case testResult = "testResult"
@@ -291,6 +293,10 @@ class HomeTableViewController: UIViewController, RequiresAppDependencies {
 	func showExposureNotificationSetting() {
 		delegate?.showExposureNotificationSetting(enState: self.homeInteractor.state.enState)
 	}
+	
+	func showToolbox() {
+		delegate?.showToolbox()
+	}
 
 	func showExposureDetection() {
 		delegate?.showExposureDetection(state: homeInteractor.state, isRequestRiskRunning: homeInteractor.riskProvider.isLoading)
@@ -331,6 +337,7 @@ class HomeTableViewController: UIViewController, RequiresAppDependencies {
 		tableView.register(UINib(nibName: HomeRiskFindingPositiveTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: HomeRiskFindingPositiveTableViewCell.stringName())
 		tableView.register(UINib(nibName: HomeTestResultLoadingTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: HomeTestResultLoadingTableViewCell.stringName())
 		tableView.register(UINib(nibName: BEInfectionSummaryTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: BEInfectionSummaryTableViewCell.stringName())
+		tableView.register(UINib(nibName: BEToolboxTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: BEToolboxTableViewCell.stringName())
 		tableView.register(UINib(nibName: HomeSpacerCell.stringName(), bundle: nil), forCellReuseIdentifier: HomeSpacerCell.stringName())
 	}
 	
@@ -339,6 +346,8 @@ class HomeTableViewController: UIViewController, RequiresAppDependencies {
 		switch cell {
 		case is HomeActivateCell:
 			showExposureNotificationSetting()
+		case is BEToolboxTableViewCell:
+			showToolbox()
 		case is HomeRiskLevelTableViewCell:
 			showExposureDetection()
 		case is HomeRiskFindingPositiveTableViewCell:
