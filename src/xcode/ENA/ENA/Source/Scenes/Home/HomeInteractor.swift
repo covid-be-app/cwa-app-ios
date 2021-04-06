@@ -291,6 +291,10 @@ extension HomeInteractor {
 		}
 		return configurator
 	}
+	
+	func setupToolboxConfigurator() -> BEHomeToolboxCellConfigurator {
+		return BEHomeToolboxCellConfigurator()
+	}
 
 	func setupActiveConfigurator() -> HomeActivateCellConfigurator {
 		return HomeActivateCellConfigurator(state: state.enState)
@@ -305,12 +309,9 @@ extension HomeInteractor {
 		activeConfigurator = setupActiveConfigurator()
 		actionsConfigurators.append(activeConfigurator)
 
-		// :BE:
-		// MARK: - Add summary card
-		
-		if let summaryConfigurator = setupInfectionSummaryConfigurator() {
-			actionsConfigurators.append(summaryConfigurator)
-		}
+		// MARK: - Add toolbox card
+
+		actionsConfigurators.append(setupToolboxConfigurator())
 
 		// MARK: - Add cards depending on result state.
 
@@ -362,6 +363,13 @@ extension HomeInteractor {
 			let submitCellConfigurator = setupSubmitConfigurator()
 			actionsConfigurators.append(submitCellConfigurator)
 		}
+
+		// MARK: - Add summary card
+		
+		if let summaryConfigurator = setupInfectionSummaryConfigurator() {
+			actionsConfigurators.append(summaryConfigurator)
+		}
+
 
 		return actionsConfigurators
 	}
