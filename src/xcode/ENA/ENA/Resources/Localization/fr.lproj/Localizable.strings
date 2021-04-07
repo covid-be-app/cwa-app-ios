@@ -350,7 +350,7 @@
 "BEMobileTestId_Select" = "Confirmer";
 "BEMobileTestId_Date" = "Date";
 "BEMobileTestId_Close" = "Fermer";
-"BEMobileTestId_saveExplanation" = "Montrez ce numéro et cette date au médecin ou au laboratoire qui effectuera le test afin de relier votre smartphone au test.\nSi vous avez reçu un code PCR, saisissez ce numéro et ces données dans le formulaire web.";
+"BEMobileTestId_saveExplanation" = "Montrez ce numéro et cette date au médecin ou au laboratoire effectuant le test pour relier votre smartphone au test.";
 "BELanguage" = "fr";
 "BESelectKeyCountries_title" = "Sélectionnez votre pays";
 "BESelectKeyCountries_explanation" = "Si vous n'étiez pas en Belgique à certaines des dates ci-dessous et que vous voulez partager cette information (de façon anonyme), veuillez sélectionner le pays dans lequel vous étiez à ces dates.";
@@ -423,3 +423,5 @@
 "BEAlreadyDidTest_possibility2" = "Vous avez reçu ou allez recevoir un SMS. Cliquez sur le lien et completer le webform.";
 "BEAlreadyDidTest_possibility3" = "Rendez-vous directement sur le webform pour encoder les 2 codes manuellement.";
 "BEAlreadyDidTest_AccImageDescription" = "Une image d'un tube à essai PCR";
+"BEMobileTestId_subtitle" = "Donnez ce code pour votre réservation de test COVID";
+"BEMobileTestId_saveExplanation2" = "Essayez autant que possible de transmettre ce numéro au médecin qui prescrit le test, mais rassurez-vous, si vous oubliez vous aurez le moyen de le faire soit par webform si vous avec un code CPR, soit par SMS si votre test est lié à un compte CPTC.";

@@ -350,7 +350,7 @@
 "BEMobileTestId_Select" = "Wählen";
 "BEMobileTestId_Date" = "Datum";
 "BEMobileTestId_Close" = "Schließen";
-"BEMobileTestId_saveExplanation" = "Zeigen Sie diese Nummer und dieses Datum dem Arzt oder Labor, das den Test durchführen wird, um Ihr Smartphone mit dem Test zu verbinden.\nWenn Sie einen PCR-Code erhalten haben, geben Sie diese Nummer und Daten in das Webformular ein.";
+"BEMobileTestId_saveExplanation" = "Zeigen Sie diese Nummer und dieses Datum dem Arzt oder Labor, das den Test durchführt, um Ihr Smartphone mit dem Test zu verbinden.";
 "BELanguage" = "de";
 "BESelectKeyCountries_title" = "Länder wählen";
 "BESelectKeyCountries_explanation" = "Wenn Sie an allen aufgeführten Daten nicht in Belgien waren und diese Informationen (anonym) weitergeben möchten, bitte in der anzupassenden Zeile das Land, das Sie an diesem Datum besucht haben, antippen.";
@@ -423,3 +423,5 @@
 "BEAlreadyDidTest_possibility2" = "Sie haben eine SMS erhalten oder werden diese erhalten. Klicken Sie auf den Link und füllen Sie das Webformular aus.";
 "BEAlreadyDidTest_possibility3" = "Gehen Sie direkt zum Webformular, um die 2 Codes manuell zu codieren. ";
 "BEAlreadyDidTest_AccImageDescription" = "Ein Bild eines PCR-Reagenzglases";
+"BEMobileTestId_subtitle" = "Geben Sie diesen Code für Ihre COVID-Testreservierung an";
+"BEMobileTestId_saveExplanation2" = "Versuchen Sie so viel wie möglich, diese Nummer an den Arzt zu übermitteln, der den Test verschreibt. Seien Sie jedoch versichert, wenn Sie vergessen, dass Sie die Möglichkeit haben, dies entweder per Webformular zu tun, wenn Sie einen CPR-Code haben, oder per SMS, wenn Ihr Test durchgeführt wird im Zusammenhang mit einem CPTC-Konto.";

@@ -34,10 +34,13 @@ enum BEAppStrings {
 	enum BEMobileTestId {
 		static let title = NSLocalizedString("BEMobileTestId_title", comment: "")
 		static let select = NSLocalizedString("BEMobileTestId_Select", comment: "")
+		
+		static let subtitle = NSLocalizedString("BEMobileTestId_subtitle", comment: "")
 
 		static let close = NSLocalizedString("BEMobileTestId_Close", comment: "")
 		static let saveExplanation = NSLocalizedString("BEMobileTestId_saveExplanation", comment: "")
-		
+		static let saveExplanation2 = NSLocalizedString("BEMobileTestId_saveExplanation2", comment: "")
+
 		static let dateInfectious = NSLocalizedString("BEMobileTestId_dateInfectious", comment: "")
 		static let code = NSLocalizedString("BEMobileTestId_code", comment: "")
 	}
