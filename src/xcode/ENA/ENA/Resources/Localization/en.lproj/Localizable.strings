@@ -425,3 +425,4 @@
 "BEAlreadyDidTest_AccImageDescription" = "An image of a PCR test tube";
 "BEMobileTestId_subtitle" = "Give this code for your COVID-test reservation";
 "BEMobileTestId_saveExplanation2" = "Try as much as possible to transmit this number to the doctor who prescribes the test, but rest assured, if you forget you will have the means to do it either by webform if you have a CPR code, or by SMS if your test is related to a CPTC account.";
+"BEHome_BEToolbox_testCenter" = "Find a test center";

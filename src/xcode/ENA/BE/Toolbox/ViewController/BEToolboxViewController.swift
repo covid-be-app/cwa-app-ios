@@ -141,6 +141,12 @@ class BEToolboxViewController: UIViewController {
 						suffix: "EN",
 						url: BEAppStrings.BEToolbox.declarationOfHonourURLEN)
 			])
+		),
+		BEToolboxItem(
+			text: BEAppStrings.BEToolbox.testCenter,
+			icon: "Icons_Toolbox_Belgium",
+			accessibilityIdentifier: BEAccessibilityIdentifiers.BEToolbox.testCenter,
+			targetURL: BEAppStrings.BEToolbox.testCenterURL
 		)
 	]
 
@@ -199,6 +205,11 @@ extension BEToolboxViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let item = toolboxItems[indexPath.row]
 		
-		self.navigationController!.pushViewController(item.viewController, animated: true)
+		if let url = item.targetURL {
+			UIApplication.shared.open(url, options: [:], completionHandler: nil)
+		} else {
+			self.navigationController!.pushViewController(item.viewController, animated: true)
+		}
+		
 	}
 }
