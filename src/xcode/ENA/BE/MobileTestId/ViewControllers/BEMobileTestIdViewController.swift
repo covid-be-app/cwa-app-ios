@@ -71,7 +71,7 @@ class BEMobileTestIdViewController: DynamicTableViewController, ENANavigationCon
 	
 		// I have no idea why this needs to be here as we don't show a back button anyway
 		// but if I keep the back button hidden, the navigation footer button disappears as soon
-		// as we scroll the contents. This does not happen if I enabled it again
+		// as we scroll the contents. This does not happen if I enable it again
 		navigationItem.hidesBackButton = false
 	}
 	

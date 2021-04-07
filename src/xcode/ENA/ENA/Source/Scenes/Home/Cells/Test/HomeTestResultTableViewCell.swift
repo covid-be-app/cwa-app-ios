@@ -20,7 +20,8 @@
 import UIKit
 
 protocol HomeTestResultTableViewCellDelegate: class {
-	func testResultCollectionViewCellPrimaryActionTriggered(_ collectionViewCell: HomeTestResultTableViewCell)
+	func testResultCollectionViewCellPrimaryActionTriggered(_ cell: HomeTestResultTableViewCell)
+	func testResultCollectionViewCellSecondayActionTriggered(_ cell: HomeTestResultTableViewCell)
 }
 
 class HomeTestResultTableViewCell: HomeCardTableViewCell {
@@ -30,6 +31,7 @@ class HomeTestResultTableViewCell: HomeCardTableViewCell {
 	@IBOutlet var warningLabel: ENALabel!
 	@IBOutlet var illustrationView: UIImageView!
 	@IBOutlet var button: ENAButton!
+	@IBOutlet var secondButton: ENAButton!
 	@IBOutlet var stackView: UIStackView!
 
 	weak var delegate: HomeTestResultTableViewCellDelegate?
@@ -51,7 +53,7 @@ class HomeTestResultTableViewCell: HomeCardTableViewCell {
 		setupAccessibility()
 	}
 
-	func configure(title: String, subtitle: String? = nil, description: String, warning: String? = nil, button buttonTitle: String, image: UIImage?, tintColor: UIColor = .enaColor(for: .textPrimary1), accessibilityIdentifier: String?) {
+	func configure(title: String, subtitle: String? = nil, description: String, warning: String? = nil, button buttonTitle: String, secondButton secondButtonTitle: String? = nil, image: UIImage?, tintColor: UIColor = .enaColor(for: .textPrimary1), accessibilityIdentifier: String?) {
 		titleLabel.text = title
 		subtitleLabel.text = subtitle
 		descriptionLabel.text = description
@@ -60,7 +62,14 @@ class HomeTestResultTableViewCell: HomeCardTableViewCell {
 
 		button.setTitle(buttonTitle, for: .normal)
 		button.accessibilityIdentifier = AccessibilityIdentifiers.Home.submitCardButton
+		
+		secondButton.isHidden = secondButtonTitle == nil
 
+		if let title = secondButtonTitle {
+			secondButton.setTitle(title, for: .normal)
+			secondButton.accessibilityIdentifier = AccessibilityIdentifiers.Home.submitCardButton2
+		}
+		
 		subtitleLabel.isHidden = (nil == subtitle)
 		button.accessibilityIdentifier = accessibilityIdentifier
 
@@ -87,6 +96,10 @@ class HomeTestResultTableViewCell: HomeCardTableViewCell {
 
 	@IBAction func primaryActionTriggered() {
 		delegate?.testResultCollectionViewCellPrimaryActionTriggered(self)
+	}
+
+	@IBAction func secondaryActionTriggered() {
+		delegate?.testResultCollectionViewCellSecondayActionTriggered(self)
 	}
 
 	func setupAccessibility() {

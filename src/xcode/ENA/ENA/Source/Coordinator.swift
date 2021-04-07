@@ -210,6 +210,12 @@ extension Coordinator: HomeViewControllerDelegate {
 	func showToolbox() {
 		rootViewController.pushViewController(BEToolboxViewController(), animated: true)
 	}
+	
+	func showAlreadyDidTestScreen() {
+		let navController = ENANavigationControllerWithFooter(rootViewController: BEAlreadyDidTestViewController())
+		navController.navigationBar.prefersLargeTitles = true
+		rootViewController.present(navController, animated: true)
+	}
 
 	func showInviteFriends() {
 		rootViewController.pushViewController(

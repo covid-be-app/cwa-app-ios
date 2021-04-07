@@ -180,4 +180,17 @@ enum BEAppStrings {
 		static let declarationOfHonourURLNL = URL(string: "https://travel.info-coronavirus.be/nl/essentiele-reis")!
 		static let declarationOfHonourURLDE = URL(string: "https://travel.info-coronavirus.be/de/notwendige-reise-ehrenwortliche-erklarung")!
 	}
+	
+	enum BEAlreadyDidTest {
+		static let title = NSLocalizedString("BEAlreadyDidTest_title", comment: "")
+		
+		static let possibilitiesTitle = NSLocalizedString("BEAlreadyDidTest_possibilitiesTitle", comment: "")
+		static let possibility1 = NSLocalizedString("BEAlreadyDidTest_possibility1", comment: "")
+		static let possibility2 = NSLocalizedString("BEAlreadyDidTest_possibility2", comment: "")
+		static let possibility3 = NSLocalizedString("BEAlreadyDidTest_possibility3", comment: "")
+		
+		static let close = NSLocalizedString("BEMobileTestId_Close", comment: "")
+		static let imageDescription = NSLocalizedString("BEAlreadyDidTest_AccImageDescription", comment: "")
+		
+	}
 }
