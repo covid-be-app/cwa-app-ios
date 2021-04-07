@@ -50,6 +50,7 @@ class HomeTestResultCellConfigurator: TableViewCellConfigurator {
 		cell.configure(
 			title: AppStrings.Home.submitCardTitle,
 			description: AppStrings.Home.submitCardBody,
+			warning: AppStrings.Home.submitCardWarning,
 			button: AppStrings.Home.submitCardButton,
 			image: UIImage(named: "Illu_Hand_with_phone-initial"),
 			accessibilityIdentifier: AccessibilityIdentifiers.Home.submitCardButton
