@@ -242,9 +242,9 @@
 "Home_Finding_Positive_Card_Status_Subtitle" = "SARS-CoV-2 wurde bei Ihnen nachgewiesen.";
 "Home_Finding_Positive_Card_Note_Title" = "Bitte beachten:";
 "Home_Finding_Positive_Card_Button" = "Weiter";
-"Home_SubmitCard_Title" = "Erhalten Sie Ihr Testergebnis";
-"Home_SubmitCard_Body" = "Generieren Sie den Code, um Ihr Testergebnis auf Ihrem Smartphone zu erhalten.";
-"Home_SubmitCard_Button" = "Generieren Sie den Code";
+"Home_SubmitCard_Title" = "Verknüpfen Sie Ihren COVID-Test mit der App";
+"Home_SubmitCard_Body" = "Generieren Sie den Code und senden Sie ihn an den Praktiker, füllen Sie das Online-Webformular aus oder verwenden Sie die SMS, um Ihr Testergebnis mit der App zu verknüpfen.";
+"Home_SubmitCard_Button" = "Ich werde einen COVID-Test machen";
 "Home_InfoCard_ShareTitle" = "Coronalert teilen";
 "Home_InfoCard_AboutTitle" = "Häufig gestellte Fragen";
 "Home_SettingsCard_Title" = "Einstellungen";
@@ -350,7 +350,7 @@
 "BEMobileTestId_Select" = "Wählen";
 "BEMobileTestId_Date" = "Datum";
 "BEMobileTestId_Close" = "Schließen";
-"BEMobileTestId_saveExplanation" = "Zeigen Sie diese Nummer und dieses Datum dem Arzt oder Labor, das den Test durchführen wird, um Ihr Smartphone mit dem Test zu verbinden.\nWenn Sie einen PCR-Code erhalten haben, geben Sie diese Nummer und Daten in das Webformular ein.";
+"BEMobileTestId_saveExplanation" = "Zeigen Sie diese Nummer und dieses Datum dem Arzt oder Labor, das den Test durchführt, um Ihr Smartphone mit dem Test zu verbinden.";
 "BELanguage" = "de";
 "BESelectKeyCountries_title" = "Länder wählen";
 "BESelectKeyCountries_explanation" = "Wenn Sie an allen aufgeführten Daten nicht in Belgien waren und diese Informationen (anonym) weitergeben möchten, bitte in der anzupassenden Zeile das Land, das Sie an diesem Datum besucht haben, antippen.";
@@ -415,3 +415,14 @@
 "BEHome_BEToolbox_registerToBeVaccinated" = "Registrieren Sie sich, um geimpft zu werden";
 "BEHome_BEToolbox_bookATest" = "Testreservering";
 "BEHome_BEToolbox_bookATestInBrussels" = "Buchen Sie einen Test in Brüssel";
+"Home_SubmitCard_Warning" = "Dies erfordert aus Gründen der Anonymität eine manuelle Aktion.";
+"Home_SubmitCard_alreadyDidTestButton" = "COVID-Test bereits durchgeführt";
+"BEAlreadyDidTest_title" = "COVID-Test bereits durchgeführt";
+"BEAlreadyDidTest_possibilitiesTitle" = "3 Möglichkeiten, Ihren Test zu verknüpfen";
+"BEAlreadyDidTest_possibility1" = "Ich habe einen Test durchgeführt und mein Arzt oder Labor hat die 17 Ziffern der Coronalert-App korrekt eingegeben. Du musst nichts tun.";
+"BEAlreadyDidTest_possibility2" = "Sie haben eine SMS erhalten oder werden diese erhalten. Klicken Sie auf den Link und füllen Sie das Webformular aus.";
+"BEAlreadyDidTest_possibility3" = "Gehen Sie direkt zum Webformular, um die 2 Codes manuell zu codieren. ";
+"BEAlreadyDidTest_AccImageDescription" = "Ein Bild eines PCR-Reagenzglases";
+"BEMobileTestId_subtitle" = "Geben Sie diesen Code für Ihre COVID-Testreservierung an";
+"BEMobileTestId_saveExplanation2" = "Versuchen Sie so viel wie möglich, diese Nummer an den Arzt zu übermitteln, der den Test verschreibt. Seien Sie jedoch versichert, wenn Sie vergessen, dass Sie die Möglichkeit haben, dies entweder per Webformular zu tun, wenn Sie einen CPR-Code haben, oder per SMS, wenn Ihr Test durchgeführt wird im Zusammenhang mit einem CPTC-Konto.";
+"BEHome_BEToolbox_testCenter" = "Finden Sie ein Testzentrum";

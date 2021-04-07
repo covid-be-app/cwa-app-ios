@@ -27,6 +27,7 @@ protocol HomeViewControllerDelegate: AnyObject {
 	func showExposureSubmission(with result: TestResult?)
 	func showInviteFriends()
 	func showToolbox()
+	func showAlreadyDidTestScreen()
 	func showWebPage(from viewController: UIViewController, urlString: String)
 	func showAppInformation()
 	func showSettings(enState: ENStateHandler.State)
@@ -353,7 +354,9 @@ class HomeTableViewController: UIViewController, RequiresAppDependencies {
 		case is HomeRiskFindingPositiveTableViewCell:
 			showExposureSubmission(with: homeInteractor.testResult)
 		case is HomeTestResultTableViewCell:
-			showExposureSubmission(with: homeInteractor.testResult)
+			if homeInteractor.testResult != nil {
+				showExposureSubmission(with: homeInteractor.testResult)
+			}
 		case is HomeRiskInactiveTableViewCell:
 			showExposureDetection()
 		default:
@@ -435,6 +438,10 @@ extension HomeTableViewController {
 		showExposureSubmission(with: homeInteractor.testResult)
 	}
 
+	func showAlreadyDidTestScreen() {
+		delegate?.showAlreadyDidTestScreen()
+	}
+	
 	func updateTestResultState() {
 		homeInteractor.reloadActionSection()
 		homeInteractor.updateTestResults()

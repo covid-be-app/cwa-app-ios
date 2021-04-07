@@ -42,6 +42,7 @@ enum AccessibilityIdentifiers {
 
 	enum Home {
 		static let submitCardButton = "AppStrings.Home.submitCardButton"
+		static let submitCardButton2 = "AppStrings.Home.submitCardButton2"
 		static let activateCardOnTitle = "AppStrings.Home.activateCardOnTitle"
 		static let activateCardOffTitle = "AppStrings.Home.activateCardOffTitle"
 		static let activateCardBluetoothOffTitle = "AppStrings.Home.activateCardBluetoothOffTitle"

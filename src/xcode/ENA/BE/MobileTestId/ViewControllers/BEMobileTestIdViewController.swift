@@ -71,7 +71,7 @@ class BEMobileTestIdViewController: DynamicTableViewController, ENANavigationCon
 	
 		// I have no idea why this needs to be here as we don't show a back button anyway
 		// but if I keep the back button hidden, the navigation footer button disappears as soon
-		// as we scroll the contents. This does not happen if I enabled it again
+		// as we scroll the contents. This does not happen if I enable it again
 		navigationItem.hidesBackButton = false
 	}
 	
@@ -105,19 +105,22 @@ class BEMobileTestIdViewController: DynamicTableViewController, ENANavigationCon
 		dynamicTableViewModel = DynamicTableViewModel([
 			.section(
 				header: .image(
-					UIImage(named: "Illu_Submission_Funktion1"),
+					UIImage(named: "Illu_Code"),
 					accessibilityLabel: AppStrings.ExposureSubmissionIntroduction.accImageDescription,
 					accessibilityIdentifier: AccessibilityIdentifiers.General.image,
 					height: 200
 				),
 				separators: false,
 				cells: [
+					.title2(text: BEAppStrings.BEMobileTestId.subtitle, accessibilityIdentifier: nil),
 					.body(text: BEAppStrings.BEMobileTestId.saveExplanation,
 						  accessibilityIdentifier: BEAccessibilityIdentifiers.BEMobileTestId.saveExplanation),
 					.title2(text: BEAppStrings.BEMobileTestId.dateInfectious, accessibilityIdentifier: nil),
 					.headline(text: dateFormatter.string(from:mobileTestId.datePatientInfectious.dateWithoutTime!), accessibilityIdentifier: nil),
 					.title2(text: BEAppStrings.BEMobileTestId.code, accessibilityIdentifier: nil),
-					codeCell
+					codeCell,
+					.body(text: BEAppStrings.BEMobileTestId.saveExplanation2,
+						  accessibilityIdentifier: BEAccessibilityIdentifiers.BEMobileTestId.saveExplanation2),
 				]
 			)
 		])

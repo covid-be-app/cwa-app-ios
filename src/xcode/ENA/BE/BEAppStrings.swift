@@ -34,10 +34,13 @@ enum BEAppStrings {
 	enum BEMobileTestId {
 		static let title = NSLocalizedString("BEMobileTestId_title", comment: "")
 		static let select = NSLocalizedString("BEMobileTestId_Select", comment: "")
+		
+		static let subtitle = NSLocalizedString("BEMobileTestId_subtitle", comment: "")
 
 		static let close = NSLocalizedString("BEMobileTestId_Close", comment: "")
 		static let saveExplanation = NSLocalizedString("BEMobileTestId_saveExplanation", comment: "")
-		
+		static let saveExplanation2 = NSLocalizedString("BEMobileTestId_saveExplanation2", comment: "")
+
 		static let dateInfectious = NSLocalizedString("BEMobileTestId_dateInfectious", comment: "")
 		static let code = NSLocalizedString("BEMobileTestId_code", comment: "")
 	}
@@ -121,6 +124,7 @@ enum BEAppStrings {
 	
 	enum BEToolbox {
 		static let vaccinationInformation = NSLocalizedString("BEHome_BEToolbox_vaccinationInformation", comment: "")
+		static let testCenter = NSLocalizedString("BEHome_BEToolbox_testCenter", comment: "")
 		static let testReservation = NSLocalizedString("BEHome_BEToolbox_testReservation", comment: "")
 		static let quarantineCertificate = NSLocalizedString("BEHome_BEToolbox_quarantineCertificate", comment: "")
 		static let passengerLocatorForm = NSLocalizedString("BEHome_BEToolbox_passengerLocatorForm", comment: "")
@@ -179,5 +183,20 @@ enum BEAppStrings {
 		static let declarationOfHonourURLEN = URL(string: "https://travel.info-coronavirus.be/essential-travel-sworn-statement")!
 		static let declarationOfHonourURLNL = URL(string: "https://travel.info-coronavirus.be/nl/essentiele-reis")!
 		static let declarationOfHonourURLDE = URL(string: "https://travel.info-coronavirus.be/de/notwendige-reise-ehrenwortliche-erklarung")!
+
+		static let testCenterURL = URL(string: "https://www.google.com/maps/d/u/0/viewer?mid=1GFrpKwhDE97_pplhtikcfDxakEhohXst&ll=50.48641435902384%2C4.395339249999988&z=9")!
+	}
+	
+	enum BEAlreadyDidTest {
+		static let title = NSLocalizedString("BEAlreadyDidTest_title", comment: "")
+		
+		static let possibilitiesTitle = NSLocalizedString("BEAlreadyDidTest_possibilitiesTitle", comment: "")
+		static let possibility1 = NSLocalizedString("BEAlreadyDidTest_possibility1", comment: "")
+		static let possibility2 = NSLocalizedString("BEAlreadyDidTest_possibility2", comment: "")
+		static let possibility3 = NSLocalizedString("BEAlreadyDidTest_possibility3", comment: "")
+		
+		static let close = NSLocalizedString("BEMobileTestId_Close", comment: "")
+		static let imageDescription = NSLocalizedString("BEAlreadyDidTest_AccImageDescription", comment: "")
+		
 	}
 }

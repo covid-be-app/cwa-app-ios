@@ -25,6 +25,7 @@ enum BEAccessibilityIdentifiers {
 		static let selectDate = "BEAppStrings.BEMobileTestId.select"
 		static let save = "BEAppStrings.BEMobileTestId.save"
 		static let saveExplanation = "BEAppStrings.BEMobileTestId.saveExplanation"
+		static let saveExplanation2 = "BEAppStrings.BEMobileTestId.saveExplanation2"
 	}
 	
 	enum BESelectSymptomsDate {
@@ -70,10 +71,14 @@ enum BEAccessibilityIdentifiers {
 	
 	enum BEToolbox {
 		static let vaccinationInformation = "BEAppStrings.BEToolbox.vaccinationInformation"
+		static let testCenter = "BEAppStrings.BEToolbox.testCenter"
 		static let testReservation = "BEAppStrings.BEToolbox.testReservation"
 		static let quarantineCertificate = "BEAppStrings.BEToolbox.quarantineCertificate"
 		static let passengerLocatorForm = "BEAppStrings.BEToolbox.passengerLocatorForm"
 		static let declarationOfHonour = "BEAppStrings.BEToolbox.declarationOfHonour"
-
+	}
+	
+	enum BEAlreadyDidTest {
+		static let close = "BEAppstrings.BEAlreadyDidTest.close"
 	}
 }

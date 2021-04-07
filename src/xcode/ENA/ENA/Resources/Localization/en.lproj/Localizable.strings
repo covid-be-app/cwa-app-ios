@@ -242,9 +242,9 @@
 "Home_Finding_Positive_Card_Status_Subtitle" = "You have been diagnosed with the SARS-CoV-2 virus.";
 "Home_Finding_Positive_Card_Note_Title" = "Please note:";
 "Home_Finding_Positive_Card_Button" = "Next";
-"Home_SubmitCard_Title" = "Receive your test result";
-"Home_SubmitCard_Body" = "Generate the code to receive your test result on your smartphone.";
-"Home_SubmitCard_Button" = "Generate the code";
+"Home_SubmitCard_Title" = "Link your COVID-test to the app";
+"Home_SubmitCard_Body" = "Generate the code and transmit it to the practitioner, fill in the online webform or use the SMS to link your test result to the app.";
+"Home_SubmitCard_Button" = "I will do a COVID-test";
 "Home_InfoCard_ShareTitle" = "Share Coronalert";
 "Home_InfoCard_AboutTitle" = "Frequently Asked Questions";
 "Home_SettingsCard_Title" = "Settings";
@@ -350,7 +350,7 @@
 "BEMobileTestId_Select" = "Select";
 "BEMobileTestId_Date" = "Date";
 "BEMobileTestId_Close" = "Close";
-"BEMobileTestId_saveExplanation" = "Show this number and date to the doctor or laboratory that will perform the test in order to link your smartphone to the test.\nIf you have received a PCR code, enter this number and data in the web form.";
+"BEMobileTestId_saveExplanation" = "Show this number and date to the doctor or lab performing the test to link your smartphone to the test.";
 "BELanguage" = "en";
 "BESelectKeyCountries_title" = "Select Countries";
 "BESelectKeyCountries_explanation" = "For each of the below dates, if you have not been in Belgium and you would like to share this information (anonymously), please select the country you visited on that date by tapping the line you want to change.";
@@ -415,3 +415,14 @@
 "BEHome_BEToolbox_registerToBeVaccinated" = "Register to be vaccinated";
 "BEHome_BEToolbox_bookATest" = "Book a Test";
 "BEHome_BEToolbox_bookATestInBrussels" = "Book a Test in Brussels";
+"Home_SubmitCard_Warning" = "This needs a manual action because of reasons of anonymity.";
+"Home_SubmitCard_alreadyDidTestButton" = "I already did my COVID-test";
+"BEAlreadyDidTest_title" = "I already did my COVID-test";
+"BEAlreadyDidTest_possibilitiesTitle" = "3 possibilities to link your test";
+"BEAlreadyDidTest_possibility1" = "I did a test and my doctor or laboratory correctly entered the 17 digits of the Coronalert app. You don't have to do anything.";
+"BEAlreadyDidTest_possibility2" = "You have received or will receive an SMS. Click on the link and complete the webform.";
+"BEAlreadyDidTest_possibility3" = "Go directly to the webform to encode the 2 codes manually.";
+"BEAlreadyDidTest_AccImageDescription" = "An image of a PCR test tube";
+"BEMobileTestId_subtitle" = "Give this code for your COVID-test reservation";
+"BEMobileTestId_saveExplanation2" = "Try as much as possible to transmit this number to the doctor who prescribes the test, but rest assured, if you forget you will have the means to do it either by webform if you have a CPR code, or by SMS if your test is related to a CPTC account.";
+"BEHome_BEToolbox_testCenter" = "Find a test center";

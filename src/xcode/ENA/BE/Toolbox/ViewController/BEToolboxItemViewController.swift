@@ -22,7 +22,7 @@ import UIKit
 
 extension BEToolboxItem {
 	var viewController: UIViewController {
-		let vc = BEToolboxItemViewController(configuration)
+		let vc = BEToolboxItemViewController(configuration!)
 		
 		return vc
 	}
