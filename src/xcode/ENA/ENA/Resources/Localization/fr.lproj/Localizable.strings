@@ -408,7 +408,7 @@
 "BEHome_BEToolbox_declarationOfHonour" = "Voyage essentiel - Déclaration sur l’honneur";
 "BEHome_BEToolbox_vaccinationInformationTitle" = "Vaccination";
 "BEHome_BEToolbox_testReservationTitle" = "Réservation d'un test";
-"BEHome_BEToolbox_quarantineCertificateTitle" = "Certificate";
+"BEHome_BEToolbox_quarantineCertificateTitle" = "Certificat";
 "BEHome_BEToolbox_passengerLocatorFormTitle" = "FLP";
 "BEHome_BEToolbox_declarationOfHonourTitle" = "Déclaration";
 "BEHome_BEToolbox_epidemiologicalSituation" = "Situation épidémiologique du COVID-19";
@@ -416,3 +416,10 @@
 "BEHome_BEToolbox_bookATest" = "Réservez un test";
 "BEHome_BEToolbox_bookATestInBrussels" = "Réservez un test à Bruxelles";
 "Home_SubmitCard_Warning" = "Cela nécessite une action manuelle pour des raisons d'anonymat.";
+"Home_SubmitCard_alreadyDidTestButton" = "J’ai déjà fait mon test COVID";
+"BEAlreadyDidTest_title" = "J’ai déjà fait mon test COVID";
+"BEAlreadyDidTest_possibilitiesTitle" = "3 possibilités pour relier votre test";
+"BEAlreadyDidTest_possibility1" = "J’ai fait un test et mon médecin ou laboratoire a bien encodé les 17 chiffres de l’application Coronalert. Vous ne devez rien faire.";
+"BEAlreadyDidTest_possibility2" = "Vous avez reçu ou allez recevoir un SMS. Cliquez sur le lien et completer le webform.";
+"BEAlreadyDidTest_possibility3" = "Rendez-vous directement sur le webform pour encoder les 2 codes manuellement.";
+"BEAlreadyDidTest_AccImageDescription" = "Une image d'un tube à essai PCR";

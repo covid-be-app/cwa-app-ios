@@ -416,3 +416,10 @@
 "BEHome_BEToolbox_bookATest" = "Testreservering";
 "BEHome_BEToolbox_bookATestInBrussels" = "Buchen Sie einen Test in Brüssel";
 "Home_SubmitCard_Warning" = "Dies erfordert aus Gründen der Anonymität eine manuelle Aktion.";
+"Home_SubmitCard_alreadyDidTestButton" = "COVID-Test bereits durchgeführt";
+"BEAlreadyDidTest_title" = "COVID-Test bereits durchgeführt";
+"BEAlreadyDidTest_possibilitiesTitle" = "3 Möglichkeiten, Ihren Test zu verknüpfen";
+"BEAlreadyDidTest_possibility1" = "Ich habe einen Test durchgeführt und mein Arzt oder Labor hat die 17 Ziffern der Coronalert-App korrekt eingegeben. Du musst nichts tun.";
+"BEAlreadyDidTest_possibility2" = "Sie haben eine SMS erhalten oder werden diese erhalten. Klicken Sie auf den Link und füllen Sie das Webformular aus.";
+"BEAlreadyDidTest_possibility3" = "Gehen Sie direkt zum Webformular, um die 2 Codes manuell zu codieren. ";
+"BEAlreadyDidTest_AccImageDescription" = "Ein Bild eines PCR-Reagenzglases";

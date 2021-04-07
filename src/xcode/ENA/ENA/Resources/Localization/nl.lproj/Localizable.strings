@@ -416,3 +416,10 @@
 "BEHome_BEToolbox_bookATest" = "Reserveer een test";
 "BEHome_BEToolbox_bookATestInBrussels" = "Reserveer een test in Brussel";
 "Home_SubmitCard_Warning" = "Dit vereist een handmatige handeling vanwege anonimiteitsredenen.";
+"Home_SubmitCard_alreadyDidTestButton" = "Ik heb al een COVID-test gedaan";
+"BEAlreadyDidTest_title" = "Ik heb al een COVID-test gedaan";
+"BEAlreadyDidTest_possibilitiesTitle" = "3 mogelijkheden om uw test te koppelen";
+"BEAlreadyDidTest_possibility1" = "Ik heb een test gedaan en mijn arts of laboratorium heeft de 17 cijfers van de Coronalert-app correct ingevoerd. U hoeft niets te doen.";
+"BEAlreadyDidTest_possibility2" = "U heeft of krijgt een sms. Klik op de link en vul het webformulier in.";
+"BEAlreadyDidTest_possibility3" = "Ga direct naar het webformulier om de 2 codes handmatig in te voeren.";
+"BEAlreadyDidTest_AccImageDescription" = "Een afbeelding van een PCR-reageerbuis";
