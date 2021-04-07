@@ -45,12 +45,14 @@ struct BEToolboxItem {
 	let text: String
 	let icon: UIImage
 	let accessibilityIdentifier: String
-	let configuration: DetailViewControllerConfiguration
+	let targetURL: URL?
+	let configuration: DetailViewControllerConfiguration?
 
-	init(text: String, icon: String, accessibilityIdentifier: String, configuration: DetailViewControllerConfiguration) {
+	init(text: String, icon: String, accessibilityIdentifier: String, configuration: DetailViewControllerConfiguration? = nil, targetURL: URL? = nil) {
 		self.text = text
 		self.icon = UIImage(named: icon)!
 		self.accessibilityIdentifier = accessibilityIdentifier
 		self.configuration = configuration
+		self.targetURL = targetURL
 	}
 }
