@@ -242,9 +242,9 @@
 "Home_Finding_Positive_Card_Status_Subtitle" = "Vous avez été diagnostiqué positif pour le SRAS-CoV-2.";
 "Home_Finding_Positive_Card_Note_Title" = "Veuillez noter que :";
 "Home_Finding_Positive_Card_Button" = "Suivant";
-"Home_SubmitCard_Title" = "Recevoir votre résultat du test";
-"Home_SubmitCard_Body" = "Générez le code pour recevoir le résultat de votre test sur votre smartphone.";
-"Home_SubmitCard_Button" = "Générez le code";
+"Home_SubmitCard_Title" = "Liez votre test COVID à l'app";
+"Home_SubmitCard_Body" = "Générez le code et transmettez-le au praticien, remplissez le formulaire en ligne ou utilisez le SMS pour lier le résultat de votre test à l'application.";
+"Home_SubmitCard_Button" = "Je vais faire un test COVID";
 "Home_InfoCard_ShareTitle" = "Partagez l'application Coronalert";
 "Home_InfoCard_AboutTitle" = "Questions fréquemment posées";
 "Home_SettingsCard_Title" = "Paramètres";
@@ -415,3 +415,4 @@
 "BEHome_BEToolbox_registerToBeVaccinated" = "Inscrivez-vous pour être vacciné";
 "BEHome_BEToolbox_bookATest" = "Réservez un test";
 "BEHome_BEToolbox_bookATestInBrussels" = "Réservez un test à Bruxelles";
+"Home_SubmitCard_Warning" = "Cela nécessite une action manuelle pour des raisons d'anonymat.";

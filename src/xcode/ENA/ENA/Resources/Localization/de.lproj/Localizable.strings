@@ -242,9 +242,9 @@
 "Home_Finding_Positive_Card_Status_Subtitle" = "SARS-CoV-2 wurde bei Ihnen nachgewiesen.";
 "Home_Finding_Positive_Card_Note_Title" = "Bitte beachten:";
 "Home_Finding_Positive_Card_Button" = "Weiter";
-"Home_SubmitCard_Title" = "Erhalten Sie Ihr Testergebnis";
-"Home_SubmitCard_Body" = "Generieren Sie den Code, um Ihr Testergebnis auf Ihrem Smartphone zu erhalten.";
-"Home_SubmitCard_Button" = "Generieren Sie den Code";
+"Home_SubmitCard_Title" = "Verknüpfen Sie Ihren COVID-Test mit der App";
+"Home_SubmitCard_Body" = "Generieren Sie den Code und senden Sie ihn an den Praktiker, füllen Sie das Online-Webformular aus oder verwenden Sie die SMS, um Ihr Testergebnis mit der App zu verknüpfen.";
+"Home_SubmitCard_Button" = "Ich werde einen COVID-Test machen";
 "Home_InfoCard_ShareTitle" = "Coronalert teilen";
 "Home_InfoCard_AboutTitle" = "Häufig gestellte Fragen";
 "Home_SettingsCard_Title" = "Einstellungen";
@@ -415,3 +415,4 @@
 "BEHome_BEToolbox_registerToBeVaccinated" = "Registrieren Sie sich, um geimpft zu werden";
 "BEHome_BEToolbox_bookATest" = "Testreservering";
 "BEHome_BEToolbox_bookATestInBrussels" = "Buchen Sie einen Test in Brüssel";
+"Home_SubmitCard_Warning" = "Dies erfordert aus Gründen der Anonymität eine manuelle Aktion.";

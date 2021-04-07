@@ -27,6 +27,7 @@ class HomeTestResultTableViewCell: HomeCardTableViewCell {
 	@IBOutlet var titleLabel: ENALabel!
 	@IBOutlet var subtitleLabel: ENALabel!
 	@IBOutlet var descriptionLabel: ENALabel!
+	@IBOutlet var warningLabel: ENALabel!
 	@IBOutlet var illustrationView: UIImageView!
 	@IBOutlet var button: ENAButton!
 	@IBOutlet var stackView: UIStackView!
@@ -50,10 +51,11 @@ class HomeTestResultTableViewCell: HomeCardTableViewCell {
 		setupAccessibility()
 	}
 
-	func configure(title: String, subtitle: String? = nil, description: String, button buttonTitle: String, image: UIImage?, tintColor: UIColor = .enaColor(for: .textPrimary1), accessibilityIdentifier: String?) {
+	func configure(title: String, subtitle: String? = nil, description: String, warning: String? = nil, button buttonTitle: String, image: UIImage?, tintColor: UIColor = .enaColor(for: .textPrimary1), accessibilityIdentifier: String?) {
 		titleLabel.text = title
 		subtitleLabel.text = subtitle
 		descriptionLabel.text = description
+		warningLabel.text = warning
 		illustrationView?.image = image
 
 		button.setTitle(buttonTitle, for: .normal)

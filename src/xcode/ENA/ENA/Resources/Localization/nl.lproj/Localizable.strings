@@ -242,9 +242,9 @@
 "Home_Finding_Positive_Card_Status_Subtitle" = "Je testte positief op het SARS-CoV-2-virus.";
 "Home_Finding_Positive_Card_Note_Title" = "Let op:";
 "Home_Finding_Positive_Card_Button" = "Volgende";
-"Home_SubmitCard_Title" = "Ontvang je testresultaat";
-"Home_SubmitCard_Body" = "Genereer de code om je testresultaat op je smartphone te ontvangen.";
-"Home_SubmitCard_Button" = "Genereer de code";
+"Home_SubmitCard_Title" = "Koppel je COVID-test aan de app";
+"Home_SubmitCard_Body" = "Genereer de code en stuur deze door naar de behandelaar, vul het online webformulier in of gebruik de sms om uw testresultaat te koppelen aan de app.";
+"Home_SubmitCard_Button" = "Ik ga een COVID test doen";
 "Home_InfoCard_ShareTitle" = "Deel Coronalert";
 "Home_InfoCard_AboutTitle" = "Veelgestelde vragen";
 "Home_SettingsCard_Title" = "Instellingen";
@@ -415,3 +415,4 @@
 "BEHome_BEToolbox_registerToBeVaccinated" = "Registreer om te worden gevaccineerd";
 "BEHome_BEToolbox_bookATest" = "Reserveer een test";
 "BEHome_BEToolbox_bookATestInBrussels" = "Reserveer een test in Brussel";
+"Home_SubmitCard_Warning" = "Dit vereist een handmatige handeling vanwege anonimiteitsredenen.";

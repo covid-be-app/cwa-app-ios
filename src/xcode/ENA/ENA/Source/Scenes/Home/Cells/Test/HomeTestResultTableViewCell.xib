@@ -37,7 +37,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="272" height="253.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NSs-EY-g6O">
-                                                <rect key="frame" x="0.0" y="0.0" width="164" height="191"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="164" height="253.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" insetsLayoutMarginsFromSafeArea="NO" text="Headline" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7If-ON-h5y" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="164" height="20.5"/>
@@ -48,11 +48,21 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="headline"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QR7-aW-xxM" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QR7-aW-xxM" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28.5" width="164" height="162.5"/>
                                                         <string key="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="ENA Text Primary 2 Color"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="body"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bp-Y2-dPi" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="199" width="164" height="54.5"/>
+                                                        <string key="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</string>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" name="ENA Text Semantic Red Color"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="body"/>
@@ -119,6 +129,7 @@
                 <outlet property="subtitleLabel" destination="7If-ON-h5y" id="LCe-1c-LHP"/>
                 <outlet property="titleLabel" destination="g0j-Vf-UVm" id="fPT-Od-Kn5"/>
                 <outlet property="viewContainer" destination="ghk-uL-4nB" id="DjH-Un-K9Q"/>
+                <outlet property="warningLabel" destination="8bp-Y2-dPi" id="Or5-Fu-hFy"/>
             </connections>
             <point key="canvasLocation" x="44.927536231884062" y="231.69642857142856"/>
         </tableViewCell>
@@ -126,6 +137,9 @@
     <designables>
         <designable name="7If-ON-h5y">
             <size key="intrinsicContentSize" width="70.5" height="20.5"/>
+        </designable>
+        <designable name="8bp-Y2-dPi">
+            <size key="intrinsicContentSize" width="1199.5" height="20.5"/>
         </designable>
         <designable name="QR7-aW-xxM">
             <size key="intrinsicContentSize" width="1199.5" height="20.5"/>
@@ -148,6 +162,9 @@
         </namedColor>
         <namedColor name="ENA Text Primary 2 Color">
             <color red="0.090196078431372548" green="0.098039215686274508" blue="0.10196078431372549" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ENA Text Semantic Red Color">
+            <color red="0.9882352941176471" green="0.13333333333333333" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
