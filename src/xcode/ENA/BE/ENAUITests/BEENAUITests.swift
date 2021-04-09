@@ -205,6 +205,11 @@ class BEENAUITests: XCTestCase {
 		snapshot("ScreenShot_\(#function)_001")
 		app.swipeUp()
 		snapshot("ScreenShot_\(#function)_002")
+		
+		if !app.buttons["AppStrings.Home.resultCardShowResultButton"].visible() {
+			app.swipeDown()
+		}
+		
 		app.buttons["AppStrings.Home.resultCardShowResultButton"].tap()
 		sleep(1)
 		snapshot("ScreenShot_\(#function)_003")
