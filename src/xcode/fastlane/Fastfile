@@ -154,13 +154,14 @@ platform :ios do
   
   lane :screenshots do
     capture_screenshots(
+      output_directory: "./screenshots_light"
+    )
+
+    capture_screenshots(
       output_directory: "./screenshots_dark",
       dark_mode: true 
     )
 
-    capture_screenshots(
-      output_directory: "./screenshots_light"
-    )
   end
 
   desc "Build and upload for App Store"

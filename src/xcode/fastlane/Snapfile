@@ -2,7 +2,7 @@
 
 # A list of devices you want to take the screenshots from
 devices([
-    "iPhone SE (2nd generation)",
+  #  "iPhone SE (2nd generation)",
     "iPhone 11",
     
 ])
@@ -12,9 +12,9 @@ ios_version(
 )
 
 languages([
+  "fr-BE",
   "en-US",
   "de-DE",
-  "fr-BE",
   "nl-BE"
 #  "bg-BG",
 #  "ro-RO",
