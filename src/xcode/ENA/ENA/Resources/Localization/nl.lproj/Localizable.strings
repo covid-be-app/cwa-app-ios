@@ -426,3 +426,4 @@
 "BEMobileTestId_subtitle" = "Geef deze code op voor uw COVID-testreservering";
 "BEMobileTestId_saveExplanation2" = "Probeer zoveel mogelijk dit nummer door te geven aan de arts die de test voorschrijft, maar wees gerust, als u vergeet, heeft u de middelen om het te doen via een webformulier als u een activatiecode hebt, of per sms als uw test is gerelateerd aan een CPTC-account.";
 "BEHome_BEToolbox_testCenter" = "Zoek een testcentrum";
+"BEHome_BEToolbox_quarantineCertificateURL" = "https://quarantaine.info-coronavirus.be/nl";

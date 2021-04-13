@@ -67,13 +67,6 @@ class BEENAToolboxTests: XCTestCase {
 		snapshot("ScreenShot_\(#function)_001")
 	}
 
-	func test_toolboxFlow_quarantine() throws {
-		openToolbox()
-		app.cells["BEAppStrings.BEToolbox.quarantineCertificate"].tap()
-		XCTAssert(app.images["BEAppStrings.BEToolbox.quarantineCertificate"].waitForExistence(timeout: 5.0))
-		snapshot("ScreenShot_\(#function)_001")
-	}
-
 	func test_toolboxFlow_plf() throws {
 		openToolbox()
 		app.cells["BEAppStrings.BEToolbox.passengerLocatorForm"].tap()

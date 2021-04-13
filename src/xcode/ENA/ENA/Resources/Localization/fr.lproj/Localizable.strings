@@ -426,3 +426,4 @@
 "BEMobileTestId_subtitle" = "Donnez ce code pour votre réservation de test COVID";
 "BEMobileTestId_saveExplanation2" = "Essayez autant que possible de transmettre ce numéro au médecin qui prescrit le test, mais rassurez-vous, si vous oubliez vous aurez le moyen de le faire soit par webform si vous avec un code CPR, soit par SMS si votre test est lié à un compte CPTC.";
 "BEHome_BEToolbox_testCenter" = "Trouver un centre de test";
+"BEHome_BEToolbox_quarantineCertificateURL" = "https://quarantaine.info-coronavirus.be/fr";

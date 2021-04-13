@@ -150,18 +150,7 @@ enum BEAppStrings {
 		static let bookATestInBrussels = NSLocalizedString("BEHome_BEToolbox_bookATestInBrussels", comment: "")
 		static let bookATestInBrusselsURL = URL(string: "https://brussels.testcovid.be/fr")!
 
-
-		static let quarantineCertificateNL = "Quarantaine certificaat"
-		static let quarantineCertificateBXL = "Quarantine certificate"
-		static let quarantineCertificateWALL = "Certificat de Quarantaine"
-		static let quarantineCertificateDE = "Quarantäne-Zertifikat"
-
-		
-		static let quarantineCertificateURLNL = URL(string: "https://www.zorg-en-gezondheid.be/testen-isoleren-en-quarantaine")!
-		static let quarantineCertificateURLBXL = URL(string: "https://coronavirus.brussels/en/home-2/")!
-		static let quarantineCertificateURLWALL = URL(string: "https://covid.aviq.be/fr/testing-particuliers")!
-		static let quarantineCertificateURLDE = URL(string: "https://www.ostbelgienlive.be/desktopdefault.aspx/tabid-6711/")!
-		
+		static let quarantineCertificateURL = URL(string: NSLocalizedString("BEHome_BEToolbox_quarantineCertificateURL", comment: ""))!
 
 		static let passengerLocatorFormFR = "Formulaire de Localisation du Passager"
 		static let passengerLocatorFormEN = "Passenger Locator Form"
