@@ -28,7 +28,7 @@
 	<key>CFBundleVersion</key>
 	<string>111</string>
 	<key>ENAPIVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>ENDeveloperRegion</key>
 	<string>BE</string>
 	<key>ITSAppUsesNonExemptEncryption</key>

@@ -75,3 +75,27 @@ extension RiskLevel: Comparable {
 		}
 	}
 }
+
+enum ENFRiskLevel: Int, Codable, Comparable {
+
+	case low = 1
+	case high = 2
+
+	// MARK: - Init
+
+	init(from riskLevel: SAP_Internal_V2_NormalizedTimeToRiskLevelMapping.RiskLevel) {
+		switch riskLevel {
+		case .low:
+			self = .low
+		case .high:
+			self = .high
+		default:
+			fatalError("Only low and high risk levels are supported")
+		}
+	}
+	// MARK: - Protocol Comparable
+
+	static func < (lhs: ENFRiskLevel, rhs: ENFRiskLevel) -> Bool {
+		return lhs.rawValue < rhs.rawValue
+	}
+}

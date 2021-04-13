@@ -130,7 +130,10 @@ final class ExposureDetection {
 	private var exposureSubscription: AnyCancellable?
 	
 	typealias Completion = (Result<ENExposureDetectionSummary, DidEndPrematurelyReason>) -> Void
-	func start(completionBlock: @escaping Completion) {
+	func start(
+		configuration: ENExposureConfiguration,
+		completionBlock: @escaping Completion
+	) {
 		self.completion = completionBlock
 		
 		guard let delegate = delegate else {
@@ -151,7 +154,8 @@ final class ExposureDetection {
 					}
 				}
 		}, receiveValue: { _ in
-			delegate.exposureDetection(self, downloadConfiguration: self.useConfiguration)
+			self.useConfiguration(configuration)
+//			delegate.exposureDetection(self, downloadConfiguration: self.useConfiguration)
 		})
 	}
 
