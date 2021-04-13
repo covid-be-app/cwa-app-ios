@@ -65,28 +65,7 @@ class BEToolboxViewController: UIViewController {
 			text: BEAppStrings.BEToolbox.quarantineCertificate,
 			icon: "Icons_Toolbox_Quarantine",
 			accessibilityIdentifier: BEAccessibilityIdentifiers.BEToolbox.quarantineCertificate,
-			configuration: BEToolboxItem.DetailViewControllerConfiguration(
-				title: BEAppStrings.BEToolbox.quarantineCertificateTitle,
-				icon: "Illu_Toolbox_Quarantine",
-				accessibilityIdentifier: BEAccessibilityIdentifiers.BEToolbox.quarantineCertificate,
-				links: [
-					BEToolboxItem.DetailLink(
-						text: BEAppStrings.BEToolbox.quarantineCertificateNL,
-						suffix: "NL",
-						url: BEAppStrings.BEToolbox.quarantineCertificateURLNL),
-					BEToolboxItem.DetailLink(
-						text: BEAppStrings.BEToolbox.quarantineCertificateBXL,
-						suffix: "BXL",
-						url: BEAppStrings.BEToolbox.quarantineCertificateURLBXL),
-					BEToolboxItem.DetailLink(
-						text: BEAppStrings.BEToolbox.quarantineCertificateWALL,
-						suffix: "WALL",
-						url: BEAppStrings.BEToolbox.quarantineCertificateURLWALL),
-					BEToolboxItem.DetailLink(
-						text: BEAppStrings.BEToolbox.quarantineCertificateDE,
-						suffix: "DE",
-						url: BEAppStrings.BEToolbox.quarantineCertificateURLDE)
-				])
+			targetURL: BEAppStrings.BEToolbox.quarantineCertificateURL
 			),
 		BEToolboxItem(
 			text: BEAppStrings.BEToolbox.passengerLocatorForm,
