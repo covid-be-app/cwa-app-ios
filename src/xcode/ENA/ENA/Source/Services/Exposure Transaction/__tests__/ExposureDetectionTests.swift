@@ -71,12 +71,6 @@ final class ExposureDetectionTransactionTests: XCTestCase {
 			return nil
 		}
 
-		let configurationToBeCalled = expectation(description: "configuration called")
-		delegate.configuration = {
-			configurationToBeCalled.fulfill()
-			return .mock()
-		}
-
 		let rootDir = FileManager().temporaryDirectory.appendingPathComponent(UUID().uuidString, isDirectory: true)
 		try FileManager().createDirectory(atPath: rootDir.path, withIntermediateDirectories: true, attributes: nil)
 		let url0 = rootDir.appendingPathComponent("1").appendingPathExtension("sig")
@@ -98,13 +92,13 @@ final class ExposureDetectionTransactionTests: XCTestCase {
 		}
 
 		let startCompletionCalled = expectation(description: "start completion called")
-		let detection = ExposureDetection(delegate: delegate)
+		let detection = ExposureDetection(configuration: ENExposureConfiguration(), delegate: delegate)
 		detection.start { _ in
 			startCompletionCalled.fulfill()
 		}
 
 		wait(
-			for: allExpectations + [configurationToBeCalled] + writtenPackagesExpectationsArray + [summaryResultBeCalled, startCompletionCalled],
+			for: allExpectations + writtenPackagesExpectationsArray + [summaryResultBeCalled, startCompletionCalled],
 			timeout: 1.0,
 			enforceOrder: true
 		)
@@ -156,10 +150,6 @@ private final class ExposureDetectionDelegateMock {
 
 	var downloadAndStore: DownloadAndStoreHandler = { _, _ in nil }
 
-	var configuration: () -> ENExposureConfiguration? = {
-		nil
-	}
-
 	var writtenPackages: (_ region: BERegion) -> WrittenPackages? = { _ in
 		nil
 	}
@@ -184,10 +174,6 @@ extension ExposureDetectionDelegateMock: ExposureDetectionDelegate {
 	func exposureDetection(_ detection: ExposureDetection, downloadAndStore delta: DaysAndHours, region: BERegion, completion: @escaping (Error?) -> Void) {
 		completion(downloadAndStore(delta, region))
 
-	}
-
-	func exposureDetection(_ detection: ExposureDetection, downloadConfiguration completion: @escaping (ENExposureConfiguration?) -> Void) {
-		completion(configuration())
 	}
 
 	func exposureDetectionWriteDownloadedPackages(_ detection: ExposureDetection, region: BERegion) -> WrittenPackages? {

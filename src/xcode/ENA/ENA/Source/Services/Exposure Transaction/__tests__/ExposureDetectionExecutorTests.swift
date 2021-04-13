@@ -39,7 +39,7 @@ final class ExposureDetectionExecutorTests: XCTestCase {
 		let sut = ExposureDetectionExecutor.makeWith(client: ClientMock(availableDaysAndHours: testDaysAndHours))
 		let successExpectation = expectation(description: "Expect that the completion handler is called!")
 
-		anyCancellable = sut.exposureDetectionDetermineAvailableData(ExposureDetection(delegate: sut), region: .belgium).sink(receiveCompletion: { completion in
+		anyCancellable = sut.exposureDetectionDetermineAvailableData(ExposureDetection(configuration: ENExposureConfiguration(), delegate: sut), region: .belgium).sink(receiveCompletion: { completion in
 			switch completion {
 			case .failure(let error):
 				XCTAssert(false, error.localizedDescription)
@@ -62,7 +62,7 @@ final class ExposureDetectionExecutorTests: XCTestCase {
 		let sut = ExposureDetectionExecutor.makeWith(client: ClientMock(urlRequestFailure: .serverError(500)))
 		let successExpectation = expectation(description: "Expect that the completion handler is called!")
 		
-		anyCancellable = sut.exposureDetectionDetermineAvailableData(ExposureDetection(delegate: sut), region: .belgium).sink(receiveCompletion: { completion in
+		anyCancellable = sut.exposureDetectionDetermineAvailableData(ExposureDetection(configuration: ENExposureConfiguration(), delegate: sut), region: .belgium).sink(receiveCompletion: { completion in
 			switch completion {
 			case .failure(let error):
 				XCTAssert(false, error.localizedDescription)
@@ -98,7 +98,7 @@ final class ExposureDetectionExecutorTests: XCTestCase {
 		let sut = ExposureDetectionExecutor.makeWith(packageStore: downloadedPackageStore)
 
 		let missingDaysAndHours = sut.exposureDetection(
-			ExposureDetection(delegate: sut),
+			ExposureDetection(configuration: ENExposureConfiguration(), delegate: sut),
 			downloadDeltaFor: remoteDaysAndHours, region: .belgium)
 
 		XCTAssertEqual(missingDaysAndHours.days, [todayString])
@@ -113,7 +113,7 @@ final class ExposureDetectionExecutorTests: XCTestCase {
 		let sut = ExposureDetectionExecutor.makeWith(packageStore: downloadedPackageStore)
 
 		_ = sut.exposureDetection(
-			ExposureDetection(delegate: sut),
+			ExposureDetection(configuration: ENExposureConfiguration(), delegate: sut),
 			downloadDeltaFor: (["Hello"], []), region: .belgium
 		)
 		XCTAssert(downloadedPackageStore.allDays(region: .belgium).isEmpty, "The store should be empty after being pruned!")
@@ -137,7 +137,7 @@ final class ExposureDetectionExecutorTests: XCTestCase {
 		)
 
 		sut.exposureDetection(
-			ExposureDetection(delegate: sut),
+			ExposureDetection(configuration: ENExposureConfiguration(), delegate: sut),
 			downloadAndStore: testDaysAndHours, region: .belgium) { error in
 				defer { completionExpectation.fulfill() }
 				XCTAssertNil(error)
@@ -169,7 +169,7 @@ final class ExposureDetectionExecutorTests: XCTestCase {
 		let sut = ExposureDetectionExecutor.makeWith(client: client)
 
 		sut.exposureDetection(
-			ExposureDetection(delegate: sut),
+			ExposureDetection(configuration: ENExposureConfiguration(), delegate: sut),
 			downloadConfiguration: { configuration in
 				defer { completionExpectation.fulfill() }
 
@@ -193,7 +193,7 @@ final class ExposureDetectionExecutorTests: XCTestCase {
 		let sut = ExposureDetectionExecutor.makeWith(client: client)
 
 		sut.exposureDetection(
-			ExposureDetection(delegate: sut),
+			ExposureDetection(configuration: ENExposureConfiguration(), delegate: sut),
 			downloadConfiguration: { configuration in
 				defer { completionExpectation.fulfill() }
 
@@ -219,7 +219,7 @@ final class ExposureDetectionExecutorTests: XCTestCase {
 		let sut = ExposureDetectionExecutor.makeWith(packageStore: downloadedPackageStore)
 
 		let result = sut.exposureDetectionWriteDownloadedPackages(
-			ExposureDetection(delegate: sut), region: .belgium
+			ExposureDetection(configuration: ENExposureConfiguration(), delegate: sut), region: .belgium
 		)
 		let writtenPackages = try XCTUnwrap(result, "Written packages was unexpectedly nil!")
 
@@ -255,7 +255,7 @@ final class ExposureDetectionExecutorTests: XCTestCase {
 		let sut = ExposureDetectionExecutor.makeWith(exposureDetector: MockExposureDetector((mockSummary, nil)))
 
 		sut.exposureDetection(
-			ExposureDetection(delegate: sut),
+			ExposureDetection(configuration: ENExposureConfiguration(), delegate: sut),
 			detectSummaryWithConfiguration: ENExposureConfiguration(),
 			writtenPackages: WrittenPackages(urls: []),
 			completion: { result in
@@ -282,7 +282,7 @@ final class ExposureDetectionExecutorTests: XCTestCase {
 		let sut = ExposureDetectionExecutor.makeWith(exposureDetector: MockExposureDetector((nil, expectedError)))
 
 		sut.exposureDetection(
-			ExposureDetection(delegate: sut),
+			ExposureDetection(configuration: ENExposureConfiguration(), delegate: sut),
 			detectSummaryWithConfiguration: ENExposureConfiguration(),
 			writtenPackages: WrittenPackages(urls: []),
 			completion: { result in

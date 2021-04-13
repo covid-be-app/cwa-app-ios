@@ -22,13 +22,25 @@ import ExposureNotification
 
 extension AppDelegate: ExposureSummaryProvider {
 	func detectExposure(completion: @escaping (ENExposureDetectionSummary?) -> Void) {
-		exposureDetection = ExposureDetection(delegate: exposureDetectionExecutor)
-		exposureDetection?.start { result in
-			switch result {
-			case .success(let summary):
-				completion(summary)
-			case .failure(let error):
-				self.showError(exposure: error)
+
+		self.client.exposureConfiguration { configuration in
+			if let configuration = configuration {
+				self.exposureDetection = ExposureDetection(
+					configuration: configuration,
+					delegate: self.exposureDetectionExecutor
+				)
+				
+				self.exposureDetection?.start { result in
+					switch result {
+					case .success(let summary):
+						completion(summary)
+					case .failure(let error):
+						self.showError(exposure: error)
+						completion(nil)
+					}
+				}
+			} else {
+				Log.debug("Failed to download configuration")
 				completion(nil)
 			}
 		}

@@ -23,10 +23,15 @@ import OpenCombine
 final class ExposureDetection {
 	// MARK: Properties
 	private weak var delegate: ExposureDetectionDelegate?
+	private var configuration: ENExposureConfiguration
 	private var completion: Completion?
 
 	// MARK: Creating a Transaction
-	init(delegate: ExposureDetectionDelegate) {
+	init(
+		configuration: ENExposureConfiguration,
+		delegate: ExposureDetectionDelegate
+	) {
+		self.configuration = configuration
 		self.delegate = delegate
 	}
 
@@ -87,12 +92,7 @@ final class ExposureDetection {
 		}
 	}
 
-	private func useConfiguration(_ configuration: ENExposureConfiguration?) {
-		guard let configuration = configuration else {
-			endPrematurely(reason: .noExposureConfiguration)
-			return
-		}
-		
+	private func useConfiguration() {
 		var urls: [URL] = []
 		
 		BERegion.allCases.forEach { region in
@@ -130,17 +130,9 @@ final class ExposureDetection {
 	private var exposureSubscription: AnyCancellable?
 	
 	typealias Completion = (Result<ENExposureDetectionSummary, DidEndPrematurelyReason>) -> Void
-	func start(
-		configuration: ENExposureConfiguration,
-		completionBlock: @escaping Completion
-	) {
+	func start(completionBlock: @escaping Completion) {
 		self.completion = completionBlock
 		
-		guard let delegate = delegate else {
-			completionBlock(.failure(.generic))
-			return
-		}
-
 		exposureSubscription = downloadPackagesForRegions(regions: ArraySlice(BERegion.allCases))
 			.sink(receiveCompletion: { completion in
 				switch completion {
@@ -154,7 +146,7 @@ final class ExposureDetection {
 					}
 				}
 		}, receiveValue: { _ in
-			self.useConfiguration(configuration)
+			self.useConfiguration()
 //			delegate.exposureDetection(self, downloadConfiguration: self.useConfiguration)
 		})
 	}

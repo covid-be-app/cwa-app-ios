@@ -45,11 +45,6 @@ protocol ExposureDetectionDelegate: AnyObject {
 		completion: @escaping (Error?) -> Void
 	)
 
-	func exposureDetection(
-		_ detection: ExposureDetection,
-		downloadConfiguration completion: @escaping (ENExposureConfiguration?) -> Void
-	)
-
 	func exposureDetectionWriteDownloadedPackages(_ detection: ExposureDetection, region: BERegion) -> WrittenPackages?
 
 	func exposureDetection(
