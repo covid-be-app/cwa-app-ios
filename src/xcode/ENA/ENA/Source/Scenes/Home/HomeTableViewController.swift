@@ -20,7 +20,6 @@
 import UIKit
 
 protocol HomeViewControllerDelegate: AnyObject {
-	func showRiskLegend()
 	func showExposureNotificationSetting(enState: ENStateHandler.State)
 	func showExposureDetection(state: HomeInteractor.State, isRequestRiskRunning: Bool)
 	func setExposureDetectionState(state: HomeInteractor.State, isRequestRiskRunning: Bool)
@@ -233,10 +232,6 @@ class HomeTableViewController: UIViewController, RequiresAppDependencies {
 
 	private func setupBarButtonItems() {
 		navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Corona-Warn-App"), style: .plain, target: nil, action: nil)
-
-		let infoButton = UIButton(type: .infoLight)
-		infoButton.addTarget(self, action: #selector(infoButtonTapped), for: .touchUpInside)
-		navigationItem.rightBarButtonItem = UIBarButtonItem(customView: infoButton)
 	}
 
 	/// This method sets up a background fetch alert, and presents it, if needed.
@@ -265,10 +260,6 @@ class HomeTableViewController: UIViewController, RequiresAppDependencies {
 		navigationItem.rightBarButtonItem?.isAccessibilityElement = true
 		navigationItem.rightBarButtonItem?.accessibilityLabel = AppStrings.Home.rightBarButtonDescription
 		navigationItem.rightBarButtonItem?.accessibilityIdentifier = AccessibilityIdentifiers.Home.rightBarButtonDescription
-	}
-	
-	@IBAction private func infoButtonTapped() {
-		delegate?.showRiskLegend()
 	}
 
 	func setStateOfChildViewControllers() {
