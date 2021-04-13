@@ -21,7 +21,7 @@ import Foundation
 import ExposureNotification
 import UIKit
 
-enum RiskCalculation {
+final class RiskCalculation {
 
 	// MARK: - Precondition Time Constants
 
@@ -55,7 +55,7 @@ enum RiskCalculation {
 		- preconditions: Current state of the `ExposureManager`
 		- currentDate: The current `Date` to use in checks. Defaults to `Date()`
 	*/
-	private static func riskLevel(
+	func riskLevel(
 		summary: CodableExposureDetectionSummary?,
 		configuration: SAP_ApplicationConfiguration,
 		dateLastExposureDetection: Date?,
@@ -82,7 +82,7 @@ enum RiskCalculation {
 		}
 
 		// Precondition 2 - If tracing is active less than 1 day, risk is .unknownInitial
-		if activeTracing.inHours < minTracingActiveHours, riskLevel < .unknownInitial {
+		if activeTracing.inHours < Self.minTracingActiveHours, riskLevel < .unknownInitial {
 			riskLevel = .unknownInitial
 		}
 
@@ -135,7 +135,7 @@ enum RiskCalculation {
 
 	/// Performs the raw risk calculation without checking any preconditions
 	/// - returns: weighted risk score
-	static func calculateRawRisk(
+	func calculateRawRisk(
 		summary: CodableExposureDetectionSummary,
 		configuration: SAP_ApplicationConfiguration
 	) -> Double {
@@ -171,7 +171,7 @@ enum RiskCalculation {
 		return (normRiskScore * weightedAttenuation).rounded(to: 2)
 	}
 
-	static func risk(
+	func risk(
 		summary: CodableExposureDetectionSummary?,
 		configuration: SAP_ApplicationConfiguration,
 		dateLastExposureDetection: Date?,

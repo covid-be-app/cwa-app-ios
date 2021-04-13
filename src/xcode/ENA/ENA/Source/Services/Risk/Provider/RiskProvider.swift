@@ -319,9 +319,9 @@ extension RiskProvider: RiskProviding {
 		}
 
 		let activeTracing = store.tracingStatusHistory.activeTracing()
-
+		let riskCalculation = RiskCalculation()
 		guard
-			let risk = RiskCalculation.risk(
+			let risk = riskCalculation.risk(
 				summary: summaries?.current?.summary,
 				configuration: _appConfiguration,
 				dateLastExposureDetection: summaries?.current?.date,

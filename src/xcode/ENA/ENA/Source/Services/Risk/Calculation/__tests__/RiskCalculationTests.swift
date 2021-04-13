@@ -24,24 +24,25 @@ import XCTest
 final class RiskCalculationTests: XCTestCase {
 
 	private let store = MockTestStore()
+	private let riskCalculation = RiskCalculation()
 
 	// MARK: - Tests for calculating raw risk score
 
 	func testCalculateRawRiskScore_Zero() throws {
 		let summaryZeroMaxRisk = makeExposureSummaryContainer(maxRiskScoreFullRange: 0, ad_low: 10, ad_mid: 10, ad_high: 10)
-		XCTAssertEqual(RiskCalculation.calculateRawRisk(summary: summaryZeroMaxRisk, configuration: appConfig), 0.0, accuracy: 0.01)
+		XCTAssertEqual(riskCalculation.calculateRawRisk(summary: summaryZeroMaxRisk, configuration: appConfig), 0.0, accuracy: 0.01)
 	}
 
 	func testCalculateRawRiskScore_Low() throws {
-		XCTAssertEqual(RiskCalculation.calculateRawRisk(summary: summaryLow, configuration: appConfig), 1.07, accuracy: 0.01)
+		XCTAssertEqual(riskCalculation.calculateRawRisk(summary: summaryLow, configuration: appConfig), 1.07, accuracy: 0.01)
 	}
 
 	func testCalculateRawRiskScore_Med() throws {
-		XCTAssertEqual(RiskCalculation.calculateRawRisk(summary: summaryMed, configuration: appConfig), 2.56, accuracy: 0.01)
+		XCTAssertEqual(riskCalculation.calculateRawRisk(summary: summaryMed, configuration: appConfig), 2.56, accuracy: 0.01)
 	}
 
 	func testCalculateRawRiskScore_High() throws {
-		XCTAssertEqual(RiskCalculation.calculateRawRisk(summary: summaryHigh, configuration: appConfig), 10.2, accuracy: 0.01)
+		XCTAssertEqual(riskCalculation.calculateRawRisk(summary: summaryHigh, configuration: appConfig), 10.2, accuracy: 0.01)
 	}
 
 	// MARK: - Tests for calculating risk levels
@@ -54,7 +55,7 @@ final class RiskCalculationTests: XCTestCase {
 			exposureDetectionInterval: .init(day: 1),
 			detectionMode: .automatic
 		)
-		let risk = RiskCalculation.risk(
+		let risk = riskCalculation.risk(
 			summary: summaryHigh,
 			configuration: appConfig,
 			dateLastExposureDetection: Date(),
@@ -80,7 +81,7 @@ final class RiskCalculationTests: XCTestCase {
 			exposureDetectionInterval: .init(day: 1),
 			detectionMode: .automatic
 		)
-		var risk = RiskCalculation
+		var risk = riskCalculation
 			.risk(
 				summary: summaryLow,
 				configuration: appConfig,
@@ -94,7 +95,7 @@ final class RiskCalculationTests: XCTestCase {
 		XCTAssertEqual(risk?.level, .unknownInitial)
 
 		// Test case when summary is nil
-		risk = RiskCalculation.risk(
+		risk = riskCalculation.risk(
 			summary: nil,
 			configuration: appConfig,
 			dateLastExposureDetection: Date(),
@@ -117,7 +118,7 @@ final class RiskCalculationTests: XCTestCase {
 		)
 
 		// That will happen when the date of last exposure detection is older than one day
-		let risk = RiskCalculation.risk(
+		let risk = riskCalculation.risk(
 			summary: summaryLow,
 			configuration: appConfig,
 			dateLastExposureDetection: Date().addingTimeInterval(.init(days: -2)),
@@ -142,7 +143,7 @@ final class RiskCalculationTests: XCTestCase {
 		)
 
 		// That will happen when the date of last exposure detection is older than one day
-		let risk = RiskCalculation.risk(
+		let risk = riskCalculation.risk(
 			summary: nil,
 			configuration: appConfig,
 			dateLastExposureDetection: Date().addingTimeInterval(.init(days: -1)),
@@ -156,7 +157,7 @@ final class RiskCalculationTests: XCTestCase {
 
 		// :BE: We currently disabled this
 		XCTAssertEqual(
-			RiskCalculation.risk(
+			riskCalculation.risk(
 				summary: summaryLow,
 				configuration: appConfig,
 				dateLastExposureDetection: Date().addingTimeInterval(.init(days: -3)),
@@ -170,7 +171,7 @@ final class RiskCalculationTests: XCTestCase {
 		)
 
 		XCTAssertEqual(
-			RiskCalculation.risk(
+			riskCalculation.risk(
 				summary: summaryLow,
 				configuration: appConfig,
 				dateLastExposureDetection: Date().addingTimeInterval(.init(days: -1)),
@@ -192,7 +193,7 @@ final class RiskCalculationTests: XCTestCase {
 		)
 
 		// Test the case where preconditions pass and there is low risk
-		let risk = RiskCalculation.risk(
+		let risk = riskCalculation.risk(
 			summary: summaryLow,
 			configuration: appConfig,
 			// arbitrary, but within limit
@@ -218,7 +219,7 @@ final class RiskCalculationTests: XCTestCase {
 		summary.matchedKeyCount = 10
 
 		// Test the case where preconditions pass and there is increased risk
-		let risk = RiskCalculation.risk(
+		let risk = riskCalculation.risk(
 			summary: summary,
 			configuration: appConfig,
 			// arbitrary, but within limit
@@ -245,7 +246,7 @@ final class RiskCalculationTests: XCTestCase {
 		// Test the case where preconditions pass and there is increased risk
 		// Values below are hand-picked to result in a raw risk score of 5.12 - within a gap in the range
 		let summary = makeExposureSummaryContainer(maxRiskScoreFullRange: 128, ad_low: 30, ad_mid: 30, ad_high: 30)
-		let risk = RiskCalculation.risk(
+		let risk = riskCalculation.risk(
 			summary: summary,
 			configuration: appConfig,
 			// arbitrary, but within limit
@@ -269,7 +270,7 @@ final class RiskCalculationTests: XCTestCase {
 		// Test the case where preconditions pass and there is increased risk
 		// Values below are hand-picked to result in a raw risk score of 13.6 - outside of the top range of the config
 		let summary = makeExposureSummaryContainer(maxRiskScoreFullRange: 255, ad_low: 40, ad_mid: 40, ad_high: 40)
-		let risk = RiskCalculation.risk(
+		let risk = riskCalculation.risk(
 			summary: summary,
 			configuration: appConfig,
 			// arbitrary, but within limit
@@ -293,7 +294,7 @@ final class RiskCalculationTests: XCTestCase {
 		// Test the case where preconditions pass and there is increased risk
 		// Values below are hand-picked to result in a raw risk score of 0.85 - outside of the bottom bound of the config
 		let summary = makeExposureSummaryContainer(maxRiskScoreFullRange: 64, ad_low: 10, ad_mid: 10, ad_high: 10)
-		let risk = RiskCalculation.risk(
+		let risk = riskCalculation.risk(
 			summary: summary,
 			configuration: appConfig,
 			// arbitrary, but within limit
@@ -320,7 +321,7 @@ final class RiskCalculationTests: XCTestCase {
 
 		// Test case where last exposure summary was gotten too far in the past,
 		// But the risk is increased
-		let risk = RiskCalculation.risk(
+		let risk = riskCalculation.risk(
 			summary: summaryHigh,
 			configuration: appConfig,
 			dateLastExposureDetection: Date().addingTimeInterval(.init(days: -2)),
@@ -342,7 +343,7 @@ final class RiskCalculationTests: XCTestCase {
 		)
 
 		// Test case where last exposure summary was gotten too far in the past,
-		let risk = RiskCalculation.risk(
+		let risk = riskCalculation.risk(
 			summary: nil,
 			configuration: appConfig,
 			dateLastExposureDetection: Date().addingTimeInterval(.init(days: -2)),
@@ -368,7 +369,7 @@ final class RiskCalculationTests: XCTestCase {
 		// and the new risk level has changed
 
 		// Will produce increased risk
-		let risk = RiskCalculation.risk(
+		let risk = riskCalculation.risk(
 			summary: summaryHigh,
 			configuration: appConfig,
 			// arbitrary, but within limit
@@ -394,7 +395,7 @@ final class RiskCalculationTests: XCTestCase {
 		// and the new risk level has changed
 
 		// Will produce high risk
-		let risk = RiskCalculation.risk(
+		let risk = riskCalculation.risk(
 			summary: summaryHigh,
 			configuration: appConfig,
 			// arbitrary, but within limit
@@ -418,7 +419,7 @@ final class RiskCalculationTests: XCTestCase {
 		// Test the case where we have an old risk level in the store,
 		// and the new risk level has not changed
 
-		let risk = RiskCalculation.risk(
+		let risk = riskCalculation.risk(
 			summary: summaryLow,
 			configuration: appConfig,
 			// arbitrary, but within limit
@@ -443,7 +444,7 @@ final class RiskCalculationTests: XCTestCase {
 		// and the new risk calculation returns unknown
 
 		// Produces unknown risk
-		let risk = RiskCalculation.risk(
+		let risk = riskCalculation.risk(
 			summary: summaryLow,
 			configuration: appConfig,
 			dateLastExposureDetection: Date().addingTimeInterval(.init(days: -2)),
@@ -467,7 +468,7 @@ final class RiskCalculationTests: XCTestCase {
 		// and the new risk calculation returns unknown
 
 		// Produces unknown risk
-		let risk = RiskCalculation.risk(
+		let risk = riskCalculation.risk(
 			summary: summaryLow,
 			configuration: appConfig,
 			dateLastExposureDetection: Date().addingTimeInterval(.init(days: -2)),
