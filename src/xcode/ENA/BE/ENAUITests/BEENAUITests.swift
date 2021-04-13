@@ -34,7 +34,7 @@ class BEENAUITests: XCTestCase {
 		app.launch()
 
 		// only run if home screen is present
-		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
+		XCTAssert(app.images["AppStrings.Home.leftBarButtonDescription"].waitForExistence(timeout: 5.0))
 
 		app.swipeUp()
 		
@@ -55,7 +55,7 @@ class BEENAUITests: XCTestCase {
 
 		app.buttons["BEAppStrings.BEMobileTestId.save"].tap()
 
-		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
+		XCTAssert(app.images["AppStrings.Home.leftBarButtonDescription"].waitForExistence(timeout: 5.0))
 		snapshot("ScreenShot_\(#function)_004")
 	}
 	
@@ -63,7 +63,7 @@ class BEENAUITests: XCTestCase {
 		app.launch()
 
 		// only run if home screen is present
-		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
+		XCTAssert(app.images["AppStrings.Home.leftBarButtonDescription"].waitForExistence(timeout: 5.0))
 		app.swipeUp()
 		
 		XCTAssertTrue(app.buttons["AppStrings.Home.submitCardButton"].waitForExistence(timeout: 5.0))
@@ -84,7 +84,7 @@ class BEENAUITests: XCTestCase {
 
 		app.buttons["BEAppStrings.BEMobileTestId.save"].tap()
 
-		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
+		XCTAssert(app.images["AppStrings.Home.leftBarButtonDescription"].waitForExistence(timeout: 5.0))
 		app.swipeUp()
 	}
 	
@@ -124,7 +124,7 @@ class BEENAUITests: XCTestCase {
 		app.launchArguments.append(contentsOf: ["-riskLevel", "HIGH"])
 		app.launch()
 
-		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
+		XCTAssert(app.images["AppStrings.Home.leftBarButtonDescription"].waitForExistence(timeout: 5.0))
 		XCTAssertTrue(app.buttons["RiskLevelCollectionViewCell.topContainer"].waitForExistence(timeout: 5.0))
 		snapshot("ScreenShot_\(#function)_001")
 		app.buttons["RiskLevelCollectionViewCell.topContainer"].tap()
@@ -138,7 +138,7 @@ class BEENAUITests: XCTestCase {
 		app.launchArguments.append(contentsOf: ["-riskLevel", "UNKNOWN"])
 		app.launch()
 
-		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
+		XCTAssert(app.images["AppStrings.Home.leftBarButtonDescription"].waitForExistence(timeout: 5.0))
 		XCTAssertTrue(app.buttons["RiskLevelCollectionViewCell.topContainer"].waitForExistence(timeout: 5.0))
 		app.buttons["RiskLevelCollectionViewCell.topContainer"].tap()
 		XCTAssertTrue(app.navigationBars.buttons.element(boundBy: 0).waitForExistence(timeout: 5.0))
@@ -151,7 +151,7 @@ class BEENAUITests: XCTestCase {
 		app.launchArguments.append(contentsOf: ["-riskLevel", "INACTIVE"])
 		app.launch()
 
-		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
+		XCTAssert(app.images["AppStrings.Home.leftBarButtonDescription"].waitForExistence(timeout: 5.0))
 		XCTAssertTrue(app.buttons["RiskLevelCollectionViewCell.topContainer"].waitForExistence(timeout: 5.0))
 		app.buttons["RiskLevelCollectionViewCell.topContainer"].tap()
 		XCTAssertTrue(app.navigationBars.buttons.element(boundBy: 0).waitForExistence(timeout: 5.0))
@@ -251,7 +251,7 @@ class BEENAUITests: XCTestCase {
 	func testMobileDataSettings() {
 		app.launch()
 
-		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
+		XCTAssert(app.images["AppStrings.Home.leftBarButtonDescription"].waitForExistence(timeout: 5.0))
 		app.swipeUp()
 		XCTAssertTrue(app.cells["AppStrings.Home.settingsCardTitle"].waitForExistence(timeout: 5.0))
 		app.cells["AppStrings.Home.settingsCardTitle"].tap()

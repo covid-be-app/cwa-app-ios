@@ -147,14 +147,6 @@ class Coordinator: RequiresAppDependencies {
 }
 
 extension Coordinator: HomeViewControllerDelegate {
-	func showRiskLegend() {
-		rootViewController.present(
-			UINavigationController(rootViewController: RiskLegendViewController()),
-			animated: true,
-			completion: nil
-		)
-	}
-
 	func showExposureNotificationSetting(enState: ENStateHandler.State) {
 		let vc = ExposureNotificationSettingViewController(
 					initialEnState: enState,

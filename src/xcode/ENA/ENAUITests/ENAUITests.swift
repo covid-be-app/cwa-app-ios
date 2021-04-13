@@ -63,7 +63,7 @@ class ENAUITests: XCTestCase {
 
 		/// ScreenShot_0002: Homescreen (low risk)
 		try? navigateThroughOnboarding()
-		XCTAssertTrue(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
+		XCTAssert(app.images["AppStrings.Home.leftBarButtonDescription"].waitForExistence(timeout: 5.0))
 		if snapshotsActive { snapshot("AppStore_0002") }
 		app.swipeUp()
 		sleep(1)
@@ -80,7 +80,7 @@ class ENAUITests: XCTestCase {
 
 		//// ScreenShot_0004: Settings > Risk exposure
 		app.navigationBars.buttons.element(boundBy: 0).tap()
-		XCTAssertTrue(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
+		XCTAssert(app.images["AppStrings.Home.leftBarButtonDescription"].waitForExistence(timeout: 5.0))
 		app.swipeUp()
 		XCTAssertTrue(app.cells["AppStrings.Home.settingsCardTitle"].waitForExistence(timeout: 5.0))
 		app.cells["AppStrings.Home.settingsCardTitle"].tap()
