@@ -21,6 +21,13 @@ import Foundation
 import ExposureNotification
 import UIKit
 
+
+struct NewRiskLevelInfo {
+	let level:RiskLevel
+	var numberOfExposures: Int = 0
+	var daysSinceLastExposure: Int?
+}
+
 final class RiskCalculation {
 
 	// MARK: - Precondition Time Constants
@@ -55,7 +62,7 @@ final class RiskCalculation {
 		- preconditions: Current state of the `ExposureManager`
 		- currentDate: The current `Date` to use in checks. Defaults to `Date()`
 	*/
-	func riskLevel(
+	private func riskLevel(
 		summary: CodableExposureDetectionSummary?,
 		configuration: SAP_ApplicationConfiguration,
 		dateLastExposureDetection: Date?,
@@ -65,15 +72,6 @@ final class RiskCalculation {
 		currentDate: Date = Date()
 	) -> Result<RiskLevel, RiskLevelCalculationError> {
 		var riskLevel = RiskLevel.low
-		DispatchQueue.main.async {
-			let appDelegate = UIApplication.shared.delegate as? AppDelegate // TODO: Remove
-			appDelegate?.lastRiskCalculation = ""  // Reset; Append from here on
-			appDelegate?.lastRiskCalculation.append("configuration: \(configuration)\n")
-			appDelegate?.lastRiskCalculation.append("numberOfTracingActiveHours: \(activeTracing.inHours)\n")
-			appDelegate?.lastRiskCalculation.append("preconditions: \(preconditions)\n")
-			appDelegate?.lastRiskCalculation.append("currentDate: \(currentDate)\n")
-			appDelegate?.lastRiskCalculation.append("summary: \(String(describing: summary?.description))\n")
-		}
 
 		// Precondition 1 - Exposure Notifications must be turned on
 		guard preconditions.isGood else {
@@ -170,7 +168,8 @@ final class RiskCalculation {
 		// Round to two decimal places
 		return (normRiskScore * weightedAttenuation).rounded(to: 2)
 	}
-
+/*
+	// Main function
 	func risk(
 		summary: CodableExposureDetectionSummary?,
 		configuration: SAP_ApplicationConfiguration,
@@ -199,14 +198,6 @@ final class RiskCalculation {
 				exposureDetectionDate: dateLastExposureDetection ?? Date()
 			)
 
-			DispatchQueue.main.async {
-				// TODO: Remove
-				let appDelegate = UIApplication.shared.delegate as? AppDelegate
-				appDelegate?.lastRiskCalculation.append("\n ===== Risk =====\n")
-				appDelegate?.lastRiskCalculation.append("details: \(details)\n")
-				appDelegate?.lastRiskCalculation.append("summary: \(String(describing: summary?.description))\n")
-			}
-
 			var riskLevelHasChanged = false
 			if
 				let previousRiskLevel = previousRiskLevel,
@@ -219,6 +210,100 @@ final class RiskCalculation {
 			
 			return Risk(
 				level: level,
+				details: details,
+				riskLevelHasChanged: riskLevelHasChanged
+			)
+		case .failure:
+			return nil
+		}
+	}
+	
+	*/
+	private func newRiskLevel(
+		windows: [ExposureWindow],
+		configuration: RiskCalculationConfiguration,
+		dateLastExposureDetection: Date?,
+		activeTracing: ActiveTracing, // Get this from the `TracingStatusHistory`
+		preconditions: ExposureManagerState,
+		providerConfiguration: RiskProvidingConfiguration,
+		currentDate: Date = Date()
+	) -> Result<NewRiskLevelInfo, RiskLevelCalculationError> {
+		var riskLevel = RiskLevel.low
+
+		// Precondition 1 - Exposure Notifications must be turned on
+		guard preconditions.isGood else {
+			// This overrides all other levels
+			return .success(NewRiskLevelInfo(level: .inactive))
+		}
+
+		// Precondition 2 - If tracing is active less than 1 day, risk is .unknownInitial
+		if activeTracing.inHours < Self.minTracingActiveHours, riskLevel < .unknownInitial {
+			riskLevel = .unknownInitial
+			return .success(NewRiskLevelInfo(level: riskLevel))
+		}
+
+		// Precondition 3 - Risk is unknownInitial if summary is not present
+		if windows.isEmpty, riskLevel < .unknownInitial {
+			riskLevel = .unknownInitial
+			return .success(NewRiskLevelInfo(level: riskLevel))
+		}
+		
+		let enfCalculation = ENFRiskCalculation()
+		let calculationResult = enfCalculation.calculateRisk(exposureWindows: windows, configuration: configuration)
+
+		var daysSinceLastExposure: Int?
+		
+		riskLevel = (calculationResult.riskLevel == ENFRiskLevel.high) ? .increased : .low
+		let numberOfExposures = calculationResult.minimumDistinctEncountersWithCurrentRiskLevel
+		
+		if numberOfExposures > 0 {
+			if let mostRecentDate = calculationResult.mostRecentDateWithCurrentRiskLevel {
+				daysSinceLastExposure = Calendar.current.dateComponents([.day], from: mostRecentDate, to: Date()).day
+			}
+		}
+		
+		return .success(NewRiskLevelInfo(level: riskLevel, numberOfExposures: numberOfExposures, daysSinceLastExposure: daysSinceLastExposure))
+	}
+	
+	func newRisk(
+		windows: [ExposureWindow],
+		configuration: RiskCalculationConfiguration,
+		dateLastExposureDetection: Date?,
+		activeTracing: ActiveTracing,
+		preconditions: ExposureManagerState,
+		currentDate: Date = Date(),
+		previousRiskLevel: EitherLowOrIncreasedRiskLevel?,
+		providerConfiguration: RiskProvidingConfiguration
+	) -> Risk? {
+		
+		switch newRiskLevel(
+			windows: windows,
+			configuration: configuration,
+			dateLastExposureDetection: dateLastExposureDetection,
+			activeTracing: activeTracing,
+			preconditions: preconditions,
+			providerConfiguration: providerConfiguration
+		) {
+		case let .success(info):
+			let details = Risk.Details(
+				daysSinceLastExposure: info.daysSinceLastExposure,
+				numberOfExposures: info.numberOfExposures,
+				activeTracing: activeTracing,
+				exposureDetectionDate: dateLastExposureDetection ?? Date()
+			)
+
+			var riskLevelHasChanged = false
+			if
+				let previousRiskLevel = previousRiskLevel,
+				let newRiskLevel = EitherLowOrIncreasedRiskLevel(with: info.level),
+				previousRiskLevel != newRiskLevel {
+				// If the newly calculated risk level is different than the stored level, set the flag to true.
+				// Note that we ignore all levels aside from low or increased risk
+				riskLevelHasChanged = true
+			}
+			
+			return Risk(
+				level: info.level,
 				details: details,
 				riskLevelHasChanged: riskLevelHasChanged
 			)
