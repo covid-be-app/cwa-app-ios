@@ -21,43 +21,35 @@
 //
 
 import XCTest
+import ZIPFoundation
 import ExposureNotification
+
 @testable import ENA
 
 private final class Summary: ENExposureDetectionSummary {}
 
 private final class ExposureSummaryProviderMock: ExposureSummaryProvider {
 	var onDetectExposure: ((ExposureSummaryProvider.Completion) -> Void)?
+	var onGetWindows: ((ExposureSummaryProvider.WindowsCompletion) -> Void)?
 
 	func detectExposure(completion:@escaping (ENExposureDetectionSummary?) -> Void) {
 		onDetectExposure?(completion)
 	}
+	
+	func getWindows(summary: ENExposureDetectionSummary, completion: @escaping WindowsCompletion) {
+		onGetWindows?(completion)
+	}
 }
 
-func getApplicationConfiguration() -> SAP_ApplicationConfiguration {
-	var config = SAP_ApplicationConfiguration()
-	config.attenuationDuration.defaultBucketOffset = 0
-	config.attenuationDuration.riskScoreNormalizationDivisor = 1
-	config.attenuationDuration.weights.low = 0
-	config.attenuationDuration.weights.mid = 0
-	config.attenuationDuration.weights.high = 0
-
-	var riskScoreClassLow = SAP_RiskScoreClass()
-	riskScoreClassLow.label = "LOW"
-	riskScoreClassLow.min = 0
-	riskScoreClassLow.max = 10
-
-	var riskScoreClassHigh = SAP_RiskScoreClass()
-	riskScoreClassHigh.label = "HIGH"
-	riskScoreClassHigh.min = 11
-	riskScoreClassHigh.max = 100000000
-
-	config.riskScoreClasses.riskClasses = [
-		riskScoreClassLow,
-		riskScoreClassHigh
-	]
-
-	return config
+func getApplicationConfiguration() -> SAP_Internal_V2_ApplicationConfigurationIOS {
+	guard
+		let url = Bundle.main.url(forResource: "default_app_config_200", withExtension: ""),
+		let data = try? Data(contentsOf: url),
+		let zip = Archive(data: data, accessMode: .read),
+		let staticConfig = try? zip.extractAppConfiguration() else {
+		fatalError("Could not fetch static app config")
+	}
+	return staticConfig
 }
 
 final class RiskProviderTests: XCTestCase {
@@ -201,8 +193,8 @@ final class RiskProviderTests: XCTestCase {
 		let client = ClientMock(submissionError: nil)
 
 		client.onAppConfiguration = { complete in
-			complete(SAP_ApplicationConfiguration.with {
-				$0.exposureConfig = SAP_RiskScoreParameters()
+			complete(SAP_Internal_V2_ApplicationConfigurationIOS.with {
+				$0.riskCalculationParameters = SAP_Internal_V2_RiskCalculationParameters()
 			})
 		}
 
@@ -251,8 +243,8 @@ final class RiskProviderTests: XCTestCase {
 		let client = ClientMock(submissionError: nil, urlRequestFailure: .serverError(500))
 
 		client.onAppConfiguration = { complete in
-			complete(SAP_ApplicationConfiguration.with {
-				$0.exposureConfig = SAP_RiskScoreParameters()
+			complete(SAP_Internal_V2_ApplicationConfigurationIOS.with {
+				$0.riskCalculationParameters = SAP_Internal_V2_RiskCalculationParameters()
 			})
 		}
 
@@ -298,12 +290,16 @@ final class RiskProviderTests: XCTestCase {
 		exposureSummaryProvider.onDetectExposure = { completion in
 			completion(nil)
 		}
+		
+		exposureSummaryProvider.onGetWindows = { completion in
+			completion([])
+		}
 
 		let client = ClientMock(submissionError: nil)
 
 		client.onAppConfiguration = { complete in
-			complete(SAP_ApplicationConfiguration.with {
-				$0.exposureConfig = SAP_RiskScoreParameters()
+			complete(SAP_Internal_V2_ApplicationConfigurationIOS.with {
+				$0.riskCalculationParameters = SAP_Internal_V2_RiskCalculationParameters()
 			})
 		}
 
@@ -351,6 +347,12 @@ final class RiskProviderTests: XCTestCase {
 				metadata: ["attenuationDurations": [30, 50, 70]]
 			)
 			completion(summary)
+		}
+		
+		exposureSummaryProvider2.onGetWindows = { completion in
+			let window = MutableENExposureWindow()
+			
+			completion([window])
 		}
 
 		let sut2 = RiskProvider(

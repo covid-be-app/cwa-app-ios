@@ -35,7 +35,7 @@ protocol Client {
 	typealias TANHandler = (Result<String, Failure>) -> Void
 	typealias DayCompletionHandler = (Result<SAPDownloadedPackage, Failure>) -> Void
 	typealias HourCompletionHandler = (Result<SAPDownloadedPackage, Failure>) -> Void
-	typealias AppConfigurationCompletion = (SAP_ApplicationConfiguration?) -> Void
+	typealias AppConfigurationCompletion = (SAP_Internal_V2_ApplicationConfigurationIOS?) -> Void
 
 	// MARK: Interacting with a Client
 

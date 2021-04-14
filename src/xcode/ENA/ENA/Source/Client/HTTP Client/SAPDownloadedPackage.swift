@@ -84,7 +84,7 @@ struct SAPDownloadedPackage {
 	}
 }
 
-private extension Archive {
+extension Archive {
 	typealias KeyPackage = (bin: Data, sig: Data)
 	enum KeyPackageError: Error {
 		case binNotFound

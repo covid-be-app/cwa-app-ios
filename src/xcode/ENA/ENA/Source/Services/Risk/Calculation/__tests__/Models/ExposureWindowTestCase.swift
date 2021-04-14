@@ -11,7 +11,7 @@ struct ExposureWindowTestCase: Decodable {
 
 	let description: String
 	let exposureWindows: [ExposureWindow]
-	let expTotalRiskLevel: RiskLevel
+	let expTotalRiskLevel: ENFRiskLevel
 	let expTotalMinimumDistinctEncountersWithLowRisk: Int
 	let expTotalMinimumDistinctEncountersWithHighRisk: Int
 	let expAgeOfMostRecentDateWithLowRisk: Int?

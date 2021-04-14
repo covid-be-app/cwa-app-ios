@@ -35,4 +35,8 @@ class MockExposureDetector: ExposureDetector {
 
 		return Progress(totalUnitCount: 1)
 	}
+	
+	func getExposureWindows(summary: ENExposureDetectionSummary, completionHandler: @escaping ENGetExposureWindowsHandler) -> Progress {
+		fatalError("TODO")
+	}
 }

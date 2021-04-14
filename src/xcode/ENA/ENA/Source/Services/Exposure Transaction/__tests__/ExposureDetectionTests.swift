@@ -196,3 +196,45 @@ private extension ENExposureConfiguration {
 		return config
 	}
 }
+
+final class MutableENExposureWindow: ENExposureWindow {
+
+	init(
+		calibrationConfidence: ENCalibrationConfidence = .lowest,
+		date: Date = Date(),
+		diagnosisReportType: ENDiagnosisReportType = .unknown,
+		infectiousness: ENInfectiousness = .none,
+		scanInstances: [ENScanInstance] = []
+	) {
+		self._calibrationConfidence = calibrationConfidence
+		self._date = date
+		self._diagnosisReportType = diagnosisReportType
+		self._infectiousness = infectiousness
+		self._scanInstances = scanInstances
+	}
+
+	private var _calibrationConfidence: ENCalibrationConfidence
+	override var calibrationConfidence: ENCalibrationConfidence {
+		_calibrationConfidence
+	}
+
+	private var _date: Date
+	override var date: Date {
+		_date
+	}
+
+	private var _diagnosisReportType: ENDiagnosisReportType
+	override var diagnosisReportType: ENDiagnosisReportType {
+		_diagnosisReportType
+	}
+
+	private var _infectiousness: ENInfectiousness
+	override var infectiousness: ENInfectiousness {
+		_infectiousness
+	}
+
+	private var _scanInstances: [ENScanInstance]
+	override var scanInstances: [ENScanInstance] {
+		_scanInstances
+	}
+}

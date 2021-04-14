@@ -26,7 +26,9 @@ import UIKit
 
 protocol ExposureSummaryProvider: AnyObject {
 	typealias Completion = (ENExposureDetectionSummary?) -> Void
+	typealias WindowsCompletion = ([ENExposureWindow]?) -> Void
 	func detectExposure(completion: @escaping Completion)
+	func getWindows(summary: ENExposureDetectionSummary, completion: @escaping WindowsCompletion)
 }
 
 final class RiskProvider {
@@ -171,6 +173,38 @@ extension RiskProvider: RiskProviding {
 			)
 		}
 	}
+	
+	private func determineSummary(
+		userInitiated: Bool,
+		completion: @escaping (ENExposureDetectionSummary?) -> Void
+	) {
+		// Here we are in automatic mode and thus we have to check the validity of the current summary
+		// :BE: force for user initiated
+		let enoughTimeHasPassed = userInitiated || configuration.shouldPerformExposureDetection(
+			activeTracingHours: store.tracingStatusHistory.activeTracing().inHours,
+			lastExposureDetectionDate: store.summary?.date
+		)
+		if !enoughTimeHasPassed || !self.exposureManagerState.isGood {
+			completion(nil)
+			return
+		}
+
+		// Enough time has passed.
+		let shouldDetectExposures = (configuration.detectionMode == .manual && userInitiated) || configuration.detectionMode == .automatic
+
+		if shouldDetectExposures == false {
+			completion(nil)
+			return
+		}
+
+		// The summary is outdated + we are in automatic mode: do a exposure detection
+
+		exposureSummaryProvider.detectExposure { detectedSummary in
+			completion(
+				detectedSummary
+			)
+		}
+	}
 
 	/// Returns the next possible date of a exposureDetection
 	/// Case1: Date is a valid date in the future
@@ -238,7 +272,8 @@ extension RiskProvider: RiskProviding {
 	}
 
 	private func _requestRiskLevel(userInitiated: Bool, completion: Completion? = nil) {
-		var summaries: Summaries?
+		var summary: ENExposureDetectionSummary?
+		var currentWindows: [ENExposureWindow]?
 		let tracingHistory = store.tracingStatusHistory
 		let numberOfEnabledHours = tracingHistory.activeTracing().inHours
 		let details = Risk.Details(
@@ -290,16 +325,24 @@ extension RiskProvider: RiskProviding {
 		let group = DispatchGroup()
 
 		group.enter()
-		determineSummaries(userInitiated: userInitiated) {
-			summaries = $0
+		determineSummary(userInitiated: userInitiated) {
+			summary = $0
 			group.leave()
 		}
 
-		var appConfiguration: SAP_ApplicationConfiguration?
+		var appConfiguration: SAP_Internal_V2_ApplicationConfigurationIOS?
 		group.enter()
 		appConfigurationProvider.appConfiguration { configuration in
 			appConfiguration = configuration
 			group.leave()
+		}
+		
+		if let currentSummary = summary {
+			group.enter()
+			exposureSummaryProvider.getWindows(summary: currentSummary) { windows in
+				currentWindows = windows
+				group.leave()
+			}
 		}
 
 		guard group.wait(timeout: .now() + .seconds(60)) == .success else {
@@ -308,29 +351,33 @@ extension RiskProvider: RiskProviding {
 			return
 		}
 
-		_requestRiskLevel(summaries: summaries, appConfiguration: appConfiguration, completion: completion)
+		_requestRiskLevel(windows: currentWindows, appConfiguration: appConfiguration, completion: completion)
 	}
 
-	private func _requestRiskLevel(summaries: Summaries?, appConfiguration: SAP_ApplicationConfiguration?, completion: Completion? = nil) {
-		guard let _appConfiguration = appConfiguration else {
+	private func _requestRiskLevel(windows: [ENExposureWindow]?, appConfiguration: SAP_Internal_V2_ApplicationConfigurationIOS?, completion: Completion? = nil) {
+		guard
+			let appConfiguration = appConfiguration,
+			let windows = windows else {
 			provideLoadingStatus(isLoading: false)
 			completeOnTargetQueue(risk: store.latestRisk, completion: completion)
 			return
 		}
-
+		
 		let activeTracing = store.tracingStatusHistory.activeTracing()
 		let riskCalculation = RiskCalculation()
+		let riskCalculationConfiguration = RiskCalculationConfiguration(from: appConfiguration.riskCalculationParameters)
+
 		guard
-			let risk = riskCalculation.risk(
-				summary: summaries?.current?.summary,
-				configuration: _appConfiguration,
-				dateLastExposureDetection: summaries?.current?.date,
+			let risk = riskCalculation.newRisk(
+				windows: windows.map { ExposureWindow( from: $0 ) },
+				configuration: riskCalculationConfiguration,
+				dateLastExposureDetection: store.latestRisk?.details.exposureDetectionDate,   // :TODO: check if this is correct
 				activeTracing: activeTracing,
 				preconditions: exposureManagerState,
 				currentDate: Date(),
 				previousRiskLevel: store.previousRiskLevel,
-				providerConfiguration: configuration
-			) else {
+				providerConfiguration: configuration)
+			else {
 				logError(message: "Serious error during risk calculation")
 				provideLoadingStatus(isLoading: false)
 				completeOnTargetQueue(risk: store.latestRisk, completion: completion)

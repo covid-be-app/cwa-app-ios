@@ -28,7 +28,7 @@ final class CachedAppConfigurationTests: XCTestCase {
 		expectation.expectedFulfillmentCount = 1
 		expectation.assertForOverFulfill = true
 
-		let expectedConfig = SAP_ApplicationConfiguration()
+		let expectedConfig = SAP_Internal_V2_ApplicationConfigurationIOS()
 		client.onAppConfiguration = { completeWith in
 			completeWith(expectedConfig)
 			expectation.fulfill()

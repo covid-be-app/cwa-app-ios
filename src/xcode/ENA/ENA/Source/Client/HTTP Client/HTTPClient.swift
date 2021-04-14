@@ -67,7 +67,15 @@ final class HTTPClient: Client {
 					completion(nil)
 					return
 				}
-				completion(try? SAP_ApplicationConfiguration(serializedData: package.bin))
+				
+				do {
+					let config = try SAP_Internal_V2_ApplicationConfigurationIOS(serializedData: package.bin)
+					print(config)
+				} catch {
+					print(error)
+				}
+				
+				completion(try? SAP_Internal_V2_ApplicationConfigurationIOS(serializedData: package.bin))
 			case .failure:
 				completion(nil)
 			}
@@ -83,11 +91,11 @@ final class HTTPClient: Client {
 				completion(nil)
 				return
 			}
-			guard config.hasExposureConfig else {
+			guard config.hasExposureConfiguration else {
 				completion(nil)
 				return
 			}
-			completion(try? ENExposureConfiguration(from: config.exposureConfig))
+			completion(ENExposureConfiguration(from: config.exposureConfiguration))
 		}
 	}
 

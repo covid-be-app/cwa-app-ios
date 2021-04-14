@@ -62,6 +62,6 @@ extension CachedAppConfiguration: AppConfigurationProviding {
 private extension CachedAppConfiguration {
 	struct Cache {
 		let date: Date
-		let value: SAP_ApplicationConfiguration
+		let value: SAP_Internal_V2_ApplicationConfigurationIOS
 	}
 }

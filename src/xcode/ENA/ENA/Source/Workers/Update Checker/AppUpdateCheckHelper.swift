@@ -44,9 +44,14 @@ final class AppUpdateCheckHelper {
 		removeObserver()
 	}
 
+	
+	// :TODO: check this
 	func checkAppVersionDialog(for vc: UIViewController?) {
 		client.appConfiguration { result in
-			guard let versionInfo: SAP_ApplicationVersionConfiguration = result?.appVersion else {
+			guard
+				let latestVersionInfo: SAP_Internal_V2_SemanticVersion = result?.latestVersion,
+				let minimumVersionInfo: SAP_Internal_V2_SemanticVersion = result?.minVersion
+				  else {
 				return
 			}
 			guard let appVersion: String = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String else {
@@ -55,8 +60,8 @@ final class AppUpdateCheckHelper {
 
 			let alertType = self.alertTypeFrom(
 				currentVersion: appVersion,
-				minVersion: versionInfo.ios.min,
-				latestVersion: versionInfo.ios.latest
+				minVersion: minimumVersionInfo,
+				latestVersion: latestVersionInfo
 			)
 
 			guard let alert = self.createAlert(alertType, vc: vc) else { return }
@@ -106,8 +111,8 @@ final class AppUpdateCheckHelper {
 
 	func alertTypeFrom(
 		currentVersion: String,
-		minVersion: SAP_SemanticVersion,
-		latestVersion: SAP_SemanticVersion
+		minVersion: SAP_Internal_V2_SemanticVersion,
+		latestVersion: SAP_Internal_V2_SemanticVersion
 	) -> UpdateAlertType {
 		guard let currentSemanticVersion = currentVersion.semanticVersion else {
 			return .none

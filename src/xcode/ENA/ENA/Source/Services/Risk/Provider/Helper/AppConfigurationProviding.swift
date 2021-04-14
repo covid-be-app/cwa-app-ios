@@ -20,6 +20,6 @@
 import Foundation
 
 protocol AppConfigurationProviding: AnyObject {
-	typealias Completion = (SAP_ApplicationConfiguration?) -> Void
+	typealias Completion = (SAP_Internal_V2_ApplicationConfigurationIOS?) -> Void
 	func appConfiguration(completion: @escaping Completion)
 }

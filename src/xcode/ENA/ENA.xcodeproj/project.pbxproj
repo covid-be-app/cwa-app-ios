@@ -262,6 +262,11 @@
 		A9063F6F2625CBAE002A623C /* ExposureWindowTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9063F6C2625CBAE002A623C /* ExposureWindowTestCase.swift */; };
 		A9063F702625CBAE002A623C /* TestCasesWithConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9063F6D2625CBAE002A623C /* TestCasesWithConfiguration.swift */; };
 		A9063F712625CBAE002A623C /* RiskCalculationResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9063F6E2625CBAE002A623C /* RiskCalculationResultTests.swift */; };
+		A9063F7726270E6F002A623C /* ENExposureConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9063F7626270E6F002A623C /* ENExposureConfiguration.swift */; };
+		A9063F8126271099002A623C /* AppConfiguration+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9063F8026271099002A623C /* AppConfiguration+Validation.swift */; };
+		A9063F8526271151002A623C /* Date+Age.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9063F8426271151002A623C /* Date+Age.swift */; };
+		A9063F89262712AF002A623C /* exposure-windows-risk-calculation.json in Resources */ = {isa = PBXBuildFile; fileRef = A9063F88262712AE002A623C /* exposure-windows-risk-calculation.json */; };
+		A9063FA026271880002A623C /* default_app_config_200 in Resources */ = {isa = PBXBuildFile; fileRef = A9063F7A26270FA9002A623C /* default_app_config_200 */; };
 		A90E1AEA25B59683005AC840 /* HomeSpacerCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90E1AE925B59683005AC840 /* HomeSpacerCellConfigurator.swift */; };
 		A90E1AF125B597A3005AC840 /* HomeSpacerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90E1AEF25B597A3005AC840 /* HomeSpacerCell.swift */; };
 		A90E1AF225B597A3005AC840 /* HomeSpacerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A90E1AF025B597A3005AC840 /* HomeSpacerCell.xib */; };
@@ -834,6 +839,11 @@
 		A9063F6C2625CBAE002A623C /* ExposureWindowTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExposureWindowTestCase.swift; sourceTree = "<group>"; };
 		A9063F6D2625CBAE002A623C /* TestCasesWithConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCasesWithConfiguration.swift; sourceTree = "<group>"; };
 		A9063F6E2625CBAE002A623C /* RiskCalculationResultTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiskCalculationResultTests.swift; sourceTree = "<group>"; };
+		A9063F7626270E6F002A623C /* ENExposureConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ENExposureConfiguration.swift; sourceTree = "<group>"; };
+		A9063F7A26270FA9002A623C /* default_app_config_200 */ = {isa = PBXFileReference; lastKnownFileType = file; path = default_app_config_200; sourceTree = "<group>"; };
+		A9063F8026271099002A623C /* AppConfiguration+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppConfiguration+Validation.swift"; sourceTree = "<group>"; };
+		A9063F8426271151002A623C /* Date+Age.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Age.swift"; sourceTree = "<group>"; };
+		A9063F88262712AE002A623C /* exposure-windows-risk-calculation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "exposure-windows-risk-calculation.json"; sourceTree = "<group>"; };
 		A90E1AE925B59683005AC840 /* HomeSpacerCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSpacerCellConfigurator.swift; sourceTree = "<group>"; };
 		A90E1AEF25B597A3005AC840 /* HomeSpacerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSpacerCell.swift; sourceTree = "<group>"; };
 		A90E1AF025B597A3005AC840 /* HomeSpacerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeSpacerCell.xib; sourceTree = "<group>"; };
@@ -1371,6 +1381,8 @@
 				A97D451A25AAFD7E00E7D698 /* Crypto.swift */,
 				A9063F212625BF0A002A623C /* Bundle+Identifier.swift */,
 				A9063F532625C66B002A623C /* Calendar+GregorianLocale.swift */,
+				A9063F7626270E6F002A623C /* ENExposureConfiguration.swift */,
+				A9063F8426271151002A623C /* Date+Age.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1911,6 +1923,7 @@
 				A9063F5F2625CB5A002A623C /* ENARangeTest.swift */,
 				A9063F5B2625CB2F002A623C /* ExposureWindowTest.swift */,
 				A9063F262625C4AD002A623C /* RiskCalculationTests.swift */,
+				A9063F88262712AE002A623C /* exposure-windows-risk-calculation.json */,
 				A9063F272625C4AD002A623C /* SAP_RiskScoreClass+LowAndHighTests.swift */,
 			);
 			path = __tests__;
@@ -2718,6 +2731,7 @@
 				B1FE13FC24896EE700D012E5 /* __tests__ */,
 				B1FE13F824896DDB00D012E5 /* CachedAppConfiguration.swift */,
 				B1FE13FA24896E6700D012E5 /* AppConfigurationProviding.swift */,
+				A9063F8026271099002A623C /* AppConfiguration+Validation.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -2725,6 +2739,7 @@
 		B1FE13FC24896EE700D012E5 /* __tests__ */ = {
 			isa = PBXGroup;
 			children = (
+				A9063F7A26270FA9002A623C /* default_app_config_200 */,
 				B1FE13FD24896EF700D012E5 /* CachedAppConfigurationTests.swift */,
 			);
 			path = __tests__;
@@ -3060,6 +3075,7 @@
 				A97D44E225A7721700E7D698 /* LabelTableViewCell.xib in Resources */,
 				A97D44EC25A7834500E7D698 /* ExposureDetectionRiskCell.xib in Resources */,
 				A9A41F8D261C942400C2BF3F /* BEToolboxItemViewController.xib in Resources */,
+				A9063FA026271880002A623C /* default_app_config_200 in Resources */,
 				71F5418E248BEE08006DB793 /* privacy-policy.html in Resources */,
 				A9A41F6E261C4F0100C2BF3F /* BEToolboxTableViewCell.xib in Resources */,
 				A97D44FC25A8462C00E7D698 /* ExposureDetectionRiskTextCell.xib in Resources */,
@@ -3075,6 +3091,7 @@
 			files = (
 				A9221A4C25470F7700853CEF /* missingLanguageDynamicTexts.json in Resources */,
 				A9221A5225472CB300853CEF /* testDownloadedTexts.json in Resources */,
+				A9063F89262712AF002A623C /* exposure-windows-risk-calculation.json in Resources */,
 				A9221A4D25470F7700853CEF /* missingScreensDynamicTexts.json in Resources */,
 				A9221A502547222E00853CEF /* testDynamicTexts.json in Resources */,
 				B1F8AE482479B4C30093A588 /* api-response-day-2020-05-16 in Resources */,
@@ -3144,6 +3161,7 @@
 				71C0BEDD2498DD07009A17A0 /* ENANavigationFooterView.swift in Sources */,
 				A9221A382542F06E00853CEF /* BEDynamicTextScreenSection.swift in Sources */,
 				A9063EC82625933B002A623C /* event_registration_parameters.pb.swift in Sources */,
+				A9063F8126271099002A623C /* AppConfiguration+Validation.swift in Sources */,
 				A3FF84EC247BFAF00053E947 /* Hasher.swift in Sources */,
 				51895EDC245E16CD0085DA38 /* ENAColor.swift in Sources */,
 				A372DA3B24BDA075003248BB /* ExposureSubmissionCoordinating.swift in Sources */,
@@ -3201,6 +3219,7 @@
 				51CE1B4A246016B0002CF42A /* UICollectionViewCell+Identifier.swift in Sources */,
 				A9063EBF2625933B002A623C /* ppdd_ppac_parameters.pb.swift in Sources */,
 				71B8044F248526B600D53506 /* DynamicTableViewSpaceCell.swift in Sources */,
+				A9063F8526271151002A623C /* Date+Age.swift in Sources */,
 				A97E15BD2579281800E1DB28 /* Migration0To1.swift in Sources */,
 				A97E160025794D2D00E1DB28 /* BERegion.swift in Sources */,
 				8595BF5F246032D90056EA27 /* ENASwitch.swift in Sources */,
@@ -3233,6 +3252,7 @@
 				2F26CE2E248B9C4F00BE30EE /* UIViewController+BackButton.swift in Sources */,
 				A9063EC52625933B002A623C /* ppdd_els_parameters.pb.swift in Sources */,
 				A16714BB248D18D20031B111 /* SummaryMetadata.swift in Sources */,
+				A9063F7726270E6F002A623C /* ENExposureConfiguration.swift in Sources */,
 				B10FD5F4246EAC1700E9D7F2 /* AppleFilesWriter.swift in Sources */,
 				711EFCC72492EE31005FEF21 /* ENAFooterView.swift in Sources */,
 				B1FE13F024891D1500D012E5 /* RiskCalculation.swift in Sources */,

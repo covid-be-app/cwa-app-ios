@@ -73,6 +73,7 @@ struct ExposureManagerState {
 @objc protocol Manager: NSObjectProtocol {
 	static var authorizationStatus: ENAuthorizationStatus { get }
 	func detectExposures(configuration: ENExposureConfiguration, diagnosisKeyURLs: [URL], completionHandler: @escaping ENDetectExposuresHandler) -> Progress
+	func getExposureWindows(from summary: ENExposureDetectionSummary, completionHandler: @escaping ENGetExposureWindowsHandler) -> Progress
 	func activate(completionHandler: @escaping ENErrorHandler)
 	func invalidate()
 	var invalidationHandler: (() -> Void)? { get set }
@@ -83,7 +84,19 @@ struct ExposureManagerState {
 	func getTestDiagnosisKeys(completionHandler: @escaping ENGetDiagnosisKeysHandler)
 }
 
-extension ENManager: Manager {}
+extension ENManager: Manager {
+
+	/// This signature is slightly altered and the call is forwarded due to Apple's use of
+	/// `NS_SWIFT_NAME(getExposureWindows(summary:completionHandler:))`
+	/// for their Objective-C implementation
+	/// ```- (NSProgress *) getExposureWindowsFromSummary: (ENExposureDetectionSummary *) summary
+	///								   	completionHandler: (ENGetExposureWindowsHandler) completionHandler```
+	/// If we're using the same signature as Apple does in our `Manager` protocol, the Objective-C implementation is expected to be named
+	/// `getExposureWindowsWithSummary` instead of `getExposureWindowsFromSummary:`
+	func getExposureWindows(from summary: ENExposureDetectionSummary, completionHandler: @escaping ENGetExposureWindowsHandler) -> Progress {
+		getExposureWindows(summary: summary, completionHandler: completionHandler)
+	}
+}
 
 protocol ExposureManagerLifeCycle {
 	typealias CompletionHandler = ((ExposureNotificationError?) -> Void)
@@ -106,6 +119,7 @@ protocol DiagnosisKeysRetrieval {
 
 protocol ExposureDetector {
 	func detectExposures(configuration: ENExposureConfiguration, diagnosisKeyURLs: [URL], completionHandler: @escaping ENDetectExposuresHandler) -> Progress
+	func getExposureWindows(summary: ENExposureDetectionSummary, completionHandler: @escaping ENGetExposureWindowsHandler) -> Progress
 }
 
 protocol ExposureManagerObserving {
@@ -244,6 +258,10 @@ final class ENAExposureManager: NSObject, ExposureManager {
 		manager.detectExposures(configuration: configuration, diagnosisKeyURLs: diagnosisKeyURLs) { summary, error in
 			completionHandler(summary, error)
 		}
+	}
+	
+	func getExposureWindows(summary: ENExposureDetectionSummary, completionHandler: @escaping ENGetExposureWindowsHandler) -> Progress {
+		manager.getExposureWindows(from: summary, completionHandler: completionHandler)
 	}
 
 	// MARK: Diagnosis Keys

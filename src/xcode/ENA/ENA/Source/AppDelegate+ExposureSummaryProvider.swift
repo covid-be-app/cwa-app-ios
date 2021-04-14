@@ -45,6 +45,17 @@ extension AppDelegate: ExposureSummaryProvider {
 			}
 		}
 	}
+	
+	func getWindows(summary: ENExposureDetectionSummary, completion: @escaping WindowsCompletion) {
+		_ = self.exposureManager.getExposureWindows(summary: summary) { windows, error in
+			if let windows = windows {
+				completion(windows)
+			} else {
+				Log.error("Failed to get windows", error: error)
+				completion(nil)
+			}
+		}
+	}
 
 	private func showError(exposure didEndPrematurely: ExposureDetection.DidEndPrematurelyReason) {
 

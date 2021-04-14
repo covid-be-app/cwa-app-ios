@@ -62,8 +62,8 @@ final class SAP_SemanticVersionTests: XCTestCase {
     }
 }
 
-private typealias Version = SAP_SemanticVersion
-private extension SAP_SemanticVersion {
+private typealias Version = SAP_Internal_V2_SemanticVersion
+private extension SAP_Internal_V2_SemanticVersion {
 	init(_ major: Int, _ minor: Int, _ patch: Int) {
 		self.init()
 		self.major = UInt32(major)

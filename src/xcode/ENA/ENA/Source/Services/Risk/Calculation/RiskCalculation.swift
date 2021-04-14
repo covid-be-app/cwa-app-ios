@@ -217,8 +217,8 @@ final class RiskCalculation {
 			return nil
 		}
 	}
-	
 	*/
+	
 	private func newRiskLevel(
 		windows: [ExposureWindow],
 		configuration: RiskCalculationConfiguration,
