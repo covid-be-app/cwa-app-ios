@@ -48,7 +48,6 @@ protocol ExposureSubmissionCoordinating: class {
 	func showTanScreen()
 	func showWarnOthersScreen()
 	func showThankYouScreen()
-	func submitExposureKeys(_ exposureKeys: [ENTemporaryExposureKey], completion: @escaping (() -> Void))
 }
 
 /// This delegate allows a class to be notified for life-cycle events of the coordinator.

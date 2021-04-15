@@ -64,6 +64,7 @@ class ExposureSubmissionTestResultViewController: DynamicTableViewController, EN
 		cellBackgroundColor = .clear
 		view.backgroundColor = .enaColor(for: .background)
 		tableView.separatorStyle = .none
+		
 		setupView()
 	}
 
@@ -73,6 +74,17 @@ class ExposureSubmissionTestResultViewController: DynamicTableViewController, EN
 		setupDynamicTableView()
 		setupNavigationBar()
 		timeStamp = exposureSubmissionService?.devicePairingSuccessfulTimestamp
+		if let testResult = testResult {
+			if testResult.result == .positive {
+				
+				// make sure we have to push the button at the bottom to get out of this screen
+				if #available(iOS 13.0, *) {
+					self.isModalInPresentation = true
+				}
+				
+				navigationController?.navigationItem.rightBarButtonItem = nil
+			}
+		}
 	}
 
 	private func setupButtons() {
@@ -99,6 +111,8 @@ class ExposureSubmissionTestResultViewController: DynamicTableViewController, EN
 		case .positive:
 			navigationFooterItem?.primaryButtonTitle = AppStrings.ExposureSubmissionResult.continueButton
 			navigationFooterItem?.isSecondaryButtonHidden = true
+			// make sure we have to push the button at the bottom to get out of this screen
+			navigationItem.rightBarButtonItem = nil
 		case .negative, .invalid:
 			navigationFooterItem?.primaryButtonTitle = AppStrings.ExposureSubmissionResult.deleteButton
 			navigationFooterItem?.isSecondaryButtonHidden = true

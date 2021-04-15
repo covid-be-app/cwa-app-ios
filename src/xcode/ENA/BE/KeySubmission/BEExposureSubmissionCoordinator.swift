@@ -23,7 +23,6 @@ import ExposureNotification
 
 class BEExposureSubmissionCoordinator : NSObject, ExposureSubmissionCoordinating {
 
-	
 	// MARK: - Attributes.
 
 	/// - NOTE: The delegate is called by the `viewWillDisappear(_:)` method of the `navigationController`.
@@ -98,8 +97,32 @@ class BEExposureSubmissionCoordinator : NSObject, ExposureSubmissionCoordinating
 	}
 
 	func showWarnOthersScreen() {
-		let vc = createWarnOthersViewController()
-		push(vc)
+		let alert = UIAlertController(
+			title: AppStrings.ExposureSubmissionWarnOthers.title,
+			message: AppStrings.ExposureSubmissionWarnOthers.description,
+			preferredStyle: .alert
+		)
+		
+		alert.view.accessibilityIdentifier = BEAccessibilityIdentifiers.BEWarnOthers.alert
+
+		let yesAction = UIAlertAction(title: BEAppStrings.BEExposureSubmission.yes,
+										 style: .default, handler: { _ in
+											self.startSubmitProcess()
+		})
+		
+		let noAction = UIAlertAction(title: BEAppStrings.BEExposureSubmission.no,
+										 style: .default, handler: { _ in
+											self.navigationController?.dismiss(animated: true)
+		})
+
+
+		alert.addAction(yesAction)
+		alert.addAction(noAction)
+
+		yesAction.accessibilityIdentifier = BEAccessibilityIdentifiers.BEWarnOthers.yes
+		noAction.accessibilityIdentifier = BEAccessibilityIdentifiers.BEWarnOthers.no
+
+		self.navigationController?.present(alert, animated: true)
 	}
 
 	func showThankYouScreen() {
@@ -107,18 +130,49 @@ class BEExposureSubmissionCoordinator : NSObject, ExposureSubmissionCoordinating
 		push(vc)
 	}
 	
-	func submitExposureKeys(_ exposureKeys:[ENTemporaryExposureKey], completion: @escaping (() -> Void)) {
+	func submitExposureKeys(_ exposureKeys:[ENTemporaryExposureKey]) {
 		exposureSubmissionService.submitExposure(keys: exposureKeys) { error in
-			completion()
 			if let error = error {
 				logError(message: "error: \(error.localizedDescription)", level: .error)
-				let alert = UIViewController.setupErrorAlert(message: error.localizedDescription)
-				self.navigationController?.present(alert, animated: true)
+				self.showErrorAlert(message: error.localizedDescription)
 			} else {
 				self.showThankYouScreen()
 			}
 		}
 	}
+	
+	private func showErrorAlert(message: String) {
+		let alert = UIViewController.setupErrorAlert(message: message, completion: {
+			self.navigationController?.dismiss(animated: true)
+		})
+		self.navigationController?.present(alert, animated: true)
+	}
+	
+	// MARK: - key submission
+	
+	private func startSubmitProcess() {
+		exposureSubmissionService.retrieveDiagnosisKeys { result in
+			
+			switch result {
+			case .failure(let error):
+				switch error {
+				case .noKeys:
+					self.exposureSubmissionService.finalizeSubmissionWithoutKeys()
+					self.showThankYouScreen()
+					// Custom error handling for EN framework related errors.
+				case .internal, .unsupported, .rateLimited:
+					self.showErrorAlert(message: error.localizedDescription)
+				default:
+					logError(message: "error: \(error.localizedDescription)", level: .error)
+					self.showErrorAlert(message: error.localizedDescription)
+				}
+				
+			case .success(let keys):
+				self.submitExposureKeys(keys)
+			}
+		}
+	}
+
 
 	// MARK: - Methods no longer used
 
@@ -185,10 +239,6 @@ class BEExposureSubmissionCoordinator : NSObject, ExposureSubmissionCoordinating
 		return ExposureSubmissionIntroViewController(coordinator: self)
 	}
 	
-	private func createWarnOthersViewController() -> ExposureSubmissionWarnOthersViewController {
-		return BEExposureSubmissionWarnOthersViewController(coordinator: self, exposureSubmissionService: self.exposureSubmissionService)
-	}
-
 	private func createSuccessViewController() -> ExposureSubmissionSuccessViewController {
 		return ExposureSubmissionSuccessViewController(coordinator: self)
 	}
