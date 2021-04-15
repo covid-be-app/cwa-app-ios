@@ -102,13 +102,10 @@ class BEENAUITests: XCTestCase {
 		snapshot("ScreenShot_\(#function)_002")
 		app.buttons["BEAppStrings.BETestResult.next"].tap()
 
-		XCTAssertTrue(app.buttons["BEAppStrings.BEWarnOthers.next"].waitForExistence(timeout: 5.0))
+		XCTAssertTrue(app.alerts["BEAppStrings.BEWarnOthers.alert"].waitForExistence(timeout: 5.0))
 		snapshot("ScreenShot_\(#function)_003")
-		app.swipeUp()
-		sleep(1)
-		snapshot("ScreenShot_\(#function)_004")
-		app.buttons["BEAppStrings.BEWarnOthers.next"].tap()
 
+		app.alerts["BEAppStrings.BEWarnOthers.alert"].buttons.element(boundBy: 0).tap()
 		XCTAssertTrue(app.buttons["BEAppStrings.BEExposureSubmissionSuccess.button"].waitForExistence(timeout: 5.0))
 
 		snapshot("ScreenShot_\(#function)_008")
@@ -239,13 +236,35 @@ class BEENAUITests: XCTestCase {
 		XCTAssertTrue(app.buttons["AppStrings.Home.resultCardShowResultButton"].waitForExistence(timeout: 5.0))
 		app.buttons["AppStrings.Home.resultCardShowResultButton"].tap()
 
+		// make sure the close button is gone
+		XCTAssertFalse(app.buttons["AppStrings.AccessibilityLabel.close"].waitForExistence(timeout: 5.0))
 		XCTAssertTrue(app.buttons["BEAppStrings.BETestResult.next"].waitForExistence(timeout: 5.0))
 		app.buttons["BEAppStrings.BETestResult.next"].tap()
 
-		XCTAssertTrue(app.buttons["BEAppStrings.BEWarnOthers.next"].waitForExistence(timeout: 5.0))
-		app.buttons["BEAppStrings.BEWarnOthers.next"].tap()
+		XCTAssertTrue(app.alerts["BEAppStrings.BEWarnOthers.alert"].waitForExistence(timeout: 5.0))
+		app.alerts["BEAppStrings.BEWarnOthers.alert"].buttons.element(boundBy: 0).tap()
 		XCTAssertTrue(app.buttons["BEAppStrings.BEExposureSubmissionSuccess.button"].waitForExistence(timeout: 5.0))
 		app.swipeUp()
+	}
+
+	func testCancelSendKeys() throws {
+		app.launchArguments.append(contentsOf: ["-testResult", "POSITIVE"])
+		app.launchArguments.append(contentsOf:[UITestingParameters.ExposureSubmission.useMock.rawValue])
+		app.launch()
+
+		XCTAssertTrue(app.buttons["AppStrings.Home.resultCardShowResultButton"].waitForExistence(timeout: 5.0))
+		app.buttons["AppStrings.Home.resultCardShowResultButton"].tap()
+
+		// make sure the close button is gone
+		XCTAssertFalse(app.buttons["AppStrings.AccessibilityLabel.close"].waitForExistence(timeout: 5.0))
+		XCTAssertTrue(app.buttons["BEAppStrings.BETestResult.next"].waitForExistence(timeout: 5.0))
+		app.buttons["BEAppStrings.BETestResult.next"].tap()
+
+		XCTAssertTrue(app.alerts["BEAppStrings.BEWarnOthers.alert"].waitForExistence(timeout: 5.0))
+		app.alerts["BEAppStrings.BEWarnOthers.alert"].buttons.element(boundBy: 1).tap()
+		XCTAssertFalse(app.buttons["BEAppStrings.BEExposureSubmissionSuccess.button"].waitForExistence(timeout: 5.0))
+		app.swipeUp()
+		XCTAssertTrue(app.buttons["AppStrings.Home.resultCardShowResultButton"].waitForExistence(timeout: 5.0))
 	}
 	
 	func testMobileDataSettings() {
