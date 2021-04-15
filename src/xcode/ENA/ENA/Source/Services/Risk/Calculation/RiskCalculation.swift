@@ -242,12 +242,6 @@ final class RiskCalculation {
 			return .success(NewRiskLevelInfo(level: riskLevel))
 		}
 
-		// Precondition 3 - Risk is unknownInitial if summary is not present
-		if windows.isEmpty, riskLevel < .unknownInitial {
-			riskLevel = .unknownInitial
-			return .success(NewRiskLevelInfo(level: riskLevel))
-		}
-		
 		let enfCalculation = ENFRiskCalculation()
 		let calculationResult = enfCalculation.calculateRisk(exposureWindows: windows, configuration: configuration)
 

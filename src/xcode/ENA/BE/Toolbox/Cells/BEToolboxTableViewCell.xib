@@ -54,7 +54,7 @@
                                             <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tF0-R7-hNH">
                                                 <rect key="frame" x="172" y="0.0" width="100" height="92"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" insetsLayoutMarginsFromSafeArea="NO" image="Home-Toolbox" translatesAutoresizingMaskIntoConstraints="NO" id="IEj-4e-0A1">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" insetsLayoutMarginsFromSafeArea="NO" image="Illu_Home_Toolbox" translatesAutoresizingMaskIntoConstraints="NO" id="IEj-4e-0A1">
                                                         <rect key="frame" x="0.0" y="-16" width="116" height="108"/>
                                                     </imageView>
                                                 </subviews>
@@ -113,8 +113,8 @@
         </designable>
     </designables>
     <resources>
-        <image name="Home-Toolbox" width="116" height="108"/>
         <image name="Icons_Chevron_plain" width="7" height="12"/>
+        <image name="Illu_Home_Toolbox" width="116" height="108"/>
         <namedColor name="ENA Chevron Color">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.30000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -164,6 +164,12 @@ final class SecureStore: Store {
 		get { kvStore["previousSummaryMetadata"] as SummaryMetadata? ?? nil }
 		set { kvStore["previousSummaryMetadata"] = newValue }
 	}
+	
+	var enfRiskCalculationResult: ENFRiskCalculationResult? {
+		get { kvStore["enfRiskCalculationResult"] as ENFRiskCalculationResult? ?? nil }
+		set { kvStore["enfRiskCalculationResult"] = newValue }
+	}
+
 
 	var hourlyFetchingEnabled: Bool {
 		get { kvStore["hourlyFetchingEnabled"] as Bool? ?? true }

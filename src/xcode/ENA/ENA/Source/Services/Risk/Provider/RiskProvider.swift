@@ -95,7 +95,7 @@ extension RiskProvider: RiskProviding {
 	var manualExposureDetectionState: ManualExposureDetectionState? {
 		configuration.manualExposureDetectionState(
 			activeTracingHours: store.tracingStatusHistory.activeTracing().inHours,
-			lastExposureDetectionDate: store.summary?.date)
+			lastExposureDetectionDate: store.enfRiskCalculationResult?.calculationDate)
 	}
 
 	/// Called by consumers to request the risk level. This method triggers the risk level process.
@@ -125,55 +125,6 @@ extension RiskProvider: RiskProviding {
 		var current: SummaryMetadata?
 	}
 
-	private func determineSummaries(
-		userInitiated: Bool,
-		completion: @escaping (Summaries) -> Void
-	) {
-		// Here we are in automatic mode and thus we have to check the validity of the current summary
-		// :BE: force for user initiated
-		let enoughTimeHasPassed = userInitiated || configuration.shouldPerformExposureDetection(
-			activeTracingHours: store.tracingStatusHistory.activeTracing().inHours,
-			lastExposureDetectionDate: store.summary?.date
-		)
-		if !enoughTimeHasPassed || !self.exposureManagerState.isGood {
-			completion(
-				.init(
-					previous: nil,
-					current: store.summary
-				)
-			)
-			return
-		}
-
-		// Enough time has passed.
-		let shouldDetectExposures = (configuration.detectionMode == .manual && userInitiated) || configuration.detectionMode == .automatic
-
-		if shouldDetectExposures == false {
-			completion(
-				.init(
-					previous: nil,
-					current: store.summary
-				)
-			)
-			return
-		}
-
-		// The summary is outdated + we are in automatic mode: do a exposure detection
-		let previousSummary = store.summary
-
-		exposureSummaryProvider.detectExposure { detectedSummary in
-			if let detectedSummary = detectedSummary {
-				self.store.summary = .init(detectionSummary: detectedSummary, date: Date())
-			}
-			completion(
-				.init(
-					previous: previousSummary,
-					current: self.store.summary
-				)
-			)
-		}
-	}
-	
 	private func determineSummary(
 		userInitiated: Bool,
 		completion: @escaping (ENExposureDetectionSummary?) -> Void
@@ -182,7 +133,7 @@ extension RiskProvider: RiskProviding {
 		// :BE: force for user initiated
 		let enoughTimeHasPassed = userInitiated || configuration.shouldPerformExposureDetection(
 			activeTracingHours: store.tracingStatusHistory.activeTracing().inHours,
-			lastExposureDetectionDate: store.summary?.date
+			lastExposureDetectionDate: store.enfRiskCalculationResult?.calculationDate
 		)
 		if !enoughTimeHasPassed || !self.exposureManagerState.isGood {
 			completion(nil)
@@ -212,7 +163,7 @@ extension RiskProvider: RiskProviding {
 	/// For Case2, we need to calculate the remaining time until we reach a full 24h of tracing.
 	func nextExposureDetectionDate() -> Date {
 		let nextDate = configuration.nextExposureDetectionDate(
-			lastExposureDetectionDate: store.summary?.date
+			lastExposureDetectionDate: store.enfRiskCalculationResult?.calculationDate
 		)
 		switch nextDate {
 		case .now:  // Occurs when no detection has been performed ever
@@ -276,12 +227,19 @@ extension RiskProvider: RiskProviding {
 		var currentWindows: [ENExposureWindow]?
 		let tracingHistory = store.tracingStatusHistory
 		let numberOfEnabledHours = tracingHistory.activeTracing().inHours
-		let details = Risk.Details(
-			daysSinceLastExposure: store.summary?.summary.daysSinceLastExposure,
-			numberOfExposures: Int(store.summary?.summary.matchedKeyCount ?? 0),
-			activeTracing: tracingHistory.activeTracing(),
-			exposureDetectionDate: store.summary?.date
-		)
+		let details: Risk.Details!
+		
+		if let riskCalculationResult = store.enfRiskCalculationResult {
+			details = riskCalculationResult.toRiskDetails(tracingHistory.activeTracing())
+		} else {
+			details = Risk.Details(
+				daysSinceLastExposure: nil,
+				numberOfExposures: 0,
+				activeTracing: tracingHistory.activeTracing(),
+				exposureDetectionDate: nil
+			)
+		}
+		
 		
 		/// this is to cover the case whereby the very first risk calculation fails because of an external issue (e.g. EN is active in the app but the server can't be reached)
 		/// the app would show a "exposure notification not active, push button to activate" message
@@ -327,7 +285,15 @@ extension RiskProvider: RiskProviding {
 		group.enter()
 		determineSummary(userInitiated: userInitiated) {
 			summary = $0
-			group.leave()
+
+			if let currentSummary = summary {
+				self.exposureSummaryProvider.getWindows(summary: currentSummary) { windows in
+					currentWindows = windows
+					group.leave()
+				}
+			} else {
+				group.leave()
+			}
 		}
 
 		var appConfiguration: SAP_Internal_V2_ApplicationConfigurationIOS?
@@ -335,14 +301,6 @@ extension RiskProvider: RiskProviding {
 		appConfigurationProvider.appConfiguration { configuration in
 			appConfiguration = configuration
 			group.leave()
-		}
-		
-		if let currentSummary = summary {
-			group.enter()
-			exposureSummaryProvider.getWindows(summary: currentSummary) { windows in
-				currentWindows = windows
-				group.leave()
-			}
 		}
 
 		guard group.wait(timeout: .now() + .seconds(60)) == .success else {
@@ -423,6 +381,26 @@ extension RiskProvider: RiskProviding {
 			store.previousRiskLevel = .increased
 		default:
 			break
+		}
+	}
+}
+
+
+extension ENFRiskCalculationResult {
+	func toRiskDetails(_ activeTracing: ActiveTracing) -> Risk.Details {
+		switch riskLevel {
+		case .low:
+			return Risk.Details(
+				daysSinceLastExposure: mostRecentDateWithLowRisk?.ageInDays,
+				numberOfExposures: minimumDistinctEncountersWithLowRisk,
+				activeTracing: activeTracing,
+				exposureDetectionDate: calculationDate)
+		case .high:
+			return Risk.Details(
+				daysSinceLastExposure: mostRecentDateWithHighRisk?.ageInDays,
+				numberOfExposures: minimumDistinctEncountersWithHighRisk,
+				activeTracing: activeTracing,
+				exposureDetectionDate: calculationDate)
 		}
 	}
 }

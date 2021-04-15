@@ -57,7 +57,8 @@ protocol Store: AnyObject {
 	var allowRiskChangesNotification: Bool { get set }
 	var allowTestsStatusNotification: Bool { get set }
 
-	var summary: SummaryMetadata? { get set }
+	//var summary: SummaryMetadata? { get set }
+	var enfRiskCalculationResult: ENFRiskCalculationResult? { get set }
 
 	var registrationToken: String? { get set }
 	var hasSeenSubmissionExposureTutorial: Bool { get set }
