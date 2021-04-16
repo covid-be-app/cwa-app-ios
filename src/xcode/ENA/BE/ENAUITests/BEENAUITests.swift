@@ -233,6 +233,7 @@ class BEENAUITests: XCTestCase {
 		app.launchArguments.append(contentsOf:[UITestingParameters.ExposureSubmission.useMock.rawValue])
 		app.launch()
 
+		app.swipeUp(velocity: .slow)
 		XCTAssertTrue(app.buttons["AppStrings.Home.resultCardShowResultButton"].waitForExistence(timeout: 5.0))
 		app.buttons["AppStrings.Home.resultCardShowResultButton"].tap()
 
@@ -252,6 +253,7 @@ class BEENAUITests: XCTestCase {
 		app.launchArguments.append(contentsOf:[UITestingParameters.ExposureSubmission.useMock.rawValue])
 		app.launch()
 
+		app.swipeUp(velocity: .slow)
 		XCTAssertTrue(app.buttons["AppStrings.Home.resultCardShowResultButton"].waitForExistence(timeout: 5.0))
 		app.buttons["AppStrings.Home.resultCardShowResultButton"].tap()
 
