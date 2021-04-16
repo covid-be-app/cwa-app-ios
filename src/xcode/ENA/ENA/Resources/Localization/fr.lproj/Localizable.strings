@@ -155,13 +155,8 @@
 "ExposureSubmissionResult_continueButton" = "Suivant";
 "ExposureSubmissionResult_deleteButton" = "Supprimer le test";
 "ExposureSubmissionResult_refreshButton" = "Mise à jour";
-"ExposureSubmissionWarnOthers_title" = "Avertir les autres";
-"ExposureSubmissionWarnOthers_AccImageDescription" = "Un smartphone transmet au système un diagnostic de test positif crypté.";
-"ExposureSubmissionWarnOthers_continueButton" = "Suivant";
-"ExposureSubmissionWarnOthers_sectionTitle" = "Ensemble, luttons contre virus !";
+"ExposureSubmissionWarnOthers_title" = "Voulez-vous avertir des autres?";
 "ExposureSubmissionWarnOthers_description" = "Vous pouvez indiquer que Coronalert partagera vos identifiants aléatoires des derniers jours avec d'autres. De cette façon, vous pouvez avertir les autres et aider à briser la chaîne de l'infection.\n\nPuisque seules des identités aléatoires impersonnelles sont transmises, votre identité restera anonyme.";
-"ExposureSubmissionWarnOthers_dataPrivacyDescription" = "En appuyant sur « Accepter », vous consentez à ce que l'application envoie votre résultat de test positif au système serveur de l'application avec vos identifiants aléatoires des derniers jours, afin que les autres utilisateurs de l'application qui ont activé la fonction d'enregistrement des expositions puissent être automatiquement informés qu'ils peuvent avoir été exposés à un risque d'infection. Les identifiants aléatoires transmis à cet effet ne contiennent aucune information permettant de déceler votre identité . \n\nLa transmission de votre résultat de test via l'application est volontaire. Vous ne serez pas pénalisé si vous ne transmettez pas votre résultat de test. Comme il n'est pas possible de retracer ou de vérifier si et comment vous utilisez l'application, personne d'autre que vous ne saura si vous avez transmis l'information de votre infection. \n\nVous pouvez retirer votre consentement à tout moment en supprimant l'application. Ce retrait n'affectera pas la légalité du traitement effectué sur la base du consentement préalable au retrait. Vous trouverez de plus amples informations dans la rubrique « Informations sur la confidentialité des données ».";
-"ExposureSubmissionWarnOthers_dataPrivacyTitle" = "Données privées";
 "ExposureSubmissionResult_RemoveAlert_Title" = "Supprimer le test ?";
 "ExposureSubmissionResult_RemoveAlert_Text" = "Le test sera définitivement supprimé de l'application Coronalert et ne pourra plus être ajouté. Cette procédure est irréversible. ";
 "ExposureSubmissionResult_RegistrationDateUnknown" = "Date d'enregistrement inconnue";
@@ -426,3 +421,5 @@
 "BEMobileTestId_subtitle" = "Donnez ce code pour votre réservation de test COVID";
 "BEMobileTestId_saveExplanation2" = "Essayez autant que possible de transmettre ce numéro au médecin qui prescrit le test, mais rassurez-vous, si vous oubliez vous aurez le moyen de le faire soit par webform si vous avec un code CPR, soit par SMS si votre test est lié à un compte CPTC.";
 "BEHome_BEToolbox_testCenter" = "Trouver un centre de test";
+"BEHome_BEToolbox_quarantineCertificateURL" = "https://quarantaine.info-coronavirus.be/fr";
+"ExposureSubmissionWarnOthers_AccImageDescription" = "Un smartphone transmet au système un diagnostic de test positif crypté.";

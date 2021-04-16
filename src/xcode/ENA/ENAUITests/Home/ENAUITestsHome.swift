@@ -39,7 +39,7 @@ class ENAUITests_01_Home: XCTestCase {
 		app.launch()
 
 		// only run if home screen is present
-		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
+		XCTAssert(app.images["AppStrings.Home.leftBarButtonDescription"].waitForExistence(timeout: 5.0))
 		snapshot("ScreenShot_\(#function)_001")
 
 		app.swipeUp()
@@ -57,7 +57,7 @@ class ENAUITests_01_Home: XCTestCase {
 		app.launch()
 
 		// only run if home screen is present
-		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
+		XCTAssert(app.images["AppStrings.Home.leftBarButtonDescription"].waitForExistence(timeout: 5.0))
 
 		app.swipeUp()
 		app.swipeUp()
@@ -74,7 +74,7 @@ class ENAUITests_01_Home: XCTestCase {
 		app.launch()
 
 		// only run if home screen is present
-		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
+		XCTAssert(app.images["AppStrings.Home.leftBarButtonDescription"].waitForExistence(timeout: 5.0))
 
 		app.swipeUp()
 		app.swipeUp()

@@ -36,6 +36,7 @@ class ExposureSubmissionStepCell: UITableViewCell {
 
 		contentView.preservesSuperviewLayoutMargins = false
 		contentView.layoutMargins.top = 0
+		backgroundColor = UIColor(enaColor: .background)
 	}
 
 	override func prepareForReuse() {

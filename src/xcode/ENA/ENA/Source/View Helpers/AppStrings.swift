@@ -166,11 +166,7 @@ enum AppStrings {
 	enum ExposureSubmissionWarnOthers {
 		static let title = NSLocalizedString("ExposureSubmissionWarnOthers_title", comment: "")
 		static let accImageDescription = NSLocalizedString("ExposureSubmissionWarnOthers_AccImageDescription", comment: "")
-		static let continueButton = NSLocalizedString("ExposureSubmissionWarnOthers_continueButton", comment: "")
-		static let sectionTitle = NSLocalizedString("ExposureSubmissionWarnOthers_sectionTitle", comment: "")
 		static let description = NSLocalizedString("ExposureSubmissionWarnOthers_description", comment: "")
-		static let dataPrivacyDescription = NSLocalizedString("ExposureSubmissionWarnOthers_dataPrivacyDescription", comment: "")
-		static let dataPrivacyTitle = NSLocalizedString("ExposureSubmissionWarnOthers_dataPrivacyTitle", comment: "")
 	}
 
 	enum ExposureSubmissionSuccess {

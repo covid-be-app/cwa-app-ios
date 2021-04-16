@@ -37,7 +37,10 @@ enum BEAccessibilityIdentifiers {
 	}
 	
 	enum BEWarnOthers {
+		static let alert = "BEAppStrings.BEWarnOthers.alert"
 		static let next = "BEAppStrings.BEWarnOthers.next"
+		static let yes = "BEAppStrings.BEWarnOthers.yes"
+		static let no = "BEAppStrings.BEWarnOthers.no"
 	}
 	
 	enum BETestResult {

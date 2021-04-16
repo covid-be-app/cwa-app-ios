@@ -41,7 +41,7 @@ jobs:
           command: sudo gem install rake bundler:2.2.2
       - run:
           name: Install dependencies
-          command: brew install swiftlint && cd src/xcode && bundle install --path=vendor --jobs=8
+          command: brew update-reset && brew install swiftlint && cd src/xcode && bundle install --path=vendor --jobs=8
       - run:
           name: Tests
           command: cd src/xcode && bundle exec fastlane test

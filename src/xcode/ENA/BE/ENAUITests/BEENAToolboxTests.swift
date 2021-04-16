@@ -37,7 +37,7 @@ class BEENAToolboxTests: XCTestCase {
 	private func openToolbox() {
 		app.launch()
 
-		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
+		XCTAssert(app.images["AppStrings.Home.leftBarButtonDescription"].waitForExistence(timeout: 5.0))
 		XCTAssert(app.cells["BEAppStrings.BEHome.toolbox"].waitForExistence(timeout: 5.0))
 		app.cells["BEAppStrings.BEHome.toolbox"].tap()
 
@@ -64,13 +64,6 @@ class BEENAToolboxTests: XCTestCase {
 		openToolbox()
 		app.cells["BEAppStrings.BEToolbox.testReservation"].tap()
 		XCTAssert(app.images["BEAppStrings.BEToolbox.testReservation"].waitForExistence(timeout: 5.0))
-		snapshot("ScreenShot_\(#function)_001")
-	}
-
-	func test_toolboxFlow_quarantine() throws {
-		openToolbox()
-		app.cells["BEAppStrings.BEToolbox.quarantineCertificate"].tap()
-		XCTAssert(app.images["BEAppStrings.BEToolbox.quarantineCertificate"].waitForExistence(timeout: 5.0))
 		snapshot("ScreenShot_\(#function)_001")
 	}
 
