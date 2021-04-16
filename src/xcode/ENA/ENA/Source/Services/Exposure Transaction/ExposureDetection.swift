@@ -94,6 +94,11 @@ final class ExposureDetection {
 
 	private func useConfiguration() {
 		var urls: [URL] = []
+		do {
+			try FileManager.default.removeTemporaryDirectoryContents()
+		} catch {
+			log(message: "Failed to clean temp folder \(error.localizedDescription)", level: .error)
+		}
 		
 		BERegion.allCases.forEach { region in
 			guard let writtenPackages = delegate?.exposureDetectionWriteDownloadedPackages(self, region: region) else {

@@ -155,13 +155,8 @@
 "ExposureSubmissionResult_continueButton" = "Weiter";
 "ExposureSubmissionResult_deleteButton" = "Test löschen";
 "ExposureSubmissionResult_refreshButton" = "Aktualisieren";
-"ExposureSubmissionWarnOthers_title" = "Andere warnen";
-"ExposureSubmissionWarnOthers_AccImageDescription" = "Ein Handy übermittelt einen positiven Testbefund verschlüsselt ins System.";
-"ExposureSubmissionWarnOthers_continueButton" = "Weiter";
-"ExposureSubmissionWarnOthers_sectionTitle" = "Helfen Sie mit!";
+"ExposureSubmissionWarnOthers_title" = "Möchten Sie andere warnen?";
 "ExposureSubmissionWarnOthers_description" = "Sie können angeben, dass Coronalert Ihre zufälligen IDs der letzten Tage mit anderen teilt. Auf diese Weise können Sie andere Personen warnen und die Infektionskette durchbrechen.\n\nDa nur unpersönliche Zufallscodes erteilt werden, ist Ihre Identität sicher.";
-"ExposureSubmissionWarnOthers_dataPrivacyDescription" = "Indem Sie auf \"Akzeptieren\" tippen, erklären Sie sich damit einverstanden, dass die App Ihr positives Testergebnis zusammen mit Ihren zufälligen IDs der letzten Tage an das Serversystem der App sendet, sodass andere Benutzer der App, die die Funktion zur Kontakterfassung aktiviert haben, automatisch benachrichtigt werden können, dass sie möglicherweise einem Infektionsrisiko ausgesetzt waren. Die zu diesem Zweck übermittelten Zufalls-IDs enthalten keine Daten, die Rückschlüsse auf Ihre Identität oder Ihre Person zulassen würden.\n\nDie Übermittlung Ihres Testergebnisses über die App ist freiwillig. Sie werden nicht bestraft, wenn Sie Ihr Testergebnis nicht übermitteln. Da es nicht möglich ist, nachzuvollziehen oder zu prüfen, ob und wie Sie die App benutzen, wird niemand wissen, ob Sie die Information, dass Sie infiziert sind, übermittelt haben.\n\nSie können Ihre Zustimmung jederzeit widerrufen, indem Sie die App löschen. Das beeinträchtigt die Rechtmäßigkeit der Verarbeitung nicht, die aufgrund der  vor dem Widerruf erteilten Zustimmung erfolgte. Weitere Infos finden Sie im Menü unter 'Datenschutzinformationen'.";
-"ExposureSubmissionWarnOthers_dataPrivacyTitle" = "Datenschutz";
 "ExposureSubmissionResult_RemoveAlert_Title" = "Test entfernen?";
 "ExposureSubmissionResult_RemoveAlert_Text" = "Der Test wird endgültig aus Coronalert gelöscht und kann nicht mehr eingefügt werden. Dieser Vorgang kann nicht rückgängig gemacht werden. ";
 "ExposureSubmissionResult_RegistrationDateUnknown" = "Registrierungsdatum unbekannt";
@@ -427,3 +422,4 @@
 "BEMobileTestId_saveExplanation2" = "Versuchen Sie so viel wie möglich, diese Nummer an den Arzt zu übermitteln, der den Test verschreibt. Seien Sie jedoch versichert, wenn Sie vergessen, dass Sie die Möglichkeit haben, dies entweder per Webformular zu tun, wenn Sie einen CPR-Code haben, oder per SMS, wenn Ihr Test durchgeführt wird im Zusammenhang mit einem CPTC-Konto.";
 "BEHome_BEToolbox_testCenter" = "Finden Sie ein Testzentrum";
 "BEHome_BEToolbox_quarantineCertificateURL" = "https://quarantaine.info-coronavirus.be/de";
+"ExposureSubmissionWarnOthers_AccImageDescription" = "Ein Handy übermittelt einen positiven Testbefund verschlüsselt ins System.";
