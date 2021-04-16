@@ -222,6 +222,7 @@
 		A902680D25AF3AF200C14169 /* HomeTestResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A902680B25AF3AF200C14169 /* HomeTestResultTableViewCell.xib */; };
 		A902682725B1759600C14169 /* BECountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A902682525B1759600C14169 /* BECountryTableViewCell.xib */; };
 		A902682825B1759600C14169 /* BECountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A902682625B1759600C14169 /* BECountryTableViewCell.swift */; };
+		A9063FB0262965B9002A623C /* BEFileManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9063FAF262965B9002A623C /* BEFileManagerTests.swift */; };
 		A90E1AEA25B59683005AC840 /* HomeSpacerCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90E1AE925B59683005AC840 /* HomeSpacerCellConfigurator.swift */; };
 		A90E1AF125B597A3005AC840 /* HomeSpacerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90E1AEF25B597A3005AC840 /* HomeSpacerCell.swift */; };
 		A90E1AF225B597A3005AC840 /* HomeSpacerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A90E1AF025B597A3005AC840 /* HomeSpacerCell.xib */; };
@@ -755,6 +756,7 @@
 		A902680B25AF3AF200C14169 /* HomeTestResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTestResultTableViewCell.xib; sourceTree = "<group>"; };
 		A902682525B1759600C14169 /* BECountryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BECountryTableViewCell.xib; sourceTree = "<group>"; };
 		A902682625B1759600C14169 /* BECountryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BECountryTableViewCell.swift; sourceTree = "<group>"; };
+		A9063FAF262965B9002A623C /* BEFileManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEFileManagerTests.swift; sourceTree = "<group>"; };
 		A90E1AE925B59683005AC840 /* HomeSpacerCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSpacerCellConfigurator.swift; sourceTree = "<group>"; };
 		A90E1AEF25B597A3005AC840 /* HomeSpacerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSpacerCell.swift; sourceTree = "<group>"; };
 		A90E1AF025B597A3005AC840 /* HomeSpacerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeSpacerCell.xib; sourceTree = "<group>"; };
@@ -2147,6 +2149,7 @@
 				A92076DC24EA7C5D00AE8748 /* BEDateTests.swift */,
 				A92076E224ED342500AE8748 /* BEURLRequestTests.swift */,
 				A9D0BF8324F5864000DEBD99 /* BECountdownTimerTests.swift */,
+				A9063FAF262965B9002A623C /* BEFileManagerTests.swift */,
 			);
 			path = __tests__;
 			sourceTree = "<group>";
@@ -3313,6 +3316,7 @@
 				A32CA72F24B6F2E300B1A994 /* HomeRiskCellConfiguratorTests.swift in Sources */,
 				B120C7C924AFE7B800F68FF1 /* ActiveTracingTests.swift in Sources */,
 				516E430224B89AED0008CC30 /* CoordinatorTests.swift in Sources */,
+				A9063FB0262965B9002A623C /* BEFileManagerTests.swift in Sources */,
 				B117521A248ACFFC00C3325C /* SAP_RiskScoreClass+LowAndHighTests.swift in Sources */,
 				B11655932491437600316087 /* RiskProvidingConfigurationTests.swift in Sources */,
 				A9221A452546F3BF00853CEF /* BEDynamicTextTests.swift in Sources */,

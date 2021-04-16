@@ -109,6 +109,76 @@ final class ExposureDetectionTransactionTests: XCTestCase {
 			enforceOrder: true
 		)
 	}
+	
+	func testDeleteTemporaryDirectoryContents() throws {
+		let fileManager = FileManager.default
+		let fileContents = "XXXXXX"
+		let data = fileContents.data(using: .utf8)!
+
+		try fileManager.removeTemporaryDirectoryContents()
+		for x in 0..<20 {
+			let directoryURL = fileManager.temporaryDirectory.appendingPathComponent("dir\(x)")
+			let fileURL = directoryURL.appendingPathComponent("file\(x).bin")
+			try fileManager.createDirectory(at: directoryURL, withIntermediateDirectories: false, attributes: nil)
+			try data.write(to: fileURL)
+		}
+
+		let preDeleteItems = try fileManager.contentsOfDirectory(at: fileManager.temporaryDirectory, includingPropertiesForKeys: nil)
+		XCTAssertFalse(preDeleteItems.isEmpty)
+
+		let delegate = ExposureDetectionDelegateMock()
+
+		delegate.availableData = { region -> DaysAndHours? in
+			return (days: ["2020-05-01"], hours: [])
+		}
+
+		delegate.downloadDelta = { available, region in
+			return (days: ["2020-05-01"], hours: [])
+		}
+
+		delegate.downloadAndStore = { delta, region in
+			return nil
+		}
+
+		delegate.configuration = {
+			return .mock()
+		}
+
+		let rootDir = FileManager().temporaryDirectory.appendingPathComponent(UUID().uuidString, isDirectory: true)
+		try FileManager().createDirectory(atPath: rootDir.path, withIntermediateDirectories: true, attributes: nil)
+		let url0 = rootDir.appendingPathComponent("1").appendingPathExtension("sig")
+		let url1 = rootDir.appendingPathComponent("1").appendingPathExtension("bin")
+		try "url0".write(to: url0, atomically: true, encoding: .utf8)
+		try "url1".write(to: url1, atomically: true, encoding: .utf8)
+
+		let writtenPackages = WrittenPackages(urls: [url0, url1])
+
+		delegate.writtenPackages = { region in
+			return writtenPackages
+		}
+
+		delegate.summaryResult = { _, _ in
+			return .success(MutableENExposureDetectionSummary(daysSinceLastExposure: 5))
+		}
+
+		let startCompletionCalled = expectation(description: "start completion called")
+		let detection = ExposureDetection(delegate: delegate)
+		detection.start { _ in
+			do {
+				let items = try fileManager.contentsOfDirectory(at: fileManager.temporaryDirectory, includingPropertiesForKeys: nil)
+				XCTAssertTrue(items.isEmpty)
+			} catch {
+				XCTAssert(false)
+			}
+			startCompletionCalled.fulfill()
+		}
+
+		wait(
+			for: [startCompletionCalled],
+			timeout: 1.0,
+			enforceOrder: true
+		)
+	}
 }
 
 final class MutableENExposureDetectionSummary: ENExposureDetectionSummary {
