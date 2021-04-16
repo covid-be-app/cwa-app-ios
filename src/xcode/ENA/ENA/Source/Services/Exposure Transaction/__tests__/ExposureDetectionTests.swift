@@ -134,10 +134,6 @@ final class ExposureDetectionTransactionTests: XCTestCase {
 			return nil
 		}
 
-		delegate.configuration = {
-			return .mock()
-		}
-
 		let rootDir = FileManager().temporaryDirectory.appendingPathComponent(UUID().uuidString, isDirectory: true)
 		try FileManager().createDirectory(atPath: rootDir.path, withIntermediateDirectories: true, attributes: nil)
 		let url0 = rootDir.appendingPathComponent("1").appendingPathExtension("sig")
@@ -156,7 +152,7 @@ final class ExposureDetectionTransactionTests: XCTestCase {
 		}
 
 		let startCompletionCalled = expectation(description: "start completion called")
-		let detection = ExposureDetection(delegate: delegate)
+		let detection = ExposureDetection(configuration: .mock(), delegate: delegate)
 		detection.start { _ in
 			do {
 				let items = try fileManager.contentsOfDirectory(at: fileManager.temporaryDirectory, includingPropertiesForKeys: nil)

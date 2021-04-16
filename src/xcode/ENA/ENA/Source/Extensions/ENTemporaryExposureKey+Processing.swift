@@ -30,9 +30,6 @@ extension Array where Element: ENTemporaryExposureKey {
 	/// Index 1 the next day, and so on.
 	/// These factors are supplied by RKI
 	///
-	/// - important: The first element of the array is not used. That is because the ExposureNotification framework
-	/// does not return the current day's key - so the first key we have in the array is actually from yesterday.
-	///
 	/// - see also: [Risk Score Calculation Docs](https://github.com/corona-warn-app/cwa-documentation/blob/master/solution_architecture.md#risk-score-calculation)
 	var transmissionRiskDefaultVector: [ENRiskLevel] {
 		[5, 6, 8, 8, 8, 5, 3, 1, 1, 1, 1, 1, 1, 1, 1]

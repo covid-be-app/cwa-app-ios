@@ -66,17 +66,8 @@ final class RiskProviderTests: XCTestCase {
 		)
 
 		let store = MockTestStore()
-		store.summary = SummaryMetadata(
-			summary: CodableExposureDetectionSummary(
-				daysSinceLastExposure: 0,
-				matchedKeyCount: 0,
-				maximumRiskScore: 0,
-				attenuationDurations: [],
-				maximumRiskScoreFullRange: 0
-			),
-			// swiftlint:disable:next force_unwrapping
-			date: lastExposureDetectionDate!
-		)
+		// swiftlint:disable:next force_unwrapping
+		store.enfRiskCalculationResult = ENFRiskCalculationResult.noRisk(lastExposureDetectionDate!)
 		store.tracingStatusHistory = [.init(on: true, date: Date().addingTimeInterval(.init(days: -1)))]
 
 		let config = RiskProvidingConfiguration(
@@ -87,8 +78,12 @@ final class RiskProviderTests: XCTestCase {
 		let exposureSummaryProvider = ExposureSummaryProviderMock()
 
 		let expectThatSummaryIsRequested = expectation(description: "expectThatSummaryIsRequested")
+		let expectThatWindowsAreRequested = expectation(description: "expectThatWindowsAreRequested")
+		exposureSummaryProvider.onGetWindows = { completion in
+			expectThatWindowsAreRequested.fulfill()
+			completion([])
+		}
 		exposureSummaryProvider.onDetectExposure = { completion in
-			store.summary = SummaryMetadata(detectionSummary: .init(), date: Date())
 			expectThatSummaryIsRequested.fulfill()
 			completion(.init())
 		}
@@ -121,17 +116,8 @@ final class RiskProviderTests: XCTestCase {
 		)
 
 		let store = MockTestStore()
-		store.summary = SummaryMetadata(
-			summary: CodableExposureDetectionSummary(
-				daysSinceLastExposure: 0,
-				matchedKeyCount: 0,
-				maximumRiskScore: 0,
-				attenuationDurations: [],
-				maximumRiskScoreFullRange: 0
-			),
-			// swiftlint:disable:next force_unwrapping
-			date: lastExposureDetectionDate!
-		)
+		// swiftlint:disable:next force_unwrapping
+		store.enfRiskCalculationResult = ENFRiskCalculationResult.noRisk(lastExposureDetectionDate!)
 		// Tracing was only active for one hour, there is not enough data to calculate risk,
 		// and we might get a rate limit error (ex. user reinstalls the app - losing tracing history - and risk is requested again)
 		store.tracingStatusHistory = [.init(on: true, date: Date().addingTimeInterval(.init(hours: -1)))]
@@ -144,11 +130,17 @@ final class RiskProviderTests: XCTestCase {
 		let exposureSummaryProvider = ExposureSummaryProviderMock()
 
 		let expectThatSummaryIsRequested = expectation(description: "expectThatSummaryIsRequested")
+		let expectThatWindowsAreRequested = expectation(description: "expectThatWindowsAreRequested")
+		exposureSummaryProvider.onGetWindows = { completion in
+			expectThatWindowsAreRequested.fulfill()
+			completion([])
+		}
 		exposureSummaryProvider.onDetectExposure = { completion in
 			expectThatSummaryIsRequested.fulfill()
 			completion(.init())
 		}
 		expectThatSummaryIsRequested.isInverted = true
+		expectThatWindowsAreRequested.isInverted = true
 
 		let sut = RiskProvider(
 			configuration: config,
@@ -173,7 +165,6 @@ final class RiskProviderTests: XCTestCase {
 		let duration = DateComponents(day: 1)
 
 		let store = MockTestStore()
-		store.summary = nil
 		store.tracingStatusHistory = [.init(on: true, date: Date().addingTimeInterval(.init(days: -1)))]
 
 		let config = RiskProvidingConfiguration(
@@ -184,10 +175,15 @@ final class RiskProviderTests: XCTestCase {
 		let exposureSummaryProvider = ExposureSummaryProviderMock()
 
 		let detectionRequested = expectation(description: "expectThatNoSummaryIsRequested")
+		let expectThatWindowsAreRequested = expectation(description: "expectThatWindowsAreRequested")
+		exposureSummaryProvider.onGetWindows = { completion in
+			expectThatWindowsAreRequested.fulfill()
+			completion([])
+		}
 
 		exposureSummaryProvider.onDetectExposure = { completion in
-			completion(nil)
 			detectionRequested.fulfill()
+			completion(MutableENExposureDetectionSummary())
 		}
 
 		let client = ClientMock(submissionError: nil)
@@ -219,14 +215,13 @@ final class RiskProviderTests: XCTestCase {
 
 		sut.observeRisk(consumer)
 		sut.requestRisk(userInitiated: true)
-		wait(for: [detectionRequested, didCalculateRiskCalled], timeout: 1.0, enforceOrder: true)
+		wait(for: [detectionRequested, expectThatWindowsAreRequested, didCalculateRiskCalled], timeout: 1.0, enforceOrder: true)
 	}
 	
 	func testThatFailedFirstRiskReturnsInitial() throws {
 		let duration = DateComponents(day: 1)
 
 		let store = MockTestStore()
-		store.summary = nil
 		store.tracingStatusHistory = [.init(on: true, date: Date().addingTimeInterval(.init(days: -1)))]
 
 		let config = RiskProvidingConfiguration(
@@ -238,6 +233,9 @@ final class RiskProviderTests: XCTestCase {
 
 		exposureSummaryProvider.onDetectExposure = { completion in
 			completion(nil)
+		}
+		exposureSummaryProvider.onGetWindows = { completion in
+			completion([])
 		}
 
 		let client = ClientMock(submissionError: nil, urlRequestFailure: .serverError(500))
@@ -277,7 +275,6 @@ final class RiskProviderTests: XCTestCase {
 		let duration = DateComponents(day: 1)
 
 		let store = MockTestStore()
-		store.summary = nil
 		store.tracingStatusHistory = [.init(on: true, date: Date().addingTimeInterval(.init(days: -1)))]
 
 		let config = RiskProvidingConfiguration(
@@ -376,5 +373,13 @@ final class RiskProviderTests: XCTestCase {
 		sut2.requestRisk(userInitiated: true)
 		wait(for: [didCalculateRiskCalled2], timeout: 100000.0, enforceOrder: true)
 
+	}
+}
+
+
+private extension ENFRiskCalculationResult {
+	
+	static func noRisk(_ calculationDate: Date) -> ENFRiskCalculationResult {
+		ENFRiskCalculationResult(riskLevel: .low, minimumDistinctEncountersWithLowRisk: 0, minimumDistinctEncountersWithHighRisk: 0, mostRecentDateWithLowRisk: nil, mostRecentDateWithHighRisk: nil, numberOfDaysWithLowRisk: 0, numberOfDaysWithHighRisk: 0, calculationDate: calculationDate, riskLevelPerDate: [:], minimumDistinctEncountersWithHighRiskPerDate: [:])
 	}
 }

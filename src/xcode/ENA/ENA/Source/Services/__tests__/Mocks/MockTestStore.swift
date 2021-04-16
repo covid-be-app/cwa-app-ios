@@ -27,7 +27,7 @@ final class MockTestStore: Store {
 	var lastBackgroundFakeRequest: Date = .init()
 	var hasSeenBackgroundFetchAlert: Bool = false
 	var previousRiskLevel: EitherLowOrIncreasedRiskLevel?
-	var summary: SummaryMetadata?
+	var enfRiskCalculationResult: ENFRiskCalculationResult?
 	var tracingStatusHistory: TracingStatusHistory = []
 	var testResultReceivedTimeStamp: Int64?
 	func clearAll(key: String?) {}

@@ -167,13 +167,6 @@ final class StoreTests: XCTestCase {
 		XCTAssertTrue(tmpStore.exposureActivationConsentAccept)
 		XCTAssertEqual(tmpStore.previousRiskLevel, .increased)
 
-		XCTAssertEqual(tmpStore.summary?.date, testDate1)
-		XCTAssertEqual(tmpStore.summary?.summary.daysSinceLastExposure, 13)
-		XCTAssertEqual(tmpStore.summary?.summary.matchedKeyCount, UInt64.max)
-		XCTAssertEqual(tmpStore.summary?.summary.maximumRiskScore, 5)
-		XCTAssertEqual(tmpStore.summary?.summary.configuredAttenuationDurations.count, 3)
-		XCTAssertEqual(tmpStore.summary?.summary.maximumRiskScoreFullRange, 7)
-
 		XCTAssertEqual(tmpStore.tracingStatusHistory.count, 2)
 		XCTAssertEqual(tmpStore.tracingStatusHistory[0].on, true)
 		XCTAssertEqual(tmpStore.tracingStatusHistory[0].date.description, testDate1.description)
