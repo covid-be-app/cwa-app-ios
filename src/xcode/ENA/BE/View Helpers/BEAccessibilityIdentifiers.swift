@@ -78,7 +78,6 @@ enum BEAccessibilityIdentifiers {
 		static let testReservation = "BEAppStrings.BEToolbox.testReservation"
 		static let quarantineCertificate = "BEAppStrings.BEToolbox.quarantineCertificate"
 		static let passengerLocatorForm = "BEAppStrings.BEToolbox.passengerLocatorForm"
-		static let declarationOfHonour = "BEAppStrings.BEToolbox.declarationOfHonour"
 	}
 	
 	enum BEAlreadyDidTest {
