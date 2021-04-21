@@ -133,6 +133,7 @@
             <connections>
                 <outlet property="button" destination="aX2-Sj-eNZ" id="Czf-VG-Qsf"/>
                 <outlet property="descriptionLabel" destination="QR7-aW-xxM" id="3kC-dn-IFy"/>
+                <outlet property="disclosureImageView" destination="MjO-NC-sEw" id="5GT-EN-zgW"/>
                 <outlet property="illustrationView" destination="dUi-Ub-Pdf" id="1cG-O1-uRA"/>
                 <outlet property="secondButton" destination="Oub-7k-u1G" id="rT2-wx-38L"/>
                 <outlet property="stackView" destination="5hy-gc-Wbp" id="tPu-hM-7DG"/>

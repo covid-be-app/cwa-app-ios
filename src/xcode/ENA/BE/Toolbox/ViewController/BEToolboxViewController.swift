@@ -95,33 +95,6 @@ class BEToolboxViewController: UIViewController {
 			])
 		),
 		BEToolboxItem(
-			text: BEAppStrings.BEToolbox.declarationOfHonour,
-			icon: "Icons_Toolbox_Declaration-of-honour",
-			accessibilityIdentifier: BEAccessibilityIdentifiers.BEToolbox.declarationOfHonour,
-			configuration: BEToolboxItem.DetailViewControllerConfiguration(
-				title: BEAppStrings.BEToolbox.declarationOfHonourTitle,
-				icon: "Illu_Toolbox_Declaration-of-honour",
-				accessibilityIdentifier: BEAccessibilityIdentifiers.BEToolbox.declarationOfHonour,
-				links: [
-					BEToolboxItem.DetailLink(
-						text: BEAppStrings.BEToolbox.declarationOfHonourNL,
-						suffix: "NL",
-						url: BEAppStrings.BEToolbox.declarationOfHonourURLNL),
-					BEToolboxItem.DetailLink(
-						text: BEAppStrings.BEToolbox.declarationOfHonourFR,
-						suffix: "FR",
-						url: BEAppStrings.BEToolbox.declarationOfHonourURLFR),
-					BEToolboxItem.DetailLink(
-						text: BEAppStrings.BEToolbox.declarationOfHonourDE,
-						suffix: "DE",
-						url: BEAppStrings.BEToolbox.declarationOfHonourURLDE),
-					BEToolboxItem.DetailLink(
-						text: BEAppStrings.BEToolbox.declarationOfHonourEN,
-						suffix: "EN",
-						url: BEAppStrings.BEToolbox.declarationOfHonourURLEN)
-			])
-		),
-		BEToolboxItem(
 			text: BEAppStrings.BEToolbox.testCenter,
 			icon: "Icons_Toolbox_Belgium",
 			accessibilityIdentifier: BEAccessibilityIdentifiers.BEToolbox.testCenter,
