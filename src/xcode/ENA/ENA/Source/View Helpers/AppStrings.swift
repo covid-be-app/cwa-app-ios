@@ -567,6 +567,7 @@ enum AppStrings {
 		static let imprintSection3Text = NSLocalizedString("App_Information_Imprint_Section3_Text", comment: "")
 		static let imprintSection4Title = NSLocalizedString("App_Information_Imprint_Section4_Title", comment: "")
 		static let imprintSection4Text = NSLocalizedString("App_Information_Imprint_Section4_Text", comment: "")
+		static let imprintSection5Text = NSLocalizedString("App_Information_Imprint_Section5_Text", comment: "")
 
 		static let legalNavigation = NSLocalizedString("App_Information_Legal_Navigation", comment: "")
 		static let legalImageDescription = NSLocalizedString("App_Information_Legal_ImageDescription", comment: "")

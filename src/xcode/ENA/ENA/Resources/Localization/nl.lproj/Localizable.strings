@@ -345,7 +345,7 @@
 "BEMobileTestId_Select" = "Kies";
 "BEMobileTestId_Date" = "Datum";
 "BEMobileTestId_Close" = "Sluiten";
-"BEMobileTestId_saveExplanation" = "Gelieve deze code aan de arts te geven want dit is noodzakelijk om je testresultaat aan de app te linken. Dit gebeurt niet automatisch vanwege het anonieme karakter van de app. Indien je dit vergeet, kan je het webformulier invullen.";
+"BEMobileTestId_saveExplanation2" = "Gelieve deze code aan de arts te geven want dit is noodzakelijk om je testresultaat aan de app te linken. Dit gebeurt niet automatisch vanwege het anonieme karakter van de app. Indien je dit vergeet, kan je het webformulier invullen.\n\nhttps://coronalert.be/nl/coronalert-formulier/";
 "BELanguage" = "nl";
 "BESelectKeyCountries_title" = "Kies Landen";
 "BESelectKeyCountries_explanation" = "Als je op een van de onderstaande datums niet in België was en je deze informatie (anoniem) wilt delen, selecteer dan het land dat je op die datum hebt bezocht. Tik op de lijn die je wilt wijzigen.";
@@ -419,7 +419,9 @@
 "BEAlreadyDidTest_possibility3" = "Ga direct naar het webformulier om de 2 codes handmatig in te voeren.";
 "BEAlreadyDidTest_AccImageDescription" = "Een afbeelding van een PCR-reageerbuis";
 "BEMobileTestId_subtitle" = "Gebruik deze code om jouw test te registreren in de app";
-"BEMobileTestId_saveExplanation2" = "Probeer zoveel mogelijk dit nummer door te geven aan de arts die de test voorschrijft, maar wees gerust, als u vergeet, heeft u de middelen om het te doen via een webformulier als u een activatiecode hebt, of per sms als uw test is gerelateerd aan een CPTC-account.";
+"BEMobileTestId_saveExplanation" = "Laat dit nummer en de datum zien aan de arts of het laboratorium dat de test uitvoert om uw smartphone aan de test te koppelen.";
 "BEHome_BEToolbox_testCenter" = "Zoek een testcentrum";
 "BEHome_BEToolbox_quarantineCertificateURL" = "https://quarantaine.info-coronavirus.be/nl";
 "ExposureSubmissionWarnOthers_AccImageDescription" = "Een toestel stuurt een versleutelde positieve diagnose naar het systeem.";
+"App_Information_Imprint_Section5_Text" = "Vragen? E-Mail: info@coronalert.be";
+"BEMobileTestId_saveExplanationWebForm" = "";

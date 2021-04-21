@@ -345,7 +345,7 @@
 "BEMobileTestId_Select" = "Confirmer";
 "BEMobileTestId_Date" = "Date";
 "BEMobileTestId_Close" = "Fermer";
-"BEMobileTestId_saveExplanation" = "Veuillez à transmettre ce code au médecin car ceci est nécessaire pour assurer le lien entre votre test et votre application. Le lien ne se fait pas automatiquement dû au caractère anonyme de Coronalert. Si vous oubliez de transmettre le code, vous pouvez remplir le webform suivant.";
+"BEMobileTestId_saveExplanation2" = "Veuillez à transmettre ce code au médecin car ceci est nécessaire pour assurer le lien entre votre test et votre application. Le lien ne se fait pas automatiquement dû au caractère anonyme de Coronalert. Si vous oubliez de transmettre le code, vous pouvez remplir le webform suivant.\n\nhttps://coronalert.be/fr/formulaire-coronalert/";
 "BELanguage" = "fr";
 "BESelectKeyCountries_title" = "Sélectionnez votre pays";
 "BESelectKeyCountries_explanation" = "Si vous n'étiez pas en Belgique à certaines des dates ci-dessous et que vous voulez partager cette information (de façon anonyme), veuillez sélectionner le pays dans lequel vous étiez à ces dates.";
@@ -419,7 +419,9 @@
 "BEAlreadyDidTest_possibility3" = "Rendez-vous directement sur le webform pour encoder les 2 codes manuellement.";
 "BEAlreadyDidTest_AccImageDescription" = "Une image d'un tube à essai PCR";
 "BEMobileTestId_subtitle" = "Utilisez ce code pour enregistrer votre test dans l’application";
-"BEMobileTestId_saveExplanation2" = "Essayez autant que possible de transmettre ce numéro au médecin qui prescrit le test, mais rassurez-vous, si vous oubliez vous aurez le moyen de le faire soit par webform si vous avec un code CPR, soit par SMS si votre test est lié à un compte CPTC.";
+"BEMobileTestId_saveExplanation" = "Montrez ce numéro et cette date au médecin ou au laboratoire effectuant le test pour relier votre smartphone au test.";
 "BEHome_BEToolbox_testCenter" = "Trouver un centre de test";
 "BEHome_BEToolbox_quarantineCertificateURL" = "https://quarantaine.info-coronavirus.be/fr";
 "ExposureSubmissionWarnOthers_AccImageDescription" = "Un smartphone transmet au système un diagnostic de test positif crypté.";
+"App_Information_Imprint_Section5_Text" = "Questions? E-Mail: info@coronalert.be";
+"BEMobileTestId_saveExplanationWebForm" = "";

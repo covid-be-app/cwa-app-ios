@@ -345,7 +345,7 @@
 "BEMobileTestId_Select" = "Select";
 "BEMobileTestId_Date" = "Date";
 "BEMobileTestId_Close" = "Close";
-"BEMobileTestId_saveExplanation" = "Please give this code to the doctor. This is necessary to link your test to the app. This requires a manual action due to anonymity of the app. If you have forgotten to give the code, you can use the webform.";
+"BEMobileTestId_saveExplanation2" = "Please give this code to the doctor. This is necessary to link your test to the app. This requires a manual action due to anonymity of the app. If you have forgotten to give the code, you can use the webform.\n\nhttps://coronalert.be/en/corona-alert-form/";
 "BELanguage" = "en";
 "BESelectKeyCountries_title" = "Select Countries";
 "BESelectKeyCountries_explanation" = "For each of the below dates, if you have not been in Belgium and you would like to share this information (anonymously), please select the country you visited on that date by tapping the line you want to change.";
@@ -419,7 +419,9 @@
 "BEAlreadyDidTest_possibility3" = "Go directly to the webform to encode the 2 codes manually.";
 "BEAlreadyDidTest_AccImageDescription" = "An image of a PCR test tube";
 "BEMobileTestId_subtitle" = "Use this code to register your test into the app";
-"BEMobileTestId_saveExplanation2" = "Try as much as possible to transmit this number to the doctor who prescribes the test, but rest assured, if you forget you will have the means to do it either by webform if you have a CPR code, or by SMS if your test is related to a CPTC account.";
+"BEMobileTestId_saveExplanation" = "Show this number and date to the doctor or lab performing the test to link your smartphone to the test.";
 "BEHome_BEToolbox_testCenter" = "Find a test center";
 "BEHome_BEToolbox_quarantineCertificateURL" = "https://quarantaine.info-coronavirus.be/en";
 "ExposureSubmissionWarnOthers_AccImageDescription" = "A device transmits an encrypted positive test diagnosis to the system.";
+"App_Information_Imprint_Section5_Text" = "Questions? E-Mail: info@coronalert.be";
+"BEMobileTestId_saveExplanationWebForm" = "Bla";

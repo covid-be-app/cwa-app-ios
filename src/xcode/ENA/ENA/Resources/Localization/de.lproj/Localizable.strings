@@ -345,7 +345,7 @@
 "BEMobileTestId_Select" = "Wählen";
 "BEMobileTestId_Date" = "Datum";
 "BEMobileTestId_Close" = "Schließen";
-"BEMobileTestId_saveExplanation" = "Bitte geben Sie den Code zum Arzt, da dies notwendig ist Ihr Testergebnis für die App zu verknüpfen. Dies geschieht aufgrund der Anonymität der App nicht automatisch. Wenn Sie dies vergessen, können Sie Ihr Webformular ausfüllen.";
+"BEMobileTestId_saveExplanation2" = "Bitte geben Sie den Code zum Arzt, da dies notwendig ist Ihr Testergebnis für die App zu verknüpfen. Dies geschieht aufgrund der Anonymität der App nicht automatisch. Wenn Sie dies vergessen, können Sie Ihr Webformular ausfüllen.\n\nhttps://coronalert.be/de/coronalert-formular/";
 "BELanguage" = "de";
 "BESelectKeyCountries_title" = "Länder wählen";
 "BESelectKeyCountries_explanation" = "Wenn Sie an allen aufgeführten Daten nicht in Belgien waren und diese Informationen (anonym) weitergeben möchten, bitte in der anzupassenden Zeile das Land, das Sie an diesem Datum besucht haben, antippen.";
@@ -419,7 +419,9 @@
 "BEAlreadyDidTest_possibility3" = "Gehen Sie direkt zum Webformular, um die 2 Codes manuell zu codieren. ";
 "BEAlreadyDidTest_AccImageDescription" = "Ein Bild eines PCR-Reagenzglases";
 "BEMobileTestId_subtitle" = "Verwenden Sie diesen Code, um Ihren Test in der App zu registrieren";
-"BEMobileTestId_saveExplanation2" = "Versuchen Sie so viel wie möglich, diese Nummer an den Arzt zu übermitteln, der den Test verschreibt. Seien Sie jedoch versichert, wenn Sie vergessen, dass Sie die Möglichkeit haben, dies entweder per Webformular zu tun, wenn Sie einen CPR-Code haben, oder per SMS, wenn Ihr Test durchgeführt wird im Zusammenhang mit einem CPTC-Konto.";
+"BEMobileTestId_saveExplanation" = "Zeigen Sie diese Nummer und dieses Datum dem Arzt oder Labor, das den Test durchführt, um Ihr Smartphone mit dem Test zu verbinden.";
 "BEHome_BEToolbox_testCenter" = "Finden Sie ein Testzentrum";
 "BEHome_BEToolbox_quarantineCertificateURL" = "https://quarantaine.info-coronavirus.be/de";
 "ExposureSubmissionWarnOthers_AccImageDescription" = "Ein Handy übermittelt einen positiven Testbefund verschlüsselt ins System.";
+"App_Information_Imprint_Section5_Text" = "Fragen? E-Mail: info@coronalert.be";
+"BEMobileTestId_saveExplanationWebForm" = "";
