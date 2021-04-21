@@ -45,7 +45,6 @@ class BEENAToolboxTests: XCTestCase {
 		XCTAssert(app.cells["BEAppStrings.BEToolbox.testReservation"].waitForExistence(timeout: 5.0))
 		XCTAssert(app.cells["BEAppStrings.BEToolbox.quarantineCertificate"].waitForExistence(timeout: 5.0))
 		XCTAssert(app.cells["BEAppStrings.BEToolbox.passengerLocatorForm"].waitForExistence(timeout: 5.0))
-		XCTAssert(app.cells["BEAppStrings.BEToolbox.declarationOfHonour"].waitForExistence(timeout: 5.0))
 	}
 
 	func test_toolboxFlow() throws {
@@ -73,13 +72,4 @@ class BEENAToolboxTests: XCTestCase {
 		XCTAssert(app.images["BEAppStrings.BEToolbox.passengerLocatorForm"].waitForExistence(timeout: 5.0))
 		snapshot("ScreenShot_\(#function)_001")
 	}
-
-	func test_toolboxFlow_honor() throws {
-		openToolbox()
-		app.cells["BEAppStrings.BEToolbox.declarationOfHonour"].tap()
-		XCTAssert(app.images["BEAppStrings.BEToolbox.declarationOfHonour"].waitForExistence(timeout: 5.0))
-		snapshot("ScreenShot_\(#function)_001")
-	}
-
-	
 }

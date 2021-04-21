@@ -137,7 +137,7 @@
 "ExposureSubmissionResult_CardInvalid" = "Évaluation impossible";
 "ExposureSubmissionResult_CardPending" = "Résultat pas encore disponible";
 "ExposureSubmissionResult_Procedure" = "Comment ça marche ?";
-"ExposureSubmissionResult_testAdded" = "Test ajouté avec succès";
+"ExposureSubmissionResult_testAdded" = "";
 "ExposureSubmissionResult_testAddedDesc" = "Votre test a été enregistré dans l'application Coronalert.";
 "ExposureSubmissionResult_warnOthers" = "Avertir les autres";
 "ExposureSubmissionResult_warnOthersDesc" = "Partagez vos identifiants aléatoires des derniers jours afin de protéger les autres et briser la chaîne d'infection.";
@@ -237,8 +237,8 @@
 "Home_Finding_Positive_Card_Status_Subtitle" = "Vous avez été diagnostiqué positif pour le SRAS-CoV-2.";
 "Home_Finding_Positive_Card_Note_Title" = "Veuillez noter que :";
 "Home_Finding_Positive_Card_Button" = "Suivant";
-"Home_SubmitCard_Title" = "Liez votre test COVID à l'app";
-"Home_SubmitCard_Body" = "Générez le code et transmettez-le au praticien, remplissez le formulaire en ligne ou utilisez le SMS pour lier le résultat de votre test à l'application.";
+"Home_SubmitCard_Title" = "Recevez votre test COVID dans l'app";
+"Home_SubmitCard_Body" = "";
 "Home_SubmitCard_Button" = "Je vais faire un test COVID";
 "Home_InfoCard_ShareTitle" = "Partagez l'application Coronalert";
 "Home_InfoCard_AboutTitle" = "Questions fréquemment posées";
@@ -345,7 +345,7 @@
 "BEMobileTestId_Select" = "Confirmer";
 "BEMobileTestId_Date" = "Date";
 "BEMobileTestId_Close" = "Fermer";
-"BEMobileTestId_saveExplanation" = "Montrez ce numéro et cette date au médecin ou au laboratoire effectuant le test pour relier votre smartphone au test.";
+"BEMobileTestId_saveExplanation2" = "Veuillez à transmettre ce code au médecin car ceci est nécessaire pour assurer le lien entre votre test et votre application. Le lien ne se fait pas automatiquement dû au caractère anonyme de Coronalert. Si vous oubliez de transmettre le code, vous pouvez remplir le webform suivant.\n\nhttps://coronalert.be/fr/formulaire-coronalert/";
 "BELanguage" = "fr";
 "BESelectKeyCountries_title" = "Sélectionnez votre pays";
 "BESelectKeyCountries_explanation" = "Si vous n'étiez pas en Belgique à certaines des dates ci-dessous et que vous voulez partager cette information (de façon anonyme), veuillez sélectionner le pays dans lequel vous étiez à ces dates.";
@@ -395,7 +395,7 @@
 "ExposureNotificationSetting_EU_Desc_4" = "L'avis de confidentialité de l'application (y compris les informations sur le traitement des données effectué pour la fonction d'enregistrement des expositions transnationales) se trouve dans le menu sous «Informations sur l'application»> «Confidentialité des données».";
 "App_Disabled_Text" = "Cette application ne fonctionne que sur iOS 12.5 ou iOS 13.6 ou supérieur.";
 "BEHome_Toolbox_title" = "Boîte à outils";
-"BEHome_Toolbox_description" = "Découvrez plusieurs outils pour respecter les mesures COVID actuelles";
+"BEHome_Toolbox_description" = "Découvrez plusieurs outils pour lutter contre le COVID-19";
 "BEHome_BEToolbox_vaccinationInformation" = "Informations sur la vaccination";
 "BEHome_BEToolbox_testReservation" = "Réservation d'un test";
 "BEHome_BEToolbox_quarantineCertificate" = "Certificat de quarantaine";
@@ -407,10 +407,10 @@
 "BEHome_BEToolbox_passengerLocatorFormTitle" = "FLP";
 "BEHome_BEToolbox_declarationOfHonourTitle" = "Déclaration";
 "BEHome_BEToolbox_epidemiologicalSituation" = "Situation épidémiologique du COVID-19";
-"BEHome_BEToolbox_registerToBeVaccinated" = "Inscrivez-vous pour être vacciné";
+"BEHome_BEToolbox_registerToBeVaccinated" = "Inscrivez-vous sur la liste de réserve";
 "BEHome_BEToolbox_bookATest" = "Réservez un test";
 "BEHome_BEToolbox_bookATestInBrussels" = "Réservez un test à Bruxelles";
-"Home_SubmitCard_Warning" = "Cela nécessite une action manuelle pour des raisons d'anonymat.";
+"Home_SubmitCard_Warning" = "Ceci nécessite une action manuelle du au caractère anonyme de Coronalert";
 "Home_SubmitCard_alreadyDidTestButton" = "J’ai déjà fait mon test COVID";
 "BEAlreadyDidTest_title" = "J’ai déjà fait mon test COVID";
 "BEAlreadyDidTest_possibilitiesTitle" = "3 possibilités pour relier votre test";
@@ -418,8 +418,10 @@
 "BEAlreadyDidTest_possibility2" = "Vous avez reçu ou allez recevoir un SMS. Cliquez sur le lien et completer le webform.";
 "BEAlreadyDidTest_possibility3" = "Rendez-vous directement sur le webform pour encoder les 2 codes manuellement.";
 "BEAlreadyDidTest_AccImageDescription" = "Une image d'un tube à essai PCR";
-"BEMobileTestId_subtitle" = "Donnez ce code pour votre réservation de test COVID";
-"BEMobileTestId_saveExplanation2" = "Essayez autant que possible de transmettre ce numéro au médecin qui prescrit le test, mais rassurez-vous, si vous oubliez vous aurez le moyen de le faire soit par webform si vous avec un code CPR, soit par SMS si votre test est lié à un compte CPTC.";
+"BEMobileTestId_subtitle" = "Utilisez ce code pour enregistrer votre test dans l’application";
+"BEMobileTestId_saveExplanation" = "Montrez ce numéro et cette date au médecin ou au laboratoire effectuant le test pour relier votre smartphone au test.";
 "BEHome_BEToolbox_testCenter" = "Trouver un centre de test";
 "BEHome_BEToolbox_quarantineCertificateURL" = "https://quarantaine.info-coronavirus.be/fr";
 "ExposureSubmissionWarnOthers_AccImageDescription" = "Un smartphone transmet au système un diagnostic de test positif crypté.";
+"App_Information_Imprint_Section5_Text" = "Questions? E-Mail: info@coronalert.be";
+"BEMobileTestId_saveExplanationWebForm" = "";

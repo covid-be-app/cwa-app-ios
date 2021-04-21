@@ -139,7 +139,10 @@ extension AppInformationViewController {
 											accessibilityIdentifier: AccessibilityIdentifiers.AppInformation.imprintSection4Title),
 				.bodyWithoutTopInset(text: AppStrings.AppInformation.imprintSection4Text,
 									 style: .textView([]),
-									 accessibilityIdentifier: AccessibilityIdentifiers.AppInformation.imprintSection4Text)
+									 accessibilityIdentifier: AccessibilityIdentifiers.AppInformation.imprintSection4Text),
+				.bodyWithoutTopInset(text: AppStrings.AppInformation.imprintSection5Text,
+									 style: .textView(.all),
+									 accessibilityIdentifier: AccessibilityIdentifiers.AppInformation.imprintSection5Text),
 			]
 		)
 	])

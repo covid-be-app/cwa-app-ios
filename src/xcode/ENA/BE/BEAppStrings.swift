@@ -134,7 +134,6 @@ enum BEAppStrings {
 		static let testReservationTitle = NSLocalizedString("BEHome_BEToolbox_testReservationTitle", comment: "")
 		static let quarantineCertificateTitle = NSLocalizedString("BEHome_BEToolbox_quarantineCertificateTitle", comment: "")
 		static let passengerLocatorFormTitle = NSLocalizedString("BEHome_BEToolbox_passengerLocatorFormTitle", comment: "")
-		static let declarationOfHonourTitle = NSLocalizedString("BEHome_BEToolbox_declarationOfHonourTitle", comment: "")
 
 		
 		static let epidemiologicalSituation = NSLocalizedString("BEHome_BEToolbox_epidemiologicalSituation", comment: "")
@@ -161,17 +160,6 @@ enum BEAppStrings {
 		static let passengerLocatorFormURLEN = URL(string: "https://travel.info-coronavirus.be/public-health-passenger-locator-form")!
 		static let passengerLocatorFormURLNL = URL(string: "https://travel.info-coronavirus.be/nl/public-health-passenger-locator-form")!
 		static let passengerLocatorFormURLDE = URL(string: "https://travel.info-coronavirus.be/de/public-health-passenger-locator-form")!
-
-
-		static let declarationOfHonourFR = "Déclaration sur l’honneur"
-		static let declarationOfHonourEN = "Sworn Statement"
-		static let declarationOfHonourNL = "Verklaring op eer"
-		static let declarationOfHonourDE = "ehrenwörtliche Erklärung"
-
-		static let declarationOfHonourURLFR = URL(string: "https://travel.info-coronavirus.be/fr/voyage-essentiel")!
-		static let declarationOfHonourURLEN = URL(string: "https://travel.info-coronavirus.be/essential-travel-sworn-statement")!
-		static let declarationOfHonourURLNL = URL(string: "https://travel.info-coronavirus.be/nl/essentiele-reis")!
-		static let declarationOfHonourURLDE = URL(string: "https://travel.info-coronavirus.be/de/notwendige-reise-ehrenwortliche-erklarung")!
 
 		static let testCenterURL = URL(string: "https://www.google.com/maps/d/u/0/viewer?mid=1GFrpKwhDE97_pplhtikcfDxakEhohXst&ll=50.48641435902384%2C4.395339249999988&z=9")!
 	}

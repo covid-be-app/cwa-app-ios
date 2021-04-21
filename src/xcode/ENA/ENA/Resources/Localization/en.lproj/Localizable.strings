@@ -137,7 +137,7 @@
 "ExposureSubmissionResult_CardInvalid" = "Evaluation not possible";
 "ExposureSubmissionResult_CardPending" = "Result not yet available";
 "ExposureSubmissionResult_Procedure" = "How this works:";
-"ExposureSubmissionResult_testAdded" = "Test added successfully";
+"ExposureSubmissionResult_testAdded" = "";
 "ExposureSubmissionResult_testAddedDesc" = "Your test has been stored in Coronalert.";
 "ExposureSubmissionResult_warnOthers" = "Warning Others";
 "ExposureSubmissionResult_warnOthersDesc" = "Share your random IDs of the last days in order to protect others and break the chain of infection.";
@@ -237,8 +237,8 @@
 "Home_Finding_Positive_Card_Status_Subtitle" = "You have been diagnosed with the SARS-CoV-2 virus.";
 "Home_Finding_Positive_Card_Note_Title" = "Please note:";
 "Home_Finding_Positive_Card_Button" = "Next";
-"Home_SubmitCard_Title" = "Link your COVID-test to the app";
-"Home_SubmitCard_Body" = "Generate the code and transmit it to the practitioner, fill in the online webform or use the SMS to link your test result to the app.";
+"Home_SubmitCard_Title" = "Receive your test result in the app";
+"Home_SubmitCard_Body" = "";
 "Home_SubmitCard_Button" = "I will do a COVID-test";
 "Home_InfoCard_ShareTitle" = "Share Coronalert";
 "Home_InfoCard_AboutTitle" = "Frequently Asked Questions";
@@ -345,7 +345,7 @@
 "BEMobileTestId_Select" = "Select";
 "BEMobileTestId_Date" = "Date";
 "BEMobileTestId_Close" = "Close";
-"BEMobileTestId_saveExplanation" = "Show this number and date to the doctor or lab performing the test to link your smartphone to the test.";
+"BEMobileTestId_saveExplanation2" = "Please give this code to the doctor. This is necessary to link your test to the app. This requires a manual action due to anonymity of the app. If you have forgotten to give the code, you can use the webform.\n\nhttps://coronalert.be/en/corona-alert-form/";
 "BELanguage" = "en";
 "BESelectKeyCountries_title" = "Select Countries";
 "BESelectKeyCountries_explanation" = "For each of the below dates, if you have not been in Belgium and you would like to share this information (anonymously), please select the country you visited on that date by tapping the line you want to change.";
@@ -395,7 +395,7 @@
 "ExposureNotificationSetting_EU_Desc_4" = "The app’s privacy notice (including information about the data processing carried out for the transnational exposure logging feature) can be found in the menu under “App Information” > “Data Privacy”.";
 "App_Disabled_Text" = "This app only works on iOS 12.5, or iOS 13.6 or higher.";
 "BEHome_Toolbox_title" = "Toolbox";
-"BEHome_Toolbox_description" = "Discover several tools to respect current COVID-measures";
+"BEHome_Toolbox_description" = "Discover several tools to fight COVID-19";
 "BEHome_BEToolbox_vaccinationInformation" = "Vaccination information";
 "BEHome_BEToolbox_testReservation" = "Test Reservation";
 "BEHome_BEToolbox_quarantineCertificate" = "Quarantine certificate";
@@ -407,10 +407,10 @@
 "BEHome_BEToolbox_passengerLocatorFormTitle" = "PLF";
 "BEHome_BEToolbox_declarationOfHonourTitle" = "Sworn Statement";
 "BEHome_BEToolbox_epidemiologicalSituation" = "COVID-19 Epidemiological Situation";
-"BEHome_BEToolbox_registerToBeVaccinated" = "Register to be vaccinated";
+"BEHome_BEToolbox_registerToBeVaccinated" = "Register to the reserve list";
 "BEHome_BEToolbox_bookATest" = "Book a Test";
 "BEHome_BEToolbox_bookATestInBrussels" = "Book a Test in Brussels";
-"Home_SubmitCard_Warning" = "This needs a manual action because of reasons of anonymity.";
+"Home_SubmitCard_Warning" = "This requires a manual action due to anonymity of the app";
 "Home_SubmitCard_alreadyDidTestButton" = "I already did my COVID-test";
 "BEAlreadyDidTest_title" = "I already did my COVID-test";
 "BEAlreadyDidTest_possibilitiesTitle" = "3 possibilities to link your test";
@@ -418,8 +418,10 @@
 "BEAlreadyDidTest_possibility2" = "You have received or will receive an SMS. Click on the link and complete the webform.";
 "BEAlreadyDidTest_possibility3" = "Go directly to the webform to encode the 2 codes manually.";
 "BEAlreadyDidTest_AccImageDescription" = "An image of a PCR test tube";
-"BEMobileTestId_subtitle" = "Give this code for your COVID-test reservation";
-"BEMobileTestId_saveExplanation2" = "Try as much as possible to transmit this number to the doctor who prescribes the test, but rest assured, if you forget you will have the means to do it either by webform if you have a CPR code, or by SMS if your test is related to a CPTC account.";
+"BEMobileTestId_subtitle" = "Use this code to register your test into the app";
+"BEMobileTestId_saveExplanation" = "Show this number and date to the doctor or lab performing the test to link your smartphone to the test.";
 "BEHome_BEToolbox_testCenter" = "Find a test center";
 "BEHome_BEToolbox_quarantineCertificateURL" = "https://quarantaine.info-coronavirus.be/en";
 "ExposureSubmissionWarnOthers_AccImageDescription" = "A device transmits an encrypted positive test diagnosis to the system.";
+"App_Information_Imprint_Section5_Text" = "Questions? E-Mail: info@coronalert.be";
+"BEMobileTestId_saveExplanationWebForm" = "Bla";
