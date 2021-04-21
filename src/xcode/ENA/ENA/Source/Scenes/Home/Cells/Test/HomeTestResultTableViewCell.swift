@@ -33,6 +33,7 @@ class HomeTestResultTableViewCell: HomeCardTableViewCell {
 	@IBOutlet var button: ENAButton!
 	@IBOutlet var secondButton: ENAButton!
 	@IBOutlet var stackView: UIStackView!
+	@IBOutlet var disclosureImageView: UIImageView!
 
 	weak var delegate: HomeTestResultTableViewCellDelegate?
 
@@ -53,12 +54,13 @@ class HomeTestResultTableViewCell: HomeCardTableViewCell {
 		setupAccessibility()
 	}
 
-	func configure(title: String, subtitle: String? = nil, description: String, warning: String? = nil, button buttonTitle: String, secondButton secondButtonTitle: String? = nil, image: UIImage?, tintColor: UIColor = .enaColor(for: .textPrimary1), accessibilityIdentifier: String?) {
+	func configure(title: String, subtitle: String? = nil, description: String, warning: String? = nil, button buttonTitle: String, secondButton secondButtonTitle: String? = nil, image: UIImage?, tintColor: UIColor = .enaColor(for: .textPrimary1), accessibilityIdentifier: String?, showDisclosureArrow: Bool) {
 		titleLabel.text = title
 		subtitleLabel.text = subtitle
 		descriptionLabel.text = description
 		warningLabel.text = warning
 		illustrationView?.image = image
+		disclosureImageView.isHidden = !showDisclosureArrow
 
 		button.setTitle(buttonTitle, for: .normal)
 		button.accessibilityIdentifier = AccessibilityIdentifiers.Home.submitCardButton
