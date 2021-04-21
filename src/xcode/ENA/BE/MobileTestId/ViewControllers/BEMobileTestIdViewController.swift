@@ -120,6 +120,7 @@ class BEMobileTestIdViewController: DynamicTableViewController, ENANavigationCon
 					.title2(text: BEAppStrings.BEMobileTestId.code, accessibilityIdentifier: nil),
 					codeCell,
 					.body(text: BEAppStrings.BEMobileTestId.saveExplanation2,
+						  style: .textView(.all),
 						  accessibilityIdentifier: BEAccessibilityIdentifiers.BEMobileTestId.saveExplanation2),
 				]
 			)

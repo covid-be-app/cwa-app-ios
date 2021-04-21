@@ -224,17 +224,17 @@
 			<key>NSStringFormatValueTypeKey</key>
 			<string>u</string>
 			<key>zero</key>
-			<string>%u tägliche verstorben</string>
+			<string>%u täglich Verstorbene</string>
 			<key>one</key>
-			<string>%u tägliche verstorben</string>
+			<string>%u täglich Verstorbene</string>
 			<key>few</key>
-			<string>%u tägliche verstorben</string>
+			<string>%u täglich Verstorbene</string>
 			<key>many</key>
-			<string>%u tägliche verstorben</string>
+			<string>%u täglich Verstorbene</string>
 			<key>two</key>
-			<string>%u tägliche verstorben</string>
+			<string>%u täglich Verstorbene</string>
 			<key>other</key>
-			<string>%u tägliche verstorben</string>
+			<string>%u täglich Verstorbene</string>
 		</dict>
 	</dict>
 	<key>BEInfectionSummary_averageHospitalised</key>
