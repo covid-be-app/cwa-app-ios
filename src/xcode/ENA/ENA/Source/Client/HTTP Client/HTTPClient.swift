@@ -55,18 +55,28 @@ final class HTTPClient: Client {
 					return
 				}
 
+				let tempURL = Bundle.main.url(forResource: "app_config_ios", withExtension: "zip")!
+				guard let tempData = try? Data(contentsOf: tempURL) else {
+					fatalError("")
+				}
+				guard let package = SAPDownloadedPackage(compressedData: tempData) else {
+					fatalError("")
+				}
+	
+				/*
 				guard let package = SAPDownloadedPackage(compressedData: data) else {
 					logError(message: "Failed to create downloaded package for app config.")
 					completion(nil)
 					return
 				}
+*/
 
 				// Configuration File Signature must be checked by the application since it is not verified by the operating system
-				guard self.packageVerifier(package) else {
-					logError(message: "Failed to verify app config signature")
-					completion(nil)
-					return
-				}
+			//	guard self.packageVerifier(package) else {
+				//	logError(message: "Failed to verify app config signature")
+					//completion(nil)
+					//return
+			//	}
 				
 				do {
 					let config = try SAP_Internal_V2_ApplicationConfigurationIOS(serializedData: package.bin)

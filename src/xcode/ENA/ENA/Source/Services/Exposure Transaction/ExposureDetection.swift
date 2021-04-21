@@ -152,7 +152,6 @@ final class ExposureDetection {
 				}
 		}, receiveValue: { _ in
 			self.useConfiguration()
-//			delegate.exposureDetection(self, downloadConfiguration: self.useConfiguration)
 		})
 	}
 

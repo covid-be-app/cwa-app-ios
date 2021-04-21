@@ -168,57 +168,7 @@ final class RiskCalculation {
 		// Round to two decimal places
 		return (normRiskScore * weightedAttenuation).rounded(to: 2)
 	}
-/*
-	// Main function
-	func risk(
-		summary: CodableExposureDetectionSummary?,
-		configuration: SAP_ApplicationConfiguration,
-		dateLastExposureDetection: Date?,
-		activeTracing: ActiveTracing,
-		preconditions: ExposureManagerState,
-		currentDate: Date = Date(),
-		previousRiskLevel: EitherLowOrIncreasedRiskLevel?,
-		providerConfiguration: RiskProvidingConfiguration
-	) -> Risk? {
-		switch riskLevel(
-			summary: summary,
-			configuration: configuration,
-			dateLastExposureDetection: dateLastExposureDetection,
-			activeTracing: activeTracing,
-			preconditions: preconditions,
-			providerConfiguration: providerConfiguration
-		) {
-		case .success(let level):
-			let keyCount = summary?.matchedKeyCount ?? 0
-			let daysSinceLastExposure = keyCount > 0 ? summary?.daysSinceLastExposure : nil
-			let details = Risk.Details(
-				daysSinceLastExposure: daysSinceLastExposure,
-				numberOfExposures: Int(summary?.matchedKeyCount ?? 0),
-				activeTracing: activeTracing,
-				exposureDetectionDate: dateLastExposureDetection ?? Date()
-			)
 
-			var riskLevelHasChanged = false
-			if
-				let previousRiskLevel = previousRiskLevel,
-				let newRiskLevel = EitherLowOrIncreasedRiskLevel(with: level),
-				previousRiskLevel != newRiskLevel {
-				// If the newly calculated risk level is different than the stored level, set the flag to true.
-				// Note that we ignore all levels aside from low or increased risk
-				riskLevelHasChanged = true
-			}
-			
-			return Risk(
-				level: level,
-				details: details,
-				riskLevelHasChanged: riskLevelHasChanged
-			)
-		case .failure:
-			return nil
-		}
-	}
-	*/
-	
 	private func newRiskLevel(
 		windows: [ExposureWindow],
 		configuration: RiskCalculationConfiguration,
@@ -283,7 +233,7 @@ final class RiskCalculation {
 				daysSinceLastExposure: info.daysSinceLastExposure,
 				numberOfExposures: info.numberOfExposures,
 				activeTracing: activeTracing,
-				exposureDetectionDate: dateLastExposureDetection ?? Date()
+				exposureDetectionDate: Date()
 			)
 
 			var riskLevelHasChanged = false

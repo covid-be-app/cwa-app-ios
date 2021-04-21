@@ -35,7 +35,7 @@ extension ENStateHandler {
 				return .bluetoothOff
 			case .disabled:
 				return .disabled
-			case .restricted:
+			case .restricted, .paused, .unauthorized:
 				return differentiateRestrictedCase()
 			case .unknown:
 				return .disabled
