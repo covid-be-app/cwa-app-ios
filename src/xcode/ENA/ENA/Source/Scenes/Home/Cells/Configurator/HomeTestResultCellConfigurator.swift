@@ -54,7 +54,6 @@ class HomeTestResultCellConfigurator: TableViewCellConfigurator {
 			warning: AppStrings.Home.submitCardWarning,
 			button: AppStrings.Home.submitCardButton,
 			secondButton: AppStrings.Home.alreadyDidTestButton,
-			image: UIImage(named: "Illu_Hand_with_phone-initial"),
 			accessibilityIdentifier: AccessibilityIdentifiers.Home.submitCardButton,
 			showDisclosureArrow: false
 		)
@@ -66,7 +65,6 @@ class HomeTestResultCellConfigurator: TableViewCellConfigurator {
 			subtitle: AppStrings.Home.resultCardNegativeTitle,
 			description: AppStrings.Home.resultCardNegativeDesc,
 			button: AppStrings.Home.resultCardShowResultButton,
-			image: UIImage(named: "Illu_Hand_with_phone-negativ"),
 			tintColor: .enaColor(for: .textSemanticGreen),
 			accessibilityIdentifier: AccessibilityIdentifiers.Home.resultCardShowResultButton,
 			showDisclosureArrow: true
@@ -79,7 +77,6 @@ class HomeTestResultCellConfigurator: TableViewCellConfigurator {
 			subtitle: AppStrings.Home.resultCardInvalidTitle,
 			description: AppStrings.Home.resultCardInvalidDesc,
 			button: AppStrings.Home.resultCardShowResultButton,
-			image: UIImage(named: "Illu_Hand_with_phone-error"),
 			tintColor: .enaColor(for: .textSemanticGray),
 			accessibilityIdentifier: AccessibilityIdentifiers.Home.resultCardShowResultButton,
 			showDisclosureArrow: true
@@ -91,7 +88,6 @@ class HomeTestResultCellConfigurator: TableViewCellConfigurator {
 			title: AppStrings.Home.resultCardResultUnvailableTitle,
 			description: AppStrings.Home.resultCardPendingDesc,
 			button: AppStrings.Home.resultCardShowResultButton,
-			image: UIImage(named: "Illu_Hand_with_phone-pending"),
 			tintColor: .enaColor(for: .textPrimary2),
 			accessibilityIdentifier: AccessibilityIdentifiers.Home.resultCardShowResultButton,
 			showDisclosureArrow: true
