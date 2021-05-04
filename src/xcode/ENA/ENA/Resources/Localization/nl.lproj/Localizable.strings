@@ -151,7 +151,7 @@
 "ExposureSubmissionResult_testPending" = "Resultaat nog niet beschikbaar";
 "ExposureSubmissionResult_testPendingDesc" = "Je testresultaat is nog niet beschikbaar.";
 "ExposureSubmissionResult_testRemove" = "Test verwijderen";
-"ExposureSubmissionResult_testRemoveDesc" = "Verwijder de test uit Coronalert, zodat je hier indien nodig een nieuwe testcode kunt opslaan.\nDit testresultaat wordt na 48 uur van uw smartphone verwijderd.";
+"ExposureSubmissionResult_testRemoveDesc" = "Verwijder de test uit Coronalert, zodat je hier indien nodig een nieuwe testcode kunt opslaan.\nDit testresultaat wordt na 48 uur van je smartphone verwijderd.";
 "ExposureSubmissionResult_continueButton" = "Volgende";
 "ExposureSubmissionResult_deleteButton" = "Test verwijderen";
 "ExposureSubmissionResult_refreshButton" = "Vernieuwen";
@@ -237,9 +237,9 @@
 "Home_Finding_Positive_Card_Status_Subtitle" = "Je testte positief op het SARS-CoV-2-virus.";
 "Home_Finding_Positive_Card_Note_Title" = "Let op:";
 "Home_Finding_Positive_Card_Button" = "Volgende";
-"Home_SubmitCard_Title" = "Ontvang je testresultaat in jouw app";
-"Home_SubmitCard_Body" = "";
-"Home_SubmitCard_Button" = "Ik ga een COVID test doen";
+"Home_SubmitCard_Title" = "Koppel je COVID-test aan de app";
+"Home_SubmitCard_Body" = "Heb je je COVID-test gedaan?";
+"Home_SubmitCard_Button" = "Nog niet";
 "Home_InfoCard_ShareTitle" = "Deel Coronalert";
 "Home_InfoCard_AboutTitle" = "Veelgestelde vragen";
 "Home_SettingsCard_Title" = "Instellingen";
@@ -247,7 +247,7 @@
 "Home_AppInformationCard_Version" = "Versie";
 "Home_resultCard_ResultAvailableTitle" = "Je resultaat is beschikbaar";
 "Home_resultCard_ResultUnvailableTitle" = "Je resultaat is nog niet beschikbaar";
-"Home_resultCard_ShowResultButton" = "Test tonen";
+"Home_resultCard_ShowResultButton" = "Testresultaat tonen";
 "Home_resultCard_LoadingBody" = "Huidige gegevens worden gedownload.\nDit kan enkele minuten duren.";
 "Home_resultCard_LoadingTitle" = "Update bezig...";
 "Home_resultCard_NegativeTitle" = "Negatieve diagnose";
@@ -340,12 +340,12 @@
 "ENATanInput_CharacterIndex" = "Karakter %1$u van %2$u";
 "Active_Tracing_Interval_Partially_Active" = "Blootstellingscontrole was %1$u van de voorbije 14 dagen actief.";
 "Active_Tracing_Interval_Permanently_Active" = "Uitwisseling blootstelling permanent actief";
-"BEMobileTestId_title" = "Ontvang de test";
+"BEMobileTestId_title" = "Ontvang het testresultaat";
 "BESelectSymptomsDate_explanation" = "Kies de datum waarop je symptomen begon te krijgen.";
 "BEMobileTestId_Select" = "Kies";
 "BEMobileTestId_Date" = "Datum";
 "BEMobileTestId_Close" = "Sluiten";
-"BEMobileTestId_saveExplanation2" = "Gelieve deze code aan de arts te geven want dit is noodzakelijk om je testresultaat aan de app te linken. Dit gebeurt niet automatisch vanwege het anonieme karakter van de app. Indien je dit vergeet, kan je het webformulier invullen.\n\nhttps://coronalert.be/nl/coronalert-formulier/";
+"BEMobileTestId_saveExplanation2" = "Gelieve deze code aan de arts te geven want dit is noodzakelijk om je testresultaat aan de app te linken. Dit gebeurt niet automatisch omdat Coronalert anoniem is. Indien je dit vergeet, kan je het webformulier invullen.\n\nhttps://coronalert.be/nl/coronalert-formulier/";
 "BELanguage" = "nl";
 "BESelectKeyCountries_title" = "Kies Landen";
 "BESelectKeyCountries_explanation" = "Als je op een van de onderstaande datums niet in België was en je deze informatie (anoniem) wilt delen, selecteer dan het land dat je op die datum hebt bezocht. Tik op de lijn die je wilt wijzigen.";
@@ -410,8 +410,8 @@
 "BEHome_BEToolbox_registerToBeVaccinated" = "Registreer voor de reservelijst";
 "BEHome_BEToolbox_bookATest" = "Reserveer een testmoment";
 "BEHome_BEToolbox_bookATestInBrussels" = "Reserveer een test in Brussel";
-"Home_SubmitCard_Warning" = "Dit vereist een handmatige handeling vanwege anonimiteitsredenen";
-"Home_SubmitCard_alreadyDidTestButton" = "Ik heb al een COVID-test gedaan";
+"Home_SubmitCard_Warning" = "Dit vereist een handmatige handeling omdat Coronalert anoniem is";
+"Home_SubmitCard_alreadyDidTestButton" = "Ja";
 "BEAlreadyDidTest_title" = "Ik heb al een COVID-test gedaan";
 "BEAlreadyDidTest_possibilitiesTitle" = "3 mogelijkheden om uw test te koppelen";
 "BEAlreadyDidTest_possibility1" = "Ik heb een test gedaan en mijn arts of laboratorium heeft de 17 cijfers van de Coronalert-app correct ingevoerd. U hoeft niets te doen.";
