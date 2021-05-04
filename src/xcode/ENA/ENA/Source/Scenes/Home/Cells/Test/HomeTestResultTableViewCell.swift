@@ -54,18 +54,21 @@ class HomeTestResultTableViewCell: HomeCardTableViewCell {
 		setupAccessibility()
 	}
 
-	func configure(title: String, subtitle: String? = nil, description: String, warning: String? = nil, button buttonTitle: String, secondButton secondButtonTitle: String? = nil, image: UIImage?, tintColor: UIColor = .enaColor(for: .textPrimary1), accessibilityIdentifier: String?, showDisclosureArrow: Bool) {
+	func configure(title: String, subtitle: String? = nil, description: String, warning: String? = nil, button buttonTitle: String, secondButton secondButtonTitle: String? = nil, tintColor: UIColor = .enaColor(for: .textPrimary1), accessibilityIdentifier: String?, showDisclosureArrow: Bool) {
 		titleLabel.text = title
 		subtitleLabel.text = subtitle
 		descriptionLabel.text = description
 		warningLabel.text = warning
-		illustrationView?.image = image
 		disclosureImageView.isHidden = !showDisclosureArrow
 
 		button.setTitle(buttonTitle, for: .normal)
 		button.accessibilityIdentifier = AccessibilityIdentifiers.Home.submitCardButton
 		
 		secondButton.isHidden = secondButtonTitle == nil
+		
+		if secondButton.isHidden {
+			button.backgroundColor = secondButton.backgroundColor
+		}
 
 		if let title = secondButtonTitle {
 			secondButton.setTitle(title, for: .normal)

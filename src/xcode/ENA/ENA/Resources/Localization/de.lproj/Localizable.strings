@@ -237,9 +237,9 @@
 "Home_Finding_Positive_Card_Status_Subtitle" = "SARS-CoV-2 wurde bei Ihnen nachgewiesen.";
 "Home_Finding_Positive_Card_Note_Title" = "Bitte beachten:";
 "Home_Finding_Positive_Card_Button" = "Weiter";
-"Home_SubmitCard_Title" = "Erhalten Sie Ihr Testergebnis in Ihrer App";
-"Home_SubmitCard_Body" = "";
-"Home_SubmitCard_Button" = "Ich werde einen COVID-Test machen";
+"Home_SubmitCard_Title" = "Verknüpfen Sie Ihren COVID-Test mit der App";
+"Home_SubmitCard_Body" = "Hast du deinen COVID-Test gemacht?";
+"Home_SubmitCard_Button" = "Noch nicht";
 "Home_InfoCard_ShareTitle" = "Coronalert teilen";
 "Home_InfoCard_AboutTitle" = "Häufig gestellte Fragen";
 "Home_SettingsCard_Title" = "Einstellungen";
@@ -411,7 +411,7 @@
 "BEHome_BEToolbox_bookATest" = "Testreservierung";
 "BEHome_BEToolbox_bookATestInBrussels" = "Testreservierung in Brüssel";
 "Home_SubmitCard_Warning" = "Dies erfordert aus Gründen der Anonymität manuelle Maßnahmen";
-"Home_SubmitCard_alreadyDidTestButton" = "COVID-Test bereits durchgeführt";
+"Home_SubmitCard_alreadyDidTestButton" = "Ja";
 "BEAlreadyDidTest_title" = "COVID-Test bereits durchgeführt";
 "BEAlreadyDidTest_possibilitiesTitle" = "3 Möglichkeiten, Ihren Test zu verknüpfen";
 "BEAlreadyDidTest_possibility1" = "Ich habe einen Test durchgeführt und mein Arzt oder Labor hat die 17 Ziffern der Coronalert-App korrekt eingegeben. Du musst nichts tun.";
