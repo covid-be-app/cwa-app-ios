@@ -23,7 +23,7 @@
 "ExposureDetection_Outdated" = "Exposure logging is not possible";
 "ExposureDetection_Unknown" = "Unknown Risk";
 "ExposureDetection_Low" = "Low Risk";
-"ExposureDetection_High" = "Higher Risk";
+"ExposureDetection_High" = "High Risk";
 "ExposureDetection_NumberOfDaysStored" = "%d of 14 days active";
 "ExposureDetection_Refreshed" = "Updated: %@";
 "ExposureDetection_Refreshed_Never" = "Unknown";
@@ -106,7 +106,7 @@
 "OnboardingInfo_alwaysStayInformedPage_imageDescription" = "A woman receives a notification from Coronalert.";
 "OnboardingInfo_alwaysStayInformedPage_title" = "Receive Warnings and Identify Risks ";
 "OnboardingInfo_alwaysStayInformedPage_boldText" = "The app can notify you automatically about your risk status and warn you about new infections of people you have been exposed to. Allow the app now to notify you. ";
-"OnboardingInfo_alwaysStayInformedPage_normalText" = "You can then self-isolate to protect others and find out where you can get tested.";
+"OnboardingInfo_alwaysStayInformedPage_normalText" = "You can then self-quarantine to protect others and find out where you can get tested.";
 "ExposureSubmission_DataPrivacyTitle" = "Privacy Policy";
 "ExposureSubmission_Continue_actionText" = "Next";
 "ExposureSubmissionDataPrivacy_AcceptTitle" = "Accept";
@@ -151,7 +151,7 @@
 "ExposureSubmissionResult_testPending" = "Result not yet available";
 "ExposureSubmissionResult_testPendingDesc" = "Your test result is not yet available.";
 "ExposureSubmissionResult_testRemove" = "Delete test";
-"ExposureSubmissionResult_testRemoveDesc" = "Please delete the test from Coronalert, so that you can save a new test code here if necessary.\nThis test result will be removed from your smartphone after 48 hours.";
+"ExposureSubmissionResult_testRemoveDesc" = "Please delete the test from Coronalert, so that you can save a new test code here if necessary.\The test result will be removed automatically from your smartphone after 48 hours.";
 "ExposureSubmissionResult_continueButton" = "Next";
 "ExposureSubmissionResult_deleteButton" = "Delete test";
 "ExposureSubmissionResult_refreshButton" = "Update";
@@ -216,7 +216,7 @@
 "Home_Risk_Last_Activate_Item_Title" = "Last exposure logging: %@";
 "Home_Risk_Last_Activate_Item_Unknown_Title" = "Unknown Risk";
 "Home_Risk_Last_Activate_Item_Low_Title" = "Low Risk";
-"Home_Risk_Last_Activate_Item_High_Title" = "Higher Risk";
+"Home_Risk_Last_Activate_Item_High_Title" = "High Risk";
 "Home_RiskCard_Update_Button" = "Update";
 "Home_RiskCard_Unknown_Item_Title" = "Since you have not had exposure logging turned on for long enough, we cannot calculate your risk of infection.";
 "Home_RiskCard_Unknown48h_Body" = "Your infection risk calculation has not been updated for more than 48 hours. Please update the calculation.";
@@ -229,7 +229,7 @@
 "Home_Risk_Low_Title" = "Low Risk";
 "Home_Risk_Low_SaveDays_Item_Title" = "Exposure logging was active for %1$u of the past 14 days.";
 "Home_Risk_Low_SaveDays_Item_Title__Permanently_Active" = "Exposure logging permanently active";
-"Home_Risk_High_Title" = "Higher Risk";
+"Home_Risk_High_Title" = "High Risk";
 "Home_Risk_Status_Check_Title" = "Check is running …";
 "Home_Risk_Status_Check_Body" = "Current data is being downloaded and checked. This can take several minutes.";
 "Home_Finding_Positive_Card_Title" = "Positive Diagnosis";
@@ -310,7 +310,7 @@
 "RiskLegend_Legend1_Text" = "Exposure logging is one of the central features of the app. When you activate it, encounters with people's devices are logged. You don't have to do anything else.";
 "RiskLegend_Legend2_Text" = "If you have had contact within the last 14 days with a person who was diagnosed with COVID-19, the app calculates your personal risk of infection. It does this by measuring duration and proximity of the exposure.";
 "RiskLegend_Legend2_RiskLevels" = "The following risk status can be shown:";
-"RiskLegend_Legend2_High" = "Higher Risk";
+"RiskLegend_Legend2_High" = "High Risk";
 "RiskLegend_Legend2_High_Color" = "Red";
 "RiskLegend_Legend2_Low" = "Low Risk";
 "RiskLegend_Legend2_Low_Color" = "Green";
@@ -390,7 +390,7 @@
 "ExposureNotificationSetting_euTracingAllCountriesTitle" = "Participating Countries";
 "ExposureNotificationSetting_EU_Title" = "Transnational Exposure Logging";
 "ExposureNotificationSetting_EU_Desc_1" = "Several countries are working together to enable transnational alerts via a joint exchange server. For example, contacts with users of an official coronavirus app from other participating countries can also be taken into account for exposure logging.";
-"ExposureNotificationSetting_EU_Desc_2" = "For this purpose, the app downloads every day a list of therandom IDs of all users who had a positive test and who have decided to inform other users by sharing their random IDs. This list is then compared with the random IDs recorded by your smartphone.You can chose to download this list over WiFi; otherwise part of your mobile data budget will be consumed. Be aware that this may result inroaming charges if you would leave the EU.";
+"ExposureNotificationSetting_EU_Desc_2" = "For this purpose, the app downloads every day a list of the random IDs of all users who had a positive test and who have decided to inform other users by sharing their random IDs. This list is then compared with the random IDs recorded by your smartphone. It is recommended to download this list via WIFI, otherwise mobile data might be consumed. Be aware that this may result in roaming charges if you would leave the EU.";
 "ExposureNotificationSetting_EU_Desc_3" = "The following countries currently participate in transnational exposure logging:";
 "ExposureNotificationSetting_EU_Desc_4" = "The app’s privacy notice (including information about the data processing carried out for the transnational exposure logging feature) can be found in the menu under “App Information” > “Data Privacy”.";
 "App_Disabled_Text" = "This app only works on iOS 12.5, or iOS 13.6 or higher.";
@@ -424,4 +424,4 @@
 "BEHome_BEToolbox_quarantineCertificateURL" = "https://quarantaine.info-coronavirus.be/en";
 "ExposureSubmissionWarnOthers_AccImageDescription" = "A device transmits an encrypted positive test diagnosis to the system.";
 "App_Information_Imprint_Section5_Text" = "Questions? E-Mail: info@coronalert.be";
-"BEMobileTestId_saveExplanationWebForm" = "Bla";
+"BEMobileTestId_saveExplanationWebForm" = "";
