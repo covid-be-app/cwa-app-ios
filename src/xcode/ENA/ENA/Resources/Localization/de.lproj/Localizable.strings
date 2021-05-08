@@ -156,7 +156,7 @@
 "ExposureSubmissionResult_deleteButton" = "Test löschen";
 "ExposureSubmissionResult_refreshButton" = "Aktualisieren";
 "ExposureSubmissionWarnOthers_title" = "Möchten Sie andere warnen?";
-"ExposureSubmissionWarnOthers_description" = "Sie können angeben, dass Coronalert Ihre zufälligen IDs der letzten Tage mit anderen teilt. Auf diese Weise können Sie andere Personen warnen und die Infektionskette durchbrechen.\n\nDa nur unpersönliche Zufallscodes erteilt werden, ist Ihre Identität sicher.";
+"ExposureSubmissionWarnOthers_description" = "Sie können angeben, dass Coronalert Ihre zufälligen IDs der letzten Tage mit anderen teilt. Auf diese Weise können Sie andere Personen warnen und die Infektionskette durchbrechen.\n\nDa nur anonyme Zufallscodes geteilt werden, bleibt Ihre Identität unbekannt.";
 "ExposureSubmissionResult_RemoveAlert_Title" = "Test entfernen?";
 "ExposureSubmissionResult_RemoveAlert_Text" = "Der Test wird endgültig aus Coronalert gelöscht und kann nicht mehr eingefügt werden. Dieser Vorgang kann nicht rückgängig gemacht werden. ";
 "ExposureSubmissionResult_RegistrationDateUnknown" = "Registrierungsdatum unbekannt";
@@ -238,7 +238,7 @@
 "Home_Finding_Positive_Card_Note_Title" = "Bitte beachten:";
 "Home_Finding_Positive_Card_Button" = "Weiter";
 "Home_SubmitCard_Title" = "Verknüpfen Sie Ihren COVID-Test mit der App";
-"Home_SubmitCard_Body" = "Hast du deinen COVID-Test gemacht?";
+"Home_SubmitCard_Body" = "Haben Sie Ihren COVID-Test gemacht?";
 "Home_SubmitCard_Button" = "Noch nicht";
 "Home_InfoCard_ShareTitle" = "Coronalert teilen";
 "Home_InfoCard_AboutTitle" = "Häufig gestellte Fragen";
@@ -345,7 +345,7 @@
 "BEMobileTestId_Select" = "Wählen";
 "BEMobileTestId_Date" = "Datum";
 "BEMobileTestId_Close" = "Schließen";
-"BEMobileTestId_saveExplanation2" = "Bitte geben Sie den Code zum Arzt, da dies notwendig ist Ihr Testergebnis für die App zu verknüpfen. Dies geschieht aufgrund der Anonymität der App nicht automatisch. Wenn Sie dies vergessen, können Sie Ihr Webformular ausfüllen.\n\nhttps://coronalert.be/de/coronalert-formular/";
+"BEMobileTestId_saveExplanation2" = "Versuchen Sie immer, diesen Code an den Arzt zu übermitteln, der den Test verschreibt. Wenn Sie dies vergessen, dann können Sie diesen auch selbst über ein Web-Formular eingeben.\n\nhttps://coronalert.be/de/coronalert-formular/";
 "BELanguage" = "de";
 "BESelectKeyCountries_title" = "Länder wählen";
 "BESelectKeyCountries_explanation" = "Wenn Sie an allen aufgeführten Daten nicht in Belgien waren und diese Informationen (anonym) weitergeben möchten, bitte in der anzupassenden Zeile das Land, das Sie an diesem Datum besucht haben, antippen.";

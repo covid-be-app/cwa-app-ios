@@ -32,7 +32,7 @@
 "ExposureDetection_LastRiskLevel" = "Laatste blootstellingscontrole: %@";
 "ExposureDetection_OffText" = "Activeer blootstellingscontrole om je risicostatus vandaag te evalueren.";
 "ExposureDetection_OutdatedText" = "Je blootstellingslogbestand kon gedurende meer dan 48 uur niet worden geüpdatet.";
-"ExposureDetection_UnknownText" = "Je hebt Coronalert niet lang genoeg aangezet. Daarom kunnen we je risico op besmetting niet berekenen.";
+"ExposureDetection_UnknownText" = "Je hebt Coronalert niet lang genoeg ingeschakeld. Daarom kunnen we je risico op besmetting niet berekenen.";
 "ExposureDetection_LoadingText" = "Actuele gegevens worden gedownload en gecontroleerd. Dit kan enkele minuten duren.";
 "ExposureDetection_Behavior_Title" = "Preventieve maatregelen";
 "ExposureDetection_Behavior_Subtitle" = "Dit is wat je moet doen";
@@ -85,8 +85,8 @@
 "Onboarding_DeactivateExposureConfirmation_message" = "Je kan deze functie op elk moment uitschakelen.";
 "OnboardingInfo_togetherAgainstCoronaPage_imageDescription" = "Een groep mensen gebruikt hun toestellen in de stad. Officiële logo’s van de federale overheid, de Vlaamse overheid, het Waals Gewest, Het Brussels Hoofdstedelijk Gewest en de Duitstalige Gemeenschap.";
 "OnboardingInfo_togetherAgainstCoronaPage_title" = "Samen krijgen we het coronavirus klein";
-"OnboardingInfo_togetherAgainstCoronaPage_boldText" = "Bescherm jezelf en ons allemaal. Gebruik Coronalert, zo kunnen we de infectieketens sneller doorbreken.";
-"OnboardingInfo_togetherAgainstCoronaPage_normalText" = "Maak van je toestel een corona-waarschuwingssysteem. Je krijgt een overzicht van je risicostatus en krijgt te horen of je de voorbije 14 dagen nauw contact hebt gehad met mensen die een COVID-19-diagnose hebben gekregen. \n\nDe app registreert contacten tussen mensen. Hun toestellen wisselen willekeurige versleutelde ID's uit, maar hebben geen toegang tot persoonlijke gegevens.";
+"OnboardingInfo_togetherAgainstCoronaPage_boldText" = "Bescherm jezelf en ons allemaal. Gebruik Coronalert, zo kunnen we de infectieketen sneller doorbreken.";
+"OnboardingInfo_togetherAgainstCoronaPage_normalText" = "Maak van je toestel een corona-waarschuwingssysteem. Je krijgt een overzicht van je risicostatus en krijgt te horen of je de voorbije 14 dagen nauw contact hebt gehad met mensen die een COVID-19-diagnose hebben gekregen. \n\nDe app registreert contacten tussen mensen. Hun toestellen wisselen willekeurige versleutelde codes uit, maar er worden geen persoonlijke gegevens uitgewisseld.";
 "OnboardingInfo_privacyPage_imageDescription" = "Een vrouw gebruikt Coronalert op haar smartphone. Het hangslot op een schildje geeft aan dat de gegevens versleuteld worden.";
 "OnboardingInfo_privacyPage_title" = "Privacyverklaring";
 "OnboardingInfo_privacyPage_boldText" = "";
@@ -94,7 +94,7 @@
 "OnboardingInfo_enableLoggingOfContactsPage_imageDescription" = "Drie mensen hebben de blootstellingscontrole op hun toestellen geactiveerd. Hun contacten met elkaar worden geregistreerd.";
 "OnboardingInfo_enableLoggingOfContactsPage_title" = "Hoe activeer je blootstellingscontrole?";
 "OnboardingInfo_enableLoggingOfContactsPage_boldText" = "Als je wilt weten of je risico loopt op besmetting, activeer dan de app.";
-"OnboardingInfo_enableLoggingOfContactsPage_normalText" = "De app werkt via Bluetooth op je telefoon. Telefoons die de app gebruiken delen willekeurige codes (ID's) uit wanneer ze in elkaars buurt zijn. Je kan deze functie op elk moment uitschakelen.\n\nDe willekeurige codes geven alleen informatie over de datum, duur en nabijheid door aan andere gebruikers (berekend met behulp van signaalsterkte) door aan anderen. Persoonlijke gegevens zoals naam, adres, locatie en tijd worden nooit geregistreerd. Je kan dan ook niet geïdentificeerd worden.";
+"OnboardingInfo_enableLoggingOfContactsPage_normalText" = "De app werkt via Bluetooth op je telefoon. Telefoons die de app gebruiken delen willekeurige codes (ID's) uit wanneer ze in elkaars buurt zijn. Je kan deze functie op elk moment uitschakelen.\n\nDe willekeurige codes geven alleen informatie over de datum, duur en nabijheid door aan andere gebruikers (berekend met behulp van signaalsterkte). Persoonlijke gegevens zoals naam, adres, locatie en tijd worden nooit geregistreerd. Je kan dan ook niet geïdentificeerd worden.";
 "OnboardingInfo_enableLoggingOfContactsPage_stateHeader" = "Status";
 "OnboardingInfo_enableLoggingOfContactsPage_stateTitle" = "blootstellingslogbestand";
 "OnboardingInfo_enableLoggingOfContactsPage_stateActive" = "Actief";
@@ -218,7 +218,7 @@
 "Home_Risk_Last_Activate_Item_Low_Title" = "Laag risico";
 "Home_Risk_Last_Activate_Item_High_Title" = "Verhoogd risico ";
 "Home_RiskCard_Update_Button" = "Vernieuwen";
-"Home_RiskCard_Unknown_Item_Title" = "Blootstellingscontrole is nog niet lang genoeg aangezet. Daarom kunnen we je risico op besmetting nog niet berekenen.";
+"Home_RiskCard_Unknown_Item_Title" = "Blootstellingscontrole is nog niet lang genoeg ingeschakeld. Daarom kunnen we je risico op besmetting nog niet berekenen.";
 "Home_RiskCard_Unknown48h_Body" = "Je risicoberekening werd meer dan 48 uur niet geüpdatet. Werk de berekening bij.";
 "Home_Risk_Inactive_NoCalculation_Possible_Title" = "Blootstellingscontrole stopgezet";
 "Home_Risk_Inactive_Outdated_Results_Title" = "Blootstellingscontrole is niet mogelijk";
@@ -260,7 +260,7 @@
 "App_Information_About_ImageDescription" = "";
 "App_Information_About_Title" = "Samen krijgen we het coronavirus klein";
 "App_Information_About_Description" = "Sciensano is een Belgisch federaal agentschap voor de volksgezondheid. Zij publiceert Coronalert namens de regeringen van de gefedereerde entiteiten. De app bestaat als een digitale aanvulling op de reeds bestaande maatregelen op het gebied van de volksgezondheid.";
-"App_Information_About_Text" = "Als gebruiker van de app help je bij het opsporen en doorbreken van infectieketens. De app slaat contacten met andere mensen lokaal op uw toestel op. Je krijgt een melding als je in contact bent gekomen met mensen die later een COVID-19-diagnose hebben gekregen. Je identiteit en privacy zijn altijd beschermd.";
+"App_Information_About_Text" = "Als gebruiker van de app help je bij het opsporen en doorbreken van infectieketens. De app slaat contacten met andere mensen anoniem op jouw toestel op. Je krijgt een melding als je in contact bent gekomen met mensen die later een COVID-19-diagnose hebben gekregen. Je identiteit en privacy zijn altijd beschermd.";
 "App_Information_Contact_ImageDescription" = "Een man met een koptelefoon telefoneert.";
 "App_Information_Contact_Title" = "Hoe kunnen we je helpen?";
 "App_Information_Imprint_Navigation" = "Informatie";
@@ -389,7 +389,7 @@
 "ExposureNotificationSetting_euTracingRiskDeterminationTitle" = "Transnationale blootstellingsregistratie";
 "ExposureNotificationSetting_euTracingAllCountriesTitle" = "Deelnemende landen";
 "ExposureNotificationSetting_EU_Title" = "Transnationale blootstellingsregistratie";
-"ExposureNotificationSetting_EU_Desc_1" = "Verschillende landen werken samen om transnationale alerts mogelijk te maken. Zo kunnen ook contacten met gebruikers van een officiële coronavirus-app uit andere deelnemende landen meegenomen bij de berekening van jouw besmettingsrisico.";
+"ExposureNotificationSetting_EU_Desc_1" = "Verschillende landen werken samen om transnationale alerts mogelijk te maken. Zo kunnen ook contacten met gebruikers van een officiële coronavirus-app uit andere deelnemende landen meegenomen worden bij de berekening van jouw besmettingsrisico.";
 "ExposureNotificationSetting_EU_Desc_2" = "Voor dit doel downloadt de app elke dag een lijst met willekeurige ID's van alle gebruikers die een positieve test hebben ondergaan en die hebben besloten andere gebruikers te informeren door hun willekeurige ID's te delen. Deze lijst wordt vervolgens vergeleken met de willekeurige ID's die door uw smartphone zijn geregistreerd. U kunt ervoor kiezen om deze lijst via wifi te downloaden; anders wordt een deel van uw mobiele gegevensbudget verbruikt. Houd er rekening mee dat dit kan leiden tot roamingkosten als u de EU verlaat.";
 "ExposureNotificationSetting_EU_Desc_3" = "De volgende landen nemen momenteel deel aan transnationale blootstellingsregistratie:";
 "ExposureNotificationSetting_EU_Desc_4" = "De privacyverklaring van de app (inclusief informatie over de gegevensverwerking die wordt uitgevoerd voor de transnationale blootstellingsregistratiefunctie) is te vinden in het menu onder 'Informatie app'> 'Privacyverklaring'.";
