@@ -55,7 +55,7 @@ class ENAUITests_00_Onboarding: XCTestCase {
 		app.buttons["AppStrings.Onboarding.onboardingDoNotAllow"].tap()
 
 		// check that the homescreen element AppStrings.home.activateTitle is visible onscreen
-		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
+		XCTAssert(app.images["AppStrings.Home.leftBarButtonDescription"].waitForExistence(timeout: 5.0))
 	}
 
 	func test_0001_OnboardingFlow_EnablePermissions_normal_XS() throws {
@@ -82,7 +82,7 @@ class ENAUITests_00_Onboarding: XCTestCase {
 		app.buttons["AppStrings.Onboarding.onboardingContinue"].tap()
 
 		// check that the homescreen element AppStrings.home.activateTitle is visible onscreen
-		XCTAssert(app.buttons["AppStrings.Home.rightBarButtonDescription"].waitForExistence(timeout: 5.0))
+		XCTAssert(app.images["AppStrings.Home.leftBarButtonDescription"].waitForExistence(timeout: 5.0))
 	}
 
 }

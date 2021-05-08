@@ -42,6 +42,7 @@ enum AccessibilityIdentifiers {
 
 	enum Home {
 		static let submitCardButton = "AppStrings.Home.submitCardButton"
+		static let submitCardButton2 = "AppStrings.Home.submitCardButton2"
 		static let activateCardOnTitle = "AppStrings.Home.activateCardOnTitle"
 		static let activateCardOffTitle = "AppStrings.Home.activateCardOffTitle"
 		static let activateCardBluetoothOffTitle = "AppStrings.Home.activateCardBluetoothOffTitle"
@@ -129,6 +130,7 @@ enum AccessibilityIdentifiers {
 		static let imprintSection3Text = "AppStrings.AppInformation.imprintSection3Text"
 		static let imprintSection4Title = "AppStrings.AppInformation.imprintSection4Title"
 		static let imprintSection4Text = "AppStrings.AppInformation.imprintSection4Text"
+		static let imprintSection5Text = "AppStrings.AppInformation.imprintSection5Text"
 		static let privacyImageDescription = "AppStrings.AppInformation.privacyImageDescription"
 		static let privacyTitle = "AppStrings.AppInformation.privacyTitle"
 		static let termsImageDescription = "AppStrings.AppInformation.termsImageDescription"

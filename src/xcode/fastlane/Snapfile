@@ -2,7 +2,7 @@
 
 # A list of devices you want to take the screenshots from
 devices([
-    "iPhone SE (2nd generation)",
+  #  "iPhone SE (2nd generation)",
     "iPhone 11",
     
 ])
@@ -12,9 +12,9 @@ ios_version(
 )
 
 languages([
+  "fr-BE",
   "en-US",
   "de-DE",
-  "fr-BE",
   "nl-BE"
 #  "bg-BG",
 #  "ro-RO",
@@ -37,3 +37,6 @@ override_status_bar(true)
 
 # For more information about all available options run
 # fastlane action snapshot
+
+number_of_retries(0)
+stop_after_first_error(true)

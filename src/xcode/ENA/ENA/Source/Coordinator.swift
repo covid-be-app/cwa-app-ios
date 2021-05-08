@@ -147,14 +147,6 @@ class Coordinator: RequiresAppDependencies {
 }
 
 extension Coordinator: HomeViewControllerDelegate {
-	func showRiskLegend() {
-		rootViewController.present(
-			UINavigationController(rootViewController: RiskLegendViewController()),
-			animated: true,
-			completion: nil
-		)
-	}
-
 	func showExposureNotificationSetting(enState: ENStateHandler.State) {
 		let vc = ExposureNotificationSettingViewController(
 					initialEnState: enState,
@@ -205,6 +197,16 @@ extension Coordinator: HomeViewControllerDelegate {
 		)
 
 		coordinator.start(with: result)
+	}
+	
+	func showToolbox() {
+		rootViewController.pushViewController(BEToolboxViewController(), animated: true)
+	}
+	
+	func showAlreadyDidTestScreen() {
+		let navController = ENANavigationControllerWithFooter(rootViewController: BEAlreadyDidTestViewController())
+		navController.navigationBar.prefersLargeTitles = true
+		rootViewController.present(navController, animated: true)
 	}
 
 	func showInviteFriends() {

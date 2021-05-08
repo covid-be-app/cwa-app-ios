@@ -83,12 +83,6 @@ class CoordinatorTests: XCTestCase {
 		XCTAssertTrue(setViewControllersWasCalled)
 	}
 
-	func test_coordinator_shouldShowRiskLegend() {
-		coordinator.showRiskLegend()
-		let presentWasCalled = coordinator.mockNavigationController.presentWasCalled
-		XCTAssertTrue(presentWasCalled)
-	}
-
 	func test_coordinator_shouldShowExposureNotificationSetting() {
 		coordinator.showExposureNotificationSetting(enState: .unknown)
 		let pushViewControllerWasCalled = coordinator.mockNavigationController.pushViewControllerWasCalled

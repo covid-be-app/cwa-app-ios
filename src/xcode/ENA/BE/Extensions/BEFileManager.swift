@@ -30,4 +30,12 @@ extension FileManager {
 		
 		return applicationSupportURL
 	}
+	
+	func removeTemporaryDirectoryContents() throws {
+		let tempDir = self.temporaryDirectory
+		let contents = try self.contentsOfDirectory(at: tempDir, includingPropertiesForKeys: nil)
+		try contents.forEach { item in
+			try self.removeItem(at: item)
+		}
+	}
 }

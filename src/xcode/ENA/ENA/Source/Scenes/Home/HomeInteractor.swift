@@ -275,12 +275,15 @@ extension HomeInteractor {
 
 	private func setupTestResultConfigurator() -> HomeTestResultCellConfigurator {
 		testResultConfigurator.primaryAction = homeViewController?.showTestResultScreen
+		
 		return testResultConfigurator
 	}
 
 	func setupSubmitConfigurator() -> HomeTestResultCellConfigurator {
 		let submitConfigurator = HomeTestResultCellConfigurator()
 		submitConfigurator.primaryAction = homeViewController?.showExposureSubmissionWithoutResult
+		submitConfigurator.secondaryAction = homeViewController?.showAlreadyDidTestScreen
+
 		return submitConfigurator
 	}
 
@@ -290,6 +293,10 @@ extension HomeInteractor {
 			self.homeViewController?.showExposureSubmission(with: self.testResult)
 		}
 		return configurator
+	}
+	
+	func setupToolboxConfigurator() -> BEHomeToolboxCellConfigurator {
+		return BEHomeToolboxCellConfigurator()
 	}
 
 	func setupActiveConfigurator() -> HomeActivateCellConfigurator {
@@ -305,12 +312,9 @@ extension HomeInteractor {
 		activeConfigurator = setupActiveConfigurator()
 		actionsConfigurators.append(activeConfigurator)
 
-		// :BE:
-		// MARK: - Add summary card
-		
-		if let summaryConfigurator = setupInfectionSummaryConfigurator() {
-			actionsConfigurators.append(summaryConfigurator)
-		}
+		// MARK: - Add toolbox card
+
+		actionsConfigurators.append(setupToolboxConfigurator())
 
 		// MARK: - Add cards depending on result state.
 
@@ -362,6 +366,13 @@ extension HomeInteractor {
 			let submitCellConfigurator = setupSubmitConfigurator()
 			actionsConfigurators.append(submitCellConfigurator)
 		}
+
+		// MARK: - Add summary card
+		
+		if let summaryConfigurator = setupInfectionSummaryConfigurator() {
+			actionsConfigurators.append(summaryConfigurator)
+		}
+
 
 		return actionsConfigurators
 	}

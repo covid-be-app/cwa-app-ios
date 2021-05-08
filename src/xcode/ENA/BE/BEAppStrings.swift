@@ -34,10 +34,13 @@ enum BEAppStrings {
 	enum BEMobileTestId {
 		static let title = NSLocalizedString("BEMobileTestId_title", comment: "")
 		static let select = NSLocalizedString("BEMobileTestId_Select", comment: "")
+		
+		static let subtitle = NSLocalizedString("BEMobileTestId_subtitle", comment: "")
 
 		static let close = NSLocalizedString("BEMobileTestId_Close", comment: "")
 		static let saveExplanation = NSLocalizedString("BEMobileTestId_saveExplanation", comment: "")
-		
+		static let saveExplanation2 = NSLocalizedString("BEMobileTestId_saveExplanation2", comment: "")
+
 		static let dateInfectious = NSLocalizedString("BEMobileTestId_dateInfectious", comment: "")
 		static let code = NSLocalizedString("BEMobileTestId_code", comment: "")
 	}
@@ -112,5 +115,65 @@ enum BEAppStrings {
 	
 	enum BEAppDisabled {
 		static let text = NSLocalizedString("App_Disabled_Text", comment: "")
+	}
+	
+	enum BEHome {
+		static let toolboxTitle = NSLocalizedString("BEHome_Toolbox_title", comment: "")
+		static let toolboxDescription = NSLocalizedString("BEHome_Toolbox_description", comment: "")
+	}
+	
+	enum BEToolbox {
+		static let vaccinationInformation = NSLocalizedString("BEHome_BEToolbox_vaccinationInformation", comment: "")
+		static let testCenter = NSLocalizedString("BEHome_BEToolbox_testCenter", comment: "")
+		static let testReservation = NSLocalizedString("BEHome_BEToolbox_testReservation", comment: "")
+		static let quarantineCertificate = NSLocalizedString("BEHome_BEToolbox_quarantineCertificate", comment: "")
+		static let passengerLocatorForm = NSLocalizedString("BEHome_BEToolbox_passengerLocatorForm", comment: "")
+		static let declarationOfHonour = NSLocalizedString("BEHome_BEToolbox_declarationOfHonour", comment: "")
+
+		static let vaccinationInformationTitle = NSLocalizedString("BEHome_BEToolbox_vaccinationInformationTitle", comment: "")
+		static let testReservationTitle = NSLocalizedString("BEHome_BEToolbox_testReservationTitle", comment: "")
+		static let quarantineCertificateTitle = NSLocalizedString("BEHome_BEToolbox_quarantineCertificateTitle", comment: "")
+		static let passengerLocatorFormTitle = NSLocalizedString("BEHome_BEToolbox_passengerLocatorFormTitle", comment: "")
+
+		
+		static let epidemiologicalSituation = NSLocalizedString("BEHome_BEToolbox_epidemiologicalSituation", comment: "")
+		static let registerToBeVaccinated = NSLocalizedString("BEHome_BEToolbox_registerToBeVaccinated", comment: "")
+		
+		static let epidemiologicalSituationURL = URL(string: "https://datastudio.google.com/embed/u/0/reporting/c14a5cfc-cab7-4812-848c-0369173148ab/page/hOMwB")!
+		static let registerToBeVaccinatedURL = URL(string: "https://www.qvax.be/region")!
+		
+		
+		static let bookATest = NSLocalizedString("BEHome_BEToolbox_bookATest", comment: "")
+		static let bookATestURL = URL(string: "https://testcovid.doclr.be")!
+		
+		static let bookATestInBrussels = NSLocalizedString("BEHome_BEToolbox_bookATestInBrussels", comment: "")
+		static let bookATestInBrusselsURL = URL(string: "https://brussels.testcovid.be/fr")!
+
+		static let quarantineCertificateURL = URL(string: NSLocalizedString("BEHome_BEToolbox_quarantineCertificateURL", comment: ""))!
+
+		static let passengerLocatorFormFR = "Formulaire de Localisation du Passager"
+		static let passengerLocatorFormEN = "Passenger Locator Form"
+		static let passengerLocatorFormNL = "Passenger Locator Form"
+		static let passengerLocatorFormDE = "Passagier-Lokalisierungsformular"
+
+		static let passengerLocatorFormURLFR = URL(string: "https://travel.info-coronavirus.be/fr/public-health-passenger-locator-form")!
+		static let passengerLocatorFormURLEN = URL(string: "https://travel.info-coronavirus.be/public-health-passenger-locator-form")!
+		static let passengerLocatorFormURLNL = URL(string: "https://travel.info-coronavirus.be/nl/public-health-passenger-locator-form")!
+		static let passengerLocatorFormURLDE = URL(string: "https://travel.info-coronavirus.be/de/public-health-passenger-locator-form")!
+
+		static let testCenterURL = URL(string: "https://www.google.com/maps/d/u/0/viewer?mid=1GFrpKwhDE97_pplhtikcfDxakEhohXst&ll=50.48641435902384%2C4.395339249999988&z=9")!
+	}
+	
+	enum BEAlreadyDidTest {
+		static let title = NSLocalizedString("BEAlreadyDidTest_title", comment: "")
+		
+		static let possibilitiesTitle = NSLocalizedString("BEAlreadyDidTest_possibilitiesTitle", comment: "")
+		static let possibility1 = NSLocalizedString("BEAlreadyDidTest_possibility1", comment: "")
+		static let possibility2 = NSLocalizedString("BEAlreadyDidTest_possibility2", comment: "")
+		static let possibility3 = NSLocalizedString("BEAlreadyDidTest_possibility3", comment: "")
+		
+		static let close = NSLocalizedString("BEMobileTestId_Close", comment: "")
+		static let imageDescription = NSLocalizedString("BEAlreadyDidTest_AccImageDescription", comment: "")
+		
 	}
 }

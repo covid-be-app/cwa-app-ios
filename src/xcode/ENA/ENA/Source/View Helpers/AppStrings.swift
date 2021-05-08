@@ -166,11 +166,7 @@ enum AppStrings {
 	enum ExposureSubmissionWarnOthers {
 		static let title = NSLocalizedString("ExposureSubmissionWarnOthers_title", comment: "")
 		static let accImageDescription = NSLocalizedString("ExposureSubmissionWarnOthers_AccImageDescription", comment: "")
-		static let continueButton = NSLocalizedString("ExposureSubmissionWarnOthers_continueButton", comment: "")
-		static let sectionTitle = NSLocalizedString("ExposureSubmissionWarnOthers_sectionTitle", comment: "")
 		static let description = NSLocalizedString("ExposureSubmissionWarnOthers_description", comment: "")
-		static let dataPrivacyDescription = NSLocalizedString("ExposureSubmissionWarnOthers_dataPrivacyDescription", comment: "")
-		static let dataPrivacyTitle = NSLocalizedString("ExposureSubmissionWarnOthers_dataPrivacyTitle", comment: "")
 	}
 
 	enum ExposureSubmissionSuccess {
@@ -438,7 +434,9 @@ enum AppStrings {
 		// Submit Card
 		static let submitCardTitle = NSLocalizedString("Home_SubmitCard_Title", comment: "")
 		static let submitCardBody = NSLocalizedString("Home_SubmitCard_Body", comment: "")
+		static let submitCardWarning = NSLocalizedString("Home_SubmitCard_Warning", comment: "")
 		static let submitCardButton = NSLocalizedString("Home_SubmitCard_Button", comment: "")
+		static let alreadyDidTestButton = NSLocalizedString("Home_SubmitCard_alreadyDidTestButton", comment: "")
 
 		static let settingsCardTitle = NSLocalizedString("Home_SettingsCard_Title", comment: "")
 		static let appInformationCardTitle = NSLocalizedString("Home_AppInformationCard_Title", comment: "")
@@ -569,6 +567,7 @@ enum AppStrings {
 		static let imprintSection3Text = NSLocalizedString("App_Information_Imprint_Section3_Text", comment: "")
 		static let imprintSection4Title = NSLocalizedString("App_Information_Imprint_Section4_Title", comment: "")
 		static let imprintSection4Text = NSLocalizedString("App_Information_Imprint_Section4_Text", comment: "")
+		static let imprintSection5Text = NSLocalizedString("App_Information_Imprint_Section5_Text", comment: "")
 
 		static let legalNavigation = NSLocalizedString("App_Information_Legal_Navigation", comment: "")
 		static let legalImageDescription = NSLocalizedString("App_Information_Legal_ImageDescription", comment: "")

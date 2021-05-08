@@ -28,6 +28,7 @@ class HomeTestResultCellConfigurator: TableViewCellConfigurator {
 	var testResult: TestResult?
 
 	var primaryAction: (() -> Void)?
+	var secondaryAction: (() -> Void)?
 
 	func configure(cell: HomeTestResultTableViewCell) {
 		cell.delegate = self
@@ -50,9 +51,11 @@ class HomeTestResultCellConfigurator: TableViewCellConfigurator {
 		cell.configure(
 			title: AppStrings.Home.submitCardTitle,
 			description: AppStrings.Home.submitCardBody,
+			warning: AppStrings.Home.submitCardWarning,
 			button: AppStrings.Home.submitCardButton,
-			image: UIImage(named: "Illu_Hand_with_phone-initial"),
-			accessibilityIdentifier: AccessibilityIdentifiers.Home.submitCardButton
+			secondButton: AppStrings.Home.alreadyDidTestButton,
+			accessibilityIdentifier: AccessibilityIdentifiers.Home.submitCardButton,
+			showDisclosureArrow: false
 		)
 	}
 
@@ -62,9 +65,9 @@ class HomeTestResultCellConfigurator: TableViewCellConfigurator {
 			subtitle: AppStrings.Home.resultCardNegativeTitle,
 			description: AppStrings.Home.resultCardNegativeDesc,
 			button: AppStrings.Home.resultCardShowResultButton,
-			image: UIImage(named: "Illu_Hand_with_phone-negativ"),
 			tintColor: .enaColor(for: .textSemanticGreen),
-			accessibilityIdentifier: AccessibilityIdentifiers.Home.resultCardShowResultButton
+			accessibilityIdentifier: AccessibilityIdentifiers.Home.resultCardShowResultButton,
+			showDisclosureArrow: true
 		)
 	}
 
@@ -74,9 +77,9 @@ class HomeTestResultCellConfigurator: TableViewCellConfigurator {
 			subtitle: AppStrings.Home.resultCardInvalidTitle,
 			description: AppStrings.Home.resultCardInvalidDesc,
 			button: AppStrings.Home.resultCardShowResultButton,
-			image: UIImage(named: "Illu_Hand_with_phone-error"),
 			tintColor: .enaColor(for: .textSemanticGray),
-			accessibilityIdentifier: AccessibilityIdentifiers.Home.resultCardShowResultButton
+			accessibilityIdentifier: AccessibilityIdentifiers.Home.resultCardShowResultButton,
+			showDisclosureArrow: true
 		)
 	}
 
@@ -85,9 +88,9 @@ class HomeTestResultCellConfigurator: TableViewCellConfigurator {
 			title: AppStrings.Home.resultCardResultUnvailableTitle,
 			description: AppStrings.Home.resultCardPendingDesc,
 			button: AppStrings.Home.resultCardShowResultButton,
-			image: UIImage(named: "Illu_Hand_with_phone-pending"),
 			tintColor: .enaColor(for: .textPrimary2),
-			accessibilityIdentifier: AccessibilityIdentifiers.Home.resultCardShowResultButton
+			accessibilityIdentifier: AccessibilityIdentifiers.Home.resultCardShowResultButton,
+			showDisclosureArrow: true
 		)
 	}
 
@@ -103,7 +106,11 @@ class HomeTestResultCellConfigurator: TableViewCellConfigurator {
 }
 
 extension HomeTestResultCellConfigurator: HomeTestResultTableViewCellDelegate {
-	func testResultCollectionViewCellPrimaryActionTriggered(_ collectionViewCell: HomeTestResultTableViewCell) {
+	func testResultCollectionViewCellPrimaryActionTriggered(_ cell: HomeTestResultTableViewCell) {
 		primaryAction?()
+	}
+
+	func testResultCollectionViewCellSecondayActionTriggered(_ cell: HomeTestResultTableViewCell) {
+		secondaryAction?()
 	}
 }
