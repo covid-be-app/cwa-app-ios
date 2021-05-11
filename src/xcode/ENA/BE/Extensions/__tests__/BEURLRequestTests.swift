@@ -148,15 +148,19 @@ class BEURLRequestTests: XCTestCase {
 			keys: keys)
 		
 		guard
-			let firstHeaders = keyRequest.allHTTPHeaderFields,
-			let secondHeaders = coviCodeKeyRequest.allHTTPHeaderFields,
+			var firstHeaders = keyRequest.allHTTPHeaderFields,
+			var secondHeaders = coviCodeKeyRequest.allHTTPHeaderFields,
 			let firstBody = keyRequest.httpBody,
 			let secondBody = coviCodeKeyRequest.httpBody
 			else {
 			XCTAssert(false)
 			return
 		}
-		
+
+		// we know the base64 secret key can have different lengths, so we remove it
+		firstHeaders.removeValue(forKey: "Secret-Key")
+		secondHeaders.removeValue(forKey: "Secret-Key")
+
 		let firstData = try JSONEncoder().encode(firstHeaders)
 		let secondData = try JSONEncoder().encode(secondHeaders)
 		
