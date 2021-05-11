@@ -31,7 +31,7 @@ class ExposureSubmissionServiceFactory { }
 #if !UITESTING
 
 extension ExposureSubmissionServiceFactory {
-	static func create(diagnosiskeyRetrieval: DiagnosisKeysRetrieval, client: Client, store: Store) -> ExposureSubmissionService {
+	static func create(diagnosiskeyRetrieval: DiagnosisKeysRetrieval, client: Client, store: Store) -> BEExposureSubmissionService {
 		return BEExposureSubmissionServiceImpl(
 			diagnosiskeyRetrieval: diagnosiskeyRetrieval,
 			client: client,
@@ -49,7 +49,7 @@ extension ExposureSubmissionServiceFactory {
 /// If the parameter is _not_ provided, the factory will instantiate a regular BEExposureSubmissionService.
 /// - NOTE: This is condtionally compiled so no test code spills into the release build.
 extension ExposureSubmissionServiceFactory {
-	static func create(diagnosiskeyRetrieval: DiagnosisKeysRetrieval, client: Client, store: Store) -> ExposureSubmissionService {
+	static func create(diagnosiskeyRetrieval: DiagnosisKeysRetrieval, client: Client, store: Store) -> BEExposureSubmissionService {
 
 		guard isEnabled(.useMock) else {
 			return BEExposureSubmissionServiceImpl(

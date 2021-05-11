@@ -22,7 +22,7 @@ import Foundation
 import ExposureNotification
 import XCTest
 
-final class BEHTTPClientSubmitTests: XCTestCase {
+final class BEHTTPClientSubmitCoviCodeTests: XCTestCase {
 	let mockUrl = URL(staticString: "http://example.com")
 	let expectationsTimeout: TimeInterval = 2
 
@@ -32,8 +32,10 @@ final class BEHTTPClientSubmitTests: XCTestCase {
 		return [key]
 	}
 	
-	private var mobileTestId = BEMobileTestId(symptomsStartDate: Date())
-	
+	private var datePatientInfectious = BEDateString.fromDateWithoutTime(date: Date())
+	private var dateTestCommunicated = BEDateString.fromDateWithoutTime(date: Date())
+	private var coviCode = "111111111111"
+
 	func testSubmit_Success() {
 		// Arrange
 		let stack = MockNetworkStack(
@@ -41,15 +43,16 @@ final class BEHTTPClientSubmitTests: XCTestCase {
 			// cannot be nil since this is not a a completion handler can be in (response + nil body)
 			responseData: Data()
 		)
-		let result = TestResult.positive
 		let expectation = self.expectation(description: "completion handler is called without an error")
 
+		
 		// Act
-		HTTPClient.makeWith(mock: stack).submit(
+		HTTPClient.makeWith(mock: stack).submitWithCoviCode(
 			keys: keys,
-			mobileTestId: mobileTestId,
-			testResult: result,
-			isFake: false) { error in
+			coviCode: coviCode,
+			datePatientInfectious: datePatientInfectious,
+			symptomsStartDate: nil,
+			dateTestCommunicated: dateTestCommunicated) { error in
 			defer { expectation.fulfill() }
 			XCTAssertTrue(error == nil)
 		}
@@ -67,15 +70,16 @@ final class BEHTTPClientSubmitTests: XCTestCase {
 				error: TestError.error
 			)
 		)
-		let testResult = TestResult.positive
+
 		let expectation = self.expectation(description: AppStrings.ExposureSubmission.generalErrorTitle)
 
 		// Act
-		HTTPClient.makeWith(mock: stack).submit(
+		HTTPClient.makeWith(mock: stack).submitWithCoviCode(
 			keys: keys,
-			mobileTestId: mobileTestId,
-			testResult: testResult,
-			isFake: false) {
+			coviCode: coviCode,
+			datePatientInfectious: datePatientInfectious,
+			symptomsStartDate: nil,
+			dateTestCommunicated: dateTestCommunicated) {
 			error = $0
 			expectation.fulfill()
 		}
@@ -95,15 +99,15 @@ final class BEHTTPClientSubmitTests: XCTestCase {
 				error: TestError.error
 			)
 		)
-		let testResult = TestResult.positive
 		let expectation = self.expectation(description: "SpecificError")
 
 		// Act
-		HTTPClient.makeWith(mock: stack).submit(
+		HTTPClient.makeWith(mock: stack).submitWithCoviCode(
 			keys: keys,
-			mobileTestId: mobileTestId,
-			testResult: testResult,
-			isFake: false) { error in
+			coviCode: coviCode,
+			datePatientInfectious: datePatientInfectious,
+			symptomsStartDate: nil,
+			dateTestCommunicated: dateTestCommunicated) { error in
 			defer {
 				expectation.fulfill()
 			}
@@ -128,15 +132,15 @@ final class BEHTTPClientSubmitTests: XCTestCase {
 		let stack = MockNetworkStack(
 			mockSession: mockURLSession
 		)
-		let testResult = TestResult.positive
 		let expectation = self.expectation(description: "ResponseNil")
 
 		// Act
-		HTTPClient.makeWith(mock: stack).submit(
+		HTTPClient.makeWith(mock: stack).submitWithCoviCode(
 			keys: keys,
-			mobileTestId: mobileTestId,
-			testResult: testResult,
-			isFake: false) { error in
+			coviCode: coviCode,
+			datePatientInfectious: datePatientInfectious,
+			symptomsStartDate: nil,
+			dateTestCommunicated: dateTestCommunicated) { error in
 			defer {
 				expectation.fulfill()
 			}
@@ -159,15 +163,15 @@ final class BEHTTPClientSubmitTests: XCTestCase {
 			httpStatus: 400,
 			responseData: Data()
 		)
-		let testResult = TestResult.positive
 		let expectation = self.expectation(description: "Response400")
 
 		// Act
-		HTTPClient.makeWith(mock: stack).submit(
+		HTTPClient.makeWith(mock: stack).submitWithCoviCode(
 			keys: keys,
-			mobileTestId: mobileTestId,
-			testResult: testResult,
-			isFake: false) { error in
+			coviCode: coviCode,
+			datePatientInfectious: datePatientInfectious,
+			symptomsStartDate: nil,
+			dateTestCommunicated: dateTestCommunicated) { error in
 			defer { expectation.fulfill() }
 			guard let error = error else {
 				XCTFail("error expected")
@@ -181,32 +185,33 @@ final class BEHTTPClientSubmitTests: XCTestCase {
 
 		waitForExpectations(timeout: expectationsTimeout)
 	}
-	
-	func testSubmit_VerifyPOSTBodyContent() throws {
-		let expectedToken = "SomeToken"
-		let sendPostExpectation = expectation(
-			description: "Expect that the client sends a POST request"
-		)
-		let verifyPostBodyContent: MockUrlSession.URLRequestObserver = { request in
-			defer { sendPostExpectation.fulfill() }
 
-			guard let content = try? JSONDecoder().decode([String: String].self, from: request.httpBody ?? Data()) else {
-				XCTFail("POST body was empty, expected testResultPollingToken JSON!")
+	func testSubmit_Response403() {
+		// Arrange
+		let stack = MockNetworkStack(
+			httpStatus: 403,
+			responseData: Data()
+		)
+		let expectation = self.expectation(description: "Response403")
+
+		// Act
+		HTTPClient.makeWith(mock: stack).submitWithCoviCode(
+			keys: keys,
+			coviCode: coviCode,
+			datePatientInfectious: datePatientInfectious,
+			symptomsStartDate: nil,
+			dateTestCommunicated: dateTestCommunicated) { error in
+			defer { expectation.fulfill() }
+			guard let error = error else {
+				XCTFail("error expected")
 				return
 			}
-
-			guard content["testResultPollingToken"] == expectedToken else {
-				XCTFail("POST JSON body did not have testResultPollingToken value, or it was incorrect!")
+			guard case SubmissionError.invalidCoviCode = error else {
+				XCTFail("We expect error to be of type invalidTan")
 				return
 			}
 		}
-		let stack = MockNetworkStack(
-			httpStatus: 200,
-			responseData: try? JSONEncoder().encode(GetRegistrationTokenResponse(registrationToken: expectedToken)),
-			requestObserver: verifyPostBodyContent
-		)
 
-		HTTPClient.makeWith(mock: stack).getTestResult(forDevice: expectedToken) { _ in }
 		waitForExpectations(timeout: expectationsTimeout)
 	}
 }

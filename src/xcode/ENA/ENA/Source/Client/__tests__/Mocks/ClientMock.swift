@@ -102,6 +102,17 @@ extension ClientMock: Client {
 	func submit(keys _: [ENTemporaryExposureKey], tan: String, completion: @escaping SubmitKeysCompletionHandler) {
 		completion(submissionError)
 	}
+	
+	func submitWithCoviCode(
+		keys: [ENTemporaryExposureKey],
+		coviCode: String,
+		datePatientInfectious: BEDateString,
+		symptomsStartDate: BEDateString?,
+		dateTestCommunicated: BEDateString,
+		completion: @escaping SubmitKeysCompletionHandler
+	) {
+		completion(submissionError)
+	}
 
 	func getRegistrationToken(forKey _: String, withType: String, completion completeWith: @escaping RegistrationHandler) {
 		completeWith(.success("dummyRegistrationToken"))
@@ -127,6 +138,18 @@ extension ClientMock: Client {
 	}
 	
 	func submit(keys: [ENTemporaryExposureKey], mobileTestId: BEMobileTestId?, testResult: TestResult?, isFake: Bool, completion: @escaping SubmitKeysCompletionHandler) {
+		completion(nil)
+	}
+	
+	func submitWithCoviCode(
+		keys: [ENTemporaryExposureKey],
+		coviCode: String,
+		datePatientInfectious: BEDateString,
+		symptomsStartDate: BEDateString?,
+		dateTestCommunicated: BEDateString,
+		isFake: Bool,
+		completion: @escaping SubmitKeysCompletionHandler
+	) {
 		completion(nil)
 	}
 	

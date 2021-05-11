@@ -63,7 +63,7 @@ class BEURLRequestTests: XCTestCase {
 		var keys:[ENTemporaryExposureKey] = []
 		let dayCount = 14
 		let startDate = Calendar.current.date(byAdding: .day, value: -dayCount, to: Date(), wrappingComponents: true)!
-		let headerKeys = ["Secret-Key","Random-String","Date-Patient-Infectious","Date-Test-Communicated","Result-Channel","Content-Type"]
+		let headerKeys = ["Secret-Key","Random-String","Date-Patient-Infectious","Date-Test-Communicated","Result-Channel","Content-Type","Covi-Code"]
 		let onsetOfSymptomsKey = "Date-Onset-Of-Symptoms"
 
 		for x in 0..<dayCount+1 {
@@ -117,5 +117,54 @@ class BEURLRequestTests: XCTestCase {
 		}
 		
 		XCTAssertEqual(allHeaderKeys.count, 0)
+	}
+	
+	func testEqualSize() throws {
+		var keys:[ENTemporaryExposureKey] = []
+		let dayCount = 7
+		let startDate = Calendar.current.date(byAdding: .day, value: -dayCount, to: Date(), wrappingComponents: true)!
+		let mobileTestId = BEMobileTestId()
+		
+		for x in 0..<dayCount+1 {
+			let date = Calendar.current.date(byAdding: .day, value: x, to: startDate, wrappingComponents: true)!
+			let key = ENTemporaryExposureKey.random(date)
+
+			keys.append(key)
+		}
+
+		let keyRequest = try URLRequest.submitKeysRequest(
+			configuration: HTTPClient.Configuration.fake,
+			mobileTestId: BEMobileTestId(),
+			testResult: TestResult.positive,
+			keys: keys
+		)
+		
+		let coviCodeKeyRequest = try URLRequest.submitCoviCodeKeysRequest(
+			configuration: HTTPClient.Configuration.fake,
+			coviCode: "111111111111",
+			datePatientInfectious: mobileTestId.datePatientInfectious,
+			symptomsStartDate: mobileTestId.symptomsStartDate,
+			dateTestCommunicated: TestResult.positive.dateTestCommunicated,
+			keys: keys)
+		
+		guard
+			var firstHeaders = keyRequest.allHTTPHeaderFields,
+			var secondHeaders = coviCodeKeyRequest.allHTTPHeaderFields,
+			let firstBody = keyRequest.httpBody,
+			let secondBody = coviCodeKeyRequest.httpBody
+			else {
+			XCTAssert(false)
+			return
+		}
+
+		// we know the base64 secret key can have different lengths, so we remove it
+		firstHeaders.removeValue(forKey: "Secret-Key")
+		secondHeaders.removeValue(forKey: "Secret-Key")
+
+		let firstData = try JSONEncoder().encode(firstHeaders)
+		let secondData = try JSONEncoder().encode(secondHeaders)
+		
+		XCTAssertEqual(firstData.count, secondData.count)
+		XCTAssertEqual(firstBody.count, secondBody.count)
 	}
 }

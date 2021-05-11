@@ -29,7 +29,7 @@ enum DeviceRegistrationKey {
 // :BE: replaced TestResult with a more complex structure
 // :BE: added access to mobile test id
 
-protocol ExposureSubmissionService: class {
+protocol ExposureSubmissionService: AnyObject {
 	typealias ExposureSubmissionHandler = (_ error: ExposureSubmissionError?) -> Void
 	typealias RegistrationHandler = (Result<String, ExposureSubmissionError>) -> Void
 	typealias TestResultHandler = (Result<TestResult, ExposureSubmissionError>) -> Void
@@ -208,7 +208,7 @@ enum ExposureSubmissionError: Error, Equatable {
 	case noKeys
 	case noConsent
 	case noExposureConfiguration
-	case invalidTan
+	case invalidCoviCode
 	case invalidResponse
 	case noResponse
 	case teleTanAlreadyUsed
@@ -229,8 +229,8 @@ extension ExposureSubmissionError: LocalizedError {
 			return "\(AppStrings.ExposureSubmissionError.other)\(code)\(AppStrings.ExposureSubmissionError.otherend)"
 		case let .httpError(desc):
 			return "\(AppStrings.ExposureSubmissionError.httpError)\n\(desc)"
-		case .invalidTan:
-			return AppStrings.ExposureSubmissionError.invalidTan
+		case .invalidCoviCode:
+			return BEAppStrings.BEExposureSubmissionError.invalidCoviCode
 		case .enNotEnabled:
 			return AppStrings.ExposureSubmissionError.enNotEnabled
 		case .notAuthorized:

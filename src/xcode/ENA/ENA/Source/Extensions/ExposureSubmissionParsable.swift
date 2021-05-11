@@ -72,8 +72,8 @@ extension ExposureNotificationError: ExposureSubmissionErrorTransformable {
 extension SubmissionError: ExposureSubmissionErrorTransformable {
 	func toExposureSubmissionError() -> ExposureSubmissionError {
 		switch self {
-		case .invalidTan:
-			return .invalidTan
+		case .invalidCoviCode:
+			return .invalidCoviCode
 		case let .serverError(code):
 			return .serverError(code)
 		default:

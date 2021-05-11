@@ -118,12 +118,21 @@ protocol Client {
 		isFake: Bool,
 		completion: @escaping SubmitKeysCompletionHandler
 	)
+	
+	func submitWithCoviCode(
+		keys: [ENTemporaryExposureKey],
+		coviCode: String,
+		datePatientInfectious: BEDateString,
+		symptomsStartDate: BEDateString?,
+		dateTestCommunicated: BEDateString,
+		completion: @escaping SubmitKeysCompletionHandler
+	)
 }
 
 enum SubmissionError: Error {
 	case other(Error)
 	case invalidPayloadOrHeaders
-	case invalidTan
+	case invalidCoviCode
 	case serverError(Int)
 	case requestCouldNotBeBuilt
 	case simpleError(String)
@@ -136,8 +145,8 @@ extension SubmissionError: LocalizedError {
 			return "\(AppStrings.ExposureSubmissionError.other)\(code)\(AppStrings.ExposureSubmissionError.otherend)"
 		case .invalidPayloadOrHeaders:
 			return "Received an invalid Payload or headers."
-		case .invalidTan:
-			return "Received invalid TAN"
+		case .invalidCoviCode:
+			return "Received invalid Covi-Code"
 		case .requestCouldNotBeBuilt:
 			return "The Submission Request could not be built correctly."
 		case let .simpleError(errorString):

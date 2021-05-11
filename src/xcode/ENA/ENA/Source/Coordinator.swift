@@ -47,7 +47,9 @@ class Coordinator: RequiresAppDependencies {
 	private var settingsController: SettingsViewController?
 	private var exposureDetectionController: ExposureDetectionViewController?
 
-	private lazy var exposureSubmissionService: ExposureSubmissionService = {
+	private var coviCodeCoordinator: BECoviCodeCoordinator?
+	
+	private lazy var exposureSubmissionService: BEExposureSubmissionService = {
 		ExposureSubmissionServiceFactory.create(
 			diagnosiskeyRetrieval: self.exposureManager,
 			client: self.client,
@@ -190,7 +192,7 @@ extension Coordinator: HomeViewControllerDelegate {
 		// which is managed by UIKit.
 		
 		// :BE: replace ExposureSubmissionCoordinator with BEExposureSubmissionCoordinator
-		let coordinator = BEExposureSubmissionCoordinator(
+		let coordinator = BEExposureSubmissionFromTestCoordinator(
 			parentNavigationController: rootViewController,
 			exposureSubmissionService: exposureSubmissionService,
 			delegate: self
@@ -202,7 +204,13 @@ extension Coordinator: HomeViewControllerDelegate {
 	func showToolbox() {
 		rootViewController.pushViewController(BEToolboxViewController(), animated: true)
 	}
-	
+
+	func showCoviCode() {
+		
+		coviCodeCoordinator = BECoviCodeCoordinator(exposureSubmissionService: exposureSubmissionService, parentViewController: rootViewController, delegate: self)
+		coviCodeCoordinator?.start()
+	}
+
 	func showAlreadyDidTestScreen() {
 		let navController = ENANavigationControllerWithFooter(rootViewController: BEAlreadyDidTestViewController())
 		navController.navigationBar.prefersLargeTitles = true

@@ -43,6 +43,7 @@ struct TestResult : Codable, Hashable {
 		case unknown = 0
 		case lab = 1
 		case doctor = 2
+		case callcenter = 3
 	}
 
 	let result:Result
