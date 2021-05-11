@@ -28,7 +28,7 @@ class ExposureSubmissionTestResultViewController: DynamicTableViewController, EN
 	var testResult: TestResult?
 	var timeStamp: Int64?
 	
-	private(set) weak var coordinator: ExposureSubmissionCoordinating?
+	private(set) weak var coordinator: ExposureSubmissionFromTestCoordinating?
 	private(set) weak var exposureSubmissionService: BEExposureSubmissionService?
 
 	private var footerItem = ENANavigationFooterItem()
@@ -39,7 +39,7 @@ class ExposureSubmissionTestResultViewController: DynamicTableViewController, EN
 
 	// MARK: - Initializers.
 
-	init(coordinator: ExposureSubmissionCoordinating, exposureSubmissionService: BEExposureSubmissionService, testResult: TestResult?) {
+	init(coordinator: ExposureSubmissionFromTestCoordinating, exposureSubmissionService: BEExposureSubmissionService, testResult: TestResult?) {
 		self.coordinator = coordinator
 		self.exposureSubmissionService = exposureSubmissionService
 		self.testResult = testResult

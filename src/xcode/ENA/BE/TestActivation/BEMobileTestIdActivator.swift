@@ -23,7 +23,7 @@ import UIKit
 // Links a (new?) mobile test id to an activation code that we received from the government
 // url format: https://coronalert.be/en/corona-alert-form/?pcr=0000000000000000
 
-protocol BEMobileTestIdActivatorDelegate: class {
+protocol BEMobileTestIdActivatorDelegate: AnyObject {
 	func mobileTestIdActivatorFinished(_: BEMobileTestIdActivator)
 }
 

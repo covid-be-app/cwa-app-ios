@@ -19,7 +19,7 @@
 
 import UIKit
 
-protocol HomeTestResultTableViewCellDelegate: class {
+protocol HomeTestResultTableViewCellDelegate: AnyObject {
 	func testResultCollectionViewCellPrimaryActionTriggered(_ cell: HomeTestResultTableViewCell)
 	func testResultCollectionViewCellSecondayActionTriggered(_ cell: HomeTestResultTableViewCell)
 }

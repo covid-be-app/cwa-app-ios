@@ -298,6 +298,10 @@ extension HomeInteractor {
 	func setupToolboxConfigurator() -> BEHomeToolboxCellConfigurator {
 		return BEHomeToolboxCellConfigurator()
 	}
+	
+	func setupCoviCodeConfigurator() -> BEHomeCoviCodeCellConfigurator {
+		return BEHomeCoviCodeCellConfigurator()
+	}
 
 	func setupActiveConfigurator() -> HomeActivateCellConfigurator {
 		return HomeActivateCellConfigurator(state: state.enState)
@@ -315,6 +319,10 @@ extension HomeInteractor {
 		// MARK: - Add toolbox card
 
 		actionsConfigurators.append(setupToolboxConfigurator())
+
+		// MARK: - Add covi codes card
+
+		actionsConfigurators.append(setupCoviCodeConfigurator())
 
 		// MARK: - Add cards depending on result state.
 

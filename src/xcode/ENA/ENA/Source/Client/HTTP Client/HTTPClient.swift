@@ -432,6 +432,42 @@ final class HTTPClient: Client {
 		}
 	}
 	
+	func submitWithCoviCode(
+		keys: [ENTemporaryExposureKey],
+		coviCode: String,
+		datePatientInfectious: BEDateString,
+		symptomsStartDate: BEDateString?,
+		dateTestCommunicated: BEDateString,
+		completion: @escaping SubmitKeysCompletionHandler
+	) {
+		guard let request = try? URLRequest.submitCoviCodeKeysRequest(
+			configuration: configuration,
+			coviCode: coviCode,
+			datePatientInfectious: datePatientInfectious,
+			symptomsStartDate: symptomsStartDate,
+			dateTestCommunicated: dateTestCommunicated,
+			keys: keys
+		) else {
+			completion(.requestCouldNotBeBuilt)
+			return
+		}
+
+		session.response(for: request) { result in
+			switch result {
+			case let .success(response):
+				switch response.statusCode {
+				case 200: completion(nil)
+				case 201: completion(nil)
+				case 400: completion(.invalidPayloadOrHeaders)
+				case 403: completion(.invalidCoviCode)
+				default: completion(.serverError(response.statusCode))
+				}
+			case let .failure(error):
+				completion(.other(error))
+			}
+		}
+	}
+	
 	func submit(
 		keys: [ENTemporaryExposureKey],
 		mobileTestId: BEMobileTestId?,
@@ -465,7 +501,6 @@ final class HTTPClient: Client {
 				case 200: completion(nil)
 				case 201: completion(nil)
 				case 400: completion(.invalidPayloadOrHeaders)
-				case 403: completion(.invalidTan)
 				default: completion(.serverError(response.statusCode))
 				}
 			case let .failure(error):

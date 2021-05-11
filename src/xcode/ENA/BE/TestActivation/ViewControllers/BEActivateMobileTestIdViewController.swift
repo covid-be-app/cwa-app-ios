@@ -20,7 +20,7 @@
 import UIKit
 import WebKit
 
-protocol BEActivateMobileTestIdViewControllerDelegate: class {
+protocol BEActivateMobileTestIdViewControllerDelegate: AnyObject {
 	func activateMobileTestIdViewControllerFinished(_: BEActivateMobileTestIdViewController)
 	func activateMobileTestIdViewControllerCancelled(_: BEActivateMobileTestIdViewController)
 }

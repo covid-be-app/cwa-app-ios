@@ -21,7 +21,7 @@
 
 import ExposureNotification
 
-class MockExposureSubmissionCoordinator: ExposureSubmissionCoordinating {
+class MockExposureSubmissionCoordinator: ExposureSubmissionFromTestCoordinating {
 
 	// MARK: - Attributes.
 	var submitExposureCallback: (() -> Void)?

@@ -64,6 +64,12 @@ class BEMockExposureSubmissionService : BEExposureSubmissionService {
 		}
 	}
 	
+	func submitExposureWithCoviCode(coviCode: String, symptomsStartDate: Date?, completion: @escaping ExposureSubmissionHandler) {
+		DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+			completion(nil)
+		}
+	}
+	
 	func submitExposure(completionHandler: @escaping ExposureSubmissionHandler) {
 		fatalError("no longer supported")
 	}

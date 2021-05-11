@@ -35,6 +35,8 @@ class ENANavigationControllerWithFooter: UINavigationController {
 
 	private var topViewControllerWithFooterChild: ENANavigationControllerWithFooterChild? { topViewController as? ENANavigationControllerWithFooterChild }
 
+	var doKeyboardObservation: Bool = true
+	
 	override func loadView() {
 		super.loadView()
 
@@ -49,7 +51,10 @@ class ENANavigationControllerWithFooter: UINavigationController {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 
-		observeKeyboard()
+		if doKeyboardObservation {
+			observeKeyboard()
+		}
+		
 		observeNavigationItem(of: topViewController)
 		footerView.apply(navigationItem: topViewController?.navigationItem)
 	}
@@ -57,7 +62,10 @@ class ENANavigationControllerWithFooter: UINavigationController {
 	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
 
-		removeKeyboardObserver()
+		if doKeyboardObservation {
+			removeKeyboardObserver()
+		}
+		
 		navigationItemObserver?.invalidate()
 	}
 

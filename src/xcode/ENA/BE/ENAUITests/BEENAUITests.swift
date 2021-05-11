@@ -281,4 +281,27 @@ class BEENAUITests: XCTestCase {
 		XCTAssertTrue(app.images["BEAppStrings.BESettings.BEMobileDataUsageSettings.image"].waitForExistence(timeout: 5.0))
 		snapshot("ScreenShot_\(#function)_001")
 	}
+	
+	func testSendCoviCodes() {
+		app.launchArguments.append(contentsOf:[UITestingParameters.ExposureSubmission.useMock.rawValue])
+		app.launch()
+		XCTAssertTrue(app.cells["BEAppStrings.BEHome.coviCode"].waitForExistence(timeout: 5.0))
+		app.cells["BEAppStrings.BEHome.coviCode"].tap()
+		snapshot("ScreenShot_\(#function)_001")
+		XCTAssertTrue(app.buttons["BEAppStrings.BECoviCode.submit"].waitForExistence(timeout: 5.0))
+		app.buttons["BEAppStrings.BECoviCode.submit"].tap()
+		XCTAssertTrue(app.alerts.firstMatch.exists)
+		snapshot("ScreenShot_\(#function)_002")
+
+		// tap NO
+		app.alerts.buttons.element(boundBy: 1).tap()
+
+		app.textFields.element(boundBy: 0).tap()
+		app.textFields.element(boundBy: 0).typeText("111111111111")
+		snapshot("ScreenShot_\(#function)_003")
+
+		app.alerts.buttons.element(boundBy: 1).tap()
+		XCTAssertTrue(app.buttons["BEAppStrings.BEExposureSubmissionSuccess.button"].waitForExistence(timeout: 5.0))
+
+	}
 }
