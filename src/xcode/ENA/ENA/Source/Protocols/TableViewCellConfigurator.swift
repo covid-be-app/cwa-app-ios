@@ -17,7 +17,7 @@
 
 import UIKit
 
-protocol TableViewCellConfiguratorAny: class {
+protocol TableViewCellConfiguratorAny: AnyObject {
 	var viewAnyType: UITableViewCell.Type { get }
 
 	func configureAny(cell: UITableViewCell)

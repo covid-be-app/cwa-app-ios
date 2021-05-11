@@ -21,7 +21,7 @@ import Foundation
 import UIKit
 import ExposureNotification
 
-class BEExposureSubmissionCoordinator : NSObject, ExposureSubmissionCoordinating {
+class BEExposureSubmissionFromTestCoordinator : NSObject, ExposureSubmissionFromTestCoordinating {
 
 	// MARK: - Attributes.
 
@@ -244,20 +244,20 @@ class BEExposureSubmissionCoordinator : NSObject, ExposureSubmissionCoordinating
 	}
 }
 
-extension BEExposureSubmissionCoordinator: BEMobileTestIdGeneratorDelegate {
+extension BEExposureSubmissionFromTestCoordinator: BEMobileTestIdGeneratorDelegate {
 	func mobileTestIdGenerator(_ generator:BEMobileTestIdGenerator, generatedNewMobileTestId: Bool) {
 		showMobileTestIdViewController()
 	}
 }
 
-extension BEExposureSubmissionCoordinator : BEMobileTestIdViewControllerDelegate {
+extension BEExposureSubmissionFromTestCoordinator : BEMobileTestIdViewControllerDelegate {
 	
 	func mobileTestIdViewControllerFinished(_ vc: BEMobileTestIdViewController) {
 		self.navigationController?.dismiss(animated: true)
 	}
 }
 
-extension BEExposureSubmissionCoordinator : UINavigationControllerDelegate {
+extension BEExposureSubmissionFromTestCoordinator : UINavigationControllerDelegate {
 	func navigationController(_ controller: UINavigationController, willShow viewController: UIViewController, animated _: Bool) {
 		if let navigationController = controller as? ExposureSubmissionNavigationController {
 			navigationController.applyDefaultRightBarButtonItem(to: viewController)

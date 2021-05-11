@@ -29,6 +29,7 @@ protocol BEExposureSubmissionService : ExposureSubmissionService {
 	func finalizeSubmissionWithoutKeys()
 	func submitExposure(keys:[ENTemporaryExposureKey], completionHandler: @escaping ExposureSubmissionHandler)
 	func submitFakeExposure(completionHandler: @escaping ExposureSubmissionHandler)
+	func submitExposureWithCoviCode(coviCode: String, symptomsStartDate: Date?, completion: @escaping ExposureSubmissionHandler)
 	
 	func deleteMobileTestIdIfOutdated() -> Bool
 	
@@ -42,8 +43,7 @@ protocol BEExposureSubmissionService : ExposureSubmissionService {
 }
 
 class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposureSubmissionService {
-	
-	
+
 	private(set) override var mobileTestId:BEMobileTestId? {
 		get {
 			return store.mobileTestId
@@ -186,6 +186,12 @@ class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposure
 		}
 	}
 	
+	func retrieveDiagnosisKeysForCoviCode(
+		
+		completionHandler: @escaping BEExposureSubmissionGetKeysHandler) {
+		
+	}
+	
 	func retrieveDiagnosisKeys(completionHandler: @escaping BEExposureSubmissionGetKeysHandler) {
 		guard
 			let mobileTestId = store.mobileTestId,
@@ -244,6 +250,74 @@ class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposure
 			}
 			completionHandler(nil)
 		}
+	}
+	
+	func submitExposureWithCoviCode(coviCode: String, symptomsStartDate: Date?, completion: @escaping ExposureSubmissionHandler) {
+		var symptomsStartDateString: BEDateString?
+		
+		if let date = symptomsStartDate {
+			symptomsStartDateString = String.fromDateWithoutTime(date: date)
+		}
+		
+		let datePatientInfectious = BEMobileTestId.calculateDatePatientInfectious(symptomsStartDate: symptomsStartDate)
+		let dateTestCommunicated = BEDateString.fromDateWithoutTime(date: Date())
+		
+		
+		diagnosiskeyRetrieval.getKeysInDateRange(startDate: datePatientInfectious.dateInt, endDate: dateTestCommunicated.dateInt) { keys,error in
+			
+			if error == nil && keys == nil {
+				completion(.noKeys)
+				return
+			}
+			
+			if let error = error {
+				logError(message: "Error while retrieving diagnosis keys: \(error.localizedDescription)")
+				completion(self.parseError(error))
+				return
+			}
+
+			var processedKeys = keys!
+			processedKeys.processedForSubmission()
+			
+			self.client.submitWithCoviCode(keys: processedKeys, coviCode: coviCode, datePatientInfectious: datePatientInfectious, symptomsStartDate: symptomsStartDateString, dateTestCommunicated: dateTestCommunicated) { error in
+				if let error = error {
+					logError(message: "Error while submiting diagnosis keys: \(error.localizedDescription)")
+					completion(self.parseError(error))
+					return
+				}
+
+				self.submitExposureCleanup()
+				log(message: "Successfully completed exposure sumbission.")
+				completion(nil)
+			}
+		}
+
+		/*
+		
+		retrieveDiagnosisKeys { result in
+			switch result {
+			case .failure(let error):
+				switch error {
+				case .noKeys:
+					self.exposureSubmissionService.finalizeSubmissionWithoutKeys()
+					self.showThankYouScreen()
+				case .internal, .unsupported, .rateLimited:
+					self.showErrorAlert(message: error.localizedDescription)
+				default:
+					logError(message: "error: \(error.localizedDescription)", level: .error)
+					self.showErrorAlert(message: error.localizedDescription)
+				}
+				
+			case .success(let keys):
+				self.submitExposureKeys(exposureKeys: keys, coviCode: coviCode, symptomsStartDate: symptomsStartDate)
+			}
+		}
+
+		*/
+		
+		
+		
+
 	}
 
 	private func submit(keys: [ENTemporaryExposureKey], completion: @escaping ExposureSubmissionHandler) {

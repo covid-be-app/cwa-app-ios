@@ -425,3 +425,14 @@
 "ExposureSubmissionWarnOthers_AccImageDescription" = "A device transmits an encrypted positive test diagnosis to the system.";
 "App_Information_Imprint_Section5_Text" = "Questions? E-Mail: info@coronalert.be";
 "BEMobileTestId_saveExplanationWebForm" = "";
+"BEHome_CoviCode_title" = "I Tested Positive";
+"BEHome_CoviCode_description" = "Received a positive test result but did not use the app? Use the code from the call center to warn others.";
+"BECoviCode_enterCodeTitle" = "Enter your Covi-Code";
+"BECoviCode_enterCodeDescription" = "Enter the 12-digit Covi-Code you received from the contact center";
+"BECoviCode_ok" = "Ok";
+"BECoviCode_cancel" = "Cancel";
+"BECoviCode_title" = "Use The Covi-Code";
+"BECoviCode_subtitle" = "Help others";
+"BECoviCode_explanation" = "Use the 12-digit code from the contact center to warn your contacts about a potential high risk exposure";
+"BECoviCode_submit" = "Send Code";
+"BEExposureSubmissionError_invalidCoviCode" = "Invalid Covi-Code";

@@ -28,6 +28,11 @@ enum BEAccessibilityIdentifiers {
 		static let saveExplanation2 = "BEAppStrings.BEMobileTestId.saveExplanation2"
 	}
 	
+	enum BECoviCode {
+		static let submit = "BEAppStrings.BECoviCode.submit"
+		static let explanation = "BEAppStrings.BECoviCode.explanation"
+	}
+	
 	enum BESelectSymptomsDate {
 		static let next = "BEAppStrings.BESelectSymptomsDate.next"
 	}
@@ -70,6 +75,7 @@ enum BEAccessibilityIdentifiers {
 	
 	enum BEHome {
 		static let toolbox = "BEAppStrings.BEHome.toolbox"
+		static let coviCode = "BEAppStrings.BEHome.coviCode"
 	}
 	
 	enum BEToolbox {

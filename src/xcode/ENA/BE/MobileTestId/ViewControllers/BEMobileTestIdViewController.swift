@@ -19,7 +19,7 @@
 
 import UIKit
 
-protocol BEMobileTestIdViewControllerDelegate : class {
+protocol BEMobileTestIdViewControllerDelegate : AnyObject {
 	func mobileTestIdViewControllerFinished(_ vc:BEMobileTestIdViewController)
 }
 

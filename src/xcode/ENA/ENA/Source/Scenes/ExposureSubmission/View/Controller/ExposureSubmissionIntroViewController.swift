@@ -21,11 +21,11 @@ class ExposureSubmissionIntroViewController: DynamicTableViewController, ENANavi
 
 	// MARK: - Attributes.
 
-	private(set) weak var coordinator: ExposureSubmissionCoordinating?
+	private(set) weak var coordinator: ExposureSubmissionFromTestCoordinating?
 
 	// MARK: - Initializers.
 
-	init(coordinator: ExposureSubmissionCoordinating) {
+	init(coordinator: ExposureSubmissionFromTestCoordinating) {
 		self.coordinator = coordinator
 		super.init(nibName: nil, bundle: nil)
 	}

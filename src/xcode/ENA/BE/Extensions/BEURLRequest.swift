@@ -27,7 +27,6 @@ extension URLRequest {
 		testResult:TestResult,
 		keys: [ENTemporaryExposureKey]
 	) throws -> URLRequest {
-		
 		let payloadData = try getPaddedPayloadData(keys: keys)
 		let url = configuration.submissionURL
 		var request = URLRequest(url: url)
@@ -62,6 +61,73 @@ extension URLRequest {
 		request.setValue(
 			"\(testResult.resultChannel.rawValue)",
 			forHTTPHeaderField: "Result-Channel"
+		)
+		
+		request.setValue(
+			"000000000000",
+			forHTTPHeaderField: "Covi-Code"
+		)
+
+		request.setValue(
+			"application/x-protobuf",
+			forHTTPHeaderField: "Content-Type"
+		)
+
+		request.httpMethod = "POST"
+		request.httpBody = payloadData
+
+		return request
+	}
+	
+	static func submitCoviCodeKeysRequest(
+		configuration: HTTPClient.Configuration,
+		coviCode: String,
+		datePatientInfectious: BEDateString,
+		symptomsStartDate: BEDateString?,
+		dateTestCommunicated: BEDateString,
+		keys: [ENTemporaryExposureKey]
+	) throws -> URLRequest {
+		let payloadData = try getPaddedPayloadData(keys: keys)
+		let url = configuration.submissionURL
+		var request = URLRequest(url: url)
+		let fakeMobileTestId = BEMobileTestId.random
+		
+		request.setValue(
+			fakeMobileTestId.secretKeyBase64String,
+			forHTTPHeaderField: "Secret-Key"
+		)
+
+		request.setValue(
+			fakeMobileTestId.randomString,
+			forHTTPHeaderField: "Random-String"
+		)
+
+		
+		request.setValue(
+			datePatientInfectious,
+			forHTTPHeaderField: "Date-Patient-Infectious"
+		)
+
+		if let symptomsDate = symptomsStartDate {
+			request.setValue(
+				symptomsDate,
+				forHTTPHeaderField: "Date-Onset-Of-Symptoms"
+			)
+		}
+
+		request.setValue(
+			dateTestCommunicated,
+			forHTTPHeaderField: "Date-Test-Communicated"
+		)
+
+		request.setValue(
+			"\(TestResult.Channel.callcenter.rawValue)",
+			forHTTPHeaderField: "Result-Channel"
+		)
+
+		request.setValue(
+			coviCode,
+			forHTTPHeaderField: "Covi-Code"
 		)
 
 		request.setValue(

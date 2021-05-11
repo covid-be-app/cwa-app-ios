@@ -19,7 +19,7 @@
 
 import UIKit
 
-protocol BESelectSymptomsDateViewControllerDelegate : class {
+protocol BESelectSymptomsDateViewControllerDelegate : AnyObject {
 	func selectSymptomsDateViewController(_ vc:BESelectSymptomsDateViewController, selectedDate date:Date)
 }
 
@@ -62,5 +62,33 @@ class BESelectSymptomsDateViewController: UIViewController, ENANavigationControl
 extension BESelectSymptomsDateViewController {
 	func navigationController(_ navigationController: ENANavigationControllerWithFooter, didTapPrimaryButton button: UIButton) {
 		delegate?.selectSymptomsDateViewController(self, selectedDate: datePicker.date)
+	}
+}
+
+
+extension BESelectSymptomsDateViewController {
+	func show(_ parentViewController: UIViewController, delegate: BESelectSymptomsDateViewControllerDelegate) {
+		self.delegate = delegate
+		
+		// Since the original code throws all the code for test code registration, test result showing and TEK submission in one big pile inside
+		// ExposureSubmissionCoordinator, it's not straightforward to only use the test code flow separately without having to implement protocols
+		// and dependencies that are completely useless.
+		// Since the viewcontroller used there requires a parent navigation controller with footer buttons
+		// the easiest solution is to check if the parent nav controller is of the correct type. If not we embed
+		// our viewcontroller in one and show it modally.
+		// This is not an ideal solution, but the ideal solution would be to refactor the entire ExposureSubmissionCoordinator,
+		// splitting it in different modules (one for code generation, one for showing test results and one for managing the TEK submission)
+		// but ain't nobody got time for that right now
+
+		if let vc = parentViewController as? ENANavigationControllerWithFooter {
+			vc.pushViewController(self, animated: true)
+		} else {
+			let navigationController = ENANavigationControllerWithFooter(rootViewController: self)
+			navigationController.navigationBar.prefersLargeTitles = true
+			self.navigationItem.largeTitleDisplayMode = .always
+			navigationController.modalPresentationStyle = .fullScreen
+			parentViewController.present(navigationController, animated: true)
+		}
+
 	}
 }
