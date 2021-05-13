@@ -1,0 +1,32 @@
+{
+	"structure": {
+		"news": {
+			"explanation": [
+				{
+					"title": "news.explanation.1.title",
+					"text": "news.explanation.1.text"
+					}
+			]
+		}
+	},
+	"texts": {
+		"en": {
+			"news.explanation.1.title": "Downloaded title",
+			"news.explanation.1.text": "Medical out-of-hours service at 1733"
+		},
+		"nl": {
+			"news.explanation.1.title": "Downloaded title",
+			"news.explanation.1.text": "Medical out-of-hours service at 1733"
+
+		},
+		"fr": {
+			"news.explanation.1.title": "Downloaded title",
+			"news.explanation.1.text": "Medical out-of-hours service at 1733"
+
+		},
+		"de": {
+			"news.explanation.1.title": "Downloaded title",
+			"news.explanation.1.text": "Medical out-of-hours service at 1733"
+		}
+	}
+}

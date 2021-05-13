@@ -157,7 +157,7 @@ extension ClientMock: Client {
 		completion(.failure(.noResponse))
 	}
 	
-	func getDynamicTexts(completion: @escaping DynamicTextsHandler) {
+	func getDynamicTexts(_ url: URL, completion: @escaping DynamicTextsHandler) {
 		if let data = dynamicTextsDownloadData {
 			completion(.success(data))
 		} else {

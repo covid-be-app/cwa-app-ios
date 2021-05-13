@@ -29,16 +29,18 @@ class BEDynamicTextDownloadService {
 	private let client: Client
 	private var textService: BEDynamicTextService
 	private let outdatedTimeInterval: TimeInterval
+	private let url: URL
 	
-	init(client: Client, textService: BEDynamicTextService, textOutdatedTimeInterval:TimeInterval = .textOutdatedTimeInterval) {
+	init(client: Client, textService: BEDynamicTextService, url: URL, textOutdatedTimeInterval:TimeInterval = .textOutdatedTimeInterval) {
 		self.client = client
 		self.textService = textService
 		self.outdatedTimeInterval = textOutdatedTimeInterval
+		self.url = url
 	}
 	
 	func downloadTextsIfNeeded(completion: @escaping DynamicTextLoader) {
 		if
-			let attributes = try? FileManager.default.attributesOfItem(atPath: BEDynamicTextService.cacheURL.path),
+			let attributes = try? FileManager.default.attributesOfItem(atPath: textService.cacheURL.path),
 			let modificationDate = attributes[.modificationDate] as? Date {
 			
 				if modificationDate.timeIntervalSinceNow > -self.outdatedTimeInterval {
@@ -58,7 +60,7 @@ class BEDynamicTextDownloadService {
 	/// We ignore errors here in the callback since there isn't much we can do and we'll fallback to the previous version of the text anyway
 	private func downloadTexts(_ completion: @escaping DynamicTextLoader) {
 		log(message: "Downloading texts")
-		client.getDynamicTexts { result in
+		client.getDynamicTexts(url) { result in
 
 			/// Since dynamic texts are used from the main thread (UI) we make sure there is no other thread manipulating
 			/// files that while they are being read from the main thread.

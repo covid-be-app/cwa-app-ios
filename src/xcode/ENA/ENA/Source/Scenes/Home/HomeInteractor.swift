@@ -52,6 +52,8 @@ final class HomeInteractor: RequiresAppDependencies {
 			}
 		}
 		
+		NotificationCenter.default.addObserver(self, selector: #selector(newsUpdated), name: BEDynamicNewsTextService.newsStatusChangedNotificationName, object: nil)
+		
 		observeRisk()
 	}
 
@@ -137,6 +139,11 @@ final class HomeInteractor: RequiresAppDependencies {
 
 	func buildSections() {
 		sections = initialCellConfigurators()
+	}
+	
+	@objc
+	func newsUpdated() {
+		buildSections()
 	}
 
 	private func initialCellConfigurators() -> SectionConfiguration {
@@ -307,6 +314,10 @@ extension HomeInteractor {
 		return HomeActivateCellConfigurator(state: state.enState)
 	}
 
+	func setupNewsConfigurator() -> BENewsTableViewCellConfigurator {
+		return BENewsTableViewCellConfigurator()
+	}
+	
 	func setupActionConfigurators() -> [TableViewCellConfiguratorAny] {
 		var actionsConfigurators: [TableViewCellConfiguratorAny] = []
 
@@ -319,6 +330,14 @@ extension HomeInteractor {
 		// MARK: - Add toolbox card
 
 		actionsConfigurators.append(setupToolboxConfigurator())
+
+		// MARK: - Add news card
+		
+		let newsService = BEDynamicNewsTextService()
+		
+		if newsService.hasNews {
+			actionsConfigurators.append(setupNewsConfigurator())
+		}
 
 		// MARK: - Add covi codes card
 

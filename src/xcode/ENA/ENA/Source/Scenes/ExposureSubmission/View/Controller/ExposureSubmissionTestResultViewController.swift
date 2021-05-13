@@ -303,7 +303,7 @@ private extension ExposureSubmissionTestResultViewController {
 	}
 
 	private func positiveTestResultSection() -> DynamicSection {
-		let dynamicTextService = BEDynamicTextService()
+		let dynamicTextService = BEDynamicInformationTextService()
 		let textSections = dynamicTextService.sections(.positiveTestResult, section: .explanation)
 		let tintColor = UIColor.enaColor(for: .riskHigh)
 		let stepCells = Array(textSections.map({ $0.buildTestResultStepCells(iconTint: tintColor) }).joined())
@@ -321,12 +321,12 @@ private extension ExposureSubmissionTestResultViewController {
 				}
 			),
 			separators: false,
-			cells:cells
+			cells: cells
 		)
 	}
 
 	private func negativeTestResultSection() -> DynamicSection {
-		let dynamicTextService = BEDynamicTextService()
+		let dynamicTextService = BEDynamicInformationTextService()
 		let textSections = dynamicTextService.sections(.negativeTestResult, section: .explanation)
 		let tintColor = UIColor.enaColor(for: .riskLow)
 		let stepCells = Array(textSections.map({ $0.buildTestResultStepCells(iconTint: tintColor) }).joined())

@@ -20,13 +20,15 @@
 import XCTest
 @testable import ENA
 
-class BEDynamicTextTests: XCTestCase {
+class BEDynamicInformationTextTests: XCTestCase {
 
+	private let stubURL = URL(string: "https://www.coronalert.be")!
+	
 	private func createDynamicTextService(_ filename: String) -> BEDynamicTextService {
 		let testBundle = Bundle(for: type(of: self))
 		let url = testBundle.url(forResource: filename, withExtension: "json")!
 		
-		return BEDynamicTextService(url)
+		return BEDynamicInformationTextService(bundleURL: url)
 	}
 	
 	private func loadDynamicText(_ filename: String) -> BEDynamicText {
@@ -40,7 +42,6 @@ class BEDynamicTextTests: XCTestCase {
 		} catch {
 			fatalError("Something went wrong \(error.localizedDescription)")
 		}
-		
 	}
 	
 	private func getFirstScreenSectionEntry(service:BEDynamicTextService, name: BEDynamicTextScreenName, section: BEDynamicTextScreenSectionName, language:BEDynamicTextLanguage = .current) -> BEDynamicTextScreenSection {
@@ -52,7 +53,7 @@ class BEDynamicTextTests: XCTestCase {
 	}
 	
 	override class func tearDown() {
-		BEDynamicTextService.deleteCachedFile()
+		BEDynamicInformationTextService().deleteCachedFile()
 	}
 	
 	/// test the texts in the bundle
@@ -67,21 +68,21 @@ class BEDynamicTextTests: XCTestCase {
 	
 	func testMissingLanguage() throws {
 		let dynamicText = loadDynamicText("missingLanguageDynamicTexts")
-		XCTAssertThrowsError(try BEDynamicTextService.validateLoadedText(dynamicText))
+		XCTAssertThrowsError(try BEDynamicInformationTextService().validateLoadedText(dynamicText))
 	}
 
 	func testMissingScreen() throws {
 		let dynamicText = loadDynamicText("missingScreensDynamicTexts")
-		XCTAssertThrowsError(try BEDynamicTextService.validateLoadedText(dynamicText))
+		XCTAssertThrowsError(try BEDynamicInformationTextService().validateLoadedText(dynamicText))
 	}
 
 	func testWrongStructure() throws {
 		let dynamicText = loadDynamicText("wrongStructureDynamicTexts")
-		XCTAssertThrowsError(try BEDynamicTextService.validateLoadedText(dynamicText))
+		XCTAssertThrowsError(try BEDynamicInformationTextService().validateLoadedText(dynamicText))
 	}
 
 	func testLoadScreen() throws {
-		BEDynamicTextService.deleteCachedFile()
+		BEDynamicInformationTextService().deleteCachedFile()
 		let service = createDynamicTextService("testDynamicTexts")
 		let sectionEntry = getFirstScreenSectionEntry(service: service, name: .highRisk, section: .preventiveMeasures)
 		XCTAssertEqual(sectionEntry.text, "If possible, please go home and stay at home.")
@@ -89,10 +90,10 @@ class BEDynamicTextTests: XCTestCase {
 	
 	/// Test that the texts keep on working after a download error
 	func testDownloadTextsWithError() throws {
-		BEDynamicTextService.deleteCachedFile()
+		BEDynamicInformationTextService().deleteCachedFile()
 		let client = ClientMock()
 		let service = createDynamicTextService("testDynamicTexts")
-		let downloader = BEDynamicTextDownloadService(client: client, textService: service)
+		let downloader = BEDynamicTextDownloadService(client: client, textService: service, url:stubURL)
 		let expectation = self.expectation(description: "finished")
 
 		downloader.downloadTextsIfNeeded {
@@ -106,10 +107,10 @@ class BEDynamicTextTests: XCTestCase {
 
 	/// Test that the texts keep on working after a download of non-JSON data
 	func testDownloadTextsCorruptData() throws {
-		BEDynamicTextService.deleteCachedFile()
+		BEDynamicInformationTextService().deleteCachedFile()
 		let client = ClientMock()
 		let service = createDynamicTextService("testDynamicTexts")
-		let downloader = BEDynamicTextDownloadService(client: client, textService: service)
+		let downloader = BEDynamicTextDownloadService(client: client, textService: service, url:stubURL)
 		let expectation = self.expectation(description: "finished")
 		
 		client.dynamicTextsDownloadData = Data()
@@ -125,10 +126,10 @@ class BEDynamicTextTests: XCTestCase {
 
 	/// Test that the texts are updated after a download
 	func testDownloadTexts() throws {
-		BEDynamicTextService.deleteCachedFile()
+		BEDynamicInformationTextService().deleteCachedFile()
 		let client = ClientMock()
 		let service = createDynamicTextService("testDynamicTexts")
-		let downloader = BEDynamicTextDownloadService(client: client, textService: service, textOutdatedTimeInterval: 1)
+		let downloader = BEDynamicTextDownloadService(client: client, textService: service, url:stubURL, textOutdatedTimeInterval: 1)
 		let expectation = self.expectation(description: "finished")
 		
 		let testBundle = Bundle(for: type(of: self))
@@ -149,10 +150,10 @@ class BEDynamicTextTests: XCTestCase {
 	
 	/// Test that the texts are not updated after a download which does not contain all screens
 	func testDownloadMissingTexts() throws {
-		BEDynamicTextService.deleteCachedFile()
+		BEDynamicInformationTextService().deleteCachedFile()
 		let client = ClientMock()
 		let service = createDynamicTextService("testDynamicTexts")
-		let downloader = BEDynamicTextDownloadService(client: client, textService: service, textOutdatedTimeInterval: 1)
+		let downloader = BEDynamicTextDownloadService(client: client, textService: service, url: stubURL, textOutdatedTimeInterval: 1)
 		let expectation = self.expectation(description: "finished")
 		
 		let testBundle = Bundle(for: type(of: self))
@@ -171,10 +172,10 @@ class BEDynamicTextTests: XCTestCase {
 	
 	/// Test that the texts are downloaded, cached and that a new instance uses the cached version
 	func testDownloadAndUseCache() throws {
-		BEDynamicTextService.deleteCachedFile()
+		BEDynamicInformationTextService().deleteCachedFile()
 		let client = ClientMock()
 		let service = createDynamicTextService("testDynamicTexts")
-		let downloader = BEDynamicTextDownloadService(client: client, textService: service, textOutdatedTimeInterval: 1)
+		let downloader = BEDynamicTextDownloadService(client: client, textService: service, url:stubURL, textOutdatedTimeInterval: 1)
 		let expectation = self.expectation(description: "finished")
 		
 		let sectionEntry = getFirstScreenSectionEntry(service: service, name: .highRisk, section: .preventiveMeasures)
@@ -204,7 +205,7 @@ class BEDynamicTextTests: XCTestCase {
 	
 	/// Test that corrupting the cached file will reuse the file from the bundle
 	func testCorruptCache() throws {
-		BEDynamicTextService.corruptCache()
+		BEDynamicInformationTextService().corruptCache()
 		let service = createDynamicTextService("testDynamicTexts")
 		let sectionEntry = getFirstScreenSectionEntry(service: service, name: .highRisk, section: .preventiveMeasures)
 		XCTAssertEqual(sectionEntry.text, "If possible, please go home and stay at home.")
@@ -213,7 +214,7 @@ class BEDynamicTextTests: XCTestCase {
 
 
 extension BEDynamicTextService {
-	static func deleteCachedFile() {
+	func deleteCachedFile() {
 		do {
 			try FileManager.default.removeItem(at: cacheURL)
 		} catch {
@@ -221,7 +222,7 @@ extension BEDynamicTextService {
 		}
 	}
 
-	static func corruptCache() {
+	func corruptCache() {
 		do {
 			let data = "hahahaha".data(using: .utf8)!
 			try data.write(to: cacheURL)

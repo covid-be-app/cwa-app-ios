@@ -19,17 +19,17 @@
 
 import XCTest
 @testable import ENA
-class BEOnlineDynamicTextTests: XCTestCase {
+class BEOnlineDynamicNewsTextTests: XCTestCase {
 	private func dynamicTextsURL(_ environment: BEEnvironment) -> URL {
 		let dynamicTextsURL = URL(string: "https://coronalert-\(environment.urlSuffix()).ixor.be")!
-		return dynamicTextsURL.appendingPathComponent("dynamictext/dynamicTextsV2.json")
+		return dynamicTextsURL.appendingPathComponent("dynamictext/dynamicNews.json")
 	}
 	
 	func testURL() throws {
 		let configuration = HTTPClient.Configuration.backendBaseURLs
 		let urlToTest = dynamicTextsURL(.test)
 		
-		XCTAssertEqual(configuration.dynamicTextsURL,urlToTest)
+		XCTAssertEqual(configuration.dynamicNewsTextsURL,urlToTest)
     }
 	
 	func testEnvironments() throws {
@@ -43,7 +43,7 @@ class BEOnlineDynamicTextTests: XCTestCase {
 		let decoder = JSONDecoder()
 		let result = try decoder.decode(BEDynamicText.self, from: data)
 		
-		try BEDynamicTextService.validateLoadedText(result)
+		try BEDynamicInformationTextService().validateLoadedText(result)
 	}
 
 }

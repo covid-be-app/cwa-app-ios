@@ -537,9 +537,8 @@ final class HTTPClient: Client {
 			}
 		}
 	}
-	
-	func getDynamicTexts(completion: @escaping DynamicTextsHandler) {
-		let url = configuration.dynamicTextsURL
+
+	func getDynamicTexts(_ url: URL, completion: @escaping DynamicTextsHandler) {
 		self.session.GET(url) { result in
 			switch result {
 			case let .success(response):
