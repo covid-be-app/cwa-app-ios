@@ -47,6 +47,7 @@ class HomeTableViewController: UIViewController, RequiresAppDependencies {
 		case riskFindingPositive = "riskFindingPositive"
 		case testResultLoading = "testResultLoading"
 		case coviCode = "coviCode"
+		case news = "news"
 	}
 	
 	var sections: HomeInteractor.SectionConfiguration = [] {
@@ -337,6 +338,7 @@ class HomeTableViewController: UIViewController, RequiresAppDependencies {
 		tableView.register(UINib(nibName: BEInfectionSummaryTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: BEInfectionSummaryTableViewCell.stringName())
 		tableView.register(UINib(nibName: BEToolboxTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: BEToolboxTableViewCell.stringName())
 		tableView.register(UINib(nibName: BECoviCodeTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: BECoviCodeTableViewCell.stringName())
+		tableView.register(UINib(nibName: BENewsTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: BENewsTableViewCell.stringName())
 		tableView.register(UINib(nibName: HomeSpacerCell.stringName(), bundle: nil), forCellReuseIdentifier: HomeSpacerCell.stringName())
 	}
 	

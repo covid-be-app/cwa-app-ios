@@ -21,8 +21,11 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BqZ-QT-PQ1">
                         <rect key="frame" x="16" y="11" width="288" height="378"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" text="Title 2" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U19-He-VXB" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
-                                <rect key="frame" x="8" y="8" width="246.5" height="20.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="Illu_Covid" translatesAutoresizingMaskIntoConstraints="NO" id="Glp-C4-k2b">
+                                <rect key="frame" x="8" y="8" width="32" height="32"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" insetsLayoutMarginsFromSafeArea="NO" text="Title 2" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U19-He-VXB" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
+                                <rect key="frame" x="48" y="8" width="206.5" height="362"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="ENA Text Primary 1 Color"/>
                                 <nil key="highlightedColor"/>
@@ -30,32 +33,22 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="title2"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05Y-Pp-jkv" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
-                                <rect key="frame" x="8" y="44.5" width="272" height="325.5"/>
-                                <string key="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" name="ENA Text Primary 2 Color"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="body"/>
-                                </userDefinedRuntimeAttributes>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="Icons_Chevron_plain" translatesAutoresizingMaskIntoConstraints="NO" id="3Hx-uI-k6g">
-                                <rect key="frame" x="262.5" y="12" width="7" height="12"/>
+                                <rect key="frame" x="262.5" y="14" width="7" height="12"/>
                                 <color key="tintColor" name="ENA Chevron Color"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="05Y-Pp-jkv" firstAttribute="leading" secondItem="BqZ-QT-PQ1" secondAttribute="leadingMargin" id="9RL-Jb-stx"/>
                             <constraint firstItem="3Hx-uI-k6g" firstAttribute="leading" secondItem="U19-He-VXB" secondAttribute="trailing" constant="8" id="EQz-Pt-bDP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3Hx-uI-k6g" secondAttribute="centerX" constant="14" id="NGm-KC-X5K"/>
-                            <constraint firstItem="U19-He-VXB" firstAttribute="leading" secondItem="BqZ-QT-PQ1" secondAttribute="leadingMargin" id="Qu3-7I-nTa"/>
+                            <constraint firstItem="U19-He-VXB" firstAttribute="top" secondItem="Glp-C4-k2b" secondAttribute="top" id="QMC-cu-epX"/>
                             <constraint firstItem="U19-He-VXB" firstAttribute="top" secondItem="BqZ-QT-PQ1" secondAttribute="topMargin" id="V3x-Q7-P3E"/>
-                            <constraint firstItem="05Y-Pp-jkv" firstAttribute="trailing" secondItem="BqZ-QT-PQ1" secondAttribute="trailingMargin" id="Yyb-6X-6MS"/>
-                            <constraint firstItem="05Y-Pp-jkv" firstAttribute="top" secondItem="U19-He-VXB" secondAttribute="bottom" constant="16" id="Zb3-1h-0A5"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="05Y-Pp-jkv" secondAttribute="bottom" id="ZoP-ap-5fi"/>
+                            <constraint firstItem="U19-He-VXB" firstAttribute="leading" secondItem="Glp-C4-k2b" secondAttribute="trailing" constant="8" id="YgV-dZ-kZl"/>
+                            <constraint firstItem="Glp-C4-k2b" firstAttribute="leading" secondItem="BqZ-QT-PQ1" secondAttribute="leadingMargin" id="eZB-Uh-yjS"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="U19-He-VXB" secondAttribute="bottom" id="n7n-Q7-Xrd"/>
                             <constraint firstItem="U19-He-VXB" firstAttribute="firstBaseline" secondItem="3Hx-uI-k6g" secondAttribute="bottom" id="nva-V4-Ev9"/>
+                            <constraint firstItem="Glp-C4-k2b" firstAttribute="top" secondItem="BqZ-QT-PQ1" secondAttribute="topMargin" id="w6C-QG-l71"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -67,7 +60,6 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="descriptionLabel" destination="05Y-Pp-jkv" id="cVG-2n-Jjf"/>
                 <outlet property="titleLabel" destination="U19-He-VXB" id="a1E-nZ-SzW"/>
                 <outlet property="viewContainer" destination="BqZ-QT-PQ1" id="v0K-3T-kPW"/>
             </connections>
@@ -75,23 +67,18 @@
         </tableViewCell>
     </objects>
     <designables>
-        <designable name="05Y-Pp-jkv">
-            <size key="intrinsicContentSize" width="1199.5" height="20.5"/>
-        </designable>
         <designable name="U19-He-VXB">
-            <size key="intrinsicContentSize" width="47.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="56.5" height="23"/>
         </designable>
     </designables>
     <resources>
         <image name="Icons_Chevron_plain" width="7" height="12"/>
+        <image name="Illu_Covid" width="32" height="32"/>
         <namedColor name="ENA Chevron Color">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.30000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ENA Text Primary 1 Color">
             <color red="0.090196078431372548" green="0.098039215686274508" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="ENA Text Primary 2 Color">
-            <color red="0.090196078431372548" green="0.098039215686274508" blue="0.10196078431372549" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

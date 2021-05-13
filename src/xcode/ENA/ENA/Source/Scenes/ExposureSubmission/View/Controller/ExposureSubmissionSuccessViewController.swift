@@ -100,7 +100,7 @@ extension ExposureSubmissionSuccessViewController {
 
 private extension DynamicTableViewModel {
 	static var thankYouData: DynamicTableViewModel {
-		let dynamicTextService = BEDynamicTextService()
+		let dynamicTextService = BEDynamicInformationTextService()
 		let pleaseNoteSections = dynamicTextService.sections(.thankYou, section: .pleaseNote)
 		let otherInformationSections = dynamicTextService.sections(.thankYou, section: .otherInformation)
 

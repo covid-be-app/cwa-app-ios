@@ -425,8 +425,7 @@
 "ExposureSubmissionWarnOthers_AccImageDescription" = "Ein Handy übermittelt einen positiven Testbefund verschlüsselt ins System.";
 "App_Information_Imprint_Section5_Text" = "Fragen? E-Mail: info@coronalert.be";
 "BEMobileTestId_saveExplanationWebForm" = "";
-"BEHome_CoviCode_title" = "Ich habe positiv getestet";
-"BEHome_CoviCode_description" = "Sie haben ein positives Testergebnis erhalten, die App aber nicht verwendet? Verwenden Sie den Code aus dem Call Center, um andere zu warnen.";
+"BEHome_CoviCode_title" = "Sind Sie positiv und möchten Ihre Kontakte anonym informieren?";
 "BECoviCode_enterCodeTitle" = "Geben Sie Ihren Covi-Code ein";
 "BECoviCode_enterCodeDescription" = "Geben Sie den 12-stelligen Covi-Code ein, den Sie vom Contact Center erhalten haben";
 "BECoviCode_ok" = "Ok";

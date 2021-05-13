@@ -222,12 +222,21 @@ extension HTTPClient {
 				)
 		}
 		
-		var dynamicTextsURL: URL {
+		var dynamicInformationTextsURL: URL {
 			endpoints
 				.dynamicTexts
 				.appending(
 					"dynamictext",
 					"dynamicTextsV2.json"
+			)
+		}
+
+		var dynamicNewsTextsURL: URL {
+			endpoints
+				.dynamicTexts
+				.appending(
+					"dynamictext",
+					"dynamicNews.json"
 			)
 		}
 	}
