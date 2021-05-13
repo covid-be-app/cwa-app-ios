@@ -26,7 +26,7 @@ class BEHomeCoviCodeCellConfigurator: TableViewCellConfigurator {
 	}
 	
 	func configure(cell: BECoviCodeTableViewCell) {
-		cell.configure(title: BEAppStrings.BEHome.coviCodeTitle, description: BEAppStrings.BEHome.coviCodeDescription, accessibilityIdentifier: BEAccessibilityIdentifiers.BEHome.coviCode)
+		cell.configure(title: BEAppStrings.BEHome.coviCodeTitle, accessibilityIdentifier: BEAccessibilityIdentifiers.BEHome.coviCode)
 	}
 	
 	// MARK: Hashable

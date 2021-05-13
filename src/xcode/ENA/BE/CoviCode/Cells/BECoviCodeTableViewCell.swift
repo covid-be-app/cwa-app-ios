@@ -21,11 +21,9 @@ import UIKit
 
 class BECoviCodeTableViewCell: HomeCardTableViewCell {
 	@IBOutlet var titleLabel: ENALabel!
-	@IBOutlet var descriptionLabel: ENALabel!
 
-	func configure(title: String, description: String, tintColor: UIColor = .enaColor(for: .textPrimary1), accessibilityIdentifier: String?) {
+	func configure(title: String, tintColor: UIColor = .enaColor(for: .textPrimary1), accessibilityIdentifier: String?) {
 		titleLabel.text = title
-		descriptionLabel.text = description
 		self.accessibilityIdentifier = accessibilityIdentifier
 
 		self.tintColor = tintColor
@@ -34,7 +32,6 @@ class BECoviCodeTableViewCell: HomeCardTableViewCell {
 
 	func setupAccessibility() {
 		titleLabel.isAccessibilityElement = true
-		descriptionLabel.isAccessibilityElement = true
 		isAccessibilityElement = false
 
 		titleLabel.accessibilityTraits = [.header, .button]

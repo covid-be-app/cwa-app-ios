@@ -425,8 +425,7 @@
 "ExposureSubmissionWarnOthers_AccImageDescription" = "Een toestel stuurt een versleutelde positieve diagnose naar het systeem.";
 "App_Information_Imprint_Section5_Text" = "Vragen? E-Mail: info@coronalert.be";
 "BEMobileTestId_saveExplanationWebForm" = "";
-"BEHome_CoviCode_title" = "Ik heb positief getest";
-"BEHome_CoviCode_description" = "Positief testresultaat ontvangen maar de app niet gebruikt? Gebruik de code van het callcenter om anderen te waarschuwen.";
+"BEHome_CoviCode_title" = "Ben je positief en wil je je contacten anoniem informeren?";
 "BECoviCode_enterCodeTitle" = "Voer uw Covi-code in";
 "BECoviCode_enterCodeDescription" = "Voer de 12-cijferige Covi-code in die u van het contactcenter hebt ontvangen";
 "BECoviCode_ok" = "Ok";
