@@ -1,0 +1,24 @@
+{
+	"structure": {
+		},
+	"texts": {
+		"en": {
+			"news.explanation.1.title": "Your general practitioner",
+			"news.explanation.1.text": "Medical out-of-hours service at 1733"
+		},
+		"nl": {
+			"news.explanation.1.title": "Your general practitioner",
+			"news.explanation.1.text": "Medical out-of-hours service at 1733"
+
+		},
+		"fr": {
+			"news.explanation.1.title": "Your general practitioner",
+			"news.explanation.1.text": "Medical out-of-hours service at 1733"
+
+		},
+		"de": {
+			"news.explanation.1.title": "Your general practitioner",
+			"news.explanation.1.text": "Medical out-of-hours service at 1733"
+		}
+	}
+}

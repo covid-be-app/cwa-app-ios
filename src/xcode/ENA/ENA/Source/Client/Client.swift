@@ -104,8 +104,8 @@ protocol Client {
 	func getInfectionSummary(completion: @escaping InfectionSummaryHandler)
 	
 	/// dynamic texts
-	func getDynamicTexts(completion: @escaping DynamicTextsHandler)
-	
+	func getDynamicTexts(_ url: URL, completion: @escaping DynamicTextsHandler)
+
 
 	/// Acknowledge we downloaded a test result
 	func ackTestDownload(forDevice registrationToken: String, completionBlock: @escaping(() -> Void))

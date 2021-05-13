@@ -103,11 +103,16 @@ extension AppDelegate: ENATaskExecutionDelegate {
 	
 	private func updateDynamicTexts(completion: @escaping (() -> Void)) {
 		log(message: "Start dynamic text updates...")
-		let dynamicTextService = BEDynamicTextService()
-		let dynamicTextDownloadService = BEDynamicTextDownloadService(client: client, textService: dynamicTextService)
+		let dynamicInformationTextService = BEDynamicInformationTextService()
+		let dynamicInformationTextDownloadService = BEDynamicTextDownloadService(client: client, textService: dynamicInformationTextService, url: client.configuration.dynamicInformationTextsURL)
 		
-		dynamicTextDownloadService.downloadTextsIfNeeded {
-			completion()
+		dynamicInformationTextDownloadService.downloadTextsIfNeeded {
+			let dynamicNewsTextService = BEDynamicNewsTextService()
+			let dynamicNewsTextDownloadService = BEDynamicTextDownloadService(client: self.client, textService: dynamicNewsTextService, url: self.client.configuration.dynamicNewsTextsURL)
+
+			dynamicNewsTextDownloadService.downloadTextsIfNeeded {
+				completion()
+			}
 		}
 	}
 }

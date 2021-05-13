@@ -41,7 +41,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="Icons_Chevron_plain" translatesAutoresizingMaskIntoConstraints="NO" id="3Hx-uI-k6g">
-                                <rect key="frame" x="262.5" y="12" width="7" height="12"/>
+                                <rect key="frame" x="262.5" y="14" width="7" height="12"/>
                                 <color key="tintColor" name="ENA Chevron Color"/>
                             </imageView>
                         </subviews>
@@ -76,10 +76,10 @@
     </objects>
     <designables>
         <designable name="05Y-Pp-jkv">
-            <size key="intrinsicContentSize" width="1199.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="1081" height="18"/>
         </designable>
         <designable name="U19-He-VXB">
-            <size key="intrinsicContentSize" width="47.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="56.5" height="23"/>
         </designable>
     </designables>
     <resources>

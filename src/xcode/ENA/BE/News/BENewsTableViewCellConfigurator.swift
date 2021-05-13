@@ -18,15 +18,27 @@
 //
 
 import Foundation
+import UIKit
 
-enum BEDynamicTextScreenName: String, Decodable, CaseIterable {
-	case standard = "standard"
-	case highRisk = "highRisk"
-	case positiveTestResultCard = "positiveTestResultCard"
-	case positiveTestResult = "positiveTestResult"
-	case negativeTestResult = "negativeTestResult"
-	case thankYou = "thankYou"
-	case participatingCountries = "participatingCountries"
-	case news = "news"
+class BENewsTableViewCellConfigurator: TableViewCellConfigurator {
+	
+	init() {
+	}
+	
+	func configure(cell: BENewsTableViewCell) {
+		let service = BEDynamicNewsTextService()
+		
+		cell.titleLabel.text = service.newsTitle()
+		cell.descriptionLabel.text = service.newsText()
+	}
+	
+	// MARK: Hashable
+
+	func hash(into hasher: inout Swift.Hasher) {
+		hasher.combine("news")
+	}
+
+	static func == (lhs: BENewsTableViewCellConfigurator, rhs: BENewsTableViewCellConfigurator) -> Bool {
+		return true
+	}
 }
-

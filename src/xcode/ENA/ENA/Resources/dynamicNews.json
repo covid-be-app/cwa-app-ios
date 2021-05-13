@@ -1,0 +1,30 @@
+{
+    "structure": {
+        "news": {
+            "explanation": [
+				{
+					"title": "",
+					"text": ""
+					}
+            ]
+        }
+	},
+    "texts": {
+        "en": {
+            "title": "News",
+            "text": "News Text News Text News Text News Text News Text News Text News Text News Text News Text News Text News Text"
+        },
+        "nl": {
+			"title": "News Title",
+			"text": "News Text"
+        },
+        "fr": {
+			"title": "News Title",
+			"text": "News Text"
+        },
+        "de": {
+			"title": "News Title",
+			"text": "News Text"
+        }
+    }
+}

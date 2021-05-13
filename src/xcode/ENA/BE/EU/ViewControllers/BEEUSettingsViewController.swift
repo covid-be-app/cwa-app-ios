@@ -89,7 +89,7 @@ extension BEEUSettingsViewController {
 	}
 
 	func countries() -> DynamicSection {
-		let dynamicTextService = BEDynamicTextService()
+		let dynamicTextService = BEDynamicInformationTextService()
 		let countries = dynamicTextService.sections(.participatingCountries, section: .list)
 		let cells = countries.filter{ $0.text != nil }.sorted { $0.text!.localizedCompare($1.text!) == .orderedAscending }.compactMap { DynamicCell.euCell(country: $0) }
 

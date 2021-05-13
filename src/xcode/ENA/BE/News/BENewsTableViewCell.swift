@@ -17,16 +17,9 @@
 // under the License.
 //
 
-import Foundation
+import UIKit
 
-enum BEDynamicTextScreenName: String, Decodable, CaseIterable {
-	case standard = "standard"
-	case highRisk = "highRisk"
-	case positiveTestResultCard = "positiveTestResultCard"
-	case positiveTestResult = "positiveTestResult"
-	case negativeTestResult = "negativeTestResult"
-	case thankYou = "thankYou"
-	case participatingCountries = "participatingCountries"
-	case news = "news"
+class BENewsTableViewCell: HomeCardTableViewCell {
+	@IBOutlet var titleLabel: ENALabel!
+	@IBOutlet var descriptionLabel: ENALabel!
 }
-
