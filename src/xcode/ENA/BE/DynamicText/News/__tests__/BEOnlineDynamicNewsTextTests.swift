@@ -43,7 +43,7 @@ class BEOnlineDynamicNewsTextTests: XCTestCase {
 		let decoder = JSONDecoder()
 		let result = try decoder.decode(BEDynamicText.self, from: data)
 		
-		try BEDynamicInformationTextService().validateLoadedText(result)
+		try BEDynamicNewsTextService().validateLoadedText(result)
 	}
 
 }
