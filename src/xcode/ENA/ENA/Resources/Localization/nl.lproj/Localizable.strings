@@ -435,3 +435,7 @@
 "BECoviCode_explanation" = "Gebruik de 12-cijferige code van het contactcenter om uw contacten te waarschuwen voor een mogelijk hoog risico";
 "BECoviCode_submit" = "Code verzenden";
 "BEExposureSubmissionError_invalidCoviCode" = "Ongeldige Covi-Code";
+"BEVaccinationInfo_title" = "Vaccinatie";
+"BEVaccinationInfo_atLeastOneDose" = "Tenminste 1 dosis";
+"BEVaccinationInfo_fullyVaccinated" = "Volledig gevaccineerd";
+"BEVaccinationInfo_updatedAt" = "Laatst bijgewerkt op %@";

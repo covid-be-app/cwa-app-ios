@@ -97,11 +97,11 @@ protocol Client {
 	)
 
 	// :BE:
-	typealias InfectionSummaryHandler = (Result<BEInfectionSummary, Failure>) -> Void
+	typealias StatisticsHandler = (Result<(BEInfectionSummary, BEVaccinationInfo), Failure>) -> Void
 	typealias DynamicTextsHandler = (Result<Data, Failure>) -> Void
 
 	/// Stats
-	func getInfectionSummary(completion: @escaping InfectionSummaryHandler)
+	func getStatistics(completion: @escaping StatisticsHandler)
 	
 	/// dynamic texts
 	func getDynamicTexts(_ url: URL, completion: @escaping DynamicTextsHandler)

@@ -435,3 +435,7 @@
 "BECoviCode_explanation" = "Use the 12-digit code from the contact center to warn your contacts about a potential high risk exposure";
 "BECoviCode_submit" = "Send Code";
 "BEExposureSubmissionError_invalidCoviCode" = "Invalid Covi-Code";
+"BEVaccinationInfo_title" = "Vaccination";
+"BEVaccinationInfo_atLeastOneDose" = "At least 1 dose";
+"BEVaccinationInfo_fullyVaccinated" = "Fully vaccinated";
+"BEVaccinationInfo_updatedAt" = "Last updated on %@";

@@ -435,3 +435,7 @@
 "BECoviCode_explanation" = "Verwenden Sie den 12-stelligen Code aus dem Contact Center, um Ihre Kontakte vor einem möglichen Risiko mit hohem Risiko zu warnen";
 "BECoviCode_submit" = "Code senden";
 "BEExposureSubmissionError_invalidCoviCode" = "Ungültiger Covi-Code";
+"BEVaccinationInfo_title" = "Impfung";
+"BEVaccinationInfo_atLeastOneDose" = "Mindestens 1 Dosis";
+"BEVaccinationInfo_fullyVaccinated" = "Vollständig geimpft";
+"BEVaccinationInfo_updatedAt" = "Zuletzt aktualisiert am %@";

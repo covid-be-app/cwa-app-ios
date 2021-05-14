@@ -153,7 +153,7 @@ extension ClientMock: Client {
 		completion(nil)
 	}
 	
-	func getInfectionSummary(completion: @escaping InfectionSummaryHandler) {
+	func getStatistics(completion: @escaping StatisticsHandler) {
 		completion(.failure(.noResponse))
 	}
 	

@@ -190,10 +190,15 @@ final class SecureStore: Store {
 		get { kvStore["infectionSummary"] as BEInfectionSummary? }
 		set { kvStore["infectionSummary"] = newValue }
 	}
-	
-	var infectionSummaryUpdatedAt: Date? {
-		get { kvStore["infectionSummaryUpdatedAt"] as Date? }
-		set { kvStore["infectionSummaryUpdatedAt"] = newValue }
+
+	var vaccinationInfo: BEVaccinationInfo? {
+		get { kvStore["vaccinationInfo"] as BEVaccinationInfo? }
+		set { kvStore["vaccinationInfo"] = newValue }
+	}
+
+	var statisticsUpdatedAt: Date? {
+		get { kvStore["statisticsUpdatedAt"] as Date? }
+		set { kvStore["statisticsUpdatedAt"] = newValue }
 	}
 	
 	var latestRisk: Risk? {

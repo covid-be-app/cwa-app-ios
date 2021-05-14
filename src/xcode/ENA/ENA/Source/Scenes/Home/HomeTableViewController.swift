@@ -205,7 +205,7 @@ class HomeTableViewController: UIViewController, RequiresAppDependencies {
 		super.viewWillAppear(animated)
 		homeInteractor.updateTestResults()
 		homeInteractor.requestRisk(userInitiated: false)
-		homeInteractor.requestInfectionSummary()
+		homeInteractor.requestStatisticsUpdate()
 		updateBackgroundColor()
 	}
 	
@@ -340,6 +340,7 @@ class HomeTableViewController: UIViewController, RequiresAppDependencies {
 		tableView.register(UINib(nibName: BECoviCodeTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: BECoviCodeTableViewCell.stringName())
 		tableView.register(UINib(nibName: BENewsTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: BENewsTableViewCell.stringName())
 		tableView.register(UINib(nibName: HomeSpacerCell.stringName(), bundle: nil), forCellReuseIdentifier: HomeSpacerCell.stringName())
+		tableView.register(UINib(nibName: BEVaccinationInfoTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: BEVaccinationInfoTableViewCell.stringName())
 	}
 	
 	private func showScreenForActionSectionForCell(at indexPath: IndexPath) {

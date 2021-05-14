@@ -273,6 +273,10 @@
 		A95EE81424FCE11100AFECBD /* BEStatisticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95EE81324FCE11100AFECBD /* BEStatisticsService.swift */; };
 		A95EE81624FCF2A600AFECBD /* BEHomeInfectionSummaryCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95EE81524FCF2A600AFECBD /* BEHomeInfectionSummaryCellConfigurator.swift */; };
 		A95EE81C24FD0A6A00AFECBD /* BEUIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95EE81B24FD0A6A00AFECBD /* BEUIStackView.swift */; };
+		A9659884264E64190018BF0B /* BEVaccinationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9659883264E64190018BF0B /* BEVaccinationInfo.swift */; };
+		A9659889264E7CCC0018BF0B /* BEHomeVaccinationInfoCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9659886264E7CCC0018BF0B /* BEHomeVaccinationInfoCellConfigurator.swift */; };
+		A965988A264E7CCC0018BF0B /* BEVaccinationInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9659887264E7CCC0018BF0B /* BEVaccinationInfoTableViewCell.swift */; };
+		A965988B264E7CCC0018BF0B /* BEVaccinationInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9659888264E7CCC0018BF0B /* BEVaccinationInfoTableViewCell.xib */; };
 		A97D448725A708D300E7D698 /* OnboardingInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97D448625A708D300E7D698 /* OnboardingInfoViewController.xib */; };
 		A97D448F25A71D5F00E7D698 /* RiskLegendDotBodyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97D448E25A71D5F00E7D698 /* RiskLegendDotBodyCell.xib */; };
 		A97D449625A71E8900E7D698 /* CloseBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D449525A71E8900E7D698 /* CloseBarButtonItem.swift */; };
@@ -827,6 +831,10 @@
 		A95EE81324FCE11100AFECBD /* BEStatisticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEStatisticsService.swift; sourceTree = "<group>"; };
 		A95EE81524FCF2A600AFECBD /* BEHomeInfectionSummaryCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEHomeInfectionSummaryCellConfigurator.swift; sourceTree = "<group>"; };
 		A95EE81B24FD0A6A00AFECBD /* BEUIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEUIStackView.swift; sourceTree = "<group>"; };
+		A9659883264E64190018BF0B /* BEVaccinationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEVaccinationInfo.swift; sourceTree = "<group>"; };
+		A9659886264E7CCC0018BF0B /* BEHomeVaccinationInfoCellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEHomeVaccinationInfoCellConfigurator.swift; sourceTree = "<group>"; };
+		A9659887264E7CCC0018BF0B /* BEVaccinationInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEVaccinationInfoTableViewCell.swift; sourceTree = "<group>"; };
+		A9659888264E7CCC0018BF0B /* BEVaccinationInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEVaccinationInfoTableViewCell.xib; sourceTree = "<group>"; };
 		A96E9FC224CD710000F845DB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = fr; path = fr.lproj/usage.html; sourceTree = "<group>"; };
 		A96E9FC324CD710000F845DB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = fr; path = "fr.lproj/privacy-policy.html"; sourceTree = "<group>"; };
 		A96E9FC424CD710000F845DB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -1945,6 +1953,8 @@
 		A95EE81224FCE0CF00AFECBD /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
+				A9D0BF8A24FBA19C00DEBD99 /* InfectionSummary */,
+				A9659882264E63680018BF0B /* VaccinationInfo */,
 				A95EE81324FCE11100AFECBD /* BEStatisticsService.swift */,
 			);
 			path = Statistics;
@@ -1956,6 +1966,25 @@
 				A95EE81524FCF2A600AFECBD /* BEHomeInfectionSummaryCellConfigurator.swift */,
 				A90267CB25AEECB900C14169 /* BEInfectionSummaryTableViewCell.swift */,
 				A90267CC25AEECB900C14169 /* BEInfectionSummaryTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A9659882264E63680018BF0B /* VaccinationInfo */ = {
+			isa = PBXGroup;
+			children = (
+				A9659885264E7CB90018BF0B /* Cells */,
+				A9659883264E64190018BF0B /* BEVaccinationInfo.swift */,
+			);
+			path = VaccinationInfo;
+			sourceTree = "<group>";
+		};
+		A9659885264E7CB90018BF0B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A9659886264E7CCC0018BF0B /* BEHomeVaccinationInfoCellConfigurator.swift */,
+				A9659887264E7CCC0018BF0B /* BEVaccinationInfoTableViewCell.swift */,
+				A9659888264E7CCC0018BF0B /* BEVaccinationInfoTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -2185,7 +2214,6 @@
 				A9221A2F2542C1DD00853CEF /* DynamicText */,
 				A9FC52802522329600660812 /* TestActivation */,
 				A95EE81224FCE0CF00AFECBD /* Statistics */,
-				A9D0BF8A24FBA19C00DEBD99 /* InfectionSummary */,
 				A92076EA24ED540D00AE8748 /* Mocks */,
 				A92076E424ED406500AE8748 /* FakeRequests */,
 				A935EE5424E005A200B33B66 /* ENAUITests */,
@@ -2977,6 +3005,7 @@
 				A97D44D425A76D9D00E7D698 /* MobileDataUsageTableViewCell.xib in Resources */,
 				A97D44CC25A75C9F00E7D698 /* ResetViewController.xib in Resources */,
 				A97D44D025A76D3100E7D698 /* MobileDataUsageSettingsViewController.xib in Resources */,
+				A965988B264E7CCC0018BF0B /* BEVaccinationInfoTableViewCell.xib in Resources */,
 				A90267B825AEE0E500C14169 /* HomeActivateCell.xib in Resources */,
 				A90267CE25AEECB900C14169 /* BEInfectionSummaryTableViewCell.xib in Resources */,
 				A9FC52852522330900660812 /* BEActivateMobileTestIdViewController.xib in Resources */,
@@ -3101,6 +3130,7 @@
 				B1A89F3A24819CD300DA1CEC /* HomeRiskImageItemViewConfigurator.swift in Sources */,
 				B1A89F3924819CC200DA1CEC /* ExposureStateUpdating.swift in Sources */,
 				B1C6ECFF247F089E0066138F /* RiskImageItemView.swift in Sources */,
+				A9659889264E7CCC0018BF0B /* BEHomeVaccinationInfoCellConfigurator.swift in Sources */,
 				71330E43248109FD00EB10F6 /* DynamicTableViewCell.swift in Sources */,
 				B14D0CDD246E972400D5BEBC /* ExposureDetectionDelegate.swift in Sources */,
 				B161782E2480658F006E435A /* DeltaCalculationResult.swift in Sources */,
@@ -3296,6 +3326,7 @@
 				859DD512248549790073D59F /* MockDiagnosisKeysRetrieval.swift in Sources */,
 				A9DD2CF324CF2AE20035081A /* BEString.swift in Sources */,
 				A9C47CA52565447600C7A86B /* MobileDataUsageTableViewCell.swift in Sources */,
+				A965988A264E7CCC0018BF0B /* BEVaccinationInfoTableViewCell.swift in Sources */,
 				EE22DB89247FB43A001B0A71 /* TracingHistoryTableViewCell.swift in Sources */,
 				A9A41F74261C6F7300C2BF3F /* BEToolboxViewController.swift in Sources */,
 				A90267EE25AEFF5D00C14169 /* HomeRiskFindingPositiveTableViewCell.swift in Sources */,
@@ -3380,6 +3411,7 @@
 				B161782524804AC3006E435A /* DownloadedPackagesSQLLiteStoreV0.swift in Sources */,
 				51CE1BBF2460B222002CF42A /* HomeRiskCellConfigurator.swift in Sources */,
 				EE22DB82247FB40A001B0A71 /* ENSettingModel.swift in Sources */,
+				A9659884264E64190018BF0B /* BEVaccinationInfo.swift in Sources */,
 				713EA26324798F8500AB7EE8 /* ExposureDetectionHeaderCell.swift in Sources */,
 				A97E15BF2579281800E1DB28 /* Migration.swift in Sources */,
 				FEDCE09E9F78ABEB4AA9A484 /* ExposureDetectionExecutor.swift in Sources */,
