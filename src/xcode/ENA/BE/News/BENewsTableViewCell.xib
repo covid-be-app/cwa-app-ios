@@ -25,7 +25,7 @@
                                 <rect key="frame" x="8" y="8" width="272" height="362"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="AeL-Zw-H1r">
-                                        <rect key="frame" x="0.0" y="0.0" width="96.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="84.5" height="30"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="Illu_News" translatesAutoresizingMaskIntoConstraints="NO" id="D7Y-o7-6mg">
                                                 <rect key="frame" x="0.0" y="0.0" width="32" height="30"/>
@@ -35,7 +35,8 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" insetsLayoutMarginsFromSafeArea="NO" text="Title 2" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U19-He-VXB" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
-                                                <rect key="frame" x="40" y="0.0" width="56.5" height="30"/>
+                                                <rect key="frame" x="40" y="0.0" width="44.5" height="30"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" name="ENA Text Primary 1 Color"/>
                                                 <nil key="highlightedColor"/>
@@ -44,7 +45,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="U19-He-VXB" secondAttribute="trailing" id="1Rs-Q4-siD"/>
                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="D7Y-o7-6mg" secondAttribute="bottom" id="MfK-i8-Sb8"/>

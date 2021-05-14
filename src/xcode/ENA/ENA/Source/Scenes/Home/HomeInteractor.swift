@@ -339,10 +339,6 @@ extension HomeInteractor {
 			actionsConfigurators.append(setupNewsConfigurator())
 		}
 
-		// MARK: - Add covi codes card
-
-		actionsConfigurators.append(setupCoviCodeConfigurator())
-
 		// MARK: - Add cards depending on result state.
 
 		if store.lastSuccessfulSubmitDiagnosisKeyTimestamp != nil {
@@ -393,6 +389,11 @@ extension HomeInteractor {
 			let submitCellConfigurator = setupSubmitConfigurator()
 			actionsConfigurators.append(submitCellConfigurator)
 		}
+
+		// MARK: - Add covi codes card
+
+		actionsConfigurators.append(setupCoviCodeConfigurator())
+
 
 		// MARK: - Add summary card
 		

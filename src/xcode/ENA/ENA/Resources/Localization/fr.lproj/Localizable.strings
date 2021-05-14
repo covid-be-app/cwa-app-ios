@@ -425,7 +425,7 @@
 "ExposureSubmissionWarnOthers_AccImageDescription" = "Un smartphone transmet au système un diagnostic de test positif crypté.";
 "App_Information_Imprint_Section5_Text" = "Questions? E-Mail: info@coronalert.be";
 "BEMobileTestId_saveExplanationWebForm" = "";
-"BEHome_CoviCode_title" = "Êtes-vous positif et souhaitez informer vos contacts de manière anonyme?";
+"BEHome_CoviCode_title" = "Vous êtes positif et souhaitez informer vos contact de manière anonyme";
 "BECoviCode_enterCodeTitle" = "Entrez votre Covi-Code";
 "BECoviCode_enterCodeDescription" = "Entrez le Covi-Code à 12 chiffres que vous avez reçu du centre de contact";
 "BECoviCode_ok" = "Ok";
