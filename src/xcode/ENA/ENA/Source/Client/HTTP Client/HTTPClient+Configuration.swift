@@ -213,7 +213,7 @@ extension HTTPClient {
 		
 		// :BE: add statistics
 		
-		var infectionSummaryURL: URL {
+		var statisticsURL: URL {
 			endpoints
 				.statistics
 				.appending(

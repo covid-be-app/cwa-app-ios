@@ -29,4 +29,15 @@ struct BEInfectionSummary : Codable, Hashable {
 
 	let startDate:BEDateString
 	let endDate:BEDateString
+	
+	func hash(into hasher: inout Hasher) {
+		hasher.combine(averageInfected)
+		hasher.combine(averageInfectedChangePercentage)
+		hasher.combine(averageHospitalised)
+		hasher.combine(averageHospitalisedChangePercentage)
+		hasher.combine(averageDeceased)
+		hasher.combine(averageDeceasedChangePercentage)
+		hasher.combine(startDate)
+		hasher.combine(endDate)
+	}
 }

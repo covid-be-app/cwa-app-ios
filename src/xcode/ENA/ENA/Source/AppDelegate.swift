@@ -325,7 +325,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		appUpdateChecker.checkAppVersionDialog(for: window?.rootViewController)
 		
 		// :BE: get stats, ignore errors and result
-		statisticsService.getInfectionSummary { _ in }
+		statisticsService.update { _ in }
 		
 		
 		// Update dynamic texts
