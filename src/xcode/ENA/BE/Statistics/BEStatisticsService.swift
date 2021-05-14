@@ -21,14 +21,15 @@ import Foundation
 import OpenCombine
 
 class BEStatisticsService {
-	typealias InfectionSummaryHandler = (Result<BEInfectionSummary, Error>) -> Void
+	typealias StatisticsHandler = (Result<(BEInfectionSummary, BEVaccinationInfo), Error>) -> Void
 	
 	private let client:Client
 
 	@OpenCombine.Published private(set) var infectionSummary:BEInfectionSummary?
-	@OpenCombine.Published private(set) var infectionSummaryUpdatedAt:Date?
+	@OpenCombine.Published private(set) var vaccinationInfo:BEVaccinationInfo?
+	@OpenCombine.Published private(set) var updatedAt:Date?
 	
-	private let infectionSummaryUpdateInterval:TimeInterval = 3600
+	private let updateInterval:TimeInterval = 3600
 	
 	private var observers:Set<AnyCancellable> = []
 	
@@ -36,28 +37,34 @@ class BEStatisticsService {
 		self.client = client
 
 		infectionSummary = store.infectionSummary
-		infectionSummaryUpdatedAt = store.infectionSummaryUpdatedAt
+		vaccinationInfo = store.vaccinationInfo
+		updatedAt = store.statisticsUpdatedAt
 		
 		$infectionSummary.assign(to: \.infectionSummary, on: store).store(in: &observers)
-		$infectionSummaryUpdatedAt.assign(to: \.infectionSummaryUpdatedAt, on: store).store(in: &observers)
+		$vaccinationInfo.assign(to: \.vaccinationInfo, on: store).store(in: &observers)
+		$updatedAt.assign(to: \.statisticsUpdatedAt, on: store).store(in: &observers)
 	}
 	
-	func getInfectionSummary(completion: @escaping InfectionSummaryHandler) {
-		if let lastUpdateDate = infectionSummaryUpdatedAt, let summary = infectionSummary {
-			if lastUpdateDate.timeIntervalSinceNow > -infectionSummaryUpdateInterval {
-				completion(.success(summary))
+	func update(completion: @escaping StatisticsHandler) {
+		if let lastUpdateDate = updatedAt,
+		   let summary = infectionSummary,
+		   let info = vaccinationInfo
+		   {
+			if lastUpdateDate.timeIntervalSinceNow > -updateInterval {
+				completion(.success((summary, info)))
 				return
 			}
 		}
 		
-		client.getInfectionSummary { result in
+		client.getStatistics { result in
 			switch result {
 			case .failure(let error):
 				completion(.failure(error))
-			case .success(let summary):
+			case .success(let (summary, info)):
 				self.infectionSummary = summary
-				self.infectionSummaryUpdatedAt = Date()
-				completion(.success(summary))
+				self.vaccinationInfo = info
+				self.updatedAt = Date()
+				completion(.success((summary, info)))
 			}
 		}
 	}

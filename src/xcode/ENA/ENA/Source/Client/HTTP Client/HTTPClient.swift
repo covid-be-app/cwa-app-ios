@@ -22,6 +22,42 @@ import ExposureNotification
 import Foundation
 import ZIPFoundation
 
+private struct StatisticsResponse: Decodable {
+	let averageInfected: Int
+	let averageInfectedChangePercentage: Int
+	let averageHospitalised: Int
+	let averageHospitalisedChangePercentage: Int
+	let averageDeceased: Int
+	let averageDeceasedChangePercentage: Int
+
+	let startDate: BEDateString
+	let endDate: BEDateString
+
+	let atLeastPartiallyVaccinated: Int
+	let fullyVaccinated: Int
+}
+
+private extension BEInfectionSummary {
+	static func fromStatisticsResponse(_ response: StatisticsResponse) -> BEInfectionSummary {
+		return BEInfectionSummary(
+			averageInfected: response.averageInfected,
+			averageInfectedChangePercentage: response.averageInfectedChangePercentage,
+			averageHospitalised: response.averageHospitalised,
+			averageHospitalisedChangePercentage: response.averageHospitalisedChangePercentage,
+			averageDeceased: response.averageDeceased,
+			averageDeceasedChangePercentage: response.averageDeceasedChangePercentage,
+			startDate: response.startDate,
+			endDate: response.endDate)
+	}
+}
+
+private extension BEVaccinationInfo {
+	static func fromStatisticsResponse(_ response: StatisticsResponse) -> BEVaccinationInfo {
+		return BEVaccinationInfo(atLeastPartiallyVaccinated: response.atLeastPartiallyVaccinated, fullyVaccinated: response.fullyVaccinated)
+	}
+}
+
+
 final class HTTPClient: Client {
 	// MARK: Creating
 	init(
@@ -509,8 +545,9 @@ final class HTTPClient: Client {
 		}
 	}
 	
-	func getInfectionSummary(completion: @escaping InfectionSummaryHandler) {
-		let url = configuration.infectionSummaryURL
+	func getStatistics(completion: @escaping StatisticsHandler) {
+		
+		let url = configuration.statisticsURL
 		self.session.GET(url) { result in
 			switch result {
 			case let .success(response):
@@ -518,18 +555,25 @@ final class HTTPClient: Client {
 					completion(.failure(.serverError(response.statusCode)))
 					return
 				}
-				guard let summaryResponseData = response.body else {
+				guard let statisticsResponseData = response.body else {
 					completion(.failure(.invalidResponse))
 					return
 				}
 				do {
 					let decoder = JSONDecoder()
-					let infectionSummary = try decoder.decode(
-						BEInfectionSummary.self,
-						from: summaryResponseData
+					let statisticsResponse = try decoder.decode(
+						StatisticsResponse.self,
+						from: statisticsResponseData
 					)
-					completion(.success(infectionSummary))
+					
+					let infectionSummary = BEInfectionSummary.fromStatisticsResponse(statisticsResponse)
+					let vaccinationInfo = BEVaccinationInfo.fromStatisticsResponse(statisticsResponse)
+					
+					
+					completion(.success((infectionSummary, vaccinationInfo)))
 				} catch {
+					print(error)
+					print(error.localizedDescription)
 					completion(.failure(.invalidResponse))
 				}
 			case let .failure(error):

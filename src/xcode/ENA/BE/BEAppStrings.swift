@@ -194,4 +194,11 @@ enum BEAppStrings {
 	enum BEExposureSubmissionError {
 		static let invalidCoviCode = NSLocalizedString("BEExposureSubmissionError_invalidCoviCode", comment: "")
 	}
+	
+	enum BEVaccinationInfo {
+		static let title = NSLocalizedString("BEVaccinationInfo_title", comment: "")
+		static let atLeastOneDose = NSLocalizedString("BEVaccinationInfo_atLeastOneDose", comment: "")
+		static let fullyVaccinated = NSLocalizedString("BEVaccinationInfo_fullyVaccinated", comment: "")
+		static let updatedAt = NSLocalizedString("BEVaccinationInfo_updatedAt", comment: "")
+	}
 }
