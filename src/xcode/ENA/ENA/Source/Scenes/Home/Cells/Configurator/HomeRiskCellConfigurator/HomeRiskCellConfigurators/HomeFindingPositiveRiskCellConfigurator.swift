@@ -26,7 +26,7 @@ final class HomeFindingPositiveRiskCellConfigurator: HomeRiskCellConfigurator {
 	// MARK: Configuration
 
 	func configure(cell: HomeRiskFindingPositiveTableViewCell) {
-		let dynamicTextService = BEDynamicTextService()
+		let dynamicTextService = BEDynamicInformationTextService()
 		let screenSections = dynamicTextService.sections(.positiveTestResultCard, section: .explanation)
 		cell.delegate = self
 

@@ -125,9 +125,10 @@ protocol Store: AnyObject {
 	/// How many fake test fetches did we currently do
 	var fakeRequestTestResultFetchIndex: Int { get set }
 	
+	var statisticsUpdatedAt: Date? { get set }
 	var infectionSummary: BEInfectionSummary? { get set }
-	var infectionSummaryUpdatedAt: Date? { get set }
-	
+	var vaccinationInfo: BEVaccinationInfo? { get set }
+
 	var latestRisk: Risk? { get set }
 	
 	var useMobileDataForTEKDownload: Bool { get set }

@@ -28,19 +28,19 @@ enum BEDynamicTextServiceError: Error {
 }
 
 class BEDynamicTextService {
-	static let cacheURL = FileManager.default.applicationSupportURL("dynamicTextsV2.json")
-	static let defaultBundleURL = Bundle.main.url(forResource: "dynamicTextsV2", withExtension: "json")!
-
 	var dynamicText:BEDynamicText!
-	var bundleURL: URL!
+	
+	private let bundleURL: URL
+	let cacheURL: URL
 	
 	// if this throws there is a big issue with the data stored inside the bundle
-	init(_ defaultFileURL:URL = defaultBundleURL) {
-		bundleURL = defaultFileURL
+	init(cacheURL: URL, bundleURL: URL) {
+		self.cacheURL = cacheURL
+		self.bundleURL = bundleURL
 		
 		do {
 			try copyBundleToCacheIfMoreRecent()
-			dynamicText = try Self.loadTextFromCache()
+			dynamicText = try loadTextFromCache()
 			return
 		} catch {
 			logError(message: "\(error.localizedDescription)")
@@ -49,7 +49,7 @@ class BEDynamicTextService {
 		// if that fails, copy the data in the bundle and try again
 		do {
 			try copyBundleTextsToCache()
-			dynamicText = try Self.loadTextFromCache()
+			dynamicText = try loadTextFromCache()
 		} catch {
 			logError(message: "\(error.localizedDescription)")
 			fatalError("Should never happen")
@@ -57,9 +57,9 @@ class BEDynamicTextService {
 	}
 	
 	func updateTexts(_ data: Data) throws {
-		if let text = try? Self.loadTextFromData(data) {
+		if let text = try? loadTextFromData(data) {
 			do {
-				try data.write(to: Self.cacheURL, options: .atomic)
+				try data.write(to: cacheURL, options: .atomic)
 				dynamicText = text
 			} catch {
 			}
@@ -92,44 +92,9 @@ class BEDynamicTextService {
 		return dynamicSections
 	}
 	
-	static func validateLoadedText(_ dynamicText: BEDynamicText) throws {
-		try BEDynamicTextLanguage.allCases.forEach{ language in
-			if dynamicText.texts[language] == nil {
-				logError(message: "Missing language \(language)")
-				throw BEDynamicTextServiceError.missingLanguage
-			}
-		}
-		
-		try BEDynamicTextScreenName.allCases.forEach{ screenName in
-			if dynamicText.structure[screenName] == nil {
-				logError(message: "Missing screen \(screenName)")
-				throw BEDynamicTextServiceError.missingScreen
-			}
-		}
-
-		guard
-			let standard = dynamicText.structure[.standard],
-			let highRisk = dynamicText.structure[.highRisk],
-			let positiveTestResultCard = dynamicText.structure[.positiveTestResultCard],
-			let positiveTestResult = dynamicText.structure[.positiveTestResult],
-			let negativeTestResult = dynamicText.structure[.negativeTestResult],
-			let thankYou = dynamicText.structure[.thankYou],
-			let participatingCountries = dynamicText.structure[.participatingCountries] else {
-				throw BEDynamicTextServiceError.missingScreen
-		}
-		
-		try validateRiskScreen(standard)
-		try validateRiskScreen(highRisk)
-		try validatePositiveTestResultCard(positiveTestResultCard)
-		try validateTestResult(positiveTestResult)
-		try validateTestResult(negativeTestResult)
-		try validateThankYou(thankYou)
-		try validateParticipatingCountries(participatingCountries)
-	}
-	
 	private func copyBundleToCacheIfMoreRecent() throws {
 		let sourceAttributes = try FileManager.default.attributesOfItem(atPath: bundleURL.path)
-		let cacheAttributes = try FileManager.default.attributesOfItem(atPath: Self.cacheURL.path)
+		let cacheAttributes = try FileManager.default.attributesOfItem(atPath: cacheURL.path)
 
 		guard
 			let sourceModificationDate = sourceAttributes[.modificationDate] as? Date,
@@ -151,11 +116,11 @@ class BEDynamicTextService {
 			fatalError("Should never happen")
 		}
 		
-		try data.write(to: Self.cacheURL, options: .atomic)
+		try data.write(to: cacheURL, options: .atomic)
 		
 		// also copy the modification date
 		let sourceAttributes = try FileManager.default.attributesOfItem(atPath: bundleURL.path)
-		var destinationAttributes = try FileManager.default.attributesOfItem(atPath: Self.cacheURL.path)
+		var destinationAttributes = try FileManager.default.attributesOfItem(atPath: cacheURL.path)
 
 		guard let modificationDate = sourceAttributes[.modificationDate] as? Date else {
 			throw BEDynamicTextServiceError.cachingError
@@ -163,129 +128,49 @@ class BEDynamicTextService {
 		
 		destinationAttributes[.modificationDate] = modificationDate
 
-		try FileManager.default.setAttributes(destinationAttributes, ofItemAtPath: Self.cacheURL.path)
+		try FileManager.default.setAttributes(destinationAttributes, ofItemAtPath: cacheURL.path)
 	}
 	
-	static private func loadTextFromCache() throws -> BEDynamicText {
+	private func loadTextFromCache() throws -> BEDynamicText {
 		log(message: "Load text from cache")
-		let data = try Data(contentsOf: Self.cacheURL)
+		let data = try Data(contentsOf: cacheURL)
 
 		return try loadTextFromData(data)
 	}
 	
-	static private func loadTextFromData(_ data: Data) throws -> BEDynamicText {
+	private func loadTextFromData(_ data: Data) throws -> BEDynamicText {
 		let decoder = JSONDecoder()
 		let result = try decoder.decode(BEDynamicText.self, from: data)
 		
 		// do some sanity checks
-		try Self.validateLoadedText(result)
+		try validateLoadedText(result)
 		
 		return result
 	}
 	
-	static private func validateRiskScreen(_ screen:[BEDynamicTextScreenSectionName:[BEDynamicTextScreenSection]]) throws {
-		guard let preventiveMeasures = screen[.preventiveMeasures] else {
-			throw BEDynamicTextServiceError.missingScreenSection
+	func validateLoadedText(_ dynamicText: BEDynamicText) throws {
+		fatalError("Override in subclass")
+	}
+	
+	func validateLoadedText(_ dynamicText: BEDynamicText, screenNames: [BEDynamicTextScreenName]) throws {
+		try BEDynamicTextLanguage.allCases.forEach{ language in
+			if dynamicText.texts[language] == nil {
+				logError(message: "Missing language \(language)")
+				throw BEDynamicTextServiceError.missingLanguage
+			}
 		}
 		
-		try preventiveMeasures.forEach{ entry in
-			if entry.icon == nil || entry.text == nil {
-				throw BEDynamicTextServiceError.wrongSectionFields
+		try screenNames.forEach{ screenName in
+			guard let structure = dynamicText.structure[screenName] else {
+				logError(message: "Missing screen \(screenName)")
+				throw BEDynamicTextServiceError.missingScreen
 			}
 			
-			if entry.title != nil {
-				throw BEDynamicTextServiceError.wrongSectionFields
-			}
+			try validateScreenStructure(name: screenName, structure: structure)
 		}
 	}
 	
-	static private func validatePositiveTestResultCard(_ screen:[BEDynamicTextScreenSectionName:[BEDynamicTextScreenSection]]) throws {
-		guard let explanation = screen[.explanation] else {
-			throw BEDynamicTextServiceError.missingScreenSection
-		}
-		
-		try explanation.forEach{ entry in
-			if entry.icon == nil || entry.text == nil {
-				throw BEDynamicTextServiceError.wrongSectionFields
-			}
-
-			if entry.title != nil {
-				throw BEDynamicTextServiceError.wrongSectionFields
-			}
-
-			if entry.paragraphs != nil {
-				throw BEDynamicTextServiceError.wrongSectionFields
-			}
-		}
-	}
-
-	static private func validateTestResult(_ screen:[BEDynamicTextScreenSectionName:[BEDynamicTextScreenSection]]) throws {
-		guard let explanation = screen[.explanation] else {
-			throw BEDynamicTextServiceError.missingScreenSection
-		}
-		
-		try explanation.forEach{ entry in
-			if entry.icon == nil || entry.text == nil || entry.title == nil {
-				throw BEDynamicTextServiceError.wrongSectionFields
-			}
-		}
-	}
-	
-	static private func validateThankYou(_ screen:[BEDynamicTextScreenSectionName:[BEDynamicTextScreenSection]]) throws {
-		guard
-			let pleaseNote = screen[.pleaseNote],
-			let otherInformation = screen[.otherInformation] else {
-				throw BEDynamicTextServiceError.missingScreenSection
-		}
-		
-		try pleaseNote.forEach{ entry in
-			if entry.icon == nil || entry.text == nil {
-				throw BEDynamicTextServiceError.wrongSectionFields
-			}
-
-			if entry.title != nil {
-				throw BEDynamicTextServiceError.wrongSectionFields
-			}
-
-			if entry.paragraphs != nil {
-				throw BEDynamicTextServiceError.wrongSectionFields
-			}
-		}
-		
-		try otherInformation.forEach{ entry in
-			if entry.icon != nil {
-				throw BEDynamicTextServiceError.wrongSectionFields
-			}
-			if entry.text != nil {
-				throw BEDynamicTextServiceError.wrongSectionFields
-			}
-			if entry.title != nil {
-				throw BEDynamicTextServiceError.wrongSectionFields
-			}
-			if entry.paragraphs == nil {
-				throw BEDynamicTextServiceError.wrongSectionFields
-			}
-		}
-	}
-	
-	static private func validateParticipatingCountries(_ screen:[BEDynamicTextScreenSectionName:[BEDynamicTextScreenSection]]) throws {
-		guard let list = screen[.list] else {
-			throw BEDynamicTextServiceError.missingScreenSection
-		}
-		
-		try list.forEach{ entry in
-			if entry.icon == nil {
-				throw BEDynamicTextServiceError.wrongSectionFields
-			}
-			if entry.text == nil {
-				throw BEDynamicTextServiceError.wrongSectionFields
-			}
-			if entry.title != nil {
-				throw BEDynamicTextServiceError.wrongSectionFields
-			}
-			if entry.paragraphs != nil {
-				throw BEDynamicTextServiceError.wrongSectionFields
-			}
-		}
+	func validateScreenStructure(name: BEDynamicTextScreenName, structure: [BEDynamicTextScreenSectionName:[BEDynamicTextScreenSection]]) throws {
+		fatalError("Override in subclass")
 	}
 }

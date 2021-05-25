@@ -181,36 +181,7 @@ final class BEHTTPClientSubmitTests: XCTestCase {
 
 		waitForExpectations(timeout: expectationsTimeout)
 	}
-
-	func testSubmit_Response403() {
-		// Arrange
-		let stack = MockNetworkStack(
-			httpStatus: 403,
-			responseData: Data()
-		)
-		let testResult = TestResult.positive
-		let expectation = self.expectation(description: "Response403")
-
-		// Act
-		HTTPClient.makeWith(mock: stack).submit(
-			keys: keys,
-			mobileTestId: mobileTestId,
-			testResult: testResult,
-			isFake: false) { error in
-			defer { expectation.fulfill() }
-			guard let error = error else {
-				XCTFail("error expected")
-				return
-			}
-			guard case SubmissionError.invalidTan = error else {
-				XCTFail("We expect error to be of type invalidTan")
-				return
-			}
-		}
-
-		waitForExpectations(timeout: expectationsTimeout)
-	}
-
+	
 	func testSubmit_VerifyPOSTBodyContent() throws {
 		let expectedToken = "SomeToken"
 		let sendPostExpectation = expectation(

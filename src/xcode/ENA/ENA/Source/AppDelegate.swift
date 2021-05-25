@@ -325,14 +325,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		appUpdateChecker.checkAppVersionDialog(for: window?.rootViewController)
 		
 		// :BE: get stats, ignore errors and result
-		statisticsService.getInfectionSummary { _ in }
+		statisticsService.update { _ in }
 		
 		
 		// Update dynamic texts
-		let dynamicTextService = BEDynamicTextService()
-		let dynamicTextDownloadService = BEDynamicTextDownloadService(client: client, textService: dynamicTextService)
-		
-		dynamicTextDownloadService.downloadTextsIfNeeded {}
+		let dynamicInformationTextService = BEDynamicInformationTextService()
+		let dynamicInformationTextDownloadService = BEDynamicTextDownloadService(client: client, textService: dynamicInformationTextService, url: client.configuration.dynamicInformationTextsURL)
+
+		let dynamicNewsTextService = BEDynamicNewsTextService()
+		let hasNews = dynamicNewsTextService.hasNews
+		let dynamicNewsTextDownloadService = BEDynamicTextDownloadService(client: client, textService: dynamicNewsTextService, url: client.configuration.dynamicNewsTextsURL)
+
+		dynamicInformationTextDownloadService.downloadTextsIfNeeded {
+			dynamicNewsTextDownloadService.downloadTextsIfNeeded {
+				if dynamicNewsTextService.hasNews != hasNews {
+					NotificationCenter.default.post(name: BEDynamicNewsTextService.newsStatusChangedNotificationName, object: nil)
+				}
+			}
+		}
 		
 		let exposureSubmissionService = BEExposureSubmissionServiceImpl(diagnosiskeyRetrieval: self.exposureManager, client: self.client, store: self.store)
 

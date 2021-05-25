@@ -226,10 +226,17 @@
 		A90E1AEA25B59683005AC840 /* HomeSpacerCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90E1AE925B59683005AC840 /* HomeSpacerCellConfigurator.swift */; };
 		A90E1AF125B597A3005AC840 /* HomeSpacerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90E1AEF25B597A3005AC840 /* HomeSpacerCell.swift */; };
 		A90E1AF225B597A3005AC840 /* HomeSpacerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A90E1AF025B597A3005AC840 /* HomeSpacerCell.xib */; };
+		A913E2F92647C70B0013EF3E /* BEHomeCoviCodeCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A913E2F62647C70B0013EF3E /* BEHomeCoviCodeCellConfigurator.swift */; };
+		A913E2FA2647C70B0013EF3E /* BECoviCodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A913E2F72647C70B0013EF3E /* BECoviCodeTableViewCell.swift */; };
+		A913E2FB2647C70B0013EF3E /* BECoviCodeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A913E2F82647C70B0013EF3E /* BECoviCodeTableViewCell.xib */; };
+		A913E2FD2647DC880013EF3E /* BECoviCodeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A913E2FC2647DC880013EF3E /* BECoviCodeCoordinator.swift */; };
+		A913E2FF264816720013EF3E /* BECoviCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A913E2FE264816720013EF3E /* BECoviCodeViewController.swift */; };
+		A913E3022649433B0013EF3E /* BEMockExposureSubmissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076D024E426D600AE8748 /* BEMockExposureSubmissionService.swift */; };
+		A913E304264A5C900013EF3E /* BEHTTPClientSubmitCoviCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A913E303264A5C900013EF3E /* BEHTTPClientSubmitCoviCodeTests.swift */; };
+		A913E306264A5F6C0013EF3E /* ExposureSubmissionServiceCoviCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A913E305264A5F6B0013EF3E /* ExposureSubmissionServiceCoviCodeTests.swift */; };
 		A92076C824E3DDEE00AE8748 /* BEDiagnosisKeyRetrieval.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076C724E3DDEE00AE8748 /* BEDiagnosisKeyRetrieval.swift */; };
 		A92076CC24E3F56400AE8748 /* BEExposureSubmissionServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076CB24E3F56400AE8748 /* BEExposureSubmissionServiceTests.swift */; };
 		A92076CE24E40BFC00AE8748 /* BEIntervalNumberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076CD24E40BFC00AE8748 /* BEIntervalNumberTests.swift */; };
-		A92076D124E426D600AE8748 /* BEMockExposureSubmissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076D024E426D600AE8748 /* BEMockExposureSubmissionService.swift */; };
 		A92076DB24EA770F00AE8748 /* BEDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076DA24EA770F00AE8748 /* BEDate.swift */; };
 		A92076DD24EA7C5D00AE8748 /* BEDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076DC24EA7C5D00AE8748 /* BEDateTests.swift */; };
 		A92076E124ED33EA00AE8748 /* BEURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076E024ED33EA00AE8748 /* BEURLRequest.swift */; };
@@ -245,7 +252,7 @@
 		A9221A3E2543524900853CEF /* KeychainHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A3D2543524900853CEF /* KeychainHelperTests.swift */; };
 		A9221A402544606800853CEF /* BEDynamicText.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A3F2544606800853CEF /* BEDynamicText.swift */; };
 		A9221A422546C39700853CEF /* BEFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A412546C39700853CEF /* BEFileManager.swift */; };
-		A9221A452546F3BF00853CEF /* BEDynamicTextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A442546F3BF00853CEF /* BEDynamicTextTests.swift */; };
+		A9221A452546F3BF00853CEF /* BEDynamicInformationTextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A442546F3BF00853CEF /* BEDynamicInformationTextTests.swift */; };
 		A9221A472546F62900853CEF /* BEDynamicTextService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A462546F62900853CEF /* BEDynamicTextService.swift */; };
 		A9221A492546FB1A00853CEF /* BEDynamicTextLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A482546FB1A00853CEF /* BEDynamicTextLanguage.swift */; };
 		A9221A4C25470F7700853CEF /* missingLanguageDynamicTexts.json in Resources */ = {isa = PBXBuildFile; fileRef = A9221A4A25470F7700853CEF /* missingLanguageDynamicTexts.json */; };
@@ -254,7 +261,7 @@
 		A9221A5225472CB300853CEF /* testDownloadedTexts.json in Resources */ = {isa = PBXBuildFile; fileRef = A9221A5125472CB200853CEF /* testDownloadedTexts.json */; };
 		A9221A572549692D00853CEF /* BEDynamicTextScreenSection+Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A562549692D00853CEF /* BEDynamicTextScreenSection+Cells.swift */; };
 		A9221A592549B92600853CEF /* wrongStructureDynamicTexts.json in Resources */ = {isa = PBXBuildFile; fileRef = A9221A582549B92600853CEF /* wrongStructureDynamicTexts.json */; };
-		A9221A5B254B02B400853CEF /* BEOnlineDynamicTextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A5A254B02B400853CEF /* BEOnlineDynamicTextTests.swift */; };
+		A9221A5B254B02B400853CEF /* BEOnlineDynamicInformationTextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A5A254B02B400853CEF /* BEOnlineDynamicInformationTextTests.swift */; };
 		A929A71724DC3EE50039B997 /* BEHTTPClientSubmitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A929A71624DC3EE50039B997 /* BEHTTPClientSubmitTests.swift */; };
 		A92B66AD251CBF9B00F9B8DD /* BEUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B66AC251CBF9B00F9B8DD /* BEUILabel.swift */; };
 		A935EE5624E0060400B33B66 /* BEENAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A935EE5524E0060400B33B66 /* BEENAUITests.swift */; };
@@ -266,6 +273,10 @@
 		A95EE81424FCE11100AFECBD /* BEStatisticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95EE81324FCE11100AFECBD /* BEStatisticsService.swift */; };
 		A95EE81624FCF2A600AFECBD /* BEHomeInfectionSummaryCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95EE81524FCF2A600AFECBD /* BEHomeInfectionSummaryCellConfigurator.swift */; };
 		A95EE81C24FD0A6A00AFECBD /* BEUIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95EE81B24FD0A6A00AFECBD /* BEUIStackView.swift */; };
+		A9659884264E64190018BF0B /* BEVaccinationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9659883264E64190018BF0B /* BEVaccinationInfo.swift */; };
+		A9659889264E7CCC0018BF0B /* BEHomeVaccinationInfoCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9659886264E7CCC0018BF0B /* BEHomeVaccinationInfoCellConfigurator.swift */; };
+		A965988A264E7CCC0018BF0B /* BEVaccinationInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9659887264E7CCC0018BF0B /* BEVaccinationInfoTableViewCell.swift */; };
+		A965988B264E7CCC0018BF0B /* BEVaccinationInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9659888264E7CCC0018BF0B /* BEVaccinationInfoTableViewCell.xib */; };
 		A97D448725A708D300E7D698 /* OnboardingInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97D448625A708D300E7D698 /* OnboardingInfoViewController.xib */; };
 		A97D448F25A71D5F00E7D698 /* RiskLegendDotBodyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97D448E25A71D5F00E7D698 /* RiskLegendDotBodyCell.xib */; };
 		A97D449625A71E8900E7D698 /* CloseBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D449525A71E8900E7D698 /* CloseBarButtonItem.swift */; };
@@ -316,6 +327,19 @@
 		A97E1608257A51DC00E1DB28 /* BEFuture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E1607257A51DC00E1DB28 /* BEFuture.swift */; };
 		A980D59D24D822F400A5BB8E /* BEIntervalNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980D59C24D822F400A5BB8E /* BEIntervalNumber.swift */; };
 		A986053024D33231003D0865 /* BEAccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A986052F24D33231003D0865 /* BEAccessibilityIdentifiers.swift */; };
+		A9A41AD1264ACA7D00B3AAD7 /* BENewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9A41ACE264ACA7D00B3AAD7 /* BENewsTableViewCell.xib */; };
+		A9A41AD2264ACA7D00B3AAD7 /* BENewsTableViewCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A41ACF264ACA7D00B3AAD7 /* BENewsTableViewCellConfigurator.swift */; };
+		A9A41AD3264ACA7D00B3AAD7 /* BENewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A41AD0264ACA7D00B3AAD7 /* BENewsTableViewCell.swift */; };
+		A9A41AD6264ACFC100B3AAD7 /* BEDynamicInformationTextService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A41AD5264ACFC100B3AAD7 /* BEDynamicInformationTextService.swift */; };
+		A9A41ADA264BBAB400B3AAD7 /* BEDynamicNewsTextService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A41AD9264BBAB400B3AAD7 /* BEDynamicNewsTextService.swift */; };
+		A9A41ADC264BC22800B3AAD7 /* dynamicNews.json in Resources */ = {isa = PBXBuildFile; fileRef = A9A41ADB264BC22800B3AAD7 /* dynamicNews.json */; };
+		A9A41AE1264BCD9D00B3AAD7 /* BEDynamicNewsTextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A41ADF264BCD9D00B3AAD7 /* BEDynamicNewsTextTests.swift */; };
+		A9A41AE2264BCD9D00B3AAD7 /* BEOnlineDynamicNewsTextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A41AE0264BCD9D00B3AAD7 /* BEOnlineDynamicNewsTextTests.swift */; };
+		A9A41AE8264BCE2A00B3AAD7 /* testDownloadedNewsTexts.json in Resources */ = {isa = PBXBuildFile; fileRef = A9A41AE3264BCE2A00B3AAD7 /* testDownloadedNewsTexts.json */; };
+		A9A41AE9264BCE2A00B3AAD7 /* wrongStructureNewsDynamicTexts.json in Resources */ = {isa = PBXBuildFile; fileRef = A9A41AE4264BCE2A00B3AAD7 /* wrongStructureNewsDynamicTexts.json */; };
+		A9A41AEA264BCE2A00B3AAD7 /* missingLanguageNewsDynamicTexts.json in Resources */ = {isa = PBXBuildFile; fileRef = A9A41AE5264BCE2A00B3AAD7 /* missingLanguageNewsDynamicTexts.json */; };
+		A9A41AEB264BCE2A00B3AAD7 /* testNewsDynamicTexts.json in Resources */ = {isa = PBXBuildFile; fileRef = A9A41AE6264BCE2A00B3AAD7 /* testNewsDynamicTexts.json */; };
+		A9A41AEC264BCE2A00B3AAD7 /* missingScreensNewsDynamicTexts.json in Resources */ = {isa = PBXBuildFile; fileRef = A9A41AE7264BCE2A00B3AAD7 /* missingScreensNewsDynamicTexts.json */; };
 		A9A41F6C261C4F0100C2BF3F /* BEHomeToolboxCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A41F69261C4F0100C2BF3F /* BEHomeToolboxCellConfigurator.swift */; };
 		A9A41F6D261C4F0100C2BF3F /* BEToolboxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A41F6A261C4F0100C2BF3F /* BEToolboxTableViewCell.swift */; };
 		A9A41F6E261C4F0100C2BF3F /* BEToolboxTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9A41F6B261C4F0100C2BF3F /* BEToolboxTableViewCell.xib */; };
@@ -341,7 +365,7 @@
 		A9D0BF8424F5864000DEBD99 /* BECountdownTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D0BF8324F5864000DEBD99 /* BECountdownTimerTests.swift */; };
 		A9D0BF8E24FBA20E00DEBD99 /* BEInfectionSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D0BF8D24FBA20E00DEBD99 /* BEInfectionSummary.swift */; };
 		A9DD2CE724CEF0680035081A /* BEMobileTestIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2CE524CEF0680035081A /* BEMobileTestIdViewController.swift */; };
-		A9DD2CEB24CEF3C70035081A /* BEExposureSubmissionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2CEA24CEF3C70035081A /* BEExposureSubmissionCoordinator.swift */; };
+		A9DD2CEB24CEF3C70035081A /* BEExposureSubmissionFromTestCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2CEA24CEF3C70035081A /* BEExposureSubmissionFromTestCoordinator.swift */; };
 		A9DD2CED24CF0BC00035081A /* BEAppStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2CEC24CF0BC00035081A /* BEAppStrings.swift */; };
 		A9DD2CEF24CF293E0035081A /* BEMobileTestId.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2CEE24CF293E0035081A /* BEMobileTestId.swift */; };
 		A9DD2CF324CF2AE20035081A /* BEString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD2CF224CF2AE20035081A /* BEString.swift */; };
@@ -760,6 +784,13 @@
 		A90E1AE925B59683005AC840 /* HomeSpacerCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSpacerCellConfigurator.swift; sourceTree = "<group>"; };
 		A90E1AEF25B597A3005AC840 /* HomeSpacerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSpacerCell.swift; sourceTree = "<group>"; };
 		A90E1AF025B597A3005AC840 /* HomeSpacerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeSpacerCell.xib; sourceTree = "<group>"; };
+		A913E2F62647C70B0013EF3E /* BEHomeCoviCodeCellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEHomeCoviCodeCellConfigurator.swift; sourceTree = "<group>"; };
+		A913E2F72647C70B0013EF3E /* BECoviCodeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BECoviCodeTableViewCell.swift; sourceTree = "<group>"; };
+		A913E2F82647C70B0013EF3E /* BECoviCodeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BECoviCodeTableViewCell.xib; sourceTree = "<group>"; };
+		A913E2FC2647DC880013EF3E /* BECoviCodeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BECoviCodeCoordinator.swift; sourceTree = "<group>"; };
+		A913E2FE264816720013EF3E /* BECoviCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BECoviCodeViewController.swift; sourceTree = "<group>"; };
+		A913E303264A5C900013EF3E /* BEHTTPClientSubmitCoviCodeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEHTTPClientSubmitCoviCodeTests.swift; sourceTree = "<group>"; };
+		A913E305264A5F6B0013EF3E /* ExposureSubmissionServiceCoviCodeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExposureSubmissionServiceCoviCodeTests.swift; sourceTree = "<group>"; };
 		A92076C724E3DDEE00AE8748 /* BEDiagnosisKeyRetrieval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDiagnosisKeyRetrieval.swift; sourceTree = "<group>"; };
 		A92076CB24E3F56400AE8748 /* BEExposureSubmissionServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEExposureSubmissionServiceTests.swift; sourceTree = "<group>"; };
 		A92076CD24E40BFC00AE8748 /* BEIntervalNumberTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEIntervalNumberTests.swift; sourceTree = "<group>"; };
@@ -779,7 +810,7 @@
 		A9221A3D2543524900853CEF /* KeychainHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelperTests.swift; sourceTree = "<group>"; };
 		A9221A3F2544606800853CEF /* BEDynamicText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicText.swift; sourceTree = "<group>"; };
 		A9221A412546C39700853CEF /* BEFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEFileManager.swift; sourceTree = "<group>"; };
-		A9221A442546F3BF00853CEF /* BEDynamicTextTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicTextTests.swift; sourceTree = "<group>"; };
+		A9221A442546F3BF00853CEF /* BEDynamicInformationTextTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicInformationTextTests.swift; sourceTree = "<group>"; };
 		A9221A462546F62900853CEF /* BEDynamicTextService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicTextService.swift; sourceTree = "<group>"; };
 		A9221A482546FB1A00853CEF /* BEDynamicTextLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicTextLanguage.swift; sourceTree = "<group>"; };
 		A9221A4A25470F7700853CEF /* missingLanguageDynamicTexts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = missingLanguageDynamicTexts.json; sourceTree = "<group>"; };
@@ -788,7 +819,7 @@
 		A9221A5125472CB200853CEF /* testDownloadedTexts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testDownloadedTexts.json; sourceTree = "<group>"; };
 		A9221A562549692D00853CEF /* BEDynamicTextScreenSection+Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BEDynamicTextScreenSection+Cells.swift"; sourceTree = "<group>"; };
 		A9221A582549B92600853CEF /* wrongStructureDynamicTexts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wrongStructureDynamicTexts.json; sourceTree = "<group>"; };
-		A9221A5A254B02B400853CEF /* BEOnlineDynamicTextTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEOnlineDynamicTextTests.swift; sourceTree = "<group>"; };
+		A9221A5A254B02B400853CEF /* BEOnlineDynamicInformationTextTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEOnlineDynamicInformationTextTests.swift; sourceTree = "<group>"; };
 		A929A71624DC3EE50039B997 /* BEHTTPClientSubmitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEHTTPClientSubmitTests.swift; sourceTree = "<group>"; };
 		A92B66AC251CBF9B00F9B8DD /* BEUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEUILabel.swift; sourceTree = "<group>"; };
 		A935EE5524E0060400B33B66 /* BEENAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEENAUITests.swift; sourceTree = "<group>"; };
@@ -800,6 +831,10 @@
 		A95EE81324FCE11100AFECBD /* BEStatisticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEStatisticsService.swift; sourceTree = "<group>"; };
 		A95EE81524FCF2A600AFECBD /* BEHomeInfectionSummaryCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEHomeInfectionSummaryCellConfigurator.swift; sourceTree = "<group>"; };
 		A95EE81B24FD0A6A00AFECBD /* BEUIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEUIStackView.swift; sourceTree = "<group>"; };
+		A9659883264E64190018BF0B /* BEVaccinationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEVaccinationInfo.swift; sourceTree = "<group>"; };
+		A9659886264E7CCC0018BF0B /* BEHomeVaccinationInfoCellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEHomeVaccinationInfoCellConfigurator.swift; sourceTree = "<group>"; };
+		A9659887264E7CCC0018BF0B /* BEVaccinationInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEVaccinationInfoTableViewCell.swift; sourceTree = "<group>"; };
+		A9659888264E7CCC0018BF0B /* BEVaccinationInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEVaccinationInfoTableViewCell.xib; sourceTree = "<group>"; };
 		A96E9FC224CD710000F845DB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = fr; path = fr.lproj/usage.html; sourceTree = "<group>"; };
 		A96E9FC324CD710000F845DB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = fr; path = "fr.lproj/privacy-policy.html"; sourceTree = "<group>"; };
 		A96E9FC424CD710000F845DB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -857,6 +892,19 @@
 		A97E1607257A51DC00E1DB28 /* BEFuture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEFuture.swift; sourceTree = "<group>"; };
 		A980D59C24D822F400A5BB8E /* BEIntervalNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEIntervalNumber.swift; sourceTree = "<group>"; };
 		A986052F24D33231003D0865 /* BEAccessibilityIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEAccessibilityIdentifiers.swift; sourceTree = "<group>"; };
+		A9A41ACE264ACA7D00B3AAD7 /* BENewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BENewsTableViewCell.xib; sourceTree = "<group>"; };
+		A9A41ACF264ACA7D00B3AAD7 /* BENewsTableViewCellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BENewsTableViewCellConfigurator.swift; sourceTree = "<group>"; };
+		A9A41AD0264ACA7D00B3AAD7 /* BENewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BENewsTableViewCell.swift; sourceTree = "<group>"; };
+		A9A41AD5264ACFC100B3AAD7 /* BEDynamicInformationTextService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicInformationTextService.swift; sourceTree = "<group>"; };
+		A9A41AD9264BBAB400B3AAD7 /* BEDynamicNewsTextService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicNewsTextService.swift; sourceTree = "<group>"; };
+		A9A41ADB264BC22800B3AAD7 /* dynamicNews.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dynamicNews.json; sourceTree = "<group>"; };
+		A9A41ADF264BCD9D00B3AAD7 /* BEDynamicNewsTextTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEDynamicNewsTextTests.swift; sourceTree = "<group>"; };
+		A9A41AE0264BCD9D00B3AAD7 /* BEOnlineDynamicNewsTextTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEOnlineDynamicNewsTextTests.swift; sourceTree = "<group>"; };
+		A9A41AE3264BCE2A00B3AAD7 /* testDownloadedNewsTexts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testDownloadedNewsTexts.json; sourceTree = "<group>"; };
+		A9A41AE4264BCE2A00B3AAD7 /* wrongStructureNewsDynamicTexts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wrongStructureNewsDynamicTexts.json; sourceTree = "<group>"; };
+		A9A41AE5264BCE2A00B3AAD7 /* missingLanguageNewsDynamicTexts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = missingLanguageNewsDynamicTexts.json; sourceTree = "<group>"; };
+		A9A41AE6264BCE2A00B3AAD7 /* testNewsDynamicTexts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testNewsDynamicTexts.json; sourceTree = "<group>"; };
+		A9A41AE7264BCE2A00B3AAD7 /* missingScreensNewsDynamicTexts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = missingScreensNewsDynamicTexts.json; sourceTree = "<group>"; };
 		A9A41F69261C4F0100C2BF3F /* BEHomeToolboxCellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEHomeToolboxCellConfigurator.swift; sourceTree = "<group>"; };
 		A9A41F6A261C4F0100C2BF3F /* BEToolboxTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEToolboxTableViewCell.swift; sourceTree = "<group>"; };
 		A9A41F6B261C4F0100C2BF3F /* BEToolboxTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEToolboxTableViewCell.xib; sourceTree = "<group>"; };
@@ -882,7 +930,7 @@
 		A9D0BF8324F5864000DEBD99 /* BECountdownTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BECountdownTimerTests.swift; sourceTree = "<group>"; };
 		A9D0BF8D24FBA20E00DEBD99 /* BEInfectionSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEInfectionSummary.swift; sourceTree = "<group>"; };
 		A9DD2CE524CEF0680035081A /* BEMobileTestIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEMobileTestIdViewController.swift; sourceTree = "<group>"; };
-		A9DD2CEA24CEF3C70035081A /* BEExposureSubmissionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEExposureSubmissionCoordinator.swift; sourceTree = "<group>"; };
+		A9DD2CEA24CEF3C70035081A /* BEExposureSubmissionFromTestCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEExposureSubmissionFromTestCoordinator.swift; sourceTree = "<group>"; };
 		A9DD2CEC24CF0BC00035081A /* BEAppStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEAppStrings.swift; sourceTree = "<group>"; };
 		A9DD2CEE24CF293E0035081A /* BEMobileTestId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEMobileTestId.swift; sourceTree = "<group>"; };
 		A9DD2CF224CF2AE20035081A /* BEString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEString.swift; sourceTree = "<group>"; };
@@ -1582,6 +1630,7 @@
 				85D75975245706B0008175F0 /* Storyboards */,
 				A189E460248C35BF001D0996 /* PublicKeys.plist */,
 				A9221A322542C2C200853CEF /* dynamicTextsV2.json */,
+				A9A41ADB264BC22800B3AAD7 /* dynamicNews.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1801,6 +1850,26 @@
 			path = Configurator;
 			sourceTree = "<group>";
 		};
+		A913E2F42647C6C20013EF3E /* CoviCode */ = {
+			isa = PBXGroup;
+			children = (
+				A913E2F52647C6CD0013EF3E /* Cells */,
+				A913E2FC2647DC880013EF3E /* BECoviCodeCoordinator.swift */,
+				A913E2FE264816720013EF3E /* BECoviCodeViewController.swift */,
+			);
+			path = CoviCode;
+			sourceTree = "<group>";
+		};
+		A913E2F52647C6CD0013EF3E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A913E2F62647C70B0013EF3E /* BEHomeCoviCodeCellConfigurator.swift */,
+				A913E2F72647C70B0013EF3E /* BECoviCodeTableViewCell.swift */,
+				A913E2F82647C70B0013EF3E /* BECoviCodeTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		A92076CA24E3E7E800AE8748 /* __tests__ */ = {
 			isa = PBXGroup;
 			children = (
@@ -1846,39 +1915,13 @@
 		A9221A2F2542C1DD00853CEF /* DynamicText */ = {
 			isa = PBXGroup;
 			children = (
-				A9221A532548494500853CEF /* View */,
-				A9221A432546F3A900853CEF /* __tests__ */,
-				A9221A342542F00C00853CEF /* Model */,
+				A9A41AD8264AD36200B3AAD7 /* News */,
+				A9A41AD4264ACEDA00B3AAD7 /* Information */,
+				A9A41AD7264AD0EF00B3AAD7 /* Model */,
 				A9221A302542C1F200853CEF /* BEDynamicTextDownloadService.swift */,
 				A9221A462546F62900853CEF /* BEDynamicTextService.swift */,
 			);
 			path = DynamicText;
-			sourceTree = "<group>";
-		};
-		A9221A342542F00C00853CEF /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				A9221A372542F06E00853CEF /* BEDynamicTextScreenSection.swift */,
-				A9221A392542F10300853CEF /* BEDynamicTextScreenName.swift */,
-				A9221A3B2542F1AB00853CEF /* BEDynamicTextScreenSectionName.swift */,
-				A9221A3F2544606800853CEF /* BEDynamicText.swift */,
-				A9221A482546FB1A00853CEF /* BEDynamicTextLanguage.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		A9221A432546F3A900853CEF /* __tests__ */ = {
-			isa = PBXGroup;
-			children = (
-				A9221A582549B92600853CEF /* wrongStructureDynamicTexts.json */,
-				A9221A4A25470F7700853CEF /* missingLanguageDynamicTexts.json */,
-				A9221A4B25470F7700853CEF /* missingScreensDynamicTexts.json */,
-				A9221A4E2547216300853CEF /* testDynamicTexts.json */,
-				A9221A5125472CB200853CEF /* testDownloadedTexts.json */,
-				A9221A442546F3BF00853CEF /* BEDynamicTextTests.swift */,
-				A9221A5A254B02B400853CEF /* BEOnlineDynamicTextTests.swift */,
-			);
-			path = __tests__;
 			sourceTree = "<group>";
 		};
 		A9221A532548494500853CEF /* View */ = {
@@ -1892,6 +1935,7 @@
 		A929A71324DC3C470039B997 /* __tests__ */ = {
 			isa = PBXGroup;
 			children = (
+				A913E303264A5C900013EF3E /* BEHTTPClientSubmitCoviCodeTests.swift */,
 				A929A71624DC3EE50039B997 /* BEHTTPClientSubmitTests.swift */,
 			);
 			path = __tests__;
@@ -1909,6 +1953,8 @@
 		A95EE81224FCE0CF00AFECBD /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
+				A9D0BF8A24FBA19C00DEBD99 /* InfectionSummary */,
+				A9659882264E63680018BF0B /* VaccinationInfo */,
 				A95EE81324FCE11100AFECBD /* BEStatisticsService.swift */,
 			);
 			path = Statistics;
@@ -1920,6 +1966,25 @@
 				A95EE81524FCF2A600AFECBD /* BEHomeInfectionSummaryCellConfigurator.swift */,
 				A90267CB25AEECB900C14169 /* BEInfectionSummaryTableViewCell.swift */,
 				A90267CC25AEECB900C14169 /* BEInfectionSummaryTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A9659882264E63680018BF0B /* VaccinationInfo */ = {
+			isa = PBXGroup;
+			children = (
+				A9659885264E7CB90018BF0B /* Cells */,
+				A9659883264E64190018BF0B /* BEVaccinationInfo.swift */,
+			);
+			path = VaccinationInfo;
+			sourceTree = "<group>";
+		};
+		A9659885264E7CB90018BF0B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A9659886264E7CCC0018BF0B /* BEHomeVaccinationInfoCellConfigurator.swift */,
+				A9659887264E7CCC0018BF0B /* BEVaccinationInfoTableViewCell.swift */,
+				A9659888264E7CCC0018BF0B /* BEVaccinationInfoTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -2005,6 +2070,75 @@
 			path = "View Helpers";
 			sourceTree = "<group>";
 		};
+		A9A41ACD264ACA0500B3AAD7 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				A9A41AD0264ACA7D00B3AAD7 /* BENewsTableViewCell.swift */,
+				A9A41ACE264ACA7D00B3AAD7 /* BENewsTableViewCell.xib */,
+				A9A41ACF264ACA7D00B3AAD7 /* BENewsTableViewCellConfigurator.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		A9A41AD4264ACEDA00B3AAD7 /* Information */ = {
+			isa = PBXGroup;
+			children = (
+				A9A41ADD264BCC9900B3AAD7 /* __tests__ */,
+				A9221A532548494500853CEF /* View */,
+				A9A41AD5264ACFC100B3AAD7 /* BEDynamicInformationTextService.swift */,
+			);
+			path = Information;
+			sourceTree = "<group>";
+		};
+		A9A41AD7264AD0EF00B3AAD7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A9221A3B2542F1AB00853CEF /* BEDynamicTextScreenSectionName.swift */,
+				A9221A372542F06E00853CEF /* BEDynamicTextScreenSection.swift */,
+				A9221A392542F10300853CEF /* BEDynamicTextScreenName.swift */,
+				A9221A482546FB1A00853CEF /* BEDynamicTextLanguage.swift */,
+				A9221A3F2544606800853CEF /* BEDynamicText.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A9A41AD8264AD36200B3AAD7 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				A9A41ADE264BCD7000B3AAD7 /* __tests__ */,
+				A9A41AD9264BBAB400B3AAD7 /* BEDynamicNewsTextService.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		A9A41ADD264BCC9900B3AAD7 /* __tests__ */ = {
+			isa = PBXGroup;
+			children = (
+				A9221A582549B92600853CEF /* wrongStructureDynamicTexts.json */,
+				A9221A4A25470F7700853CEF /* missingLanguageDynamicTexts.json */,
+				A9221A4B25470F7700853CEF /* missingScreensDynamicTexts.json */,
+				A9221A4E2547216300853CEF /* testDynamicTexts.json */,
+				A9221A5125472CB200853CEF /* testDownloadedTexts.json */,
+				A9221A442546F3BF00853CEF /* BEDynamicInformationTextTests.swift */,
+				A9221A5A254B02B400853CEF /* BEOnlineDynamicInformationTextTests.swift */,
+			);
+			path = __tests__;
+			sourceTree = "<group>";
+		};
+		A9A41ADE264BCD7000B3AAD7 /* __tests__ */ = {
+			isa = PBXGroup;
+			children = (
+				A9A41AE5264BCE2A00B3AAD7 /* missingLanguageNewsDynamicTexts.json */,
+				A9A41AE7264BCE2A00B3AAD7 /* missingScreensNewsDynamicTexts.json */,
+				A9A41AE3264BCE2A00B3AAD7 /* testDownloadedNewsTexts.json */,
+				A9A41AE6264BCE2A00B3AAD7 /* testNewsDynamicTexts.json */,
+				A9A41AE4264BCE2A00B3AAD7 /* wrongStructureNewsDynamicTexts.json */,
+				A9A41ADF264BCD9D00B3AAD7 /* BEDynamicNewsTextTests.swift */,
+				A9A41AE0264BCD9D00B3AAD7 /* BEOnlineDynamicNewsTextTests.swift */,
+			);
+			path = __tests__;
+			sourceTree = "<group>";
+		};
 		A9A41F67261C4EC300C2BF3F /* Toolbox */ = {
 			isa = PBXGroup;
 			children = (
@@ -2062,7 +2196,7 @@
 			isa = PBXGroup;
 			children = (
 				A92076CA24E3E7E800AE8748 /* __tests__ */,
-				A9DD2CEA24CEF3C70035081A /* BEExposureSubmissionCoordinator.swift */,
+				A9DD2CEA24CEF3C70035081A /* BEExposureSubmissionFromTestCoordinator.swift */,
 				A9DD2D0624D02DFC0035081A /* BEExposureSubmissionService.swift */,
 				A92076C724E3DDEE00AE8748 /* BEDiagnosisKeyRetrieval.swift */,
 			);
@@ -2072,13 +2206,14 @@
 		A9DD2CE224CEEEF40035081A /* BE */ = {
 			isa = PBXGroup;
 			children = (
+				A9A41ACD264ACA0500B3AAD7 /* News */,
+				A913E2F42647C6C20013EF3E /* CoviCode */,
 				A9A41FAD261DB92F00C2BF3F /* AlreadyDidTest */,
 				A9A41F67261C4EC300C2BF3F /* Toolbox */,
 				A97E158F257668AC00E1DB28 /* EU */,
 				A9221A2F2542C1DD00853CEF /* DynamicText */,
 				A9FC52802522329600660812 /* TestActivation */,
 				A95EE81224FCE0CF00AFECBD /* Statistics */,
-				A9D0BF8A24FBA19C00DEBD99 /* InfectionSummary */,
 				A92076EA24ED540D00AE8748 /* Mocks */,
 				A92076E424ED406500AE8748 /* FakeRequests */,
 				A935EE5424E005A200B33B66 /* ENAUITests */,
@@ -2356,6 +2491,7 @@
 			children = (
 				B15382E0248273A50010F007 /* Mocks */,
 				CDF27BD2246ADBA70044D32B /* ExposureSubmissionServiceTests.swift */,
+				A913E305264A5F6B0013EF3E /* ExposureSubmissionServiceCoviCodeTests.swift */,
 			);
 			path = __tests__;
 			sourceTree = "<group>";
@@ -2869,6 +3005,7 @@
 				A97D44D425A76D9D00E7D698 /* MobileDataUsageTableViewCell.xib in Resources */,
 				A97D44CC25A75C9F00E7D698 /* ResetViewController.xib in Resources */,
 				A97D44D025A76D3100E7D698 /* MobileDataUsageSettingsViewController.xib in Resources */,
+				A965988B264E7CCC0018BF0B /* BEVaccinationInfoTableViewCell.xib in Resources */,
 				A90267B825AEE0E500C14169 /* HomeActivateCell.xib in Resources */,
 				A90267CE25AEECB900C14169 /* BEInfectionSummaryTableViewCell.xib in Resources */,
 				A9FC52852522330900660812 /* BEActivateMobileTestIdViewController.xib in Resources */,
@@ -2897,6 +3034,7 @@
 				A90267EF25AEFF5D00C14169 /* HomeRiskFindingPositiveTableViewCell.xib in Resources */,
 				A9A41F7D261C708B00C2BF3F /* BEToolboxViewController.xib in Resources */,
 				A97D448725A708D300E7D698 /* OnboardingInfoViewController.xib in Resources */,
+				A913E2FB2647C70B0013EF3E /* BECoviCodeTableViewCell.xib in Resources */,
 				A9A41F96261C971000C2BF3F /* BEToolboxItemCell.xib in Resources */,
 				A902680D25AF3AF200C14169 /* HomeTestResultTableViewCell.xib in Resources */,
 				A97D44A425A72DFF00E7D698 /* ImageTableViewCell.xib in Resources */,
@@ -2914,6 +3052,8 @@
 				A97D44EC25A7834500E7D698 /* ExposureDetectionRiskCell.xib in Resources */,
 				A9A41F8D261C942400C2BF3F /* BEToolboxItemViewController.xib in Resources */,
 				71F5418E248BEE08006DB793 /* privacy-policy.html in Resources */,
+				A9A41AD1264ACA7D00B3AAD7 /* BENewsTableViewCell.xib in Resources */,
+				A9A41ADC264BC22800B3AAD7 /* dynamicNews.json in Resources */,
 				A9A41F6E261C4F0100C2BF3F /* BEToolboxTableViewCell.xib in Resources */,
 				A97D44FC25A8462C00E7D698 /* ExposureDetectionRiskTextCell.xib in Resources */,
 				51FE277D247535C400BB8144 /* RiskLoadingItemView.xib in Resources */,
@@ -2929,11 +3069,16 @@
 				A9221A4C25470F7700853CEF /* missingLanguageDynamicTexts.json in Resources */,
 				A9221A5225472CB300853CEF /* testDownloadedTexts.json in Resources */,
 				A9221A4D25470F7700853CEF /* missingScreensDynamicTexts.json in Resources */,
+				A9A41AE9264BCE2A00B3AAD7 /* wrongStructureNewsDynamicTexts.json in Resources */,
 				A9221A502547222E00853CEF /* testDynamicTexts.json in Resources */,
 				B1F8AE482479B4C30093A588 /* api-response-day-2020-05-16 in Resources */,
 				01678E9C249A5F08003B048B /* testStore.sqlite in Resources */,
+				A9A41AE8264BCE2A00B3AAD7 /* testDownloadedNewsTexts.json in Resources */,
+				A9A41AEC264BCE2A00B3AAD7 /* missingScreensNewsDynamicTexts.json in Resources */,
+				A9A41AEA264BCE2A00B3AAD7 /* missingLanguageNewsDynamicTexts.json in Resources */,
 				A189E45F248C325E001D0996 /* de-config in Resources */,
 				A9221A592549B92600853CEF /* wrongStructureDynamicTexts.json in Resources */,
+				A9A41AEB264BCE2A00B3AAD7 /* testNewsDynamicTexts.json in Resources */,
 				F252472F2483955B00C5556B /* DynamicTableViewControllerFake.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2985,6 +3130,7 @@
 				B1A89F3A24819CD300DA1CEC /* HomeRiskImageItemViewConfigurator.swift in Sources */,
 				B1A89F3924819CC200DA1CEC /* ExposureStateUpdating.swift in Sources */,
 				B1C6ECFF247F089E0066138F /* RiskImageItemView.swift in Sources */,
+				A9659889264E7CCC0018BF0B /* BEHomeVaccinationInfoCellConfigurator.swift in Sources */,
 				71330E43248109FD00EB10F6 /* DynamicTableViewCell.swift in Sources */,
 				B14D0CDD246E972400D5BEBC /* ExposureDetectionDelegate.swift in Sources */,
 				B161782E2480658F006E435A /* DeltaCalculationResult.swift in Sources */,
@@ -3037,6 +3183,7 @@
 				011E4B032483A92A002E6412 /* MockExposureManager.swift in Sources */,
 				A9D0BF8E24FBA20E00DEBD99 /* BEInfectionSummary.swift in Sources */,
 				2FE15A3C249B8C0B0077BD8D /* AccessibilityIdentifiers.swift in Sources */,
+				A913E2FD2647DC880013EF3E /* BECoviCodeCoordinator.swift in Sources */,
 				51FE277F247535E300BB8144 /* RiskLoadingItemView.swift in Sources */,
 				514C0A0824772F5E00F235F6 /* RiskItemView.swift in Sources */,
 				B1175213248A83AB00C3325C /* Risk.swift in Sources */,
@@ -3074,6 +3221,7 @@
 				B1D431CB246C84A400E728AD /* DownloadedPackagesStoreV0.swift in Sources */,
 				A92076E124ED33EA00AE8748 /* BEURLRequest.swift in Sources */,
 				714194EA247A65C60072A090 /* DynamicTableViewHeaderSeparatorView.swift in Sources */,
+				A9A41AD6264ACFC100B3AAD7 /* BEDynamicInformationTextService.swift in Sources */,
 				2F26CE2E248B9C4F00BE30EE /* UIViewController+BackButton.swift in Sources */,
 				A16714BB248D18D20031B111 /* SummaryMetadata.swift in Sources */,
 				B10FD5F4246EAC1700E9D7F2 /* AppleFilesWriter.swift in Sources */,
@@ -3082,6 +3230,7 @@
 				514C0A14247C163800F235F6 /* HomeLowRiskCellConfigurator.swift in Sources */,
 				51C779122486E549004582F8 /* HomeFindingPositiveRiskCellConfigurator.swift in Sources */,
 				A9A41F97261C971000C2BF3F /* BEToolboxItemCell.swift in Sources */,
+				A913E2FF264816720013EF3E /* BECoviCodeViewController.swift in Sources */,
 				B1741B4E2462C21F006275D9 /* DMViewController.swift in Sources */,
 				A9A41F91261C943200C2BF3F /* BEToolboxItem.swift in Sources */,
 				EE22DB8C247FB43A001B0A71 /* DescriptionTableViewCell.swift in Sources */,
@@ -3089,6 +3238,7 @@
 				B1741B4C2462C21F006275D9 /* DMDeveloperMenu.swift in Sources */,
 				514C0A11247C15EC00F235F6 /* HomeUnknownRiskCellConfigurator.swift in Sources */,
 				710ABB23247513E300948792 /* DynamicTypeTableViewCell.swift in Sources */,
+				A913E2FA2647C70B0013EF3E /* BECoviCodeTableViewCell.swift in Sources */,
 				A9DD2CED24CF0BC00035081A /* BEAppStrings.swift in Sources */,
 				EE22DB81247FB40A001B0A71 /* ENStateHandler.swift in Sources */,
 				A16714AF248CA1B70031B111 /* Bundle+ReadPlist.swift in Sources */,
@@ -3124,6 +3274,7 @@
 				A3284250248B9269006B1F09 /* HomeTestResultLoadingCellConfigurator.swift in Sources */,
 				A9A41FB0261DB94400C2BF3F /* BEAlreadyDidTestViewController.swift in Sources */,
 				713EA25D24798A7000AB7EE8 /* ExposureDetectionRoundedView.swift in Sources */,
+				A9A41AD3264ACA7D00B3AAD7 /* BENewsTableViewCell.swift in Sources */,
 				A3EE6E5D249BB9B900C64B61 /* UITestingParameters.swift in Sources */,
 				710224F42490E7A3000C5DEF /* ExposureSubmissionStepCell.swift in Sources */,
 				B19FD7132491A08500A9D56A /* SAP_SemanticVersion+Compare.swift in Sources */,
@@ -3131,6 +3282,7 @@
 				B1B381432472EF8B0056BEEE /* HTTPClient+Configuration.swift in Sources */,
 				4026C2DC24852B7600926FB4 /* AppInformationViewController+LegalModel.swift in Sources */,
 				EE278B30245F2C8A008B06F9 /* FriendsInviteController.swift in Sources */,
+				A9A41AD2264ACA7D00B3AAD7 /* BENewsTableViewCellConfigurator.swift in Sources */,
 				710ABB27247533FA00948792 /* DynamicTableViewController.swift in Sources */,
 				A986053024D33231003D0865 /* BEAccessibilityIdentifiers.swift in Sources */,
 				B184A380248FFCBE007180F6 /* SecureStore.swift in Sources */,
@@ -3174,6 +3326,7 @@
 				859DD512248549790073D59F /* MockDiagnosisKeysRetrieval.swift in Sources */,
 				A9DD2CF324CF2AE20035081A /* BEString.swift in Sources */,
 				A9C47CA52565447600C7A86B /* MobileDataUsageTableViewCell.swift in Sources */,
+				A965988A264E7CCC0018BF0B /* BEVaccinationInfoTableViewCell.swift in Sources */,
 				EE22DB89247FB43A001B0A71 /* TracingHistoryTableViewCell.swift in Sources */,
 				A9A41F74261C6F7300C2BF3F /* BEToolboxViewController.swift in Sources */,
 				A90267EE25AEFF5D00C14169 /* HomeRiskFindingPositiveTableViewCell.swift in Sources */,
@@ -3181,6 +3334,7 @@
 				A97E159625766BBB00E1DB28 /* EuTracingTableViewCell.swift in Sources */,
 				71FE1C7F247AC2B500851FEB /* ExposureSubmissionTestResultViewController.swift in Sources */,
 				B1D6B002247DA0320079DDD3 /* ExposureDetectionViewControllerDelegate.swift in Sources */,
+				A9A41ADA264BBAB400B3AAD7 /* BEDynamicNewsTextService.swift in Sources */,
 				713EA25B247818B000AB7EE8 /* DynamicTypeButton.swift in Sources */,
 				CDA262F824AB808800612E15 /* Coordinator.swift in Sources */,
 				51C77910248684F5004582F8 /* HomeRiskListItemViewConfigurator.swift in Sources */,
@@ -3206,6 +3360,7 @@
 				A980D59D24D822F400A5BB8E /* BEIntervalNumber.swift in Sources */,
 				71FE1C69247A8FE100851FEB /* DynamicTableViewHeaderFooterView.swift in Sources */,
 				A9DD2CE724CEF0680035081A /* BEMobileTestIdViewController.swift in Sources */,
+				A913E2F92647C70B0013EF3E /* BEHomeCoviCodeCellConfigurator.swift in Sources */,
 				A902678425ADCECF00C14169 /* AppDisabledView.swift in Sources */,
 				B184A383248FFCE2007180F6 /* CodableExposureDetectionSummary.swift in Sources */,
 				A90267E825AEFE1800C14169 /* HomeRiskInactiveTableViewCell.swift in Sources */,
@@ -3223,10 +3378,11 @@
 				51486D9F2484FC0200FCE216 /* HomeRiskLevelCellConfigurator.swift in Sources */,
 				B1E8C99D2479D4E7006DC678 /* DMSubmissionStateViewController.swift in Sources */,
 				A90267E225AEEE8D00C14169 /* HomeRiskLevelTableViewCell.swift in Sources */,
-				A9DD2CEB24CEF3C70035081A /* BEExposureSubmissionCoordinator.swift in Sources */,
+				A9DD2CEB24CEF3C70035081A /* BEExposureSubmissionFromTestCoordinator.swift in Sources */,
 				71FE1C8C247AC79D00851FEB /* DynamicTableViewIconCell.swift in Sources */,
 				B19FD7112491A07000A9D56A /* String+SemanticVersion.swift in Sources */,
 				A9C47CA925668B6600C7A86B /* BENetwork.swift in Sources */,
+				A913E3022649433B0013EF3E /* BEMockExposureSubmissionService.swift in Sources */,
 				710ABB25247514BD00948792 /* UIViewController+Segue.swift in Sources */,
 				51D420C424583E3300AD70CA /* SettingsViewController.swift in Sources */,
 				B1C7EEB024941A6B00F1F284 /* RiskConsumer.swift in Sources */,
@@ -3255,6 +3411,7 @@
 				B161782524804AC3006E435A /* DownloadedPackagesSQLLiteStoreV0.swift in Sources */,
 				51CE1BBF2460B222002CF42A /* HomeRiskCellConfigurator.swift in Sources */,
 				EE22DB82247FB40A001B0A71 /* ENSettingModel.swift in Sources */,
+				A9659884264E64190018BF0B /* BEVaccinationInfo.swift in Sources */,
 				713EA26324798F8500AB7EE8 /* ExposureDetectionHeaderCell.swift in Sources */,
 				A97E15BF2579281800E1DB28 /* Migration.swift in Sources */,
 				FEDCE09E9F78ABEB4AA9A484 /* ExposureDetectionExecutor.swift in Sources */,
@@ -3264,7 +3421,6 @@
 				A92076C824E3DDEE00AE8748 /* BEDiagnosisKeyRetrieval.swift in Sources */,
 				FEDCE6E2763B0BABFADF36BA /* ExposureDetectionViewController+State.swift in Sources */,
 				FEDCECC1B2111AB537AEF7E5 /* HomeInteractor+State.swift in Sources */,
-				A92076D124E426D600AE8748 /* BEMockExposureSubmissionService.swift in Sources */,
 				A92B66AD251CBF9B00F9B8DD /* BEUILabel.swift in Sources */,
 				B1221BE02492ECE800E6C4E4 /* CFDictionary+KeychainQuery.swift in Sources */,
 			);
@@ -3274,6 +3430,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A913E304264A5C900013EF3E /* BEHTTPClientSubmitCoviCodeTests.swift in Sources */,
 				A1BABD0924A57B88000ED515 /* TemporaryExposureKeyMock.swift in Sources */,
 				A92076EC24ED542900AE8748 /* BEMockURLSession.swift in Sources */,
 				A1E41941249410AF0016E52A /* SAPDownloadedPackage+Helpers.swift in Sources */,
@@ -3303,6 +3460,7 @@
 				A92076E324ED342500AE8748 /* BEURLRequestTests.swift in Sources */,
 				EE22DB91247FB479001B0A71 /* MockStateHandlerObserverDelegate.swift in Sources */,
 				B1C7EE4624938EB700F1F284 /* ExposureDetection_DidEndPrematurelyReason+ErrorHandlingTests.swift in Sources */,
+				A913E306264A5F6C0013EF3E /* ExposureSubmissionServiceCoviCodeTests.swift in Sources */,
 				A92076CE24E40BFC00AE8748 /* BEIntervalNumberTests.swift in Sources */,
 				B10F9B8C249961CE00C418F4 /* UIFont+DynamicTypeTests.swift in Sources */,
 				A173665324844F41006BE209 /* SQLiteKeyValueStoreTests.swift in Sources */,
@@ -3319,7 +3477,7 @@
 				A9063FB0262965B9002A623C /* BEFileManagerTests.swift in Sources */,
 				B117521A248ACFFC00C3325C /* SAP_RiskScoreClass+LowAndHighTests.swift in Sources */,
 				B11655932491437600316087 /* RiskProvidingConfigurationTests.swift in Sources */,
-				A9221A452546F3BF00853CEF /* BEDynamicTextTests.swift in Sources */,
+				A9221A452546F3BF00853CEF /* BEDynamicInformationTextTests.swift in Sources */,
 				A9D0BF8424F5864000DEBD99 /* BECountdownTimerTests.swift in Sources */,
 				B1A76E9F24714AC700EA5208 /* HTTPClient+Configuration.swift in Sources */,
 				516E430024B777B20008CC30 /* HomeHighRiskCellConfiguratorTests.swift in Sources */,
@@ -3335,12 +3493,13 @@
 				A372DA4124BF33F9003248BB /* MockExposureSubmissionCoordinatorDelegate.swift in Sources */,
 				B163D1102499068D001A322C /* SettingsViewModelTests.swift in Sources */,
 				A1654F0224B43E8500C0E115 /* DynamicTableViewTextViewCellTests.swift in Sources */,
-				A9221A5B254B02B400853CEF /* BEOnlineDynamicTextTests.swift in Sources */,
+				A9221A5B254B02B400853CEF /* BEOnlineDynamicInformationTextTests.swift in Sources */,
 				A1E419462495479D0016E52A /* HTTPClient+MockNetworkStack.swift in Sources */,
 				B1CD333E24865E0000B06E9B /* TracingStatusHistoryTests.swift in Sources */,
 				B1FE13ED24891D0400D012E5 /* RiskProviderTests.swift in Sources */,
 				A9F53DB32524718D008F95E0 /* BEMobileTestIdActivatorTests.swift in Sources */,
 				A1E4194F2495A5AF0016E52A /* HTTPClient+ExposureConfigTests.swift in Sources */,
+				A9A41AE2264BCD9D00B3AAD7 /* BEOnlineDynamicNewsTextTests.swift in Sources */,
 				B1218920248AD79900496210 /* ClientMock.swift in Sources */,
 				A1E4194C2495A3A10016E52A /* HTTPClient+AppConfigTests.swift in Sources */,
 				A1BABD0E24A57CFC000ED515 /* ENTemporaryExposureKey+ProcessingTests.swift in Sources */,
@@ -3369,6 +3528,7 @@
 				F22C6E252492082B00712A6B /* DynamicTableViewSpaceCellTests.swift in Sources */,
 				B1FE13FE24896EF700D012E5 /* CachedAppConfigurationTests.swift in Sources */,
 				A1E419602498243E0016E52A /* String+TodayTests.swift in Sources */,
+				A9A41AE1264BCD9D00B3AAD7 /* BEDynamicNewsTextTests.swift in Sources */,
 				2FC0356F24B342FA00E234AC /* UIViewcontroller+AlertTest.swift in Sources */,
 				F2DC809024898A9400EDC40A /* DynamicTableViewControllerNumberOfRowsAndSectionsTests.swift in Sources */,
 				A92076CC24E3F56400AE8748 /* BEExposureSubmissionServiceTests.swift in Sources */,
@@ -3542,7 +3702,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "${PROJECT}/Resources/ENACommunity.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 115;
+				CURRENT_PROJECT_VERSION = 120;
 				DEVELOPMENT_TEAM = UK48F668XR;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -3556,7 +3716,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7.0;
+				MARKETING_VERSION = 1.8.0;
 				OTHER_CFLAGS = (
 					"-DSQLITE_HAS_CODEC",
 					"-DSQLITE_TEMP_STORE=3",
@@ -3702,7 +3862,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "${PROJECT}/Resources/ENACommunity.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 115;
+				CURRENT_PROJECT_VERSION = 120;
 				DEVELOPMENT_TEAM = UK48F668XR;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -3715,7 +3875,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7.0;
+				MARKETING_VERSION = 1.8.0;
 				OTHER_CFLAGS = (
 					"-DSQLITE_HAS_CODEC",
 					"-DSQLITE_TEMP_STORE=3",
@@ -3918,7 +4078,7 @@
 				CODE_SIGN_ENTITLEMENTS = "${PROJECT}/Resources/ENATest.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 115;
+				CURRENT_PROJECT_VERSION = 120;
 				DEVELOPMENT_TEAM = UK48F668XR;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -3931,7 +4091,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7.0;
+				MARKETING_VERSION = 1.8.0;
 				OTHER_CFLAGS = (
 					"-DSQLITE_HAS_CODEC",
 					"-DSQLITE_TEMP_STORE=3",
@@ -3958,7 +4118,7 @@
 				CODE_SIGN_ENTITLEMENTS = "${PROJECT}/Resources/ENA.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 115;
+				CURRENT_PROJECT_VERSION = 120;
 				DEVELOPMENT_TEAM = UK48F668XR;
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PREPROCESSOR_DEFINITIONS = "SQLITE_HAS_CODEC=1";
@@ -3968,7 +4128,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7.0;
+				MARKETING_VERSION = 1.8.0;
 				OTHER_CFLAGS = (
 					"-DSQLITE_HAS_CODEC",
 					"-DSQLITE_TEMP_STORE=3",

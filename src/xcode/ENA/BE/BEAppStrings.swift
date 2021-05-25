@@ -120,6 +120,21 @@ enum BEAppStrings {
 	enum BEHome {
 		static let toolboxTitle = NSLocalizedString("BEHome_Toolbox_title", comment: "")
 		static let toolboxDescription = NSLocalizedString("BEHome_Toolbox_description", comment: "")
+
+		static let coviCodeTitle = NSLocalizedString("BEHome_CoviCode_title", comment: "")
+		static let coviCodeDescription = NSLocalizedString("BEHome_CoviCode_description", comment: "")
+
+	}
+	
+	enum BECoviCode {
+		static let title = NSLocalizedString("BECoviCode_title", comment: "")
+		static let subtitle = NSLocalizedString("BECoviCode_subtitle", comment: "")
+		static let explanation = NSLocalizedString("BECoviCode_explanation", comment: "")
+		static let submit = NSLocalizedString("BECoviCode_submit", comment: "")
+		static let enterCodeTitle = NSLocalizedString("BECoviCode_enterCodeTitle", comment: "")
+		static let enterCodeDescription = NSLocalizedString("BECoviCode_enterCodeDescription", comment: "")
+		static let ok = NSLocalizedString("BECoviCode_ok", comment: "")
+		static let cancel = NSLocalizedString("BECoviCode_cancel", comment: "")
 	}
 	
 	enum BEToolbox {
@@ -174,6 +189,16 @@ enum BEAppStrings {
 		
 		static let close = NSLocalizedString("BEMobileTestId_Close", comment: "")
 		static let imageDescription = NSLocalizedString("BEAlreadyDidTest_AccImageDescription", comment: "")
-		
+	}
+	
+	enum BEExposureSubmissionError {
+		static let invalidCoviCode = NSLocalizedString("BEExposureSubmissionError_invalidCoviCode", comment: "")
+	}
+	
+	enum BEVaccinationInfo {
+		static let title = NSLocalizedString("BEVaccinationInfo_title", comment: "")
+		static let atLeastOneDose = NSLocalizedString("BEVaccinationInfo_atLeastOneDose", comment: "")
+		static let fullyVaccinated = NSLocalizedString("BEVaccinationInfo_fullyVaccinated", comment: "")
+		static let updatedAt = NSLocalizedString("BEVaccinationInfo_updatedAt", comment: "")
 	}
 }

@@ -41,16 +41,22 @@ final class HomeInteractor: RequiresAppDependencies {
 		self.exposureSubmissionService = exposureSubmissionService
 		self.statisticsService = statisticsService
 		
-		summarySubscriber = statisticsService.$infectionSummary.sink { [weak self] _ in
+		summarySubscriber = statisticsService.$updatedAt.sink { [weak self] _ in
 
 			guard let self = self else {
 				return
 			}
 			
 			if !self.sections.isEmpty {
-				self.infectionSummaryUpdated()
+				
+				// run this async so the service will contain the right value in the updatedAt Publisher
+				DispatchQueue.main.async {
+					self.statisticsUpdated()
+				}
 			}
 		}
+		
+		NotificationCenter.default.addObserver(self, selector: #selector(newsUpdated), name: BEDynamicNewsTextService.newsStatusChangedNotificationName, object: nil)
 		
 		observeRisk()
 	}
@@ -137,6 +143,11 @@ final class HomeInteractor: RequiresAppDependencies {
 
 	func buildSections() {
 		sections = initialCellConfigurators()
+	}
+	
+	@objc
+	func newsUpdated() {
+		buildSections()
 	}
 
 	private func initialCellConfigurators() -> SectionConfiguration {
@@ -298,11 +309,19 @@ extension HomeInteractor {
 	func setupToolboxConfigurator() -> BEHomeToolboxCellConfigurator {
 		return BEHomeToolboxCellConfigurator()
 	}
+	
+	func setupCoviCodeConfigurator() -> BEHomeCoviCodeCellConfigurator {
+		return BEHomeCoviCodeCellConfigurator()
+	}
 
 	func setupActiveConfigurator() -> HomeActivateCellConfigurator {
 		return HomeActivateCellConfigurator(state: state.enState)
 	}
 
+	func setupNewsConfigurator() -> BENewsTableViewCellConfigurator {
+		return BENewsTableViewCellConfigurator()
+	}
+	
 	func setupActionConfigurators() -> [TableViewCellConfiguratorAny] {
 		var actionsConfigurators: [TableViewCellConfiguratorAny] = []
 
@@ -312,9 +331,23 @@ extension HomeInteractor {
 		activeConfigurator = setupActiveConfigurator()
 		actionsConfigurators.append(activeConfigurator)
 
+		// MARK: - Add vaccination card
+		
+		if let vaccinationInfoConfigurator = setupVaccinationInfoConfigurator() {
+			actionsConfigurators.append(vaccinationInfoConfigurator)
+		}
+
 		// MARK: - Add toolbox card
 
 		actionsConfigurators.append(setupToolboxConfigurator())
+
+		// MARK: - Add news card
+		
+		let newsService = BEDynamicNewsTextService()
+		
+		if newsService.hasNews {
+			actionsConfigurators.append(setupNewsConfigurator())
+		}
 
 		// MARK: - Add cards depending on result state.
 
@@ -366,6 +399,11 @@ extension HomeInteractor {
 			let submitCellConfigurator = setupSubmitConfigurator()
 			actionsConfigurators.append(submitCellConfigurator)
 		}
+
+		// MARK: - Add covi codes card
+
+		actionsConfigurators.append(setupCoviCodeConfigurator())
+
 
 		// MARK: - Add summary card
 		
@@ -492,18 +530,18 @@ extension HomeInteractor {
 // MARK: Infection Summary
 
 extension HomeInteractor {
-	func requestInfectionSummary() {
-		statisticsService.getInfectionSummary { result in
+	func requestStatisticsUpdate() {
+		statisticsService.update { result in
 			switch result {
 			case .failure(let error):
 				logError(message: error.localizedDescription)
 			case .success:
-				log(message: "Summary loaded")
+				log(message: "Statistics loaded")
 			}
 		}
 	}
 	
-	func infectionSummaryUpdated() {
+	func statisticsUpdated() {
 		self.reloadActionSection()
 	}
 	
@@ -511,9 +549,15 @@ extension HomeInteractor {
 		let infectionSummaryConfigurator = BEHomeInfectionSummaryCellConfigurator()
 		
 		infectionSummaryConfigurator.infectionSummary = statisticsService.infectionSummary
-		infectionSummaryConfigurator.infectionSummaryUpdatedAt = statisticsService.infectionSummaryUpdatedAt
+		infectionSummaryConfigurator.infectionSummaryUpdatedAt = statisticsService.updatedAt
 		
 		return infectionSummaryConfigurator
+	}
+
+	func setupVaccinationInfoConfigurator() -> TableViewCellConfiguratorAny? {
+		let vaccinationInfoConfigurator = BEHomeVaccinationInfoCellConfigurator(vaccinationInfo: statisticsService.vaccinationInfo, vaccinationInfoUpdatedAt: statisticsService.updatedAt)
+
+		return vaccinationInfoConfigurator
 	}
 }
 

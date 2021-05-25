@@ -425,3 +425,17 @@
 "ExposureSubmissionWarnOthers_AccImageDescription" = "Un smartphone transmet au système un diagnostic de test positif crypté.";
 "App_Information_Imprint_Section5_Text" = "Questions? E-Mail: info@coronalert.be";
 "BEMobileTestId_saveExplanationWebForm" = "";
+"BEHome_CoviCode_title" = "Vous êtes positif et souhaitez informer vos contact de manière anonyme";
+"BECoviCode_enterCodeTitle" = "Entrez votre Covi-Code";
+"BECoviCode_enterCodeDescription" = "Entrez le Covi-Code à 12 chiffres que vous avez reçu du centre de contact";
+"BECoviCode_ok" = "Ok";
+"BECoviCode_cancel" = "Annuler";
+"BECoviCode_title" = "Utilisez le Covi-Code";
+"BECoviCode_subtitle" = "Aider les autres";
+"BECoviCode_explanation" = "Utilisez le code à 12 chiffres du centre de contact pour avertir vos contacts d'une exposition potentielle à un risque élevé";
+"BECoviCode_submit" = "Envoyer le code";
+"BEExposureSubmissionError_invalidCoviCode" = "Mauvais Covi-Code";
+"BEVaccinationInfo_title" = "Vaccination";
+"BEVaccinationInfo_atLeastOneDose" = "Au moins 1 dose";
+"BEVaccinationInfo_fullyVaccinated" = "Entièrement vacciné";
+"BEVaccinationInfo_updatedAt" = "Dernière mise à jour le %@";

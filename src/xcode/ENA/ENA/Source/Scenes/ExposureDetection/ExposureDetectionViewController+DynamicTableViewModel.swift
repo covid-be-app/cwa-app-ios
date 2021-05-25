@@ -240,7 +240,7 @@ extension ExposureDetectionViewController {
 	}
 
 	private var standardGuideSection: DynamicSection {
-		let dynamicTextService = BEDynamicTextService()
+		let dynamicTextService = BEDynamicInformationTextService()
 		let dynamicSections = dynamicTextService.sections(.standard, section: .preventiveMeasures)
 		var cells: [DynamicCell] = [.header(title: AppStrings.ExposureDetection.behaviorTitle, subtitle: AppStrings.ExposureDetection.behaviorSubtitle)]
 		
@@ -253,7 +253,7 @@ extension ExposureDetectionViewController {
 	}
 	
 	private var highRiskGuideSection: DynamicSection {
-		let dynamicTextService = BEDynamicTextService()
+		let dynamicTextService = BEDynamicInformationTextService()
 		let dynamicSections = dynamicTextService.sections(.highRisk, section: .preventiveMeasures)
 
 		var cells: [DynamicCell] = [.header(title: AppStrings.ExposureDetection.behaviorTitle, subtitle: AppStrings.ExposureDetection.behaviorSubtitle)]

@@ -26,6 +26,7 @@ protocol HomeViewControllerDelegate: AnyObject {
 	func showExposureSubmission(with result: TestResult?)
 	func showInviteFriends()
 	func showToolbox()
+	func showCoviCode()
 	func showAlreadyDidTestScreen()
 	func showWebPage(from viewController: UIViewController, urlString: String)
 	func showAppInformation()
@@ -45,6 +46,8 @@ class HomeTableViewController: UIViewController, RequiresAppDependencies {
 		case riskInactive = "riskInactive"
 		case riskFindingPositive = "riskFindingPositive"
 		case testResultLoading = "testResultLoading"
+		case coviCode = "coviCode"
+		case news = "news"
 	}
 	
 	var sections: HomeInteractor.SectionConfiguration = [] {
@@ -202,7 +205,7 @@ class HomeTableViewController: UIViewController, RequiresAppDependencies {
 		super.viewWillAppear(animated)
 		homeInteractor.updateTestResults()
 		homeInteractor.requestRisk(userInitiated: false)
-		homeInteractor.requestInfectionSummary()
+		homeInteractor.requestStatisticsUpdate()
 		updateBackgroundColor()
 	}
 	
@@ -289,6 +292,10 @@ class HomeTableViewController: UIViewController, RequiresAppDependencies {
 	func showToolbox() {
 		delegate?.showToolbox()
 	}
+	
+	func showCoviCode() {
+		delegate?.showCoviCode()
+	}
 
 	func showExposureDetection() {
 		delegate?.showExposureDetection(state: homeInteractor.state, isRequestRiskRunning: homeInteractor.riskProvider.isLoading)
@@ -330,7 +337,10 @@ class HomeTableViewController: UIViewController, RequiresAppDependencies {
 		tableView.register(UINib(nibName: HomeTestResultLoadingTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: HomeTestResultLoadingTableViewCell.stringName())
 		tableView.register(UINib(nibName: BEInfectionSummaryTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: BEInfectionSummaryTableViewCell.stringName())
 		tableView.register(UINib(nibName: BEToolboxTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: BEToolboxTableViewCell.stringName())
+		tableView.register(UINib(nibName: BECoviCodeTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: BECoviCodeTableViewCell.stringName())
+		tableView.register(UINib(nibName: BENewsTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: BENewsTableViewCell.stringName())
 		tableView.register(UINib(nibName: HomeSpacerCell.stringName(), bundle: nil), forCellReuseIdentifier: HomeSpacerCell.stringName())
+		tableView.register(UINib(nibName: BEVaccinationInfoTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: BEVaccinationInfoTableViewCell.stringName())
 	}
 	
 	private func showScreenForActionSectionForCell(at indexPath: IndexPath) {
@@ -340,6 +350,8 @@ class HomeTableViewController: UIViewController, RequiresAppDependencies {
 			showExposureNotificationSetting()
 		case is BEToolboxTableViewCell:
 			showToolbox()
+		case is BECoviCodeTableViewCell:
+			showCoviCode()
 		case is HomeRiskLevelTableViewCell:
 			showExposureDetection()
 		case is HomeRiskFindingPositiveTableViewCell:

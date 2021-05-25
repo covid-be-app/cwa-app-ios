@@ -19,7 +19,6 @@
 
 import Foundation
 
-/// Make sure these stay in sync with the JSON
 enum BEDynamicTextScreenName: String, Decodable, CaseIterable {
 	case standard = "standard"
 	case highRisk = "highRisk"
@@ -28,5 +27,6 @@ enum BEDynamicTextScreenName: String, Decodable, CaseIterable {
 	case negativeTestResult = "negativeTestResult"
 	case thankYou = "thankYou"
 	case participatingCountries = "participatingCountries"
+	case news = "news"
 }
 

@@ -21,14 +21,26 @@ import Foundation
 import UIKit
 import ExposureNotification
 
-/// Coordinator for the exposure submission flow.
-/// This protocol hides the creation of view controllers and their transitions behind a slim interface.
-protocol ExposureSubmissionCoordinating: class {
 
-	// MARK: - Attributes.
+protocol ExposureSubmissionCoordinating: AnyObject {
 
 	/// Delegate that is called for life-cycle events of the coordinator.
 	var delegate: ExposureSubmissionCoordinatorDelegate? { get set }
+
+	func dismiss()
+	func resetApp()
+}
+
+/// This delegate allows a class to be notified for life-cycle events of the coordinator.
+protocol ExposureSubmissionCoordinatorDelegate: AnyObject {
+	func exposureSubmissionCoordinatorWillDisappear(_ coordinator: ExposureSubmissionCoordinating)
+	func exposureSubmissionCoordinatorRequestsAppReset()
+}
+
+
+/// Coordinator for the exposure submission flow.
+/// This protocol hides the creation of view controllers and their transitions behind a slim interface.
+protocol ExposureSubmissionFromTestCoordinating: ExposureSubmissionCoordinating {
 
 	// MARK: - Navigation.
 
@@ -39,8 +51,6 @@ protocol ExposureSubmissionCoordinating: class {
 	/// - Case 3: (UI-Testing) The coordinator may be configured to show other screens for UI-Testing.
 	/// For more information on the usage and configuration of the initial screen, check the concrete implementation of the method.
 	func start(with result: TestResult?)
-	func dismiss()
-	func resetApp()
 
 	func showOverviewScreen()
 	func showTestResultScreen(with result: TestResult)
@@ -48,10 +58,4 @@ protocol ExposureSubmissionCoordinating: class {
 	func showTanScreen()
 	func showWarnOthersScreen()
 	func showThankYouScreen()
-}
-
-/// This delegate allows a class to be notified for life-cycle events of the coordinator.
-protocol ExposureSubmissionCoordinatorDelegate: class {
-	func exposureSubmissionCoordinatorWillDisappear(_ coordinator: ExposureSubmissionCoordinating)
-	func exposureSubmissionCoordinatorRequestsAppReset()
 }

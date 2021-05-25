@@ -67,5 +67,7 @@ final class MockTestStore: Store {
 	var infectionSummaryUpdatedAt: Date?
 	var latestRisk: Risk?
 	var useMobileDataForTEKDownload: Bool = true
+	var statisticsUpdatedAt: Date?
+	var vaccinationInfo: BEVaccinationInfo?
 
 }

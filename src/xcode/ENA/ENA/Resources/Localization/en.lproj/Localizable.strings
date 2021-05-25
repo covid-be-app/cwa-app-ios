@@ -238,7 +238,7 @@
 "Home_Finding_Positive_Card_Note_Title" = "Please note:";
 "Home_Finding_Positive_Card_Button" = "Next";
 "Home_SubmitCard_Title" = "Link your COVID-test to the app";
-"Home_SubmitCard_Body" = "Did you do your COVID-test?";
+"Home_SubmitCard_Body" = "Did you take your COVID-test?";
 "Home_SubmitCard_Button" = "Not yet";
 "Home_InfoCard_ShareTitle" = "Share Coronalert";
 "Home_InfoCard_AboutTitle" = "Frequently Asked Questions";
@@ -425,3 +425,17 @@
 "ExposureSubmissionWarnOthers_AccImageDescription" = "A device transmits an encrypted positive test diagnosis to the system.";
 "App_Information_Imprint_Section5_Text" = "Questions? E-Mail: info@coronalert.be";
 "BEMobileTestId_saveExplanationWebForm" = "";
+"BEHome_CoviCode_title" = "Did you test positive and do you want to inform your contacts anonymously?";
+"BECoviCode_enterCodeTitle" = "Enter your Covi-Code";
+"BECoviCode_enterCodeDescription" = "Enter the 12-digit Covi-Code you received from the contact center";
+"BECoviCode_ok" = "Ok";
+"BECoviCode_cancel" = "Cancel";
+"BECoviCode_title" = "Use The Covi-Code";
+"BECoviCode_subtitle" = "Help others";
+"BECoviCode_explanation" = "Use the 12-digit code from the contact center to warn your contacts about a potential high risk exposure";
+"BECoviCode_submit" = "Send Code";
+"BEExposureSubmissionError_invalidCoviCode" = "Invalid Covi-Code";
+"BEVaccinationInfo_title" = "Vaccination";
+"BEVaccinationInfo_atLeastOneDose" = "At least 1 dose";
+"BEVaccinationInfo_fullyVaccinated" = "Fully vaccinated";
+"BEVaccinationInfo_updatedAt" = "Last updated on %@";

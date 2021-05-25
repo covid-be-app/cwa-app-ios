@@ -20,7 +20,7 @@
 import Foundation
 import UIKit
 
-protocol BEMobileTestIdGeneratorDelegate: class {
+protocol BEMobileTestIdGeneratorDelegate: AnyObject {
 	/// When this is called, a mobile test id will always exist in BEExposureSubmissionService
 	/// the second parameter only communicates if it is a newly generated one or not
 	func mobileTestIdGenerator(_ generator:BEMobileTestIdGenerator, generatedNewMobileTestId: Bool)
@@ -72,27 +72,9 @@ class BEMobileTestIdGenerator {
 	
 	private func showSelectSymptomsDateViewController() {
 		let vc = BESelectSymptomsDateViewController()
-		vc.delegate = self
 		
-		// Since the original code throws all the code for test code registration, test result showing and TEK submission in one big pile inside
-		// ExposureSubmissionCoordinator, it's not straightforward to only use the test code flow separately without having to implement protocols
-		// and dependencies that are completely useless.
-		// Since the viewcontroller used there requires a parent navigation controller with footer buttons
-		// the easiest solution is to check if the parent nav controller is of the correct type. If not we embed
-		// our viewcontroller in one and show it modally.
-		// This is not an ideal solution, but the ideal solution would be to refactor the entire ExposureSubmissionCoordinator,
-		// splitting it in different modules (one for code generation, one for showing test results and one for managing the TEK submission)
-		// but ain't nobody got time for that right now
+		vc.show(parentViewController, delegate: self)
 		
-		if self.parentViewController is ENANavigationControllerWithFooter {
-			self.parentViewController.pushViewController(vc, animated: true)
-		} else {
-			let navigationController = ENANavigationControllerWithFooter(rootViewController: vc)
-			navigationController.navigationBar.prefersLargeTitles = true
-			vc.navigationItem.largeTitleDisplayMode = .always
-			navigationController.modalPresentationStyle = .fullScreen
-			self.parentViewController.present(navigationController, animated: true)
-		}
 	}
 }
 

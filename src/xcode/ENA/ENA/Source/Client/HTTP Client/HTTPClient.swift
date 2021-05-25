@@ -22,6 +22,42 @@ import ExposureNotification
 import Foundation
 import ZIPFoundation
 
+private struct StatisticsResponse: Decodable {
+	let averageInfected: Int
+	let averageInfectedChangePercentage: Int
+	let averageHospitalised: Int
+	let averageHospitalisedChangePercentage: Int
+	let averageDeceased: Int
+	let averageDeceasedChangePercentage: Int
+
+	let startDate: BEDateString
+	let endDate: BEDateString
+
+	let atLeastPartiallyVaccinated: Int
+	let fullyVaccinated: Int
+}
+
+private extension BEInfectionSummary {
+	static func fromStatisticsResponse(_ response: StatisticsResponse) -> BEInfectionSummary {
+		return BEInfectionSummary(
+			averageInfected: response.averageInfected,
+			averageInfectedChangePercentage: response.averageInfectedChangePercentage,
+			averageHospitalised: response.averageHospitalised,
+			averageHospitalisedChangePercentage: response.averageHospitalisedChangePercentage,
+			averageDeceased: response.averageDeceased,
+			averageDeceasedChangePercentage: response.averageDeceasedChangePercentage,
+			startDate: response.startDate,
+			endDate: response.endDate)
+	}
+}
+
+private extension BEVaccinationInfo {
+	static func fromStatisticsResponse(_ response: StatisticsResponse) -> BEVaccinationInfo {
+		return BEVaccinationInfo(atLeastPartiallyVaccinated: response.atLeastPartiallyVaccinated, fullyVaccinated: response.fullyVaccinated)
+	}
+}
+
+
 final class HTTPClient: Client {
 	// MARK: Creating
 	init(
@@ -432,6 +468,42 @@ final class HTTPClient: Client {
 		}
 	}
 	
+	func submitWithCoviCode(
+		keys: [ENTemporaryExposureKey],
+		coviCode: String,
+		datePatientInfectious: BEDateString,
+		symptomsStartDate: BEDateString?,
+		dateTestCommunicated: BEDateString,
+		completion: @escaping SubmitKeysCompletionHandler
+	) {
+		guard let request = try? URLRequest.submitCoviCodeKeysRequest(
+			configuration: configuration,
+			coviCode: coviCode,
+			datePatientInfectious: datePatientInfectious,
+			symptomsStartDate: symptomsStartDate,
+			dateTestCommunicated: dateTestCommunicated,
+			keys: keys
+		) else {
+			completion(.requestCouldNotBeBuilt)
+			return
+		}
+
+		session.response(for: request) { result in
+			switch result {
+			case let .success(response):
+				switch response.statusCode {
+				case 200: completion(nil)
+				case 201: completion(nil)
+				case 400: completion(.invalidPayloadOrHeaders)
+				case 403: completion(.invalidCoviCode)
+				default: completion(.serverError(response.statusCode))
+				}
+			case let .failure(error):
+				completion(.other(error))
+			}
+		}
+	}
+	
 	func submit(
 		keys: [ENTemporaryExposureKey],
 		mobileTestId: BEMobileTestId?,
@@ -465,7 +537,6 @@ final class HTTPClient: Client {
 				case 200: completion(nil)
 				case 201: completion(nil)
 				case 400: completion(.invalidPayloadOrHeaders)
-				case 403: completion(.invalidTan)
 				default: completion(.serverError(response.statusCode))
 				}
 			case let .failure(error):
@@ -474,8 +545,9 @@ final class HTTPClient: Client {
 		}
 	}
 	
-	func getInfectionSummary(completion: @escaping InfectionSummaryHandler) {
-		let url = configuration.infectionSummaryURL
+	func getStatistics(completion: @escaping StatisticsHandler) {
+		
+		let url = configuration.statisticsURL
 		self.session.GET(url) { result in
 			switch result {
 			case let .success(response):
@@ -483,18 +555,25 @@ final class HTTPClient: Client {
 					completion(.failure(.serverError(response.statusCode)))
 					return
 				}
-				guard let summaryResponseData = response.body else {
+				guard let statisticsResponseData = response.body else {
 					completion(.failure(.invalidResponse))
 					return
 				}
 				do {
 					let decoder = JSONDecoder()
-					let infectionSummary = try decoder.decode(
-						BEInfectionSummary.self,
-						from: summaryResponseData
+					let statisticsResponse = try decoder.decode(
+						StatisticsResponse.self,
+						from: statisticsResponseData
 					)
-					completion(.success(infectionSummary))
+					
+					let infectionSummary = BEInfectionSummary.fromStatisticsResponse(statisticsResponse)
+					let vaccinationInfo = BEVaccinationInfo.fromStatisticsResponse(statisticsResponse)
+					
+					
+					completion(.success((infectionSummary, vaccinationInfo)))
 				} catch {
+					print(error)
+					print(error.localizedDescription)
 					completion(.failure(.invalidResponse))
 				}
 			case let .failure(error):
@@ -502,9 +581,8 @@ final class HTTPClient: Client {
 			}
 		}
 	}
-	
-	func getDynamicTexts(completion: @escaping DynamicTextsHandler) {
-		let url = configuration.dynamicTextsURL
+
+	func getDynamicTexts(_ url: URL, completion: @escaping DynamicTextsHandler) {
 		self.session.GET(url) { result in
 			switch result {
 			case let .success(response):
