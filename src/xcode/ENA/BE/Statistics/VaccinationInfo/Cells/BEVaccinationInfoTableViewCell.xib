@@ -36,23 +36,23 @@
                             <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="a99-bb-BQB">
                                 <rect key="frame" x="8" y="47" width="272" height="238"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kZQ-BE-vpl">
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kZQ-BE-vpl">
                                         <rect key="frame" x="0.0" y="0.0" width="272" height="207.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ydh-aH-m5R">
-                                                <rect key="frame" x="0.0" y="50" width="132.5" height="108"/>
+                                                <rect key="frame" x="0.0" y="50" width="135.5" height="108"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="20 hospitalized (-15%)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M9M-mc-aOz" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="132.5" height="93.5"/>
+                                                        <rect key="frame" x="10.5" y="0.0" width="115" height="68.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="ENA Text Primary 1 Color"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="title1"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="title2"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="20 hospitalized (-15%)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pd4-7x-QRH" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
-                                                        <rect key="frame" x="2" y="93.5" width="129" height="14.5"/>
+                                                        <rect key="frame" x="3.5" y="93.5" width="129" height="14.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="ENA Text Primary 1 Color"/>
                                                         <nil key="highlightedColor"/>
@@ -70,19 +70,19 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ydc-Fz-4Mm">
-                                                <rect key="frame" x="139.5" y="50" width="132.5" height="108"/>
+                                                <rect key="frame" x="136.5" y="74" width="135.5" height="60"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="12 deceased (-15%)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TM5-SO-Wfs" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
-                                                        <rect key="frame" x="4" y="0.0" width="124.5" height="93.5"/>
+                                                        <rect key="frame" x="9" y="0.0" width="118" height="45.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="ENA Text Primary 1 Color"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="title1"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="title2"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="12 deceased (-15%)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSe-J3-Fa1" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
-                                                        <rect key="frame" x="9.5" y="93.5" width="113.5" height="14.5"/>
+                                                        <rect key="frame" x="11" y="45.5" width="113.5" height="14.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="ENA Text Primary 1 Color"/>
                                                         <nil key="highlightedColor"/>
@@ -148,13 +148,13 @@
             <size key="intrinsicContentSize" width="180" height="14.5"/>
         </designable>
         <designable name="M9M-mc-aOz">
-            <size key="intrinsicContentSize" width="277" height="31.5"/>
+            <size key="intrinsicContentSize" width="207.5" height="23"/>
         </designable>
         <designable name="Pd4-7x-QRH">
             <size key="intrinsicContentSize" width="129" height="14.5"/>
         </designable>
         <designable name="TM5-SO-Wfs">
-            <size key="intrinsicContentSize" width="243.5" height="31.5"/>
+            <size key="intrinsicContentSize" width="182" height="23"/>
         </designable>
         <designable name="ZSe-J3-Fa1">
             <size key="intrinsicContentSize" width="113.5" height="14.5"/>
