@@ -425,7 +425,7 @@
 "ExposureSubmissionWarnOthers_AccImageDescription" = "A device transmits an encrypted positive test diagnosis to the system.";
 "App_Information_Imprint_Section5_Text" = "Questions? E-Mail: info@coronalert.be";
 "BEMobileTestId_saveExplanationWebForm" = "";
-"BEHome_CoviCode_title" = "Are you positive and want to inform your contacts anonymously?";
+"BEHome_CoviCode_title" = "Did you test positive and do you want to inform your contacts anonymously?";
 "BECoviCode_enterCodeTitle" = "Enter your Covi-Code";
 "BECoviCode_enterCodeDescription" = "Enter the 12-digit Covi-Code you received from the contact center";
 "BECoviCode_ok" = "Ok";
