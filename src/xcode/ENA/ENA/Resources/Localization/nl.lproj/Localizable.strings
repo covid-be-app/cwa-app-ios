@@ -345,7 +345,7 @@
 "BEMobileTestId_Select" = "Kies";
 "BEMobileTestId_Date" = "Datum";
 "BEMobileTestId_Close" = "Sluiten";
-"BEMobileTestId_saveExplanation2" = "Geef deze code door wanneer je voor het eerst contact opneemt met je arts of wanneer je boekt bij het testcentrum. Zolang de test niet is afgenomen, kan je de code nog steeds verzenden via een link die je per sms hebt ontvangen of een formulier dat beschikbaar is op de website https://coronalert.be/nl/coronalert-formulier/\n\nAls geen van deze procedures zou werken, kan je nog altijd je contacten anoniem verwittigen na een positieve test. ";
+"BEMobileTestId_saveExplanation2" = "Zolang de test niet is afgenomen, kan je de code nog steeds verzenden via een link die je per sms hebt ontvangen of een formulier dat beschikbaar is op de website https://coronalert.be/nl/coronalert-formulier/\n\nAls geen van deze procedures zou werken, kan je nog altijd je contacten anoniem verwittigen na een positieve test. ";
 "BELanguage" = "nl";
 "BESelectKeyCountries_title" = "Kies Landen";
 "BESelectKeyCountries_explanation" = "Als je op een van de onderstaande datums niet in België was en je deze informatie (anoniem) wilt delen, selecteer dan het land dat je op die datum hebt bezocht. Tik op de lijn die je wilt wijzigen.";
@@ -418,7 +418,7 @@
 "BEAlreadyDidTest_possibility3" = "Ga direct naar het webformulier om de 2 codes handmatig in te voeren.";
 "BEAlreadyDidTest_AccImageDescription" = "Een afbeelding van een PCR-reageerbuis";
 "BEMobileTestId_subtitle" = "Gebruik deze code om jouw test te registreren in de app";
-"BEMobileTestId_saveExplanation" = "Laat dit nummer en de datum zien aan de arts of het laboratorium dat de test uitvoert om uw smartphone aan de test te koppelen.";
+"BEMobileTestId_saveExplanation" = "Geef deze code door wanneer je voor het eerst contact opneemt met je arts of wanneer je boekt bij het testcentrum.";
 "BEHome_BEToolbox_testCenter" = "Zoek een testcentrum";
 "BEHome_BEToolbox_quarantineCertificateURL" = "https://quarantaine.info-coronavirus.be/nl";
 "ExposureSubmissionWarnOthers_AccImageDescription" = "Een toestel stuurt een versleutelde positieve diagnose naar het systeem.";
