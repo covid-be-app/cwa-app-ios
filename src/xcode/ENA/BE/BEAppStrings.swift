@@ -123,12 +123,14 @@ enum BEAppStrings {
 
 		static let coviCodeTitle = NSLocalizedString("BEHome_CoviCode_title", comment: "")
 		static let coviCodeDescription = NSLocalizedString("BEHome_CoviCode_description", comment: "")
+		static let coviCodeButton = NSLocalizedString("BEHome_CoviCode_button", comment: "")
 
 	}
 	
 	enum BECoviCode {
 		static let title = NSLocalizedString("BECoviCode_title", comment: "")
 		static let subtitle = NSLocalizedString("BECoviCode_subtitle", comment: "")
+		static let button = NSLocalizedString("BECoviCode_button", comment: "")
 		static let explanation = NSLocalizedString("BECoviCode_explanation", comment: "")
 		static let submit = NSLocalizedString("BECoviCode_submit", comment: "")
 		static let enterCodeTitle = NSLocalizedString("BECoviCode_enterCodeTitle", comment: "")

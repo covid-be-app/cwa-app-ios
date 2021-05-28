@@ -188,6 +188,7 @@ class BEENAUITests: XCTestCase {
 		snapshot("ScreenShot_\(#function)_001")
 		app.swipeUp()
 		snapshot("ScreenShot_\(#function)_002")
+		app.swipeDown()
 		app.buttons["AppStrings.Home.resultCardShowResultButton"].tap()
 		sleep(1)
 		snapshot("ScreenShot_\(#function)_003")
@@ -265,7 +266,6 @@ class BEENAUITests: XCTestCase {
 		XCTAssertTrue(app.alerts["BEAppStrings.BEWarnOthers.alert"].waitForExistence(timeout: 5.0))
 		app.alerts["BEAppStrings.BEWarnOthers.alert"].buttons.element(boundBy: 1).tap()
 		XCTAssertFalse(app.buttons["BEAppStrings.BEExposureSubmissionSuccess.button"].waitForExistence(timeout: 5.0))
-		app.swipeUp()
 		XCTAssertTrue(app.buttons["AppStrings.Home.resultCardShowResultButton"].waitForExistence(timeout: 5.0))
 	}
 	

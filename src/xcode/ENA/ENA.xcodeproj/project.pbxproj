@@ -354,8 +354,6 @@
 		A9A41F96261C971000C2BF3F /* BEToolboxItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9A41F94261C971000C2BF3F /* BEToolboxItemCell.xib */; };
 		A9A41F97261C971000C2BF3F /* BEToolboxItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A41F95261C971000C2BF3F /* BEToolboxItemCell.swift */; };
 		A9A41F9E261CB1FF00C2BF3F /* BEENAToolboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A41F9A261CB1FA00C2BF3F /* BEENAToolboxTests.swift */; };
-		A9A41FB0261DB94400C2BF3F /* BEAlreadyDidTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A41FAE261DB94400C2BF3F /* BEAlreadyDidTestViewController.swift */; };
-		A9A41FB1261DB94400C2BF3F /* BEAlreadyDidTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9A41FAF261DB94400C2BF3F /* BEAlreadyDidTestViewController.xib */; };
 		A9A5F21B24D1C757004B01FC /* BETestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A5F21A24D1C757004B01FC /* BETestResult.swift */; };
 		A9C47CA32565425000C7A86B /* MobileDataUsageSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C47CA22565425000C7A86B /* MobileDataUsageSettingsViewController.swift */; };
 		A9C47CA52565447600C7A86B /* MobileDataUsageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C47CA42565447600C7A86B /* MobileDataUsageTableViewCell.swift */; };
@@ -919,8 +917,6 @@
 		A9A41F94261C971000C2BF3F /* BEToolboxItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BEToolboxItemCell.xib; sourceTree = "<group>"; };
 		A9A41F95261C971000C2BF3F /* BEToolboxItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEToolboxItemCell.swift; sourceTree = "<group>"; };
 		A9A41F9A261CB1FA00C2BF3F /* BEENAToolboxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEENAToolboxTests.swift; sourceTree = "<group>"; };
-		A9A41FAE261DB94400C2BF3F /* BEAlreadyDidTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEAlreadyDidTestViewController.swift; sourceTree = "<group>"; };
-		A9A41FAF261DB94400C2BF3F /* BEAlreadyDidTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BEAlreadyDidTestViewController.xib; sourceTree = "<group>"; };
 		A9A5F21A24D1C757004B01FC /* BETestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BETestResult.swift; sourceTree = "<group>"; };
 		A9C47CA22565425000C7A86B /* MobileDataUsageSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileDataUsageSettingsViewController.swift; sourceTree = "<group>"; };
 		A9C47CA42565447600C7A86B /* MobileDataUsageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileDataUsageTableViewCell.swift; sourceTree = "<group>"; };
@@ -2174,15 +2170,6 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		A9A41FAD261DB92F00C2BF3F /* AlreadyDidTest */ = {
-			isa = PBXGroup;
-			children = (
-				A9A41FAE261DB94400C2BF3F /* BEAlreadyDidTestViewController.swift */,
-				A9A41FAF261DB94400C2BF3F /* BEAlreadyDidTestViewController.xib */,
-			);
-			path = AlreadyDidTest;
-			sourceTree = "<group>";
-		};
 		A9D0BF8A24FBA19C00DEBD99 /* InfectionSummary */ = {
 			isa = PBXGroup;
 			children = (
@@ -2208,7 +2195,6 @@
 			children = (
 				A9A41ACD264ACA0500B3AAD7 /* News */,
 				A913E2F42647C6C20013EF3E /* CoviCode */,
-				A9A41FAD261DB92F00C2BF3F /* AlreadyDidTest */,
 				A9A41F67261C4EC300C2BF3F /* Toolbox */,
 				A97E158F257668AC00E1DB28 /* EU */,
 				A9221A2F2542C1DD00853CEF /* DynamicText */,
@@ -3057,7 +3043,6 @@
 				A9A41F6E261C4F0100C2BF3F /* BEToolboxTableViewCell.xib in Resources */,
 				A97D44FC25A8462C00E7D698 /* ExposureDetectionRiskTextCell.xib in Resources */,
 				51FE277D247535C400BB8144 /* RiskLoadingItemView.xib in Resources */,
-				A9A41FB1261DB94400C2BF3F /* BEAlreadyDidTestViewController.xib in Resources */,
 				A97D44F025A7837400E7D698 /* ExposureDetectionLoadingCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3272,7 +3257,6 @@
 				B1CD33412486AA7100B06E9B /* CoronaWarnURLSessionDelegate.swift in Sources */,
 				514C0A0F247AFEC500F235F6 /* HomeRiskTextItemViewConfigurator.swift in Sources */,
 				A3284250248B9269006B1F09 /* HomeTestResultLoadingCellConfigurator.swift in Sources */,
-				A9A41FB0261DB94400C2BF3F /* BEAlreadyDidTestViewController.swift in Sources */,
 				713EA25D24798A7000AB7EE8 /* ExposureDetectionRoundedView.swift in Sources */,
 				A9A41AD3264ACA7D00B3AAD7 /* BENewsTableViewCell.swift in Sources */,
 				A3EE6E5D249BB9B900C64B61 /* UITestingParameters.swift in Sources */,
@@ -3702,7 +3686,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "${PROJECT}/Resources/ENACommunity.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 120;
+				CURRENT_PROJECT_VERSION = 121;
 				DEVELOPMENT_TEAM = UK48F668XR;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -3862,7 +3846,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "${PROJECT}/Resources/ENACommunity.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 120;
+				CURRENT_PROJECT_VERSION = 121;
 				DEVELOPMENT_TEAM = UK48F668XR;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -4078,7 +4062,7 @@
 				CODE_SIGN_ENTITLEMENTS = "${PROJECT}/Resources/ENATest.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 120;
+				CURRENT_PROJECT_VERSION = 121;
 				DEVELOPMENT_TEAM = UK48F668XR;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -4118,7 +4102,7 @@
 				CODE_SIGN_ENTITLEMENTS = "${PROJECT}/Resources/ENA.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 120;
+				CURRENT_PROJECT_VERSION = 121;
 				DEVELOPMENT_TEAM = UK48F668XR;
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PREPROCESSOR_DEFINITIONS = "SQLITE_HAS_CODEC=1";

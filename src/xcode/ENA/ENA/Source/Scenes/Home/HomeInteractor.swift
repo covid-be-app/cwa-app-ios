@@ -293,7 +293,6 @@ extension HomeInteractor {
 	func setupSubmitConfigurator() -> HomeTestResultCellConfigurator {
 		let submitConfigurator = HomeTestResultCellConfigurator()
 		submitConfigurator.primaryAction = homeViewController?.showExposureSubmissionWithoutResult
-		submitConfigurator.secondaryAction = homeViewController?.showAlreadyDidTestScreen
 
 		return submitConfigurator
 	}
