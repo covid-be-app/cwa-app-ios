@@ -345,7 +345,7 @@
 "BEMobileTestId_Select" = "Confirmer";
 "BEMobileTestId_Date" = "Date";
 "BEMobileTestId_Close" = "Fermer";
-"BEMobileTestId_saveExplanation2" = "Veuillez transmettre ce code dès votre premier contact avec votre médecin ou lors de votre réservation au centre de dépistage. Tant que le prélèvement n’a pas été effectué, vous pouvez encore transmettre le code au moyen d’un lien reçu par SMS ou bien d’un formulaire disponible sur le site internet https://coronalert.be/fr/formulaire-coronalert/\n\nSi aucune de ces procédures ne fonctionne, vous aurez encore l’occasion de prévenir vos contacts de façon anonyme après avoir reçu un résultat positif.";
+"BEMobileTestId_saveExplanation2" = "Tant que le prélèvement n’a pas été effectué, vous pouvez encore transmettre le code au moyen d’un lien reçu par SMS ou bien d’un formulaire disponible sur le site internet https://coronalert.be/fr/formulaire-coronalert/\n\nSi aucune de ces procédures ne fonctionne, vous aurez encore l’occasion de prévenir vos contacts de façon anonyme après avoir reçu un résultat positif.";
 "BELanguage" = "fr";
 "BESelectKeyCountries_title" = "Sélectionnez votre pays";
 "BESelectKeyCountries_explanation" = "Si vous n'étiez pas en Belgique à certaines des dates ci-dessous et que vous voulez partager cette information (de façon anonyme), veuillez sélectionner le pays dans lequel vous étiez à ces dates.";
@@ -418,7 +418,7 @@
 "BEAlreadyDidTest_possibility3" = "Rendez-vous directement sur le webform pour encoder les 2 codes manuellement.";
 "BEAlreadyDidTest_AccImageDescription" = "Une image d'un tube à essai PCR";
 "BEMobileTestId_subtitle" = "Utilisez ce code pour enregistrer votre test dans l’application";
-"BEMobileTestId_saveExplanation" = "Montrez ce numéro et cette date au médecin ou au laboratoire effectuant le test pour relier votre smartphone au test.";
+"BEMobileTestId_saveExplanation" = "Veuillez transmettre ce code dès votre premier contact avec votre médecin ou lors de votre réservation au centre de dépistage.";
 "BEHome_BEToolbox_testCenter" = "Trouver un centre de test";
 "BEHome_BEToolbox_quarantineCertificateURL" = "https://quarantaine.info-coronavirus.be/fr";
 "ExposureSubmissionWarnOthers_AccImageDescription" = "Un smartphone transmet au système un diagnostic de test positif crypté.";
