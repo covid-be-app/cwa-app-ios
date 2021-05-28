@@ -345,7 +345,7 @@
 "BEMobileTestId_Select" = "Select";
 "BEMobileTestId_Date" = "Date";
 "BEMobileTestId_Close" = "Close";
-"BEMobileTestId_saveExplanation2" = "Please send this code when you first contact your doctor or when booking a test at the test center. As long as you have not been tested, you can still transmit the code using a link received by SMS or a form available on the website https://coronalert.be/en/corona-alert-form/\n\nIf none of these procedures would work, you will still have the opportunity to warn your contacts anonymously after receiving a positive result.";
+"BEMobileTestId_saveExplanation2" = "As long as you have not been tested, you can still transmit the code using a link received by SMS or a form available on the website https://coronalert.be/en/corona-alert-form/\n\nIf none of these procedures would work, you will still have the opportunity to warn your contacts anonymously after receiving a positive result.";
 "BELanguage" = "en";
 "BESelectKeyCountries_title" = "Select Countries";
 "BESelectKeyCountries_explanation" = "For each of the below dates, if you have not been in Belgium and you would like to share this information (anonymously), please select the country you visited on that date by tapping the line you want to change.";
@@ -418,7 +418,7 @@
 "BEAlreadyDidTest_possibility3" = "Go directly to the webform to encode the 2 codes manually.";
 "BEAlreadyDidTest_AccImageDescription" = "An image of a PCR test tube";
 "BEMobileTestId_subtitle" = "Use this code to register your test into the app";
-"BEMobileTestId_saveExplanation" = "Show this number and date to the doctor or lab performing the test to link your smartphone to the test.";
+"BEMobileTestId_saveExplanation" = "Please pass this code when you first contact your doctor or when booking a test at the test center. ";
 "BEHome_BEToolbox_testCenter" = "Find a test center";
 "BEHome_BEToolbox_quarantineCertificateURL" = "https://quarantaine.info-coronavirus.be/en";
 "ExposureSubmissionWarnOthers_AccImageDescription" = "A device transmits an encrypted positive test diagnosis to the system.";
