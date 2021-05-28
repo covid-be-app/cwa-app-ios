@@ -237,9 +237,9 @@
 "Home_Finding_Positive_Card_Status_Subtitle" = "You have been diagnosed with the SARS-CoV-2 virus.";
 "Home_Finding_Positive_Card_Note_Title" = "Please note:";
 "Home_Finding_Positive_Card_Button" = "Next";
-"Home_SubmitCard_Title" = "Link your COVID-test to the app";
-"Home_SubmitCard_Body" = "Did you take your COVID-test?";
-"Home_SubmitCard_Button" = "Not yet";
+"Home_SubmitCard_Title" = "I have to get tested";
+"Home_SubmitCard_Body" = "Get a 17-digit code to link your future COVID test to this application.";
+"Home_SubmitCard_Button" = "Get your code";
 "Home_InfoCard_ShareTitle" = "Share Coronalert";
 "Home_InfoCard_AboutTitle" = "Frequently Asked Questions";
 "Home_SettingsCard_Title" = "Settings";
@@ -411,7 +411,6 @@
 "BEHome_BEToolbox_bookATest" = "Book a Test";
 "BEHome_BEToolbox_bookATestInBrussels" = "Book a Test in Brussels";
 "Home_SubmitCard_Warning" = "This requires a manual action due to the anonymity of the app";
-"Home_SubmitCard_alreadyDidTestButton" = "Yes";
 "BEAlreadyDidTest_title" = "I have taken my COVID-test";
 "BEAlreadyDidTest_possibilitiesTitle" = "3 possibilities to link your test";
 "BEAlreadyDidTest_possibility1" = "I did a test and my doctor or laboratory correctly entered the 17 digits of the Coronalert app. You don't have to do anything.";
@@ -425,13 +424,13 @@
 "ExposureSubmissionWarnOthers_AccImageDescription" = "A device transmits an encrypted positive test diagnosis to the system.";
 "App_Information_Imprint_Section5_Text" = "Questions? E-Mail: info@coronalert.be";
 "BEMobileTestId_saveExplanationWebForm" = "";
-"BEHome_CoviCode_title" = "Did you test positive and do you want to inform your contacts anonymously?";
+"BEHome_CoviCode_title" = "I got tested";
 "BECoviCode_enterCodeTitle" = "Enter your Covi-Code";
 "BECoviCode_enterCodeDescription" = "Enter the 12-digit Covi-Code you received from the contact center";
 "BECoviCode_ok" = "Ok";
 "BECoviCode_cancel" = "Cancel";
 "BECoviCode_title" = "Use The Covi-Code";
-"BECoviCode_subtitle" = "Help others";
+"BEHome_CoviCode_description" = "You tested positive and you did not link the test to Coronalert? It's not too late to anonymously notify your contacts.";
 "BECoviCode_explanation" = "Use the 12-digit code from the contact center to warn your contacts about a potential high risk exposure";
 "BECoviCode_submit" = "Send Code";
 "BEExposureSubmissionError_invalidCoviCode" = "Invalid Covi-Code";
@@ -439,3 +438,4 @@
 "BEVaccinationInfo_atLeastOneDose" = "At least 1 dose";
 "BEVaccinationInfo_fullyVaccinated" = "Fully vaccinated";
 "BEVaccinationInfo_updatedAt" = "Last updated on %@";
+"BEHome_CoviCode_button" = "Notify contacts";

@@ -211,12 +211,6 @@ extension Coordinator: HomeViewControllerDelegate {
 		coviCodeCoordinator?.start()
 	}
 
-	func showAlreadyDidTestScreen() {
-		let navController = ENANavigationControllerWithFooter(rootViewController: BEAlreadyDidTestViewController())
-		navController.navigationBar.prefersLargeTitles = true
-		rootViewController.present(navController, animated: true)
-	}
-
 	func showInviteFriends() {
 		rootViewController.pushViewController(
 			FriendsInviteController(),

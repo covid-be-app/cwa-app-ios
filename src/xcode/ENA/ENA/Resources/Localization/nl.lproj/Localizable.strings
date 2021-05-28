@@ -237,9 +237,9 @@
 "Home_Finding_Positive_Card_Status_Subtitle" = "Je testte positief op het SARS-CoV-2-virus.";
 "Home_Finding_Positive_Card_Note_Title" = "Let op:";
 "Home_Finding_Positive_Card_Button" = "Volgende";
-"Home_SubmitCard_Title" = "Koppel je COVID-test aan de app";
-"Home_SubmitCard_Body" = "Heb je je COVID-test gedaan?";
-"Home_SubmitCard_Button" = "Nog niet";
+"Home_SubmitCard_Title" = "Ik moet getest worden";
+"Home_SubmitCard_Body" = "Ontvang een 17-cijferige code om je toekomstige COVID-test aan deze applicatie te koppelen.";
+"Home_SubmitCard_Button" = "Haal je code";
 "Home_InfoCard_ShareTitle" = "Deel Coronalert";
 "Home_InfoCard_AboutTitle" = "Veelgestelde vragen";
 "Home_SettingsCard_Title" = "Instellingen";
@@ -411,7 +411,6 @@
 "BEHome_BEToolbox_bookATest" = "Reserveer een testmoment";
 "BEHome_BEToolbox_bookATestInBrussels" = "Reserveer een test in Brussel";
 "Home_SubmitCard_Warning" = "Dit vereist een handmatige handeling omdat Coronalert anoniem is";
-"Home_SubmitCard_alreadyDidTestButton" = "Ja";
 "BEAlreadyDidTest_title" = "Ik heb al een COVID-test gedaan";
 "BEAlreadyDidTest_possibilitiesTitle" = "3 mogelijkheden om uw test te koppelen";
 "BEAlreadyDidTest_possibility1" = "Ik heb een test gedaan en mijn arts of laboratorium heeft de 17 cijfers van de Coronalert-app correct ingevoerd. U hoeft niets te doen.";
@@ -425,13 +424,13 @@
 "ExposureSubmissionWarnOthers_AccImageDescription" = "Een toestel stuurt een versleutelde positieve diagnose naar het systeem.";
 "App_Information_Imprint_Section5_Text" = "Vragen? E-Mail: info@coronalert.be";
 "BEMobileTestId_saveExplanationWebForm" = "";
-"BEHome_CoviCode_title" = "Ben je positief en wil je je contacten anoniem informeren?";
+"BEHome_CoviCode_title" = "Ik ben getest";
 "BECoviCode_enterCodeTitle" = "Voer uw Covi-code in";
 "BECoviCode_enterCodeDescription" = "Voer de 12-cijferige Covi-code in die u van het contactcenter hebt ontvangen";
 "BECoviCode_ok" = "Ok";
 "BECoviCode_cancel" = "Annuleren";
 "BECoviCode_title" = "Gebruik de Covi-code";
-"BECoviCode_subtitle" = "Help anderen";
+"BEHome_CoviCode_description" = "Je testte positief en je had je test niet gekoppeld aan Coronalert? Je kan nog altijd je contacten anoniem op de hoogte stellen.";
 "BECoviCode_explanation" = "Gebruik de 12-cijferige code van het contactcenter om uw contacten te waarschuwen voor een mogelijk hoog risico";
 "BECoviCode_submit" = "Code verzenden";
 "BEExposureSubmissionError_invalidCoviCode" = "Ongeldige Covi-Code";
@@ -439,3 +438,4 @@
 "BEVaccinationInfo_atLeastOneDose" = "Tenminste 1 dosis";
 "BEVaccinationInfo_fullyVaccinated" = "Volledig gevaccineerd";
 "BEVaccinationInfo_updatedAt" = "Laatst bijgewerkt op %@";
+"BEHome_CoviCode_button" = "Verwittig je contacten";
