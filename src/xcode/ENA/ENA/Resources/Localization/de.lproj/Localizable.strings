@@ -237,9 +237,9 @@
 "Home_Finding_Positive_Card_Status_Subtitle" = "SARS-CoV-2 wurde bei Ihnen nachgewiesen.";
 "Home_Finding_Positive_Card_Note_Title" = "Bitte beachten:";
 "Home_Finding_Positive_Card_Button" = "Weiter";
-"Home_SubmitCard_Title" = "Verknüpfen Sie Ihren COVID-Test mit der App";
-"Home_SubmitCard_Body" = "Haben Sie Ihren COVID-Test gemacht?";
-"Home_SubmitCard_Button" = "Noch nicht";
+"Home_SubmitCard_Title" = "Ich muss mich testen lassen";
+"Home_SubmitCard_Body" = "Erstellen Sie einen 17-stelligen Code, um Ihren COVID-Test mit dieser Anwendung zu verknüpfen.";
+"Home_SubmitCard_Button" = "Code erstellen";
 "Home_InfoCard_ShareTitle" = "Coronalert teilen";
 "Home_InfoCard_AboutTitle" = "Häufig gestellte Fragen";
 "Home_SettingsCard_Title" = "Einstellungen";
@@ -411,7 +411,6 @@
 "BEHome_BEToolbox_bookATest" = "Testreservierung";
 "BEHome_BEToolbox_bookATestInBrussels" = "Testreservierung in Brüssel";
 "Home_SubmitCard_Warning" = "Dies erfordert aus Gründen der Anonymität manuelle Maßnahmen";
-"Home_SubmitCard_alreadyDidTestButton" = "Ja";
 "BEAlreadyDidTest_title" = "COVID-Test bereits durchgeführt";
 "BEAlreadyDidTest_possibilitiesTitle" = "3 Möglichkeiten, Ihren Test zu verknüpfen";
 "BEAlreadyDidTest_possibility1" = "Ich habe einen Test durchgeführt und mein Arzt oder Labor hat die 17 Ziffern der Coronalert-App korrekt eingegeben. Du musst nichts tun.";
@@ -425,13 +424,13 @@
 "ExposureSubmissionWarnOthers_AccImageDescription" = "Ein Handy übermittelt einen positiven Testbefund verschlüsselt ins System.";
 "App_Information_Imprint_Section5_Text" = "Fragen? E-Mail: info@coronalert.be";
 "BEMobileTestId_saveExplanationWebForm" = "";
-"BEHome_CoviCode_title" = "Sind Sie positiv und möchten Ihre Kontakte anonym informieren?";
+"BEHome_CoviCode_title" = "Ich wurde getestet";
 "BECoviCode_enterCodeTitle" = "Geben Sie Ihren Covi-Code ein";
 "BECoviCode_enterCodeDescription" = "Geben Sie den 12-stelligen Covi-Code ein, den Sie vom Contact Center erhalten haben";
 "BECoviCode_ok" = "Ok";
 "BECoviCode_cancel" = "Stornieren";
 "BECoviCode_title" = "Covi-Code";
-"BECoviCode_subtitle" = "Anderen helfen";
+"BEHome_CoviCode_description" = "Sie wurden positiv auf COVID-19 getestet und den Test nicht mit Coronalert verbunden? Es ist nicht schlecht, Ihre Kontakte anonym zu benachrichtigen.";
 "BECoviCode_explanation" = "Verwenden Sie den 12-stelligen Code aus dem Contact Center, um Ihre Kontakte vor einem möglichen Risiko mit hohem Risiko zu warnen";
 "BECoviCode_submit" = "Code senden";
 "BEExposureSubmissionError_invalidCoviCode" = "Ungültiger Covi-Code";
@@ -439,3 +438,4 @@
 "BEVaccinationInfo_atLeastOneDose" = "Mindestens 1 Dosis";
 "BEVaccinationInfo_fullyVaccinated" = "Vollständig geimpft";
 "BEVaccinationInfo_updatedAt" = "Zuletzt aktualisiert am %@";
+"BEHome_CoviCode_button" = "Benachrichtigen Sie Ihre Kontakte";

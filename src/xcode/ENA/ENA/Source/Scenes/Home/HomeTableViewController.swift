@@ -27,7 +27,6 @@ protocol HomeViewControllerDelegate: AnyObject {
 	func showInviteFriends()
 	func showToolbox()
 	func showCoviCode()
-	func showAlreadyDidTestScreen()
 	func showWebPage(from viewController: UIViewController, urlString: String)
 	func showAppInformation()
 	func showSettings(enState: ENStateHandler.State)
@@ -441,10 +440,6 @@ extension HomeTableViewController {
 		showExposureSubmission(with: homeInteractor.testResult)
 	}
 
-	func showAlreadyDidTestScreen() {
-		delegate?.showAlreadyDidTestScreen()
-	}
-	
 	func updateTestResultState() {
 		homeInteractor.reloadActionSection()
 		homeInteractor.updateTestResults()
