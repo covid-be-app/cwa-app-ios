@@ -65,7 +65,7 @@ class BECoviCodeViewController: DynamicTableViewController, ENANavigationControl
 				separators: false,
 				cells: [
 					.title2(text: BEAppStrings.BECoviCode.subtitle, accessibilityIdentifier: nil),
-					.body(text: BEAppStrings.BECoviCode.explanation,
+					.body(text: BEAppStrings.BECoviCode.explanation, style: .textView(.phoneNumber),
 						  accessibilityIdentifier: BEAccessibilityIdentifiers.BECoviCode.explanation)
 				]
 			)

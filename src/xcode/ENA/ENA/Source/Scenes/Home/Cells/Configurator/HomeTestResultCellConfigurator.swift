@@ -28,7 +28,6 @@ class HomeTestResultCellConfigurator: TableViewCellConfigurator {
 	var testResult: TestResult?
 
 	var primaryAction: (() -> Void)?
-	var secondaryAction: (() -> Void)?
 
 	func configure(cell: HomeTestResultTableViewCell) {
 		cell.delegate = self
@@ -53,7 +52,6 @@ class HomeTestResultCellConfigurator: TableViewCellConfigurator {
 			description: AppStrings.Home.submitCardBody,
 			warning: AppStrings.Home.submitCardWarning,
 			button: AppStrings.Home.submitCardButton,
-			secondButton: AppStrings.Home.alreadyDidTestButton,
 			accessibilityIdentifier: AccessibilityIdentifiers.Home.submitCardButton,
 			showDisclosureArrow: false
 		)
@@ -108,9 +106,5 @@ class HomeTestResultCellConfigurator: TableViewCellConfigurator {
 extension HomeTestResultCellConfigurator: HomeTestResultTableViewCellDelegate {
 	func testResultCollectionViewCellPrimaryActionTriggered(_ cell: HomeTestResultTableViewCell) {
 		primaryAction?()
-	}
-
-	func testResultCollectionViewCellSecondayActionTriggered(_ cell: HomeTestResultTableViewCell) {
-		secondaryAction?()
 	}
 }

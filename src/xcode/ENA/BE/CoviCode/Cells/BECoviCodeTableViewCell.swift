@@ -21,9 +21,13 @@ import UIKit
 
 class BECoviCodeTableViewCell: HomeCardTableViewCell {
 	@IBOutlet var titleLabel: ENALabel!
+	@IBOutlet var descriptionLabel: ENALabel!
+	@IBOutlet var button: ENAButton!
 
-	func configure(title: String, tintColor: UIColor = .enaColor(for: .textPrimary1), accessibilityIdentifier: String?) {
+	func configure(title: String, description: String, button buttonTitle: String, tintColor: UIColor = .enaColor(for: .textPrimary1), accessibilityIdentifier: String?) {
 		titleLabel.text = title
+		descriptionLabel.text = description
+		button.setTitle(buttonTitle, for: .normal)
 		self.accessibilityIdentifier = accessibilityIdentifier
 
 		self.tintColor = tintColor
