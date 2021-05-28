@@ -54,7 +54,7 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="body"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" verticalCompressionResistancePriority="1000" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shv-QY-GCU" customClass="ENAButton" customModule="ENA" customModuleProvider="target">
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="750" verticalCompressionResistancePriority="1000" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shv-QY-GCU" customClass="ENAButton" customModule="ENA" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="138" width="248" height="30"/>
                                                 <state key="normal" title="Button"/>
                                                 <userDefinedRuntimeAttributes>

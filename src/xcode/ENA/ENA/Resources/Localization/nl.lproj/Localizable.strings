@@ -345,7 +345,7 @@
 "BEMobileTestId_Select" = "Kies";
 "BEMobileTestId_Date" = "Datum";
 "BEMobileTestId_Close" = "Sluiten";
-"BEMobileTestId_saveExplanation2" = "Gelieve deze code aan de arts te geven want dit is noodzakelijk om je testresultaat aan de app te linken. Dit gebeurt niet automatisch omdat Coronalert anoniem is. Indien je dit vergeet, kan je het webformulier invullen.\n\nhttps://coronalert.be/nl/coronalert-formulier/";
+"BEMobileTestId_saveExplanation2" = "Geef deze code door wanneer je voor het eerst contact opneemt met je arts of wanneer je boekt bij het testcentrum. Zolang de test niet is afgenomen, kan je de code nog steeds verzenden via een link die je per sms hebt ontvangen of een formulier dat beschikbaar is op de website https://coronalert.be/nl/coronalert-formulier/\n\nAls geen van deze procedures zou werken, kan je nog altijd je contacten anoniem verwittigen na een positieve test. ";
 "BELanguage" = "nl";
 "BESelectKeyCountries_title" = "Kies Landen";
 "BESelectKeyCountries_explanation" = "Als je op een van de onderstaande datums niet in België was en je deze informatie (anoniem) wilt delen, selecteer dan het land dat je op die datum hebt bezocht. Tik op de lijn die je wilt wijzigen.";
@@ -431,7 +431,7 @@
 "BECoviCode_cancel" = "Annuleren";
 "BECoviCode_title" = "Gebruik de Covi-code";
 "BEHome_CoviCode_description" = "Je testte positief en je had je test niet gekoppeld aan Coronalert? Je kan nog altijd je contacten anoniem op de hoogte stellen.";
-"BECoviCode_explanation" = "Gebruik de 12-cijferige code van het contactcenter om uw contacten te waarschuwen voor een mogelijk hoog risico";
+"BECoviCode_explanation" = "Gebruik de 12-cijferige code die je kan bekomen bij het contactcentrum om je contacten op de hoogte te stellen van een mogelijk hoog-risico blootstelling. Hier is het nummer dat je moet bellen: +32 2 214 19 19";
 "BECoviCode_submit" = "Code verzenden";
 "BEExposureSubmissionError_invalidCoviCode" = "Ongeldige Covi-Code";
 "BEVaccinationInfo_title" = "Vaccinatie";
@@ -439,3 +439,5 @@
 "BEVaccinationInfo_fullyVaccinated" = "Volledig gevaccineerd";
 "BEVaccinationInfo_updatedAt" = "Laatst bijgewerkt op %@";
 "BEHome_CoviCode_button" = "Verwittig je contacten";
+"BECoviCode_subtitle" = "Help anderen";
+"ExposureSubmissionResult_testNegative_disclaimer" = "Dit scherm kan niet als COVID-certificaat worden gebruikt";

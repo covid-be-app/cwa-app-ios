@@ -345,7 +345,7 @@
 "BEMobileTestId_Select" = "Confirmer";
 "BEMobileTestId_Date" = "Date";
 "BEMobileTestId_Close" = "Fermer";
-"BEMobileTestId_saveExplanation2" = "Veuillez à transmettre ce code au médecin car ceci est nécessaire pour assurer le lien entre votre test et votre application. Le lien ne se fait pas automatiquement vu le caractère anonyme de Coronalert. Si vous oubliez de transmettre le code, vous pouvez remplir le webform suivant.\n\nhttps://coronalert.be/fr/formulaire-coronalert/";
+"BEMobileTestId_saveExplanation2" = "Veuillez transmettre ce code dès votre premier contact avec votre médecin ou lors de votre réservation au centre de dépistage. Tant que le prélèvement n’a pas été effectué, vous pouvez encore transmettre le code au moyen d’un lien reçu par SMS ou bien d’un formulaire disponible sur le site internet https://coronalert.be/fr/formulaire-coronalert/\n\nSi aucune de ces procédures ne fonctionne, vous aurez encore l’occasion de prévenir vos contacts de façon anonyme après avoir reçu un résultat positif.";
 "BELanguage" = "fr";
 "BESelectKeyCountries_title" = "Sélectionnez votre pays";
 "BESelectKeyCountries_explanation" = "Si vous n'étiez pas en Belgique à certaines des dates ci-dessous et que vous voulez partager cette information (de façon anonyme), veuillez sélectionner le pays dans lequel vous étiez à ces dates.";
@@ -431,7 +431,7 @@
 "BECoviCode_cancel" = "Annuler";
 "BECoviCode_title" = "Utilisez le Covi-Code";
 "BEHome_CoviCode_description" = "Vous avec reçu un test positif et vous ne l’aviez pas lié à Coronalert ? Il n’est pas trop tard pour prévenir anonymement vos contacts.";
-"BECoviCode_explanation" = "Utilisez le code à 12 chiffres du centre de contact pour avertir vos contacts d'une exposition potentielle à un risque élevé";
+"BECoviCode_explanation" = "Utilisez le code à 12 chiffres que vous pouvez obtenir en appelant le centre de contact pour avertir vos contacts d’une exposition potentielle à risque élevé. Voici le numéro à appeler : +32 2 214 19 19";
 "BECoviCode_submit" = "Envoyer le code";
 "BEExposureSubmissionError_invalidCoviCode" = "Mauvais Covi-Code";
 "BEVaccinationInfo_title" = "Vaccination";
@@ -439,3 +439,5 @@
 "BEVaccinationInfo_fullyVaccinated" = "Entièrement vacciné";
 "BEVaccinationInfo_updatedAt" = "Dernière mise à jour le %@";
 "BEHome_CoviCode_button" = "Prévenez vos contacts";
+"BECoviCode_subtitle" = "Aider les autres";
+"ExposureSubmissionResult_testNegative_disclaimer" = "Cet écran ne peut pas être utilisé comme certificat COVID";

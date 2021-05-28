@@ -331,7 +331,9 @@ private extension ExposureSubmissionTestResultViewController {
 		let tintColor = UIColor.enaColor(for: .riskLow)
 		let stepCells = Array(textSections.map({ $0.buildTestResultStepCells(iconTint: tintColor) }).joined())
 
-		var cells: [DynamicCell] = [.title2(text: AppStrings.ExposureSubmissionResult.procedure,
+		var cells: [DynamicCell] = [
+			.footnote(text: AppStrings.ExposureSubmissionResult.furtherInfos_Disclaimer, accessibilityIdentifier: nil),
+			.title2(text: AppStrings.ExposureSubmissionResult.procedure,
 					accessibilityIdentifier: AccessibilityIdentifiers.ExposureSubmissionResult.procedure)]
 		
 		cells.append(contentsOf: stepCells)
