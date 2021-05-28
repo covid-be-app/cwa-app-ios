@@ -345,7 +345,7 @@
 "BEMobileTestId_Select" = "Wählen";
 "BEMobileTestId_Date" = "Datum";
 "BEMobileTestId_Close" = "Schließen";
-"BEMobileTestId_saveExplanation2" = "Versuchen Sie immer, diesen Code an den Arzt zu übermitteln, der den Test verschreibt. Wenn Sie dies vergessen, dann können Sie diesen auch selbst über ein Web-Formular eingeben.\n\nhttps://coronalert.be/de/coronalert-formular/";
+"BEMobileTestId_saveExplanation2" = "Bitte senden Sie diesen Code, wenn Sie sich zum ersten Mal an Ihren Arzt wenden oder wenn Sie einen Test reservieren. Solange der Test noch nicht erfolgt ist, können Sie den Code weiterhin über einen Link hochladen, den sie per SMS empfangen. Oder Sie tragen den Code in dieses Formular auf der Coronalert-Website https://coronalert.be/de/coronalert-formular/ ein.\n\nWenn keines dieser Verfahren funktionieren sollte, haben Sie auch nach einem positiven Test noch die Möglichkeit Ihre Kontakte anonym zu warnen.";
 "BELanguage" = "de";
 "BESelectKeyCountries_title" = "Länder wählen";
 "BESelectKeyCountries_explanation" = "Wenn Sie an allen aufgeführten Daten nicht in Belgien waren und diese Informationen (anonym) weitergeben möchten, bitte in der anzupassenden Zeile das Land, das Sie an diesem Datum besucht haben, antippen.";
@@ -431,7 +431,7 @@
 "BECoviCode_cancel" = "Stornieren";
 "BECoviCode_title" = "Covi-Code";
 "BEHome_CoviCode_description" = "Sie wurden positiv auf COVID-19 getestet und den Test nicht mit Coronalert verbunden? Es ist nicht schlecht, Ihre Kontakte anonym zu benachrichtigen.";
-"BECoviCode_explanation" = "Verwenden Sie den 12-stelligen Code aus dem Contact Center, um Ihre Kontakte vor einem möglichen Risiko mit hohem Risiko zu warnen";
+"BECoviCode_explanation" = "Verwenden Sie den 12-stelligen Code, den Sie erhalten, wenn Sie den Callcenter anrufen, um Ihre Kontakte über eine Hochrisiko-Begegnung zu informieren. Hier ist die Nummer, die Sie anrufen können: +32 2 214 19 19";
 "BECoviCode_submit" = "Code senden";
 "BEExposureSubmissionError_invalidCoviCode" = "Ungültiger Covi-Code";
 "BEVaccinationInfo_title" = "Impfung";
@@ -439,3 +439,5 @@
 "BEVaccinationInfo_fullyVaccinated" = "Vollständig geimpft";
 "BEVaccinationInfo_updatedAt" = "Zuletzt aktualisiert am %@";
 "BEHome_CoviCode_button" = "Benachrichtigen Sie Ihre Kontakte";
+"BECoviCode_subtitle" = "Anderen helfen";
+"ExposureSubmissionResult_testNegative_disclaimer" = "Dieser Bildschirm kann nicht als COVID-Zertifikat verwendet werden";

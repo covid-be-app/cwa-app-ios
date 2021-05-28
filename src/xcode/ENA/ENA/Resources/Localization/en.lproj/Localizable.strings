@@ -345,7 +345,7 @@
 "BEMobileTestId_Select" = "Select";
 "BEMobileTestId_Date" = "Date";
 "BEMobileTestId_Close" = "Close";
-"BEMobileTestId_saveExplanation2" = "Please give this code to the doctor. This is necessary to link your test to the app. This requires a manual action due to the anonymity of the app. If you have forgotten to give the code, you can use the webform.\n\nhttps://coronalert.be/en/corona-alert-form/";
+"BEMobileTestId_saveExplanation2" = "Please send this code when you first contact your doctor or when booking a test at the test center. As long as you have not been tested, you can still transmit the code using a link received by SMS or a form available on the website https://coronalert.be/en/corona-alert-form/\n\nIf none of these procedures would work, you will still have the opportunity to warn your contacts anonymously after receiving a positive result.";
 "BELanguage" = "en";
 "BESelectKeyCountries_title" = "Select Countries";
 "BESelectKeyCountries_explanation" = "For each of the below dates, if you have not been in Belgium and you would like to share this information (anonymously), please select the country you visited on that date by tapping the line you want to change.";
@@ -431,7 +431,7 @@
 "BECoviCode_cancel" = "Cancel";
 "BECoviCode_title" = "Use The Covi-Code";
 "BEHome_CoviCode_description" = "You tested positive and you did not link the test to Coronalert? It's not too late to anonymously notify your contacts.";
-"BECoviCode_explanation" = "Use the 12-digit code from the contact center to warn your contacts about a potential high risk exposure";
+"BECoviCode_explanation" = "Use the 12-digit code you can obtain by calling the contact center to notify your contacts of a potential high-risk exposure. Here is the number to call: +32 2 214 19 19";
 "BECoviCode_submit" = "Send Code";
 "BEExposureSubmissionError_invalidCoviCode" = "Invalid Covi-Code";
 "BEVaccinationInfo_title" = "Vaccination";
@@ -439,3 +439,5 @@
 "BEVaccinationInfo_fullyVaccinated" = "Fully vaccinated";
 "BEVaccinationInfo_updatedAt" = "Last updated on %@";
 "BEHome_CoviCode_button" = "Notify contacts";
+"BECoviCode_subtitle" = "Help others";
+"ExposureSubmissionResult_testNegative_disclaimer" = "This screen cannot be used as a COVID certificate";
