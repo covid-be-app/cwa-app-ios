@@ -178,7 +178,7 @@ enum BEAppStrings {
 		static let passengerLocatorFormURLNL = URL(string: "https://travel.info-coronavirus.be/nl/public-health-passenger-locator-form")!
 		static let passengerLocatorFormURLDE = URL(string: "https://travel.info-coronavirus.be/de/public-health-passenger-locator-form")!
 
-		static let testCenterURL = URL(string: "https://www.google.com/maps/d/u/0/viewer?mid=1GFrpKwhDE97_pplhtikcfDxakEhohXst&ll=50.48641435902384%2C4.395339249999988&z=9")!
+		static let testCenterURL = URL(string: "https://testcovid.doclr.be/#!/saps")!
 	}
 	
 	enum BEAlreadyDidTest {
