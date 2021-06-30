@@ -18,14 +18,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BqZ-QT-PQ1">
+                    <view contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="BqZ-QT-PQ1">
                         <rect key="frame" x="16" y="11" width="288" height="378"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" axis="vertical" distribution="equalSpacing" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="8MO-8D-xNC">
                                 <rect key="frame" x="8" y="8" width="272" height="362"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="AeL-Zw-H1r">
-                                        <rect key="frame" x="0.0" y="0.0" width="69.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="64" height="30"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="Illu_News" translatesAutoresizingMaskIntoConstraints="NO" id="D7Y-o7-6mg">
                                                 <rect key="frame" x="0.0" y="0.0" width="32" height="30"/>
@@ -35,7 +35,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" insetsLayoutMarginsFromSafeArea="NO" text="Title 2" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U19-He-VXB" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
-                                                <rect key="frame" x="40" y="0.0" width="29.5" height="30"/>
+                                                <rect key="frame" x="40" y="0.0" width="24" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" name="ENA Text Primary 1 Color"/>
@@ -59,7 +59,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" insetsLayoutMarginsFromSafeArea="NO" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05Y-Pp-jkv" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="272" width="272" height="90"/>
+                                        <rect key="frame" x="0.0" y="260.5" width="264" height="101.5"/>
                                         <string key="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" name="ENA Text Primary 2 Color"/>
@@ -97,10 +97,10 @@
     </objects>
     <designables>
         <designable name="05Y-Pp-jkv">
-            <size key="intrinsicContentSize" width="1081" height="18"/>
+            <size key="intrinsicContentSize" width="1199.5" height="20.5"/>
         </designable>
         <designable name="U19-He-VXB">
-            <size key="intrinsicContentSize" width="56.5" height="23"/>
+            <size key="intrinsicContentSize" width="47.5" height="20.5"/>
         </designable>
     </designables>
     <resources>
