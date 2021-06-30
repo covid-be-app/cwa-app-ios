@@ -234,6 +234,11 @@
 		A913E3022649433B0013EF3E /* BEMockExposureSubmissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076D024E426D600AE8748 /* BEMockExposureSubmissionService.swift */; };
 		A913E304264A5C900013EF3E /* BEHTTPClientSubmitCoviCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A913E303264A5C900013EF3E /* BEHTTPClientSubmitCoviCodeTests.swift */; };
 		A913E306264A5F6C0013EF3E /* ExposureSubmissionServiceCoviCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A913E305264A5F6B0013EF3E /* ExposureSubmissionServiceCoviCodeTests.swift */; };
+		A9158090268C5CD900197BAF /* BECovidSafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A915808B268C5CD900197BAF /* BECovidSafeViewController.swift */; };
+		A9158091268C5CD900197BAF /* BEHomeCovidSafeCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A915808D268C5CD900197BAF /* BEHomeCovidSafeCellConfigurator.swift */; };
+		A9158092268C5CD900197BAF /* BECovidSafeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A915808E268C5CD900197BAF /* BECovidSafeTableViewCell.swift */; };
+		A9158093268C5CD900197BAF /* BECovidSafeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A915808F268C5CD900197BAF /* BECovidSafeTableViewCell.xib */; };
+		A9158095268C5E9600197BAF /* BECovidSafeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9158094268C5E9600197BAF /* BECovidSafeViewController.xib */; };
 		A92076C824E3DDEE00AE8748 /* BEDiagnosisKeyRetrieval.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076C724E3DDEE00AE8748 /* BEDiagnosisKeyRetrieval.swift */; };
 		A92076CC24E3F56400AE8748 /* BEExposureSubmissionServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076CB24E3F56400AE8748 /* BEExposureSubmissionServiceTests.swift */; };
 		A92076CE24E40BFC00AE8748 /* BEIntervalNumberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076CD24E40BFC00AE8748 /* BEIntervalNumberTests.swift */; };
@@ -789,6 +794,11 @@
 		A913E2FE264816720013EF3E /* BECoviCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BECoviCodeViewController.swift; sourceTree = "<group>"; };
 		A913E303264A5C900013EF3E /* BEHTTPClientSubmitCoviCodeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEHTTPClientSubmitCoviCodeTests.swift; sourceTree = "<group>"; };
 		A913E305264A5F6B0013EF3E /* ExposureSubmissionServiceCoviCodeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExposureSubmissionServiceCoviCodeTests.swift; sourceTree = "<group>"; };
+		A915808B268C5CD900197BAF /* BECovidSafeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BECovidSafeViewController.swift; sourceTree = "<group>"; };
+		A915808D268C5CD900197BAF /* BEHomeCovidSafeCellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEHomeCovidSafeCellConfigurator.swift; sourceTree = "<group>"; };
+		A915808E268C5CD900197BAF /* BECovidSafeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BECovidSafeTableViewCell.swift; sourceTree = "<group>"; };
+		A915808F268C5CD900197BAF /* BECovidSafeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BECovidSafeTableViewCell.xib; sourceTree = "<group>"; };
+		A9158094268C5E9600197BAF /* BECovidSafeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BECovidSafeViewController.xib; sourceTree = "<group>"; };
 		A92076C724E3DDEE00AE8748 /* BEDiagnosisKeyRetrieval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDiagnosisKeyRetrieval.swift; sourceTree = "<group>"; };
 		A92076CB24E3F56400AE8748 /* BEExposureSubmissionServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEExposureSubmissionServiceTests.swift; sourceTree = "<group>"; };
 		A92076CD24E40BFC00AE8748 /* BEIntervalNumberTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEIntervalNumberTests.swift; sourceTree = "<group>"; };
@@ -1866,6 +1876,26 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		A9158089268C5C6900197BAF /* CovidSafe */ = {
+			isa = PBXGroup;
+			children = (
+				A915808B268C5CD900197BAF /* BECovidSafeViewController.swift */,
+				A9158094268C5E9600197BAF /* BECovidSafeViewController.xib */,
+				A915808C268C5CD900197BAF /* Cells */,
+			);
+			path = CovidSafe;
+			sourceTree = "<group>";
+		};
+		A915808C268C5CD900197BAF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A915808D268C5CD900197BAF /* BEHomeCovidSafeCellConfigurator.swift */,
+				A915808E268C5CD900197BAF /* BECovidSafeTableViewCell.swift */,
+				A915808F268C5CD900197BAF /* BECovidSafeTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		A92076CA24E3E7E800AE8748 /* __tests__ */ = {
 			isa = PBXGroup;
 			children = (
@@ -2193,6 +2223,7 @@
 		A9DD2CE224CEEEF40035081A /* BE */ = {
 			isa = PBXGroup;
 			children = (
+				A9158089268C5C6900197BAF /* CovidSafe */,
 				A9A41ACD264ACA0500B3AAD7 /* News */,
 				A913E2F42647C6C20013EF3E /* CoviCode */,
 				A9A41F67261C4EC300C2BF3F /* Toolbox */,
@@ -3010,6 +3041,7 @@
 				A189E461248C35BF001D0996 /* PublicKeys.plist in Resources */,
 				A97D44F825A783CA00E7D698 /* ExposureDetectionLongGuideCell.xib in Resources */,
 				A97D44BA25A7354400E7D698 /* FriendsInviteController.xib in Resources */,
+				A9158095268C5E9600197BAF /* BECovidSafeViewController.xib in Resources */,
 				71F2E57B2487AEFC00694F1A /* ena-colors.xcassets in Resources */,
 				51C7790C24867F16004582F8 /* RiskListItemView.xib in Resources */,
 				EE92A33E245D96DA006B97B0 /* Localizable.stringsdict in Resources */,
@@ -3030,6 +3062,7 @@
 				8539874F2467094E00D28B62 /* AppIcon.xcassets in Resources */,
 				514C0A0B247AF9F700F235F6 /* RiskTextItemView.xib in Resources */,
 				A97D44C825A749EC00E7D698 /* NotificationSettingsOffTableViewCell.xib in Resources */,
+				A9158093268C5CD900197BAF /* BECovidSafeTableViewCell.xib in Resources */,
 				51B5B414246DF07300DC5D3E /* RiskImageItemView.xib in Resources */,
 				85D7594B24570491008175F0 /* Assets.xcassets in Resources */,
 				711EFCC924935C79005FEF21 /* ExposureSubmissionTestResultHeaderView.xib in Resources */,
@@ -3196,6 +3229,7 @@
 				EE22DB8B247FB43A001B0A71 /* ActionDetailTableViewCell.swift in Sources */,
 				A97D451B25AAFD7E00E7D698 /* Crypto.swift in Sources */,
 				71FE1C71247AA7B700851FEB /* DynamicTableViewHeaderImageView.swift in Sources */,
+				A9158090268C5CD900197BAF /* BECovidSafeViewController.swift in Sources */,
 				0159E6C2247829BA00894A89 /* temporary_exposure_key_signature_list.pb.swift in Sources */,
 				B1CD333C24865A7D00B06E9B /* TracingStatusHistory.swift in Sources */,
 				51D420B724583B7200AD70CA /* NSObject+Identifier.swift in Sources */,
@@ -3208,11 +3242,13 @@
 				714194EA247A65C60072A090 /* DynamicTableViewHeaderSeparatorView.swift in Sources */,
 				A9A41AD6264ACFC100B3AAD7 /* BEDynamicInformationTextService.swift in Sources */,
 				2F26CE2E248B9C4F00BE30EE /* UIViewController+BackButton.swift in Sources */,
+				A9158092268C5CD900197BAF /* BECovidSafeTableViewCell.swift in Sources */,
 				A16714BB248D18D20031B111 /* SummaryMetadata.swift in Sources */,
 				B10FD5F4246EAC1700E9D7F2 /* AppleFilesWriter.swift in Sources */,
 				711EFCC72492EE31005FEF21 /* ENAFooterView.swift in Sources */,
 				B1FE13F024891D1500D012E5 /* RiskCalculation.swift in Sources */,
 				514C0A14247C163800F235F6 /* HomeLowRiskCellConfigurator.swift in Sources */,
+				A9158091268C5CD900197BAF /* BEHomeCovidSafeCellConfigurator.swift in Sources */,
 				51C779122486E549004582F8 /* HomeFindingPositiveRiskCellConfigurator.swift in Sources */,
 				A9A41F97261C971000C2BF3F /* BEToolboxItemCell.swift in Sources */,
 				A913E2FF264816720013EF3E /* BECoviCodeViewController.swift in Sources */,

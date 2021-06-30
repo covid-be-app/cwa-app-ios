@@ -203,4 +203,12 @@ enum BEAppStrings {
 		static let fullyVaccinated = NSLocalizedString("BEVaccinationInfo_fullyVaccinated", comment: "")
 		static let updatedAt = NSLocalizedString("BEVaccinationInfo_updatedAt", comment: "")
 	}
+	
+	enum BECovidSafe {
+		static let homeTitle = NSLocalizedString("BECovidSafe_cardTitle", comment: "")
+		static let title = NSLocalizedString("BECovidSafe_title", comment: "")
+		static let appTitle = NSLocalizedString("BECovidSafe_appTitle", comment: "")
+		static let appSubtitle = NSLocalizedString("BECovidSafe_appSubtitle", comment: "")
+		static let appButton = NSLocalizedString("BECovidSafe_appButton", comment: "")
+	}
 }

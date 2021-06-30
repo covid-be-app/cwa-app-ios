@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -137,16 +137,16 @@
     </objects>
     <designables>
         <designable name="32G-IK-cl1">
-            <size key="intrinsicContentSize" width="46.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="42" height="18"/>
         </designable>
         <designable name="Brc-sk-m3M">
-            <size key="intrinsicContentSize" width="221.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="199.5" height="18"/>
         </designable>
         <designable name="b95-Kz-bRd">
-            <size key="intrinsicContentSize" width="46" height="20.5"/>
+            <size key="intrinsicContentSize" width="41.5" height="18"/>
         </designable>
         <designable name="l1j-pi-LlK">
-            <size key="intrinsicContentSize" width="44" height="20.5"/>
+            <size key="intrinsicContentSize" width="39.5" height="18"/>
         </designable>
     </designables>
     <resources>

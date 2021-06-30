@@ -441,3 +441,9 @@
 "BEHome_CoviCode_button" = "Notify contacts";
 "BECoviCode_subtitle" = "Help others";
 "ExposureSubmissionResult_testNegative_disclaimer" = "This screen cannot be used as a COVID certificate";
+"BECovidSafe_cardTitle" = "Vaccine certificate";
+"BECovidSafe_title" = "My vaccine certificate";
+"BECovidSafe_appTitle" = "CovidSafeBE";
+"BECovidSafe_appSubtitle" = "Click here to start the CovidSafe app";
+"BECovidSafe_appButton" = "Start";
+

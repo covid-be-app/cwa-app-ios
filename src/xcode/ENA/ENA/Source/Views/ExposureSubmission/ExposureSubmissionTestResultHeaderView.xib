@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -47,7 +48,7 @@
                                     <rect key="frame" x="28" y="0.0" width="203" height="136"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="1000" insetsLayoutMarginsFromSafeArea="NO" text="Footnote" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OU3-fJ-eEo" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="54.5" height="16"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="51" height="14.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" name="ENA Text Primary 2 Color"/>
                                             <nil key="highlightedColor"/>
@@ -76,7 +77,7 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="1000" insetsLayoutMarginsFromSafeArea="NO" text="Footnote" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGr-ET-QNF" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="120" width="54.5" height="16"/>
+                                            <rect key="frame" x="0.0" y="121.5" width="51" height="14.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" name="ENA Text Primary 1 Color"/>
                                             <nil key="highlightedColor"/>
@@ -125,6 +126,17 @@
             <point key="canvasLocation" x="-255.79710144927537" y="-13.058035714285714"/>
         </view>
     </objects>
+    <designables>
+        <designable name="OU3-fJ-eEo">
+            <size key="intrinsicContentSize" width="51" height="14.5"/>
+        </designable>
+        <designable name="Tam-Om-CJ8">
+            <size key="intrinsicContentSize" width="262" height="23"/>
+        </designable>
+        <designable name="dGr-ET-QNF">
+            <size key="intrinsicContentSize" width="51" height="14.5"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Illu_Submission_NegativesTestErgebnis" width="90" height="112"/>
         <namedColor name="ENA Risk Low Color">
