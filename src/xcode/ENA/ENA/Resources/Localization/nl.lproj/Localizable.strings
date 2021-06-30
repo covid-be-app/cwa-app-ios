@@ -441,3 +441,8 @@
 "BEHome_CoviCode_button" = "Verwittig je contacten";
 "BECoviCode_subtitle" = "Help anderen";
 "ExposureSubmissionResult_testNegative_disclaimer" = "Dit scherm kan niet als COVID-certificaat worden gebruikt";
+"BECovidSafe_cardTitle" = "Vaccin certificaat";
+"BECovidSafe_title" = "Mijn vaccinatiecertificaat";
+"BECovidSafe_appTitle" = "CovidSafeBE";
+"BECovidSafe_appSubtitle" = "Klik hier om de CovidSafe-app te starten";
+"BECovidSafe_appButton" = "Start";
