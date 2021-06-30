@@ -302,6 +302,13 @@ class BEENAUITests: XCTestCase {
 
 		app.alerts.buttons.element(boundBy: 1).tap()
 		XCTAssertTrue(app.buttons["BEAppStrings.BEExposureSubmissionSuccess.button"].waitForExistence(timeout: 5.0))
-
+	}
+	
+	func testCovidSafe() {
+		app.launch()
+		XCTAssertTrue(app.cells["BEAppStrings.BEHome.covidSafe"].waitForExistence(timeout: 5.0))
+		app.cells["BEAppStrings.BEHome.covidSafe"].tap()
+		XCTAssertTrue(app.buttons["BEAppStrings.BECovidSafe.button"].waitForExistence(timeout: 5.0))
+		snapshot("ScreenShot_\(#function)_001")
 	}
 }

@@ -1,0 +1,22 @@
+{
+  "images" : [
+    {
+      "filename" : "Illustration-Festival-Plane-stadion.pdf",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "Illustration-Festival-Plane-stadion-dark.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

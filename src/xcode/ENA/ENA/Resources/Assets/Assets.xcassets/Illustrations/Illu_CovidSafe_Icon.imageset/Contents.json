@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Sweel_logo_Grey.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

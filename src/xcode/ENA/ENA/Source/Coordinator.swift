@@ -206,9 +206,12 @@ extension Coordinator: HomeViewControllerDelegate {
 	}
 
 	func showCoviCode() {
-		
 		coviCodeCoordinator = BECoviCodeCoordinator(exposureSubmissionService: exposureSubmissionService, parentViewController: rootViewController, delegate: self)
 		coviCodeCoordinator?.start()
+	}
+
+	func showCovidSafe() {
+		rootViewController.pushViewController(BECovidSafeViewController(), animated: true)
 	}
 
 	func showInviteFriends() {
