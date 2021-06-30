@@ -20,26 +20,22 @@
 import Foundation
 import UIKit
 
-class BENewsTableViewCellConfigurator: TableViewCellConfigurator {
-	let service = BEDynamicNewsTextService()
+class BEHomeCovidSafeTableViewCellConfigurator: TableViewCellConfigurator {
 
 	init() {
 	}
 	
-	func configure(cell: BENewsTableViewCell) {
-		
-		cell.titleLabel.text = service.newsTitle()
-		cell.descriptionLabel.text = service.newsText()
+	func configure(cell: BECovidSafeTableViewCell) {
+		cell.configure(title: BEAppStrings.BECovidSafe.homeTitle, icon: UIImage(named: "Illu_QR"), accessibilityIdentifier: BEAccessibilityIdentifiers.BEHome.covidSafe)
 	}
 	
 	// MARK: Hashable
 
 	func hash(into hasher: inout Swift.Hasher) {
-		hasher.combine(service.newsText())
-		hasher.combine(service.newsTitle())
+		hasher.combine("covidSafe")
 	}
 
-	static func == (lhs: BENewsTableViewCellConfigurator, rhs: BENewsTableViewCellConfigurator) -> Bool {
-		return lhs.service.newsTitle() == rhs.service.newsTitle() && lhs.service.newsText() == rhs.service.newsText()
+	static func == (lhs: BEHomeCovidSafeTableViewCellConfigurator, rhs: BEHomeCovidSafeTableViewCellConfigurator) -> Bool {
+		return true
 	}
 }

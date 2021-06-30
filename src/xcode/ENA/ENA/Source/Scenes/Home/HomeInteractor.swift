@@ -316,6 +316,10 @@ extension HomeInteractor {
 	func setupActiveConfigurator() -> HomeActivateCellConfigurator {
 		return HomeActivateCellConfigurator(state: state.enState)
 	}
+	
+	func setupCovidSafeConfigurator() -> BEHomeCovidSafeTableViewCellConfigurator {
+		return BEHomeCovidSafeTableViewCellConfigurator()
+	}
 
 	func setupNewsConfigurator() -> BENewsTableViewCellConfigurator {
 		return BENewsTableViewCellConfigurator()
@@ -329,6 +333,10 @@ extension HomeInteractor {
 		// Active card.
 		activeConfigurator = setupActiveConfigurator()
 		actionsConfigurators.append(activeConfigurator)
+
+		// MARK: - Add CovidSafe card
+
+		actionsConfigurators.append(setupCovidSafeConfigurator())
 
 		// MARK: - Add vaccination card
 		

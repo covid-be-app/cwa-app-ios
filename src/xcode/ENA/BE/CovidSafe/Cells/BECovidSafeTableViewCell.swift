@@ -17,29 +17,26 @@
 // under the License.
 //
 
-import Foundation
 import UIKit
 
-class BENewsTableViewCellConfigurator: TableViewCellConfigurator {
-	let service = BEDynamicNewsTextService()
+class BECovidSafeTableViewCell: HomeCardTableViewCell {
 
-	init() {
+	@IBOutlet var iconImageView: UIImageView!
+	@IBOutlet var titleLabel: UILabel!
+
+	override func awakeFromNib() {
+		super.awakeFromNib()
+
+		isAccessibilityElement = true
+		accessibilityTraits = .button
+	}
+
+	func configure(title: String, icon: UIImage?, accessibilityIdentifier: String) {
+		self.titleLabel.text = title
+		self.iconImageView.image = icon
+		self.accessibilityIdentifier = accessibilityIdentifier
+		self.accessibilityLabel = title
+
 	}
 	
-	func configure(cell: BENewsTableViewCell) {
-		
-		cell.titleLabel.text = service.newsTitle()
-		cell.descriptionLabel.text = service.newsText()
-	}
-	
-	// MARK: Hashable
-
-	func hash(into hasher: inout Swift.Hasher) {
-		hasher.combine(service.newsText())
-		hasher.combine(service.newsTitle())
-	}
-
-	static func == (lhs: BENewsTableViewCellConfigurator, rhs: BENewsTableViewCellConfigurator) -> Bool {
-		return lhs.service.newsTitle() == rhs.service.newsTitle() && lhs.service.newsText() == rhs.service.newsText()
-	}
 }

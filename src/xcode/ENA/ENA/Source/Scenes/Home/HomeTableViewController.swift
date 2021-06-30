@@ -27,6 +27,7 @@ protocol HomeViewControllerDelegate: AnyObject {
 	func showInviteFriends()
 	func showToolbox()
 	func showCoviCode()
+	func showCovidSafe()
 	func showWebPage(from viewController: UIViewController, urlString: String)
 	func showAppInformation()
 	func showSettings(enState: ENStateHandler.State)
@@ -37,6 +38,7 @@ class HomeTableViewController: UIViewController, RequiresAppDependencies {
 
 	enum CellType: String {
 		case activate = "activate"
+		case covidSafe = "covidSafe"
 		case infectionSummary = "infectionSummary"
 		case toolbox = "toolbox"
 		case riskLevel = "riskLevel"
@@ -295,6 +297,10 @@ class HomeTableViewController: UIViewController, RequiresAppDependencies {
 	func showCoviCode() {
 		delegate?.showCoviCode()
 	}
+	
+	func showCovidSafe() {
+		delegate?.showCovidSafe()
+	}
 
 	func showExposureDetection() {
 		delegate?.showExposureDetection(state: homeInteractor.state, isRequestRiskRunning: homeInteractor.riskProvider.isLoading)
@@ -337,6 +343,7 @@ class HomeTableViewController: UIViewController, RequiresAppDependencies {
 		tableView.register(UINib(nibName: BEInfectionSummaryTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: BEInfectionSummaryTableViewCell.stringName())
 		tableView.register(UINib(nibName: BEToolboxTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: BEToolboxTableViewCell.stringName())
 		tableView.register(UINib(nibName: BECoviCodeTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: BECoviCodeTableViewCell.stringName())
+		tableView.register(UINib(nibName: BECovidSafeTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: BECovidSafeTableViewCell.stringName())
 		tableView.register(UINib(nibName: BENewsTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: BENewsTableViewCell.stringName())
 		tableView.register(UINib(nibName: HomeSpacerCell.stringName(), bundle: nil), forCellReuseIdentifier: HomeSpacerCell.stringName())
 		tableView.register(UINib(nibName: BEVaccinationInfoTableViewCell.stringName(), bundle: nil), forCellReuseIdentifier: BEVaccinationInfoTableViewCell.stringName())
@@ -349,6 +356,8 @@ class HomeTableViewController: UIViewController, RequiresAppDependencies {
 			showExposureNotificationSetting()
 		case is BEToolboxTableViewCell:
 			showToolbox()
+		case is BECovidSafeTableViewCell:
+			showCovidSafe()
 		case is BECoviCodeTableViewCell:
 			showCoviCode()
 		case is HomeRiskLevelTableViewCell:

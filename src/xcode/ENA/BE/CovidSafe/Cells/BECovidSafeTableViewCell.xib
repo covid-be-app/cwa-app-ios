@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3QT-SJ-WhZ" customClass="BECovidSafeTableViewCell" customModule="ENA" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="356" height="66"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3QT-SJ-WhZ" id="gM4-v1-D8J">
+                <rect key="frame" x="0.0" y="0.0" width="356" height="66"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="06p-gR-YUu">
+                        <rect key="frame" x="20" y="11" width="316" height="44"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qKe-KD-ufv">
+                                <rect key="frame" x="0.0" y="0.0" width="282.5" height="44"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEu-xl-Ywu">
+                                        <rect key="frame" x="0.0" y="0.0" width="133" height="44"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="1000" text="Headline" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjg-aI-liB" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
+                                        <rect key="frame" x="133" y="13" width="149.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="ENA Text Primary 1 Color"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="ibEnaStyle" value="headline"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" insetsLayoutMarginsFromSafeArea="NO" image="Icons_Chevron_plain" translatesAutoresizingMaskIntoConstraints="NO" id="YQS-mV-URK">
+                                <rect key="frame" x="290.5" y="16" width="7" height="12"/>
+                                <color key="tintColor" name="ENA Chevron Color"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" name="ENA Background Color"/>
+                        <constraints>
+                            <constraint firstItem="qKe-KD-ufv" firstAttribute="top" secondItem="06p-gR-YUu" secondAttribute="top" id="I6G-SX-fIU"/>
+                            <constraint firstItem="qKe-KD-ufv" firstAttribute="leading" secondItem="06p-gR-YUu" secondAttribute="leading" id="Od8-IN-le4"/>
+                            <constraint firstAttribute="bottom" secondItem="qKe-KD-ufv" secondAttribute="bottom" id="UlY-6p-svj"/>
+                            <constraint firstItem="YQS-mV-URK" firstAttribute="centerY" secondItem="qKe-KD-ufv" secondAttribute="centerY" id="iXF-xX-hMr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YQS-mV-URK" secondAttribute="centerX" constant="14" id="ksH-Lj-DmQ"/>
+                            <constraint firstItem="YQS-mV-URK" firstAttribute="leading" secondItem="qKe-KD-ufv" secondAttribute="trailing" constant="8" id="tyF-xJ-RXF"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="06p-gR-YUu" firstAttribute="trailing" secondItem="gM4-v1-D8J" secondAttribute="trailingMargin" id="LYD-Hk-zbz"/>
+                    <constraint firstItem="06p-gR-YUu" firstAttribute="bottom" secondItem="gM4-v1-D8J" secondAttribute="bottomMargin" id="bOf-LE-fHa"/>
+                    <constraint firstItem="06p-gR-YUu" firstAttribute="leading" secondItem="gM4-v1-D8J" secondAttribute="leadingMargin" id="cK5-QB-dy9"/>
+                    <constraint firstItem="06p-gR-YUu" firstAttribute="top" secondItem="gM4-v1-D8J" secondAttribute="topMargin" id="hle-jK-Eq8"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="iconImageView" destination="DEu-xl-Ywu" id="Fn8-nl-JLV"/>
+                <outlet property="titleLabel" destination="fjg-aI-liB" id="HLF-yG-FmE"/>
+                <outlet property="viewContainer" destination="06p-gR-YUu" id="k49-kg-w9T"/>
+            </connections>
+            <point key="canvasLocation" x="-214" y="-136"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="fjg-aI-liB">
+            <size key="intrinsicContentSize" width="63" height="18"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="Icons_Chevron_plain" width="7" height="12"/>
+        <namedColor name="ENA Background Color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ENA Chevron Color">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.30000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ENA Text Primary 1 Color">
+            <color red="0.090196078431372548" green="0.098039215686274508" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
