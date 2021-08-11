@@ -21,12 +21,12 @@ import Foundation
 import UIKit
 
 class BENewsTableViewCellConfigurator: TableViewCellConfigurator {
-	
+	let service = BEDynamicNewsTextService()
+
 	init() {
 	}
 	
 	func configure(cell: BENewsTableViewCell) {
-		let service = BEDynamicNewsTextService()
 		
 		cell.titleLabel.text = service.newsTitle()
 		cell.descriptionLabel.text = service.newsText()
@@ -35,10 +35,11 @@ class BENewsTableViewCellConfigurator: TableViewCellConfigurator {
 	// MARK: Hashable
 
 	func hash(into hasher: inout Swift.Hasher) {
-		hasher.combine("news")
+		hasher.combine(service.newsText())
+		hasher.combine(service.newsTitle())
 	}
 
 	static func == (lhs: BENewsTableViewCellConfigurator, rhs: BENewsTableViewCellConfigurator) -> Bool {
-		return true
+		return lhs.service.newsTitle() == rhs.service.newsTitle() && lhs.service.newsText() == rhs.service.newsText()
 	}
 }
