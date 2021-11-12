@@ -26,7 +26,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
-	<string>128</string>
+	<string>129</string>
 	<key>ENAPIVersion</key>
 	<string>1</string>
 	<key>ENDeveloperRegion</key>
