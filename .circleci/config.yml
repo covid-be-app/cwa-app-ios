@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     macos:
-      xcode: 12.3.0
+      xcode: 12.5.0
     steps:
       - checkout
       - run:
@@ -24,7 +24,7 @@ jobs:
   test:
     resource_class: large
     macos:
-      xcode: 12.3.0
+      xcode: 12.5.0
     steps:
       - checkout
       - run:
@@ -85,7 +85,7 @@ jobs:
 
   testflight-release:
     macos:
-      xcode: 12.3.0
+      xcode: 12.5.0
     steps:
       - checkout
       - run:
@@ -106,7 +106,7 @@ jobs:
           
   production-release:
     macos:
-      xcode: 12.3.0
+      xcode: 12.5.0
     steps:
       - checkout
       - run:
