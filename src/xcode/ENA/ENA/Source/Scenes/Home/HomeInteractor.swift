@@ -270,16 +270,20 @@ extension HomeInteractor {
 				numberRiskContacts: state.numberRiskContacts,
 				daysSinceLastExposure: state.daysSinceLastExposure,
 				lastUpdateDate: dateLastExposureDetection,
-				manualExposureDetectionState: riskProvider.manualExposureDetectionState,
-				detectionMode: detectionMode,
 				detectionInterval: detectionInterval
 			)
 		case .none:
 			riskLevelConfigurator = nil
 		}
 
-		riskLevelConfigurator?.buttonAction = {
-			self.requestRisk(userInitiated: true)
+		if riskLevel != .increased {
+			riskLevelConfigurator?.buttonAction = {
+				self.requestRisk(userInitiated: true)
+			}
+		} else {
+			riskLevelConfigurator?.buttonAction = {
+				self.openRequestCovidTestURL()
+			}
 		}
 		return riskLevelConfigurator ?? inactiveConfigurator
 	}
@@ -529,6 +533,13 @@ extension HomeInteractor {
 			}
 		} else {
 			self.exposureSubmissionService.getTestResult(completionBlock)
+		}
+	}
+	
+	private func openRequestCovidTestURL() {
+		let url = URL(string: "https://google.com")!
+		if UIApplication.shared.canOpenURL(url) {
+			UIApplication.shared.open(url, completionHandler: nil)
 		}
 	}
 }

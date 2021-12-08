@@ -35,8 +35,8 @@ class HomeHighRiskCellConfiguratorTests: XCTestCase {
 	func test_unknownRiskLevelCell_shouldHaveEqualHash() {
 		let date = Date()
 
-		let configurator1 = HomeHighRiskCellConfigurator(isLoading: false, numberRiskContacts: 0, daysSinceLastExposure: 0, lastUpdateDate: date, manualExposureDetectionState: .possible, detectionMode: .default, detectionInterval: 0)
-		let configurator2 = HomeHighRiskCellConfigurator(isLoading: false, numberRiskContacts: 0, daysSinceLastExposure: 0, lastUpdateDate: date, manualExposureDetectionState: .possible, detectionMode: .default, detectionInterval: 0)
+		let configurator1 = HomeHighRiskCellConfigurator(isLoading: false, numberRiskContacts: 0, daysSinceLastExposure: 0, lastUpdateDate: date, detectionInterval: 0)
+		let configurator2 = HomeHighRiskCellConfigurator(isLoading: false, numberRiskContacts: 0, daysSinceLastExposure: 0, lastUpdateDate: date, detectionInterval: 0)
 
 		let hash1 = configurator1.hashValue
 		let hash2 = configurator2.hashValue
@@ -48,21 +48,8 @@ class HomeHighRiskCellConfiguratorTests: XCTestCase {
 
 		let date = Date()
 
-		let configurator1 = HomeHighRiskCellConfigurator(isLoading: false, numberRiskContacts: 0, daysSinceLastExposure: 0, lastUpdateDate: date, manualExposureDetectionState: .possible, detectionMode: .default, detectionInterval: 0)
-		let configurator2 = HomeHighRiskCellConfigurator(isLoading: false, numberRiskContacts: 4, daysSinceLastExposure: 0, lastUpdateDate: date, manualExposureDetectionState: .possible, detectionMode: .default, detectionInterval: 0)
-
-		let hash1 = configurator1.hashValue
-		let hash2 = configurator2.hashValue
-
-		XCTAssertNotEqual(hash1, hash2)
-	}
-
-	func test_unknownRiskLevelCell_shouldHaveDifferentHash2() {
-
-		let date = Date()
-
-		let configurator1 = HomeHighRiskCellConfigurator(isLoading: false, numberRiskContacts: 0, daysSinceLastExposure: 0, lastUpdateDate: date, manualExposureDetectionState: .waiting, detectionMode: .default, detectionInterval: 0)
-		let configurator2 = HomeHighRiskCellConfigurator(isLoading: false, numberRiskContacts: 0, daysSinceLastExposure: 0, lastUpdateDate: date, manualExposureDetectionState: .possible, detectionMode: .default, detectionInterval: 0)
+		let configurator1 = HomeHighRiskCellConfigurator(isLoading: false, numberRiskContacts: 0, daysSinceLastExposure: 0, lastUpdateDate: date, detectionInterval: 0)
+		let configurator2 = HomeHighRiskCellConfigurator(isLoading: false, numberRiskContacts: 4, daysSinceLastExposure: 0, lastUpdateDate: date, detectionInterval: 0)
 
 		let hash1 = configurator1.hashValue
 		let hash2 = configurator2.hashValue
@@ -73,8 +60,8 @@ class HomeHighRiskCellConfiguratorTests: XCTestCase {
 	func test_unknownRiskLevelCell_shouldBeEqual() {
 		let date = Date()
 
-		let configurator1 = HomeHighRiskCellConfigurator(isLoading: false, numberRiskContacts: 0, daysSinceLastExposure: 0, lastUpdateDate: date, manualExposureDetectionState: .waiting, detectionMode: .default, detectionInterval: 0)
-		let configurator2 = HomeHighRiskCellConfigurator(isLoading: false, numberRiskContacts: 0, daysSinceLastExposure: 0, lastUpdateDate: date, manualExposureDetectionState: .waiting, detectionMode: .default, detectionInterval: 0)
+		let configurator1 = HomeHighRiskCellConfigurator(isLoading: false, numberRiskContacts: 0, daysSinceLastExposure: 0, lastUpdateDate: date, detectionInterval: 0)
+		let configurator2 = HomeHighRiskCellConfigurator(isLoading: false, numberRiskContacts: 0, daysSinceLastExposure: 0, lastUpdateDate: date, detectionInterval: 0)
 
 		let isEqual = configurator1 == configurator2
 		XCTAssertTrue(isEqual)
@@ -83,8 +70,8 @@ class HomeHighRiskCellConfiguratorTests: XCTestCase {
 	func test_unknownRiskLevelCell_shouldntBeEqual1() {
 		let date = Date()
 
-		let configurator1 = HomeHighRiskCellConfigurator(isLoading: false, numberRiskContacts: 0, daysSinceLastExposure: 0, lastUpdateDate: date, manualExposureDetectionState: .possible, detectionMode: .default, detectionInterval: 0)
-		let configurator2 = HomeHighRiskCellConfigurator(isLoading: false, numberRiskContacts: 0, daysSinceLastExposure: 0, lastUpdateDate: date, manualExposureDetectionState: .possible, detectionMode: .default, detectionInterval: 99)
+		let configurator1 = HomeHighRiskCellConfigurator(isLoading: false, numberRiskContacts: 0, daysSinceLastExposure: 0, lastUpdateDate: date, detectionInterval: 0)
+		let configurator2 = HomeHighRiskCellConfigurator(isLoading: false, numberRiskContacts: 0, daysSinceLastExposure: 0, lastUpdateDate: date, detectionInterval: 99)
 
 		let isEqual = configurator1 == configurator2
 
@@ -94,8 +81,8 @@ class HomeHighRiskCellConfiguratorTests: XCTestCase {
 	func test_unknownRiskLevelCell_shouldntBeEqual2() {
 		let date = Date()
 
-		let configurator1 = HomeHighRiskCellConfigurator(isLoading: false, numberRiskContacts: 0, daysSinceLastExposure: 0, lastUpdateDate: date, manualExposureDetectionState: .possible, detectionMode: .default, detectionInterval: 0)
-		let configurator2 = HomeHighRiskCellConfigurator(isLoading: false, numberRiskContacts: 0, daysSinceLastExposure: 0, lastUpdateDate: date.addingTimeInterval(22), manualExposureDetectionState: .possible, detectionMode: .default, detectionInterval: 0)
+		let configurator1 = HomeHighRiskCellConfigurator(isLoading: false, numberRiskContacts: 0, daysSinceLastExposure: 0, lastUpdateDate: date, detectionInterval: 0)
+		let configurator2 = HomeHighRiskCellConfigurator(isLoading: false, numberRiskContacts: 0, daysSinceLastExposure: 0, lastUpdateDate: date.addingTimeInterval(22), detectionInterval: 0)
 
 		let isEqual = configurator1 == configurator2
 

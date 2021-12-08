@@ -123,6 +123,8 @@ class BEENAUITests: XCTestCase {
 
 		XCTAssert(app.images["AppStrings.Home.leftBarButtonDescription"].waitForExistence(timeout: 5.0))
 		XCTAssertTrue(app.buttons["RiskLevelCollectionViewCell.topContainer"].waitForExistence(timeout: 5.0))
+		app.swipeUp()
+		XCTAssertTrue(app.buttons["RiskLevelCollectionViewCell.actionButton"].waitForExistence(timeout: 5.0))
 		snapshot("ScreenShot_\(#function)_001")
 		app.buttons["RiskLevelCollectionViewCell.topContainer"].tap()
 		XCTAssertTrue(app.navigationBars.buttons.element(boundBy: 0).waitForExistence(timeout: 5.0))
