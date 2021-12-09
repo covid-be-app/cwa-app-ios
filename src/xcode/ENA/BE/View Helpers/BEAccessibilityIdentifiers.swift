@@ -77,6 +77,7 @@ enum BEAccessibilityIdentifiers {
 		static let toolbox = "BEAppStrings.BEHome.toolbox"
 		static let coviCode = "BEAppStrings.BEHome.coviCode"
 		static let covidSafe = "BEAppStrings.BEHome.covidSafe"
+		static let riskCardHighButton = "BEAppStrings.BEHome.riskCardHighButton"
 	}
 	
 	enum BEToolbox {

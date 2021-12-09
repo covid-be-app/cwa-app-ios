@@ -37,7 +37,7 @@ enum AccessibilityIdentifiers {
 		static let topContainer =  "RiskLevelCollectionViewCell.topContainer"
 		static let bodyLabel = "RiskLevelCollectionViewCell.bodyLabel"
 		static let detectionIntervalLabel =  "RiskLevelCollectionViewCell.detectionIntervalLabel"
-		static let updateButton = "RiskLevelCollectionViewCell.updateButton"
+		static let actionButton = "RiskLevelCollectionViewCell.actionButton"
 	}
 
 	enum Home {
