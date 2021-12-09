@@ -28,17 +28,15 @@ final class HomeHighRiskCellConfigurator: HomeRiskLevelCellConfigurator {
 		numberRiskContacts: Int,
 		daysSinceLastExposure: Int?,
 		lastUpdateDate: Date?,
-		manualExposureDetectionState: ManualExposureDetectionState?,
-		detectionMode: DetectionMode,
 		detectionInterval: Int
 	) {
 		self.numberRiskContacts = numberRiskContacts
 		self.daysSinceLastExposure = daysSinceLastExposure
 		super.init(
 			isLoading: isLoading,
-			isButtonEnabled: manualExposureDetectionState == .possible,
-			isButtonHidden: detectionMode == .automatic,
-			detectionIntervalLabelHidden: detectionMode != .automatic,
+			isButtonEnabled: true,
+			isButtonHidden: false,
+			detectionIntervalLabelHidden: true,
 			lastUpdateDate: lastUpdateDate,
 			detectionInterval: detectionInterval
 		)
@@ -53,7 +51,7 @@ final class HomeHighRiskCellConfigurator: HomeRiskLevelCellConfigurator {
 		let titleColor: UIColor = .enaColor(for: .textContrast)
 		cell.configureTitle(title: title, titleColor: titleColor)
 		cell.configureBody(text: "", bodyColor: titleColor, isHidden: true)
-
+		
 		let color: UIColor = .enaColor(for: .riskHigh)
 		let separatorColor: UIColor = .enaColor(for: .hairlineContrast)
 		var itemCellConfigurators: [HomeRiskViewConfiguratorAny] = []
@@ -82,6 +80,14 @@ final class HomeHighRiskCellConfigurator: HomeRiskLevelCellConfigurator {
 
 		configureButton(for: cell)
 		setupAccessibility(cell)
+	}
+	
+	override func configureButton(for cell: HomeRiskLevelTableViewCell) {
+		cell.configureActionButton(
+			title: BEAppStrings.BEHome.riskCardHighButton,
+			isEnabled: isButtonEnabled,
+			isHidden: isButtonHidden
+		)
 	}
 
 	// MARK: Hashable

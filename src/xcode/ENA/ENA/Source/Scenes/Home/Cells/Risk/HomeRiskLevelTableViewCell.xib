@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,10 +25,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="272" height="355"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8YF-t3-myA">
-                                        <rect key="frame" x="0.0" y="0.0" width="272" height="32"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="272" height="45.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title 2" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mr9-Sq-rx6" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="234" height="26.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="234" height="23"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" name="ENA Text Contrast Color"/>
                                                 <nil key="highlightedColor"/>
@@ -47,7 +47,7 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="749" insetsLayoutMarginsFromSafeArea="NO" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRY-5R-eWJ" customClass="ENALabel" customModule="ENA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="48" width="272" height="183"/>
+                                        <rect key="frame" x="0.0" y="61.5" width="272" height="161.5"/>
                                         <string key="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" name="ENA Text Contrast Color"/>
@@ -57,7 +57,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xVG-aI-SiS">
-                                        <rect key="frame" x="0.0" y="247" width="272" height="42"/>
+                                        <rect key="frame" x="0.0" y="239" width="272" height="50"/>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o82-2C-dfO" customClass="ENAButton" customModule="ENA" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="305" width="272" height="50"/>
@@ -70,7 +70,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isInverted" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="updateButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="NoW-pB-bvh"/>
+                                            <action selector="actionButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="sl7-qV-Wd0"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -93,13 +93,13 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="actionButton" destination="o82-2C-dfO" id="8aF-at-eUN"/>
                 <outlet property="bodyLabel" destination="VRY-5R-eWJ" id="15n-QT-sEw"/>
                 <outlet property="chevronImageView" destination="7OL-Sa-cyq" id="sbn-RC-wAb"/>
                 <outlet property="riskViewStackView" destination="xVG-aI-SiS" id="zvI-JD-aOj"/>
                 <outlet property="stackView" destination="TVk-BW-7zA" id="KzB-7h-6pg"/>
                 <outlet property="titleLabel" destination="mr9-Sq-rx6" id="acW-8D-21u"/>
                 <outlet property="topContainer" destination="8YF-t3-myA" id="PwU-vw-3rv"/>
-                <outlet property="updateButton" destination="o82-2C-dfO" id="8aF-at-eUN"/>
                 <outlet property="viewContainer" destination="SP9-en-hIt" id="3D3-Pg-0ar"/>
             </connections>
             <point key="canvasLocation" x="19" y="0.0"/>
@@ -107,13 +107,13 @@
     </objects>
     <designables>
         <designable name="VRY-5R-eWJ">
-            <size key="intrinsicContentSize" width="2267.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="2044" height="18"/>
         </designable>
         <designable name="mr9-Sq-rx6">
-            <size key="intrinsicContentSize" width="63.5" height="26.5"/>
+            <size key="intrinsicContentSize" width="56.5" height="23"/>
         </designable>
         <designable name="o82-2C-dfO">
-            <size key="intrinsicContentSize" width="70" height="50"/>
+            <size key="intrinsicContentSize" width="65" height="50"/>
         </designable>
     </designables>
     <resources>

@@ -22,7 +22,6 @@ jobs:
           name: Build
           command: cd src/xcode && bundle exec fastlane build
   test:
-    resource_class: large
     macos:
       xcode: 12.5.0
     steps:
