@@ -106,27 +106,26 @@ class HomeRiskLevelCellConfigurator: HomeRiskCellConfigurator {
 
 		cell.topContainer.isAccessibilityElement = true
 		cell.bodyLabel.isAccessibilityElement = true
-		cell.updateButton.isAccessibilityElement = true
+		cell.actionButton.isAccessibilityElement = true
 
 		cell.topContainer.accessibilityTraits = [.updatesFrequently, .button]
 		cell.bodyLabel.accessibilityTraits = [.updatesFrequently]
-		cell.updateButton.accessibilityTraits = [.updatesFrequently, .button]
+		cell.actionButton.accessibilityTraits = [.updatesFrequently, .button]
 
 		cell.topContainer.accessibilityLabel = cell.titleLabel.text ?? ""
 
 		cell.topContainer.accessibilityIdentifier = AccessibilityIdentifiers.RiskCollectionViewCell.topContainer
 		cell.bodyLabel.accessibilityIdentifier = AccessibilityIdentifiers.RiskCollectionViewCell.bodyLabel
-		cell.updateButton.accessibilityIdentifier = AccessibilityIdentifiers.RiskCollectionViewCell.updateButton
+		cell.actionButton.accessibilityIdentifier = AccessibilityIdentifiers.RiskCollectionViewCell.actionButton
 	}
 
 	/// Convenience method that can be overwritten to configure the button without running the full configure(_:) method.
 	/// This is handy when very frequent updates such as the update countdown are applied to the button.
 	func configureButton(for cell: HomeRiskLevelTableViewCell) {
-		cell.configureUpdateButton(
+		cell.configureActionButton(
 			title: buttonTitle,
 			isEnabled: isButtonEnabled,
-			isHidden: isButtonHidden,
-			accessibilityIdentifier: AccessibilityIdentifiers.Home.riskCardIntervalUpdateTitle
+			isHidden: isButtonHidden
 		)
 	}
 
@@ -152,7 +151,7 @@ class HomeRiskLevelCellConfigurator: HomeRiskCellConfigurator {
 }
 
 extension HomeRiskLevelCellConfigurator: HomeRiskLevelTableViewCellDelegate {
-	func updateButtonTapped(cell _: HomeRiskLevelTableViewCell) {
+	func actionButtonTapped(cell _: HomeRiskLevelTableViewCell) {
 		buttonAction?()
 	}
 }

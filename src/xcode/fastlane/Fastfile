@@ -154,7 +154,8 @@ platform :ios do
   
   lane :screenshots do
     capture_screenshots(
-      output_directory: "./screenshots_light"
+      output_directory: "./screenshots_light",
+      dark_mode: false
     )
 
     capture_screenshots(

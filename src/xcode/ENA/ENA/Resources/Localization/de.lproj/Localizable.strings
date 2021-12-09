@@ -446,3 +446,4 @@
 "BECovidSafe_appTitle" = "CovidSafeBE";
 "BECovidSafe_appSubtitle" = "Klicken Sie hier, um die CovidSafe-App zu starten";
 "BECovidSafe_appButton" = "Start";
+"BEHome_riskCardHigh_button" = "Anfrage Covid-Test";

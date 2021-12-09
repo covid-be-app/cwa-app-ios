@@ -20,7 +20,7 @@
 import UIKit
 
 protocol HomeRiskLevelTableViewCellDelegate: AnyObject {
-	func updateButtonTapped(cell: HomeRiskLevelTableViewCell)
+	func actionButtonTapped(cell: HomeRiskLevelTableViewCell)
 }
 
 class HomeRiskLevelTableViewCell: HomeCardTableViewCell {
@@ -33,7 +33,7 @@ class HomeRiskLevelTableViewCell: HomeCardTableViewCell {
 	@IBOutlet var titleLabel: ENALabel!
 	@IBOutlet var chevronImageView: UIImageView!
 	@IBOutlet var bodyLabel: ENALabel!
-	@IBOutlet var updateButton: ENAButton!
+	@IBOutlet var actionButton: ENAButton!
 
 	@IBOutlet var topContainer: UIStackView!
 	@IBOutlet var stackView: UIStackView!
@@ -43,9 +43,9 @@ class HomeRiskLevelTableViewCell: HomeCardTableViewCell {
 
 	// Ignore touches on the button when it's disabled
 	override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-		let buttonPoint = convert(point, to: updateButton)
-		let containsPoint = updateButton.bounds.contains(buttonPoint)
-		if containsPoint, !updateButton.isEnabled {
+		let buttonPoint = convert(point, to: actionButton)
+		let containsPoint = actionButton.bounds.contains(buttonPoint)
+		if containsPoint, !actionButton.isEnabled {
 			return nil
 		}
 		return super.hitTest(point, with: event)
@@ -53,8 +53,8 @@ class HomeRiskLevelTableViewCell: HomeCardTableViewCell {
 
 	// MARK: Actions
 
-	@IBAction func updateButtonTapped(_: UIButton) {
-		delegate?.updateButtonTapped(cell: self)
+	@IBAction func actionButtonTapped(_: UIButton) {
+		delegate?.actionButtonTapped(cell: self)
 	}
 
 	// MARK: Configuring the UI
@@ -74,14 +74,12 @@ class HomeRiskLevelTableViewCell: HomeCardTableViewCell {
 		viewContainer.backgroundColor = color
 	}
 
-	func configureUpdateButton(title: String, isEnabled: Bool, isHidden: Bool, accessibilityIdentifier: String?) {
-		updateButton.setTitle(title, for: .normal)
-		updateButton.isEnabled = isEnabled
-		updateButton.isHidden = isHidden
-		updateButton.isHidden = isHidden
-		updateButton.isAccessibilityElement = true
-		updateButton.accessibilityLabel = title
-		updateButton.accessibilityIdentifier = accessibilityIdentifier
+	func configureActionButton(title: String, isEnabled: Bool, isHidden: Bool) {
+		actionButton.setTitle(title, for: .normal)
+		actionButton.isEnabled = isEnabled
+		actionButton.isHidden = isHidden
+		actionButton.isAccessibilityElement = true
+		actionButton.accessibilityLabel = title
 	}
 
 	func configureDetectionIntervalLabel(text: String, isHidden: Bool) {

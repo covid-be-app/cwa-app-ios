@@ -151,11 +151,26 @@ extension BEActivateMobileTestIdViewController: WKNavigationDelegate {
 		
 		if let url = navigationAction.request.url {
 			let urlString = url.absoluteString
+			
+			if urlString.contains("#") {
+				decisionHandler(.allow)
+				return
+			}
 
 			/// successful submission
 			if Self.successRedirectPaths.first(where:{ urlString.contains($0)}) != nil {
 				decisionHandler(.cancel)
 				delegate?.activateMobileTestIdViewControllerFinished(self)
+				return
+			} else {
+
+				if navigationAction.navigationType == .other {
+					decisionHandler(.allow)
+					return
+				}
+				
+				UIApplication.shared.open(url, options: [:])
+				decisionHandler(.cancel)
 				return
 			}
 		}

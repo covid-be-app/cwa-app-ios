@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     macos:
-      xcode: 12.3.0
+      xcode: 12.5.0
     steps:
       - checkout
       - run:
@@ -22,9 +22,8 @@ jobs:
           name: Build
           command: cd src/xcode && bundle exec fastlane build
   test:
-    resource_class: large
     macos:
-      xcode: 12.3.0
+      xcode: 12.5.0
     steps:
       - checkout
       - run:
@@ -85,7 +84,7 @@ jobs:
 
   testflight-release:
     macos:
-      xcode: 12.3.0
+      xcode: 12.5.0
     steps:
       - checkout
       - run:
@@ -106,7 +105,7 @@ jobs:
           
   production-release:
     macos:
-      xcode: 12.3.0
+      xcode: 12.5.0
     steps:
       - checkout
       - run:
