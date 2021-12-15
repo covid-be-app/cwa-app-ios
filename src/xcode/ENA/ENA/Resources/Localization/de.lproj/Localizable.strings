@@ -447,3 +447,4 @@
 "BECovidSafe_appSubtitle" = "Klicken Sie hier, um die CovidSafe-App zu starten";
 "BECovidSafe_appButton" = "Start";
 "BEHome_riskCardHigh_button" = "Anfrage Covid-Test";
+"BEHome_requestTestURL" = "https://www.meinegesundheit.belgien.be/#/app/covid-19/prescriptions/request/corona-alert";

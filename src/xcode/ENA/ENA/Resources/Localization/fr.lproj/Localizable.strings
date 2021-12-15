@@ -447,3 +447,4 @@
 "BECovidSafe_appSubtitle" = "Cliquez ici pour démarrer CovidSafe app";
 "BECovidSafe_appButton" = "Démarrer";
 "BEHome_riskCardHigh_button" = "Demandez un test Covid";
+"BEHome_requestTestURL" = "https://www.masante.belgique.be/#/app/covid-19/prescriptions/request/corona-alert";

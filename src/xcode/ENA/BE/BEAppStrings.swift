@@ -126,6 +126,7 @@ enum BEAppStrings {
 		static let coviCodeButton = NSLocalizedString("BEHome_CoviCode_button", comment: "")
 
 		static let riskCardHighButton = NSLocalizedString("BEHome_riskCardHigh_button", comment: "")
+		static let requestTestURL = URL(string: NSLocalizedString("BEHome_requestTestURL", comment: ""))!
 	}
 	
 	enum BECoviCode {

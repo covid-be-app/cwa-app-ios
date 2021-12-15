@@ -537,7 +537,8 @@ extension HomeInteractor {
 	}
 	
 	private func openRequestCovidTestURL() {
-		let url = URL(string: "https://www.mijngezondheid.belgie.be/#/app/covid-19/prescriptions/request/corona-alert")!
+		let url = BEAppStrings.BEHome.requestTestURL
+		
 		if UIApplication.shared.canOpenURL(url) {
 			UIApplication.shared.open(url, completionHandler: nil)
 		}
