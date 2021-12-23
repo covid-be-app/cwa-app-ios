@@ -56,5 +56,53 @@ class BEStringTests: XCTestCase {
 			"6"
 		)
 	}
+	
+	func testFindURL() throws {
+		let url = "https://www.google.com"
+		let text = "this is a \(url) url test"
+		let result = text.findFirstURL()
+		
+		XCTAssertNotNil(result)
+		
+		XCTAssertEqual(result!.url.absoluteString, url)
+		XCTAssertEqual(result!.range.location, 10)
+		XCTAssertEqual(result!.range.length, url.count)
+	}
+
+	func testFindPhoneNumber() throws {
+		let number = "+32 486 12 34 56"
+		let text = "this is a \(number) test"
+		let result = text.findFirstPhoneNumber()
+		
+		XCTAssertNotNil(result)
+		
+		XCTAssertEqual(result!.phoneNumber, number)
+		XCTAssertEqual(result!.range.location, 10)
+		XCTAssertEqual(result!.range.length, number.count)
+	}
+
+	func testFindPhoneNumber2() throws {
+		let number = "02 486 12 34 56"
+		let text = "this is a \(number) test"
+		let result = text.findFirstPhoneNumber()
+		
+		XCTAssertNotNil(result)
+		
+		XCTAssertEqual(result!.phoneNumber, number)
+		XCTAssertEqual(result!.range.location, 10)
+		XCTAssertEqual(result!.range.length, number.count)
+	}
+
+	func testFindPhoneNumber3() throws {
+		let number = "02 214 19 19"
+		let text = "this is a \(number). test"
+		let result = text.findFirstPhoneNumber()
+		
+		XCTAssertNotNil(result)
+		
+		XCTAssertEqual(result!.phoneNumber, number)
+		XCTAssertEqual(result!.range.location, 10)
+		XCTAssertEqual(result!.range.length, number.count)
+	}
 
 }
