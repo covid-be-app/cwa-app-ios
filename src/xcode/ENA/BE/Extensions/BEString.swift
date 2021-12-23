@@ -60,3 +60,42 @@ extension String {
 	  return String(self[startIndex..<endIndex])
 	}
 }
+
+
+extension String {
+	func findFirstURL() -> (url: URL, range: NSRange)? {
+		if
+			let match = getFirstMatch(.link),
+			let url = match.url {
+			return (url: url, range: match.range)
+		}
+		
+		return nil
+	}
+	
+	func findFirstPhoneNumber() -> (phoneNumber: String, range: NSRange)? {
+		if
+			let match = getFirstMatch(.phoneNumber),
+			let phoneNumber = match.phoneNumber {
+			return (phoneNumber: phoneNumber, range: match.range)
+		}
+		
+		return nil
+	}
+
+	private func getFirstMatch(_ type: NSTextCheckingResult.CheckingType) -> NSTextCheckingResult? {
+		let detector = try? NSDataDetector(types: type.rawValue)
+		
+		guard let detect = detector else {
+		   return nil
+		}
+
+		let matches = detect.matches(in: self, options: .reportCompletion, range: NSMakeRange(0, count))
+
+		if matches.isEmpty {
+			return nil
+		}
+		
+		return matches[0]
+	}
+}

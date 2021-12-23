@@ -121,3 +121,64 @@ public extension UILabel {
         }
     }
 }
+
+extension UILabel {
+	
+	/// Checks the text for links / phone numbers, and adds a button the size of the label that will open the link or call the number
+	/// This only works for 1 link or 1 phone number per label, mutually exclusive and the button will cover the entire label
+	
+	func addOpenActionForSupportedTypes() {
+		var textRange: NSRange?
+		
+		textRange = addOpenActionForLink()
+		
+		if textRange == nil {
+			textRange = addOpenActionForPhoneNumber()
+		}
+
+		if let range = textRange {
+			let labelText = NSMutableAttributedString(attributedString: attributedText!)  // we know it's not nil
+			labelText.addAttribute(.foregroundColor, value: UIColor.enaColor(for: .textTint), range: range)
+			self.text = nil
+			self.attributedText = labelText
+		}
+	}
+	
+	private func addOpenActionForLink() -> NSRange? {
+		guard let text = text else {
+		   return nil
+		}
+
+		if let firstUrlMatch = text.findFirstURL() {
+			addAction(firstUrlMatch.url)
+			return firstUrlMatch.range
+		}
+
+		return nil
+	}
+	
+	private func addOpenActionForPhoneNumber() -> NSRange? {
+		guard let text = text else {
+		   return nil
+		}
+
+		if let firstMatch = text.findFirstPhoneNumber(),
+		   let phoneUrl = URL(string:"telprompt://\(firstMatch.phoneNumber.replacingOccurrences(of: " ", with: ""))") {
+			addAction(phoneUrl)
+			return firstMatch.range
+		}
+
+		return nil
+	}
+	
+	private func addAction(_ url: URL) {
+		let recog = UITapGestureRecognizer { _ in
+			if UIApplication.shared.canOpenURL(url) {
+				UIApplication.shared.open(url, options: [:], completionHandler:nil)
+			}
+		}
+		
+		addGestureRecognizer(recog)
+		self.isUserInteractionEnabled = true
+	}
+}
