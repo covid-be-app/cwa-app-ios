@@ -291,33 +291,6 @@ class BEExposureSubmissionServiceImpl : ENAExposureSubmissionService, BEExposure
 				completion(nil)
 			}
 		}
-
-		/*
-		
-		retrieveDiagnosisKeys { result in
-			switch result {
-			case .failure(let error):
-				switch error {
-				case .noKeys:
-					self.exposureSubmissionService.finalizeSubmissionWithoutKeys()
-					self.showThankYouScreen()
-				case .internal, .unsupported, .rateLimited:
-					self.showErrorAlert(message: error.localizedDescription)
-				default:
-					logError(message: "error: \(error.localizedDescription)", level: .error)
-					self.showErrorAlert(message: error.localizedDescription)
-				}
-				
-			case .success(let keys):
-				self.submitExposureKeys(exposureKeys: keys, coviCode: coviCode, symptomsStartDate: symptomsStartDate)
-			}
-		}
-
-		*/
-		
-		
-		
-
 	}
 
 	private func submit(keys: [ENTemporaryExposureKey], completion: @escaping ExposureSubmissionHandler) {

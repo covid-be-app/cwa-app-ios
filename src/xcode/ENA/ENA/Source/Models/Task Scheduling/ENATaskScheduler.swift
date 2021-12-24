@@ -138,4 +138,99 @@ final class ENATaskScheduler {
 		   }
 		}
 	}
+	
+	// :MARK: - Key upload reminders
+	
+	static let submitKeysNoficationIdentifier = ".notifications.cwa-uploadkeys"
+	
+	/// Schedule a notification to remind a user to upload their keys after a positive test result
+	/// If notification already exists it is cancelled and pushed forward
+	static func scheduleSubmitKeysReminder(store: Store) {
+		
+		// Do not keep harassing the user
+		if store.submitKeysReminderCount >= 3 {
+			log(message: "No longer scheduling submit keys reminder. User already had enough of those")
+			return
+		} else {
+			log(message: "Reminder count \(store.submitKeysReminderCount)")
+
+		}
+		
+		let notificationCenter = UNUserNotificationCenter.current()
+		guard let bundleID = Bundle.main.bundleIdentifier else {
+			logError(message: "Could not access bundle identifier")
+			return
+		}
+		let identifier = bundleID + Self.submitKeysNoficationIdentifier
+		
+		Self.cancelSubmitKeysReminder { alreadyScheduled in
+		
+			// we consider it a new reminder only if we already showed it previously
+			// a reschedule doesn't count as the user never received the notification
+			if !alreadyScheduled {
+				store.submitKeysReminderCount += 1
+			}
+			
+			let content = UNMutableNotificationContent()
+			content.title = BEAppStrings.BEUploadKeysReminder.title
+			content.body = BEAppStrings.BEUploadKeysReminder.body
+			content.sound = .default
+
+			// reminder in 6 hours
+			var nextTriggerDate = Calendar.current.date(byAdding: .hour, value: 6, to: Date())!
+			var comps = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: nextTriggerDate)
+			
+			// don't schedule at night
+			
+			if (comps.hour! >= 22) || (comps.hour! < 6) {
+				nextTriggerDate = Calendar.current.date(byAdding: .hour, value: 8, to: nextTriggerDate)!
+				comps = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: nextTriggerDate)
+			}
+
+			let trigger = UNCalendarNotificationTrigger(dateMatching: comps, repeats: false)
+
+
+			let request = UNNotificationRequest(
+				identifier: identifier,
+				content: content,
+				trigger: trigger
+			)
+
+			notificationCenter.add(request) { error in
+			   if error != nil {
+				  logError(message: "Reminder notification could not be scheduled.")
+			   }
+				log(message: "Reminder notification scheduled")
+			}
+		}
+	}
+	
+	// completion will contain true if the notification was already scheduled and we removed it
+	
+	static func cancelSubmitKeysReminder(_ completion: @escaping (Bool) -> Void) {
+		let notificationCenter = UNUserNotificationCenter.current()
+		// bundleIdentifier is defined in Info.plist and can never be nil!
+		guard let bundleID = Bundle.main.bundleIdentifier else {
+			logError(message: "Could not access bundle identifier")
+			return
+		}
+		let identifier = bundleID + Self.submitKeysNoficationIdentifier
+		
+		notificationCenter.getPendingNotificationRequests { requests in
+			let request = requests.first{ request in
+				return request.identifier == identifier
+			}
+			
+			if request != nil {
+				log(message: "Reminder notification already scheduled. Removing it.")
+				notificationCenter.removePendingNotificationRequests(withIdentifiers: [identifier])
+				
+				completion(true)
+				return
+			}
+
+			log(message: "Reminder notification was not scheduled so we do not need to remove it.")
+			completion(false)
+		}
+	}
 }
