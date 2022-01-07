@@ -1,0 +1,30 @@
+{
+    "structure": {
+        "news": {
+            "explanation": [
+				{
+					"title": "title",
+					"text": "text"
+					}
+            ]
+        }
+	},
+    "texts": {
+        "en": {
+            "title": "Latest News",
+            "text": "Going out soon? Do it safely with the Coronalert app."
+        },
+        "nl": {
+			"title": "Laatste Nieuws",
+			"text": "Gebruik de Coronalert app en zet je Bluetooth aan, zo ben je altijd klaar om veilig buiten te gaan."
+        },
+        "fr": {
+			"title": "Dernière Nouvelle",
+			"text": "Utilisez l'application Coronalert et activez votre Bluetooth, afin d'être toujours prêt à sortir en toute sécurité."
+        },
+        "de": {
+			"title": "Letzte Neuigkeiten",
+			"text": "Gehen Sie bald aus? Tun Sie es sicher mit der Coronalert-App."
+        }
+    }
+}

@@ -471,9 +471,9 @@
 		B1FE13FB24896E6700D012E5 /* AppConfigurationProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FE13FA24896E6700D012E5 /* AppConfigurationProviding.swift */; };
 		B1FE13FE24896EF700D012E5 /* CachedAppConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FE13FD24896EF700D012E5 /* CachedAppConfigurationTests.swift */; };
 		B1FE13FF2489708200D012E5 /* CachedAppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FE13F824896DDB00D012E5 /* CachedAppConfiguration.swift */; };
-		CB711724278889EB0029E779 /* dynamicNews.json in Resources */ = {isa = PBXBuildFile; fileRef = CB711722278889EB0029E779 /* dynamicNews.json */; };
-		CB711725278889EB0029E779 /* dynamicTextsV2.json in Resources */ = {isa = PBXBuildFile; fileRef = CB711723278889EB0029E779 /* dynamicTextsV2.json */; };
 		CB8270CD2774774700EC7836 /* BEUIGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8270CC2774774700EC7836 /* BEUIGestureRecognizer.swift */; };
+		CBEDFF382788AE1C00E95FCE /* dynamicNews.json in Resources */ = {isa = PBXBuildFile; fileRef = CBEDFF362788AE1C00E95FCE /* dynamicNews.json */; };
+		CBEDFF392788AE1C00E95FCE /* dynamicTextsV2.json in Resources */ = {isa = PBXBuildFile; fileRef = CBEDFF372788AE1C00E95FCE /* dynamicTextsV2.json */; };
 		CD2EC329247D82EE00C6B3F9 /* NotificationSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2EC328247D82EE00C6B3F9 /* NotificationSettingsViewController.swift */; };
 		CD678F6F246C43FC00B6A0F8 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD678F6E246C43FC00B6A0F8 /* MockURLSession.swift */; };
 		CD8638532477EBD400A5A07C /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8638522477EBD400A5A07C /* SettingsViewModel.swift */; };
@@ -1027,9 +1027,9 @@
 		B1FE13F824896DDB00D012E5 /* CachedAppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAppConfiguration.swift; sourceTree = "<group>"; };
 		B1FE13FA24896E6700D012E5 /* AppConfigurationProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurationProviding.swift; sourceTree = "<group>"; };
 		B1FE13FD24896EF700D012E5 /* CachedAppConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAppConfigurationTests.swift; sourceTree = "<group>"; };
-		CB711722278889EB0029E779 /* dynamicNews.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = dynamicNews.json; path = "../../../../../../cwa-dynamic-data/payload/dynamicNews.json"; sourceTree = "<group>"; };
-		CB711723278889EB0029E779 /* dynamicTextsV2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = dynamicTextsV2.json; path = "../../../../../../cwa-dynamic-data/payload/dynamicTextsV2.json"; sourceTree = "<group>"; };
 		CB8270CC2774774700EC7836 /* BEUIGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEUIGestureRecognizer.swift; sourceTree = "<group>"; };
+		CBEDFF362788AE1C00E95FCE /* dynamicNews.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dynamicNews.json; sourceTree = "<group>"; };
+		CBEDFF372788AE1C00E95FCE /* dynamicTextsV2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dynamicTextsV2.json; sourceTree = "<group>"; };
 		CD2EC328247D82EE00C6B3F9 /* NotificationSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsViewController.swift; sourceTree = "<group>"; };
 		CD678F6A246C43E200B6A0F8 /* MockExposureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockExposureManager.swift; sourceTree = "<group>"; };
 		CD678F6C246C43EE00B6A0F8 /* ClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientMock.swift; sourceTree = "<group>"; };
@@ -1629,8 +1629,8 @@
 		85D7597424570615008175F0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CB711722278889EB0029E779 /* dynamicNews.json */,
-				CB711723278889EB0029E779 /* dynamicTextsV2.json */,
+				CBEDFF362788AE1C00E95FCE /* dynamicNews.json */,
+				CBEDFF372788AE1C00E95FCE /* dynamicTextsV2.json */,
 				011E4B002483A35A002E6412 /* ENACommunity.entitlements */,
 				CD7F5C732466F6D400D3D03C /* ENATest.entitlements */,
 				85790F2E245C6B72003D47E1 /* ENA.entitlements */,
@@ -3056,11 +3056,11 @@
 				A9A41F7D261C708B00C2BF3F /* BEToolboxViewController.xib in Resources */,
 				A97D448725A708D300E7D698 /* OnboardingInfoViewController.xib in Resources */,
 				A913E2FB2647C70B0013EF3E /* BECoviCodeTableViewCell.xib in Resources */,
-				CB711725278889EB0029E779 /* dynamicTextsV2.json in Resources */,
+				CBEDFF392788AE1C00E95FCE /* dynamicTextsV2.json in Resources */,
 				A9A41F96261C971000C2BF3F /* BEToolboxItemCell.xib in Resources */,
 				A902680D25AF3AF200C14169 /* HomeTestResultTableViewCell.xib in Resources */,
 				A97D44A425A72DFF00E7D698 /* ImageTableViewCell.xib in Resources */,
-				CB711724278889EB0029E779 /* dynamicNews.json in Resources */,
+				CBEDFF382788AE1C00E95FCE /* dynamicNews.json in Resources */,
 				A90267E925AEFE1800C14169 /* HomeRiskInactiveTableViewCell.xib in Resources */,
 				A90267C825AEE96200C14169 /* HomeInfoCell.xib in Resources */,
 				8539874F2467094E00D28B62 /* AppIcon.xcassets in Resources */,
