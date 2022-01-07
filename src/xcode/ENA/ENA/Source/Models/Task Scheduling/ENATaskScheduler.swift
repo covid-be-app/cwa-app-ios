@@ -172,12 +172,14 @@ final class ENATaskScheduler {
 			}
 			
 			let content = UNMutableNotificationContent()
-			content.title = BEAppStrings.BEUploadKeysReminder.title
-			content.body = BEAppStrings.BEUploadKeysReminder.body
+			content.title = AppStrings.LocalNotifications.testResultsTitle
+			content.body = AppStrings.LocalNotifications.testResultsBody
 			content.sound = .default
 
 			// reminder in 6 hours
-			var nextTriggerDate = Calendar.current.date(byAdding: .hour, value: 6, to: Date())!
+			// :TEMP:
+//			var nextTriggerDate = Calendar.current.date(byAdding: .hour, value: 6, to: Date())!
+			var nextTriggerDate = Calendar.current.date(byAdding: .second, value: 30, to: Date())!
 			var comps = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: nextTriggerDate)
 			
 			// don't schedule at night

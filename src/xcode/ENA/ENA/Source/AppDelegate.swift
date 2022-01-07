@@ -443,6 +443,18 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 	}
 
 	func userNotificationCenter(_: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+		
+		if response.notification.request.identifier.contains(ENATaskScheduler.submitKeysNoficationIdentifier) {
+			let alert = UIAlertController(title: BEAppStrings.BEUploadKeysReminder.title, message: BEAppStrings.BEUploadKeysReminder.body, preferredStyle: .alert)
+			alert.addAction(UIAlertAction(title: AppStrings.Common.alertActionOk, style: .cancel))
+			
+			if let vc = self.window?.rootViewController {
+				vc.present(alert, animated: true)
+			}
+
+			return
+		}
+			
 		switch response.actionIdentifier {
 		case UserNotificationAction.openExposureDetectionResults.rawValue,
 			 UserNotificationAction.openTestResults.rawValue:
