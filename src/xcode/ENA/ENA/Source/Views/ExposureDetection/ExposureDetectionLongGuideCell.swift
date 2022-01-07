@@ -65,6 +65,8 @@ class ExposureDetectionLongGuideCell: UITableViewCell {
 			stackView.setContentHuggingPriority(.required, for: .vertical)
 			labelView.setContentHuggingPriority(.required, for: .vertical)
 			label.setContentHuggingPriority(.required, for: .vertical)
+
+			label.addOpenActionForSupportedTypes()
 		}
 	}
 }
