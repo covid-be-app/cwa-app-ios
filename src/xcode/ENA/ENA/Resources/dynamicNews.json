@@ -1,30 +1,30 @@
 {
-	"structure": {
-		"news": {
-			"explanation": [
+    "structure": {
+        "news": {
+            "explanation": [
 				{
 					"title": "title",
 					"text": "text"
 					}
-			]
-		}
+            ]
+        }
 	},
-	"texts": {
-		"en": {
-			"title": "Latest News",
-			"text": "The Coronalert app has been updated. You can add your test anonymously."
-		},
-		"nl": {
+    "texts": {
+        "en": {
+            "title": "Latest News",
+            "text": "Going out soon? Do it safely with the Coronalert app."
+        },
+        "nl": {
 			"title": "Laatste Nieuws",
-			"text": "De Coronalert-app is bijgewerkt. U kunt uw test anoniem toevoegen."
-		},
-		"fr": {
+			"text": "Gebruik de Coronalert app en zet je Bluetooth aan, zo ben je altijd klaar om veilig buiten te gaan."
+        },
+        "fr": {
 			"title": "Dernière Nouvelle",
-			"text": "Coronalert à été mise à jour. Vous pouvez rajouter votre test de manière anonyme."
-		},
-		"de": {
+			"text": "Utilisez l'application Coronalert et activez votre Bluetooth, afin d'être toujours prêt à sortir en toute sécurité."
+        },
+        "de": {
 			"title": "Letzte Neuigkeiten",
-			"text": "Die Coronalert-App wurde aktualisiert. Sie können Ihren Test anonym hinzufügen."
-		}
-	}
+			"text": "Gehen Sie bald aus? Tun Sie es sicher mit der Coronalert-App."
+        }
+    }
 }
