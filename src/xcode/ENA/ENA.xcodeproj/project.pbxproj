@@ -250,7 +250,6 @@
 		A92076E924ED41F400AE8748 /* BEFakeRequestsExecutorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076E824ED41F400AE8748 /* BEFakeRequestsExecutorTests.swift */; };
 		A92076EC24ED542900AE8748 /* BEMockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92076EB24ED542900AE8748 /* BEMockURLSession.swift */; };
 		A9221A312542C1F200853CEF /* BEDynamicTextDownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A302542C1F200853CEF /* BEDynamicTextDownloadService.swift */; };
-		A9221A332542C2C200853CEF /* dynamicTextsV2.json in Resources */ = {isa = PBXBuildFile; fileRef = A9221A322542C2C200853CEF /* dynamicTextsV2.json */; };
 		A9221A382542F06E00853CEF /* BEDynamicTextScreenSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A372542F06E00853CEF /* BEDynamicTextScreenSection.swift */; };
 		A9221A3A2542F10300853CEF /* BEDynamicTextScreenName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A392542F10300853CEF /* BEDynamicTextScreenName.swift */; };
 		A9221A3C2542F1AB00853CEF /* BEDynamicTextScreenSectionName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9221A3B2542F1AB00853CEF /* BEDynamicTextScreenSectionName.swift */; };
@@ -337,7 +336,6 @@
 		A9A41AD3264ACA7D00B3AAD7 /* BENewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A41AD0264ACA7D00B3AAD7 /* BENewsTableViewCell.swift */; };
 		A9A41AD6264ACFC100B3AAD7 /* BEDynamicInformationTextService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A41AD5264ACFC100B3AAD7 /* BEDynamicInformationTextService.swift */; };
 		A9A41ADA264BBAB400B3AAD7 /* BEDynamicNewsTextService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A41AD9264BBAB400B3AAD7 /* BEDynamicNewsTextService.swift */; };
-		A9A41ADC264BC22800B3AAD7 /* dynamicNews.json in Resources */ = {isa = PBXBuildFile; fileRef = A9A41ADB264BC22800B3AAD7 /* dynamicNews.json */; };
 		A9A41AE1264BCD9D00B3AAD7 /* BEDynamicNewsTextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A41ADF264BCD9D00B3AAD7 /* BEDynamicNewsTextTests.swift */; };
 		A9A41AE2264BCD9D00B3AAD7 /* BEOnlineDynamicNewsTextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A41AE0264BCD9D00B3AAD7 /* BEOnlineDynamicNewsTextTests.swift */; };
 		A9A41AE8264BCE2A00B3AAD7 /* testDownloadedNewsTexts.json in Resources */ = {isa = PBXBuildFile; fileRef = A9A41AE3264BCE2A00B3AAD7 /* testDownloadedNewsTexts.json */; };
@@ -473,6 +471,8 @@
 		B1FE13FB24896E6700D012E5 /* AppConfigurationProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FE13FA24896E6700D012E5 /* AppConfigurationProviding.swift */; };
 		B1FE13FE24896EF700D012E5 /* CachedAppConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FE13FD24896EF700D012E5 /* CachedAppConfigurationTests.swift */; };
 		B1FE13FF2489708200D012E5 /* CachedAppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FE13F824896DDB00D012E5 /* CachedAppConfiguration.swift */; };
+		CB711724278889EB0029E779 /* dynamicNews.json in Resources */ = {isa = PBXBuildFile; fileRef = CB711722278889EB0029E779 /* dynamicNews.json */; };
+		CB711725278889EB0029E779 /* dynamicTextsV2.json in Resources */ = {isa = PBXBuildFile; fileRef = CB711723278889EB0029E779 /* dynamicTextsV2.json */; };
 		CB8270CD2774774700EC7836 /* BEUIGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8270CC2774774700EC7836 /* BEUIGestureRecognizer.swift */; };
 		CD2EC329247D82EE00C6B3F9 /* NotificationSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2EC328247D82EE00C6B3F9 /* NotificationSettingsViewController.swift */; };
 		CD678F6F246C43FC00B6A0F8 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD678F6E246C43FC00B6A0F8 /* MockURLSession.swift */; };
@@ -812,7 +812,6 @@
 		A92076E824ED41F400AE8748 /* BEFakeRequestsExecutorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEFakeRequestsExecutorTests.swift; sourceTree = "<group>"; };
 		A92076EB24ED542900AE8748 /* BEMockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEMockURLSession.swift; sourceTree = "<group>"; };
 		A9221A302542C1F200853CEF /* BEDynamicTextDownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicTextDownloadService.swift; sourceTree = "<group>"; };
-		A9221A322542C2C200853CEF /* dynamicTextsV2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dynamicTextsV2.json; sourceTree = "<group>"; };
 		A9221A372542F06E00853CEF /* BEDynamicTextScreenSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicTextScreenSection.swift; sourceTree = "<group>"; };
 		A9221A392542F10300853CEF /* BEDynamicTextScreenName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicTextScreenName.swift; sourceTree = "<group>"; };
 		A9221A3B2542F1AB00853CEF /* BEDynamicTextScreenSectionName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicTextScreenSectionName.swift; sourceTree = "<group>"; };
@@ -906,7 +905,6 @@
 		A9A41AD0264ACA7D00B3AAD7 /* BENewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BENewsTableViewCell.swift; sourceTree = "<group>"; };
 		A9A41AD5264ACFC100B3AAD7 /* BEDynamicInformationTextService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicInformationTextService.swift; sourceTree = "<group>"; };
 		A9A41AD9264BBAB400B3AAD7 /* BEDynamicNewsTextService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEDynamicNewsTextService.swift; sourceTree = "<group>"; };
-		A9A41ADB264BC22800B3AAD7 /* dynamicNews.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dynamicNews.json; sourceTree = "<group>"; };
 		A9A41ADF264BCD9D00B3AAD7 /* BEDynamicNewsTextTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEDynamicNewsTextTests.swift; sourceTree = "<group>"; };
 		A9A41AE0264BCD9D00B3AAD7 /* BEOnlineDynamicNewsTextTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEOnlineDynamicNewsTextTests.swift; sourceTree = "<group>"; };
 		A9A41AE3264BCE2A00B3AAD7 /* testDownloadedNewsTexts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testDownloadedNewsTexts.json; sourceTree = "<group>"; };
@@ -1029,6 +1027,8 @@
 		B1FE13F824896DDB00D012E5 /* CachedAppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAppConfiguration.swift; sourceTree = "<group>"; };
 		B1FE13FA24896E6700D012E5 /* AppConfigurationProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurationProviding.swift; sourceTree = "<group>"; };
 		B1FE13FD24896EF700D012E5 /* CachedAppConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAppConfigurationTests.swift; sourceTree = "<group>"; };
+		CB711722278889EB0029E779 /* dynamicNews.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = dynamicNews.json; path = "../../../../../../cwa-dynamic-data/payload/dynamicNews.json"; sourceTree = "<group>"; };
+		CB711723278889EB0029E779 /* dynamicTextsV2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = dynamicTextsV2.json; path = "../../../../../../cwa-dynamic-data/payload/dynamicTextsV2.json"; sourceTree = "<group>"; };
 		CB8270CC2774774700EC7836 /* BEUIGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEUIGestureRecognizer.swift; sourceTree = "<group>"; };
 		CD2EC328247D82EE00C6B3F9 /* NotificationSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsViewController.swift; sourceTree = "<group>"; };
 		CD678F6A246C43E200B6A0F8 /* MockExposureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockExposureManager.swift; sourceTree = "<group>"; };
@@ -1629,6 +1629,8 @@
 		85D7597424570615008175F0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CB711722278889EB0029E779 /* dynamicNews.json */,
+				CB711723278889EB0029E779 /* dynamicTextsV2.json */,
 				011E4B002483A35A002E6412 /* ENACommunity.entitlements */,
 				CD7F5C732466F6D400D3D03C /* ENATest.entitlements */,
 				85790F2E245C6B72003D47E1 /* ENA.entitlements */,
@@ -1637,8 +1639,6 @@
 				85D75976245706BD008175F0 /* Assets */,
 				85D75975245706B0008175F0 /* Storyboards */,
 				A189E460248C35BF001D0996 /* PublicKeys.plist */,
-				A9221A322542C2C200853CEF /* dynamicTextsV2.json */,
-				A9A41ADB264BC22800B3AAD7 /* dynamicNews.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -3056,12 +3056,13 @@
 				A9A41F7D261C708B00C2BF3F /* BEToolboxViewController.xib in Resources */,
 				A97D448725A708D300E7D698 /* OnboardingInfoViewController.xib in Resources */,
 				A913E2FB2647C70B0013EF3E /* BECoviCodeTableViewCell.xib in Resources */,
+				CB711725278889EB0029E779 /* dynamicTextsV2.json in Resources */,
 				A9A41F96261C971000C2BF3F /* BEToolboxItemCell.xib in Resources */,
 				A902680D25AF3AF200C14169 /* HomeTestResultTableViewCell.xib in Resources */,
 				A97D44A425A72DFF00E7D698 /* ImageTableViewCell.xib in Resources */,
+				CB711724278889EB0029E779 /* dynamicNews.json in Resources */,
 				A90267E925AEFE1800C14169 /* HomeRiskInactiveTableViewCell.xib in Resources */,
 				A90267C825AEE96200C14169 /* HomeInfoCell.xib in Resources */,
-				A9221A332542C2C200853CEF /* dynamicTextsV2.json in Resources */,
 				8539874F2467094E00D28B62 /* AppIcon.xcassets in Resources */,
 				514C0A0B247AF9F700F235F6 /* RiskTextItemView.xib in Resources */,
 				A97D44C825A749EC00E7D698 /* NotificationSettingsOffTableViewCell.xib in Resources */,
@@ -3075,7 +3076,6 @@
 				A9A41F8D261C942400C2BF3F /* BEToolboxItemViewController.xib in Resources */,
 				71F5418E248BEE08006DB793 /* privacy-policy.html in Resources */,
 				A9A41AD1264ACA7D00B3AAD7 /* BENewsTableViewCell.xib in Resources */,
-				A9A41ADC264BC22800B3AAD7 /* dynamicNews.json in Resources */,
 				A9A41F6E261C4F0100C2BF3F /* BEToolboxTableViewCell.xib in Resources */,
 				A97D44FC25A8462C00E7D698 /* ExposureDetectionRiskTextCell.xib in Resources */,
 				51FE277D247535C400BB8144 /* RiskLoadingItemView.xib in Resources */,
@@ -3740,7 +3740,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.10.0;
+				MARKETING_VERSION = 1.10.1;
 				OTHER_CFLAGS = (
 					"-DSQLITE_HAS_CODEC",
 					"-DSQLITE_TEMP_STORE=3",
@@ -3900,7 +3900,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.10.0;
+				MARKETING_VERSION = 1.10.1;
 				OTHER_CFLAGS = (
 					"-DSQLITE_HAS_CODEC",
 					"-DSQLITE_TEMP_STORE=3",
@@ -4116,7 +4116,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.10.0;
+				MARKETING_VERSION = 1.10.1;
 				OTHER_CFLAGS = (
 					"-DSQLITE_HAS_CODEC",
 					"-DSQLITE_TEMP_STORE=3",
@@ -4153,7 +4153,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.10.0;
+				MARKETING_VERSION = 1.10.1;
 				OTHER_CFLAGS = (
 					"-DSQLITE_HAS_CODEC",
 					"-DSQLITE_TEMP_STORE=3",
