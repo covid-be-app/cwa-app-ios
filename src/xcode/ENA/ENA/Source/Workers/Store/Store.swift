@@ -132,4 +132,5 @@ protocol Store: AnyObject {
 	var latestRisk: Risk? { get set }
 	
 	var useMobileDataForTEKDownload: Bool { get set }
+	var submitKeysReminderCount: Int { get set }
 }

@@ -54,13 +54,12 @@ struct ExposureManagerState {
 			} else {
 				self.status = .active
 			}
-
 		#else
-		self.authorized = authorized
-		self.enabled = enabled
-		self.status = status
+			self.authorized = authorized
+			self.enabled = enabled
+			self.status = status
 		#endif
-	}
+ 	}
 
 	// MARK: Properties
 

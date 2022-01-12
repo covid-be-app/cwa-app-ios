@@ -222,6 +222,7 @@ extension RiskProvider: RiskProviding {
 
 		saveRiskIfNeeded(risk)
 	}
+
 	#else
 
 	private func completeOnTargetQueue(risk: Risk?, completion: Completion? = nil) {
@@ -347,9 +348,9 @@ extension RiskProvider: RiskProviding {
 
 	private func _provideRisk(_ risk: Risk, to consumer: RiskConsumer?) {
 		#if UITESTING
-		consumer?.provideRisk(riskLevelForTesting)
+			consumer?.provideRisk(riskLevelForTesting)
 		#else
-		consumer?.provideRisk(risk)
+			consumer?.provideRisk(risk)
 		#endif
 	}
 

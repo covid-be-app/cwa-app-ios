@@ -107,12 +107,15 @@ class BEExposureSubmissionFromTestCoordinator : NSObject, ExposureSubmissionFrom
 
 		let yesAction = UIAlertAction(title: BEAppStrings.BEExposureSubmission.yes,
 										 style: .default, handler: { _ in
-											self.startSubmitProcess()
+			ENATaskScheduler.cancelSubmitKeysReminder { _ in
+				
+			}
+			self.startSubmitProcess()
 		})
 		
 		let noAction = UIAlertAction(title: BEAppStrings.BEExposureSubmission.no,
 										 style: .default, handler: { _ in
-											self.navigationController?.dismiss(animated: true)
+			self.navigationController?.dismiss(animated: true)
 		})
 
 
@@ -147,7 +150,7 @@ class BEExposureSubmissionFromTestCoordinator : NSObject, ExposureSubmissionFrom
 		})
 		self.navigationController?.present(alert, animated: true)
 	}
-	
+
 	// MARK: - key submission
 	
 	private func startSubmitProcess() {
