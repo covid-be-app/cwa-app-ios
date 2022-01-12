@@ -177,9 +177,9 @@ final class ENATaskScheduler {
 			content.sound = .default
 
 			// reminder in 6 hours
-			// :TEMP:
-//			var nextTriggerDate = Calendar.current.date(byAdding: .hour, value: 6, to: Date())!
-			var nextTriggerDate = Calendar.current.date(byAdding: .second, value: 30, to: Date())!
+			var nextTriggerDate = Calendar.current.date(byAdding: .hour, value: 6, to: Date())!
+			// test code
+//			var nextTriggerDate = Calendar.current.date(byAdding: .second, value: 30, to: Date())!
 			var comps = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: nextTriggerDate)
 			
 			// don't schedule at night
