@@ -70,4 +70,8 @@ extension SecureStore {
 		set { kvStore["shouldPerformBackgroundFakeRequests"] = newValue }
 	}
 
+	var submitKeysReminderCount: Int {
+		get { kvStore["submitKeysReminderCount"] as Int? ?? 0 }
+		set { kvStore["submitKeysReminderCount"] = newValue }
+	}
 }

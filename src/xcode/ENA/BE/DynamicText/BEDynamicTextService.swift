@@ -132,7 +132,6 @@ class BEDynamicTextService {
 	}
 	
 	private func loadTextFromCache() throws -> BEDynamicText {
-		log(message: "Load text from cache")
 		let data = try Data(contentsOf: cacheURL)
 
 		return try loadTextFromData(data)

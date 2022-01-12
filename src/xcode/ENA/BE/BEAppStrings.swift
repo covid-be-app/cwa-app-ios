@@ -213,4 +213,9 @@ enum BEAppStrings {
 		static let appSubtitle = NSLocalizedString("BECovidSafe_appSubtitle", comment: "")
 		static let appButton = NSLocalizedString("BECovidSafe_appButton", comment: "")
 	}
+	
+	enum BEUploadKeysReminder {
+		static let title = NSLocalizedString("BEUploadKeysReminder_title", comment: "")
+		static let body = NSLocalizedString("BEUploadKeysReminder_body", comment: "")
+	}
 }

@@ -93,7 +93,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			appConfigurationProvider: CachedAppConfiguration(client: self.client),
 			exposureManagerState: self.exposureManager.preconditions()
 		)
-		
+
 		#if UITESTING
 			if let isAtRisk = UserDefaults.standard.value(forKey: "riskLevel") as? String {
 				
@@ -350,6 +350,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		exposureSubmissionService.deleteTestResultIfOutdated()
 	}
 
+	func applicationWillResignActive(_ application: UIApplication) {
+		if let result = store.testResult {
+			if result.result == .positive {
+				ENATaskScheduler.scheduleSubmitKeysReminder(store: store)
+			}
+		}
+	}
+	
 	func applicationDidEnterBackground(_ application: UIApplication) {
 		if #available(iOS 13.0, *) {
 			taskScheduler.scheduleTask()
@@ -360,12 +368,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		UIApplication.shared.applicationIconBadgeNumber = 0
 		if store.isOnboarded {
 			coordinator.refreshTestResults()
+			
+			if let result = store.testResult {
+				if store.submitKeysReminderCount > 0 && result.result == .positive {
+					showUploadKeysReminderAlert()
+				}
+			}
 		}
 	}
 	
 	func requestUpdatedExposureState() {
 		let state = exposureManager.preconditions()
 		updateExposureState(state)
+	}
+	
+	func showUploadKeysReminderAlert() {
+		let alert = UIAlertController(title: BEAppStrings.BEUploadKeysReminder.title, message: BEAppStrings.BEUploadKeysReminder.body, preferredStyle: .alert)
+		alert.addAction(UIAlertAction(title: AppStrings.Common.alertActionOk, style: .cancel))
+
+		if let vc = self.window?.rootViewController {
+			vc.present(alert, animated: true)
+		}
+
 	}
 }
 
@@ -424,7 +448,12 @@ extension AppDelegate {
 
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
-	func userNotificationCenter(_: UNUserNotificationCenter, willPresent _: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+	func userNotificationCenter(_: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+		if notification.request.identifier.contains(ENATaskScheduler.submitKeysNoficationIdentifier) {
+			completionHandler([])
+			return
+		}
+
 		completionHandler([.alert, .badge, .sound])
 	}
 

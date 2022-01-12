@@ -69,5 +69,6 @@ final class MockTestStore: Store {
 	var useMobileDataForTEKDownload: Bool = true
 	var statisticsUpdatedAt: Date?
 	var vaccinationInfo: BEVaccinationInfo?
+	var submitKeysReminderCount: Int = 0
 
 }

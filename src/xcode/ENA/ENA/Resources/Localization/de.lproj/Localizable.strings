@@ -448,3 +448,5 @@
 "BECovidSafe_appButton" = "Start";
 "BEHome_riskCardHigh_button" = "Anfrage Covid-Test";
 "BEHome_requestTestURL" = "https://sat.info-coronavirus.be/de/coronalert";
+"BEUploadKeysReminder_title" = "Andere warnen";
+"BEUploadKeysReminder_body" = "Teilen Sie Ihre zufälligen IDs mit anderen un helfen Sie, die Infektionskette zu durchbrechen.";
