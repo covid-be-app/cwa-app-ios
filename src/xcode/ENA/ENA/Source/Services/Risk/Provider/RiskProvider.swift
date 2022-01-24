@@ -303,7 +303,7 @@ extension RiskProvider: RiskProviding {
 			group.leave()
 		}
 
-		guard group.wait(timeout: .now() + .seconds(60)) == .success else {
+		guard group.wait(timeout: .now() + .seconds(240)) == .success else {
 			provideLoadingStatus(isLoading: false)
 			completeOnTargetQueue(risk: store.latestRisk, completion: completion)
 			return
