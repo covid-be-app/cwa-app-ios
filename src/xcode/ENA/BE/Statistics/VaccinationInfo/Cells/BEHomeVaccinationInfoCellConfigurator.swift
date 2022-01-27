@@ -39,21 +39,24 @@ class BEHomeVaccinationInfoCellConfigurator: TableViewCellConfigurator {
 		numberFormatter.numberStyle = .decimal
 		
 		cell.titleLabel.text = BEAppStrings.BEVaccinationInfo.title
-		cell.atLeastPartiallyVaccinatedTextLabel.text = BEAppStrings.BEVaccinationInfo.atLeastOneDose
-		cell.fullyVaccinatedTextLabel.text = BEAppStrings.BEVaccinationInfo.fullyVaccinated
+		cell.firstDoseTextLabel.text = BEAppStrings.BEVaccinationInfo.firstDose
+		cell.secondDoseTextLabel.text = BEAppStrings.BEVaccinationInfo.secondDose
+		cell.thirdDoseTextLabel.text = BEAppStrings.BEVaccinationInfo.thirdDose
 
 		guard
 			let vaccinationInfo = self.vaccinationInfo,
 			let vaccinationInfoUpdatedAt = self.vaccinationInfoUpdatedAt
 		else {
-			cell.atLeastPartiallyVaccinatedLabel.text = "-"
-			cell.fullyVaccinatedLabel.text = "-"
+			cell.firstDoseLabel.text = "-"
+			cell.secondDoseLabel.text = "-"
+			cell.thirdDoseLabel.text = "-"
 			cell.lastUpdatedLabel.text = nil
 			return
 		}
 
-		cell.atLeastPartiallyVaccinatedLabel.text = numberFormatter.string(from:NSNumber(value: vaccinationInfo.atLeastPartiallyVaccinated))
-		cell.fullyVaccinatedLabel.text = numberFormatter.string(from:NSNumber(value: vaccinationInfo.fullyVaccinated))
+		cell.firstDoseLabel.text = numberFormatter.string(from:NSNumber(value: vaccinationInfo.atLeastPartiallyVaccinated))
+		cell.secondDoseLabel.text = numberFormatter.string(from:NSNumber(value: vaccinationInfo.fullyVaccinated))
+		cell.thirdDoseLabel.text = numberFormatter.string(from:NSNumber(value: vaccinationInfo.boosterVaccinated))
 
 		cell.lastUpdatedLabel.text = String(format:
 			BEAppStrings.BEVaccinationInfo.updatedAt,

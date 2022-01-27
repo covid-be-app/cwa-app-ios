@@ -435,8 +435,9 @@
 "BECoviCode_submit" = "Envoyer le code";
 "BEExposureSubmissionError_invalidCoviCode" = "Mauvais Covi-Code";
 "BEVaccinationInfo_title" = "Vaccination";
-"BEVaccinationInfo_atLeastOneDose" = "Au moins 1 dose";
-"BEVaccinationInfo_fullyVaccinated" = "Entièrement vacciné";
+"BEVaccinationInfo_firstDose" = "1 Dose";
+"BEVaccinationInfo_secondDose" = "2 Doses";
+"BEVaccinationInfo_thirdDose" = "3 Doses";
 "BEVaccinationInfo_updatedAt" = "Dernière mise à jour le %@";
 "BEHome_CoviCode_button" = "Prévenez vos contacts";
 "BECoviCode_subtitle" = "Aider les autres";

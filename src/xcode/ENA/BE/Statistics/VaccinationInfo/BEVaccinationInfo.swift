@@ -20,11 +20,13 @@
 import Foundation
 
 struct BEVaccinationInfo : Codable, Hashable {
-	let atLeastPartiallyVaccinated:Int
-	let fullyVaccinated:Int
+	let atLeastPartiallyVaccinated: Int
+	let fullyVaccinated: Int
+	let boosterVaccinated: Int
 	
 	func hash(into hasher: inout Hasher) {
-			hasher.combine(atLeastPartiallyVaccinated)
-			hasher.combine(fullyVaccinated)
-		}
+		hasher.combine(atLeastPartiallyVaccinated)
+		hasher.combine(fullyVaccinated)
+		hasher.combine(boosterVaccinated)
+	}
 }
