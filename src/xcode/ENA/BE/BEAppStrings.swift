@@ -201,8 +201,9 @@ enum BEAppStrings {
 	
 	enum BEVaccinationInfo {
 		static let title = NSLocalizedString("BEVaccinationInfo_title", comment: "")
-		static let atLeastOneDose = NSLocalizedString("BEVaccinationInfo_atLeastOneDose", comment: "")
-		static let fullyVaccinated = NSLocalizedString("BEVaccinationInfo_fullyVaccinated", comment: "")
+		static let firstDose = NSLocalizedString("BEVaccinationInfo_firstDose", comment: "")
+		static let secondDose = NSLocalizedString("BEVaccinationInfo_secondDose", comment: "")
+		static let thirdDose = NSLocalizedString("BEVaccinationInfo_thirdDose", comment: "")
 		static let updatedAt = NSLocalizedString("BEVaccinationInfo_updatedAt", comment: "")
 	}
 	

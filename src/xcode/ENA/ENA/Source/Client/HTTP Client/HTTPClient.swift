@@ -35,6 +35,7 @@ private struct StatisticsResponse: Decodable {
 
 	let atLeastPartiallyVaccinated: Int
 	let fullyVaccinated: Int
+	let boosterVaccinated: Int
 }
 
 private extension BEInfectionSummary {
@@ -53,7 +54,7 @@ private extension BEInfectionSummary {
 
 private extension BEVaccinationInfo {
 	static func fromStatisticsResponse(_ response: StatisticsResponse) -> BEVaccinationInfo {
-		return BEVaccinationInfo(atLeastPartiallyVaccinated: response.atLeastPartiallyVaccinated, fullyVaccinated: response.fullyVaccinated)
+		return BEVaccinationInfo(atLeastPartiallyVaccinated: response.atLeastPartiallyVaccinated, fullyVaccinated: response.fullyVaccinated, boosterVaccinated: response.boosterVaccinated)
 	}
 }
 
