@@ -21,10 +21,12 @@ import UIKit
 
 class BEVaccinationInfoTableViewCell: HomeCardTableViewCell {
 	@IBOutlet weak var titleLabel:UILabel!
-	@IBOutlet weak var atLeastPartiallyVaccinatedLabel:UILabel!
-	@IBOutlet weak var fullyVaccinatedLabel:UILabel!
+	@IBOutlet weak var firstDoseLabel:UILabel!
+	@IBOutlet weak var secondDoseLabel:UILabel!
+	@IBOutlet weak var thirdDoseLabel:UILabel!
 	@IBOutlet weak var lastUpdatedLabel:UILabel!
 
-	@IBOutlet weak var atLeastPartiallyVaccinatedTextLabel:UILabel!
-	@IBOutlet weak var fullyVaccinatedTextLabel:UILabel!
+	@IBOutlet weak var firstDoseTextLabel:UILabel!
+	@IBOutlet weak var secondDoseTextLabel:UILabel!
+	@IBOutlet weak var thirdDoseTextLabel:UILabel!
 }
